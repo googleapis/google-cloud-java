@@ -136,6 +136,8 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2beta/{parent=projects/*/locations/*/catalogs/*}/userEvents:collect")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

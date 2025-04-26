@@ -77,6 +77,10 @@ public final class ContentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_RoutingConfig_ManualRoutingMode_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_fieldAccessorTable;
@@ -207,7 +211,7 @@ public final class ContentProto {
           + "\014voice_config\"R\n"
           + "\014SpeechConfig\022B\n"
           + "\014voice_config\030\001"
-          + " \001(\0132,.google.cloud.aiplatform.v1beta1.VoiceConfig\"\223\022\n"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.VoiceConfig\"\274\023\n"
           + "\020GenerationConfig\022\035\n"
           + "\013temperature\030\001 \001(\002B\003\340A\001H\000\210\001\001\022\027\n"
           + "\005top_p\030\002 \001(\002B\003\340A\001H\001\210\001\001\022\027\n"
@@ -234,17 +238,20 @@ public final class ContentProto {
           + "A.google.cloud.aiplatform.v1beta1.GenerationConfig.MediaResolutionB\003\340A\001H\r"
           + "\210\001\001\022N\n\r"
           + "speech_config\030\027"
-          + " \001(\0132-.google.cloud.aiplatform.v1beta1.SpeechConfigB\003\340A\001H\016\210\001\001\022X\n"
-          + "\014model_config\030\033 \001(\0132=.google.cloud.aiplat"
-          + "form.v1beta1.GenerationConfig.ModelConfigB\003\340A\001\032\321\004\n\r"
+          + " \001(\0132-.google.cloud.aiplatform.v1beta1.SpeechConfigB\003\340A\001H\016\210\001\001\022^\n"
+          + "\017thinking_config\030\031 \001(\0132@.google.cloud.aip"
+          + "latform.v1beta1.GenerationConfig.ThinkingConfigB\003\340A\001\022X\n"
+          + "\014model_config\030\033 \001(\0132=.goo"
+          + "gle.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigB\003\340A\001\032\321\004\n\r"
           + "RoutingConfig\022d\n"
-          + "\tauto_mode\030\001 \001(\0132O.google.cloud.aiplatform.v1beta1.Ge"
-          + "nerationConfig.RoutingConfig.AutoRoutingModeH\000\022h\n"
-          + "\013manual_mode\030\002 \001(\0132Q.google.clo"
-          + "ud.aiplatform.v1beta1.GenerationConfig.RoutingConfig.ManualRoutingModeH\000\032\240\002\n"
+          + "\tauto_mode\030\001 \001(\0132O.google.cloud.aipla"
+          + "tform.v1beta1.GenerationConfig.RoutingConfig.AutoRoutingModeH\000\022h\n"
+          + "\013manual_mode\030\002 \001(\0132Q.google.cloud.aiplatform.v1beta1.Ge"
+          + "nerationConfig.RoutingConfig.ManualRoutingModeH\000\032\240\002\n"
           + "\017AutoRoutingMode\022\215\001\n"
-          + "\030model_routing_preference\030\001 \001(\0162f.google.cloud.aiplatform.v1beta"
-          + "1.GenerationConfig.RoutingConfig.AutoRoutingMode.ModelRoutingPreferenceH\000\210\001\001\"`\n"
+          + "\030model_routing_preference\030\001 \001(\0162f.google.cloud.a"
+          + "iplatform.v1beta1.GenerationConfig.Routi"
+          + "ngConfig.AutoRoutingMode.ModelRoutingPreferenceH\000\210\001\001\"`\n"
           + "\026ModelRoutingPreference\022\013\n"
           + "\007UNKNOWN\020\000\022\026\n"
           + "\022PRIORITIZE_QUALITY\020\001\022\014\n"
@@ -254,10 +261,14 @@ public final class ContentProto {
           + "\021ManualRoutingMode\022\027\n\n"
           + "model_name\030\001 \001(\tH\000\210\001\001B\r\n"
           + "\013_model_nameB\020\n"
-          + "\016routing_config\032\233\002\n"
+          + "\016routing_config\032G\n"
+          + "\016ThinkingConfig\022!\n"
+          + "\017thinking_budget\030\003 \001(\005B\003\340A\001H\000\210\001\001B\022\n"
+          + "\020_thinking_budget\032\233\002\n"
           + "\013ModelConfig\022\203\001\n"
-          + "\034feature_selection_preference\030\001 \001(\0162X.google.cloud.aiplatf"
-          + "orm.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreferenceB\003\340A\002\"\205\001\n"
+          + "\034feature_selection_preference\030\001 \001(\0162X.google.clou"
+          + "d.aiplatform.v1beta1.GenerationConfig.Mo"
+          + "delConfig.FeatureSelectionPreferenceB\003\340A\002\"\205\001\n"
           + "\032FeatureSelectionPreference\022,\n"
           + "(FEATURE_SELECTION_PREFERENCE_UNSPECIFIED\020\000\022\026\n"
           + "\022PRIORITIZE_QUALITY\020\001\022\014\n"
@@ -289,12 +300,12 @@ public final class ContentProto {
           + "\021_media_resolutionB\020\n"
           + "\016_speech_config\"\372\003\n\r"
           + "SafetySetting\022D\n"
-          + "\010category\030\001 \001(\0162-.goog"
-          + "le.cloud.aiplatform.v1beta1.HarmCategoryB\003\340A\002\022Y\n"
-          + "\tthreshold\030\002 \001(\0162A.google.cloud."
-          + "aiplatform.v1beta1.SafetySetting.HarmBlockThresholdB\003\340A\002\022S\n"
-          + "\006method\030\004 \001(\0162>.googl"
-          + "e.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockMethodB\003\340A\001\"\235\001\n"
+          + "\010category\030\001 \001"
+          + "(\0162-.google.cloud.aiplatform.v1beta1.HarmCategoryB\003\340A\002\022Y\n"
+          + "\tthreshold\030\002 \001(\0162A.goog"
+          + "le.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockThresholdB\003\340A\002\022S\n"
+          + "\006method\030\004 \001("
+          + "\0162>.google.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockMethodB\003\340A\001\"\235\001\n"
           + "\022HarmBlockThreshold\022$\n"
           + " HARM_BLOCK_THRESHOLD_UNSPECIFIED\020\000\022\027\n"
           + "\023BLOCK_LOW_AND_ABOVE\020\001\022\032\n"
@@ -307,13 +318,13 @@ public final class ContentProto {
           + "\010SEVERITY\020\001\022\017\n"
           + "\013PROBABILITY\020\002\"\316\004\n"
           + "\014SafetyRating\022D\n"
-          + "\010category\030\001"
-          + " \001(\0162-.google.cloud.aiplatform.v1beta1.HarmCategoryB\003\340A\003\022W\n"
-          + "\013probability\030\002 \001(\0162=.google.cloud.aiplatform"
-          + ".v1beta1.SafetyRating.HarmProbabilityB\003\340A\003\022\036\n"
+          + "\010category\030\001 \001(\0162-.google."
+          + "cloud.aiplatform.v1beta1.HarmCategoryB\003\340A\003\022W\n"
+          + "\013probability\030\002 \001(\0162=.google.cloud.a"
+          + "iplatform.v1beta1.SafetyRating.HarmProbabilityB\003\340A\003\022\036\n"
           + "\021probability_score\030\005 \001(\002B\003\340A\003\022Q\n"
-          + "\010severity\030\006"
-          + " \001(\0162:.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverityB\003\340A\003\022\033\n"
+          + "\010severity\030\006 \001(\0162:.google.cloud.aip"
+          + "latform.v1beta1.SafetyRating.HarmSeverityB\003\340A\003\022\033\n"
           + "\016severity_score\030\007 \001(\002B\003\340A\003\022\024\n"
           + "\007blocked\030\003 \001(\010B\003\340A\003\"b\n"
           + "\017HarmProbability\022 \n"
@@ -345,15 +356,15 @@ public final class ContentProto {
           + "\014avg_logprobs\030\t \001(\001B\003\340A\003\022M\n"
           + "\017logprobs_result\030\n"
           + " \001(\0132/.google.cloud.aiplatform.v1beta1.LogprobsResultB\003\340A\003\022S\n\r"
-          + "finish_reason\030\003 \001(\01627.google.clou"
-          + "d.aiplatform.v1beta1.Candidate.FinishReasonB\003\340A\003\022J\n"
-          + "\016safety_ratings\030\004 \003(\0132-.googl"
-          + "e.cloud.aiplatform.v1beta1.SafetyRatingB\003\340A\003\022 \n"
+          + "finish_reason\030\003 \001(\01627.go"
+          + "ogle.cloud.aiplatform.v1beta1.Candidate.FinishReasonB\003\340A\003\022J\n"
+          + "\016safety_ratings\030\004 \003("
+          + "\0132-.google.cloud.aiplatform.v1beta1.SafetyRatingB\003\340A\003\022 \n"
           + "\016finish_message\030\005 \001(\tB\003\340A\003H\000\210\001\001\022Q\n"
-          + "\021citation_metadata\030\006 \001(\01321.google.cloud"
-          + ".aiplatform.v1beta1.CitationMetadataB\003\340A\003\022S\n"
-          + "\022grounding_metadata\030\007 \001(\01322.google.c"
-          + "loud.aiplatform.v1beta1.GroundingMetadataB\003\340A\003\"\274\001\n"
+          + "\021citation_metadata\030\006 \001(\01321.goo"
+          + "gle.cloud.aiplatform.v1beta1.CitationMetadataB\003\340A\003\022S\n"
+          + "\022grounding_metadata\030\007 \001(\01322"
+          + ".google.cloud.aiplatform.v1beta1.GroundingMetadataB\003\340A\003\"\274\001\n"
           + "\014FinishReason\022\035\n"
           + "\031FINISH_REASON_UNSPECIFIED\020\000\022\010\n"
           + "\004STOP\020\001\022\016\n\n"
@@ -367,10 +378,10 @@ public final class ContentProto {
           + "\027MALFORMED_FUNCTION_CALL\020\tB\021\n"
           + "\017_finish_message\"\236\003\n"
           + "\016LogprobsResult\022U\n"
-          + "\016top_candidates\030\001 \003(\0132=.google.cloud.aipla"
-          + "tform.v1beta1.LogprobsResult.TopCandidates\022T\n"
-          + "\021chosen_candidates\030\002 \003(\01329.google.c"
-          + "loud.aiplatform.v1beta1.LogprobsResult.Candidate\032\177\n"
+          + "\016top_candidates\030\001 \003(\0132=.google.cl"
+          + "oud.aiplatform.v1beta1.LogprobsResult.TopCandidates\022T\n"
+          + "\021chosen_candidates\030\002 \003(\01329"
+          + ".google.cloud.aiplatform.v1beta1.LogprobsResult.Candidate\032\177\n"
           + "\tCandidate\022\022\n"
           + "\005token\030\001 \001(\tH\000\210\001\001\022\025\n"
           + "\010token_id\030\003 \001(\005H\001\210\001\001\022\034\n"
@@ -379,8 +390,8 @@ public final class ContentProto {
           + "\t_token_idB\022\n"
           + "\020_log_probability\032^\n\r"
           + "TopCandidates\022M\n\n"
-          + "candidates\030\001"
-          + " \003(\01329.google.cloud.aiplatform.v1beta1.LogprobsResult.Candidate\"g\n"
+          + "candidates\030\001 \003(\01329.google.cloud.a"
+          + "iplatform.v1beta1.LogprobsResult.Candidate\"g\n"
           + "\007Segment\022\027\n\n"
           + "part_index\030\001 \001(\005B\003\340A\003\022\030\n"
           + "\013start_index\030\002 \001(\005B\003\340A\003\022\026\n"
@@ -389,8 +400,8 @@ public final class ContentProto {
           + "\016GroundingChunk\022B\n"
           + "\003web\030\001"
           + " \001(\01323.google.cloud.aiplatform.v1beta1.GroundingChunk.WebH\000\022]\n"
-          + "\021retrieved_context\030\002 \001(\0132@.google.cloud.aiplatform.v"
-          + "1beta1.GroundingChunk.RetrievedContextH\000\032=\n"
+          + "\021retrieved_context\030\002 \001(\0132@.google.cloud.aip"
+          + "latform.v1beta1.GroundingChunk.RetrievedContextH\000\032=\n"
           + "\003Web\022\020\n"
           + "\003uri\030\001 \001(\tH\000\210\001\001\022\022\n"
           + "\005title\030\002 \001(\tH\001\210\001\001B\006\n"
@@ -408,22 +419,22 @@ public final class ContentProto {
           + "\005_textB\014\n\n"
           + "chunk_type\"\232\001\n"
           + "\020GroundingSupport\022>\n"
-          + "\007segment\030\001"
-          + " \001(\0132(.google.cloud.aiplatform.v1beta1.SegmentH\000\210\001\001\022\037\n"
+          + "\007segment\030\001 \001(\0132(.googl"
+          + "e.cloud.aiplatform.v1beta1.SegmentH\000\210\001\001\022\037\n"
           + "\027grounding_chunk_indices\030\002 \003(\005\022\031\n"
           + "\021confidence_scores\030\003 \003(\002B\n\n"
           + "\010_segment\"\327\003\n"
           + "\021GroundingMetadata\022\037\n"
           + "\022web_search_queries\030\001 \003(\tB\003\340A\001\022W\n"
-          + "\022search_entry_point\030\004 \001(\01321.google.cloud"
-          + ".aiplatform.v1beta1.SearchEntryPointB\003\340A\001H\000\210\001\001\022\036\n"
+          + "\022search_entry_point\030\004 \001(\01321.goo"
+          + "gle.cloud.aiplatform.v1beta1.SearchEntryPointB\003\340A\001H\000\210\001\001\022\036\n"
           + "\021retrieval_queries\030\003 \003(\tB\003\340A\001\022I\n"
-          + "\020grounding_chunks\030\005"
-          + " \003(\0132/.google.cloud.aiplatform.v1beta1.GroundingChunk\022R\n"
-          + "\022grounding_supports\030\006"
-          + " \003(\01321.google.cloud.aiplatform.v1beta1.GroundingSupportB\003\340A\001\022[\n"
-          + "\022retrieval_metadata\030\007 \001(\01322.google.cloud"
-          + ".aiplatform.v1beta1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001B\025\n"
+          + "\020grounding_chunks\030\005 \003(\0132/.goog"
+          + "le.cloud.aiplatform.v1beta1.GroundingChunk\022R\n"
+          + "\022grounding_supports\030\006 \003(\01321.google."
+          + "cloud.aiplatform.v1beta1.GroundingSupportB\003\340A\001\022[\n"
+          + "\022retrieval_metadata\030\007 \001(\01322.goo"
+          + "gle.cloud.aiplatform.v1beta1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001B\025\n"
           + "\023_search_entry_pointB\025\n"
           + "\023_retrieval_metadata\"H\n"
           + "\020SearchEntryPoint\022\035\n"
@@ -448,11 +459,11 @@ public final class ContentProto {
           + "\005VIDEO\020\003\022\t\n"
           + "\005AUDIO\020\004\022\014\n"
           + "\010DOCUMENT\020\005B\343\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\014ContentProtoP\001ZCcl"
-          + "oud.google.com/go/aiplatform/apiv1beta1/"
-          + "aiplatformpb;aiplatformpb\252\002\037Google.Cloud"
-          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
-          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\014ContentPr"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -564,6 +575,7 @@ public final class ContentProto {
               "ResponseModalities",
               "MediaResolution",
               "SpeechConfig",
+              "ThinkingConfig",
               "ModelConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_RoutingConfig_descriptor =
@@ -596,10 +608,20 @@ public final class ContentProto {
             new java.lang.String[] {
               "ModelName",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_descriptor,
+            new java.lang.String[] {
+              "ThinkingBudget",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor,

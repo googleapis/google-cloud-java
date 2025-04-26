@@ -380,8 +380,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -521,8 +522,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -655,8 +657,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -773,8 +776,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>
@@ -892,8 +896,9 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Writes a single user event from the browser. This uses a GET request to
-     * due to browser restriction of POST-ing to a 3rd party domain.
+     * Writes a single user event from the browser.
+     * For larger user event payload over 16 KB, the POST method should be used
+     * instead, otherwise a 400 Bad Request error is returned.
      * This method is used only by the Retail API JavaScript pixel and Google Tag
      * Manager. Users should not call this method directly.
      * </pre>

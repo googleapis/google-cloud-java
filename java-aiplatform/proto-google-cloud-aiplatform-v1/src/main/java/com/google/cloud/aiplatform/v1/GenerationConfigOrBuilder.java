@@ -480,4 +480,54 @@ public interface GenerationConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.GenerationConfig.RoutingConfigOrBuilder
       getRoutingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for thinking features.
+   * An error will be returned if this field is set for models that don't
+   * support thinking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thinkingConfig field is set.
+   */
+  boolean hasThinkingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for thinking features.
+   * An error will be returned if this field is set for models that don't
+   * support thinking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thinkingConfig.
+   */
+  com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig getThinkingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for thinking features.
+   * An error will be returned if this field is set for models that don't
+   * support thinking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfigOrBuilder
+      getThinkingConfigOrBuilder();
 }

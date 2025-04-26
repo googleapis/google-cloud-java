@@ -29,9 +29,6 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   *
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -45,9 +42,6 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   *
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -61,9 +55,6 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   *
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>

@@ -3558,6 +3558,626 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface ThinkingConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the thinking budget in tokens.
+     * This is only applied when enable_thinking is true.
+     * </pre>
+     *
+     * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the thinkingBudget field is set.
+     */
+    boolean hasThinkingBudget();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the thinking budget in tokens.
+     * This is only applied when enable_thinking is true.
+     * </pre>
+     *
+     * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The thinkingBudget.
+     */
+    int getThinkingBudget();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for thinking features.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig}
+   */
+  public static final class ThinkingConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig)
+      ThinkingConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ThinkingConfig.newBuilder() to construct.
+    private ThinkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ThinkingConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ThinkingConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.class,
+              com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int THINKING_BUDGET_FIELD_NUMBER = 3;
+    private int thinkingBudget_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the thinking budget in tokens.
+     * This is only applied when enable_thinking is true.
+     * </pre>
+     *
+     * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the thinkingBudget field is set.
+     */
+    @java.lang.Override
+    public boolean hasThinkingBudget() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the thinking budget in tokens.
+     * This is only applied when enable_thinking is true.
+     * </pre>
+     *
+     * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The thinkingBudget.
+     */
+    @java.lang.Override
+    public int getThinkingBudget() {
+      return thinkingBudget_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(3, thinkingBudget_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, thinkingBudget_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig other =
+          (com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig) obj;
+
+      if (hasThinkingBudget() != other.hasThinkingBudget()) return false;
+      if (hasThinkingBudget()) {
+        if (getThinkingBudget() != other.getThinkingBudget()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasThinkingBudget()) {
+        hash = (37 * hash) + THINKING_BUDGET_FIELD_NUMBER;
+        hash = (53 * hash) + getThinkingBudget();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Config for thinking features.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig)
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.class,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        thinkingBudget_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ThinkingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig build() {
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig result =
+            new com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.thinkingBudget_ = thinkingBudget_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+                .getDefaultInstance()) return this;
+        if (other.hasThinkingBudget()) {
+          setThinkingBudget(other.getThinkingBudget());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24:
+                {
+                  thinkingBudget_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int thinkingBudget_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the thinking budget in tokens.
+       * This is only applied when enable_thinking is true.
+       * </pre>
+       *
+       * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the thinkingBudget field is set.
+       */
+      @java.lang.Override
+      public boolean hasThinkingBudget() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the thinking budget in tokens.
+       * This is only applied when enable_thinking is true.
+       * </pre>
+       *
+       * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The thinkingBudget.
+       */
+      @java.lang.Override
+      public int getThinkingBudget() {
+        return thinkingBudget_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the thinking budget in tokens.
+       * This is only applied when enable_thinking is true.
+       * </pre>
+       *
+       * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The thinkingBudget to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThinkingBudget(int value) {
+
+        thinkingBudget_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates the thinking budget in tokens.
+       * This is only applied when enable_thinking is true.
+       * </pre>
+       *
+       * <code>optional int32 thinking_budget = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThinkingBudget() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        thinkingBudget_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ThinkingConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ThinkingConfig>() {
+          @java.lang.Override
+          public ThinkingConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ThinkingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ThinkingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ModelConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)
@@ -5316,6 +5936,72 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : speechConfig_;
   }
 
+  public static final int THINKING_CONFIG_FIELD_NUMBER = 25;
+  private com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinkingConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for thinking features.
+   * An error will be returned if this field is set for models that don't
+   * support thinking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thinkingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasThinkingConfig() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for thinking features.
+   * An error will be returned if this field is set for models that don't
+   * support thinking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thinkingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig getThinkingConfig() {
+    return thinkingConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.getDefaultInstance()
+        : thinkingConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for thinking features.
+   * An error will be returned if this field is set for models that don't
+   * support thinking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfigOrBuilder
+      getThinkingConfigOrBuilder() {
+    return thinkingConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.getDefaultInstance()
+        : thinkingConfig_;
+  }
+
   public static final int MODEL_CONFIG_FIELD_NUMBER = 27;
   private com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig modelConfig_;
 
@@ -5334,7 +6020,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasModelConfig() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -5450,6 +6136,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       output.writeMessage(23, getSpeechConfig());
     }
     if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(25, getThinkingConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(27, getModelConfig());
     }
     getUnknownFields().writeTo(output);
@@ -5531,6 +6220,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSpeechConfig());
     }
     if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getThinkingConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getModelConfig());
     }
     size += getUnknownFields().getSerializedSize();
@@ -5617,6 +6309,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasSpeechConfig()) {
       if (!getSpeechConfig().equals(other.getSpeechConfig())) return false;
     }
+    if (hasThinkingConfig() != other.hasThinkingConfig()) return false;
+    if (hasThinkingConfig()) {
+      if (!getThinkingConfig().equals(other.getThinkingConfig())) return false;
+    }
     if (hasModelConfig() != other.hasModelConfig()) return false;
     if (hasModelConfig()) {
       if (!getModelConfig().equals(other.getModelConfig())) return false;
@@ -5701,6 +6397,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasSpeechConfig()) {
       hash = (37 * hash) + SPEECH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechConfig().hashCode();
+    }
+    if (hasThinkingConfig()) {
+      hash = (37 * hash) + THINKING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getThinkingConfig().hashCode();
     }
     if (hasModelConfig()) {
       hash = (37 * hash) + MODEL_CONFIG_FIELD_NUMBER;
@@ -5850,6 +6550,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         getResponseSchemaFieldBuilder();
         getRoutingConfigFieldBuilder();
         getSpeechConfigFieldBuilder();
+        getThinkingConfigFieldBuilder();
         getModelConfigFieldBuilder();
       }
     }
@@ -5888,6 +6589,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (speechConfigBuilder_ != null) {
         speechConfigBuilder_.dispose();
         speechConfigBuilder_ = null;
+      }
+      thinkingConfig_ = null;
+      if (thinkingConfigBuilder_ != null) {
+        thinkingConfigBuilder_.dispose();
+        thinkingConfigBuilder_ = null;
       }
       modelConfig_ = null;
       if (modelConfigBuilder_ != null) {
@@ -6012,9 +6718,14 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.thinkingConfig_ =
+            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.modelConfig_ =
             modelConfigBuilder_ == null ? modelConfig_ : modelConfigBuilder_.build();
-        to_bitField0_ |= 0x00008000;
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6134,6 +6845,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSpeechConfig()) {
         mergeSpeechConfig(other.getSpeechConfig());
+      }
+      if (other.hasThinkingConfig()) {
+        mergeThinkingConfig(other.getThinkingConfig());
       }
       if (other.hasModelConfig()) {
         mergeModelConfig(other.getModelConfig());
@@ -6286,10 +7000,16 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00020000;
                 break;
               } // case 186
+            case 202:
+              {
+                input.readMessage(getThinkingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 202
             case 218:
               {
                 input.readMessage(getModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 218
             default:
@@ -8525,6 +9245,246 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return speechConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinkingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfigOrBuilder>
+        thinkingConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thinkingConfig field is set.
+     */
+    public boolean hasThinkingConfig() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thinkingConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig getThinkingConfig() {
+      if (thinkingConfigBuilder_ == null) {
+        return thinkingConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+                .getDefaultInstance()
+            : thinkingConfig_;
+      } else {
+        return thinkingConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThinkingConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig value) {
+      if (thinkingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thinkingConfig_ = value;
+      } else {
+        thinkingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThinkingConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder
+            builderForValue) {
+      if (thinkingConfigBuilder_ == null) {
+        thinkingConfig_ = builderForValue.build();
+      } else {
+        thinkingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeThinkingConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig value) {
+      if (thinkingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && thinkingConfig_ != null
+            && thinkingConfig_
+                != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+                    .getDefaultInstance()) {
+          getThinkingConfigBuilder().mergeFrom(value);
+        } else {
+          thinkingConfig_ = value;
+        }
+      } else {
+        thinkingConfigBuilder_.mergeFrom(value);
+      }
+      if (thinkingConfig_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearThinkingConfig() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      thinkingConfig_ = null;
+      if (thinkingConfigBuilder_ != null) {
+        thinkingConfigBuilder_.dispose();
+        thinkingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder
+        getThinkingConfigBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getThinkingConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfigOrBuilder
+        getThinkingConfigOrBuilder() {
+      if (thinkingConfigBuilder_ != null) {
+        return thinkingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return thinkingConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig
+                .getDefaultInstance()
+            : thinkingConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for thinking features.
+     * An error will be returned if this field is set for models that don't
+     * support thinking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig thinking_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfigOrBuilder>
+        getThinkingConfigFieldBuilder() {
+      if (thinkingConfigBuilder_ == null) {
+        thinkingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ThinkingConfigOrBuilder>(
+                getThinkingConfig(), getParentForChildren(), isClean());
+        thinkingConfig_ = null;
+      }
+      return thinkingConfigBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig modelConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig,
@@ -8546,7 +9506,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the modelConfig field is set.
      */
     public boolean hasModelConfig() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -8593,7 +9553,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         modelConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8616,7 +9576,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         modelConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8635,7 +9595,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeModelConfig(
         com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig value) {
       if (modelConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && modelConfig_ != null
             && modelConfig_
                 != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
@@ -8648,7 +9608,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         modelConfigBuilder_.mergeFrom(value);
       }
       if (modelConfig_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -8666,7 +9626,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearModelConfig() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       modelConfig_ = null;
       if (modelConfigBuilder_ != null) {
         modelConfigBuilder_.dispose();
@@ -8689,7 +9649,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder
         getModelConfigBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getModelConfigFieldBuilder().getBuilder();
     }

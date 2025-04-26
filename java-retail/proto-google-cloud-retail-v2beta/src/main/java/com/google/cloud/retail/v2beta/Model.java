@@ -3756,7 +3756,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * `frequently-bought-together`, `page-optimization`, `similar-items`,
    * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
    *
-   *
    * This field together with
    * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
    * describe model metadata to use to control model training and serving.
@@ -3794,7 +3793,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * Currently supported values: `recommended-for-you`, `others-you-may-like`,
    * `frequently-bought-together`, `page-optimization`, `similar-items`,
    * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
-   *
    *
    * This field together with
    * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
@@ -6107,7 +6105,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `frequently-bought-together`, `page-optimization`, `similar-items`,
      * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
      *
-     *
      * This field together with
      * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
      * describe model metadata to use to control model training and serving.
@@ -6144,7 +6141,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
      * `frequently-bought-together`, `page-optimization`, `similar-items`,
      * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
-     *
      *
      * This field together with
      * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
@@ -6183,7 +6179,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `frequently-bought-together`, `page-optimization`, `similar-items`,
      * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
      *
-     *
      * This field together with
      * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
      * describe model metadata to use to control model training and serving.
@@ -6220,7 +6215,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `frequently-bought-together`, `page-optimization`, `similar-items`,
      * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
      *
-     *
      * This field together with
      * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
      * describe model metadata to use to control model training and serving.
@@ -6252,7 +6246,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
      * `frequently-bought-together`, `page-optimization`, `similar-items`,
      * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
-     *
      *
      * This field together with
      * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]

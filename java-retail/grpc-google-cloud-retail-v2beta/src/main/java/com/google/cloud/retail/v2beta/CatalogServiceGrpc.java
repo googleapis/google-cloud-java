@@ -723,13 +723,14 @@ public final class CatalogServiceGrpc {
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
      * Using multiple branches can be useful when developers would like
      * to have a staging branch to test and verify for future usage. When it
-     * becomes ready, developers switch on the staging branch using this API while
-     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
-     * as [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch]
-     * to route the traffic to this staging branch.
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * route the traffic to this staging branch.
      * CAUTION: If you have live predict/search traffic, switching the default
-     * branch could potentially cause outages if the ID space of the new branch is
-     * very different from the old one.
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
      * More specifically:
      * * PredictionService will only return product IDs from branch {newBranch}.
      * * SearchService will only return product IDs from branch {newBranch}
@@ -995,13 +996,14 @@ public final class CatalogServiceGrpc {
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
      * Using multiple branches can be useful when developers would like
      * to have a staging branch to test and verify for future usage. When it
-     * becomes ready, developers switch on the staging branch using this API while
-     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
-     * as [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch]
-     * to route the traffic to this staging branch.
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * route the traffic to this staging branch.
      * CAUTION: If you have live predict/search traffic, switching the default
-     * branch could potentially cause outages if the ID space of the new branch is
-     * very different from the old one.
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
      * More specifically:
      * * PredictionService will only return product IDs from branch {newBranch}.
      * * SearchService will only return product IDs from branch {newBranch}
@@ -1265,13 +1267,14 @@ public final class CatalogServiceGrpc {
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
      * Using multiple branches can be useful when developers would like
      * to have a staging branch to test and verify for future usage. When it
-     * becomes ready, developers switch on the staging branch using this API while
-     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
-     * as [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch]
-     * to route the traffic to this staging branch.
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * route the traffic to this staging branch.
      * CAUTION: If you have live predict/search traffic, switching the default
-     * branch could potentially cause outages if the ID space of the new branch is
-     * very different from the old one.
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
      * More specifically:
      * * PredictionService will only return product IDs from branch {newBranch}.
      * * SearchService will only return product IDs from branch {newBranch}
@@ -1496,13 +1499,14 @@ public final class CatalogServiceGrpc {
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
      * Using multiple branches can be useful when developers would like
      * to have a staging branch to test and verify for future usage. When it
-     * becomes ready, developers switch on the staging branch using this API while
-     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
-     * as [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch]
-     * to route the traffic to this staging branch.
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * route the traffic to this staging branch.
      * CAUTION: If you have live predict/search traffic, switching the default
-     * branch could potentially cause outages if the ID space of the new branch is
-     * very different from the old one.
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
      * More specifically:
      * * PredictionService will only return product IDs from branch {newBranch}.
      * * SearchService will only return product IDs from branch {newBranch}
@@ -1729,13 +1733,14 @@ public final class CatalogServiceGrpc {
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
      * Using multiple branches can be useful when developers would like
      * to have a staging branch to test and verify for future usage. When it
-     * becomes ready, developers switch on the staging branch using this API while
-     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
-     * as [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch]
-     * to route the traffic to this staging branch.
+     * becomes ready, developers switch on the staging branch using this API
+     * while keeping using
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` as
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * route the traffic to this staging branch.
      * CAUTION: If you have live predict/search traffic, switching the default
-     * branch could potentially cause outages if the ID space of the new branch is
-     * very different from the old one.
+     * branch could potentially cause outages if the ID space of the new branch
+     * is very different from the old one.
      * More specifically:
      * * PredictionService will only return product IDs from branch {newBranch}.
      * * SearchService will only return product IDs from branch {newBranch}
