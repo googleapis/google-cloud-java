@@ -1386,6 +1386,213 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$ConversationalFilteringSpec",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$ConversationalFilteringSpec$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$ConversationalFilteringSpec$Mode",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$SearchParams",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$SearchParams$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$UserAnswer",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$UserAnswer$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$UserAnswer$SelectedAnswer",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchRequest$UserAnswer$SelectedAnswer$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$ConversationalFilteringResult",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$ConversationalFilteringResult$AdditionalFilter",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$ConversationalFilteringResult$AdditionalFilter$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$ConversationalFilteringResult$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$FollowupQuestion",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$FollowupQuestion$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$FollowupQuestion$SuggestedAnswer",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$FollowupQuestion$SuggestedAnswer$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$RefinedSearch",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.retail.v2alpha.ConversationalSearchResponse$RefinedSearch$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.retail.v2alpha.CreateControlRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
