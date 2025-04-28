@@ -1,1 +1,1 @@
-TestExecuteQuery|TestFeatureGap/(traffic_director_enabled|direct_access_requested)
+TestExecuteQuery|TestFeatureGap/(traffic_director_enabled|direct_access_requested)|TestReadRows_Retry_WithRetryInfo_MultipleErrorResponse
