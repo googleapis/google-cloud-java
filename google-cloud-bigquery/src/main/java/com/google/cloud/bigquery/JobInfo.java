@@ -66,6 +66,12 @@ public class JobInfo implements Serializable {
     /** Configures the job to overwrite the table data if table already exists. */
     WRITE_TRUNCATE,
 
+    /**
+     * Configures the job to retain schema and constraints on an existing table, and truncate and
+     * replace data.
+     */
+    WRITE_TRUNCATE_DATA,
+
     /** Configures the job to append data to the table if it already exists. */
     WRITE_APPEND,
 
