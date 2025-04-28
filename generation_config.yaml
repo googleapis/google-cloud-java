@@ -2282,6 +2282,23 @@ libraries:
   GAPICs:
   - proto_path: google/storagetransfer/v1
 
+- api_shortname: storagebatchoperations
+  name_pretty: Storage Batch Operations API
+  product_documentation: https://cloud.google.com/storage/docs/batch-operations/overview
+  api_description: Storage batch operations is a Cloud Storage management feature
+    that performs operations on billions of Cloud Storage objects in a serverless
+    manner.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-storagebatchoperations/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-storagebatchoperations
+  api_id: storagebatchoperations.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/storagebatchoperations/v1
+  requires_billing: true
 - api_shortname: storageinsights
   name_pretty: Storage Insights API
   product_documentation: https://cloud.google.com/storage/docs/insights/storage-insights/
