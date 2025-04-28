@@ -46,6 +46,7 @@ import org.mockito.junit.MockitoRule;
 
 @RunWith(JUnit4.class)
 public final class VertexAITest {
+  private static final String UNUSED_VARIABLE = null;
   private static final String TEST_PROJECT = "test_project";
   private static final String TEST_LOCATION = "test_location";
   private static final String TEST_ENDPOINT = "test_endpoint";
