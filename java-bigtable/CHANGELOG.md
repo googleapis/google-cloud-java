@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.58.1](https://github.com/googleapis/java-bigtable/compare/v2.58.0...v2.58.1) (2025-04-28)
+
+
+### Bug Fixes
+
+* Close otel instance ([#2571](https://github.com/googleapis/java-bigtable/issues/2571)) ([422fe26](https://github.com/googleapis/java-bigtable/commit/422fe26f3aae30fe74de80fad3848707452d6646))
+
 ## [2.58.0](https://github.com/googleapis/java-bigtable/compare/v2.57.3...v2.58.0) (2025-04-28)
 
 
