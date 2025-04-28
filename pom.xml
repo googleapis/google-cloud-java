@@ -200,6 +200,7 @@
     <module>java-shopping-merchant-reviews</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
+    <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>
     <module>java-talent</module>
     <module>java-tasks</module>
