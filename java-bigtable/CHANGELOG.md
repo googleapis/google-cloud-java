@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.58.0](https://github.com/googleapis/java-bigtable/compare/v2.57.3...v2.58.0) (2025-04-28)
+
+
+### Features
+
+* Add deletion_protection support for LVs ([43c97a3](https://github.com/googleapis/java-bigtable/commit/43c97a3f430ee4ee90d46b3685ae50f13949831c))
+* **bigtable:** Add integration tests for Materialized/Logical Views ([#2518](https://github.com/googleapis/java-bigtable/issues/2518)) ([4d3a7e6](https://github.com/googleapis/java-bigtable/commit/4d3a7e675b60ba6a3225a45b7463edff279f9bc4))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.56.2 ([43c97a3](https://github.com/googleapis/java-bigtable/commit/43c97a3f430ee4ee90d46b3685ae50f13949831c))
+* Fix retry info algorithm setting ([#2562](https://github.com/googleapis/java-bigtable/issues/2562)) ([c424ccb](https://github.com/googleapis/java-bigtable/commit/c424ccba72a191609dc726ed67d03f0d330015fc))
+* Use universe domain when creating the monitoring client ([#2570](https://github.com/googleapis/java-bigtable/issues/2570)) ([3b51e12](https://github.com/googleapis/java-bigtable/commit/3b51e1206a4f83078625705ed8d8a899839af1a9))
+
 ## [2.57.3](https://github.com/googleapis/java-bigtable/compare/v2.57.2...v2.57.3) (2025-04-01)
 
 
