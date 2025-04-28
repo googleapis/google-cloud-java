@@ -33,6 +33,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.PutObjectHold)
     PutObjectHoldOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PutObjectHold.newBuilder() to construct.
   private PutObjectHold(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
      * <code>HOLD_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int HOLD_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
      * <code>SET = 1;</code>
      */
     public static final int SET_VALUE = 1;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEMPORARY_HOLD_FIELD_NUMBER = 1;
   private int temporaryHold_ = 0;
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
   public int getTemporaryHoldValue() {
     return temporaryHold_;
   }
+
   /**
    *
    *
@@ -269,6 +274,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_BASED_HOLD_FIELD_NUMBER = 2;
   private int eventBasedHold_ = 0;
+
   /**
    *
    *
@@ -288,6 +294,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
   public int getEventBasedHoldValue() {
     return eventBasedHold_;
   }
+
   /**
    *
    *
@@ -494,6 +501,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -689,6 +697,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int temporaryHold_ = 0;
+
     /**
      *
      *
@@ -707,6 +716,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
     public int getTemporaryHoldValue() {
       return temporaryHold_;
     }
+
     /**
      *
      *
@@ -728,6 +738,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +762,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.storagebatchoperations.v1.PutObjectHold.HoldStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -776,6 +788,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +811,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int eventBasedHold_ = 0;
+
     /**
      *
      *
@@ -817,6 +831,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
     public int getEventBasedHoldValue() {
       return eventBasedHold_;
     }
+
     /**
      *
      *
@@ -839,6 +854,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.storagebatchoperations.v1.PutObjectHold.HoldStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class PutObjectHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.PutMetadata)
     PutMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PutMetadata.newBuilder() to construct.
   private PutMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentDisposition_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContentDisposition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentEncoding_ = "";
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContentEncoding() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentLanguage_ = "";
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContentLanguage() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -313,6 +323,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contentType_ = "";
+
   /**
    *
    *
@@ -331,6 +342,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContentType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -357,6 +369,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -388,6 +401,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cacheControl_ = "";
+
   /**
    *
    *
@@ -408,6 +422,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCacheControl() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -436,6 +451,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -469,6 +485,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customTime_ = "";
+
   /**
    *
    *
@@ -486,6 +503,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -511,6 +529,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -565,6 +584,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getCustomMetadataCount() {
     return internalGetCustomMetadata().getMap().size();
   }
+
   /**
    *
    *
@@ -586,12 +606,14 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetCustomMetadata().getMap().containsKey(key);
   }
+
   /** Use {@link #getCustomMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getCustomMetadata() {
     return getCustomMetadataMap();
   }
+
   /**
    *
    *
@@ -610,6 +632,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getCustomMetadataMap() {
     return internalGetCustomMetadata().getMap();
   }
+
   /**
    *
    *
@@ -635,6 +658,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -913,6 +937,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1221,6 +1246,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object contentDisposition_ = "";
+
     /**
      *
      *
@@ -1239,6 +1265,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContentDisposition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1265,6 +1292,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1291,6 +1319,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1316,6 +1345,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1367,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1396,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contentEncoding_ = "";
+
     /**
      *
      *
@@ -1382,6 +1414,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContentEncoding() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1407,6 +1440,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1432,6 +1466,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1491,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1512,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1540,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contentLanguage_ = "";
+
     /**
      *
      *
@@ -1521,6 +1559,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContentLanguage() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1547,6 +1586,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1573,6 +1613,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1639,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1661,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1690,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object contentType_ = "";
+
     /**
      *
      *
@@ -1664,6 +1708,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContentType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1689,6 +1734,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1714,6 +1760,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1738,6 +1785,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1806,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1834,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cacheControl_ = "";
+
     /**
      *
      *
@@ -1804,6 +1854,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCacheControl() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1831,6 +1882,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1910,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1884,6 +1937,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1960,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1990,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customTime_ = "";
+
     /**
      *
      *
@@ -1951,6 +2007,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1975,6 +2032,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2057,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2022,6 +2081,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2101,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2094,6 +2155,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getCustomMetadataCount() {
       return internalGetCustomMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -2116,12 +2178,14 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetCustomMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getCustomMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getCustomMetadata() {
       return getCustomMetadataMap();
     }
+
     /**
      *
      *
@@ -2141,6 +2205,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getCustomMetadataMap() {
       return internalGetCustomMetadata().getMap();
     }
+
     /**
      *
      *
@@ -2167,6 +2232,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetCustomMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2199,6 +2265,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCustomMetadata().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2221,12 +2288,14 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCustomMetadata().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableCustomMetadata() {
       bitField0_ |= 0x00000040;
       return internalGetMutableCustomMetadata().getMutableMap();
     }
+
     /**
      *
      *
@@ -2253,6 +2322,7 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
