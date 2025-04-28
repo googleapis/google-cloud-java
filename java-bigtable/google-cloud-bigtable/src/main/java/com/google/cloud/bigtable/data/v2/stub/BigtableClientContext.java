@@ -54,6 +54,7 @@ public class BigtableClientContext {
 
   @Nullable private final OpenTelemetry openTelemetry;
   @Nullable private final OpenTelemetrySdk internalOpenTelemetry;
+  private final MetricsProvider metricsProvider;
   private final ClientContext clientContext;
 
   public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
@@ -140,7 +141,8 @@ public class BigtableClientContext {
           clientContext.getExecutor());
     }
 
-    return new BigtableClientContext(clientContext, openTelemetry, internalOtel);
+    return new BigtableClientContext(
+        clientContext, openTelemetry, internalOtel, settings.getMetricsProvider());
   }
 
   private static void configureGrpcOtel(
@@ -172,11 +174,13 @@ public class BigtableClientContext {
 
   private BigtableClientContext(
       ClientContext clientContext,
-      OpenTelemetry openTelemetry,
-      @Nullable OpenTelemetrySdk internalOtel) {
+      @Nullable OpenTelemetry openTelemetry,
+      @Nullable OpenTelemetrySdk internalOtel,
+      MetricsProvider metricsProvider) {
     this.clientContext = clientContext;
     this.openTelemetry = openTelemetry;
     this.internalOpenTelemetry = internalOtel;
+    this.metricsProvider = metricsProvider;
   }
 
   public OpenTelemetry getOpenTelemetry() {
@@ -193,6 +197,9 @@ public class BigtableClientContext {
     }
     if (internalOpenTelemetry != null) {
       internalOpenTelemetry.close();
+    }
+    if (metricsProvider instanceof DefaultMetricsProvider && openTelemetry != null) {
+      ((OpenTelemetrySdk) openTelemetry).close();
     }
   }
 
