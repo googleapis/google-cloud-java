@@ -247,82 +247,9 @@ your OpenTelemetry instance. You can refer to
 [CustomOpenTelemetryMetricsProvider](https://github.com/googleapis/java-bigtable/blob/main/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/CustomOpenTelemetryMetricsProvider.java)
 on how to set it up.
 
-## Client request tracing: OpenCensus Tracing
-
-Cloud Bigtable client supports [OpenCensus Tracing](https://opencensus.io/tracing/),
-which gives insight into the client internals and aids in debugging production issues.
-By default, the functionality is disabled. For example to enable tracing using
-[Google Stackdriver](https://cloud.google.com/trace/docs/):
-
-[//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
-
-If you are using Maven, add this to your pom.xml file
-```xml
-<dependency>
-  <groupId>io.opencensus</groupId>
-  <artifactId>opencensus-impl</artifactId>
-  <version>0.31.1</version>
-  <scope>runtime</scope>
-</dependency>
-<dependency>
-  <groupId>io.opencensus</groupId>
-  <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
-  <version>0.31.1</version>
-  <exclusions>
-    <exclusion>
-      <groupId>io.grpc</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-    <exclusion>
-      <groupId>com.google.auth</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-  </exclusions>
-</dependency>
-```
-If you are using Gradle, add this to your dependencies
-```Groovy
-compile 'io.opencensus:opencensus-impl:0.24.0'
-compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.24.0'
-```
-If you are using SBT, add this to your dependencies
-```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.24.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.24.0"
-```
-
-At the start of your application configure the exporter:
-
-```java
-import io.opencensus.exporter.trace.stackdriver.StackdriverTraceConfiguration;
-import io.opencensus.exporter.trace.stackdriver.StackdriverTraceExporter;
-
-StackdriverTraceExporter.createAndRegister(
-  StackdriverTraceConfiguration.builder()
-      .setProjectId("YOUR_PROJECT_ID")
-      .build());
-```
-
-You can view the traces on the Google Cloud Platform Console
-[Trace](https://console.cloud.google.com/traces) page.
-
-By default traces are [sampled](https://opencensus.io/tracing/sampling) at a rate of about 1/10,000.
-You can configure a higher rate by updating the active tracing params:
-
-```java
-import io.opencensus.trace.Tracing;
-import io.opencensus.trace.samplers.Samplers;
-
-Tracing.getTraceConfig().updateActiveTraceParams(
-    Tracing.getTraceConfig().getActiveTraceParams().toBuilder()
-        .setSampler(Samplers.probabilitySampler(0.01))
-        .build()
-);
-```
-
 ### Disable Bigtbale traces
 
-If your application already has OpenCensus Tracing integration and you want to disable Bigtable
+If your application already has tracing integration and you want to disable Bigtable
 traces, you can do the following:
 
 ```java
