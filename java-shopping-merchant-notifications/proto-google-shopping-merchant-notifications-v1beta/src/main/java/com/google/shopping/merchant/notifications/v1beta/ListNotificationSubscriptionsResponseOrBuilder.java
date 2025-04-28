@@ -37,6 +37,7 @@ public interface ListNotificationSubscriptionsResponseOrBuilder
    */
   java.util.List<com.google.shopping.merchant.notifications.v1beta.NotificationSubscription>
       getNotificationSubscriptionsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListNotificationSubscriptionsResponseOrBuilder
    */
   com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
       getNotificationSubscriptions(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListNotificationSubscriptionsResponseOrBuilder
    * </code>
    */
   int getNotificationSubscriptionsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ListNotificationSubscriptionsResponseOrBuilder
           ? extends
               com.google.shopping.merchant.notifications.v1beta.NotificationSubscriptionOrBuilder>
       getNotificationSubscriptionsOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface ListNotificationSubscriptionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
