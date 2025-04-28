@@ -834,3 +834,6 @@ grpc-google-cloud-devicestreaming-v1:0.0.0:0.0.1-SNAPSHOT
 google-shopping-merchant-productstudio:0.0.0:0.0.1-SNAPSHOT
 proto-google-shopping-merchant-productstudio-v1alpha:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-productstudio-v1alpha:0.0.0:0.0.1-SNAPSHOT
+google-cloud-chronicle:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-chronicle-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-chronicle-v1:0.0.0:0.0.1-SNAPSHOT
