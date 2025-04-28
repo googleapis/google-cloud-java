@@ -1,0 +1,150 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.chronicle.v1",
+  "libraryPackage": "google.cloud.chronicle.v1",
+  "services": {
+    "DataAccessControlService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataAccessControlServiceClient",
+          "rpcs": {
+            "CreateDataAccessLabel": {
+              "methods": ["createDataAccessLabel", "createDataAccessLabel", "createDataAccessLabel", "createDataAccessLabelCallable"]
+            },
+            "CreateDataAccessScope": {
+              "methods": ["createDataAccessScope", "createDataAccessScope", "createDataAccessScope", "createDataAccessScopeCallable"]
+            },
+            "DeleteDataAccessLabel": {
+              "methods": ["deleteDataAccessLabel", "deleteDataAccessLabel", "deleteDataAccessLabel", "deleteDataAccessLabelCallable"]
+            },
+            "DeleteDataAccessScope": {
+              "methods": ["deleteDataAccessScope", "deleteDataAccessScope", "deleteDataAccessScope", "deleteDataAccessScopeCallable"]
+            },
+            "GetDataAccessLabel": {
+              "methods": ["getDataAccessLabel", "getDataAccessLabel", "getDataAccessLabel", "getDataAccessLabelCallable"]
+            },
+            "GetDataAccessScope": {
+              "methods": ["getDataAccessScope", "getDataAccessScope", "getDataAccessScope", "getDataAccessScopeCallable"]
+            },
+            "ListDataAccessLabels": {
+              "methods": ["listDataAccessLabels", "listDataAccessLabels", "listDataAccessLabels", "listDataAccessLabelsPagedCallable", "listDataAccessLabelsCallable"]
+            },
+            "ListDataAccessScopes": {
+              "methods": ["listDataAccessScopes", "listDataAccessScopes", "listDataAccessScopes", "listDataAccessScopesPagedCallable", "listDataAccessScopesCallable"]
+            },
+            "UpdateDataAccessLabel": {
+              "methods": ["updateDataAccessLabel", "updateDataAccessLabel", "updateDataAccessLabelCallable"]
+            },
+            "UpdateDataAccessScope": {
+              "methods": ["updateDataAccessScope", "updateDataAccessScope", "updateDataAccessScopeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EntityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EntityServiceClient",
+          "rpcs": {
+            "CreateWatchlist": {
+              "methods": ["createWatchlist", "createWatchlist", "createWatchlist", "createWatchlistCallable"]
+            },
+            "DeleteWatchlist": {
+              "methods": ["deleteWatchlist", "deleteWatchlist", "deleteWatchlist", "deleteWatchlistCallable"]
+            },
+            "GetWatchlist": {
+              "methods": ["getWatchlist", "getWatchlist", "getWatchlist", "getWatchlistCallable"]
+            },
+            "ListWatchlists": {
+              "methods": ["listWatchlists", "listWatchlists", "listWatchlists", "listWatchlistsPagedCallable", "listWatchlistsCallable"]
+            },
+            "UpdateWatchlist": {
+              "methods": ["updateWatchlist", "updateWatchlist", "updateWatchlistCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InstanceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstanceServiceClient",
+          "rpcs": {
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReferenceListService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReferenceListServiceClient",
+          "rpcs": {
+            "CreateReferenceList": {
+              "methods": ["createReferenceList", "createReferenceList", "createReferenceList", "createReferenceListCallable"]
+            },
+            "GetReferenceList": {
+              "methods": ["getReferenceList", "getReferenceList", "getReferenceList", "getReferenceListCallable"]
+            },
+            "ListReferenceLists": {
+              "methods": ["listReferenceLists", "listReferenceLists", "listReferenceLists", "listReferenceListsPagedCallable", "listReferenceListsCallable"]
+            },
+            "UpdateReferenceList": {
+              "methods": ["updateReferenceList", "updateReferenceList", "updateReferenceListCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RuleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RuleServiceClient",
+          "rpcs": {
+            "CreateRetrohunt": {
+              "methods": ["createRetrohuntAsync", "createRetrohuntAsync", "createRetrohuntAsync", "createRetrohuntOperationCallable", "createRetrohuntCallable"]
+            },
+            "CreateRule": {
+              "methods": ["createRule", "createRule", "createRule", "createRuleCallable"]
+            },
+            "DeleteRule": {
+              "methods": ["deleteRule", "deleteRule", "deleteRule", "deleteRuleCallable"]
+            },
+            "GetRetrohunt": {
+              "methods": ["getRetrohunt", "getRetrohunt", "getRetrohunt", "getRetrohuntCallable"]
+            },
+            "GetRule": {
+              "methods": ["getRule", "getRule", "getRule", "getRuleCallable"]
+            },
+            "GetRuleDeployment": {
+              "methods": ["getRuleDeployment", "getRuleDeployment", "getRuleDeployment", "getRuleDeploymentCallable"]
+            },
+            "ListRetrohunts": {
+              "methods": ["listRetrohunts", "listRetrohunts", "listRetrohunts", "listRetrohuntsPagedCallable", "listRetrohuntsCallable"]
+            },
+            "ListRuleDeployments": {
+              "methods": ["listRuleDeployments", "listRuleDeployments", "listRuleDeployments", "listRuleDeploymentsPagedCallable", "listRuleDeploymentsCallable"]
+            },
+            "ListRuleRevisions": {
+              "methods": ["listRuleRevisions", "listRuleRevisions", "listRuleRevisions", "listRuleRevisionsPagedCallable", "listRuleRevisionsCallable"]
+            },
+            "ListRules": {
+              "methods": ["listRules", "listRules", "listRules", "listRulesPagedCallable", "listRulesCallable"]
+            },
+            "UpdateRule": {
+              "methods": ["updateRule", "updateRule", "updateRuleCallable"]
+            },
+            "UpdateRuleDeployment": {
+              "methods": ["updateRuleDeployment", "updateRuleDeployment", "updateRuleDeploymentCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
