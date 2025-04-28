@@ -113,15 +113,19 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
       String exporterName,
       @Nullable Credentials credentials,
       @Nullable String endpoint,
+      String universeDomain,
       TimeSeriesConverter converter)
       throws IOException {
-
+    Preconditions.checkNotNull(universeDomain);
     MetricServiceSettings.Builder settingsBuilder = MetricServiceSettings.newBuilder();
     CredentialsProvider credentialsProvider =
         Optional.ofNullable(credentials)
             .<CredentialsProvider>map(FixedCredentialsProvider::create)
             .orElse(NoCredentialsProvider.create());
     settingsBuilder.setCredentialsProvider(credentialsProvider);
+
+    settingsBuilder.setUniverseDomain(universeDomain);
+
     if (MONITORING_ENDPOINT_OVERRIDE_SYS_PROP != null) {
       logger.warning(
           "Setting the monitoring endpoint through system variable will be removed in future"

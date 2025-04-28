@@ -263,6 +263,7 @@ public class Util {
                 "application metrics",
                 credentials,
                 settings.getMetricsEndpoint(),
+                settings.getUniverseDomain(),
                 new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
                     Suppliers.memoize(
                         () -> BigtableExporterUtils.createInternalMonitoredResource(settings))))));
