@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.storagebatchoperations.v1",
+  "libraryPackage": "com.google.cloud.storagebatchoperations.v1",
+  "services": {
+    "StorageBatchOperations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageBatchOperationsClient",
+          "rpcs": {
+            "CancelJob": {
+              "methods": ["cancelJob", "cancelJob", "cancelJob", "cancelJobCallable"]
+            },
+            "CreateJob": {
+              "methods": ["createJobAsync", "createJobAsync", "createJobAsync", "createJobOperationCallable", "createJobCallable"]
+            },
+            "DeleteJob": {
+              "methods": ["deleteJob", "deleteJob", "deleteJob", "deleteJobCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
