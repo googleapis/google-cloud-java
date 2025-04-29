@@ -37,6 +37,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * @return A list containing the loadBalancingSchemes.
    */
   java.util.List<java.lang.String> getLoadBalancingSchemesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * @return The count of loadBalancingSchemes.
    */
   int getLoadBalancingSchemesCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * @return The loadBalancingSchemes at the given index.
    */
   java.lang.String getLoadBalancingSchemes(int index);
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface UrlMapsValidateRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.compute.v1.UrlMap getResource();
+
   /**
    *
    *

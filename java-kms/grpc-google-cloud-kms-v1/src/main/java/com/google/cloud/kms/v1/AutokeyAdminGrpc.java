@@ -194,6 +194,19 @@ public final class AutokeyAdminGrpc {
     return AutokeyAdminStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AutokeyAdminBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AutokeyAdminBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutokeyAdminBlockingV2Stub>() {
+          @java.lang.Override
+          public AutokeyAdminBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutokeyAdminBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AutokeyAdminBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -396,6 +409,79 @@ public final class AutokeyAdminGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AutokeyAdmin.
+   *
+   * <pre>
+   * Provides interfaces for managing [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) folder-level
+   * configurations. A configuration is inherited by all descendent projects. A
+   * configuration at one folder overrides any other configurations in its
+   * ancestry. Setting a configuration on a folder is a prerequisite for Cloud KMS
+   * Autokey, so that users working in a descendant project can request
+   * provisioned [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer
+   * Managed Encryption Key (CMEK) use, on-demand.
+   * </pre>
+   */
+  public static final class AutokeyAdminBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AutokeyAdminBlockingV2Stub> {
+    private AutokeyAdminBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AutokeyAdminBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AutokeyAdminBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
+     * folder. The caller must have both `cloudkms.autokeyConfigs.update`
+     * permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy`
+     * permission on the provided key project. A
+     * [KeyHandle][google.cloud.kms.v1.KeyHandle] creation in the folder's
+     * descendant projects will use this configuration to determine where to
+     * create the resulting [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.AutokeyConfig updateAutokeyConfig(
+        com.google.cloud.kms.v1.UpdateAutokeyConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutokeyConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [AutokeyConfig][google.cloud.kms.v1.AutokeyConfig] for a
+     * folder.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.AutokeyConfig getAutokeyConfig(
+        com.google.cloud.kms.v1.GetAutokeyConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutokeyConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the effective Cloud KMS Autokey configuration for a given project.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigResponse showEffectiveAutokeyConfig(
+        com.google.cloud.kms.v1.ShowEffectiveAutokeyConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getShowEffectiveAutokeyConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AutokeyAdmin.
    *
    * <pre>
    * Provides interfaces for managing [Cloud KMS

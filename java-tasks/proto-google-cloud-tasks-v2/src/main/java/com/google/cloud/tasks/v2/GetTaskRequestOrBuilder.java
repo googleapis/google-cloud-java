@@ -39,6 +39,7 @@ public interface GetTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface GetTaskRequestOrBuilder
    * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
+
   /**
    *
    *

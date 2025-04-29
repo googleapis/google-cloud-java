@@ -34,6 +34,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.CreateAttributeRequest)
     CreateAttributeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAttributeRequest.newBuilder() to construct.
   private CreateAttributeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributeId_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
 
   public static final int ATTRIBUTE_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.Attribute attribute_;
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
   public boolean hasAttribute() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.apihub.v1.Attribute.getDefaultInstance()
         : attribute_;
   }
+
   /**
    *
    *
@@ -430,6 +438,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -684,6 +694,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +720,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object attributeId_ = "";
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +916,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +955,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.apihub.v1.Attribute.Builder,
             com.google.cloud.apihub.v1.AttributeOrBuilder>
         attributeBuilder_;
+
     /**
      *
      *
@@ -952,6 +972,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
     public boolean hasAttribute() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
         return attributeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1042,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1111,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getAttributeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1105,6 +1132,7 @@ public final class CreateAttributeRequest extends com.google.protobuf.GeneratedM
             : attribute_;
       }
     }
+
     /**
      *
      *

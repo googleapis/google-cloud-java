@@ -34,6 +34,7 @@ public interface ListSearchConfigsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchConfig search_configs = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.SearchConfig> getSearchConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSearchConfigsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchConfig search_configs = 1;</code>
    */
   com.google.cloud.visionai.v1.SearchConfig getSearchConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSearchConfigsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchConfig search_configs = 1;</code>
    */
   int getSearchConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSearchConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.SearchConfigOrBuilder>
       getSearchConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListSearchConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

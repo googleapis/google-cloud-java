@@ -39,6 +39,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return Whether the encryptionInfo field is set.
    */
   boolean hasEncryptionInfo();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return The encryptionInfo.
    */
   com.google.cloud.alloydb.v1alpha.EncryptionInfo getEncryptionInfo();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return Whether the enabledTime field is set.
    */
   boolean hasEnabledTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return The enabledTime.
    */
   com.google.protobuf.Timestamp getEnabledTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return A list containing the schedule.
    */
   java.util.List<com.google.type.DayOfWeek> getScheduleList();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return The count of schedule.
    */
   int getScheduleCount();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return The schedule at the given index.
    */
   com.google.type.DayOfWeek getSchedule(int index);
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return A list containing the enum numeric values on the wire for schedule.
    */
   java.util.List<java.lang.Integer> getScheduleValueList();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return Whether the earliestRestorableTime field is set.
    */
   boolean hasEarliestRestorableTime();
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public interface ContinuousBackupInfoOrBuilder
    * @return The earliestRestorableTime.
    */
   com.google.protobuf.Timestamp getEarliestRestorableTime();
+
   /**
    *
    *

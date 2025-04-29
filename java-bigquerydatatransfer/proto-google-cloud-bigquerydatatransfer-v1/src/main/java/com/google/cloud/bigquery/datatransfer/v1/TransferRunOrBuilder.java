@@ -39,6 +39,7 @@ public interface TransferRunOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TransferRunOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface TransferRunOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface TransferRunOrBuilder
    * @return Whether the runTime field is set.
    */
   boolean hasRunTime();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface TransferRunOrBuilder
    * @return The runTime.
    */
   com.google.protobuf.Timestamp getRunTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface TransferRunOrBuilder
    * @return Whether the errorStatus field is set.
    */
   boolean hasErrorStatus();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface TransferRunOrBuilder
    * @return The errorStatus.
    */
   com.google.rpc.Status getErrorStatus();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface TransferRunOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface TransferRunOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface TransferRunOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface TransferRunOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public interface TransferRunOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface TransferRunOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public interface TransferRunOrBuilder
    * @return Whether the params field is set.
    */
   boolean hasParams();
+
   /**
    *
    *
@@ -315,6 +329,7 @@ public interface TransferRunOrBuilder
    * @return The params.
    */
   com.google.protobuf.Struct getParams();
+
   /**
    *
    *
@@ -342,6 +357,7 @@ public interface TransferRunOrBuilder
    * @return Whether the destinationDatasetId field is set.
    */
   boolean hasDestinationDatasetId();
+
   /**
    *
    *
@@ -354,6 +370,7 @@ public interface TransferRunOrBuilder
    * @return The destinationDatasetId.
    */
   java.lang.String getDestinationDatasetId();
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public interface TransferRunOrBuilder
    * @return The dataSourceId.
    */
   java.lang.String getDataSourceId();
+
   /**
    *
    *
@@ -404,6 +422,7 @@ public interface TransferRunOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -446,6 +465,7 @@ public interface TransferRunOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -480,6 +500,7 @@ public interface TransferRunOrBuilder
    * @return The notificationPubsubTopic.
    */
   java.lang.String getNotificationPubsubTopic();
+
   /**
    *
    *
@@ -514,6 +535,7 @@ public interface TransferRunOrBuilder
    * @return Whether the emailPreferences field is set.
    */
   boolean hasEmailPreferences();
+
   /**
    *
    *
@@ -530,6 +552,7 @@ public interface TransferRunOrBuilder
    * @return The emailPreferences.
    */
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public interface ListBranchRulesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -54,6 +55,7 @@ public interface ListBranchRulesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *

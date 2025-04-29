@@ -33,6 +33,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Tags)
     TagsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Tags.newBuilder() to construct.
   private Tags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList items_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -372,6 +380,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +588,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -593,6 +603,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +626,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +649,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +689,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -722,6 +738,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       items_.makeImmutable();
       return items_;
     }
+
     /**
      *
      *
@@ -736,6 +753,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     public int getItemsCount() {
       return items_.size();
     }
+
     /**
      *
      *
@@ -751,6 +769,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getItems(int index) {
       return items_.get(index);
     }
+
     /**
      *
      *
@@ -766,6 +785,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getItemsBytes(int index) {
       return items_.getByteString(index);
     }
+
     /**
      *
      *
@@ -789,6 +809,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +832,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +871,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

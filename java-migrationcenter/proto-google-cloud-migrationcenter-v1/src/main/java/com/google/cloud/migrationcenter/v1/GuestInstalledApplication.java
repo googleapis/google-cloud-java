@@ -33,6 +33,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GuestInstalledApplication)
     GuestInstalledApplicationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuestInstalledApplication.newBuilder() to construct.
   private GuestInstalledApplication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object applicationName_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vendor_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
 
   public static final int INSTALL_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp installTime_;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
   public boolean hasInstallTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
   public com.google.protobuf.Timestamp getInstallTime() {
     return installTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : installTime_;
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -518,6 +530,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -780,6 +793,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object applicationName_ = "";
+
     /**
      *
      *
@@ -802,6 +816,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -824,6 +839,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     }
 
     private java.lang.Object vendor_ = "";
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         installTimeBuilder_;
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     public boolean hasInstallTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return installTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1079,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1127,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1147,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1162,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return getInstallTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1150,6 +1181,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
             : installTime_;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1209,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     }
 
     private java.lang.Object path_ = "";
+
     /**
      *
      *
@@ -1199,6 +1232,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1255,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1277,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1295,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1320,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -1305,6 +1343,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1366,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1388,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1406,7 @@ public final class GuestInstalledApplication extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

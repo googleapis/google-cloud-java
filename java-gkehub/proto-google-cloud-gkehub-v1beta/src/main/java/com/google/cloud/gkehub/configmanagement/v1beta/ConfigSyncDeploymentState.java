@@ -33,6 +33,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState)
     ConfigSyncDeploymentStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigSyncDeploymentState.newBuilder() to construct.
   private ConfigSyncDeploymentState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int IMPORTER_FIELD_NUMBER = 1;
   private int importer_ = 0;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getImporterValue() {
     return importer_;
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int SYNCER_FIELD_NUMBER = 2;
   private int syncer_ = 0;
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getSyncerValue() {
     return syncer_;
   }
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int GIT_SYNC_FIELD_NUMBER = 3;
   private int gitSync_ = 0;
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getGitSyncValue() {
     return gitSync_;
   }
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int MONITOR_FIELD_NUMBER = 4;
   private int monitor_ = 0;
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getMonitorValue() {
     return monitor_;
   }
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int RECONCILER_MANAGER_FIELD_NUMBER = 5;
   private int reconcilerManager_ = 0;
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getReconcilerManagerValue() {
     return reconcilerManager_;
   }
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int ROOT_RECONCILER_FIELD_NUMBER = 6;
   private int rootReconciler_ = 0;
+
   /**
    *
    *
@@ -277,6 +289,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getRootReconcilerValue() {
     return rootReconciler_;
   }
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int ADMISSION_WEBHOOK_FIELD_NUMBER = 7;
   private int admissionWebhook_ = 0;
+
   /**
    *
    *
@@ -315,6 +329,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getAdmissionWebhookValue() {
     return admissionWebhook_;
   }
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int RESOURCE_GROUP_CONTROLLER_MANAGER_FIELD_NUMBER = 8;
   private int resourceGroupControllerManager_ = 0;
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getResourceGroupControllerManagerValue() {
     return resourceGroupControllerManager_;
   }
+
   /**
    *
    *
@@ -382,6 +399,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
 
   public static final int OTEL_COLLECTOR_FIELD_NUMBER = 9;
   private int otelCollector_ = 0;
+
   /**
    *
    *
@@ -397,6 +415,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   public int getOtelCollectorValue() {
     return otelCollector_;
   }
+
   /**
    *
    *
@@ -706,6 +725,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1003,6 +1023,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int importer_ = 0;
+
     /**
      *
      *
@@ -1018,6 +1039,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getImporterValue() {
       return importer_;
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1078,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1077,6 +1101,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1121,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int syncer_ = 0;
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getSyncerValue() {
       return syncer_;
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1176,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1170,6 +1199,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1219,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int gitSync_ = 0;
+
     /**
      *
      *
@@ -1204,6 +1235,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getGitSyncValue() {
       return gitSync_;
     }
+
     /**
      *
      *
@@ -1222,6 +1254,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1274,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1263,6 +1297,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1317,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int monitor_ = 0;
+
     /**
      *
      *
@@ -1297,6 +1333,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getMonitorValue() {
       return monitor_;
     }
+
     /**
      *
      *
@@ -1315,6 +1352,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1372,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1356,6 +1395,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1415,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int reconcilerManager_ = 0;
+
     /**
      *
      *
@@ -1391,6 +1432,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getReconcilerManagerValue() {
       return reconcilerManager_;
     }
+
     /**
      *
      *
@@ -1410,6 +1452,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1474,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1454,6 +1498,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1519,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int rootReconciler_ = 0;
+
     /**
      *
      *
@@ -1490,6 +1536,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getRootReconcilerValue() {
       return rootReconciler_;
     }
+
     /**
      *
      *
@@ -1509,6 +1556,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1578,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1553,6 +1602,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1573,6 +1623,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int admissionWebhook_ = 0;
+
     /**
      *
      *
@@ -1589,6 +1640,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getAdmissionWebhookValue() {
       return admissionWebhook_;
     }
+
     /**
      *
      *
@@ -1608,6 +1660,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1682,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1652,6 +1706,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1727,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int resourceGroupControllerManager_ = 0;
+
     /**
      *
      *
@@ -1689,6 +1745,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getResourceGroupControllerManagerValue() {
       return resourceGroupControllerManager_;
     }
+
     /**
      *
      *
@@ -1709,6 +1766,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1790,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1756,6 +1815,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1837,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     }
 
     private int otelCollector_ = 0;
+
     /**
      *
      *
@@ -1792,6 +1853,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public int getOtelCollectorValue() {
       return otelCollector_;
     }
+
     /**
      *
      *
@@ -1810,6 +1872,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1829,6 +1892,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1851,6 +1915,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

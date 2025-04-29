@@ -32,6 +32,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsListNodes)
     NodeGroupsListNodesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeGroupsListNodes.newBuilder() to construct.
   private NodeGroupsListNodes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NodeGroupNode> items_;
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.compute.v1.NodeGroupNode> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.NodeGroupNode getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -340,6 +355,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -378,6 +395,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -404,6 +422,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -419,6 +438,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -434,6 +454,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -679,6 +700,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1002,6 +1024,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1016,6 +1039,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1038,6 +1062,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1085,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1125,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1181,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1198,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1215,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1282,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1305,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1325,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1346,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1367,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1387,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1407,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1420,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.NodeGroupNode.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1396,6 +1437,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1455,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1426,6 +1469,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NodeGroupNode.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1439,6 +1483,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NodeGroupNode.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1470,6 +1515,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1484,6 +1530,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1506,6 +1553,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1576,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1598,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1616,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1641,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1604,6 +1656,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1626,6 +1679,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1648,6 +1702,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1724,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1742,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1767,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1724,6 +1782,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1746,6 +1805,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1768,6 +1828,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1789,6 +1850,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1806,6 +1868,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1898,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1849,6 +1913,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1869,6 +1934,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1891,6 +1957,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1977,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +2005,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2025,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2040,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1988,6 +2059,7 @@ public final class NodeGroupsListNodes extends com.google.protobuf.GeneratedMess
             : warning_;
       }
     }
+
     /**
      *
      *

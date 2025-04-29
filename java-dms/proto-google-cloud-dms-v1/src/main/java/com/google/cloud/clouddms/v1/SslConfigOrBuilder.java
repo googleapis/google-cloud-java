@@ -39,6 +39,7 @@ public interface SslConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SslConfigOrBuilder
    * @return The clientKey.
    */
   java.lang.String getClientKey();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface SslConfigOrBuilder
    * @return The clientCertificate.
    */
   java.lang.String getClientCertificate();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface SslConfigOrBuilder
    * @return The caCertificate.
    */
   java.lang.String getCaCertificate();
+
   /**
    *
    *

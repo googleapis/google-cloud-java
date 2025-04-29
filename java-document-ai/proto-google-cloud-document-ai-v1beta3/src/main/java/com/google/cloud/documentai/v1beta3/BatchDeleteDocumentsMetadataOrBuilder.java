@@ -36,6 +36,7 @@ public interface BatchDeleteDocumentsMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BatchDeleteDocumentsMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface BatchDeleteDocumentsMetadataOrBuilder
           com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata
               .IndividualBatchDeleteStatus>
       getIndividualBatchDeleteStatusesList();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface BatchDeleteDocumentsMetadataOrBuilder
    */
   com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata.IndividualBatchDeleteStatus
       getIndividualBatchDeleteStatuses(int index);
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface BatchDeleteDocumentsMetadataOrBuilder
    * </code>
    */
   int getIndividualBatchDeleteStatusesCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface BatchDeleteDocumentsMetadataOrBuilder
               com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata
                   .IndividualBatchDeleteStatusOrBuilder>
       getIndividualBatchDeleteStatusesOrBuilderList();
+
   /**
    *
    *

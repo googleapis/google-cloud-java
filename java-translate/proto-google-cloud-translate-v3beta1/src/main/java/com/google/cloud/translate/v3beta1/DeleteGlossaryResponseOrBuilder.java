@@ -36,6 +36,7 @@ public interface DeleteGlossaryResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeleteGlossaryResponseOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DeleteGlossaryResponseOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface DeleteGlossaryResponseOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface DeleteGlossaryResponseOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

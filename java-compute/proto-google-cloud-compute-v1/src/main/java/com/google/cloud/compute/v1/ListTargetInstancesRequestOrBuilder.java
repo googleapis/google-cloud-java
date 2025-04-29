@@ -36,6 +36,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface ListTargetInstancesRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

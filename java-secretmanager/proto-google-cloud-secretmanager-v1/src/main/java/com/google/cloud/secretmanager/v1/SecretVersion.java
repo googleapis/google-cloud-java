@@ -33,6 +33,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.SecretVersion)
     SecretVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecretVersion.newBuilder() to construct.
   private SecretVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
+
     /**
      *
      *
@@ -265,6 +269,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -294,6 +299,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -326,6 +332,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -378,6 +387,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESTROY_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp destroyTime_;
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDestroyTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -418,6 +429,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDestroyTime() {
     return destroyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : destroyTime_;
   }
+
   /**
    *
    *
@@ -439,6 +451,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -457,6 +470,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICATION_STATUS_FIELD_NUMBER = 5;
   private com.google.cloud.secretmanager.v1.ReplicationStatus replicationStatus_;
+
   /**
    *
    *
@@ -498,6 +513,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReplicationStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -516,6 +532,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance()
         : replicationStatus_;
   }
+
   /**
    *
    *
@@ -538,6 +555,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -562,6 +580,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -589,6 +608,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_SPECIFIED_PAYLOAD_CHECKSUM_FIELD_NUMBER = 7;
   private boolean clientSpecifiedPayloadChecksum_ = false;
+
   /**
    *
    *
@@ -613,6 +633,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULED_DESTROY_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp scheduledDestroyTime_;
+
   /**
    *
    *
@@ -634,6 +655,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduledDestroyTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -657,6 +679,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduledDestroyTime_;
   }
+
   /**
    *
    *
@@ -682,6 +705,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 9;
   private com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
       customerManagedEncryption_;
+
   /**
    *
    *
@@ -702,6 +726,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerManagedEncryption() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -725,6 +750,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.getDefaultInstance()
         : customerManagedEncryption_;
   }
+
   /**
    *
    *
@@ -1012,6 +1038,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1355,6 +1382,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1383,6 +1411,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1411,6 +1440,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1468,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1492,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1528,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1513,6 +1546,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1536,6 +1570,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1561,6 +1596,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1619,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1613,6 +1650,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1673,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1691,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1673,6 +1713,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1708,6 +1749,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         destroyTimeBuilder_;
+
     /**
      *
      *
@@ -1728,6 +1770,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDestroyTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1754,6 +1797,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return destroyTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1782,6 +1826,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1852,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1886,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1912,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1933,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDestroyTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1909,6 +1958,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : destroyTime_;
       }
     }
+
     /**
      *
      *
@@ -1942,6 +1992,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1960,6 +2011,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1981,6 +2033,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2056,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.secretmanager.v1.SecretVersion.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2027,6 +2081,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2109,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.ReplicationStatus.Builder,
             com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder>
         replicationStatusBuilder_;
+
     /**
      *
      *
@@ -2069,6 +2125,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplicationStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2090,6 +2147,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return replicationStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2113,6 +2171,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2134,6 +2193,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2224,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2245,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2200,6 +2262,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReplicationStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2220,6 +2283,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : replicationStatus_;
       }
     }
+
     /**
      *
      *
@@ -2248,6 +2312,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -2271,6 +2336,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2294,6 +2360,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2316,6 +2383,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2334,6 +2402,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2428,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clientSpecifiedPayloadChecksum_;
+
     /**
      *
      *
@@ -2381,6 +2451,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean getClientSpecifiedPayloadChecksum() {
       return clientSpecifiedPayloadChecksum_;
     }
+
     /**
      *
      *
@@ -2407,6 +2478,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2438,6 +2510,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduledDestroyTimeBuilder_;
+
     /**
      *
      *
@@ -2458,6 +2531,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduledDestroyTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2484,6 +2558,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return scheduledDestroyTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2512,6 +2587,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2613,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2570,6 +2647,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2595,6 +2673,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2615,6 +2694,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScheduledDestroyTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2639,6 +2719,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : scheduledDestroyTime_;
       }
     }
+
     /**
      *
      *
@@ -2678,6 +2759,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
             com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>
         customerManagedEncryptionBuilder_;
+
     /**
      *
      *
@@ -2697,6 +2779,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerManagedEncryption() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2723,6 +2806,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return customerManagedEncryptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2751,6 +2835,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2776,6 +2861,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2811,6 +2897,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2835,6 +2922,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2855,6 +2943,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomerManagedEncryptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2879,6 +2968,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             : customerManagedEncryption_;
       }
     }
+
     /**
      *
      *

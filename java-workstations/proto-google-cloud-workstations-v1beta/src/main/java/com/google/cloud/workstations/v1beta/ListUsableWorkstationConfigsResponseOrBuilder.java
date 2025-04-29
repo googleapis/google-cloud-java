@@ -36,6 +36,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig>
       getWorkstationConfigsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.workstations.v1beta.WorkstationConfig getWorkstationConfigs(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    * </code>
    */
   int getWorkstationConfigsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.workstations.v1beta.WorkstationConfigOrBuilder>
       getWorkstationConfigsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface ListUsableWorkstationConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeployModelResponseOrBuilder
    * @return Whether the deployedModel field is set.
    */
   boolean hasDeployedModel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DeployModelResponseOrBuilder
    * @return The deployedModel.
    */
   com.google.cloud.aiplatform.v1.DeployedModel getDeployedModel();
+
   /**
    *
    *

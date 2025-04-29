@@ -36,6 +36,7 @@ public interface TrajectorySingleToolUseSpecOrBuilder
    * @return Whether the toolName field is set.
    */
   boolean hasToolName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TrajectorySingleToolUseSpecOrBuilder
    * @return The toolName.
    */
   java.lang.String getToolName();
+
   /**
    *
    *

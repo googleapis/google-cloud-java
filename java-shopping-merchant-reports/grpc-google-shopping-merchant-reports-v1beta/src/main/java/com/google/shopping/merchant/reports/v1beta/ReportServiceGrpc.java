@@ -96,6 +96,19 @@ public final class ReportServiceGrpc {
     return ReportServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ReportServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ReportServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReportServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ReportServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReportServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ReportServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -207,6 +220,42 @@ public final class ReportServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ReportService.
+   *
+   * <pre>
+   * Service for retrieving reports and insights about your products, their
+   * performance, and their competitive environment on Google.
+   * </pre>
+   */
+  public static final class ReportServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ReportServiceBlockingV2Stub> {
+    private ReportServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ReportServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ReportServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a report defined by a search query. The response might contain
+     * fewer rows than specified by `page_size`. Rely on `next_page_token` to
+     * determine if there are more rows to be requested.
+     * </pre>
+     */
+    public com.google.shopping.merchant.reports.v1beta.SearchResponse search(
+        com.google.shopping.merchant.reports.v1beta.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ReportService.
    *
    * <pre>
    * Service for retrieving reports and insights about your products, their

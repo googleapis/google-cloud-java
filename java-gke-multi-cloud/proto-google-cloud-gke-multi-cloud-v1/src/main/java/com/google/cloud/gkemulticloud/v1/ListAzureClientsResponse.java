@@ -33,6 +33,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.ListAzureClientsResponse)
     ListAzureClientsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAzureClientsResponse.newBuilder() to construct.
   private ListAzureClientsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AzureClient> azureClients_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.gkemulticloud.v1.AzureClient> getAzureClientsList() {
     return azureClients_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       getAzureClientsOrBuilderList() {
     return azureClients_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
   public int getAzureClientsCount() {
     return azureClients_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
   public com.google.cloud.gkemulticloud.v1.AzureClient getAzureClients(int index) {
     return azureClients_.get(index);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return azureClientsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return azureClientsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return azureClientsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
     public com.google.cloud.gkemulticloud.v1.AzureClient.Builder getAzureClientsBuilder(int index) {
       return getAzureClientsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return azureClientsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(azureClients_);
       }
     }
+
     /**
      *
      *
@@ -933,6 +957,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       return getAzureClientsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AzureClient.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       return getAzureClientsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.AzureClient.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -980,6 +1006,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1003,6 +1030,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1054,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1077,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1096,7 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

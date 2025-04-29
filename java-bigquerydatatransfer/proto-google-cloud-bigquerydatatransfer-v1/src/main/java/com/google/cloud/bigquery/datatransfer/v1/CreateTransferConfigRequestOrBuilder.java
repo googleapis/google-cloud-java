@@ -42,6 +42,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * @return Whether the transferConfig field is set.
    */
   boolean hasTransferConfig();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * @return The transferConfig.
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface CreateTransferConfigRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getAuthorizationCode();
+
   /**
    *
    *
@@ -195,6 +199,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * @return The versionInfo.
    */
   java.lang.String getVersionInfo();
+
   /**
    *
    *
@@ -242,6 +247,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * @return The serviceAccountName.
    */
   java.lang.String getServiceAccountName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ImportSshPublicKeyResponseOrBuilder
    * @return Whether the loginProfile field is set.
    */
   boolean hasLoginProfile();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImportSshPublicKeyResponseOrBuilder
    * @return The loginProfile.
    */
   com.google.cloud.oslogin.v1.LoginProfile getLoginProfile();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ImportSshPublicKeyResponseOrBuilder
    * @return The details.
    */
   java.lang.String getDetails();
+
   /**
    *
    *

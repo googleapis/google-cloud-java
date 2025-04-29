@@ -38,6 +38,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the shotChangeDetectionConfig field is set.
    */
   boolean hasShotChangeDetectionConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig
       getShotChangeDetectionConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the labelDetectionConfig field is set.
    */
   boolean hasLabelDetectionConfig();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig
       getLabelDetectionConfig();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the explicitContentDetectionConfig field is set.
    */
   boolean hasExplicitContentDetectionConfig();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig
       getExplicitContentDetectionConfig();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the objectTrackingConfig field is set.
    */
   boolean hasObjectTrackingConfig();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig
       getObjectTrackingConfig();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the automlActionRecognitionConfig field is set.
    */
   boolean hasAutomlActionRecognitionConfig();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       getAutomlActionRecognitionConfig();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the automlClassificationConfig field is set.
    */
   boolean hasAutomlClassificationConfig();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
       getAutomlClassificationConfig();
+
   /**
    *
    *
@@ -296,6 +308,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the automlObjectTrackingConfig field is set.
    */
   boolean hasAutomlObjectTrackingConfig();
+
   /**
    *
    *
@@ -311,6 +324,7 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig
       getAutomlObjectTrackingConfig();
+
   /**
    *
    *
@@ -337,6 +351,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return The enum numeric value on the wire for feature.
    */
   int getFeatureValue();
+
   /**
    *
    *
@@ -363,6 +378,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return Whether the storageConfig field is set.
    */
   boolean hasStorageConfig();
+
   /**
    *
    *
@@ -376,6 +392,7 @@ public interface StreamingVideoConfigOrBuilder
    * @return The storageConfig.
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig getStorageConfig();
+
   /**
    *
    *

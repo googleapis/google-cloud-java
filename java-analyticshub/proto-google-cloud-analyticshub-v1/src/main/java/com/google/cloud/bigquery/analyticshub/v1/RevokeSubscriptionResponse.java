@@ -34,6 +34,7 @@ public final class RevokeSubscriptionResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse)
     RevokeSubscriptionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RevokeSubscriptionResponse.newBuilder() to construct.
   private RevokeSubscriptionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,6 +215,7 @@ public final class RevokeSubscriptionResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

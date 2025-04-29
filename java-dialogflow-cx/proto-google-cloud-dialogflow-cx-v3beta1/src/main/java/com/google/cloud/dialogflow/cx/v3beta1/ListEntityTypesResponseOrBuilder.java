@@ -35,6 +35,7 @@ public interface ListEntityTypesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EntityType entity_types = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.EntityType> getEntityTypesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListEntityTypesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EntityType entity_types = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.EntityType getEntityTypes(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListEntityTypesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EntityType entity_types = 1;</code>
    */
   int getEntityTypesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListEntityTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.EntityTypeOrBuilder>
       getEntityTypesOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListEntityTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

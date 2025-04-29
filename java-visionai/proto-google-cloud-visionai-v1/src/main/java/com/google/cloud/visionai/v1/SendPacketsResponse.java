@@ -33,6 +33,7 @@ public final class SendPacketsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SendPacketsResponse)
     SendPacketsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SendPacketsResponse.newBuilder() to construct.
   private SendPacketsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class SendPacketsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

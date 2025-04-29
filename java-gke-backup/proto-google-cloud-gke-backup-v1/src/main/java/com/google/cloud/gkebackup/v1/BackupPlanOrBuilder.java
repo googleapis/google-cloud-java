@@ -37,6 +37,7 @@ public interface BackupPlanOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface BackupPlanOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BackupPlanOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface BackupPlanOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface BackupPlanOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface BackupPlanOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the retentionPolicy field is set.
    */
   boolean hasRetentionPolicy();
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public interface BackupPlanOrBuilder
    * @return The retentionPolicy.
    */
   com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy getRetentionPolicy();
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public interface BackupPlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -283,9 +294,11 @@ public interface BackupPlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -296,6 +309,7 @@ public interface BackupPlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -310,6 +324,7 @@ public interface BackupPlanOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the backupSchedule field is set.
    */
   boolean hasBackupSchedule();
+
   /**
    *
    *
@@ -351,6 +367,7 @@ public interface BackupPlanOrBuilder
    * @return The backupSchedule.
    */
   com.google.cloud.gkebackup.v1.BackupPlan.Schedule getBackupSchedule();
+
   /**
    *
    *
@@ -384,6 +401,7 @@ public interface BackupPlanOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -437,6 +455,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the backupConfig field is set.
    */
   boolean hasBackupConfig();
+
   /**
    *
    *
@@ -451,6 +470,7 @@ public interface BackupPlanOrBuilder
    * @return The backupConfig.
    */
   com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig getBackupConfig();
+
   /**
    *
    *
@@ -495,6 +515,7 @@ public interface BackupPlanOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -518,7 +539,8 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Output only. Human-readable description of why BackupPlan is in the current
-   * `state`
+   * `state`. This field is only meant for human readability and should not be
+   * used programmatically as this field is not guaranteed to be consistent.
    * </pre>
    *
    * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -526,12 +548,14 @@ public interface BackupPlanOrBuilder
    * @return The stateReason.
    */
   java.lang.String getStateReason();
+
   /**
    *
    *
    * <pre>
    * Output only. Human-readable description of why BackupPlan is in the current
-   * `state`
+   * `state`. This field is only meant for human readability and should not be
+   * used programmatically as this field is not guaranteed to be consistent.
    * </pre>
    *
    * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -568,6 +592,7 @@ public interface BackupPlanOrBuilder
    * @return The rpoRiskReason.
    */
   java.lang.String getRpoRiskReason();
+
   /**
    *
    *
@@ -581,4 +606,56 @@ public interface BackupPlanOrBuilder
    * @return The bytes for rpoRiskReason.
    */
   com.google.protobuf.ByteString getRpoRiskReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Completion time of the last successful Backup. This is sourced
+   * from a successful Backup's complete_time field. This field is added to
+   * maintain consistency with BackupPlanBinding to display last successful
+   * backup time.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_successful_backup_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastSuccessfulBackupTime field is set.
+   */
+  boolean hasLastSuccessfulBackupTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Completion time of the last successful Backup. This is sourced
+   * from a successful Backup's complete_time field. This field is added to
+   * maintain consistency with BackupPlanBinding to display last successful
+   * backup time.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_successful_backup_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastSuccessfulBackupTime.
+   */
+  com.google.protobuf.Timestamp getLastSuccessfulBackupTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Completion time of the last successful Backup. This is sourced
+   * from a successful Backup's complete_time field. This field is added to
+   * maintain consistency with BackupPlanBinding to display last successful
+   * backup time.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_successful_backup_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastSuccessfulBackupTimeOrBuilder();
 }

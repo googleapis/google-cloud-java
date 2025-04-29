@@ -36,6 +36,7 @@ public interface InstanceGroupManagerAutoHealingPolicyOrBuilder
    * @return Whether the healthCheck field is set.
    */
   boolean hasHealthCheck();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerAutoHealingPolicyOrBuilder
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstanceGroupManagerAutoHealingPolicyOrBuilder
    * @return Whether the initialDelaySec field is set.
    */
   boolean hasInitialDelaySec();
+
   /**
    *
    *

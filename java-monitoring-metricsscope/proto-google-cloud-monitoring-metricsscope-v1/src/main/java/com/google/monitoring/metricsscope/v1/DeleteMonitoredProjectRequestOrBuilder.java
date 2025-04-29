@@ -44,6 +44,7 @@ public interface DeleteMonitoredProjectRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

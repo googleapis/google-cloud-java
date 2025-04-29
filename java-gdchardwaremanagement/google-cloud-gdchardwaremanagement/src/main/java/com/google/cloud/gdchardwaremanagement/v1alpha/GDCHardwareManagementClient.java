@@ -6154,6 +6154,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *       SignalZoneStateRequest.newBuilder()
    *           .setName(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setStep("step3540684")
+   *           .setDetails("details1557721666")
    *           .build();
    *   Zone response = gDCHardwareManagementClient.signalZoneStateAsync(request).get();
    * }
@@ -6185,6 +6187,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *       SignalZoneStateRequest.newBuilder()
    *           .setName(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setStep("step3540684")
+   *           .setDetails("details1557721666")
    *           .build();
    *   OperationFuture<Zone, OperationMetadata> future =
    *       gDCHardwareManagementClient.signalZoneStateOperationCallable().futureCall(request);
@@ -6216,6 +6220,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *       SignalZoneStateRequest.newBuilder()
    *           .setName(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setStep("step3540684")
+   *           .setDetails("details1557721666")
    *           .build();
    *   ApiFuture<Operation> future =
    *       gDCHardwareManagementClient.signalZoneStateCallable().futureCall(request);

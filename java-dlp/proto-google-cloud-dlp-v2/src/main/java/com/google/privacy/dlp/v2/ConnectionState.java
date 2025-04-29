@@ -90,6 +90,7 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONNECTION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int CONNECTION_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -101,6 +102,7 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MISSING_CREDENTIALS = 1;</code>
    */
   public static final int MISSING_CREDENTIALS_VALUE = 1;
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AVAILABLE = 2;</code>
    */
   public static final int AVAILABLE_VALUE = 2;
+
   /**
    *
    *

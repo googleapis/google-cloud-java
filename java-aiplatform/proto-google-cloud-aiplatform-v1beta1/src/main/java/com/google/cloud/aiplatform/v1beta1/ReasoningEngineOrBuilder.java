@@ -36,6 +36,7 @@ public interface ReasoningEngineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ReasoningEngineOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ReasoningEngineOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ReasoningEngineOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ReasoningEngineOrBuilder
    * @return The spec.
    */
   com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec getSpec();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface ReasoningEngineOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ReasoningEngineOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface ReasoningEngineOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public interface ReasoningEngineOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface ReasoningEngineOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

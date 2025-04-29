@@ -37,6 +37,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface InstanceOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface InstanceOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface InstanceOrBuilder
    * @return The config.
    */
   com.google.cloud.apigeeregistry.v1.Instance.Config getConfig();
+
   /**
    *
    *

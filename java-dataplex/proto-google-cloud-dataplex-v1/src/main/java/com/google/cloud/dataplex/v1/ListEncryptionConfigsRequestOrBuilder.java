@@ -38,6 +38,7 @@ public interface ListEncryptionConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ListEncryptionConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public interface ListEncryptionConfigsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -165,6 +168,7 @@ public interface ListEncryptionConfigsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

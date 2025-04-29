@@ -37,6 +37,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.YarnApplication)
     YarnApplicationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use YarnApplication.newBuilder() to construct.
   private YarnApplication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -183,6 +184,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -193,6 +195,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>NEW = 1;</code>
      */
     public static final int NEW_VALUE = 1;
+
     /**
      *
      *
@@ -203,6 +206,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>NEW_SAVING = 2;</code>
      */
     public static final int NEW_SAVING_VALUE = 2;
+
     /**
      *
      *
@@ -213,6 +217,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>SUBMITTED = 3;</code>
      */
     public static final int SUBMITTED_VALUE = 3;
+
     /**
      *
      *
@@ -223,6 +228,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>ACCEPTED = 4;</code>
      */
     public static final int ACCEPTED_VALUE = 4;
+
     /**
      *
      *
@@ -233,6 +239,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>RUNNING = 5;</code>
      */
     public static final int RUNNING_VALUE = 5;
+
     /**
      *
      *
@@ -243,6 +250,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>FINISHED = 6;</code>
      */
     public static final int FINISHED_VALUE = 6;
+
     /**
      *
      *
@@ -253,6 +261,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      * <code>FAILED = 7;</code>
      */
     public static final int FAILED_VALUE = 7;
+
     /**
      *
      *
@@ -363,6 +372,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -386,6 +396,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +423,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -429,6 +441,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -453,6 +466,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROGRESS_FIELD_NUMBER = 3;
   private float progress_ = 0F;
+
   /**
    *
    *
@@ -473,6 +487,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trackingUrl_ = "";
+
   /**
    *
    *
@@ -499,6 +514,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -715,6 +731,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -943,6 +960,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -965,6 +983,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1006,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1028,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1046,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1066,6 +1089,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1086,6 +1110,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1132,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.dataproc.v1.YarnApplication.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1130,6 +1156,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1178,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     }
 
     private float progress_;
+
     /**
      *
      *
@@ -1166,6 +1194,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     public float getProgress() {
       return progress_;
     }
+
     /**
      *
      *
@@ -1185,6 +1214,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1234,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object trackingUrl_ = "";
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1286,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1311,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1332,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

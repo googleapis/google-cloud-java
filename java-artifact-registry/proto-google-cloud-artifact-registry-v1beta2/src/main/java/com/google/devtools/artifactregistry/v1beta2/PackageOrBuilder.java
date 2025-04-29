@@ -37,6 +37,7 @@ public interface PackageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PackageOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface PackageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface PackageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface PackageOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface PackageOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

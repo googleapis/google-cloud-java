@@ -40,6 +40,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the aggregatorName field is set.
    */
   boolean hasAggregatorName();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The aggregatorName.
    */
   java.lang.String getAggregatorName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the subclientName field is set.
    */
   boolean hasSubclientName();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The subclientName.
    */
   java.lang.String getSubclientName();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the publisherName field is set.
    */
   boolean hasPublisherName();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The publisherName.
    */
   java.lang.String getPublisherName();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the publisherFavicon field is set.
    */
   boolean hasPublisherFavicon();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The publisherFavicon.
    */
   java.lang.String getPublisherFavicon();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewerId field is set.
    */
   boolean hasReviewerId();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewerId.
    */
   java.lang.String getReviewerId();
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewerIsAnonymous field is set.
    */
   boolean hasReviewerIsAnonymous();
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewerUsername field is set.
    */
   boolean hasReviewerUsername();
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewerUsername.
    */
   java.lang.String getReviewerUsername();
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewLanguage field is set.
    */
   boolean hasReviewLanguage();
+
   /**
    *
    *
@@ -346,6 +360,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewLanguage.
    */
   java.lang.String getReviewLanguage();
+
   /**
    *
    *
@@ -372,6 +387,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewCountry field is set.
    */
   boolean hasReviewCountry();
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewCountry.
    */
   java.lang.String getReviewCountry();
+
   /**
    *
    *
@@ -412,6 +429,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewTime field is set.
    */
   boolean hasReviewTime();
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewTime.
    */
   com.google.protobuf.Timestamp getReviewTime();
+
   /**
    *
    *
@@ -449,6 +468,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -461,6 +481,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -486,6 +507,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -498,6 +520,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -524,6 +547,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the pros.
    */
   java.util.List<java.lang.String> getProsList();
+
   /**
    *
    *
@@ -537,6 +561,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of pros.
    */
   int getProsCount();
+
   /**
    *
    *
@@ -551,6 +576,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The pros at the given index.
    */
   java.lang.String getPros(int index);
+
   /**
    *
    *
@@ -579,6 +605,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the cons.
    */
   java.util.List<java.lang.String> getConsList();
+
   /**
    *
    *
@@ -592,6 +619,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of cons.
    */
   int getConsCount();
+
   /**
    *
    *
@@ -606,6 +634,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The cons at the given index.
    */
   java.lang.String getCons(int index);
+
   /**
    *
    *
@@ -635,6 +664,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the reviewLink field is set.
    */
   boolean hasReviewLink();
+
   /**
    *
    *
@@ -649,6 +679,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewLink.
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLink getReviewLink();
+
   /**
    *
    *
@@ -677,6 +708,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the reviewerImageLinks.
    */
   java.util.List<java.lang.String> getReviewerImageLinksList();
+
   /**
    *
    *
@@ -691,6 +723,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of reviewerImageLinks.
    */
   int getReviewerImageLinksCount();
+
   /**
    *
    *
@@ -706,6 +739,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The reviewerImageLinks at the given index.
    */
   java.lang.String getReviewerImageLinks(int index);
+
   /**
    *
    *
@@ -736,6 +770,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the minRating field is set.
    */
   boolean hasMinRating();
+
   /**
    *
    *
@@ -764,6 +799,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the maxRating field is set.
    */
   boolean hasMaxRating();
+
   /**
    *
    *
@@ -790,6 +826,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the rating field is set.
    */
   boolean hasRating();
+
   /**
    *
    *
@@ -815,6 +852,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the productNames.
    */
   java.util.List<java.lang.String> getProductNamesList();
+
   /**
    *
    *
@@ -827,6 +865,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of productNames.
    */
   int getProductNamesCount();
+
   /**
    *
    *
@@ -840,6 +879,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The productNames at the given index.
    */
   java.lang.String getProductNames(int index);
+
   /**
    *
    *
@@ -868,6 +908,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the productLinks.
    */
   java.util.List<java.lang.String> getProductLinksList();
+
   /**
    *
    *
@@ -882,6 +923,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of productLinks.
    */
   int getProductLinksCount();
+
   /**
    *
    *
@@ -897,6 +939,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The productLinks at the given index.
    */
   java.lang.String getProductLinks(int index);
+
   /**
    *
    *
@@ -926,6 +969,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the asins.
    */
   java.util.List<java.lang.String> getAsinsList();
+
   /**
    *
    *
@@ -939,6 +983,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of asins.
    */
   int getAsinsCount();
+
   /**
    *
    *
@@ -953,6 +998,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The asins at the given index.
    */
   java.lang.String getAsins(int index);
+
   /**
    *
    *
@@ -981,6 +1027,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the gtins.
    */
   java.util.List<java.lang.String> getGtinsList();
+
   /**
    *
    *
@@ -994,6 +1041,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of gtins.
    */
   int getGtinsCount();
+
   /**
    *
    *
@@ -1008,6 +1056,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The gtins at the given index.
    */
   java.lang.String getGtins(int index);
+
   /**
    *
    *
@@ -1036,6 +1085,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the mpns.
    */
   java.util.List<java.lang.String> getMpnsList();
+
   /**
    *
    *
@@ -1049,6 +1099,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of mpns.
    */
   int getMpnsCount();
+
   /**
    *
    *
@@ -1063,6 +1114,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The mpns at the given index.
    */
   java.lang.String getMpns(int index);
+
   /**
    *
    *
@@ -1091,6 +1143,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the skus.
    */
   java.util.List<java.lang.String> getSkusList();
+
   /**
    *
    *
@@ -1104,6 +1157,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of skus.
    */
   int getSkusCount();
+
   /**
    *
    *
@@ -1118,6 +1172,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The skus at the given index.
    */
   java.lang.String getSkus(int index);
+
   /**
    *
    *
@@ -1145,6 +1200,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return A list containing the brands.
    */
   java.util.List<java.lang.String> getBrandsList();
+
   /**
    *
    *
@@ -1157,6 +1213,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The count of brands.
    */
   int getBrandsCount();
+
   /**
    *
    *
@@ -1170,6 +1227,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The brands at the given index.
    */
   java.lang.String getBrands(int index);
+
   /**
    *
    *
@@ -1197,6 +1255,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return Whether the isSpam field is set.
    */
   boolean hasIsSpam();
+
   /**
    *
    *
@@ -1225,6 +1284,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The enum numeric value on the wire for collectionMethod.
    */
   int getCollectionMethodValue();
+
   /**
    *
    *
@@ -1255,6 +1315,7 @@ public interface ProductReviewAttributesOrBuilder
    * @return The transactionId.
    */
   java.lang.String getTransactionId();
+
   /**
    *
    *

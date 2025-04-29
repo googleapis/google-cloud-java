@@ -39,6 +39,7 @@ public interface CreateServiceConnectionMapRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateServiceConnectionMapRequestOrBuilder
    * @return The serviceConnectionMapId.
    */
   java.lang.String getServiceConnectionMapId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateServiceConnectionMapRequestOrBuilder
    * @return Whether the serviceConnectionMap field is set.
    */
   boolean hasServiceConnectionMap();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateServiceConnectionMapRequestOrBuilder
    * @return The serviceConnectionMap.
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionMap getServiceConnectionMap();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface CreateServiceConnectionMapRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

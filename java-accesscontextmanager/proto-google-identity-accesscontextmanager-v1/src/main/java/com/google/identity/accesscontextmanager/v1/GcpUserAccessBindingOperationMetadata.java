@@ -37,6 +37,7 @@ public final class GcpUserAccessBindingOperationMetadata
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.GcpUserAccessBindingOperationMetadata)
     GcpUserAccessBindingOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcpUserAccessBindingOperationMetadata.newBuilder() to construct.
   private GcpUserAccessBindingOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -226,6 +227,7 @@ public final class GcpUserAccessBindingOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

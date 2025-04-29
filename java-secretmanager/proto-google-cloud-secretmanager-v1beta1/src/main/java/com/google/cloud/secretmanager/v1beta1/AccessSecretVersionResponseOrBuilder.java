@@ -28,7 +28,8 @@ public interface AccessSecretVersionResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -37,11 +38,13 @@ public interface AccessSecretVersionResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -63,6 +66,7 @@ public interface AccessSecretVersionResponseOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -75,6 +79,7 @@ public interface AccessSecretVersionResponseOrBuilder
    * @return The payload.
    */
   com.google.cloud.secretmanager.v1beta1.SecretPayload getPayload();
+
   /**
    *
    *

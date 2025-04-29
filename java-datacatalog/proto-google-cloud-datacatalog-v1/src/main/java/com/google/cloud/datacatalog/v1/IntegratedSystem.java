@@ -142,6 +142,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INTEGRATED_SYSTEM_UNSPECIFIED = 0;</code>
    */
   public static final int INTEGRATED_SYSTEM_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -152,6 +153,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>BIGQUERY = 1;</code>
    */
   public static final int BIGQUERY_VALUE = 1;
+
   /**
    *
    *
@@ -162,6 +164,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CLOUD_PUBSUB = 2;</code>
    */
   public static final int CLOUD_PUBSUB_VALUE = 2;
+
   /**
    *
    *
@@ -172,6 +175,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPROC_METASTORE = 3;</code>
    */
   public static final int DATAPROC_METASTORE_VALUE = 3;
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPLEX = 4;</code>
    */
   public static final int DATAPLEX_VALUE = 4;
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CLOUD_SPANNER = 6;</code>
    */
   public static final int CLOUD_SPANNER_VALUE = 6;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CLOUD_BIGTABLE = 7;</code>
    */
   public static final int CLOUD_BIGTABLE_VALUE = 7;
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CLOUD_SQL = 8;</code>
    */
   public static final int CLOUD_SQL_VALUE = 8;
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOOKER = 9;</code>
    */
   public static final int LOOKER_VALUE = 9;
+
   /**
    *
    *

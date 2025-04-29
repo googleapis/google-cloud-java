@@ -33,6 +33,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.VirusScanFilterResult)
     VirusScanFilterResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VirusScanFilterResult.newBuilder() to construct.
   private VirusScanFilterResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
      * <code>SCANNED_CONTENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SCANNED_CONTENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
      * <code>UNKNOWN = 1;</code>
      */
     public static final int UNKNOWN_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
      * <code>PLAINTEXT = 2;</code>
      */
     public static final int PLAINTEXT_VALUE = 2;
+
     /**
      *
      *
@@ -256,6 +260,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int EXECUTION_STATE_FIELD_NUMBER = 1;
   private int executionState_ = 0;
+
   /**
    *
    *
@@ -273,6 +278,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public int getExecutionStateValue() {
     return executionState_;
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.MessageItem> messageItems_;
+
   /**
    *
    *
@@ -315,6 +322,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList() {
     return messageItems_;
   }
+
   /**
    *
    *
@@ -332,6 +340,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       getMessageItemsOrBuilderList() {
     return messageItems_;
   }
+
   /**
    *
    *
@@ -348,6 +357,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public int getMessageItemsCount() {
     return messageItems_.size();
   }
+
   /**
    *
    *
@@ -364,6 +374,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index) {
     return messageItems_.get(index);
   }
+
   /**
    *
    *
@@ -383,6 +394,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
 
   public static final int MATCH_STATE_FIELD_NUMBER = 3;
   private int matchState_ = 0;
+
   /**
    *
    *
@@ -401,6 +413,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public int getMatchStateValue() {
     return matchState_;
   }
+
   /**
    *
    *
@@ -424,6 +437,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
 
   public static final int SCANNED_CONTENT_TYPE_FIELD_NUMBER = 4;
   private int scannedContentType_ = 0;
+
   /**
    *
    *
@@ -441,6 +455,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public int getScannedContentTypeValue() {
     return scannedContentType_;
   }
+
   /**
    *
    *
@@ -467,6 +482,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
 
   public static final int SCANNED_SIZE_FIELD_NUMBER = 5;
   private long scannedSize_ = 0L;
+
   /**
    *
    *
@@ -482,6 +498,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public boolean hasScannedSize() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -502,6 +519,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.VirusDetail> virusDetails_;
+
   /**
    *
    *
@@ -516,6 +534,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.modelarmor.v1.VirusDetail> getVirusDetailsList() {
     return virusDetails_;
   }
+
   /**
    *
    *
@@ -531,6 +550,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       getVirusDetailsOrBuilderList() {
     return virusDetails_;
   }
+
   /**
    *
    *
@@ -545,6 +565,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public int getVirusDetailsCount() {
     return virusDetails_.size();
   }
+
   /**
    *
    *
@@ -559,6 +580,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
   public com.google.cloud.modelarmor.v1.VirusDetail getVirusDetails(int index) {
     return virusDetails_.get(index);
   }
+
   /**
    *
    *
@@ -801,6 +823,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1142,6 +1165,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int executionState_ = 0;
+
     /**
      *
      *
@@ -1159,6 +1183,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public int getExecutionStateValue() {
       return executionState_;
     }
+
     /**
      *
      *
@@ -1179,6 +1204,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1226,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.modelarmor.v1.FilterExecutionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1223,6 +1250,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1307,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return messageItemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1327,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return messageItemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1317,6 +1347,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return messageItemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1373,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1397,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1423,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1449,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1473,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1497,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1521,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1544,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1567,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1583,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.modelarmor.v1.MessageItem.Builder getMessageItemsBuilder(int index) {
       return getMessageItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1562,6 +1603,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return messageItemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1582,6 +1624,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(messageItems_);
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1641,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       return getMessageItemsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1614,6 +1658,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       return getMessageItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1649,6 +1694,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     }
 
     private int matchState_ = 0;
+
     /**
      *
      *
@@ -1667,6 +1713,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public int getMatchStateValue() {
       return matchState_;
     }
+
     /**
      *
      *
@@ -1688,6 +1735,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1708,6 +1756,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(matchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1732,6 +1781,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1804,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     }
 
     private int scannedContentType_ = 0;
+
     /**
      *
      *
@@ -1771,6 +1822,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public int getScannedContentTypeValue() {
       return scannedContentType_;
     }
+
     /**
      *
      *
@@ -1791,6 +1843,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1867,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.modelarmor.v1.VirusScanFilterResult.ScannedContentType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1838,6 +1892,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1914,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     }
 
     private long scannedSize_;
+
     /**
      *
      *
@@ -1874,6 +1930,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public boolean hasScannedSize() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1889,6 +1946,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public long getScannedSize() {
       return scannedSize_;
     }
+
     /**
      *
      *
@@ -1908,6 +1966,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2019,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return virusDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1977,6 +2037,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return virusDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1994,6 +2055,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return virusDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2017,6 +2079,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2038,6 +2101,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2125,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2084,6 +2149,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2105,6 +2171,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2193,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2147,6 +2215,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2167,6 +2236,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2187,6 +2257,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2200,6 +2271,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.modelarmor.v1.VirusDetail.Builder getVirusDetailsBuilder(int index) {
       return getVirusDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2217,6 +2289,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return virusDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2235,6 +2308,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(virusDetails_);
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2323,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       return getVirusDetailsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.VirusDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2263,6 +2338,7 @@ public final class VirusScanFilterResult extends com.google.protobuf.GeneratedMe
       return getVirusDetailsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.VirusDetail.getDefaultInstance());
     }
+
     /**
      *
      *

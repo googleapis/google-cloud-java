@@ -99,6 +99,19 @@ public final class SystemPolicyV1Grpc {
     return SystemPolicyV1Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SystemPolicyV1BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SystemPolicyV1BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SystemPolicyV1BlockingV2Stub>() {
+          @java.lang.Override
+          public SystemPolicyV1BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SystemPolicyV1BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SystemPolicyV1BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -210,6 +223,40 @@ public final class SystemPolicyV1Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SystemPolicyV1.
+   *
+   * <pre>
+   * API for working with the system policy.
+   * </pre>
+   */
+  public static final class SystemPolicyV1BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SystemPolicyV1BlockingV2Stub> {
+    private SystemPolicyV1BlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SystemPolicyV1BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SystemPolicyV1BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the current system policy in the specified location.
+     * </pre>
+     */
+    public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Policy getSystemPolicy(
+        com.google.protos.google.cloud.binaryauthorization.v1.Service.GetSystemPolicyRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSystemPolicyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SystemPolicyV1.
    *
    * <pre>
    * API for working with the system policy.

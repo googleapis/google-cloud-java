@@ -36,6 +36,7 @@ public interface UpdateProjectSettingsRequestOrBuilder
    * @return Whether the projectSettings field is set.
    */
   boolean hasProjectSettings();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateProjectSettingsRequestOrBuilder
    * @return The projectSettings.
    */
   com.google.devtools.artifactregistry.v1beta2.ProjectSettings getProjectSettings();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface UpdateProjectSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface UpdateProjectSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

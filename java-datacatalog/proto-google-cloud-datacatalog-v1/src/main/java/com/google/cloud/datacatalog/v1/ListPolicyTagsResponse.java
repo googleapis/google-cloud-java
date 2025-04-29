@@ -34,6 +34,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ListPolicyTagsResponse)
     ListPolicyTagsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPolicyTagsResponse.newBuilder() to construct.
   private ListPolicyTagsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.PolicyTag> policyTags_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.datacatalog.v1.PolicyTag> getPolicyTagsList() {
     return policyTags_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       getPolicyTagsOrBuilderList() {
     return policyTags_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
   public int getPolicyTagsCount() {
     return policyTags_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.datacatalog.v1.PolicyTag getPolicyTags(int index) {
     return policyTags_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -638,6 +647,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return policyTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return policyTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return policyTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +771,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +834,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +887,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.datacatalog.v1.PolicyTag.Builder getPolicyTagsBuilder(int index) {
       return getPolicyTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -882,6 +904,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return policyTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -899,6 +922,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(policyTags_);
       }
     }
+
     /**
      *
      *
@@ -912,6 +936,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       return getPolicyTagsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.PolicyTag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -925,6 +950,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       return getPolicyTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.PolicyTag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -957,6 +983,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -980,6 +1007,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1031,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1054,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1073,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

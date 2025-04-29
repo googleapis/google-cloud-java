@@ -37,6 +37,7 @@ public interface SourceLocationOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface SourceLocationOrBuilder
    * @return The functionName.
    */
   java.lang.String getFunctionName();
+
   /**
    *
    *

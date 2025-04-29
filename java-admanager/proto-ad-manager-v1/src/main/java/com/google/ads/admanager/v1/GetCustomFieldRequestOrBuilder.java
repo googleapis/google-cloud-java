@@ -39,6 +39,7 @@ public interface GetCustomFieldRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

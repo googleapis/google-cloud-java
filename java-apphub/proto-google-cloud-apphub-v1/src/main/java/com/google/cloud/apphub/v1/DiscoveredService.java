@@ -35,6 +35,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.DiscoveredService)
     DiscoveredServiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveredService.newBuilder() to construct.
   private DiscoveredService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
 
   public static final int SERVICE_REFERENCE_FIELD_NUMBER = 2;
   private com.google.cloud.apphub.v1.ServiceReference serviceReference_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
   public boolean hasServiceReference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.apphub.v1.ServiceReference.getDefaultInstance()
         : serviceReference_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
 
   public static final int SERVICE_PROPERTIES_FIELD_NUMBER = 3;
   private com.google.cloud.apphub.v1.ServiceProperties serviceProperties_;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
   public boolean hasServiceProperties() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.apphub.v1.ServiceProperties.getDefaultInstance()
         : serviceProperties_;
   }
+
   /**
    *
    *
@@ -424,6 +433,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +673,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
             com.google.cloud.apphub.v1.ServiceReference.Builder,
             com.google.cloud.apphub.v1.ServiceReferenceOrBuilder>
         serviceReferenceBuilder_;
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
     public boolean hasServiceReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
         return serviceReferenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getServiceReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -958,6 +981,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
             : serviceReference_;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1017,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
             com.google.cloud.apphub.v1.ServiceProperties.Builder,
             com.google.cloud.apphub.v1.ServicePropertiesOrBuilder>
         servicePropertiesBuilder_;
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
     public boolean hasServiceProperties() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1033,6 +1059,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
         return servicePropertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1109,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1164,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1182,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getServicePropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1172,6 +1204,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
             : serviceProperties_;
       }
     }
+
     /**
      *
      *

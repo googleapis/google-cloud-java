@@ -34,6 +34,7 @@ public interface ListExampleStoresResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ExampleStore example_stores = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ExampleStore> getExampleStoresList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListExampleStoresResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ExampleStore example_stores = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ExampleStore getExampleStores(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListExampleStoresResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ExampleStore example_stores = 1;</code>
    */
   int getExampleStoresCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListExampleStoresResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExampleStoreOrBuilder>
       getExampleStoresOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListExampleStoresResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

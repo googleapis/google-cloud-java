@@ -303,6 +303,19 @@ public final class ReasoningEngineServiceGrpc {
     return ReasoningEngineServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ReasoningEngineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ReasoningEngineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReasoningEngineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ReasoningEngineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReasoningEngineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ReasoningEngineServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -535,6 +548,92 @@ public final class ReasoningEngineServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ReasoningEngineService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's Reasoning Engines.
+   * </pre>
+   */
+  public static final class ReasoningEngineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ReasoningEngineServiceBlockingV2Stub> {
+    private ReasoningEngineServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ReasoningEngineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ReasoningEngineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a reasoning engine.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.CreateReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReasoningEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a reasoning engine.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine getReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.GetReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReasoningEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists reasoning engines in a location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesResponse listReasoningEngines(
+        com.google.cloud.aiplatform.v1beta1.ListReasoningEnginesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReasoningEnginesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a reasoning engine.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.UpdateReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReasoningEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reasoning engine.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.DeleteReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReasoningEngineMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ReasoningEngineService.
    *
    * <pre>
    * A service for managing Vertex AI's Reasoning Engines.

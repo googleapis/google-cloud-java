@@ -40,6 +40,7 @@ public interface UpdateDeviceSessionRequestOrBuilder
    * @return Whether the deviceSession field is set.
    */
   boolean hasDeviceSession();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateDeviceSessionRequestOrBuilder
    * @return The deviceSession.
    */
   com.google.cloud.devicestreaming.v1.DeviceSession getDeviceSession();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateDeviceSessionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface UpdateDeviceSessionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

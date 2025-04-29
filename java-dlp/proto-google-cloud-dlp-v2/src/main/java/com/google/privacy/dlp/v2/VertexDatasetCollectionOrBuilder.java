@@ -36,6 +36,7 @@ public interface VertexDatasetCollectionOrBuilder
    * @return Whether the vertexDatasetRegexes field is set.
    */
   boolean hasVertexDatasetRegexes();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface VertexDatasetCollectionOrBuilder
    * @return The vertexDatasetRegexes.
    */
   com.google.privacy.dlp.v2.VertexDatasetRegexes getVertexDatasetRegexes();
+
   /**
    *
    *

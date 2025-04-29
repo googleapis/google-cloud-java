@@ -964,6 +964,19 @@ public final class ServiceUsageGrpc {
     return ServiceUsageStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServiceUsageBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServiceUsageBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServiceUsageBlockingV2Stub>() {
+          @java.lang.Override
+          public ServiceUsageBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServiceUsageBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServiceUsageBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1698,6 +1711,312 @@ public final class ServiceUsageGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServiceUsage.
+   *
+   * <pre>
+   * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
+   * </pre>
+   */
+  public static final class ServiceUsageBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServiceUsageBlockingV2Stub> {
+    private ServiceUsageBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServiceUsageBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServiceUsageBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a service so that it can be used with a project.
+     * Operation response type: `google.protobuf.Empty`
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.longrunning.Operation enableService(
+        com.google.api.serviceusage.v1beta1.EnableServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a service so that it can no longer be used with a project.
+     * This prevents unintended usage that may cause unexpected billing
+     * charges or security leaks.
+     * It is not valid to call the disable method on a service that is not
+     * currently enabled. Callers will receive a `FAILED_PRECONDITION` status if
+     * the target service is not currently enabled.
+     * Operation response type: `google.protobuf.Empty`
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.longrunning.Operation disableService(
+        com.google.api.serviceusage.v1beta1.DisableServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the service configuration and enabled state for a given service.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.api.serviceusage.v1beta1.Service getService(
+        com.google.api.serviceusage.v1beta1.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all services available to the specified project, and the current
+     * state of those services with respect to the project. The list includes
+     * all public services, all services for which the calling user has the
+     * `servicemanagement.services.bind` permission, and all services that have
+     * already been enabled on the project. The list can be filtered to
+     * only include services in a specific state, for example to only include
+     * services enabled on the project.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.api.serviceusage.v1beta1.ListServicesResponse listServices(
+        com.google.api.serviceusage.v1beta1.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables multiple services on a project. The operation is atomic: if
+     * enabling any service fails, then the entire batch fails, and no state
+     * changes occur.
+     * Operation response type: `google.protobuf.Empty`
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.longrunning.Operation batchEnableServices(
+        com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchEnableServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a summary of all quota information visible to the service
+     * consumer, organized by service metric. Each metric includes information
+     * about all of its defined limits. Each limit includes the limit
+     * configuration (quota unit, preciseness, default value), the current
+     * effective limit value, and all of the overrides applied to the limit.
+     * </pre>
+     */
+    public com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsResponse
+        listConsumerQuotaMetrics(
+            com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConsumerQuotaMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a summary of quota information for a specific quota metric
+     * </pre>
+     */
+    public com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric getConsumerQuotaMetric(
+        com.google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConsumerQuotaMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a summary of quota information for a specific quota limit.
+     * </pre>
+     */
+    public com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit getConsumerQuotaLimit(
+        com.google.api.serviceusage.v1beta1.GetConsumerQuotaLimitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConsumerQuotaLimitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an admin override.
+     * An admin override is applied by an administrator of a parent folder or
+     * parent organization of the consumer receiving the override. An admin
+     * override is intended to limit the amount of quota the consumer can use out
+     * of the total quota pool allocated to all children of the folder or
+     * organization.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAdminOverride(
+        com.google.api.serviceusage.v1beta1.CreateAdminOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdminOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an admin override.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAdminOverride(
+        com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAdminOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an admin override.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAdminOverride(
+        com.google.api.serviceusage.v1beta1.DeleteAdminOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdminOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all admin overrides on this limit.
+     * </pre>
+     */
+    public com.google.api.serviceusage.v1beta1.ListAdminOverridesResponse listAdminOverrides(
+        com.google.api.serviceusage.v1beta1.ListAdminOverridesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdminOverridesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or updates multiple admin overrides atomically, all on the
+     * same consumer, but on many different metrics or limits.
+     * The name field in the quota override message should not be set.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importAdminOverrides(
+        com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAdminOverridesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a consumer override.
+     * A consumer override is applied to the consumer on its own authority to
+     * limit its own quota usage. Consumer overrides cannot be used to grant more
+     * quota than would be allowed by admin overrides, producer overrides, or the
+     * default limit of the service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConsumerOverride(
+        com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConsumerOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a consumer override.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateConsumerOverride(
+        com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConsumerOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a consumer override.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConsumerOverride(
+        com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConsumerOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all consumer overrides on this limit.
+     * </pre>
+     */
+    public com.google.api.serviceusage.v1beta1.ListConsumerOverridesResponse listConsumerOverrides(
+        com.google.api.serviceusage.v1beta1.ListConsumerOverridesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConsumerOverridesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or updates multiple consumer overrides atomically, all on the
+     * same consumer, but on many different metrics or limits.
+     * The name field in the quota override message should not be set.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importConsumerOverrides(
+        com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportConsumerOverridesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates service identity for service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation generateServiceIdentity(
+        com.google.api.serviceusage.v1beta1.GenerateServiceIdentityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateServiceIdentityMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServiceUsage.
    *
    * <pre>
    * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)

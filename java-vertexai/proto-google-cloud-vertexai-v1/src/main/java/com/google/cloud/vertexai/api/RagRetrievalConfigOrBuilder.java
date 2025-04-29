@@ -51,6 +51,7 @@ public interface RagRetrievalConfigOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RagRetrievalConfigOrBuilder
    * @return The filter.
    */
   com.google.cloud.vertexai.api.RagRetrievalConfig.Filter getFilter();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface RagRetrievalConfigOrBuilder
    * @return Whether the ranking field is set.
    */
   boolean hasRanking();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface RagRetrievalConfigOrBuilder
    * @return The ranking.
    */
   com.google.cloud.vertexai.api.RagRetrievalConfig.Ranking getRanking();
+
   /**
    *
    *

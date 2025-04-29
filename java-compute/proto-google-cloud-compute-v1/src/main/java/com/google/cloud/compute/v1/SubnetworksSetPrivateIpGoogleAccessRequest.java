@@ -33,6 +33,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest)
     SubnetworksSetPrivateIpGoogleAccessRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder() to construct.
   private SubnetworksSetPrivateIpGoogleAccessRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
   private int bitField0_;
   public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
   private boolean privateIpGoogleAccess_ = false;
+
   /**
    * <code>optional bool private_ip_google_access = 421491790;</code>
    *
@@ -74,6 +76,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
   public boolean hasPrivateIpGoogleAccess() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional bool private_ip_google_access = 421491790;</code>
    *
@@ -251,6 +254,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -443,6 +447,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     private int bitField0_;
 
     private boolean privateIpGoogleAccess_;
+
     /**
      * <code>optional bool private_ip_google_access = 421491790;</code>
      *
@@ -452,6 +457,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     public boolean hasPrivateIpGoogleAccess() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional bool private_ip_google_access = 421491790;</code>
      *
@@ -461,6 +467,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     public boolean getPrivateIpGoogleAccess() {
       return privateIpGoogleAccess_;
     }
+
     /**
      * <code>optional bool private_ip_google_access = 421491790;</code>
      *
@@ -474,6 +481,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       onChanged();
       return this;
     }
+
     /**
      * <code>optional bool private_ip_google_access = 421491790;</code>
      *

@@ -41,6 +41,7 @@ public interface UpdateEngineConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateEngineConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface UpdateEngineConfigRequestOrBuilder
    * @return Whether the engineConfig field is set.
    */
   boolean hasEngineConfig();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdateEngineConfigRequestOrBuilder
    * @return The engineConfig.
    */
   com.google.cloud.financialservices.v1.EngineConfig getEngineConfig();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface UpdateEngineConfigRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

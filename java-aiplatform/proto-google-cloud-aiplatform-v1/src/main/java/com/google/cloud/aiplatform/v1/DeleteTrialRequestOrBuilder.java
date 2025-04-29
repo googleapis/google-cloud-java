@@ -40,6 +40,7 @@ public interface DeleteTrialRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

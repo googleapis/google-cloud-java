@@ -33,6 +33,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.DataSourceParameter)
     DataSourceParameterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataSourceParameter.newBuilder() to construct.
   private DataSourceParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -175,6 +176,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -185,6 +187,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>STRING = 1;</code>
      */
     public static final int STRING_VALUE = 1;
+
     /**
      *
      *
@@ -196,6 +199,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>INTEGER = 2;</code>
      */
     public static final int INTEGER_VALUE = 2;
+
     /**
      *
      *
@@ -206,6 +210,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>DOUBLE = 3;</code>
      */
     public static final int DOUBLE_VALUE = 3;
+
     /**
      *
      *
@@ -216,6 +221,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>BOOLEAN = 4;</code>
      */
     public static final int BOOLEAN_VALUE = 4;
+
     /**
      *
      *
@@ -226,6 +232,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>RECORD = 5;</code>
      */
     public static final int RECORD_VALUE = 5;
+
     /**
      *
      *
@@ -236,6 +243,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * <code>PLUS_PAGE = 6;</code>
      */
     public static final int PLUS_PAGE_VALUE = 6;
+
     /**
      *
      *
@@ -347,6 +355,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object paramId_ = "";
+
   /**
    *
    *
@@ -370,6 +379,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -421,6 +432,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -449,6 +461,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -472,6 +485,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -498,6 +512,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int TYPE_FIELD_NUMBER = 4;
   private int type_ = 0;
+
   /**
    *
    *
@@ -513,6 +528,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -535,6 +551,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int REQUIRED_FIELD_NUMBER = 5;
   private boolean required_ = false;
+
   /**
    *
    *
@@ -553,6 +570,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int REPEATED_FIELD_NUMBER = 6;
   private boolean repeated_ = false;
+
   /**
    *
    *
@@ -573,6 +591,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationRegex_ = "";
+
   /**
    *
    *
@@ -596,6 +615,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -625,6 +645,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -639,6 +660,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
     return allowedValues_;
   }
+
   /**
    *
    *
@@ -653,6 +675,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public int getAllowedValuesCount() {
     return allowedValues_.size();
   }
+
   /**
    *
    *
@@ -668,6 +691,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public java.lang.String getAllowedValues(int index) {
     return allowedValues_.get(index);
   }
+
   /**
    *
    *
@@ -686,6 +710,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int MIN_VALUE_FIELD_NUMBER = 9;
   private com.google.protobuf.DoubleValue minValue_;
+
   /**
    *
    *
@@ -701,6 +726,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public boolean hasMinValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -716,6 +742,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.DoubleValue getMinValue() {
     return minValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : minValue_;
   }
+
   /**
    *
    *
@@ -732,6 +759,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int MAX_VALUE_FIELD_NUMBER = 10;
   private com.google.protobuf.DoubleValue maxValue_;
+
   /**
    *
    *
@@ -747,6 +775,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public boolean hasMaxValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -762,6 +791,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.DoubleValue getMaxValue() {
     return maxValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : maxValue_;
   }
+
   /**
    *
    *
@@ -780,6 +810,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> fields_;
+
   /**
    *
    *
@@ -794,6 +825,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       getFieldsList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -809,6 +841,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       getFieldsOrBuilderList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -822,6 +855,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public int getFieldsCount() {
     return fields_.size();
   }
+
   /**
    *
    *
@@ -835,6 +869,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getFields(int index) {
     return fields_.get(index);
   }
+
   /**
    *
    *
@@ -854,6 +889,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationDescription_ = "";
+
   /**
    *
    *
@@ -878,6 +914,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -907,6 +944,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object validationHelpUrl_ = "";
+
   /**
    *
    *
@@ -930,6 +968,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -956,6 +995,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int IMMUTABLE_FIELD_NUMBER = 14;
   private boolean immutable_ = false;
+
   /**
    *
    *
@@ -974,6 +1014,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int RECURSE_FIELD_NUMBER = 15;
   private boolean recurse_ = false;
+
   /**
    *
    *
@@ -992,6 +1033,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
   public static final int DEPRECATED_FIELD_NUMBER = 20;
   private boolean deprecated_ = false;
+
   /**
    *
    *
@@ -1327,6 +1369,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1800,6 +1843,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object paramId_ = "";
+
     /**
      *
      *
@@ -1822,6 +1866,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1844,6 +1889,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1865,6 +1911,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1929,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1954,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1928,6 +1977,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1950,6 +2000,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2022,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1988,6 +2040,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2012,6 +2065,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2034,6 +2088,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2056,6 +2111,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2077,6 +2133,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2094,6 +2151,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2118,6 +2176,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -2133,6 +2192,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2151,6 +2211,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2170,6 +2231,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2192,6 +2254,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2274,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private boolean required_;
+
     /**
      *
      *
@@ -2226,6 +2290,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean getRequired() {
       return required_;
     }
+
     /**
      *
      *
@@ -2245,6 +2310,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2330,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private boolean repeated_;
+
     /**
      *
      *
@@ -2279,6 +2346,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean getRepeated() {
       return repeated_;
     }
+
     /**
      *
      *
@@ -2298,6 +2366,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2386,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object validationRegex_ = "";
+
     /**
      *
      *
@@ -2339,6 +2409,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2361,6 +2432,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2382,6 +2454,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2399,6 +2472,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2505,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2446,6 +2521,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       allowedValues_.makeImmutable();
       return allowedValues_;
     }
+
     /**
      *
      *
@@ -2460,6 +2536,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public int getAllowedValuesCount() {
       return allowedValues_.size();
     }
+
     /**
      *
      *
@@ -2475,6 +2552,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public java.lang.String getAllowedValues(int index) {
       return allowedValues_.get(index);
     }
+
     /**
      *
      *
@@ -2490,6 +2568,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getAllowedValuesBytes(int index) {
       return allowedValues_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2513,6 +2592,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2615,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2635,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2572,6 +2654,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2602,6 +2685,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         minValueBuilder_;
+
     /**
      *
      *
@@ -2616,6 +2700,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean hasMinValue() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2634,6 +2719,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return minValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2656,6 +2742,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2675,6 +2762,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2702,6 +2790,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2721,6 +2810,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2735,6 +2825,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMinValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2751,6 +2842,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return minValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : minValue_;
       }
     }
+
     /**
      *
      *
@@ -2783,6 +2875,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
             com.google.protobuf.DoubleValue.Builder,
             com.google.protobuf.DoubleValueOrBuilder>
         maxValueBuilder_;
+
     /**
      *
      *
@@ -2797,6 +2890,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean hasMaxValue() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2815,6 +2909,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return maxValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2837,6 +2932,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2856,6 +2952,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2883,6 +2980,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +3000,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2916,6 +3015,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMaxValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2932,6 +3032,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return maxValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : maxValue_;
       }
     }
+
     /**
      *
      *
@@ -2993,6 +3094,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3009,6 +3111,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3025,6 +3128,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3048,6 +3152,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3069,6 +3174,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3091,6 +3197,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3114,6 +3221,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3134,6 +3242,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3155,6 +3264,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3176,6 +3286,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3195,6 +3306,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3214,6 +3326,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3227,6 +3340,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3244,6 +3358,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3262,6 +3377,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(fields_);
       }
     }
+
     /**
      *
      *
@@ -3277,6 +3393,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3293,6 +3410,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
               index,
               com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3325,6 +3443,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object validationDescription_ = "";
+
     /**
      *
      *
@@ -3348,6 +3467,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3371,6 +3491,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3393,6 +3514,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3411,6 +3533,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3436,6 +3559,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object validationHelpUrl_ = "";
+
     /**
      *
      *
@@ -3458,6 +3582,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3480,6 +3605,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3501,6 +3627,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3518,6 +3645,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3542,6 +3670,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private boolean immutable_;
+
     /**
      *
      *
@@ -3557,6 +3686,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean getImmutable() {
       return immutable_;
     }
+
     /**
      *
      *
@@ -3576,6 +3706,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3595,6 +3726,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private boolean recurse_;
+
     /**
      *
      *
@@ -3610,6 +3742,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean getRecurse() {
       return recurse_;
     }
+
     /**
      *
      *
@@ -3629,6 +3762,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3648,6 +3782,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     }
 
     private boolean deprecated_;
+
     /**
      *
      *
@@ -3664,6 +3799,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public boolean getDeprecated() {
       return deprecated_;
     }
+
     /**
      *
      *
@@ -3684,6 +3820,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

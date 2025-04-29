@@ -39,6 +39,7 @@ public interface CreateEvaluationJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateEvaluationJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateEvaluationJobRequestOrBuilder
    * @return The job.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJob getJob();
+
   /**
    *
    *

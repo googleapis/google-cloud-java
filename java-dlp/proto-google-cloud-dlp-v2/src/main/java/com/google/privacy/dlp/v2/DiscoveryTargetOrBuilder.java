@@ -37,6 +37,7 @@ public interface DiscoveryTargetOrBuilder
    * @return Whether the bigQueryTarget field is set.
    */
   boolean hasBigQueryTarget();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DiscoveryTargetOrBuilder
    * @return The bigQueryTarget.
    */
   com.google.privacy.dlp.v2.BigQueryDiscoveryTarget getBigQueryTarget();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DiscoveryTargetOrBuilder
    * @return Whether the cloudSqlTarget field is set.
    */
   boolean hasCloudSqlTarget();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface DiscoveryTargetOrBuilder
    * @return The cloudSqlTarget.
    */
   com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget getCloudSqlTarget();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface DiscoveryTargetOrBuilder
    * @return Whether the secretsTarget field is set.
    */
   boolean hasSecretsTarget();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface DiscoveryTargetOrBuilder
    * @return The secretsTarget.
    */
   com.google.privacy.dlp.v2.SecretsDiscoveryTarget getSecretsTarget();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface DiscoveryTargetOrBuilder
    * @return Whether the cloudStorageTarget field is set.
    */
   boolean hasCloudStorageTarget();
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface DiscoveryTargetOrBuilder
    * @return The cloudStorageTarget.
    */
   com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget getCloudStorageTarget();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface DiscoveryTargetOrBuilder
    * @return Whether the otherCloudTarget field is set.
    */
   boolean hasOtherCloudTarget();
+
   /**
    *
    *
@@ -205,6 +214,7 @@ public interface DiscoveryTargetOrBuilder
    * @return The otherCloudTarget.
    */
   com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget getOtherCloudTarget();
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public interface DiscoveryTargetOrBuilder
    * @return Whether the vertexDatasetTarget field is set.
    */
   boolean hasVertexDatasetTarget();
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public interface DiscoveryTargetOrBuilder
    * @return The vertexDatasetTarget.
    */
   com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget getVertexDatasetTarget();
+
   /**
    *
    *

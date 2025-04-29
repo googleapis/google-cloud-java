@@ -34,6 +34,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchUpdateIntentsResponse)
     BatchUpdateIntentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateIntentsResponse.newBuilder() to construct.
   private BatchUpdateIntentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.dialogflow.v2.Intent> getIntentsList() {
     return intents_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       getIntentsOrBuilderList() {
     return intents_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
   public int getIntentsCount() {
     return intents_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
   public com.google.cloud.dialogflow.v2.Intent getIntents(int index) {
     return intents_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         return intentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -575,6 +583,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         return intentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -591,6 +600,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         return intentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +752,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +805,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -819,6 +840,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(intents_);
       }
     }
+
     /**
      *
      *
@@ -832,6 +854,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       return getIntentsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -845,6 +868,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       return getIntentsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
+
     /**
      *
      *

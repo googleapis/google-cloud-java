@@ -33,6 +33,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings)
     SafetySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SafetySettings.newBuilder() to construct.
   private SafetySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>PHRASE_MATCH_STRATEGY_UNSPECIFIED = 0;</code>
      */
     public static final int PHRASE_MATCH_STRATEGY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTIAL_MATCH = 1;</code>
      */
     public static final int PARTIAL_MATCH_VALUE = 1;
+
     /**
      *
      *
@@ -247,6 +250,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -272,6 +276,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
+
     /**
      *
      *
@@ -285,6 +290,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getLanguageCodeBytes();
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase)
       PhraseOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Phrase.newBuilder() to construct.
     private Phrase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -334,6 +341,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -357,6 +365,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -385,6 +394,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -408,6 +418,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -602,6 +613,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -807,6 +819,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -829,6 +842,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -851,6 +865,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -872,6 +887,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -889,6 +905,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -913,6 +930,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object languageCode_ = "";
+
       /**
        *
        *
@@ -935,6 +953,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -957,6 +976,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -978,6 +998,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -995,6 +1016,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1087,6 +1109,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_FIELD_NUMBER = 4;
   private int defaultBannedPhraseMatchStrategy_ = 0;
+
   /**
    *
    *
@@ -1104,6 +1127,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
   public int getDefaultBannedPhraseMatchStrategyValue() {
     return defaultBannedPhraseMatchStrategy_;
   }
+
   /**
    *
    *
@@ -1133,6 +1157,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase>
       bannedPhrases_;
+
   /**
    *
    *
@@ -1148,6 +1173,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       getBannedPhrasesList() {
     return bannedPhrases_;
   }
+
   /**
    *
    *
@@ -1164,6 +1190,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       getBannedPhrasesOrBuilderList() {
     return bannedPhrases_;
   }
+
   /**
    *
    *
@@ -1178,6 +1205,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
   public int getBannedPhrasesCount() {
     return bannedPhrases_.size();
   }
+
   /**
    *
    *
@@ -1192,6 +1220,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase getBannedPhrases(int index) {
     return bannedPhrases_.get(index);
   }
+
   /**
    *
    *
@@ -1387,6 +1416,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1631,6 +1661,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int defaultBannedPhraseMatchStrategy_ = 0;
+
     /**
      *
      *
@@ -1648,6 +1679,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     public int getDefaultBannedPhraseMatchStrategyValue() {
       return defaultBannedPhraseMatchStrategy_;
     }
+
     /**
      *
      *
@@ -1668,6 +1700,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1724,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1715,6 +1749,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1806,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return bannedPhrasesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1788,6 +1824,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return bannedPhrasesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1806,6 +1843,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return bannedPhrasesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1830,6 +1868,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1852,6 +1891,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1916,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1941,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1963,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1943,6 +1986,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2009,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1985,6 +2030,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2051,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2019,6 +2066,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         getBannedPhrasesBuilder(int index) {
       return getBannedPhrasesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2037,6 +2085,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return bannedPhrasesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2056,6 +2105,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bannedPhrases_);
       }
     }
+
     /**
      *
      *
@@ -2072,6 +2122,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2089,6 +2140,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase.getDefaultInstance());
     }
+
     /**
      *
      *

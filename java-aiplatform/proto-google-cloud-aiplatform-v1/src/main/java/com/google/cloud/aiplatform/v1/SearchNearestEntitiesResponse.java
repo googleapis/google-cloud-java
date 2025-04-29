@@ -34,6 +34,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SearchNearestEntitiesResponse)
     SearchNearestEntitiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchNearestEntitiesResponse.newBuilder() to construct.
   private SearchNearestEntitiesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int NEAREST_NEIGHBORS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.NearestNeighbors nearestNeighbors_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
   public boolean hasNearestNeighbors() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
         ? com.google.cloud.aiplatform.v1.NearestNeighbors.getDefaultInstance()
         : nearestNeighbors_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -487,6 +492,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1.NearestNeighbors.Builder,
             com.google.cloud.aiplatform.v1.NearestNeighborsOrBuilder>
         nearestNeighborsBuilder_;
+
     /**
      *
      *
@@ -501,6 +507,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
     public boolean hasNearestNeighbors() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -521,6 +528,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
         return nearestNeighborsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -543,6 +551,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -563,6 +572,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -591,6 +601,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +621,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +636,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
       onChanged();
       return getNearestNeighborsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -642,6 +655,7 @@ public final class SearchNearestEntitiesResponse extends com.google.protobuf.Gen
             : nearestNeighbors_;
       }
     }
+
     /**
      *
      *

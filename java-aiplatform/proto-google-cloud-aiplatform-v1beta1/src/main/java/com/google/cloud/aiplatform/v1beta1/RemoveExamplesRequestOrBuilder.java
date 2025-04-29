@@ -38,6 +38,7 @@ public interface RemoveExamplesRequestOrBuilder
    * @return Whether the storedContentsExampleFilter field is set.
    */
   boolean hasStoredContentsExampleFilter();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RemoveExamplesRequestOrBuilder
    * @return The storedContentsExampleFilter.
    */
   com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter getStoredContentsExampleFilter();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface RemoveExamplesRequestOrBuilder
    * @return The exampleStore.
    */
   java.lang.String getExampleStore();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface RemoveExamplesRequestOrBuilder
    * @return A list containing the exampleIds.
    */
   java.util.List<java.lang.String> getExampleIdsList();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface RemoveExamplesRequestOrBuilder
    * @return The count of exampleIds.
    */
   int getExampleIdsCount();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface RemoveExamplesRequestOrBuilder
    * @return The exampleIds at the given index.
    */
   java.lang.String getExampleIds(int index);
+
   /**
    *
    *

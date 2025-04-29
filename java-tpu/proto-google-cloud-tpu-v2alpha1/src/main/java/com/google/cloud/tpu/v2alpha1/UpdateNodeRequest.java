@@ -33,6 +33,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.UpdateNodeRequest)
     UpdateNodeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateNodeRequest.newBuilder() to construct.
   private UpdateNodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int NODE_FIELD_NUMBER = 2;
   private com.google.cloud.tpu.v2alpha1.Node node_;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasNode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.tpu.v2alpha1.Node getNode() {
     return node_ == null ? com.google.cloud.tpu.v2alpha1.Node.getDefaultInstance() : node_;
   }
+
   /**
    *
    *
@@ -344,6 +351,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +574,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -778,6 +795,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.tpu.v2alpha1.Node.Builder,
             com.google.cloud.tpu.v2alpha1.NodeOrBuilder>
         nodeBuilder_;
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasNode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
         return nodeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -835,6 +855,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +905,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +926,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNodeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -935,6 +960,7 @@ public final class UpdateNodeRequest extends com.google.protobuf.GeneratedMessag
         return node_ == null ? com.google.cloud.tpu.v2alpha1.Node.getDefaultInstance() : node_;
       }
     }
+
     /**
      *
      *

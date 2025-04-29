@@ -36,6 +36,7 @@ public interface SourceContextOrBuilder
    * @return Whether the cloudRepo field is set.
    */
   boolean hasCloudRepo();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SourceContextOrBuilder
    * @return The cloudRepo.
    */
   io.grafeas.v1beta1.source.CloudRepoSourceContext getCloudRepo();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SourceContextOrBuilder
    * @return Whether the gerrit field is set.
    */
   boolean hasGerrit();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface SourceContextOrBuilder
    * @return The gerrit.
    */
   io.grafeas.v1beta1.source.GerritSourceContext getGerrit();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface SourceContextOrBuilder
    * @return Whether the git field is set.
    */
   boolean hasGit();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface SourceContextOrBuilder
    * @return The git.
    */
   io.grafeas.v1beta1.source.GitSourceContext getGit();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface SourceContextOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +156,11 @@ public interface SourceContextOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +171,7 @@ public interface SourceContextOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +186,7 @@ public interface SourceContextOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

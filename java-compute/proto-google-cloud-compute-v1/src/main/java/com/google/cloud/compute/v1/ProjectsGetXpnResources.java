@@ -32,6 +32,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ProjectsGetXpnResources)
     ProjectsGetXpnResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProjectsGetXpnResources.newBuilder() to construct.
   private ProjectsGetXpnResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
   public boolean hasKind() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.XpnResourceId> resources_;
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.compute.v1.XpnResourceId> getResourcesList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       getResourcesOrBuilderList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
   public int getResourcesCount() {
     return resources_.size();
   }
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.XpnResourceId getResources(int index) {
     return resources_.get(index);
   }
+
   /**
    *
    *
@@ -458,6 +470,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -721,6 +734,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     public boolean hasKind() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -757,6 +772,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -899,6 +921,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -920,6 +943,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +961,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1017,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return resourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return resourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return resourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1074,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1095,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1118,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1141,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1161,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1182,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1203,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1223,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1243,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1256,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.XpnResourceId.Builder getResourcesBuilder(int index) {
       return getResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1235,6 +1273,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return resourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1252,6 +1291,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(resources_);
       }
     }
+
     /**
      *
      *
@@ -1265,6 +1305,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       return getResourcesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.XpnResourceId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1278,6 +1319,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       return getResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.XpnResourceId.getDefaultInstance());
     }
+
     /**
      *
      *

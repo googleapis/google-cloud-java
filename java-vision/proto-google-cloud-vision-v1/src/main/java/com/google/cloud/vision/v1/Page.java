@@ -33,6 +33,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.Page)
     PageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Page.newBuilder() to construct.
   private Page(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.TextAnnotation.TextProperty property_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.TextAnnotation.TextProperty.getDefaultInstance()
         : property_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WIDTH_FIELD_NUMBER = 2;
   private int width_ = 0;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEIGHT_FIELD_NUMBER = 3;
   private int height_ = 0;
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Block> blocks_;
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vision.v1.Block> getBlocksList() {
     return blocks_;
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       getBlocksOrBuilderList() {
     return blocks_;
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   public int getBlocksCount() {
     return blocks_.size();
   }
+
   /**
    *
    *
@@ -208,6 +218,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1.Block getBlocks(int index) {
     return blocks_.get(index);
   }
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -441,6 +453,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -740,6 +753,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.TextAnnotation.TextProperty.Builder,
             com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder>
         propertyBuilder_;
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         return propertyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +897,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
             : property_;
       }
     }
+
     /**
      *
      *
@@ -922,6 +944,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int width_;
+
     /**
      *
      *
@@ -938,6 +961,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public int getWidth() {
       return width_;
     }
+
     /**
      *
      *
@@ -958,6 +982,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1003,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int height_;
+
     /**
      *
      *
@@ -994,6 +1020,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public int getHeight() {
       return height_;
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1093,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         return blocksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1110,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         return blocksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         return blocksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1150,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1170,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1193,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1216,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1236,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1256,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1277,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1297,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1317,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1330,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Block.Builder getBlocksBuilder(int index) {
       return getBlocksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1306,6 +1347,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         return blocksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1365,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(blocks_);
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1379,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       return getBlocksFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.Block.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1349,6 +1393,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       return getBlocksFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.Block.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1380,6 +1425,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -1395,6 +1441,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -1414,6 +1461,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

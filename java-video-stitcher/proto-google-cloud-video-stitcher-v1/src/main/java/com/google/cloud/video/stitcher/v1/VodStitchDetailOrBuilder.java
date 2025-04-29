@@ -37,6 +37,7 @@ public interface VodStitchDetailOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface VodStitchDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdStitchDetail ad_stitch_details = 3;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.AdStitchDetail> getAdStitchDetailsList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface VodStitchDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdStitchDetail ad_stitch_details = 3;</code>
    */
   com.google.cloud.video.stitcher.v1.AdStitchDetail getAdStitchDetails(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface VodStitchDetailOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.AdStitchDetail ad_stitch_details = 3;</code>
    */
   int getAdStitchDetailsCount();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface VodStitchDetailOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.AdStitchDetailOrBuilder>
       getAdStitchDetailsOrBuilderList();
+
   /**
    *
    *

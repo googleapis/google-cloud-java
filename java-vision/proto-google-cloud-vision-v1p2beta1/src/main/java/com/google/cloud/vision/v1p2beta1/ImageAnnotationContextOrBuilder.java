@@ -36,6 +36,7 @@ public interface ImageAnnotationContextOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

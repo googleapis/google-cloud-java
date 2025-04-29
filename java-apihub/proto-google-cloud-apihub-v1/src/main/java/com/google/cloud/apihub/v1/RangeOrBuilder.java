@@ -36,6 +36,7 @@ public interface RangeOrBuilder
    * @return Whether the start field is set.
    */
   boolean hasStart();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RangeOrBuilder
    * @return The start.
    */
   com.google.cloud.apihub.v1.Point getStart();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RangeOrBuilder
    * @return Whether the end field is set.
    */
   boolean hasEnd();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RangeOrBuilder
    * @return The end.
    */
   com.google.cloud.apihub.v1.Point getEnd();
+
   /**
    *
    *

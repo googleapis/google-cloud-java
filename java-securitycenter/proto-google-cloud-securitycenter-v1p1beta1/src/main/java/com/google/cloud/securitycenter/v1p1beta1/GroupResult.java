@@ -33,6 +33,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1p1beta1.GroupResult)
     GroupResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GroupResult.newBuilder() to construct.
   private GroupResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,6 +103,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
+
   /**
    *
    *
@@ -118,12 +120,14 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getProperties() {
     return getPropertiesMap();
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
         internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COUNT_FIELD_NUMBER = 2;
   private long count_ = 0L;
+
   /**
    *
    *
@@ -375,6 +382,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -614,7 +622,8 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PropertiesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PropertiesConverter propertiesConverter = new PropertiesConverter();
 
@@ -654,6 +663,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -670,12 +680,14 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getProperties() {
       return getPropertiesMap();
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getPropertiesMap() {
       return internalGetProperties().getImmutableMap();
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableProperties().ensureBuilderMap();
       return map.containsKey(key) ? propertiesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().clear();
       return this;
     }
+
     /**
      *
      *
@@ -753,12 +768,14 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableProperties() {
       bitField0_ |= 0x00000001;
       return internalGetMutableProperties().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +843,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long count_;
+
     /**
      *
      *
@@ -839,6 +859,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     public long getCount() {
       return count_;
     }
+
     /**
      *
      *
@@ -858,6 +879,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

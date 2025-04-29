@@ -36,6 +36,7 @@ public interface RuleOrBuilder
    * @return Whether the boostAction field is set.
    */
   boolean hasBoostAction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RuleOrBuilder
    * @return The boostAction.
    */
   com.google.cloud.retail.v2beta.Rule.BoostAction getBoostAction();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RuleOrBuilder
    * @return Whether the redirectAction field is set.
    */
   boolean hasRedirectAction();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RuleOrBuilder
    * @return The redirectAction.
    */
   com.google.cloud.retail.v2beta.Rule.RedirectAction getRedirectAction();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface RuleOrBuilder
    * @return Whether the onewaySynonymsAction field is set.
    */
   boolean hasOnewaySynonymsAction();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface RuleOrBuilder
    * @return The onewaySynonymsAction.
    */
   com.google.cloud.retail.v2beta.Rule.OnewaySynonymsAction getOnewaySynonymsAction();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface RuleOrBuilder
    * @return Whether the doNotAssociateAction field is set.
    */
   boolean hasDoNotAssociateAction();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface RuleOrBuilder
    * @return The doNotAssociateAction.
    */
   com.google.cloud.retail.v2beta.Rule.DoNotAssociateAction getDoNotAssociateAction();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface RuleOrBuilder
    * @return Whether the replacementAction field is set.
    */
   boolean hasReplacementAction();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface RuleOrBuilder
    * @return The replacementAction.
    */
   com.google.cloud.retail.v2beta.Rule.ReplacementAction getReplacementAction();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface RuleOrBuilder
    * @return Whether the ignoreAction field is set.
    */
   boolean hasIgnoreAction();
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public interface RuleOrBuilder
    * @return The ignoreAction.
    */
   com.google.cloud.retail.v2beta.Rule.IgnoreAction getIgnoreAction();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface RuleOrBuilder
    * @return Whether the filterAction field is set.
    */
   boolean hasFilterAction();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface RuleOrBuilder
    * @return The filterAction.
    */
   com.google.cloud.retail.v2beta.Rule.FilterAction getFilterAction();
+
   /**
    *
    *
@@ -286,6 +300,7 @@ public interface RuleOrBuilder
    * @return Whether the twowaySynonymsAction field is set.
    */
   boolean hasTwowaySynonymsAction();
+
   /**
    *
    *
@@ -298,6 +313,7 @@ public interface RuleOrBuilder
    * @return The twowaySynonymsAction.
    */
   com.google.cloud.retail.v2beta.Rule.TwowaySynonymsAction getTwowaySynonymsAction();
+
   /**
    *
    *
@@ -323,6 +339,7 @@ public interface RuleOrBuilder
    * @return Whether the forceReturnFacetAction field is set.
    */
   boolean hasForceReturnFacetAction();
+
   /**
    *
    *
@@ -336,6 +353,7 @@ public interface RuleOrBuilder
    * @return The forceReturnFacetAction.
    */
   com.google.cloud.retail.v2beta.Rule.ForceReturnFacetAction getForceReturnFacetAction();
+
   /**
    *
    *
@@ -361,6 +379,7 @@ public interface RuleOrBuilder
    * @return Whether the removeFacetAction field is set.
    */
   boolean hasRemoveFacetAction();
+
   /**
    *
    *
@@ -373,6 +392,7 @@ public interface RuleOrBuilder
    * @return The removeFacetAction.
    */
   com.google.cloud.retail.v2beta.Rule.RemoveFacetAction getRemoveFacetAction();
+
   /**
    *
    *
@@ -383,6 +403,46 @@ public interface RuleOrBuilder
    * <code>.google.cloud.retail.v2beta.Rule.RemoveFacetAction remove_facet_action = 13;</code>
    */
   com.google.cloud.retail.v2beta.Rule.RemoveFacetActionOrBuilder getRemoveFacetActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pins one or more specified products to a specific position in the
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2beta.Rule.PinAction pin_action = 14;</code>
+   *
+   * @return Whether the pinAction field is set.
+   */
+  boolean hasPinAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pins one or more specified products to a specific position in the
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2beta.Rule.PinAction pin_action = 14;</code>
+   *
+   * @return The pinAction.
+   */
+  com.google.cloud.retail.v2beta.Rule.PinAction getPinAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pins one or more specified products to a specific position in the
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2beta.Rule.PinAction pin_action = 14;</code>
+   */
+  com.google.cloud.retail.v2beta.Rule.PinActionOrBuilder getPinActionOrBuilder();
 
   /**
    *
@@ -399,6 +459,7 @@ public interface RuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -414,6 +475,7 @@ public interface RuleOrBuilder
    * @return The condition.
    */
   com.google.cloud.retail.v2beta.Condition getCondition();
+
   /**
    *
    *

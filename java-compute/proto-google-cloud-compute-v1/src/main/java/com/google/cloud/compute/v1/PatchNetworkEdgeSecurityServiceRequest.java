@@ -34,6 +34,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchNetworkEdgeSecurityServiceRequest)
     PatchNetworkEdgeSecurityServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PatchNetworkEdgeSecurityServiceRequest.newBuilder() to construct.
   private PatchNetworkEdgeSecurityServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkEdgeSecurityService_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   public static final int NETWORK_EDGE_SECURITY_SERVICE_RESOURCE_FIELD_NUMBER = 477548966;
   private com.google.cloud.compute.v1.NetworkEdgeSecurityService
       networkEdgeSecurityServiceResource_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   public boolean hasNetworkEdgeSecurityServiceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         ? com.google.cloud.compute.v1.NetworkEdgeSecurityService.getDefaultInstance()
         : networkEdgeSecurityServiceResource_;
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object paths_ = "";
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -198,6 +205,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   public boolean hasPaths() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -215,6 +223,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -237,6 +246,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +360,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +400,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -413,6 +429,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object updateMask_ = "";
+
   /**
    *
    *
@@ -428,6 +445,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -451,6 +469,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -718,6 +737,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1021,6 +1041,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     private int bitField0_;
 
     private java.lang.Object networkEdgeSecurityService_ = "";
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1091,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1115,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1135,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1168,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
             com.google.cloud.compute.v1.NetworkEdgeSecurityService.Builder,
             com.google.cloud.compute.v1.NetworkEdgeSecurityServiceOrBuilder>
         networkEdgeSecurityServiceResourceBuilder_;
+
     /**
      *
      *
@@ -1159,6 +1185,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     public boolean hasNetworkEdgeSecurityServiceResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1182,6 +1209,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return networkEdgeSecurityServiceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1235,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1258,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1290,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1312,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1330,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return getNetworkEdgeSecurityServiceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1319,6 +1352,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
             : networkEdgeSecurityServiceResource_;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1382,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object paths_ = "";
+
     /**
      * <code>optional string paths = 106438894;</code>
      *
@@ -1356,6 +1391,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     public boolean hasPaths() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <code>optional string paths = 106438894;</code>
      *
@@ -1372,6 +1408,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string paths = 106438894;</code>
      *
@@ -1388,6 +1425,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string paths = 106438894;</code>
      *
@@ -1403,6 +1441,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string paths = 106438894;</code>
      *
@@ -1414,6 +1453,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string paths = 106438894;</code>
      *
@@ -1432,6 +1472,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1456,6 +1497,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1480,6 +1522,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1503,6 +1546,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1522,6 +1566,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1593,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1572,6 +1618,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1596,6 +1643,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1619,6 +1667,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1687,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1664,6 +1714,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1678,6 +1729,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1700,6 +1752,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1775,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1743,6 +1797,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1815,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1840,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object updateMask_ = "";
+
     /**
      *
      *
@@ -1798,6 +1855,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1820,6 +1878,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1842,6 +1901,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1863,6 +1923,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1880,6 +1941,7 @@ public final class PatchNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

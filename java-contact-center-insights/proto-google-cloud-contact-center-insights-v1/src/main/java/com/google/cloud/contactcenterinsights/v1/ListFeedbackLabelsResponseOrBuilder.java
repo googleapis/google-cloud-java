@@ -34,6 +34,7 @@ public interface ListFeedbackLabelsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.FeedbackLabel feedback_labels = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.FeedbackLabel> getFeedbackLabelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFeedbackLabelsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.FeedbackLabel feedback_labels = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.FeedbackLabel getFeedbackLabels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFeedbackLabelsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.FeedbackLabel feedback_labels = 1;</code>
    */
   int getFeedbackLabelsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFeedbackLabelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.FeedbackLabelOrBuilder>
       getFeedbackLabelsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListFeedbackLabelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

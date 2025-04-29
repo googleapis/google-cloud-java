@@ -37,6 +37,7 @@ public interface MethodDetailsOrBuilder
    * @return The method.
    */
   java.lang.String getMethod();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface MethodDetailsOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface MethodDetailsOrBuilder
    * @return The subapi.
    */
   java.lang.String getSubapi();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface MethodDetailsOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface WorkstationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WorkstationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface WorkstationOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface WorkstationOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -135,9 +139,11 @@ public interface WorkstationOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface WorkstationOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface WorkstationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface WorkstationOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -202,9 +211,11 @@ public interface WorkstationOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -218,6 +229,7 @@ public interface WorkstationOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -235,6 +247,7 @@ public interface WorkstationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -262,6 +275,7 @@ public interface WorkstationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -275,6 +289,7 @@ public interface WorkstationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -300,6 +315,7 @@ public interface WorkstationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -313,6 +329,7 @@ public interface WorkstationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -339,6 +356,7 @@ public interface WorkstationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -353,6 +371,7 @@ public interface WorkstationOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -379,6 +398,7 @@ public interface WorkstationOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -392,6 +412,7 @@ public interface WorkstationOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -418,6 +439,7 @@ public interface WorkstationOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -447,6 +469,7 @@ public interface WorkstationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -478,6 +501,7 @@ public interface WorkstationOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -506,6 +530,7 @@ public interface WorkstationOrBuilder
    * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getEnvCount();
+
   /**
    *
    *
@@ -517,9 +542,11 @@ public interface WorkstationOrBuilder
    * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsEnv(java.lang.String key);
+
   /** Use {@link #getEnvMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnv();
+
   /**
    *
    *
@@ -531,6 +558,7 @@ public interface WorkstationOrBuilder
    * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvMap();
+
   /**
    *
    *
@@ -546,6 +574,7 @@ public interface WorkstationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GenerateOfflineCredentialRequestOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *

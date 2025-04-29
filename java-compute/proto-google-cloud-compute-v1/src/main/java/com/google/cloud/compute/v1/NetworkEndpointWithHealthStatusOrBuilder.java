@@ -35,6 +35,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint> getHealthsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint getHealths(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * </code>
    */
   int getHealthsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthStatusForNetworkEndpointOrBuilder>
       getHealthsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * @return Whether the networkEndpoint field is set.
    */
   boolean hasNetworkEndpoint();
+
   /**
    *
    *
@@ -106,6 +111,7 @@ public interface NetworkEndpointWithHealthStatusOrBuilder
    * @return The networkEndpoint.
    */
   com.google.cloud.compute.v1.NetworkEndpoint getNetworkEndpoint();
+
   /**
    *
    *

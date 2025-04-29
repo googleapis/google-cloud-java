@@ -35,6 +35,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyAssociation> getAssociationsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.FirewallPolicyAssociation getAssociations(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   int getAssociationsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface FirewallPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyAssociationOrBuilder>
       getAssociationsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -106,6 +111,7 @@ public interface FirewallPolicyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface FirewallPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface FirewallPolicyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -205,6 +215,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -217,6 +228,7 @@ public interface FirewallPolicyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -242,6 +254,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public interface FirewallPolicyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -304,6 +319,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -316,6 +332,7 @@ public interface FirewallPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -340,6 +357,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getPacketMirroringRulesList();
+
   /**
    *
    *
@@ -351,6 +369,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index);
+
   /**
    *
    *
@@ -362,6 +381,7 @@ public interface FirewallPolicyOrBuilder
    * </code>
    */
   int getPacketMirroringRulesCount();
+
   /**
    *
    *
@@ -374,6 +394,7 @@ public interface FirewallPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
       getPacketMirroringRulesOrBuilderList();
+
   /**
    *
    *
@@ -399,6 +420,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the parent field is set.
    */
   boolean hasParent();
+
   /**
    *
    *
@@ -411,6 +433,7 @@ public interface FirewallPolicyOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -436,6 +459,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -448,6 +472,7 @@ public interface FirewallPolicyOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -473,6 +498,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the ruleTupleCount field is set.
    */
   boolean hasRuleTupleCount();
+
   /**
    *
    *
@@ -496,6 +522,7 @@ public interface FirewallPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getRulesList();
+
   /**
    *
    *
@@ -506,6 +533,7 @@ public interface FirewallPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getRules(int index);
+
   /**
    *
    *
@@ -516,6 +544,7 @@ public interface FirewallPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -527,6 +556,7 @@ public interface FirewallPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
@@ -550,6 +580,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -562,6 +593,7 @@ public interface FirewallPolicyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -587,6 +619,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -599,6 +632,7 @@ public interface FirewallPolicyOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -624,6 +658,7 @@ public interface FirewallPolicyOrBuilder
    * @return Whether the shortName field is set.
    */
   boolean hasShortName();
+
   /**
    *
    *
@@ -636,6 +671,7 @@ public interface FirewallPolicyOrBuilder
    * @return The shortName.
    */
   java.lang.String getShortName();
+
   /**
    *
    *

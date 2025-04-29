@@ -33,6 +33,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResizeDiskRequest)
     ResizeDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResizeDiskRequest.newBuilder() to construct.
   private ResizeDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int DISKS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 78307616;
   private com.google.cloud.compute.v1.DisksResizeRequest disksResizeRequestResource_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasDisksResizeRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.compute.v1.DisksResizeRequest.getDefaultInstance()
         : disksResizeRequestResource_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +311,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -325,6 +337,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -559,6 +572,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -821,6 +835,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
+
     /**
      *
      *
@@ -843,6 +858,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -886,6 +903,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +921,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +951,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.DisksResizeRequest.Builder,
             com.google.cloud.compute.v1.DisksResizeRequestOrBuilder>
         disksResizeRequestResourceBuilder_;
+
     /**
      *
      *
@@ -948,6 +968,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasDisksResizeRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -970,6 +991,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return disksResizeRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -995,6 +1017,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDisksResizeRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1107,6 +1134,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
             : disksResizeRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1164,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1160,6 +1189,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1184,6 +1214,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1238,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1258,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1285,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1288,6 +1323,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1310,6 +1346,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1368,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1386,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1411,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1396,6 +1436,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1461,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1485,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1505,7 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

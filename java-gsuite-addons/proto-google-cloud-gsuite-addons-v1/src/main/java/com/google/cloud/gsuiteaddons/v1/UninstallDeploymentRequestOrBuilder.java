@@ -40,6 +40,7 @@ public interface UninstallDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

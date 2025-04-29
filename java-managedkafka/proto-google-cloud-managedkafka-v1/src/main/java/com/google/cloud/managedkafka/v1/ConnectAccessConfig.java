@@ -33,6 +33,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ConnectAccessConfig)
     ConnectAccessConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectAccessConfig.newBuilder() to construct.
   private ConnectAccessConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.managedkafka.v1.ConnectNetworkConfig> networkConfigs_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       getNetworkConfigsList() {
     return networkConfigs_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       getNetworkConfigsOrBuilderList() {
     return networkConfigs_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
   public int getNetworkConfigsCount() {
     return networkConfigs_.size();
   }
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
   public com.google.cloud.managedkafka.v1.ConnectNetworkConfig getNetworkConfigs(int index) {
     return networkConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -592,6 +599,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
         return networkConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -613,6 +621,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
         return networkConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
         return networkConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +726,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +859,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
         int index) {
       return getNetworkConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
         return networkConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(networkConfigs_);
       }
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
       return getNetworkConfigsFieldBuilder()
           .addBuilder(com.google.cloud.managedkafka.v1.ConnectNetworkConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class ConnectAccessConfig extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.managedkafka.v1.ConnectNetworkConfig.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface DataProfileFindingOrBuilder
    * @return The quote.
    */
   java.lang.String getQuote();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DataProfileFindingOrBuilder
    * @return Whether the infotype field is set.
    */
   boolean hasInfotype();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DataProfileFindingOrBuilder
    * @return The infotype.
    */
   com.google.privacy.dlp.v2.InfoType getInfotype();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface DataProfileFindingOrBuilder
    * @return Whether the quoteInfo field is set.
    */
   boolean hasQuoteInfo();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface DataProfileFindingOrBuilder
    * @return The quoteInfo.
    */
   com.google.privacy.dlp.v2.QuoteInfo getQuoteInfo();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface DataProfileFindingOrBuilder
    * @return The dataProfileResourceName.
    */
   java.lang.String getDataProfileResourceName();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface DataProfileFindingOrBuilder
    * @return The findingId.
    */
   java.lang.String getFindingId();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface DataProfileFindingOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface DataProfileFindingOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface DataProfileFindingOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public interface DataProfileFindingOrBuilder
    * @return The location.
    */
   com.google.privacy.dlp.v2.DataProfileFindingLocation getLocation();
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public interface DataProfileFindingOrBuilder
    * @return The enum numeric value on the wire for resourceVisibility.
    */
   int getResourceVisibilityValue();
+
   /**
    *
    *

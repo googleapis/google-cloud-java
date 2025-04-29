@@ -36,6 +36,7 @@ public interface DocsExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
+
   /**
    *
    *

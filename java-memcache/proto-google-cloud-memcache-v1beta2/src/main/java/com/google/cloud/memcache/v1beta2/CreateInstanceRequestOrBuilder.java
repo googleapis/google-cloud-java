@@ -40,6 +40,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.memcache.v1beta2.Instance getResource();
+
   /**
    *
    *

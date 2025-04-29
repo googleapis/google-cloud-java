@@ -18,7 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_SessionService_ListSessions_sync]
 import com.google.cloud.aiplatform.v1beta1.ListSessionsRequest;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
 import com.google.cloud.aiplatform.v1beta1.Session;
 import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
@@ -37,7 +37,9 @@ public class SyncListSessions {
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       ListSessionsRequest request =
           ListSessionsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(
+                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+                      .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

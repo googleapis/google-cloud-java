@@ -36,6 +36,7 @@ public interface CloudAccountDetailsOrBuilder
    * @return The cloudAccount.
    */
   java.lang.String getCloudAccount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CloudAccountDetailsOrBuilder
    * @return The cloudAccountHomeRegion.
    */
   java.lang.String getCloudAccountHomeRegion();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface CloudAccountDetailsOrBuilder
    * @return Whether the linkExistingAccountUri field is set.
    */
   boolean hasLinkExistingAccountUri();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface CloudAccountDetailsOrBuilder
    * @return The linkExistingAccountUri.
    */
   java.lang.String getLinkExistingAccountUri();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface CloudAccountDetailsOrBuilder
    * @return Whether the accountCreationUri field is set.
    */
   boolean hasAccountCreationUri();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface CloudAccountDetailsOrBuilder
    * @return The accountCreationUri.
    */
   java.lang.String getAccountCreationUri();
+
   /**
    *
    *

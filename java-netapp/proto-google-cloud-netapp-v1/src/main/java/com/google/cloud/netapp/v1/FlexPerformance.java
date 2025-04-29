@@ -72,6 +72,7 @@ public enum FlexPerformance implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLEX_PERFORMANCE_UNSPECIFIED = 0;</code>
    */
   public static final int FLEX_PERFORMANCE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum FlexPerformance implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FLEX_PERFORMANCE_DEFAULT = 1;</code>
    */
   public static final int FLEX_PERFORMANCE_DEFAULT_VALUE = 1;
+
   /**
    *
    *

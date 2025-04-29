@@ -37,6 +37,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return Whether the account field is set.
    */
   boolean hasAccount();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return Whether the managingAccount field is set.
    */
   boolean hasManagingAccount();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return The managingAccount.
    */
   java.lang.String getManagingAccount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return Whether the resourceType field is set.
    */
   boolean hasResourceType();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return Whether the attribute field is set.
    */
   boolean hasAttribute();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return The enum numeric value on the wire for attribute.
    */
   int getAttributeValue();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * <code>repeated .google.shopping.merchant.notifications.v1beta.ProductChange changes = 5;</code>
    */
   java.util.List<com.google.shopping.merchant.notifications.v1beta.ProductChange> getChangesList();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * <code>repeated .google.shopping.merchant.notifications.v1beta.ProductChange changes = 5;</code>
    */
   com.google.shopping.merchant.notifications.v1beta.ProductChange getChanges(int index);
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * <code>repeated .google.shopping.merchant.notifications.v1beta.ProductChange changes = 5;</code>
    */
   int getChangesCount();
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public interface ProductStatusChangeMessageOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.notifications.v1beta.ProductChangeOrBuilder>
       getChangesOrBuilderList();
+
   /**
    *
    *
@@ -252,6 +264,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return Whether the resourceId field is set.
    */
   boolean hasResourceId();
+
   /**
    *
    *
@@ -264,6 +277,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return The resourceId.
    */
   java.lang.String getResourceId();
+
   /**
    *
    *
@@ -290,6 +304,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -303,6 +318,7 @@ public interface ProductStatusChangeMessageOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

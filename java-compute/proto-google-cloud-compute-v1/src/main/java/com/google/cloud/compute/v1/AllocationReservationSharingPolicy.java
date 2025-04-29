@@ -32,6 +32,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationReservationSharingPolicy)
     AllocationReservationSharingPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllocationReservationSharingPolicy.newBuilder() to construct.
   private AllocationReservationSharingPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -119,6 +120,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
      * <code>UNDEFINED_SERVICE_SHARE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_SERVICE_SHARE_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
      * <code>ALLOW_ALL = 475536235;</code>
      */
     public static final int ALLOW_ALL_VALUE = 475536235;
+
     /**
      *
      *
@@ -139,6 +142,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
      * <code>DISALLOW_ALL = 277786301;</code>
      */
     public static final int DISALLOW_ALL_VALUE = 277786301;
+
     /** <code>SERVICE_SHARE_TYPE_UNSPECIFIED = 279057148;</code> */
     public static final int SERVICE_SHARE_TYPE_UNSPECIFIED_VALUE = 279057148;
 
@@ -236,6 +240,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceShareType_ = "";
+
   /**
    *
    *
@@ -252,6 +257,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
   public boolean hasServiceShareType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -276,6 +282,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -467,6 +474,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -656,6 +664,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object serviceShareType_ = "";
+
     /**
      *
      *
@@ -671,6 +680,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
     public boolean hasServiceShareType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -694,6 +704,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class AllocationReservationSharingPolicy extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

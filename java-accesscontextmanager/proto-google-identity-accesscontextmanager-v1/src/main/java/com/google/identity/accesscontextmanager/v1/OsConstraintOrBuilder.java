@@ -36,6 +36,7 @@ public interface OsConstraintOrBuilder
    * @return The enum numeric value on the wire for osType.
    */
   int getOsTypeValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface OsConstraintOrBuilder
    * @return The minimumVersion.
    */
   java.lang.String getMinimumVersion();
+
   /**
    *
    *

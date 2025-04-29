@@ -36,6 +36,7 @@ public interface LocalDiskOrBuilder
    * @return Whether the diskCount field is set.
    */
   boolean hasDiskCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LocalDiskOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface LocalDiskOrBuilder
    * @return Whether the diskType field is set.
    */
   boolean hasDiskType();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface LocalDiskOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
+
   /**
    *
    *

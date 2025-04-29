@@ -38,6 +38,7 @@ public interface BackfillJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BackfillJobOrBuilder
    * @return The enum numeric value on the wire for trigger.
    */
   int getTriggerValue();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface BackfillJobOrBuilder
    * @return Whether the lastStartTime field is set.
    */
   boolean hasLastStartTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface BackfillJobOrBuilder
    * @return The lastStartTime.
    */
   com.google.protobuf.Timestamp getLastStartTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface BackfillJobOrBuilder
    * @return Whether the lastEndTime field is set.
    */
   boolean hasLastEndTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface BackfillJobOrBuilder
    * @return The lastEndTime.
    */
   com.google.protobuf.Timestamp getLastEndTime();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface BackfillJobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datastream.v1.Error> getErrorsList();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface BackfillJobOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1.Error getErrors(int index);
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface BackfillJobOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface BackfillJobOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.datastream.v1.ErrorOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *

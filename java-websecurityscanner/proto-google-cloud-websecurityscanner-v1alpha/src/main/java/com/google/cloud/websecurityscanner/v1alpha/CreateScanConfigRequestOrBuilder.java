@@ -39,6 +39,7 @@ public interface CreateScanConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateScanConfigRequestOrBuilder
    * @return Whether the scanConfig field is set.
    */
   boolean hasScanConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateScanConfigRequestOrBuilder
    * @return The scanConfig.
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig();
+
   /**
    *
    *

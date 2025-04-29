@@ -43,6 +43,7 @@ public interface ConstraintOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface ConstraintOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ConstraintOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ConstraintOrBuilder
    * @return The enum numeric value on the wire for constraintDefault.
    */
   int getConstraintDefaultValue();
+
   /**
    *
    *
@@ -152,7 +156,7 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * Defines this constraint as being a ListConstraint.
+   * Defines this constraint as being a list constraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -160,11 +164,12 @@ public interface ConstraintOrBuilder
    * @return Whether the listConstraint field is set.
    */
   boolean hasListConstraint();
+
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a ListConstraint.
+   * Defines this constraint as being a list constraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -172,11 +177,12 @@ public interface ConstraintOrBuilder
    * @return The listConstraint.
    */
   com.google.cloud.orgpolicy.v2.Constraint.ListConstraint getListConstraint();
+
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a ListConstraint.
+   * Defines this constraint as being a list constraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
@@ -187,7 +193,7 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * Defines this constraint as being a BooleanConstraint.
+   * Defines this constraint as being a boolean constraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -195,11 +201,12 @@ public interface ConstraintOrBuilder
    * @return Whether the booleanConstraint field is set.
    */
   boolean hasBooleanConstraint();
+
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a BooleanConstraint.
+   * Defines this constraint as being a boolean constraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -207,11 +214,12 @@ public interface ConstraintOrBuilder
    * @return The booleanConstraint.
    */
   com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint getBooleanConstraint();
+
   /**
    *
    *
    * <pre>
-   * Defines this constraint as being a BooleanConstraint.
+   * Defines this constraint as being a boolean constraint.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
@@ -231,6 +239,47 @@ public interface ConstraintOrBuilder
    * @return The supportsDryRun.
    */
   boolean getSupportsDryRun();
+
+  /**
+   *
+   *
+   * <pre>
+   * Managed constraint and canned constraint sometimes can have
+   * equivalents. This field is used to store the equivalent constraint name.
+   * </pre>
+   *
+   * <code>string equivalent_constraint = 8;</code>
+   *
+   * @return The equivalentConstraint.
+   */
+  java.lang.String getEquivalentConstraint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Managed constraint and canned constraint sometimes can have
+   * equivalents. This field is used to store the equivalent constraint name.
+   * </pre>
+   *
+   * <code>string equivalent_constraint = 8;</code>
+   *
+   * @return The bytes for equivalentConstraint.
+   */
+  com.google.protobuf.ByteString getEquivalentConstraintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Shows if simulation is supported for this constraint or not.
+   * </pre>
+   *
+   * <code>bool supports_simulation = 9;</code>
+   *
+   * @return The supportsSimulation.
+   */
+  boolean getSupportsSimulation();
 
   com.google.cloud.orgpolicy.v2.Constraint.ConstraintTypeCase getConstraintTypeCase();
 }

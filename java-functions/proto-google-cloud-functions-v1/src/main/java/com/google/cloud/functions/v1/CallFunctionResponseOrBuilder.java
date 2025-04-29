@@ -36,6 +36,7 @@ public interface CallFunctionResponseOrBuilder
    * @return The executionId.
    */
   java.lang.String getExecutionId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface CallFunctionResponseOrBuilder
    * @return The result.
    */
   java.lang.String getResult();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface CallFunctionResponseOrBuilder
    * @return The error.
    */
   java.lang.String getError();
+
   /**
    *
    *

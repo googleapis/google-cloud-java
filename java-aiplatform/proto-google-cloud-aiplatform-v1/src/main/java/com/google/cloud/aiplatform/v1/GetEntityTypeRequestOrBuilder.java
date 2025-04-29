@@ -40,6 +40,7 @@ public interface GetEntityTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

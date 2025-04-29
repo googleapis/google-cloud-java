@@ -59,6 +59,7 @@ public interface NodeKubeletConfigOrBuilder
    * @return Whether the cpuManagerPolicy field is set.
    */
   boolean hasCpuManagerPolicy();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface NodeKubeletConfigOrBuilder
    * @return The cpuManagerPolicy.
    */
   java.lang.String getCpuManagerPolicy();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface NodeKubeletConfigOrBuilder
    * @return Whether the cpuCfsQuota field is set.
    */
   boolean hasCpuCfsQuota();
+
   /**
    *
    *
@@ -167,6 +170,7 @@ public interface NodeKubeletConfigOrBuilder
    * @return Whether the cpuCfsQuotaPeriod field is set.
    */
   boolean hasCpuCfsQuotaPeriod();
+
   /**
    *
    *
@@ -187,6 +191,7 @@ public interface NodeKubeletConfigOrBuilder
    * @return The cpuCfsQuotaPeriod.
    */
   java.lang.String getCpuCfsQuotaPeriod();
+
   /**
    *
    *
@@ -224,6 +229,7 @@ public interface NodeKubeletConfigOrBuilder
    * @return Whether the podPidsLimit field is set.
    */
   boolean hasPodPidsLimit();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface GamVodConfigOrBuilder
    * @return The networkCode.
    */
   java.lang.String getNetworkCode();
+
   /**
    *
    *

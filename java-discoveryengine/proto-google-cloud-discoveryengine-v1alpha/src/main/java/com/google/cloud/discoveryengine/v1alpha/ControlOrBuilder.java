@@ -36,6 +36,7 @@ public interface ControlOrBuilder
    * @return Whether the boostAction field is set.
    */
   boolean hasBoostAction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ControlOrBuilder
    * @return The boostAction.
    */
   com.google.cloud.discoveryengine.v1alpha.Control.BoostAction getBoostAction();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ControlOrBuilder
    * @return Whether the filterAction field is set.
    */
   boolean hasFilterAction();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ControlOrBuilder
    * @return The filterAction.
    */
   com.google.cloud.discoveryengine.v1alpha.Control.FilterAction getFilterAction();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface ControlOrBuilder
    * @return Whether the redirectAction field is set.
    */
   boolean hasRedirectAction();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface ControlOrBuilder
    * @return The redirectAction.
    */
   com.google.cloud.discoveryengine.v1alpha.Control.RedirectAction getRedirectAction();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface ControlOrBuilder
    * @return Whether the synonymsAction field is set.
    */
   boolean hasSynonymsAction();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface ControlOrBuilder
    * @return The synonymsAction.
    */
   com.google.cloud.discoveryengine.v1alpha.Control.SynonymsAction getSynonymsAction();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface ControlOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface ControlOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface ControlOrBuilder
    * @return A list containing the associatedServingConfigIds.
    */
   java.util.List<java.lang.String> getAssociatedServingConfigIdsList();
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public interface ControlOrBuilder
    * @return The count of associatedServingConfigIds.
    */
   int getAssociatedServingConfigIdsCount();
+
   /**
    *
    *
@@ -279,6 +291,7 @@ public interface ControlOrBuilder
    * @return The associatedServingConfigIds at the given index.
    */
   java.lang.String getAssociatedServingConfigIds(int index);
+
   /**
    *
    *
@@ -315,6 +328,7 @@ public interface ControlOrBuilder
    * @return The enum numeric value on the wire for solutionType.
    */
   int getSolutionTypeValue();
+
   /**
    *
    *
@@ -351,6 +365,7 @@ public interface ControlOrBuilder
    * @return A list containing the useCases.
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.SearchUseCase> getUseCasesList();
+
   /**
    *
    *
@@ -369,6 +384,7 @@ public interface ControlOrBuilder
    * @return The count of useCases.
    */
   int getUseCasesCount();
+
   /**
    *
    *
@@ -388,6 +404,7 @@ public interface ControlOrBuilder
    * @return The useCases at the given index.
    */
   com.google.cloud.discoveryengine.v1alpha.SearchUseCase getUseCases(int index);
+
   /**
    *
    *
@@ -406,6 +423,7 @@ public interface ControlOrBuilder
    * @return A list containing the enum numeric values on the wire for useCases.
    */
   java.util.List<java.lang.Integer> getUseCasesValueList();
+
   /**
    *
    *
@@ -440,6 +458,7 @@ public interface ControlOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Condition conditions = 5;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.Condition> getConditionsList();
+
   /**
    *
    *
@@ -454,6 +473,7 @@ public interface ControlOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Condition conditions = 5;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.Condition getConditions(int index);
+
   /**
    *
    *
@@ -468,6 +488,7 @@ public interface ControlOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Condition conditions = 5;</code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -483,6 +504,7 @@ public interface ControlOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.ConditionOrBuilder>
       getConditionsOrBuilderList();
+
   /**
    *
    *

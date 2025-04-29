@@ -39,6 +39,7 @@ public interface DeleteRestoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DeleteRestoreRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

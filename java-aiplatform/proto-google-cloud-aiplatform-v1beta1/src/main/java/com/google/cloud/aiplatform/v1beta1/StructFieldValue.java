@@ -33,6 +33,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StructFieldValue)
     StructFieldValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StructFieldValue.newBuilder() to construct.
   private StructFieldValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.FeatureValue value_;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance()
         : value_;
   }
+
   /**
    *
    *
@@ -338,6 +344,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +558,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>
         valueBuilder_;
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
         return valueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +754,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +782,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +802,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +817,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -816,6 +836,7 @@ public final class StructFieldValue extends com.google.protobuf.GeneratedMessage
             : value_;
       }
     }
+
     /**
      *
      *

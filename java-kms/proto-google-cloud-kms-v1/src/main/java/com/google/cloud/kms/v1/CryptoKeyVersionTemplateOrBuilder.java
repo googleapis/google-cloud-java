@@ -39,6 +39,7 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
+
   /**
    *
    *

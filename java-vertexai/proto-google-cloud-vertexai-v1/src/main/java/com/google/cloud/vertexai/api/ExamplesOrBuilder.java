@@ -36,6 +36,7 @@ public interface ExamplesOrBuilder
    * @return Whether the exampleGcsSource field is set.
    */
   boolean hasExampleGcsSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExamplesOrBuilder
    * @return The exampleGcsSource.
    */
   com.google.cloud.vertexai.api.Examples.ExampleGcsSource getExampleGcsSource();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ExamplesOrBuilder
    * @return Whether the nearestNeighborSearchConfig field is set.
    */
   boolean hasNearestNeighborSearchConfig();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ExamplesOrBuilder
    * @return The nearestNeighborSearchConfig.
    */
   com.google.protobuf.Value getNearestNeighborSearchConfig();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ExamplesOrBuilder
    * @return Whether the presets field is set.
    */
   boolean hasPresets();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface ExamplesOrBuilder
    * @return The presets.
    */
   com.google.cloud.vertexai.api.Presets getPresets();
+
   /**
    *
    *

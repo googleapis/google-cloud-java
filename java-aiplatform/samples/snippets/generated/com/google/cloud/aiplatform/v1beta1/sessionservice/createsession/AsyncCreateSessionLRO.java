@@ -20,7 +20,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.aiplatform.v1beta1.CreateSessionOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateSessionRequest;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
 import com.google.cloud.aiplatform.v1beta1.Session;
 import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 
@@ -39,7 +39,9 @@ public class AsyncCreateSessionLRO {
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       CreateSessionRequest request =
           CreateSessionRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(
+                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+                      .toString())
               .setSession(Session.newBuilder().build())
               .build();
       OperationFuture<Session, CreateSessionOperationMetadata> future =

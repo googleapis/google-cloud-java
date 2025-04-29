@@ -35,6 +35,7 @@ public final class DeleteNotificationSubscriptionRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.DeleteNotificationSubscriptionRequest)
     DeleteNotificationSubscriptionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteNotificationSubscriptionRequest.newBuilder() to construct.
   private DeleteNotificationSubscriptionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class DeleteNotificationSubscriptionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DeleteNotificationSubscriptionRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +308,7 @@ public final class DeleteNotificationSubscriptionRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -511,6 +515,7 @@ public final class DeleteNotificationSubscriptionRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -535,6 +540,7 @@ public final class DeleteNotificationSubscriptionRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -559,6 +565,7 @@ public final class DeleteNotificationSubscriptionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -582,6 +589,7 @@ public final class DeleteNotificationSubscriptionRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +609,7 @@ public final class DeleteNotificationSubscriptionRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

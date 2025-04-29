@@ -39,6 +39,7 @@ public interface GetDeviceSessionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

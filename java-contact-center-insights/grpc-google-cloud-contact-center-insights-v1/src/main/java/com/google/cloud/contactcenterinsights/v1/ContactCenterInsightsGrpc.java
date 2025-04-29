@@ -3653,6 +3653,19 @@ public final class ContactCenterInsightsGrpc {
     return ContactCenterInsightsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ContactCenterInsightsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ContactCenterInsightsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContactCenterInsightsBlockingV2Stub>() {
+          @java.lang.Override
+          public ContactCenterInsightsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContactCenterInsightsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ContactCenterInsightsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -6068,6 +6081,1005 @@ public final class ContactCenterInsightsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ContactCenterInsights.
+   *
+   * <pre>
+   * An API that lets users analyze and explore their business conversation data.
+   * </pre>
+   */
+  public static final class ContactCenterInsightsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ContactCenterInsightsBlockingV2Stub> {
+    private ContactCenterInsightsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ContactCenterInsightsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ContactCenterInsightsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a conversation.
+     * Note that this method does not support audio transcription or redaction.
+     * Use `conversations.upload` instead.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Conversation createConversation(
+        com.google.cloud.contactcenterinsights.v1.CreateConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a long-running conversation upload operation. This method differs
+     * from `CreateConversation` by allowing audio transcription and optional DLP
+     * redaction.
+     * </pre>
+     */
+    public com.google.longrunning.Operation uploadConversation(
+        com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a conversation.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Conversation updateConversation(
+        com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a conversation.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Conversation getConversation(
+        com.google.cloud.contactcenterinsights.v1.GetConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists conversations.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListConversationsResponse listConversations(
+        com.google.cloud.contactcenterinsights.v1.ListConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a conversation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversation(
+        com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an analysis. The long running operation is done when the analysis
+     * has completed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAnalysis(
+        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an analysis.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Analysis getAnalysis(
+        com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists analyses.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListAnalysesResponse listAnalyses(
+        com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAnalysesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an analysis.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAnalysis(
+        com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes multiple conversations in a single request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkAnalyzeConversations(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkAnalyzeConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple conversations in a single request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkDeleteConversations(
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkDeleteConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports conversations and processes them according to the user's
+     * configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation ingestConversations(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIngestConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export insights data to a destination defined in the request body.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportInsightsData(
+        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportInsightsDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an issue model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIssueModel(
+        com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue model.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueModel updateIssueModel(
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue model.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModel(
+        com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issue models.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse listIssueModels(
+        com.google.cloud.contactcenterinsights.v1.ListIssueModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIssueModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIssueModel(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployIssueModel(
+        com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployIssueModel(
+        com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports an issue model to the provided destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an issue model from a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importIssueModel(
+        com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Issue getIssue(
+        com.google.cloud.contactcenterinsights.v1.GetIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists issues.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListIssuesResponse listIssues(
+        com.google.cloud.contactcenterinsights.v1.ListIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIssuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an issue.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Issue updateIssue(
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteIssue(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an issue model's statistics.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse
+        calculateIssueModelStats(
+            com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCalculateIssueModelStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a phrase matcher.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.PhraseMatcher createPhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePhraseMatcherMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a phrase matcher.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.PhraseMatcher getPhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPhraseMatcherMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists phrase matchers.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse listPhraseMatchers(
+        com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPhraseMatchersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a phrase matcher.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePhraseMatcherMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a phrase matcher.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.PhraseMatcher updatePhraseMatcher(
+        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePhraseMatcherMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets conversation statistics.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse calculateStats(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCalculateStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets project-level settings.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Settings getSettings(
+        com.google.cloud.contactcenterinsights.v1.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates project-level settings.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Settings updateSettings(
+        com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a analysis rule.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnalysisRule createAnalysisRule(
+        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAnalysisRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a analysis rule.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnalysisRule getAnalysisRule(
+        com.google.cloud.contactcenterinsights.v1.GetAnalysisRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnalysisRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists analysis rules.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesResponse listAnalysisRules(
+        com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAnalysisRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a analysis rule.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnalysisRule updateAnalysisRule(
+        com.google.cloud.contactcenterinsights.v1.UpdateAnalysisRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAnalysisRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a analysis rule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAnalysisRule(
+        com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAnalysisRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets location-level encryption key specification.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.EncryptionSpec getEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEncryptionSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes a location-level encryption key specification. An error will
+     * result if the location has resources already created before the
+     * initialization. After the encryption specification is initialized at a
+     * location, it is immutable and all newly created resources under the
+     * location will be encrypted with the existing specification.
+     * </pre>
+     */
+    public com.google.longrunning.Operation initializeEncryptionSpec(
+        com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitializeEncryptionSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.View createView(
+        com.google.cloud.contactcenterinsights.v1.CreateViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.View getView(
+        com.google.cloud.contactcenterinsights.v1.GetViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListViewsResponse listViews(
+        com.google.cloud.contactcenterinsights.v1.ListViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.View updateView(
+        com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteView(
+        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Query metrics.
+     * </pre>
+     */
+    public com.google.longrunning.Operation queryMetrics(
+        com.google.cloud.contactcenterinsights.v1.QueryMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a QaQuestion.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaQuestion createQaQuestion(
+        com.google.cloud.contactcenterinsights.v1.CreateQaQuestionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQaQuestionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QaQuestion.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaQuestion getQaQuestion(
+        com.google.cloud.contactcenterinsights.v1.GetQaQuestionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQaQuestionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a QaQuestion.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaQuestion updateQaQuestion(
+        com.google.cloud.contactcenterinsights.v1.UpdateQaQuestionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQaQuestionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QaQuestion.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteQaQuestion(
+        com.google.cloud.contactcenterinsights.v1.DeleteQaQuestionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQaQuestionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists QaQuestions.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListQaQuestionsResponse listQaQuestions(
+        com.google.cloud.contactcenterinsights.v1.ListQaQuestionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQaQuestionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a QaScorecard.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecard createQaScorecard(
+        com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQaScorecardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QaScorecard.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecard getQaScorecard(
+        com.google.cloud.contactcenterinsights.v1.GetQaScorecardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQaScorecardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a QaScorecard.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecard updateQaScorecard(
+        com.google.cloud.contactcenterinsights.v1.UpdateQaScorecardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQaScorecardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QaScorecard.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteQaScorecard(
+        com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQaScorecardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists QaScorecards.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListQaScorecardsResponse listQaScorecards(
+        com.google.cloud.contactcenterinsights.v1.ListQaScorecardsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQaScorecardsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QaScorecardRevision.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision createQaScorecardRevision(
+        com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQaScorecardRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a QaScorecardRevision.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision getQaScorecardRevision(
+        com.google.cloud.contactcenterinsights.v1.GetQaScorecardRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQaScorecardRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fine tune one or more QaModels.
+     * </pre>
+     */
+    public com.google.longrunning.Operation tuneQaScorecardRevision(
+        com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTuneQaScorecardRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy a QaScorecardRevision.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision deployQaScorecardRevision(
+        com.google.cloud.contactcenterinsights.v1.DeployQaScorecardRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployQaScorecardRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploy a QaScorecardRevision.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision
+        undeployQaScorecardRevision(
+            com.google.cloud.contactcenterinsights.v1.UndeployQaScorecardRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployQaScorecardRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QaScorecardRevision.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteQaScorecardRevision(
+        com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQaScorecardRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all revisions under the parent QaScorecard.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsResponse
+        listQaScorecardRevisions(
+            com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQaScorecardRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create feedback label.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.FeedbackLabel createFeedbackLabel(
+        com.google.cloud.contactcenterinsights.v1.CreateFeedbackLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeedbackLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List feedback labels.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsResponse listFeedbackLabels(
+        com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeedbackLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get feedback label.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.FeedbackLabel getFeedbackLabel(
+        com.google.cloud.contactcenterinsights.v1.GetFeedbackLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeedbackLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update feedback label.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.FeedbackLabel updateFeedbackLabel(
+        com.google.cloud.contactcenterinsights.v1.UpdateFeedbackLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeedbackLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete feedback label.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFeedbackLabel(
+        com.google.cloud.contactcenterinsights.v1.DeleteFeedbackLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeedbackLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all feedback labels by project number.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsResponse
+        listAllFeedbackLabels(
+            com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAllFeedbackLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upload feedback labels in bulk.
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkUploadFeedbackLabels(
+        com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkUploadFeedbackLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Download feedback labels in bulk.
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkDownloadFeedbackLabels(
+        com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkDownloadFeedbackLabelsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ContactCenterInsights.
    *
    * <pre>
    * An API that lets users analyze and explore their business conversation data.

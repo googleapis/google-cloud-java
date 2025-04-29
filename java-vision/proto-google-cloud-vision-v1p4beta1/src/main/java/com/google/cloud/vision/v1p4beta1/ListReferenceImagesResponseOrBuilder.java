@@ -34,6 +34,7 @@ public interface ListReferenceImagesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.ReferenceImage reference_images = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.ReferenceImage> getReferenceImagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListReferenceImagesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.ReferenceImage reference_images = 1;</code>
    */
   com.google.cloud.vision.v1p4beta1.ReferenceImage getReferenceImages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListReferenceImagesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.ReferenceImage reference_images = 1;</code>
    */
   int getReferenceImagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListReferenceImagesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListReferenceImagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

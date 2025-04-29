@@ -36,6 +36,7 @@ public interface EntryLinkEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EntryLinkEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface EntryLinkEventOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

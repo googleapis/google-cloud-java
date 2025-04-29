@@ -283,7 +283,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSecondaryCluster, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSecondaryCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -366,7 +367,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSecondaryInstance, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSecondaryInstance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -387,7 +389,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateInstances, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateInstances, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -638,7 +641,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListSupportedDatabaseFlags, expected %s or %s",
+                  "Unrecognized response type %s for method ListSupportedDatabaseFlags, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSupportedDatabaseFlagsResponse.class.getName(),
                   Exception.class.getName())));
@@ -660,7 +664,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateClientCertificate, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateClientCertificate, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateClientCertificateResponse.class.getName(),
                   Exception.class.getName())));

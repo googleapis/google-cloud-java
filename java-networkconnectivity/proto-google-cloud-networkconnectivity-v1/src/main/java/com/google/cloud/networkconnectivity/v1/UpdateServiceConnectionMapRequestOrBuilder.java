@@ -41,6 +41,7 @@ public interface UpdateServiceConnectionMapRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateServiceConnectionMapRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateServiceConnectionMapRequestOrBuilder
    * @return Whether the serviceConnectionMap field is set.
    */
   boolean hasServiceConnectionMap();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateServiceConnectionMapRequestOrBuilder
    * @return The serviceConnectionMap.
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionMap getServiceConnectionMap();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateServiceConnectionMapRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

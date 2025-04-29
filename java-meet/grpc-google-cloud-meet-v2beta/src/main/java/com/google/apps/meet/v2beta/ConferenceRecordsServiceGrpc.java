@@ -640,6 +640,19 @@ public final class ConferenceRecordsServiceGrpc {
     return ConferenceRecordsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConferenceRecordsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConferenceRecordsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConferenceRecordsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ConferenceRecordsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConferenceRecordsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConferenceRecordsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1128,6 +1141,202 @@ public final class ConferenceRecordsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConferenceRecordsService.
+   *
+   * <pre>
+   * REST API for services dealing with conference records.
+   * </pre>
+   */
+  public static final class ConferenceRecordsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConferenceRecordsServiceBlockingV2Stub> {
+    private ConferenceRecordsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConferenceRecordsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConferenceRecordsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a conference record by conference ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ConferenceRecord getConferenceRecord(
+        com.google.apps.meet.v2beta.GetConferenceRecordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConferenceRecordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the conference records. By default, ordered by start time and in
+     * descending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListConferenceRecordsResponse listConferenceRecords(
+        com.google.apps.meet.v2beta.ListConferenceRecordsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConferenceRecordsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a participant by participant ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.Participant getParticipant(
+        com.google.apps.meet.v2beta.GetParticipantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetParticipantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the participants in a conference record. By default, ordered by join
+     * time and in descending order. This API supports `fields` as standard
+     * parameters like every other API. However, when the `fields` request
+     * parameter is omitted, this API defaults to `'participants/&#42;,
+     * next_page_token'`.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListParticipantsResponse listParticipants(
+        com.google.apps.meet.v2beta.ListParticipantsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListParticipantsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a participant session by participant session ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ParticipantSession getParticipantSession(
+        com.google.apps.meet.v2beta.GetParticipantSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetParticipantSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the participant sessions of a participant in a conference record. By
+     * default, ordered by join time and in descending order. This API supports
+     * `fields` as standard parameters like every other API. However, when the
+     * `fields` request parameter is omitted this API defaults to
+     * `'participantsessions/&#42;, next_page_token'`.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListParticipantSessionsResponse listParticipantSessions(
+        com.google.apps.meet.v2beta.ListParticipantSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListParticipantSessionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a recording by recording ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.Recording getRecording(
+        com.google.apps.meet.v2beta.GetRecordingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRecordingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the recording resources from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListRecordingsResponse listRecordings(
+        com.google.apps.meet.v2beta.ListRecordingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRecordingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a transcript by transcript ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.Transcript getTranscript(
+        com.google.apps.meet.v2beta.GetTranscriptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTranscriptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of transcripts from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListTranscriptsResponse listTranscripts(
+        com.google.apps.meet.v2beta.ListTranscriptsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTranscriptsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a `TranscriptEntry` resource by entry ID.
+     * Note: The transcript entries returned by the Google Meet API might not
+     * match the transcription found in the Google Docs transcript file. This can
+     * occur when the Google Docs transcript file is modified after generation.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.TranscriptEntry getTranscriptEntry(
+        com.google.apps.meet.v2beta.GetTranscriptEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTranscriptEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the structured transcript entries per transcript. By default, ordered
+     * by start time and in ascending order.
+     * Note: The transcript entries returned by the Google Meet API might not
+     * match the transcription found in the Google Docs transcript file. This can
+     * occur when the Google Docs transcript file is modified after generation.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ListTranscriptEntriesResponse listTranscriptEntries(
+        com.google.apps.meet.v2beta.ListTranscriptEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTranscriptEntriesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ConferenceRecordsService.
    *
    * <pre>
    * REST API for services dealing with conference records.

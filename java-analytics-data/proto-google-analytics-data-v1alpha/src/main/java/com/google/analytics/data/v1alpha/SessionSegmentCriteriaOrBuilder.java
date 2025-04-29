@@ -38,6 +38,7 @@ public interface SessionSegmentCriteriaOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.SessionSegmentConditionGroup>
       getAndConditionGroupsList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface SessionSegmentCriteriaOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.SessionSegmentConditionGroup getAndConditionGroups(int index);
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface SessionSegmentCriteriaOrBuilder
    * </code>
    */
   int getAndConditionGroupsCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface SessionSegmentCriteriaOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.SessionSegmentConditionGroupOrBuilder>
       getAndConditionGroupsOrBuilderList();
+
   /**
    *
    *

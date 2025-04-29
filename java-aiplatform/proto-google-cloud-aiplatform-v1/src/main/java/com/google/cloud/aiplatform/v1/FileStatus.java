@@ -33,6 +33,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FileStatus)
     FileStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FileStatus.newBuilder() to construct.
   private FileStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -242,6 +246,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -266,6 +271,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorStatus_ = "";
+
   /**
    *
    *
@@ -289,6 +295,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -481,6 +488,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -677,6 +685,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -694,6 +703,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +744,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1.FileStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.aiplatform.v1.FileStatus.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -756,6 +768,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorStatus_ = "";
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +836,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class FileStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface CreateTagHoldRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateTagHoldRequestOrBuilder
    * @return Whether the tagHold field is set.
    */
   boolean hasTagHold();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateTagHoldRequestOrBuilder
    * @return The tagHold.
    */
   com.google.cloud.resourcemanager.v3.TagHold getTagHold();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListCustomModelsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.CustomTuningModel models = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.CustomTuningModel> getModelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCustomModelsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.CustomTuningModel models = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.CustomTuningModel getModels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCustomModelsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.CustomTuningModel models = 1;</code>
    */
   int getModelsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCustomModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.CustomTuningModelOrBuilder>
       getModelsOrBuilderList();
+
   /**
    *
    *

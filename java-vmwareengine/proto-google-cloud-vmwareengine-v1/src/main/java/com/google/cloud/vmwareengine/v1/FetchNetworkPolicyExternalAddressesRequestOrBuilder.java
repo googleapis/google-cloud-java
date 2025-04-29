@@ -42,6 +42,7 @@ public interface FetchNetworkPolicyExternalAddressesRequestOrBuilder
    * @return The networkPolicy.
    */
   java.lang.String getNetworkPolicy();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface FetchNetworkPolicyExternalAddressesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

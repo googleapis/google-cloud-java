@@ -19,7 +19,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 // [START aiplatform_v1beta1_generated_SessionService_CreateSession_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1beta1.CreateSessionRequest;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
 import com.google.cloud.aiplatform.v1beta1.Session;
 import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
 import com.google.longrunning.Operation;
@@ -39,7 +39,9 @@ public class AsyncCreateSession {
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       CreateSessionRequest request =
           CreateSessionRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(
+                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+                      .toString())
               .setSession(Session.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

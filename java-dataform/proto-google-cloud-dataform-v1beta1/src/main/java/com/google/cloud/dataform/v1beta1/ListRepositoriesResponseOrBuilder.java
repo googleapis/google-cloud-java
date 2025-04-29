@@ -34,6 +34,7 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.Repository repositories = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.Repository> getRepositoriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.Repository repositories = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.Repository getRepositories(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.Repository repositories = 1;</code>
    */
   int getRepositoriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRepositoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.RepositoryOrBuilder>
       getRepositoriesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListRepositoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListRepositoriesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListRepositoriesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListRepositoriesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

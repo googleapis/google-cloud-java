@@ -41,6 +41,7 @@ public interface ListTenantsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ListTenantsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

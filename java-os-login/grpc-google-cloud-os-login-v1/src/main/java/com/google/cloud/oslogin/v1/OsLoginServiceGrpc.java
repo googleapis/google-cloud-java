@@ -375,6 +375,19 @@ public final class OsLoginServiceGrpc {
     return OsLoginServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static OsLoginServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OsLoginServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public OsLoginServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OsLoginServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return OsLoginServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -682,6 +695,123 @@ public final class OsLoginServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service OsLoginService.
+   *
+   * <pre>
+   * Cloud OS Login API
+   * The Cloud OS Login API allows you to manage users and their associated SSH
+   * public keys for logging into virtual machines on Google Cloud Platform.
+   * </pre>
+   */
+  public static final class OsLoginServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<OsLoginServiceBlockingV2Stub> {
+    private OsLoginServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected OsLoginServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new OsLoginServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an SSH public key
+     * </pre>
+     */
+    public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey createSshPublicKey(
+        com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSshPublicKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a POSIX account.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePosixAccount(
+        com.google.cloud.oslogin.v1.DeletePosixAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePosixAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an SSH public key.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSshPublicKey(
+        com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSshPublicKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the profile information used for logging in to a virtual machine
+     * on Google Compute Engine.
+     * </pre>
+     */
+    public com.google.cloud.oslogin.v1.LoginProfile getLoginProfile(
+        com.google.cloud.oslogin.v1.GetLoginProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLoginProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an SSH public key.
+     * </pre>
+     */
+    public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey(
+        com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSshPublicKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds an SSH public key and returns the profile information. Default POSIX
+     * account information is set when no username and UID exist as part of the
+     * login profile.
+     * </pre>
+     */
+    public com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse importSshPublicKey(
+        com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportSshPublicKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an SSH public key and returns the profile information. This method
+     * supports patch semantics.
+     * </pre>
+     */
+    public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey updateSshPublicKey(
+        com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSshPublicKeyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service OsLoginService.
    *
    * <pre>
    * Cloud OS Login API

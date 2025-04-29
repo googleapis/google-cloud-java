@@ -32,6 +32,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstantSnapshotResourceStatus)
     InstantSnapshotResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstantSnapshotResourceStatus.newBuilder() to construct.
   private InstantSnapshotResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int STORAGE_SIZE_BYTES_FIELD_NUMBER = 387548913;
   private long storageSizeBytes_ = 0L;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
   public boolean hasStorageSizeBytes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -259,6 +262,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -443,6 +447,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
     private int bitField0_;
 
     private long storageSizeBytes_;
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
     public boolean hasStorageSizeBytes() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -473,6 +479,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
     public long getStorageSizeBytes() {
       return storageSizeBytes_;
     }
+
     /**
      *
      *
@@ -492,6 +499,7 @@ public final class InstantSnapshotResourceStatus extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

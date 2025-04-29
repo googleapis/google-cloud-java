@@ -82,6 +82,7 @@ public enum ComputeMigrationTargetProduct implements com.google.protobuf.Protoco
    * <code>COMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED = 0;</code>
    */
   public static final int COMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum ComputeMigrationTargetProduct implements com.google.protobuf.Protoco
    * <code>COMPUTE_MIGRATION_TARGET_PRODUCT_COMPUTE_ENGINE = 1;</code>
    */
   public static final int COMPUTE_MIGRATION_TARGET_PRODUCT_COMPUTE_ENGINE_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum ComputeMigrationTargetProduct implements com.google.protobuf.Protoco
    * <code>COMPUTE_MIGRATION_TARGET_PRODUCT_VMWARE_ENGINE = 2;</code>
    */
   public static final int COMPUTE_MIGRATION_TARGET_PRODUCT_VMWARE_ENGINE_VALUE = 2;
+
   /**
    *
    *

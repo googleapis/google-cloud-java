@@ -245,6 +245,19 @@ public final class ProgramsServiceGrpc {
     return ProgramsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProgramsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProgramsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProgramsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProgramsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProgramsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProgramsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -475,6 +488,89 @@ public final class ProgramsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProgramsService.
+   *
+   * <pre>
+   * Service for program management.
+   * Programs provide a mechanism for adding functionality to merchant accounts. A
+   * typical example of this is the [Free product
+   * listings](https://support.google.com/merchants/topic/9240261?ref_topic=7257954,7259405,&amp;sjid=796648681813264022-EU)
+   * program, which enables products from a merchant's store to be shown across
+   * Google for free.
+   * This service exposes methods to retrieve a merchant's
+   * participation in all available programs, in addition to methods for
+   * explicitly enabling or disabling participation in each program.
+   * </pre>
+   */
+  public static final class ProgramsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProgramsServiceBlockingV2Stub> {
+    private ProgramsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProgramsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProgramsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified program for the account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.Program getProgram(
+        com.google.shopping.merchant.accounts.v1beta.GetProgramRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProgramMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves all programs for the account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.ListProgramsResponse listPrograms(
+        com.google.shopping.merchant.accounts.v1beta.ListProgramsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProgramsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enable participation in the specified program for the account. Executing
+     * this method requires admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.Program enableProgram(
+        com.google.shopping.merchant.accounts.v1beta.EnableProgramRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableProgramMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable participation in the specified program for the account. Executing
+     * this method requires admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.Program disableProgram(
+        com.google.shopping.merchant.accounts.v1beta.DisableProgramRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableProgramMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProgramsService.
    *
    * <pre>
    * Service for program management.

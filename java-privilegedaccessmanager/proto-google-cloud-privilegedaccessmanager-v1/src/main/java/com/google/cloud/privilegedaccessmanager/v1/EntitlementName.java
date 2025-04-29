@@ -353,7 +353,8 @@ public class EntitlementName implements ResourceName {
     private Builder(EntitlementName entitlementName) {
       Preconditions.checkArgument(
           Objects.equals(entitlementName.pathTemplate, PROJECT_LOCATION_ENTITLEMENT),
-          "toBuilder is only supported when EntitlementName has the pattern of projects/{project}/locations/{location}/entitlements/{entitlement}");
+          "toBuilder is only supported when EntitlementName has the pattern of"
+              + " projects/{project}/locations/{location}/entitlements/{entitlement}");
       this.project = entitlementName.project;
       this.location = entitlementName.location;
       this.entitlement = entitlementName.entitlement;

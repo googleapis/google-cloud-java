@@ -63,6 +63,7 @@ public enum Resource implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

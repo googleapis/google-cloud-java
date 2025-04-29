@@ -39,6 +39,7 @@ public interface RunStreamRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface RunStreamRequestOrBuilder
    * @return Whether the cdcStrategy field is set.
    */
   boolean hasCdcStrategy();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface RunStreamRequestOrBuilder
    * @return The cdcStrategy.
    */
   com.google.cloud.datastream.v1.CdcStrategy getCdcStrategy();
+
   /**
    *
    *

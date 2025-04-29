@@ -338,6 +338,19 @@ public final class ServiceHealthGrpc {
     return ServiceHealthStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServiceHealthBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServiceHealthBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServiceHealthBlockingV2Stub>() {
+          @java.lang.Override
+          public ServiceHealthBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServiceHealthBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServiceHealthBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -607,6 +620,108 @@ public final class ServiceHealthGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServiceHealth.
+   *
+   * <pre>
+   * Request service health events relevant to your Google Cloud project.
+   * </pre>
+   */
+  public static final class ServiceHealthBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServiceHealthBlockingV2Stub> {
+    private ServiceHealthBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServiceHealthBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServiceHealthBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists events under a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.servicehealth.v1.ListEventsResponse listEvents(
+        com.google.cloud.servicehealth.v1.ListEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a resource containing information about an event.
+     * </pre>
+     */
+    public com.google.cloud.servicehealth.v1.Event getEvent(
+        com.google.cloud.servicehealth.v1.GetEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists organization events under a given organization and location.
+     * </pre>
+     */
+    public com.google.cloud.servicehealth.v1.ListOrganizationEventsResponse listOrganizationEvents(
+        com.google.cloud.servicehealth.v1.ListOrganizationEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrganizationEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a resource containing information about an event affecting an
+     * organization .
+     * </pre>
+     */
+    public com.google.cloud.servicehealth.v1.OrganizationEvent getOrganizationEvent(
+        com.google.cloud.servicehealth.v1.GetOrganizationEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOrganizationEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists assets impacted by organization events under a given organization and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.servicehealth.v1.ListOrganizationImpactsResponse
+        listOrganizationImpacts(
+            com.google.cloud.servicehealth.v1.ListOrganizationImpactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrganizationImpactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a resource containing information about impact to an asset under
+     * an organization affected by a service health event.
+     * </pre>
+     */
+    public com.google.cloud.servicehealth.v1.OrganizationImpact getOrganizationImpact(
+        com.google.cloud.servicehealth.v1.GetOrganizationImpactRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOrganizationImpactMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServiceHealth.
    *
    * <pre>
    * Request service health events relevant to your Google Cloud project.

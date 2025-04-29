@@ -72,6 +72,7 @@ public enum GatewayType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GATEWAY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int GATEWAY_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum GatewayType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GATEWAY = 1;</code>
    */
   public static final int GATEWAY_VALUE = 1;
+
   /**
    *
    *

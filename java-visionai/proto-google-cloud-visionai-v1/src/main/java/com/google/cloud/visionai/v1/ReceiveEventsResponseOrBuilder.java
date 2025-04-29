@@ -36,6 +36,7 @@ public interface ReceiveEventsResponseOrBuilder
    * @return Whether the eventUpdate field is set.
    */
   boolean hasEventUpdate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReceiveEventsResponseOrBuilder
    * @return The eventUpdate.
    */
   com.google.cloud.visionai.v1.EventUpdate getEventUpdate();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ReceiveEventsResponseOrBuilder
    * @return Whether the control field is set.
    */
   boolean hasControl();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ReceiveEventsResponseOrBuilder
    * @return The control.
    */
   com.google.cloud.visionai.v1.ReceiveEventsControlResponse getControl();
+
   /**
    *
    *

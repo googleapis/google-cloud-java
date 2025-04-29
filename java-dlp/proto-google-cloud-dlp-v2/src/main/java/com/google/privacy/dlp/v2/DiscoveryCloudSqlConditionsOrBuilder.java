@@ -40,6 +40,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseEngine>
       getDatabaseEnginesList();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    * @return The count of databaseEngines.
    */
   int getDatabaseEnginesCount();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    */
   com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseEngine getDatabaseEngines(
       int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    * @return A list containing the enum numeric values on the wire for databaseEngines.
    */
   java.util.List<java.lang.Integer> getDatabaseEnginesValueList();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseResourceType>
       getTypesList();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    * @return The types at the given index.
    */
   com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseResourceType getTypes(int index);
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface DiscoveryCloudSqlConditionsOrBuilder
    * @return A list containing the enum numeric values on the wire for types.
    */
   java.util.List<java.lang.Integer> getTypesValueList();
+
   /**
    *
    *

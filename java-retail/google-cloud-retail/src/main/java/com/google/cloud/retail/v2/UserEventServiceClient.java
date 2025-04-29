@@ -81,7 +81,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CollectUserEvent</td>
- *      <td><p> Writes a single user event from the browser. This uses a GET request to due to browser restriction of POST-ing to a 3rd party domain.
+ *      <td><p> Writes a single user event from the browser.
+ * <p>  For larger user event payload over 16 KB, the POST method should be used instead, otherwise a 400 Bad Request error is returned.
  * <p>  This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users should not call this method directly.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -335,8 +336,10 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Writes a single user event from the browser. This uses a GET request to due to browser
-   * restriction of POST-ing to a 3rd party domain.
+   * Writes a single user event from the browser.
+   *
+   * <p>For larger user event payload over 16 KB, the POST method should be used instead, otherwise
+   * a 400 Bad Request error is returned.
    *
    * <p>This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users
    * should not call this method directly.
@@ -371,8 +374,10 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Writes a single user event from the browser. This uses a GET request to due to browser
-   * restriction of POST-ing to a 3rd party domain.
+   * Writes a single user event from the browser.
+   *
+   * <p>For larger user event payload over 16 KB, the POST method should be used instead, otherwise
+   * a 400 Bad Request error is returned.
    *
    * <p>This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users
    * should not call this method directly.

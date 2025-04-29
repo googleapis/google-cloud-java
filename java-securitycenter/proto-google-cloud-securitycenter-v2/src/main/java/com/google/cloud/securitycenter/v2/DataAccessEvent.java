@@ -34,6 +34,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.DataAccessEvent)
     DataAccessEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataAccessEvent.newBuilder() to construct.
   private DataAccessEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
      * <code>OPERATION_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
      * <code>READ = 1;</code>
      */
     public static final int READ_VALUE = 1;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
      * <code>MOVE = 2;</code>
      */
     public static final int MOVE_VALUE = 2;
+
     /**
      *
      *
@@ -252,6 +256,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventId_ = "";
+
   /**
    *
    *
@@ -275,6 +280,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object principalEmail_ = "";
+
   /**
    *
    *
@@ -327,6 +334,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int OPERATION_FIELD_NUMBER = 3;
   private int operation_ = 0;
+
   /**
    *
    *
@@ -369,6 +378,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
   public int getOperationValue() {
     return operation_;
   }
+
   /**
    *
    *
@@ -391,6 +401,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
 
   public static final int EVENT_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp eventTime_;
+
   /**
    *
    *
@@ -406,6 +417,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -421,6 +433,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
+
   /**
    *
    *
@@ -630,6 +643,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -872,6 +886,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object eventId_ = "";
+
     /**
      *
      *
@@ -894,6 +909,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -916,6 +932,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -937,6 +954,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +997,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object principalEmail_ = "";
+
     /**
      *
      *
@@ -1001,6 +1021,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1045,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1068,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1087,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1113,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     }
 
     private int operation_ = 0;
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     public int getOperationValue() {
       return operation_;
     }
+
     /**
      *
      *
@@ -1122,6 +1148,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1168,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.securitycenter.v2.DataAccessEvent.Operation.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1163,6 +1191,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1216,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
+
     /**
      *
      *
@@ -1201,6 +1231,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
         return eventTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1241,6 +1273,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1293,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1321,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1341,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1356,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1336,6 +1373,7 @@ public final class DataAccessEvent extends com.google.protobuf.GeneratedMessageV
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface TaskGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TaskGroupOrBuilder
    * @return Whether the taskSpec field is set.
    */
   boolean hasTaskSpec();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface TaskGroupOrBuilder
    * @return The taskSpec.
    */
   com.google.cloud.batch.v1alpha.TaskSpec getTaskSpec();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface TaskGroupOrBuilder
    * @return The enum numeric value on the wire for schedulingPolicy.
    */
   int getSchedulingPolicyValue();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface TaskGroupOrBuilder
    * @return Whether the allocationPolicy field is set.
    */
   boolean hasAllocationPolicy();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface TaskGroupOrBuilder
    * @return The allocationPolicy.
    */
   com.google.cloud.batch.v1alpha.AllocationPolicy getAllocationPolicy();
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public interface TaskGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -221,9 +228,11 @@ public interface TaskGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface TaskGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface TaskGroupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public interface TaskGroupOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
    */
   java.util.List<com.google.cloud.batch.v1alpha.Environment> getTaskEnvironmentsList();
+
   /**
    *
    *
@@ -310,6 +322,7 @@ public interface TaskGroupOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
    */
   com.google.cloud.batch.v1alpha.Environment getTaskEnvironments(int index);
+
   /**
    *
    *
@@ -328,6 +341,7 @@ public interface TaskGroupOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.Environment task_environments = 9;</code>
    */
   int getTaskEnvironmentsCount();
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public interface TaskGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1alpha.EnvironmentOrBuilder>
       getTaskEnvironmentsOrBuilderList();
+
   /**
    *
    *
@@ -448,6 +463,7 @@ public interface TaskGroupOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
+
   /**
    *
    *
@@ -469,6 +485,7 @@ public interface TaskGroupOrBuilder
    * @return The serviceAccount.
    */
   com.google.cloud.batch.v1alpha.ServiceAccount getServiceAccount();
+
   /**
    *
    *

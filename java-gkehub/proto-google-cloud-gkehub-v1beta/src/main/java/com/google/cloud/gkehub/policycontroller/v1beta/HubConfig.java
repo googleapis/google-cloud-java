@@ -33,6 +33,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.HubConfig)
     HubConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HubConfig.newBuilder() to construct.
   private HubConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,6 +154,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALL_SPEC_UNSPECIFIED = 0;</code>
      */
     public static final int INSTALL_SPEC_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -163,6 +165,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALL_SPEC_NOT_INSTALLED = 1;</code>
      */
     public static final int INSTALL_SPEC_NOT_INSTALLED_VALUE = 1;
+
     /**
      *
      *
@@ -173,6 +176,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALL_SPEC_ENABLED = 2;</code>
      */
     public static final int INSTALL_SPEC_ENABLED_VALUE = 2;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALL_SPEC_SUSPENDED = 3;</code>
      */
     public static final int INSTALL_SPEC_SUSPENDED_VALUE = 3;
+
     /**
      *
      *
@@ -289,6 +294,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int INSTALL_SPEC_FIELD_NUMBER = 1;
   private int installSpec_ = 0;
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public int getInstallSpecValue() {
     return installSpec_;
   }
+
   /**
    *
    *
@@ -337,6 +344,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUDIT_INTERVAL_SECONDS_FIELD_NUMBER = 2;
   private long auditIntervalSeconds_ = 0L;
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuditIntervalSeconds() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -375,6 +384,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exemptableNamespaces_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -390,6 +400,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExemptableNamespacesList() {
     return exemptableNamespaces_;
   }
+
   /**
    *
    *
@@ -405,6 +416,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public int getExemptableNamespacesCount() {
     return exemptableNamespaces_.size();
   }
+
   /**
    *
    *
@@ -421,6 +433,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExemptableNamespaces(int index) {
     return exemptableNamespaces_.get(index);
   }
+
   /**
    *
    *
@@ -440,6 +453,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REFERENTIAL_RULES_ENABLED_FIELD_NUMBER = 4;
   private boolean referentialRulesEnabled_ = false;
+
   /**
    *
    *
@@ -459,6 +473,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_DENIES_ENABLED_FIELD_NUMBER = 5;
   private boolean logDeniesEnabled_ = false;
+
   /**
    *
    *
@@ -477,6 +492,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MUTATION_ENABLED_FIELD_NUMBER = 6;
   private boolean mutationEnabled_ = false;
+
   /**
    *
    *
@@ -495,6 +511,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MONITORING_FIELD_NUMBER = 8;
   private com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig monitoring_;
+
   /**
    *
    *
@@ -511,6 +528,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMonitoring() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -529,6 +547,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig.getDefaultInstance()
         : monitoring_;
   }
+
   /**
    *
    *
@@ -549,6 +568,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_CONTENT_FIELD_NUMBER = 9;
   private com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentSpec policyContent_;
+
   /**
    *
    *
@@ -566,6 +586,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolicyContent() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -585,6 +606,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentSpec.getDefaultInstance()
         : policyContent_;
   }
+
   /**
    *
    *
@@ -606,6 +628,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSTRAINT_VIOLATION_LIMIT_FIELD_NUMBER = 10;
   private long constraintViolationLimit_ = 0L;
+
   /**
    *
    *
@@ -622,6 +645,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConstraintViolationLimit() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -680,6 +704,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
   public int getDeploymentConfigsCount() {
     return internalGetDeploymentConfigs().getMap().size();
   }
+
   /**
    *
    *
@@ -699,6 +724,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDeploymentConfigs().getMap().containsKey(key);
   }
+
   /** Use {@link #getDeploymentConfigsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -708,6 +734,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       getDeploymentConfigs() {
     return getDeploymentConfigsMap();
   }
+
   /**
    *
    *
@@ -727,6 +754,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       getDeploymentConfigsMap() {
     return internalGetDeploymentConfigs().getMap();
   }
+
   /**
    *
    *
@@ -756,6 +784,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         map = internalGetDeploymentConfigs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1075,6 +1104,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1440,6 +1470,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int installSpec_ = 0;
+
     /**
      *
      *
@@ -1460,6 +1491,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public int getInstallSpecValue() {
       return installSpec_;
     }
+
     /**
      *
      *
@@ -1483,6 +1515,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1541,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gkehub.policycontroller.v1beta.HubConfig.InstallSpec.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1535,6 +1569,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1594,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long auditIntervalSeconds_;
+
     /**
      *
      *
@@ -1575,6 +1611,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuditIntervalSeconds() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1591,6 +1628,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public long getAuditIntervalSeconds() {
       return auditIntervalSeconds_;
     }
+
     /**
      *
      *
@@ -1611,6 +1649,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1678,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1655,6 +1695,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       exemptableNamespaces_.makeImmutable();
       return exemptableNamespaces_;
     }
+
     /**
      *
      *
@@ -1670,6 +1711,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public int getExemptableNamespacesCount() {
       return exemptableNamespaces_.size();
     }
+
     /**
      *
      *
@@ -1686,6 +1728,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExemptableNamespaces(int index) {
       return exemptableNamespaces_.get(index);
     }
+
     /**
      *
      *
@@ -1702,6 +1745,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExemptableNamespacesBytes(int index) {
       return exemptableNamespaces_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1726,6 +1770,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1794,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1815,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1835,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1862,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean referentialRulesEnabled_;
+
     /**
      *
      *
@@ -1830,6 +1879,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getReferentialRulesEnabled() {
       return referentialRulesEnabled_;
     }
+
     /**
      *
      *
@@ -1850,6 +1900,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1921,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean logDeniesEnabled_;
+
     /**
      *
      *
@@ -1885,6 +1937,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getLogDeniesEnabled() {
       return logDeniesEnabled_;
     }
+
     /**
      *
      *
@@ -1904,6 +1957,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1977,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean mutationEnabled_;
+
     /**
      *
      *
@@ -1938,6 +1993,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getMutationEnabled() {
       return mutationEnabled_;
     }
+
     /**
      *
      *
@@ -1957,6 +2013,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2038,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfigOrBuilder>
         monitoringBuilder_;
+
     /**
      *
      *
@@ -1996,6 +2054,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonitoring() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2017,6 +2076,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         return monitoringBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2041,6 +2101,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2123,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2093,6 +2155,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2176,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2129,6 +2193,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMonitoringFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2149,6 +2214,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
             : monitoring_;
       }
     }
+
     /**
      *
      *
@@ -2182,6 +2248,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentSpec.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentSpecOrBuilder>
         policyContentBuilder_;
+
     /**
      *
      *
@@ -2198,6 +2265,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolicyContent() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2220,6 +2288,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         return policyContentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2245,6 +2314,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2267,6 +2337,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2370,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2320,6 +2392,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2337,6 +2410,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPolicyContentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2358,6 +2432,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
             : policyContent_;
       }
     }
+
     /**
      *
      *
@@ -2387,6 +2462,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long constraintViolationLimit_;
+
     /**
      *
      *
@@ -2403,6 +2479,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConstraintViolationLimit() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2419,6 +2496,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public long getConstraintViolationLimit() {
       return constraintViolationLimit_;
     }
+
     /**
      *
      *
@@ -2439,6 +2517,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2487,7 +2566,8 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DeploymentConfigsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final DeploymentConfigsConverter deploymentConfigsConverter =
         new DeploymentConfigsConverter();
@@ -2534,6 +2614,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
     public int getDeploymentConfigsCount() {
       return internalGetDeploymentConfigs().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2553,6 +2634,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDeploymentConfigs().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getDeploymentConfigsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2562,6 +2644,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         getDeploymentConfigs() {
       return getDeploymentConfigsMap();
     }
+
     /**
      *
      *
@@ -2581,6 +2664,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
         getDeploymentConfigsMap() {
       return internalGetDeploymentConfigs().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2611,6 +2695,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableDeploymentConfigs().ensureBuilderMap();
       return map.containsKey(key) ? deploymentConfigsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2645,6 +2730,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDeploymentConfigs().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2664,6 +2750,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDeploymentConfigs().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2673,6 +2760,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return internalGetMutableDeploymentConfigs().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2698,6 +2786,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -2727,6 +2816,7 @@ public final class HubConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *

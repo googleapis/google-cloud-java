@@ -33,6 +33,7 @@ public final class StreamingObjectTrackingConfig extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig)
     StreamingObjectTrackingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingObjectTrackingConfig.newBuilder() to construct.
   private StreamingObjectTrackingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,6 +221,7 @@ public final class StreamingObjectTrackingConfig extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

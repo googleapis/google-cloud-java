@@ -33,6 +33,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.ListReleaseConfigsResponse)
     ListReleaseConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListReleaseConfigsResponse.newBuilder() to construct.
   private ListReleaseConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.ReleaseConfig> releaseConfigs_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.dataform.v1beta1.ReleaseConfig> getReleaseConfigsList() {
     return releaseConfigs_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       getReleaseConfigsOrBuilderList() {
     return releaseConfigs_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   public int getReleaseConfigsCount() {
     return releaseConfigs_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   public com.google.cloud.dataform.v1beta1.ReleaseConfig getReleaseConfigs(int index) {
     return releaseConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -441,6 +453,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -745,6 +758,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return releaseConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return releaseConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return releaseConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +926,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +987,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +1001,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         int index) {
       return getReleaseConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return releaseConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1037,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(releaseConfigs_);
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       return getReleaseConfigsFieldBuilder()
           .addBuilder(com.google.cloud.dataform.v1beta1.ReleaseConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1037,6 +1066,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       return getReleaseConfigsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataform.v1beta1.ReleaseConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1072,6 +1102,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1095,6 +1126,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1150,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1173,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1192,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1226,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1206,6 +1242,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1220,6 +1257,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1235,6 +1273,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1250,6 +1289,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1273,6 +1313,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1336,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1356,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1375,7 @@ public final class ListReleaseConfigsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

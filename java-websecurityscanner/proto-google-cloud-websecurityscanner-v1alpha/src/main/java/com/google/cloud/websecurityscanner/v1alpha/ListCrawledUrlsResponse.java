@@ -33,6 +33,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse)
     ListCrawledUrlsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCrawledUrlsResponse.newBuilder() to construct.
   private ListCrawledUrlsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1alpha.CrawledUrl> crawledUrls_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       getCrawledUrlsList() {
     return crawledUrls_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       getCrawledUrlsOrBuilderList() {
     return crawledUrls_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
   public int getCrawledUrlsCount() {
     return crawledUrls_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
   public com.google.cloud.websecurityscanner.v1alpha.CrawledUrl getCrawledUrls(int index) {
     return crawledUrls_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return crawledUrlsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return crawledUrlsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return crawledUrlsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +868,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +902,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         int index) {
       return getCrawledUrlsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return crawledUrlsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -915,6 +938,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(crawledUrls_);
       }
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       return getCrawledUrlsFieldBuilder()
           .addBuilder(com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -943,6 +968,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -998,6 +1025,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1049,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1072,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1091,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

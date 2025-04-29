@@ -33,6 +33,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.EditAtom)
     EditAtomOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EditAtom.newBuilder() to construct.
   private EditAtom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList inputs_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getInputsList() {
     return inputs_;
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   public int getInputsCount() {
     return inputs_.size();
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getInputs(int index) {
     return inputs_.get(index);
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_OFFSET_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration endTimeOffset_;
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : endTimeOffset_;
   }
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_OFFSET_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration startTimeOffset_;
+
   /**
    *
    *
@@ -260,6 +271,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTimeOffset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +290,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : startTimeOffset_;
   }
+
   /**
    *
    *
@@ -498,6 +511,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -753,6 +767,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -799,6 +815,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +857,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       inputs_.makeImmutable();
       return inputs_;
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public int getInputsCount() {
       return inputs_.size();
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getInputs(int index) {
       return inputs_.get(index);
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getInputsBytes(int index) {
       return inputs_.getByteString(index);
     }
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1007,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1048,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1080,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         endTimeOffsetBuilder_;
+
     /**
      *
      *
@@ -1068,6 +1097,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTimeOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1090,6 +1120,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
         return endTimeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1145,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1167,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1197,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1219,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1236,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1221,6 +1257,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
             : endTimeOffset_;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1292,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         startTimeOffsetBuilder_;
+
     /**
      *
      *
@@ -1270,6 +1308,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTimeOffset() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1291,6 +1330,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
         return startTimeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1354,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1375,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1404,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1425,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1441,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1416,6 +1461,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
             : startTimeOffset_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectAttachmentList)
     InterconnectAttachmentListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectAttachmentList.newBuilder() to construct.
   private InterconnectAttachmentList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectAttachment> items_;
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.compute.v1.InterconnectAttachment> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.InterconnectAttachment getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +356,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -405,6 +423,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -681,6 +702,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1006,6 +1028,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1020,6 +1043,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1089,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1111,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1129,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1186,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1174,6 +1203,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1220,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1243,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1264,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1287,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1310,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1331,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1352,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1373,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1393,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1413,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1426,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.InterconnectAttachment.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1403,6 +1444,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1462,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1476,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InterconnectAttachment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1447,6 +1491,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.compute.v1.InterconnectAttachment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1479,6 +1524,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1493,6 +1539,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1515,6 +1562,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1537,6 +1585,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1558,6 +1607,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1625,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1650,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1613,6 +1665,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1635,6 +1688,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1657,6 +1711,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1678,6 +1733,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1695,6 +1751,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1719,6 +1776,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1733,6 +1791,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1755,6 +1814,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1777,6 +1837,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1798,6 +1859,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1877,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1844,6 +1907,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1858,6 +1922,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1878,6 +1943,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1900,6 +1966,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1986,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +2014,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2034,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2049,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1997,6 +2068,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
             : warning_;
       }
     }
+
     /**
      *
      *

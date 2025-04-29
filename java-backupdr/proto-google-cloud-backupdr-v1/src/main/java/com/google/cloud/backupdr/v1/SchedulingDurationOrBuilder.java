@@ -36,6 +36,7 @@ public interface SchedulingDurationOrBuilder
    * @return Whether the seconds field is set.
    */
   boolean hasSeconds();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SchedulingDurationOrBuilder
    * @return Whether the nanos field is set.
    */
   boolean hasNanos();
+
   /**
    *
    *

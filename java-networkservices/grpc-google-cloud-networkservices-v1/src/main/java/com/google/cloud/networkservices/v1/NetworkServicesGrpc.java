@@ -1863,6 +1863,19 @@ public final class NetworkServicesGrpc {
     return NetworkServicesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NetworkServicesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServicesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NetworkServicesBlockingV2Stub>() {
+          @java.lang.Override
+          public NetworkServicesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NetworkServicesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NetworkServicesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3120,6 +3133,534 @@ public final class NetworkServicesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NetworkServices.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
+  public static final class NetworkServicesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NetworkServicesBlockingV2Stub> {
+    private NetworkServicesBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NetworkServicesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NetworkServicesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EndpointPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse listEndpointPolicies(
+        com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single EndpointPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.EndpointPolicy getEndpointPolicy(
+        com.google.cloud.networkservices.v1.GetEndpointPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new EndpointPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEndpointPolicy(
+        com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single EndpointPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEndpointPolicy(
+        com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single EndpointPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEndpointPolicy(
+        com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Gateways in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListGatewaysResponse listGateways(
+        com.google.cloud.networkservices.v1.ListGatewaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGatewaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Gateway.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.Gateway getGateway(
+        com.google.cloud.networkservices.v1.GetGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Gateway in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGateway(
+        com.google.cloud.networkservices.v1.CreateGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Gateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGateway(
+        com.google.cloud.networkservices.v1.UpdateGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Gateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGateway(
+        com.google.cloud.networkservices.v1.DeleteGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists GrpcRoutes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListGrpcRoutesResponse listGrpcRoutes(
+        com.google.cloud.networkservices.v1.ListGrpcRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGrpcRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single GrpcRoute.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.GrpcRoute getGrpcRoute(
+        com.google.cloud.networkservices.v1.GetGrpcRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGrpcRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new GrpcRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGrpcRoute(
+        com.google.cloud.networkservices.v1.CreateGrpcRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGrpcRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single GrpcRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGrpcRoute(
+        com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGrpcRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single GrpcRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGrpcRoute(
+        com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGrpcRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists HttpRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListHttpRoutesResponse listHttpRoutes(
+        com.google.cloud.networkservices.v1.ListHttpRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHttpRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single HttpRoute.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.HttpRoute getHttpRoute(
+        com.google.cloud.networkservices.v1.GetHttpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetHttpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new HttpRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createHttpRoute(
+        com.google.cloud.networkservices.v1.CreateHttpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateHttpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single HttpRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateHttpRoute(
+        com.google.cloud.networkservices.v1.UpdateHttpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateHttpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single HttpRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHttpRoute(
+        com.google.cloud.networkservices.v1.DeleteHttpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteHttpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TcpRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListTcpRoutesResponse listTcpRoutes(
+        com.google.cloud.networkservices.v1.ListTcpRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTcpRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TcpRoute.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.TcpRoute getTcpRoute(
+        com.google.cloud.networkservices.v1.GetTcpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTcpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TcpRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTcpRoute(
+        com.google.cloud.networkservices.v1.CreateTcpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTcpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single TcpRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTcpRoute(
+        com.google.cloud.networkservices.v1.UpdateTcpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTcpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TcpRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTcpRoute(
+        com.google.cloud.networkservices.v1.DeleteTcpRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTcpRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TlsRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListTlsRoutesResponse listTlsRoutes(
+        com.google.cloud.networkservices.v1.ListTlsRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTlsRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TlsRoute.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.TlsRoute getTlsRoute(
+        com.google.cloud.networkservices.v1.GetTlsRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTlsRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TlsRoute in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTlsRoute(
+        com.google.cloud.networkservices.v1.CreateTlsRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTlsRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single TlsRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTlsRoute(
+        com.google.cloud.networkservices.v1.UpdateTlsRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTlsRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TlsRoute.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTlsRoute(
+        com.google.cloud.networkservices.v1.DeleteTlsRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTlsRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceBinding in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListServiceBindingsResponse listServiceBindings(
+        com.google.cloud.networkservices.v1.ListServiceBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceBinding.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ServiceBinding getServiceBinding(
+        com.google.cloud.networkservices.v1.GetServiceBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceBinding in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceBinding(
+        com.google.cloud.networkservices.v1.CreateServiceBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceBinding.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceBinding(
+        com.google.cloud.networkservices.v1.DeleteServiceBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Meshes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListMeshesResponse listMeshes(
+        com.google.cloud.networkservices.v1.ListMeshesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMeshesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Mesh.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.Mesh getMesh(
+        com.google.cloud.networkservices.v1.GetMeshRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMeshMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Mesh in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMesh(
+        com.google.cloud.networkservices.v1.CreateMeshRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMeshMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Mesh.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMesh(
+        com.google.cloud.networkservices.v1.UpdateMeshRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMeshMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Mesh.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMesh(
+        com.google.cloud.networkservices.v1.DeleteMeshRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMeshMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NetworkServices.
    *
    * <pre>
    * Service describing handlers for resources.

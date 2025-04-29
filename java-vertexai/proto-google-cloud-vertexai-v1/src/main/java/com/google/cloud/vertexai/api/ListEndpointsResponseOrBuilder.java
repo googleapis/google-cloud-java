@@ -34,6 +34,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Endpoint endpoints = 1;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.Endpoint> getEndpointsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Endpoint endpoints = 1;</code>
    */
   com.google.cloud.vertexai.api.Endpoint getEndpoints(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Endpoint endpoints = 1;</code>
    */
   int getEndpointsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEndpointsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.EndpointOrBuilder>
       getEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListEndpointsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -54,6 +54,7 @@ public interface ServerMetadataOrBuilder
    * @return Whether the ingestTime field is set.
    */
   boolean hasIngestTime();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ServerMetadataOrBuilder
    * @return The ingestTime.
    */
   com.google.protobuf.Timestamp getIngestTime();
+
   /**
    *
    *

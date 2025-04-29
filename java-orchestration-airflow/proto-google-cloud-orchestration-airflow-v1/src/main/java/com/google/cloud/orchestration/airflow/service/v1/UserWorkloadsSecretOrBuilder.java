@@ -37,6 +37,7 @@ public interface UserWorkloadsSecretOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UserWorkloadsSecretOrBuilder
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getDataCount();
+
   /**
    *
    *
@@ -91,9 +93,11 @@ public interface UserWorkloadsSecretOrBuilder
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsData(java.lang.String key);
+
   /** Use {@link #getDataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getData();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface UserWorkloadsSecretOrBuilder
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDataMap();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface UserWorkloadsSecretOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

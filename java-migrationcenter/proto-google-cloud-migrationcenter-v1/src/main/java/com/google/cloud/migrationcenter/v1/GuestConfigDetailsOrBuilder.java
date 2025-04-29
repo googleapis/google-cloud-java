@@ -36,6 +36,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return The issue.
    */
   java.lang.String getIssue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return Whether the fstab field is set.
    */
   boolean hasFstab();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return The fstab.
    */
   com.google.cloud.migrationcenter.v1.FstabEntryList getFstab();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return Whether the hosts field is set.
    */
   boolean hasHosts();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return The hosts.
    */
   com.google.cloud.migrationcenter.v1.HostsEntryList getHosts();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return Whether the nfsExports field is set.
    */
   boolean hasNfsExports();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return The nfsExports.
    */
   com.google.cloud.migrationcenter.v1.NfsExportList getNfsExports();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface GuestConfigDetailsOrBuilder
    * @return The enum numeric value on the wire for selinuxMode.
    */
   int getSelinuxModeValue();
+
   /**
    *
    *

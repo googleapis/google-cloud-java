@@ -87,7 +87,8 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMonitoredResourceDescriptors, expected %s or %s",
+                  "Unrecognized response type %s for method ListMonitoredResourceDescriptors,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMonitoredResourceDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
@@ -109,7 +110,8 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetMonitoredResourceDescriptor, expected %s or %s",
+                  "Unrecognized response type %s for method GetMonitoredResourceDescriptor,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MonitoredResourceDescriptor.class.getName(),
                   Exception.class.getName())));
@@ -131,7 +133,8 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMetricDescriptors, expected %s or %s",
+                  "Unrecognized response type %s for method ListMetricDescriptors, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMetricDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
@@ -173,7 +176,8 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateMetricDescriptor, expected %s or %s",
+                  "Unrecognized response type %s for method CreateMetricDescriptor, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   MetricDescriptor.class.getName(),
                   Exception.class.getName())));
@@ -194,7 +198,8 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteMetricDescriptor, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteMetricDescriptor, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -257,7 +262,8 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceTimeSeries, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceTimeSeries, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

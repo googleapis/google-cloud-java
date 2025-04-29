@@ -38,6 +38,7 @@ public interface ClusterMaintenanceScheduleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ClusterMaintenanceScheduleOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ClusterMaintenanceScheduleOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ClusterMaintenanceScheduleOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface VertexDatasetRegexOrBuilder
    * @return The projectIdRegex.
    */
   java.lang.String getProjectIdRegex();
+
   /**
    *
    *

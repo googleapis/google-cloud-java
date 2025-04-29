@@ -39,6 +39,7 @@ public interface CreateClientTlsPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateClientTlsPolicyRequestOrBuilder
    * @return The clientTlsPolicyId.
    */
   java.lang.String getClientTlsPolicyId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CreateClientTlsPolicyRequestOrBuilder
    * @return Whether the clientTlsPolicy field is set.
    */
   boolean hasClientTlsPolicy();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateClientTlsPolicyRequestOrBuilder
    * @return The clientTlsPolicy.
    */
   com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy getClientTlsPolicy();
+
   /**
    *
    *

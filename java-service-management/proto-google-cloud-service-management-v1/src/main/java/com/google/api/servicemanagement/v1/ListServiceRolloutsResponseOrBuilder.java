@@ -34,6 +34,7 @@ public interface ListServiceRolloutsResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.Rollout rollouts = 1;</code>
    */
   java.util.List<com.google.api.servicemanagement.v1.Rollout> getRolloutsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServiceRolloutsResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.Rollout rollouts = 1;</code>
    */
   com.google.api.servicemanagement.v1.Rollout getRollouts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServiceRolloutsResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.Rollout rollouts = 1;</code>
    */
   int getRolloutsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListServiceRolloutsResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicemanagement.v1.RolloutOrBuilder>
       getRolloutsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListServiceRolloutsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

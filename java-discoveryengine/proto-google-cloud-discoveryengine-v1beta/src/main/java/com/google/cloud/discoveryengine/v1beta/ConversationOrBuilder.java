@@ -39,6 +39,7 @@ public interface ConversationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ConversationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ConversationOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.ConversationMessage messages = 4;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.ConversationMessage> getMessagesList();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.ConversationMessage messages = 4;</code>
    */
   com.google.cloud.discoveryengine.v1beta.ConversationMessage getMessages(int index);
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface ConversationOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.ConversationMessage messages = 4;</code>
    */
   int getMessagesCount();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface ConversationOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.ConversationMessageOrBuilder>
       getMessagesOrBuilderList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface ConversationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface ConversationOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface ConversationOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface ConversationOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

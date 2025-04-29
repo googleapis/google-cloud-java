@@ -33,6 +33,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceCdnPolicy)
     BackendServiceCdnPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceCdnPolicy.newBuilder() to construct.
   private BackendServiceCdnPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * <code>UNDEFINED_CACHE_MODE = 0;</code>
      */
     public static final int UNDEFINED_CACHE_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * <code>CACHE_ALL_STATIC = 355027945;</code>
      */
     public static final int CACHE_ALL_STATIC_VALUE = 355027945;
+
     /**
      *
      *
@@ -151,8 +154,10 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * <code>FORCE_CACHE_ALL = 486026928;</code>
      */
     public static final int FORCE_CACHE_ALL_VALUE = 486026928;
+
     /** <code>INVALID_CACHE_MODE = 381295560;</code> */
     public static final int INVALID_CACHE_MODE_VALUE = 381295560;
+
     /**
      *
      *
@@ -260,6 +265,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   private java.util.List<
           com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
       bypassCacheOnRequestHeaders_;
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       getBypassCacheOnRequestHeadersList() {
     return bypassCacheOnRequestHeaders_;
   }
+
   /**
    *
    *
@@ -296,6 +303,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       getBypassCacheOnRequestHeadersOrBuilderList() {
     return bypassCacheOnRequestHeaders_;
   }
+
   /**
    *
    *
@@ -311,6 +319,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public int getBypassCacheOnRequestHeadersCount() {
     return bypassCacheOnRequestHeaders_.size();
   }
+
   /**
    *
    *
@@ -327,6 +336,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       getBypassCacheOnRequestHeaders(int index) {
     return bypassCacheOnRequestHeaders_.get(index);
   }
+
   /**
    *
    *
@@ -346,6 +356,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int CACHE_KEY_POLICY_FIELD_NUMBER = 159263727;
   private com.google.cloud.compute.v1.CacheKeyPolicy cacheKeyPolicy_;
+
   /**
    *
    *
@@ -361,6 +372,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasCacheKeyPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -378,6 +390,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.CacheKeyPolicy.getDefaultInstance()
         : cacheKeyPolicy_;
   }
+
   /**
    *
    *
@@ -398,6 +411,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cacheMode_ = "";
+
   /**
    *
    *
@@ -414,6 +428,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasCacheMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -438,6 +453,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -465,6 +481,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int CLIENT_TTL_FIELD_NUMBER = 29034360;
   private int clientTtl_ = 0;
+
   /**
    *
    *
@@ -480,6 +497,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasClientTtl() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -498,11 +516,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int DEFAULT_TTL_FIELD_NUMBER = 100253422;
   private int defaultTtl_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
    * <code>optional int32 default_ttl = 100253422;</code>
@@ -513,11 +532,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasDefaultTtl() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
    * <code>optional int32 default_ttl = 100253422;</code>
@@ -531,6 +551,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int MAX_TTL_FIELD_NUMBER = 307578001;
   private int maxTtl_ = 0;
+
   /**
    *
    *
@@ -546,6 +567,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasMaxTtl() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -564,6 +586,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int NEGATIVE_CACHING_FIELD_NUMBER = 336110005;
   private boolean negativeCaching_ = false;
+
   /**
    *
    *
@@ -579,6 +602,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasNegativeCaching() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -600,6 +624,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
       negativeCachingPolicy_;
+
   /**
    *
    *
@@ -616,6 +641,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       getNegativeCachingPolicyList() {
     return negativeCachingPolicy_;
   }
+
   /**
    *
    *
@@ -634,6 +660,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       getNegativeCachingPolicyOrBuilderList() {
     return negativeCachingPolicy_;
   }
+
   /**
    *
    *
@@ -649,6 +676,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public int getNegativeCachingPolicyCount() {
     return negativeCachingPolicy_.size();
   }
+
   /**
    *
    *
@@ -665,6 +693,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       getNegativeCachingPolicy(int index) {
     return negativeCachingPolicy_.get(index);
   }
+
   /**
    *
    *
@@ -684,6 +713,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int REQUEST_COALESCING_FIELD_NUMBER = 532808276;
   private boolean requestCoalescing_ = false;
+
   /**
    *
    *
@@ -699,6 +729,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasRequestCoalescing() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -717,11 +748,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int SERVE_WHILE_STALE_FIELD_NUMBER = 236682203;
   private int serveWhileStale_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
    * </pre>
    *
    * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -732,11 +764,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasServeWhileStale() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
    * </pre>
    *
    * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -750,6 +783,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
   private long signedUrlCacheMaxAgeSec_ = 0L;
+
   /**
    *
    *
@@ -765,6 +799,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public boolean hasSignedUrlCacheMaxAgeSec() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -786,6 +821,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList signedUrlKeyNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -800,6 +836,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getSignedUrlKeyNamesList() {
     return signedUrlKeyNames_;
   }
+
   /**
    *
    *
@@ -814,6 +851,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public int getSignedUrlKeyNamesCount() {
     return signedUrlKeyNames_.size();
   }
+
   /**
    *
    *
@@ -829,6 +867,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   public java.lang.String getSignedUrlKeyNames(int index) {
     return signedUrlKeyNames_.get(index);
   }
+
   /**
    *
    *
@@ -1168,6 +1207,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1666,6 +1706,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return bypassCacheOnRequestHeadersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1725,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return bypassCacheOnRequestHeadersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1703,6 +1745,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return bypassCacheOnRequestHeadersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1772,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1753,6 +1797,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1823,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1850,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1827,6 +1874,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1899,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1926,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1898,6 +1948,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1970,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1986,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         getBypassCacheOnRequestHeadersBuilder(int index) {
       return getBypassCacheOnRequestHeadersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1953,6 +2006,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return bypassCacheOnRequestHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1975,6 +2029,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(bypassCacheOnRequestHeaders_);
       }
     }
+
     /**
      *
      *
@@ -1993,6 +2048,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2012,6 +2068,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2057,6 +2114,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.CacheKeyPolicy.Builder,
             com.google.cloud.compute.v1.CacheKeyPolicyOrBuilder>
         cacheKeyPolicyBuilder_;
+
     /**
      *
      *
@@ -2071,6 +2129,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasCacheKeyPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2091,6 +2150,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return cacheKeyPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2113,6 +2173,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2194,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2160,6 +2222,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2242,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2257,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return getCacheKeyPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2211,6 +2276,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
             : cacheKeyPolicy_;
       }
     }
+
     /**
      *
      *
@@ -2238,6 +2304,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private java.lang.Object cacheMode_ = "";
+
     /**
      *
      *
@@ -2253,6 +2320,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasCacheMode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2276,6 +2344,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2299,6 +2368,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2321,6 +2391,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2410,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2364,6 +2436,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private int clientTtl_;
+
     /**
      *
      *
@@ -2379,6 +2452,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasClientTtl() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2394,6 +2468,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public int getClientTtl() {
       return clientTtl_;
     }
+
     /**
      *
      *
@@ -2413,6 +2488,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2432,11 +2508,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private int defaultTtl_;
+
     /**
      *
      *
      * <pre>
-     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
      * <code>optional int32 default_ttl = 100253422;</code>
@@ -2447,11 +2524,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasDefaultTtl() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
      * <code>optional int32 default_ttl = 100253422;</code>
@@ -2462,11 +2540,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public int getDefaultTtl() {
       return defaultTtl_;
     }
+
     /**
      *
      *
      * <pre>
-     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
      * <code>optional int32 default_ttl = 100253422;</code>
@@ -2481,11 +2560,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
      * <code>optional int32 default_ttl = 100253422;</code>
@@ -2500,6 +2580,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private int maxTtl_;
+
     /**
      *
      *
@@ -2515,6 +2596,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasMaxTtl() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2530,6 +2612,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public int getMaxTtl() {
       return maxTtl_;
     }
+
     /**
      *
      *
@@ -2549,6 +2632,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2652,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private boolean negativeCaching_;
+
     /**
      *
      *
@@ -2583,6 +2668,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasNegativeCaching() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2598,6 +2684,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean getNegativeCaching() {
       return negativeCaching_;
     }
+
     /**
      *
      *
@@ -2617,6 +2704,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2761,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return negativeCachingPolicyBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2691,6 +2780,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return negativeCachingPolicyBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2710,6 +2800,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return negativeCachingPolicyBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2735,6 +2826,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2759,6 +2851,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2784,6 +2877,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2809,6 +2903,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2832,6 +2927,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2856,6 +2952,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2880,6 +2977,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2901,6 +2999,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2922,6 +3021,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2937,6 +3037,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         getNegativeCachingPolicyBuilder(int index) {
       return getNegativeCachingPolicyFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2956,6 +3057,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return negativeCachingPolicyBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2977,6 +3079,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(negativeCachingPolicy_);
       }
     }
+
     /**
      *
      *
@@ -2995,6 +3098,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3014,6 +3118,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3052,6 +3157,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private boolean requestCoalescing_;
+
     /**
      *
      *
@@ -3067,6 +3173,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasRequestCoalescing() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3082,6 +3189,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean getRequestCoalescing() {
       return requestCoalescing_;
     }
+
     /**
      *
      *
@@ -3101,6 +3209,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3120,11 +3229,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private int serveWhileStale_;
+
     /**
      *
      *
      * <pre>
-     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
      * </pre>
      *
      * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -3135,11 +3245,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasServeWhileStale() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
      * </pre>
      *
      * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -3150,11 +3261,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public int getServeWhileStale() {
       return serveWhileStale_;
     }
+
     /**
      *
      *
      * <pre>
-     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
      * </pre>
      *
      * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -3169,11 +3281,12 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
      * </pre>
      *
      * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -3188,6 +3301,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
 
     private long signedUrlCacheMaxAgeSec_;
+
     /**
      *
      *
@@ -3203,6 +3317,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public boolean hasSignedUrlCacheMaxAgeSec() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3218,6 +3333,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public long getSignedUrlCacheMaxAgeSec() {
       return signedUrlCacheMaxAgeSec_;
     }
+
     /**
      *
      *
@@ -3237,6 +3353,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3264,6 +3381,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -3279,6 +3397,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       signedUrlKeyNames_.makeImmutable();
       return signedUrlKeyNames_;
     }
+
     /**
      *
      *
@@ -3293,6 +3412,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public int getSignedUrlKeyNamesCount() {
       return signedUrlKeyNames_.size();
     }
+
     /**
      *
      *
@@ -3308,6 +3428,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public java.lang.String getSignedUrlKeyNames(int index) {
       return signedUrlKeyNames_.get(index);
     }
+
     /**
      *
      *
@@ -3323,6 +3444,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getSignedUrlKeyNamesBytes(int index) {
       return signedUrlKeyNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3346,6 +3468,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3368,6 +3491,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3387,6 +3511,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3405,6 +3530,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

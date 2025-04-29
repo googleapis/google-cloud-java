@@ -37,6 +37,7 @@ public interface ResourceRecordOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ResourceRecordOrBuilder
    * @return The rrdata.
    */
   java.lang.String getRrdata();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ResourceRecordOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

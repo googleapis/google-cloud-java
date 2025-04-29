@@ -39,6 +39,7 @@ public interface ApplicationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ApplicationOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface ApplicationOrBuilder
    * <code>repeated .google.appengine.v1.UrlDispatchRule dispatch_rules = 3;</code>
    */
   java.util.List<com.google.appengine.v1.UrlDispatchRule> getDispatchRulesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ApplicationOrBuilder
    * <code>repeated .google.appengine.v1.UrlDispatchRule dispatch_rules = 3;</code>
    */
   com.google.appengine.v1.UrlDispatchRule getDispatchRules(int index);
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ApplicationOrBuilder
    * <code>repeated .google.appengine.v1.UrlDispatchRule dispatch_rules = 3;</code>
    */
   int getDispatchRulesCount();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface ApplicationOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.UrlDispatchRuleOrBuilder>
       getDispatchRulesOrBuilderList();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface ApplicationOrBuilder
    * @return The authDomain.
    */
   java.lang.String getAuthDomain();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface ApplicationOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public interface ApplicationOrBuilder
    * @return The codeBucket.
    */
   java.lang.String getCodeBucket();
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface ApplicationOrBuilder
    * @return Whether the defaultCookieExpiration field is set.
    */
   boolean hasDefaultCookieExpiration();
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public interface ApplicationOrBuilder
    * @return The defaultCookieExpiration.
    */
   com.google.protobuf.Duration getDefaultCookieExpiration();
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public interface ApplicationOrBuilder
    * @return The enum numeric value on the wire for servingStatus.
    */
   int getServingStatusValue();
+
   /**
    *
    *
@@ -325,6 +337,7 @@ public interface ApplicationOrBuilder
    * @return The defaultHostname.
    */
   java.lang.String getDefaultHostname();
+
   /**
    *
    *
@@ -355,6 +368,7 @@ public interface ApplicationOrBuilder
    * @return The defaultBucket.
    */
   java.lang.String getDefaultBucket();
+
   /**
    *
    *
@@ -385,6 +399,7 @@ public interface ApplicationOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -406,12 +421,14 @@ public interface ApplicationOrBuilder
    * @return Whether the iap field is set.
    */
   boolean hasIap();
+
   /**
    * <code>.google.appengine.v1.Application.IdentityAwareProxy iap = 14;</code>
    *
    * @return The iap.
    */
   com.google.appengine.v1.Application.IdentityAwareProxy getIap();
+
   /** <code>.google.appengine.v1.Application.IdentityAwareProxy iap = 14;</code> */
   com.google.appengine.v1.Application.IdentityAwareProxyOrBuilder getIapOrBuilder();
 
@@ -428,6 +445,7 @@ public interface ApplicationOrBuilder
    * @return The gcrDomain.
    */
   java.lang.String getGcrDomain();
+
   /**
    *
    *
@@ -455,6 +473,7 @@ public interface ApplicationOrBuilder
    * @return The enum numeric value on the wire for databaseType.
    */
   int getDatabaseTypeValue();
+
   /**
    *
    *
@@ -481,6 +500,7 @@ public interface ApplicationOrBuilder
    * @return Whether the featureSettings field is set.
    */
   boolean hasFeatureSettings();
+
   /**
    *
    *
@@ -493,6 +513,7 @@ public interface ApplicationOrBuilder
    * @return The featureSettings.
    */
   com.google.appengine.v1.Application.FeatureSettings getFeatureSettings();
+
   /**
    *
    *

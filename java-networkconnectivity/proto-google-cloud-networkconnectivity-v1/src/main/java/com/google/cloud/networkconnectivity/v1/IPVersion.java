@@ -74,6 +74,7 @@ public enum IPVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IP_VERSION_UNSPECIFIED = 0;</code>
    */
   public static final int IP_VERSION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum IPVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IPV4 = 1;</code>
    */
   public static final int IPV4_VALUE = 1;
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the bigQuerySource field is set.
    */
   boolean hasBigQuerySource();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface FeatureViewOrBuilder
    * @return The bigQuerySource.
    */
   com.google.cloud.aiplatform.v1.FeatureView.BigQuerySource getBigQuerySource();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the featureRegistrySource field is set.
    */
   boolean hasFeatureRegistrySource();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface FeatureViewOrBuilder
    * @return The featureRegistrySource.
    */
   com.google.cloud.aiplatform.v1.FeatureView.FeatureRegistrySource getFeatureRegistrySource();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the vertexRagSource field is set.
    */
   boolean hasVertexRagSource();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface FeatureViewOrBuilder
    * @return The vertexRagSource.
    */
   com.google.cloud.aiplatform.v1.FeatureView.VertexRagSource getVertexRagSource();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface FeatureViewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface FeatureViewOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public interface FeatureViewOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -270,6 +281,7 @@ public interface FeatureViewOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public interface FeatureViewOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -324,9 +337,11 @@ public interface FeatureViewOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -347,6 +362,7 @@ public interface FeatureViewOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -371,6 +387,7 @@ public interface FeatureViewOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -406,6 +423,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the syncConfig field is set.
    */
   boolean hasSyncConfig();
+
   /**
    *
    *
@@ -420,6 +438,7 @@ public interface FeatureViewOrBuilder
    * @return The syncConfig.
    */
   com.google.cloud.aiplatform.v1.FeatureView.SyncConfig getSyncConfig();
+
   /**
    *
    *
@@ -450,6 +469,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the indexConfig field is set.
    */
   boolean hasIndexConfig();
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public interface FeatureViewOrBuilder
    * @return The indexConfig.
    */
   com.google.cloud.aiplatform.v1.FeatureView.IndexConfig getIndexConfig();
+
   /**
    *
    *
@@ -498,6 +519,7 @@ public interface FeatureViewOrBuilder
    * @return Whether the optimizedConfig field is set.
    */
   boolean hasOptimizedConfig();
+
   /**
    *
    *
@@ -513,6 +535,7 @@ public interface FeatureViewOrBuilder
    * @return The optimizedConfig.
    */
   com.google.cloud.aiplatform.v1.FeatureView.OptimizedConfig getOptimizedConfig();
+
   /**
    *
    *
@@ -546,6 +569,7 @@ public interface FeatureViewOrBuilder
    * @return The enum numeric value on the wire for serviceAgentType.
    */
   int getServiceAgentTypeValue();
+
   /**
    *
    *
@@ -580,6 +604,7 @@ public interface FeatureViewOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *

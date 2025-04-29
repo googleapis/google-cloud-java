@@ -36,6 +36,7 @@ public interface SubpropertyEventFilterConditionOrBuilder
    * @return Whether the nullFilter field is set.
    */
   boolean hasNullFilter();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SubpropertyEventFilterConditionOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SubpropertyEventFilterConditionOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilterCondition.StringFilter getStringFilter();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface SubpropertyEventFilterConditionOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
+
   /**
    *
    *

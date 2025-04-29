@@ -39,6 +39,7 @@ public interface DeleteCloudVmClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface DeleteCloudVmClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

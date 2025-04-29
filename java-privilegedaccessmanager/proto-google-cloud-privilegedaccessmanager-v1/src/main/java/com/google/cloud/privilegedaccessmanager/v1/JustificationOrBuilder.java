@@ -37,6 +37,7 @@ public interface JustificationOrBuilder
    * @return Whether the unstructuredJustification field is set.
    */
   boolean hasUnstructuredJustification();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface JustificationOrBuilder
    * @return The unstructuredJustification.
    */
   java.lang.String getUnstructuredJustification();
+
   /**
    *
    *

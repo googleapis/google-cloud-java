@@ -28,7 +28,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -36,11 +38,14 @@ public interface SecretOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -53,7 +58,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -65,11 +71,13 @@ public interface SecretOrBuilder
    * @return Whether the replication field is set.
    */
   boolean hasReplication();
+
   /**
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -81,11 +89,13 @@ public interface SecretOrBuilder
    * @return The replication.
    */
   com.google.cloud.secretmanager.v1beta1.Replication getReplication();
+
   /**
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -100,7 +110,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -109,11 +120,13 @@ public interface SecretOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -122,11 +135,13 @@ public interface SecretOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -154,6 +169,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -174,9 +190,11 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -197,6 +215,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -221,6 +240,7 @@ public interface SecretOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.GetServiceIdentityResponse)
     GetServiceIdentityResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetServiceIdentityResponse.newBuilder() to construct.
   private GetServiceIdentityResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
      * <code>IDENTITY_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int IDENTITY_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -205,6 +207,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int IDENTITY_FIELD_NUMBER = 1;
   private com.google.api.serviceusage.v1beta1.ServiceIdentity identity_;
+
   /**
    *
    *
@@ -222,6 +225,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
   public boolean hasIdentity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -241,6 +245,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
         ? com.google.api.serviceusage.v1beta1.ServiceIdentity.getDefaultInstance()
         : identity_;
   }
+
   /**
    *
    *
@@ -261,6 +266,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -479,6 +486,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +706,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
             com.google.api.serviceusage.v1beta1.ServiceIdentity.Builder,
             com.google.api.serviceusage.v1beta1.ServiceIdentityOrBuilder>
         identityBuilder_;
+
     /**
      *
      *
@@ -714,6 +723,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
     public boolean hasIdentity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -736,6 +746,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
         return identityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -760,6 +771,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +794,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +825,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +847,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +864,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       onChanged();
       return getIdentityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -869,6 +885,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
             : identity_;
       }
     }
+
     /**
      *
      *
@@ -898,6 +915,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -914,6 +932,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -933,6 +952,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -978,6 +999,7 @@ public final class GetServiceIdentityResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse)
     BatchCreateMessagesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateMessagesResponse.newBuilder() to construct.
   private BatchCreateMessagesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Message> messages_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Message> getMessagesList() {
     return messages_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       getMessagesOrBuilderList() {
     return messages_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
   public int getMessagesCount() {
     return messages_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
   public com.google.cloud.dialogflow.v2beta1.Message getMessages(int index) {
     return messages_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +302,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +568,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
         return messagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
         return messagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
         return messagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +646,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +713,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +734,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +755,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +775,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +795,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +808,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
     public com.google.cloud.dialogflow.v2beta1.Message.Builder getMessagesBuilder(int index) {
       return getMessagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -805,6 +825,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
         return messagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -822,6 +843,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(messages_);
       }
     }
+
     /**
      *
      *
@@ -835,6 +857,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       return getMessagesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.Message.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -848,6 +871,7 @@ public final class BatchCreateMessagesResponse extends com.google.protobuf.Gener
       return getMessagesFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.Message.getDefaultInstance());
     }
+
     /**
      *
      *

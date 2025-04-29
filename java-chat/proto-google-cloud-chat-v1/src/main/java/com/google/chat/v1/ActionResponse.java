@@ -33,6 +33,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.ActionResponse)
     ActionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ActionResponse.newBuilder() to construct.
   private ActionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -160,6 +161,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -170,6 +172,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>NEW_MESSAGE = 1;</code>
      */
     public static final int NEW_MESSAGE_VALUE = 1;
+
     /**
      *
      *
@@ -181,6 +184,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_MESSAGE = 2;</code>
      */
     public static final int UPDATE_MESSAGE_VALUE = 2;
+
     /**
      *
      *
@@ -193,6 +197,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_USER_MESSAGE_CARDS = 6;</code>
      */
     public static final int UPDATE_USER_MESSAGE_CARDS_VALUE = 6;
+
     /**
      *
      *
@@ -203,6 +208,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>REQUEST_CONFIG = 3;</code>
      */
     public static final int REQUEST_CONFIG_VALUE = 3;
+
     /**
      *
      *
@@ -214,6 +220,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>DIALOG = 4;</code>
      */
     public static final int DIALOG_VALUE = 4;
+
     /**
      *
      *
@@ -331,6 +338,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.apps.card.v1.SelectionInput.SelectionItem items = 1;</code>
      */
     java.util.List<com.google.apps.card.v1.SelectionInput.SelectionItem> getItemsList();
+
     /**
      *
      *
@@ -341,6 +349,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.apps.card.v1.SelectionInput.SelectionItem items = 1;</code>
      */
     com.google.apps.card.v1.SelectionInput.SelectionItem getItems(int index);
+
     /**
      *
      *
@@ -351,6 +360,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.apps.card.v1.SelectionInput.SelectionItem items = 1;</code>
      */
     int getItemsCount();
+
     /**
      *
      *
@@ -362,6 +372,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.apps.card.v1.SelectionInput.SelectionItemOrBuilder>
         getItemsOrBuilderList();
+
     /**
      *
      *
@@ -373,6 +384,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.apps.card.v1.SelectionInput.SelectionItemOrBuilder getItemsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -387,6 +399,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.ActionResponse.SelectionItems)
       SelectionItemsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SelectionItems.newBuilder() to construct.
     private SelectionItems(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -421,6 +434,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.apps.card.v1.SelectionInput.SelectionItem> items_;
+
     /**
      *
      *
@@ -434,6 +448,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.apps.card.v1.SelectionInput.SelectionItem> getItemsList() {
       return items_;
     }
+
     /**
      *
      *
@@ -448,6 +463,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         getItemsOrBuilderList() {
       return items_;
     }
+
     /**
      *
      *
@@ -461,6 +477,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public int getItemsCount() {
       return items_.size();
     }
+
     /**
      *
      *
@@ -474,6 +491,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.card.v1.SelectionInput.SelectionItem getItems(int index) {
       return items_.get(index);
     }
+
     /**
      *
      *
@@ -651,6 +669,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -917,6 +936,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return itemsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -933,6 +953,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return itemsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -949,6 +970,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return itemsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -972,6 +994,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -992,6 +1015,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1014,6 +1038,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1037,6 +1062,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1057,6 +1083,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1077,6 +1104,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1098,6 +1126,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1117,6 +1146,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1136,6 +1166,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1149,6 +1180,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getItemsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1166,6 +1198,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return itemsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1183,6 +1216,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(items_);
         }
       }
+
       /**
        *
        *
@@ -1196,6 +1230,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         return getItemsFieldBuilder()
             .addBuilder(com.google.apps.card.v1.SelectionInput.SelectionItem.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1211,6 +1246,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.apps.card.v1.SelectionInput.SelectionItem.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1323,6 +1359,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the suggestions field is set.
      */
     boolean hasSuggestions();
+
     /**
      *
      *
@@ -1335,6 +1372,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * @return The suggestions.
      */
     com.google.chat.v1.ActionResponse.SelectionItems getSuggestions();
+
     /**
      *
      *
@@ -1359,6 +1397,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      * @return The widget.
      */
     java.lang.String getWidget();
+
     /**
      *
      *
@@ -1375,6 +1414,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
 
     com.google.chat.v1.ActionResponse.UpdatedWidget.UpdatedWidgetCase getUpdatedWidgetCase();
   }
+
   /**
    *
    *
@@ -1390,6 +1430,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.ActionResponse.UpdatedWidget)
       UpdatedWidgetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UpdatedWidget.newBuilder() to construct.
     private UpdatedWidget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1436,6 +1477,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       private UpdatedWidgetCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1467,6 +1509,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUGGESTIONS_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1482,6 +1525,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSuggestions() {
       return updatedWidgetCase_ == 1;
     }
+
     /**
      *
      *
@@ -1500,6 +1544,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.chat.v1.ActionResponse.SelectionItems.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1521,6 +1566,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object widget_ = "";
+
     /**
      *
      *
@@ -1545,6 +1591,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1754,6 +1801,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1991,6 +2039,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.ActionResponse.SelectionItems.Builder,
               com.google.chat.v1.ActionResponse.SelectionItemsOrBuilder>
           suggestionsBuilder_;
+
       /**
        *
        *
@@ -2006,6 +2055,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSuggestions() {
         return updatedWidgetCase_ == 1;
       }
+
       /**
        *
        *
@@ -2031,6 +2081,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.ActionResponse.SelectionItems.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2053,6 +2104,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         updatedWidgetCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2073,6 +2125,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         updatedWidgetCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2106,6 +2159,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         updatedWidgetCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2131,6 +2185,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2143,6 +2198,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.chat.v1.ActionResponse.SelectionItems.Builder getSuggestionsBuilder() {
         return getSuggestionsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2163,6 +2219,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return com.google.chat.v1.ActionResponse.SelectionItems.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2197,6 +2254,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object widget_ = "";
+
       /**
        *
        *
@@ -2220,6 +2278,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2243,6 +2302,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2265,6 +2325,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2283,6 +2344,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2374,6 +2436,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -2391,6 +2454,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -2415,6 +2479,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object url_ = "";
+
   /**
    *
    *
@@ -2439,6 +2504,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2466,6 +2532,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIALOG_ACTION_FIELD_NUMBER = 3;
   private com.google.chat.v1.DialogAction dialogAction_;
+
   /**
    *
    *
@@ -2485,6 +2552,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDialogAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2506,6 +2574,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.chat.v1.DialogAction.getDefaultInstance()
         : dialogAction_;
   }
+
   /**
    *
    *
@@ -2528,6 +2597,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATED_WIDGET_FIELD_NUMBER = 4;
   private com.google.chat.v1.ActionResponse.UpdatedWidget updatedWidget_;
+
   /**
    *
    *
@@ -2545,6 +2615,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdatedWidget() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2564,6 +2635,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.chat.v1.ActionResponse.UpdatedWidget.getDefaultInstance()
         : updatedWidget_;
   }
+
   /**
    *
    *
@@ -2776,6 +2848,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3021,6 +3094,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -3038,6 +3112,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -3058,6 +3133,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3077,6 +3153,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.ActionResponse.ResponseType.forNumber(type_);
       return result == null ? com.google.chat.v1.ActionResponse.ResponseType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3100,6 +3177,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3121,6 +3199,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object url_ = "";
+
     /**
      *
      *
@@ -3144,6 +3223,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3167,6 +3247,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3189,6 +3270,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3207,6 +3289,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3237,6 +3320,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.DialogAction.Builder,
             com.google.chat.v1.DialogActionOrBuilder>
         dialogActionBuilder_;
+
     /**
      *
      *
@@ -3255,6 +3339,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDialogAction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3279,6 +3364,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         return dialogActionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3305,6 +3391,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3328,6 +3415,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3359,6 +3447,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3382,6 +3471,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3400,6 +3490,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDialogActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3422,6 +3513,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
             : dialogAction_;
       }
     }
+
     /**
      *
      *
@@ -3458,6 +3550,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.ActionResponse.UpdatedWidget.Builder,
             com.google.chat.v1.ActionResponse.UpdatedWidgetOrBuilder>
         updatedWidgetBuilder_;
+
     /**
      *
      *
@@ -3474,6 +3567,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdatedWidget() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3496,6 +3590,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
         return updatedWidgetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3520,6 +3615,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3542,6 +3638,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3572,6 +3669,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3593,6 +3691,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3609,6 +3708,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdatedWidgetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3629,6 +3729,7 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
             : updatedWidget_;
       }
     }
+
     /**
      *
      *

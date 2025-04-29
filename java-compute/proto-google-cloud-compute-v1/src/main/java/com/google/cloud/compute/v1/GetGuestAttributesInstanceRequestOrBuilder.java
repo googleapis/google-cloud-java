@@ -36,6 +36,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return Whether the queryPath field is set.
    */
   boolean hasQueryPath();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return The queryPath.
    */
   java.lang.String getQueryPath();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return Whether the variableKey field is set.
    */
   boolean hasVariableKey();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return The variableKey.
    */
   java.lang.String getVariableKey();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

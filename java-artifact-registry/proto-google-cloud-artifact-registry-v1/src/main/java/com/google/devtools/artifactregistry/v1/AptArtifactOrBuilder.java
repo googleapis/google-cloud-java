@@ -36,6 +36,7 @@ public interface AptArtifactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AptArtifactOrBuilder
    * @return The packageName.
    */
   java.lang.String getPackageName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface AptArtifactOrBuilder
    * @return The enum numeric value on the wire for packageType.
    */
   int getPackageTypeValue();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface AptArtifactOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface AptArtifactOrBuilder
    * @return The component.
    */
   java.lang.String getComponent();
+
   /**
    *
    *

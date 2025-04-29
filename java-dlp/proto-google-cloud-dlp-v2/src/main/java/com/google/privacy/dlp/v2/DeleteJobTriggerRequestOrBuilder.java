@@ -39,6 +39,7 @@ public interface DeleteJobTriggerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

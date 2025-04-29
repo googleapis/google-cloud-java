@@ -34,6 +34,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.AlloyDbConnectionProfile)
     AlloyDbConnectionProfileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AlloyDbConnectionProfile.newBuilder() to construct.
   private AlloyDbConnectionProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
 
   public static final int SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.clouddms.v1.AlloyDbSettings settings_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
   public boolean hasSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
         ? com.google.cloud.clouddms.v1.AlloyDbSettings.getDefaultInstance()
         : settings_;
   }
+
   /**
    *
    *
@@ -348,6 +354,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
             com.google.cloud.clouddms.v1.AlloyDbSettings.Builder,
             com.google.cloud.clouddms.v1.AlloyDbSettingsOrBuilder>
         settingsBuilder_;
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
     public boolean hasSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
         return settingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -740,6 +755,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +778,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
       onChanged();
       return getSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
             : settings_;
       }
     }
+
     /**
      *
      *

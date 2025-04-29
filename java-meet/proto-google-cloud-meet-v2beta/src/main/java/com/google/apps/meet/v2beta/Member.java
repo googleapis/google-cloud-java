@@ -34,6 +34,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.Member)
     MemberOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Member.newBuilder() to construct.
   private Member(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
      * <code>ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int ROLE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -214,6 +216,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -238,6 +241,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -267,6 +271,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
+
   /**
    *
    *
@@ -290,6 +295,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -316,6 +322,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLE_FIELD_NUMBER = 3;
   private int role_ = 0;
+
   /**
    *
    *
@@ -331,6 +338,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
   public int getRoleValue() {
     return role_;
   }
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object user_ = "";
+
   /**
    *
    *
@@ -379,6 +388,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -590,6 +600,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -816,6 +827,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -839,6 +851,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +875,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -884,6 +898,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +917,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +943,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object email_ = "";
+
     /**
      *
      *
@@ -949,6 +966,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +989,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1011,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1054,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int role_ = 0;
+
     /**
      *
      *
@@ -1048,6 +1070,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     public int getRoleValue() {
       return role_;
     }
+
     /**
      *
      *
@@ -1066,6 +1089,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1107,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
           com.google.apps.meet.v2beta.Member.Role.forNumber(role_);
       return result == null ? com.google.apps.meet.v2beta.Member.Role.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1149,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object user_ = "";
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1201,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1197,6 +1226,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1247,7 @@ public final class Member extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface SearchDataItemsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.DataItemView data_item_views = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.DataItemView> getDataItemViewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchDataItemsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.DataItemView data_item_views = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.DataItemView getDataItemViews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchDataItemsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.DataItemView data_item_views = 1;</code>
    */
   int getDataItemViewsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchDataItemsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.DataItemViewOrBuilder>
       getDataItemViewsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface SearchDataItemsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

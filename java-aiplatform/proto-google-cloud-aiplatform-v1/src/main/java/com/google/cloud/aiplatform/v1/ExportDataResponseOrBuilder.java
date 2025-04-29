@@ -39,6 +39,7 @@ public interface ExportDataResponseOrBuilder
    * @return A list containing the exportedFiles.
    */
   java.util.List<java.lang.String> getExportedFilesList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ExportDataResponseOrBuilder
    * @return The count of exportedFiles.
    */
   int getExportedFilesCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface ExportDataResponseOrBuilder
    * @return The exportedFiles at the given index.
    */
   java.lang.String getExportedFiles(int index);
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ExportDataResponseOrBuilder
    * @return Whether the dataStats field is set.
    */
   boolean hasDataStats();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ExportDataResponseOrBuilder
    * @return The dataStats.
    */
   com.google.cloud.aiplatform.v1.Model.DataStats getDataStats();
+
   /**
    *
    *

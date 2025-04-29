@@ -39,6 +39,7 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.automl.v1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface InputConfigOrBuilder
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   int getParamsCount();
+
   /**
    *
    *
@@ -108,9 +111,11 @@ public interface InputConfigOrBuilder
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   boolean containsParams(java.lang.String key);
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParams();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface InputConfigOrBuilder
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParamsMap();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface InputConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

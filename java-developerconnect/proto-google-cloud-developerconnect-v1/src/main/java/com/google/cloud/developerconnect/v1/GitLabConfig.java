@@ -33,6 +33,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.GitLabConfig)
     GitLabConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GitLabConfig.newBuilder() to construct.
   private GitLabConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webhookSecretSecretVersion_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 2;
   private com.google.cloud.developerconnect.v1.UserCredential readAuthorizerCredential_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadAuthorizerCredential() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.developerconnect.v1.UserCredential.getDefaultInstance()
         : readAuthorizerCredential_;
   }
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 3;
   private com.google.cloud.developerconnect.v1.UserCredential authorizerCredential_;
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuthorizerCredential() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.developerconnect.v1.UserCredential.getDefaultInstance()
         : authorizerCredential_;
   }
+
   /**
    *
    *
@@ -447,6 +456,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +697,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object webhookSecretSecretVersion_ = "";
+
     /**
      *
      *
@@ -713,6 +724,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.developerconnect.v1.UserCredential.Builder,
             com.google.cloud.developerconnect.v1.UserCredentialOrBuilder>
         readAuthorizerCredentialBuilder_;
+
     /**
      *
      *
@@ -837,6 +853,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadAuthorizerCredential() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
         return readAuthorizerCredentialBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReadAuthorizerCredentialFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
             : readAuthorizerCredential_;
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.developerconnect.v1.UserCredential.Builder,
             com.google.cloud.developerconnect.v1.UserCredentialOrBuilder>
         authorizerCredentialBuilder_;
+
     /**
      *
      *
@@ -1073,6 +1098,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthorizerCredential() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1098,6 +1124,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
         return authorizerCredentialBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1179,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1214,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuthorizerCredentialFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1253,6 +1285,7 @@ public final class GitLabConfig extends com.google.protobuf.GeneratedMessageV3
             : authorizerCredential_;
       }
     }
+
     /**
      *
      *

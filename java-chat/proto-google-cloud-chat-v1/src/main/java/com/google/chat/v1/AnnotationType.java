@@ -92,6 +92,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ANNOTATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ANNOTATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>USER_MENTION = 1;</code>
    */
   public static final int USER_MENTION_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SLASH_COMMAND = 2;</code>
    */
   public static final int SLASH_COMMAND_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum AnnotationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RICH_LINK = 3;</code>
    */
   public static final int RICH_LINK_VALUE = 3;
+
   /**
    *
    *

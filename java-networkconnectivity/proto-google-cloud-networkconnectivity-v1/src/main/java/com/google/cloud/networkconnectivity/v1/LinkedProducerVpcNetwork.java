@@ -25,6 +25,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork)
     LinkedProducerVpcNetworkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LinkedProducerVpcNetwork.newBuilder() to construct.
   private LinkedProducerVpcNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceConsumerVpcSpoke_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peering_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object producerNetwork_ = "";
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -289,6 +298,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludeExportRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getExcludeExportRangesList() {
     return excludeExportRanges_;
   }
+
   /**
    *
    *
@@ -319,6 +330,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public int getExcludeExportRangesCount() {
     return excludeExportRanges_.size();
   }
+
   /**
    *
    *
@@ -335,6 +347,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public java.lang.String getExcludeExportRanges(int index) {
     return excludeExportRanges_.get(index);
   }
+
   /**
    *
    *
@@ -357,6 +370,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includeExportRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -372,6 +386,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getIncludeExportRangesList() {
     return includeExportRanges_;
   }
+
   /**
    *
    *
@@ -387,6 +402,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public int getIncludeExportRangesCount() {
     return includeExportRanges_.size();
   }
+
   /**
    *
    *
@@ -403,6 +419,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public java.lang.String getIncludeExportRanges(int index) {
     return includeExportRanges_.get(index);
   }
+
   /**
    *
    *
@@ -425,6 +442,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList proposedIncludeExportRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -442,6 +460,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getProposedIncludeExportRangesList() {
     return proposedIncludeExportRanges_;
   }
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public int getProposedIncludeExportRangesCount() {
     return proposedIncludeExportRanges_.size();
   }
+
   /**
    *
    *
@@ -477,6 +497,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public java.lang.String getProposedIncludeExportRanges(int index) {
     return proposedIncludeExportRanges_.get(index);
   }
+
   /**
    *
    *
@@ -501,6 +522,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList proposedExcludeExportRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -518,6 +540,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getProposedExcludeExportRangesList() {
     return proposedExcludeExportRanges_;
   }
+
   /**
    *
    *
@@ -535,6 +558,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public int getProposedExcludeExportRangesCount() {
     return proposedExcludeExportRanges_.size();
   }
+
   /**
    *
    *
@@ -553,6 +577,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
   public java.lang.String getProposedExcludeExportRanges(int index) {
     return proposedExcludeExportRanges_.get(index);
   }
+
   /**
    *
    *
@@ -827,6 +852,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1140,6 +1166,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -1165,6 +1192,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1218,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1243,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1264,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1292,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     }
 
     private java.lang.Object serviceConsumerVpcSpoke_ = "";
+
     /**
      *
      *
@@ -1285,6 +1317,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1342,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1332,6 +1366,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1386,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1413,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     }
 
     private java.lang.Object peering_ = "";
+
     /**
      *
      *
@@ -1401,6 +1438,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1425,6 +1463,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1487,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1507,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1493,6 +1534,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     }
 
     private java.lang.Object producerNetwork_ = "";
+
     /**
      *
      *
@@ -1517,6 +1559,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1541,6 +1584,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1564,6 +1608,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1628,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1663,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1633,6 +1680,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       excludeExportRanges_.makeImmutable();
       return excludeExportRanges_;
     }
+
     /**
      *
      *
@@ -1648,6 +1696,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public int getExcludeExportRangesCount() {
       return excludeExportRanges_.size();
     }
+
     /**
      *
      *
@@ -1664,6 +1713,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public java.lang.String getExcludeExportRanges(int index) {
       return excludeExportRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1680,6 +1730,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getExcludeExportRangesBytes(int index) {
       return excludeExportRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1704,6 +1755,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1779,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1800,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1766,6 +1820,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1855,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1816,6 +1872,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       includeExportRanges_.makeImmutable();
       return includeExportRanges_;
     }
+
     /**
      *
      *
@@ -1831,6 +1888,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public int getIncludeExportRangesCount() {
       return includeExportRanges_.size();
     }
+
     /**
      *
      *
@@ -1847,6 +1905,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public java.lang.String getIncludeExportRanges(int index) {
       return includeExportRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1863,6 +1922,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getIncludeExportRangesBytes(int index) {
       return includeExportRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1887,6 +1947,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1971,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1930,6 +1992,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1949,6 +2012,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2048,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2002,6 +2067,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       proposedIncludeExportRanges_.makeImmutable();
       return proposedIncludeExportRanges_;
     }
+
     /**
      *
      *
@@ -2019,6 +2085,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public int getProposedIncludeExportRangesCount() {
       return proposedIncludeExportRanges_.size();
     }
+
     /**
      *
      *
@@ -2037,6 +2104,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public java.lang.String getProposedIncludeExportRanges(int index) {
       return proposedIncludeExportRanges_.get(index);
     }
+
     /**
      *
      *
@@ -2055,6 +2123,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index) {
       return proposedIncludeExportRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2081,6 +2150,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2176,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2128,6 +2199,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2221,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2186,6 +2259,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2204,6 +2278,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       proposedExcludeExportRanges_.makeImmutable();
       return proposedExcludeExportRanges_;
     }
+
     /**
      *
      *
@@ -2221,6 +2296,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public int getProposedExcludeExportRangesCount() {
       return proposedExcludeExportRanges_.size();
     }
+
     /**
      *
      *
@@ -2239,6 +2315,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public java.lang.String getProposedExcludeExportRanges(int index) {
       return proposedExcludeExportRanges_.get(index);
     }
+
     /**
      *
      *
@@ -2257,6 +2334,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index) {
       return proposedExcludeExportRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2283,6 +2361,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2308,6 +2387,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2330,6 +2410,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2432,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

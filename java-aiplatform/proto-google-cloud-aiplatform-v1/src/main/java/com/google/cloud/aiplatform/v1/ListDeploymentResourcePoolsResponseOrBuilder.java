@@ -37,6 +37,7 @@ public interface ListDeploymentResourcePoolsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.DeploymentResourcePool>
       getDeploymentResourcePoolsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListDeploymentResourcePoolsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.DeploymentResourcePool getDeploymentResourcePools(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListDeploymentResourcePoolsResponseOrBuilder
    * </code>
    */
   int getDeploymentResourcePoolsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListDeploymentResourcePoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DeploymentResourcePoolOrBuilder>
       getDeploymentResourcePoolsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListDeploymentResourcePoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

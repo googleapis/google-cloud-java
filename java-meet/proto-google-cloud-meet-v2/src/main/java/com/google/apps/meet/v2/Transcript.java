@@ -34,6 +34,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2.Transcript)
     TranscriptOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Transcript.newBuilder() to construct.
   private Transcript(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTED = 1;</code>
      */
     public static final int STARTED_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +153,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
      * <code>ENDED = 2;</code>
      */
     public static final int ENDED_VALUE = 2;
+
     /**
      *
      *
@@ -263,6 +267,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -294,6 +299,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCS_DESTINATION_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -311,6 +317,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocsDestination() {
     return destinationCase_ == 6;
   }
+
   /**
    *
    *
@@ -331,6 +338,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.apps.meet.v2.DocsDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -380,6 +389,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -409,6 +419,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -426,6 +437,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -448,6 +460,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -464,6 +477,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -480,6 +494,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -497,6 +512,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -513,6 +529,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -529,6 +546,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -762,6 +780,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1055,6 +1074,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.meet.v2.DocsDestination.Builder,
             com.google.apps.meet.v2.DocsDestinationOrBuilder>
         docsDestinationBuilder_;
+
     /**
      *
      *
@@ -1072,6 +1092,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocsDestination() {
       return destinationCase_ == 6;
     }
+
     /**
      *
      *
@@ -1099,6 +1120,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2.DocsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1123,6 +1145,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       destinationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1168,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       destinationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1203,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       destinationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1231,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1246,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.meet.v2.DocsDestination.Builder getDocsDestinationBuilder() {
       return getDocsDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1242,6 +1269,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2.DocsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1306,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1303,6 +1332,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1358,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1352,6 +1383,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1404,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1399,6 +1432,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1416,6 +1450,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1436,6 +1471,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1491,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
           com.google.apps.meet.v2.Transcript.State.forNumber(state_);
       return result == null ? com.google.apps.meet.v2.Transcript.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1478,6 +1515,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1542,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1519,6 +1558,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1538,6 +1578,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1561,6 +1602,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1623,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1652,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1673,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1689,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1661,6 +1707,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1694,6 +1741,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1709,6 +1757,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1728,6 +1777,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1751,6 +1801,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1822,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1799,6 +1851,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1819,6 +1872,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1888,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1851,6 +1906,7 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

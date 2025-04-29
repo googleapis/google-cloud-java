@@ -38,6 +38,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    */
   java.util.List<com.google.cloud.redis.cluster.v1beta1.ClusterWeeklyMaintenanceWindow>
       getWeeklyMaintenanceWindowList();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    */
   com.google.cloud.redis.cluster.v1beta1.ClusterWeeklyMaintenanceWindow getWeeklyMaintenanceWindow(
       int index);
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface ClusterMaintenancePolicyOrBuilder
    * </code>
    */
   int getWeeklyMaintenanceWindowCount();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface ClusterMaintenancePolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.redis.cluster.v1beta1.ClusterWeeklyMaintenanceWindowOrBuilder>
       getWeeklyMaintenanceWindowOrBuilderList();
+
   /**
    *
    *

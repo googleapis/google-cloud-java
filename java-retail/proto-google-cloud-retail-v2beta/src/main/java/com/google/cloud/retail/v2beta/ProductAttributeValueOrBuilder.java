@@ -36,6 +36,7 @@ public interface ProductAttributeValueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ProductAttributeValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class RubricBasedInstructionFollowingInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInstance)
     RubricBasedInstructionFollowingInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RubricBasedInstructionFollowingInstance.newBuilder() to construct.
   private RubricBasedInstructionFollowingInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -81,6 +82,7 @@ public final class RubricBasedInstructionFollowingInstance
     private InstanceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class RubricBasedInstructionFollowingInstance
   }
 
   public static final int JSON_INSTANCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class RubricBasedInstructionFollowingInstance
   public boolean hasJsonInstance() {
     return instanceCase_ == 1;
   }
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class RubricBasedInstructionFollowingInstance
       return s;
     }
   }
+
   /**
    *
    *
@@ -367,6 +372,7 @@ public final class RubricBasedInstructionFollowingInstance
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -607,6 +613,7 @@ public final class RubricBasedInstructionFollowingInstance
     public boolean hasJsonInstance() {
       return instanceCase_ == 1;
     }
+
     /**
      *
      *
@@ -637,6 +644,7 @@ public final class RubricBasedInstructionFollowingInstance
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -667,6 +675,7 @@ public final class RubricBasedInstructionFollowingInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -690,6 +699,7 @@ public final class RubricBasedInstructionFollowingInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +721,7 @@ public final class RubricBasedInstructionFollowingInstance
       }
       return this;
     }
+
     /**
      *
      *

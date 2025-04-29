@@ -33,6 +33,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ProductInputConfig)
     ProductInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductInputConfig.newBuilder() to construct.
   private ProductInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PRODUCT_INLINE_SOURCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasProductInlineSource() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.retail.v2alpha.ProductInlineSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.retail.v2alpha.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BIG_QUERY_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasBigQuerySource() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.retail.v2alpha.BigQuerySource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -471,6 +482,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -724,6 +736,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.retail.v2alpha.ProductInlineSource.Builder,
             com.google.cloud.retail.v2alpha.ProductInlineSourceOrBuilder>
         productInlineSourceBuilder_;
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasProductInlineSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.retail.v2alpha.ProductInlineSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         getProductInlineSourceBuilder() {
       return getProductInlineSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.retail.v2alpha.ProductInlineSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.retail.v2alpha.GcsSource.Builder,
             com.google.cloud.retail.v2alpha.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.retail.v2alpha.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1044,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1103,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1116,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2alpha.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.retail.v2alpha.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1176,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.retail.v2alpha.BigQuerySource.Builder,
             com.google.cloud.retail.v2alpha.BigQuerySourceOrBuilder>
         bigQuerySourceBuilder_;
+
     /**
      *
      *
@@ -1161,6 +1192,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasBigQuerySource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1186,6 +1218,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.retail.v2alpha.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1241,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1262,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1295,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1321,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1334,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2alpha.BigQuerySource.Builder getBigQuerySourceBuilder() {
       return getBigQuerySourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1317,6 +1355,7 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.retail.v2alpha.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *

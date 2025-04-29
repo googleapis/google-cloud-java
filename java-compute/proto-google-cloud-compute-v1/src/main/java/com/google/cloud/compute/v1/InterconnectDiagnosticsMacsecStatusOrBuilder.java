@@ -36,6 +36,7 @@ public interface InterconnectDiagnosticsMacsecStatusOrBuilder
    * @return Whether the ckn field is set.
    */
   boolean hasCkn();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InterconnectDiagnosticsMacsecStatusOrBuilder
    * @return The ckn.
    */
   java.lang.String getCkn();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InterconnectDiagnosticsMacsecStatusOrBuilder
    * @return Whether the operational field is set.
    */
   boolean hasOperational();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetExampleStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

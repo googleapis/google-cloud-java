@@ -33,6 +33,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationResourceStatus)
     AllocationResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllocationResourceStatus.newBuilder() to construct.
   private AllocationResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -62,9 +63,105 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   }
 
   private int bitField0_;
+  public static final int RESERVATION_BLOCK_COUNT_FIELD_NUMBER = 161835754;
+  private int reservationBlockCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of reservation blocks associated with this reservation.
+   * </pre>
+   *
+   * <code>optional int32 reservation_block_count = 161835754;</code>
+   *
+   * @return Whether the reservationBlockCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationBlockCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of reservation blocks associated with this reservation.
+   * </pre>
+   *
+   * <code>optional int32 reservation_block_count = 161835754;</code>
+   *
+   * @return The reservationBlockCount.
+   */
+  @java.lang.Override
+  public int getReservationBlockCount() {
+    return reservationBlockCount_;
+  }
+
+  public static final int RESERVATION_MAINTENANCE_FIELD_NUMBER = 340607776;
+  private com.google.cloud.compute.v1.GroupMaintenanceInfo reservationMaintenance_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+   * </code>
+   *
+   * @return Whether the reservationMaintenance field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationMaintenance() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+   * </code>
+   *
+   * @return The reservationMaintenance.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationMaintenance() {
+    return reservationMaintenance_ == null
+        ? com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()
+        : reservationMaintenance_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder
+      getReservationMaintenanceOrBuilder() {
+    return reservationMaintenance_ == null
+        ? com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()
+        : reservationMaintenance_;
+  }
+
   public static final int SPECIFIC_SKU_ALLOCATION_FIELD_NUMBER = 196231151;
   private com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       specificSkuAllocation_;
+
   /**
    *
    *
@@ -80,8 +177,9 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasSpecificSkuAllocation() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +201,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             .getDefaultInstance()
         : specificSkuAllocation_;
   }
+
   /**
    *
    *
@@ -138,7 +237,13 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(161835754, reservationBlockCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(196231151, getSpecificSkuAllocation());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(340607776, getReservationMaintenance());
     }
     getUnknownFields().writeTo(output);
   }
@@ -151,8 +256,17 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(161835754, reservationBlockCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               196231151, getSpecificSkuAllocation());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              340607776, getReservationMaintenance());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +284,14 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     com.google.cloud.compute.v1.AllocationResourceStatus other =
         (com.google.cloud.compute.v1.AllocationResourceStatus) obj;
 
+    if (hasReservationBlockCount() != other.hasReservationBlockCount()) return false;
+    if (hasReservationBlockCount()) {
+      if (getReservationBlockCount() != other.getReservationBlockCount()) return false;
+    }
+    if (hasReservationMaintenance() != other.hasReservationMaintenance()) return false;
+    if (hasReservationMaintenance()) {
+      if (!getReservationMaintenance().equals(other.getReservationMaintenance())) return false;
+    }
     if (hasSpecificSkuAllocation() != other.hasSpecificSkuAllocation()) return false;
     if (hasSpecificSkuAllocation()) {
       if (!getSpecificSkuAllocation().equals(other.getSpecificSkuAllocation())) return false;
@@ -185,6 +307,14 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasReservationBlockCount()) {
+      hash = (37 * hash) + RESERVATION_BLOCK_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationBlockCount();
+    }
+    if (hasReservationMaintenance()) {
+      hash = (37 * hash) + RESERVATION_MAINTENANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationMaintenance().hashCode();
+    }
     if (hasSpecificSkuAllocation()) {
       hash = (37 * hash) + SPECIFIC_SKU_ALLOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getSpecificSkuAllocation().hashCode();
@@ -289,6 +419,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -329,6 +460,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getReservationMaintenanceFieldBuilder();
         getSpecificSkuAllocationFieldBuilder();
       }
     }
@@ -337,6 +469,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      reservationBlockCount_ = 0;
+      reservationMaintenance_ = null;
+      if (reservationMaintenanceBuilder_ != null) {
+        reservationMaintenanceBuilder_.dispose();
+        reservationMaintenanceBuilder_ = null;
+      }
       specificSkuAllocation_ = null;
       if (specificSkuAllocationBuilder_ != null) {
         specificSkuAllocationBuilder_.dispose();
@@ -380,11 +518,22 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.reservationBlockCount_ = reservationBlockCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reservationMaintenance_ =
+            reservationMaintenanceBuilder_ == null
+                ? reservationMaintenance_
+                : reservationMaintenanceBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.specificSkuAllocation_ =
             specificSkuAllocationBuilder_ == null
                 ? specificSkuAllocation_
                 : specificSkuAllocationBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -435,6 +584,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public Builder mergeFrom(com.google.cloud.compute.v1.AllocationResourceStatus other) {
       if (other == com.google.cloud.compute.v1.AllocationResourceStatus.getDefaultInstance())
         return this;
+      if (other.hasReservationBlockCount()) {
+        setReservationBlockCount(other.getReservationBlockCount());
+      }
+      if (other.hasReservationMaintenance()) {
+        mergeReservationMaintenance(other.getReservationMaintenance());
+      }
       if (other.hasSpecificSkuAllocation()) {
         mergeSpecificSkuAllocation(other.getSpecificSkuAllocation());
       }
@@ -464,13 +619,26 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             case 0:
               done = true;
               break;
+            case 1294686032:
+              {
+                reservationBlockCount_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 1294686032
             case 1569849210:
               {
                 input.readMessage(
                     getSpecificSkuAllocationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1569849210
+            case -1570105086:
+              {
+                input.readMessage(
+                    getReservationMaintenanceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1570105086
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -490,6 +658,296 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
 
     private int bitField0_;
 
+    private int reservationBlockCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of reservation blocks associated with this reservation.
+     * </pre>
+     *
+     * <code>optional int32 reservation_block_count = 161835754;</code>
+     *
+     * @return Whether the reservationBlockCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationBlockCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of reservation blocks associated with this reservation.
+     * </pre>
+     *
+     * <code>optional int32 reservation_block_count = 161835754;</code>
+     *
+     * @return The reservationBlockCount.
+     */
+    @java.lang.Override
+    public int getReservationBlockCount() {
+      return reservationBlockCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of reservation blocks associated with this reservation.
+     * </pre>
+     *
+     * <code>optional int32 reservation_block_count = 161835754;</code>
+     *
+     * @param value The reservationBlockCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationBlockCount(int value) {
+
+      reservationBlockCount_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of reservation blocks associated with this reservation.
+     * </pre>
+     *
+     * <code>optional int32 reservation_block_count = 161835754;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationBlockCount() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      reservationBlockCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.compute.v1.GroupMaintenanceInfo reservationMaintenance_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.GroupMaintenanceInfo,
+            com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder,
+            com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder>
+        reservationMaintenanceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     *
+     * @return Whether the reservationMaintenance field is set.
+     */
+    public boolean hasReservationMaintenance() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     *
+     * @return The reservationMaintenance.
+     */
+    public com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationMaintenance() {
+      if (reservationMaintenanceBuilder_ == null) {
+        return reservationMaintenance_ == null
+            ? com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()
+            : reservationMaintenance_;
+      } else {
+        return reservationMaintenanceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    public Builder setReservationMaintenance(
+        com.google.cloud.compute.v1.GroupMaintenanceInfo value) {
+      if (reservationMaintenanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reservationMaintenance_ = value;
+      } else {
+        reservationMaintenanceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    public Builder setReservationMaintenance(
+        com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder builderForValue) {
+      if (reservationMaintenanceBuilder_ == null) {
+        reservationMaintenance_ = builderForValue.build();
+      } else {
+        reservationMaintenanceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    public Builder mergeReservationMaintenance(
+        com.google.cloud.compute.v1.GroupMaintenanceInfo value) {
+      if (reservationMaintenanceBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && reservationMaintenance_ != null
+            && reservationMaintenance_
+                != com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()) {
+          getReservationMaintenanceBuilder().mergeFrom(value);
+        } else {
+          reservationMaintenance_ = value;
+        }
+      } else {
+        reservationMaintenanceBuilder_.mergeFrom(value);
+      }
+      if (reservationMaintenance_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    public Builder clearReservationMaintenance() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      reservationMaintenance_ = null;
+      if (reservationMaintenanceBuilder_ != null) {
+        reservationMaintenanceBuilder_.dispose();
+        reservationMaintenanceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder
+        getReservationMaintenanceBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getReservationMaintenanceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder
+        getReservationMaintenanceOrBuilder() {
+      if (reservationMaintenanceBuilder_ != null) {
+        return reservationMaintenanceBuilder_.getMessageOrBuilder();
+      } else {
+        return reservationMaintenance_ == null
+            ? com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()
+            : reservationMaintenance_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance information for this reservation
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.GroupMaintenanceInfo,
+            com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder,
+            com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder>
+        getReservationMaintenanceFieldBuilder() {
+      if (reservationMaintenanceBuilder_ == null) {
+        reservationMaintenanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.GroupMaintenanceInfo,
+                com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder,
+                com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder>(
+                getReservationMaintenance(), getParentForChildren(), isClean());
+        reservationMaintenance_ = null;
+      }
+      return reservationMaintenanceBuilder_;
+    }
+
     private com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
         specificSkuAllocation_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -497,6 +955,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation.Builder,
             com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocationOrBuilder>
         specificSkuAllocationBuilder_;
+
     /**
      *
      *
@@ -511,8 +970,9 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
      * @return Whether the specificSkuAllocation field is set.
      */
     public boolean hasSpecificSkuAllocation() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -537,6 +997,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
         return specificSkuAllocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -558,10 +1019,11 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       } else {
         specificSkuAllocationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,10 +1043,11 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       } else {
         specificSkuAllocationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -599,7 +1062,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public Builder mergeSpecificSkuAllocation(
         com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation value) {
       if (specificSkuAllocationBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && specificSkuAllocation_ != null
             && specificSkuAllocation_
                 != com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
@@ -612,11 +1075,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
         specificSkuAllocationBuilder_.mergeFrom(value);
       }
       if (specificSkuAllocation_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,7 +1093,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearSpecificSkuAllocation() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       specificSkuAllocation_ = null;
       if (specificSkuAllocationBuilder_ != null) {
         specificSkuAllocationBuilder_.dispose();
@@ -638,6 +1102,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,10 +1116,11 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
      */
     public com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation.Builder
         getSpecificSkuAllocationBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSpecificSkuAllocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -677,6 +1143,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             : specificSkuAllocation_;
       }
     }
+
     /**
      *
      *

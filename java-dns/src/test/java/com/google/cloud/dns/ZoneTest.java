@@ -42,14 +42,12 @@ public class ZoneTest {
   private static final String ZONE_NAME = "dns-zone-name";
   private static final String ZONE_ID = "123";
   private static final ZoneInfo ZONE_INFO =
-      Zone.of(ZONE_NAME, "example.com", "description")
-          .toBuilder()
+      Zone.of(ZONE_NAME, "example.com", "description").toBuilder()
           .setGeneratedId(ZONE_ID)
           .setCreationTimeMillis(123478946464L)
           .build();
   private static final ZoneInfo NO_ID_INFO =
-      ZoneInfo.of(ZONE_NAME, "another-example.com", "description")
-          .toBuilder()
+      ZoneInfo.of(ZONE_NAME, "another-example.com", "description").toBuilder()
           .setCreationTimeMillis(893123464L)
           .build();
   private static final Dns.ZoneOption ZONE_FIELD_OPTIONS =

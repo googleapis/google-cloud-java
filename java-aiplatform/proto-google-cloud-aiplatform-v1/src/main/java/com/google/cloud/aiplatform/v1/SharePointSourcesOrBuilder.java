@@ -37,6 +37,7 @@ public interface SharePointSourcesOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.SharePointSources.SharePointSource>
       getSharePointSourcesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface SharePointSourcesOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SharePointSources.SharePointSource getSharePointSources(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SharePointSourcesOrBuilder
    * </code>
    */
   int getSharePointSourcesCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface SharePointSourcesOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1.SharePointSources.SharePointSourceOrBuilder>
       getSharePointSourcesOrBuilderList();
+
   /**
    *
    *

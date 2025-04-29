@@ -33,6 +33,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.SearchFoldersResponse)
     SearchFoldersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchFoldersResponse.newBuilder() to construct.
   private SearchFoldersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.Folder> folders_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.resourcemanager.v3.Folder> getFoldersList() {
     return folders_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       getFoldersOrBuilderList() {
     return folders_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
   public int getFoldersCount() {
     return folders_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.resourcemanager.v3.Folder getFolders(int index) {
     return folders_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +650,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return foldersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return foldersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return foldersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.resourcemanager.v3.Folder.Builder getFoldersBuilder(int index) {
       return getFoldersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -897,6 +919,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return foldersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -915,6 +938,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(folders_);
       }
     }
+
     /**
      *
      *
@@ -929,6 +953,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       return getFoldersFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -943,6 +968,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       return getFoldersFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.Folder.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -976,6 +1002,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1050,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1073,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1092,7 @@ public final class SearchFoldersResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action)
     ActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Action.newBuilder() to construct.
   private Action(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outputConfig field is set.
      */
     boolean hasOutputConfig();
+
     /**
      *
      *
@@ -91,6 +93,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The outputConfig.
      */
     com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig();
+
     /**
      *
      *
@@ -102,6 +105,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder();
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.SaveFindings)
       SaveFindingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SaveFindings.newBuilder() to construct.
     private SaveFindings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -150,6 +155,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int OUTPUT_CONFIG_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_;
+
     /**
      *
      *
@@ -165,6 +171,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -182,6 +189,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance()
           : outputConfig_;
     }
+
     /**
      *
      *
@@ -363,6 +371,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -573,6 +582,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.OutputStorageConfig.Builder,
               com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder>
           outputConfigBuilder_;
+
       /**
        *
        *
@@ -587,6 +597,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOutputConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -607,6 +618,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return outputConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -629,6 +641,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -649,6 +662,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -677,6 +691,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -696,6 +711,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -710,6 +726,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOutputConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -728,6 +745,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               : outputConfig_;
         }
       }
+
       /**
        *
        *
@@ -838,6 +856,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The topic.
      */
     java.lang.String getTopic();
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTopicBytes();
   }
+
   /**
    *
    *
@@ -872,6 +892,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishToPubSub)
       PublishToPubSubOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PublishToPubSub.newBuilder() to construct.
     private PublishToPubSub(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -906,6 +927,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -932,6 +954,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1142,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1310,6 +1334,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object topic_ = "";
+
       /**
        *
        *
@@ -1335,6 +1360,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1360,6 +1386,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1384,6 +1411,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1404,6 +1432,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1498,6 +1527,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.PublishSummaryToCscc)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1519,6 +1549,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishSummaryToCscc)
       PublishSummaryToCsccOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PublishSummaryToCscc.newBuilder() to construct.
     private PublishSummaryToCscc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1699,6 +1730,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1935,6 +1967,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1967,6 +2000,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog)
       PublishFindingsToCloudDataCatalogOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PublishFindingsToCloudDataCatalog.newBuilder() to construct.
     private PublishFindingsToCloudDataCatalog(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2149,6 +2183,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2418,6 +2453,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transformationConfig field is set.
      */
     boolean hasTransformationConfig();
+
     /**
      *
      *
@@ -2431,6 +2467,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The transformationConfig.
      */
     com.google.privacy.dlp.v2.TransformationConfig getTransformationConfig();
+
     /**
      *
      *
@@ -2463,6 +2500,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transformationDetailsStorageConfig field is set.
      */
     boolean hasTransformationDetailsStorageConfig();
+
     /**
      *
      *
@@ -2484,6 +2522,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
         getTransformationDetailsStorageConfig();
+
     /**
      *
      *
@@ -2522,6 +2561,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudStorageOutput field is set.
      */
     boolean hasCloudStorageOutput();
+
     /**
      *
      *
@@ -2540,6 +2580,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The cloudStorageOutput.
      */
     java.lang.String getCloudStorageOutput();
+
     /**
      *
      *
@@ -2577,6 +2618,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the fileTypesToTransform.
      */
     java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesToTransformList();
+
     /**
      *
      *
@@ -2595,6 +2637,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The count of fileTypesToTransform.
      */
     int getFileTypesToTransformCount();
+
     /**
      *
      *
@@ -2614,6 +2657,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The fileTypesToTransform at the given index.
      */
     com.google.privacy.dlp.v2.FileType getFileTypesToTransform(int index);
+
     /**
      *
      *
@@ -2632,6 +2676,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for fileTypesToTransform.
      */
     java.util.List<java.lang.Integer> getFileTypesToTransformValueList();
+
     /**
      *
      *
@@ -2654,6 +2699,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     com.google.privacy.dlp.v2.Action.Deidentify.OutputCase getOutputCase();
   }
+
   /**
    *
    *
@@ -2681,6 +2727,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.Deidentify)
       DeidentifyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Deidentify.newBuilder() to construct.
     private Deidentify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2728,6 +2775,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       private OutputCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2760,6 +2808,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TRANSFORMATION_CONFIG_FIELD_NUMBER = 7;
     private com.google.privacy.dlp.v2.TransformationConfig transformationConfig_;
+
     /**
      *
      *
@@ -2776,6 +2825,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransformationConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2794,6 +2844,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()
           : transformationConfig_;
     }
+
     /**
      *
      *
@@ -2815,6 +2866,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public static final int TRANSFORMATION_DETAILS_STORAGE_CONFIG_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
         transformationDetailsStorageConfig_;
+
     /**
      *
      *
@@ -2838,6 +2890,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransformationDetailsStorageConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2864,6 +2917,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.getDefaultInstance()
           : transformationDetailsStorageConfig_;
     }
+
     /**
      *
      *
@@ -2890,6 +2944,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CLOUD_STORAGE_OUTPUT_FIELD_NUMBER = 9;
+
     /**
      *
      *
@@ -2910,6 +2965,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudStorageOutput() {
       return outputCase_ == 9;
     }
+
     /**
      *
      *
@@ -2943,6 +2999,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2993,6 +3050,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
                 return result == null ? com.google.privacy.dlp.v2.FileType.UNRECOGNIZED : result;
               }
             };
+
     /**
      *
      *
@@ -3016,6 +3074,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.privacy.dlp.v2.FileType>(
           fileTypesToTransform_, fileTypesToTransform_converter_);
     }
+
     /**
      *
      *
@@ -3037,6 +3096,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getFileTypesToTransformCount() {
       return fileTypesToTransform_.size();
     }
+
     /**
      *
      *
@@ -3059,6 +3119,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.FileType getFileTypesToTransform(int index) {
       return fileTypesToTransform_converter_.convert(fileTypesToTransform_.get(index));
     }
+
     /**
      *
      *
@@ -3080,6 +3141,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getFileTypesToTransformValueList() {
       return fileTypesToTransform_;
     }
+
     /**
      *
      *
@@ -3338,6 +3400,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3666,6 +3729,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.TransformationConfig.Builder,
               com.google.privacy.dlp.v2.TransformationConfigOrBuilder>
           transformationConfigBuilder_;
+
       /**
        *
        *
@@ -3681,6 +3745,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTransformationConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -3702,6 +3767,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return transformationConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3725,6 +3791,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3746,6 +3813,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3776,6 +3844,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3796,6 +3865,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3812,6 +3882,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTransformationConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3832,6 +3903,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               : transformationConfig_;
         }
       }
+
       /**
        *
        *
@@ -3866,6 +3938,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder,
               com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder>
           transformationDetailsStorageConfigBuilder_;
+
       /**
        *
        *
@@ -3888,6 +3961,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTransformationDetailsStorageConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3917,6 +3991,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return transformationDetailsStorageConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3948,6 +4023,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3976,6 +4052,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4014,6 +4091,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4041,6 +4119,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4064,6 +4143,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTransformationDetailsStorageConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4091,6 +4171,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               : transformationDetailsStorageConfig_;
         }
       }
+
       /**
        *
        *
@@ -4146,6 +4227,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCloudStorageOutput() {
         return outputCase_ == 9;
       }
+
       /**
        *
        *
@@ -4180,6 +4262,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4214,6 +4297,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4241,6 +4325,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4266,6 +4351,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4304,6 +4390,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000008;
         }
       }
+
       /**
        *
        *
@@ -4326,6 +4413,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             java.lang.Integer, com.google.privacy.dlp.v2.FileType>(
             fileTypesToTransform_, fileTypesToTransform_converter_);
       }
+
       /**
        *
        *
@@ -4346,6 +4434,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public int getFileTypesToTransformCount() {
         return fileTypesToTransform_.size();
       }
+
       /**
        *
        *
@@ -4367,6 +4456,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.FileType getFileTypesToTransform(int index) {
         return fileTypesToTransform_converter_.convert(fileTypesToTransform_.get(index));
       }
+
       /**
        *
        *
@@ -4395,6 +4485,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4422,6 +4513,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4449,6 +4541,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4472,6 +4565,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4492,6 +4586,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getFileTypesToTransformValueList() {
         return java.util.Collections.unmodifiableList(fileTypesToTransform_);
       }
+
       /**
        *
        *
@@ -4513,6 +4608,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public int getFileTypesToTransformValue(int index) {
         return fileTypesToTransform_.get(index);
       }
+
       /**
        *
        *
@@ -4538,6 +4634,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4562,6 +4659,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4657,6 +4755,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.JobNotificationEmails)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -4673,6 +4772,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.JobNotificationEmails)
       JobNotificationEmailsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use JobNotificationEmails.newBuilder() to construct.
     private JobNotificationEmails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4853,6 +4953,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5084,6 +5185,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.PublishToStackdriver)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -5101,6 +5203,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishToStackdriver)
       PublishToStackdriverOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PublishToStackdriver.newBuilder() to construct.
     private PublishToStackdriver(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5281,6 +5384,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5531,6 +5635,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private ActionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5574,6 +5679,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SAVE_FINDINGS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -5589,6 +5695,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSaveFindings() {
     return actionCase_ == 1;
   }
+
   /**
    *
    *
@@ -5607,6 +5714,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.SaveFindings.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5625,6 +5733,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUB_SUB_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -5640,6 +5749,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPubSub() {
     return actionCase_ == 2;
   }
+
   /**
    *
    *
@@ -5658,6 +5768,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.PublishToPubSub.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5676,6 +5787,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLISH_SUMMARY_TO_CSCC_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -5691,6 +5803,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishSummaryToCscc() {
     return actionCase_ == 3;
   }
+
   /**
    *
    *
@@ -5709,6 +5822,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.PublishSummaryToCscc.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5728,6 +5842,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -5745,6 +5860,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishFindingsToCloudDataCatalog() {
     return actionCase_ == 5;
   }
+
   /**
    *
    *
@@ -5766,6 +5882,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5787,6 +5904,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEIDENTIFY_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -5802,6 +5920,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeidentify() {
     return actionCase_ == 7;
   }
+
   /**
    *
    *
@@ -5820,6 +5939,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5838,6 +5958,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JOB_NOTIFICATION_EMAILS_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -5855,6 +5976,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJobNotificationEmails() {
     return actionCase_ == 8;
   }
+
   /**
    *
    *
@@ -5875,6 +5997,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5896,6 +6019,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLISH_TO_STACKDRIVER_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -5911,6 +6035,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishToStackdriver() {
     return actionCase_ == 9;
   }
+
   /**
    *
    *
@@ -5929,6 +6054,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6211,6 +6337,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6536,6 +6663,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.SaveFindings.Builder,
             com.google.privacy.dlp.v2.Action.SaveFindingsOrBuilder>
         saveFindingsBuilder_;
+
     /**
      *
      *
@@ -6551,6 +6679,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSaveFindings() {
       return actionCase_ == 1;
     }
+
     /**
      *
      *
@@ -6576,6 +6705,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.SaveFindings.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6598,6 +6728,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -6618,6 +6749,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -6650,6 +6782,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -6675,6 +6808,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6687,6 +6821,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Action.SaveFindings.Builder getSaveFindingsBuilder() {
       return getSaveFindingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6707,6 +6842,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.SaveFindings.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6745,6 +6881,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.PublishToPubSub.Builder,
             com.google.privacy.dlp.v2.Action.PublishToPubSubOrBuilder>
         pubSubBuilder_;
+
     /**
      *
      *
@@ -6760,6 +6897,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPubSub() {
       return actionCase_ == 2;
     }
+
     /**
      *
      *
@@ -6785,6 +6923,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.PublishToPubSub.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6807,6 +6946,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6827,6 +6967,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6859,6 +7000,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6884,6 +7026,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6896,6 +7039,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Action.PublishToPubSub.Builder getPubSubBuilder() {
       return getPubSubFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6916,6 +7060,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.PublishToPubSub.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6954,6 +7099,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.PublishSummaryToCscc.Builder,
             com.google.privacy.dlp.v2.Action.PublishSummaryToCsccOrBuilder>
         publishSummaryToCsccBuilder_;
+
     /**
      *
      *
@@ -6969,6 +7115,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishSummaryToCscc() {
       return actionCase_ == 3;
     }
+
     /**
      *
      *
@@ -6994,6 +7141,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.PublishSummaryToCscc.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7017,6 +7165,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7037,6 +7186,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7071,6 +7221,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7096,6 +7247,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7109,6 +7261,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getPublishSummaryToCsccBuilder() {
       return getPublishSummaryToCsccFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7130,6 +7283,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.PublishSummaryToCscc.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7168,6 +7322,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder,
             com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder>
         publishFindingsToCloudDataCatalogBuilder_;
+
     /**
      *
      *
@@ -7185,6 +7340,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishFindingsToCloudDataCatalog() {
       return actionCase_ == 5;
     }
+
     /**
      *
      *
@@ -7215,6 +7371,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7240,6 +7397,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -7263,6 +7421,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -7300,6 +7459,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -7327,6 +7487,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7342,6 +7503,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getPublishFindingsToCloudDataCatalogBuilder() {
       return getPublishFindingsToCloudDataCatalogFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7366,6 +7528,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7408,6 +7571,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.Deidentify.Builder,
             com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder>
         deidentifyBuilder_;
+
     /**
      *
      *
@@ -7423,6 +7587,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeidentify() {
       return actionCase_ == 7;
     }
+
     /**
      *
      *
@@ -7448,6 +7613,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7470,6 +7636,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -7490,6 +7657,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -7522,6 +7690,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -7547,6 +7716,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7559,6 +7729,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Action.Deidentify.Builder getDeidentifyBuilder() {
       return getDeidentifyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7579,6 +7750,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7617,6 +7789,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder,
             com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder>
         jobNotificationEmailsBuilder_;
+
     /**
      *
      *
@@ -7634,6 +7807,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJobNotificationEmails() {
       return actionCase_ == 8;
     }
+
     /**
      *
      *
@@ -7661,6 +7835,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7686,6 +7861,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -7708,6 +7884,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -7744,6 +7921,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -7771,6 +7949,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7786,6 +7965,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getJobNotificationEmailsBuilder() {
       return getJobNotificationEmailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7809,6 +7989,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7849,6 +8030,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder,
             com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder>
         publishToStackdriverBuilder_;
+
     /**
      *
      *
@@ -7864,6 +8046,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishToStackdriver() {
       return actionCase_ == 9;
     }
+
     /**
      *
      *
@@ -7889,6 +8072,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7912,6 +8096,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -7932,6 +8117,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -7966,6 +8152,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -7991,6 +8178,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8004,6 +8192,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getPublishToStackdriverBuilder() {
       return getPublishToStackdriverFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8025,6 +8214,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface DeleteToolVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

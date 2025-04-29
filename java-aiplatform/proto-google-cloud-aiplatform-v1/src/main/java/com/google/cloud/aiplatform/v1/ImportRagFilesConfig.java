@@ -33,6 +33,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ImportRagFilesConfig)
     ImportRagFilesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportRagFilesConfig.newBuilder() to construct.
   private ImportRagFilesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private ImportSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -139,6 +141,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private PartialFailureSinkCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -188,6 +191,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private ImportResultSinkCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -221,6 +225,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -239,6 +244,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGcsSource() {
     return importSourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -260,6 +266,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -281,6 +288,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GOOGLE_DRIVE_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -297,6 +305,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGoogleDriveSource() {
     return importSourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -316,6 +325,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.GoogleDriveSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -335,6 +345,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SLACK_SOURCE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -350,6 +361,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasSlackSource() {
     return importSourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -368,6 +380,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.SlackSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -386,6 +399,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int JIRA_SOURCE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -401,6 +415,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasJiraSource() {
     return importSourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.JiraSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -437,6 +453,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SHARE_POINT_SOURCES_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -452,6 +469,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasSharePointSources() {
     return importSourceCase_ == 13;
   }
+
   /**
    *
    *
@@ -470,6 +488,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.SharePointSources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -488,6 +507,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARTIAL_FAILURE_GCS_SINK_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -509,6 +529,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasPartialFailureGcsSink() {
     return partialFailureSinkCase_ == 11;
   }
+
   /**
    *
    *
@@ -533,6 +554,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -556,6 +578,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARTIAL_FAILURE_BIGQUERY_SINK_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -582,6 +605,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasPartialFailureBigquerySink() {
     return partialFailureSinkCase_ == 12;
   }
+
   /**
    *
    *
@@ -611,6 +635,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -639,6 +664,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int IMPORT_RESULT_GCS_SINK_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -654,6 +680,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasImportResultGcsSink() {
     return importResultSinkCase_ == 14;
   }
+
   /**
    *
    *
@@ -672,6 +699,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -690,6 +718,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int IMPORT_RESULT_BIGQUERY_SINK_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -710,6 +739,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasImportResultBigquerySink() {
     return importResultSinkCase_ == 15;
   }
+
   /**
    *
    *
@@ -733,6 +763,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -758,6 +789,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
 
   public static final int RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER = 16;
   private com.google.cloud.aiplatform.v1.RagFileTransformationConfig ragFileTransformationConfig_;
+
   /**
    *
    *
@@ -775,6 +807,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRagFileTransformationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -795,6 +828,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.RagFileTransformationConfig.getDefaultInstance()
         : ragFileTransformationConfig_;
   }
+
   /**
    *
    *
@@ -816,6 +850,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
 
   public static final int RAG_FILE_PARSING_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.aiplatform.v1.RagFileParsingConfig ragFileParsingConfig_;
+
   /**
    *
    *
@@ -834,6 +869,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRagFileParsingConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -854,6 +890,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.RagFileParsingConfig.getDefaultInstance()
         : ragFileParsingConfig_;
   }
+
   /**
    *
    *
@@ -876,6 +913,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
 
   public static final int MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 5;
   private int maxEmbeddingRequestsPerMin_ = 0;
+
   /**
    *
    *
@@ -1255,6 +1293,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1732,6 +1771,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.GcsSource.Builder,
             com.google.cloud.aiplatform.v1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -1750,6 +1790,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGcsSource() {
       return importSourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1778,6 +1819,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1803,6 +1845,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1825,6 +1868,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1904,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1888,6 +1933,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1903,6 +1949,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1926,6 +1973,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1967,6 +2015,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.GoogleDriveSource.Builder,
             com.google.cloud.aiplatform.v1.GoogleDriveSourceOrBuilder>
         googleDriveSourceBuilder_;
+
     /**
      *
      *
@@ -1983,6 +2032,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGoogleDriveSource() {
       return importSourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -2009,6 +2059,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GoogleDriveSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2032,6 +2083,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2053,6 +2105,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2140,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2167,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2181,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.GoogleDriveSource.Builder getGoogleDriveSourceBuilder() {
       return getGoogleDriveSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2148,6 +2204,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GoogleDriveSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2187,6 +2244,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.SlackSource.Builder,
             com.google.cloud.aiplatform.v1.SlackSourceOrBuilder>
         slackSourceBuilder_;
+
     /**
      *
      *
@@ -2202,6 +2260,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasSlackSource() {
       return importSourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -2227,6 +2286,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.SlackSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2309,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2269,6 +2330,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2363,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2389,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2338,6 +2402,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.SlackSource.Builder getSlackSourceBuilder() {
       return getSlackSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2358,6 +2423,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.SlackSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2396,6 +2462,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.JiraSource.Builder,
             com.google.cloud.aiplatform.v1.JiraSourceOrBuilder>
         jiraSourceBuilder_;
+
     /**
      *
      *
@@ -2411,6 +2478,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasJiraSource() {
       return importSourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -2436,6 +2504,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.JiraSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2458,6 +2527,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2478,6 +2548,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2510,6 +2581,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2607,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2547,6 +2620,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.JiraSource.Builder getJiraSourceBuilder() {
       return getJiraSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2567,6 +2641,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.JiraSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2605,6 +2680,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.SharePointSources.Builder,
             com.google.cloud.aiplatform.v1.SharePointSourcesOrBuilder>
         sharePointSourcesBuilder_;
+
     /**
      *
      *
@@ -2620,6 +2696,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasSharePointSources() {
       return importSourceCase_ == 13;
     }
+
     /**
      *
      *
@@ -2645,6 +2722,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.SharePointSources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2667,6 +2745,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2687,6 +2766,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2720,6 +2800,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2745,6 +2826,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2757,6 +2839,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.SharePointSources.Builder getSharePointSourcesBuilder() {
       return getSharePointSourcesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2778,6 +2861,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.SharePointSources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2816,6 +2900,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder>
         partialFailureGcsSinkBuilder_;
+
     /**
      *
      *
@@ -2837,6 +2922,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasPartialFailureGcsSink() {
       return partialFailureSinkCase_ == 11;
     }
+
     /**
      *
      *
@@ -2868,6 +2954,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2894,6 +2981,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2918,6 +3006,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2955,6 +3044,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2984,6 +3074,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3000,6 +3091,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.GcsDestination.Builder getPartialFailureGcsSinkBuilder() {
       return getPartialFailureGcsSinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3025,6 +3117,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3066,6 +3159,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.BigQueryDestination.Builder,
             com.google.cloud.aiplatform.v1.BigQueryDestinationOrBuilder>
         partialFailureBigquerySinkBuilder_;
+
     /**
      *
      *
@@ -3092,6 +3186,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasPartialFailureBigquerySink() {
       return partialFailureSinkCase_ == 12;
     }
+
     /**
      *
      *
@@ -3128,6 +3223,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3160,6 +3256,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3189,6 +3286,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3232,6 +3330,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3266,6 +3365,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3288,6 +3388,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getPartialFailureBigquerySinkBuilder() {
       return getPartialFailureBigquerySinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3318,6 +3419,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3365,6 +3467,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder>
         importResultGcsSinkBuilder_;
+
     /**
      *
      *
@@ -3380,6 +3483,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasImportResultGcsSink() {
       return importResultSinkCase_ == 14;
     }
+
     /**
      *
      *
@@ -3405,6 +3509,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3427,6 +3532,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importResultSinkCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -3447,6 +3553,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importResultSinkCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -3480,6 +3587,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importResultSinkCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -3505,6 +3613,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3517,6 +3626,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.GcsDestination.Builder getImportResultGcsSinkBuilder() {
       return getImportResultGcsSinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3538,6 +3648,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3576,6 +3687,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.BigQueryDestination.Builder,
             com.google.cloud.aiplatform.v1.BigQueryDestinationOrBuilder>
         importResultBigquerySinkBuilder_;
+
     /**
      *
      *
@@ -3597,6 +3709,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasImportResultBigquerySink() {
       return importResultSinkCase_ == 15;
     }
+
     /**
      *
      *
@@ -3628,6 +3741,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3657,6 +3771,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importResultSinkCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -3683,6 +3798,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importResultSinkCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -3723,6 +3839,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importResultSinkCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -3754,6 +3871,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3773,6 +3891,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getImportResultBigquerySinkBuilder() {
       return getImportResultBigquerySinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3800,6 +3919,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3846,6 +3966,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.RagFileTransformationConfig.Builder,
             com.google.cloud.aiplatform.v1.RagFileTransformationConfigOrBuilder>
         ragFileTransformationConfigBuilder_;
+
     /**
      *
      *
@@ -3862,6 +3983,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasRagFileTransformationConfig() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3885,6 +4007,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return ragFileTransformationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3910,6 +4033,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3932,6 +4056,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3964,6 +4089,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3985,6 +4111,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4002,6 +4129,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRagFileTransformationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4023,6 +4151,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             : ragFileTransformationConfig_;
       }
     }
+
     /**
      *
      *
@@ -4057,6 +4186,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.RagFileParsingConfig.Builder,
             com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder>
         ragFileParsingConfigBuilder_;
+
     /**
      *
      *
@@ -4074,6 +4204,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasRagFileParsingConfig() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4097,6 +4228,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return ragFileParsingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4123,6 +4255,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4146,6 +4279,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4178,6 +4312,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4200,6 +4335,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4218,6 +4354,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRagFileParsingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4240,6 +4377,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             : ragFileParsingConfig_;
       }
     }
+
     /**
      *
      *
@@ -4270,6 +4408,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
 
     private int maxEmbeddingRequestsPerMin_;
+
     /**
      *
      *
@@ -4290,6 +4429,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public int getMaxEmbeddingRequestsPerMin() {
       return maxEmbeddingRequestsPerMin_;
     }
+
     /**
      *
      *
@@ -4314,6 +4454,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

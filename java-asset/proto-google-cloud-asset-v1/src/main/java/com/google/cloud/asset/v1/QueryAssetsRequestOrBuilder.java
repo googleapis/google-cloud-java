@@ -43,6 +43,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return Whether the statement field is set.
    */
   boolean hasStatement();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The statement.
    */
   java.lang.String getStatement();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return Whether the jobReference field is set.
    */
   boolean hasJobReference();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The jobReference.
    */
   java.lang.String getJobReference();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -278,6 +286,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return Whether the readTimeWindow field is set.
    */
   boolean hasReadTimeWindow();
+
   /**
    *
    *
@@ -294,6 +303,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The readTimeWindow.
    */
   com.google.cloud.asset.v1.TimeWindow getReadTimeWindow();
+
   /**
    *
    *
@@ -323,6 +333,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -337,6 +348,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -372,6 +384,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -394,6 +407,7 @@ public interface QueryAssetsRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.asset.v1.QueryAssetsOutputConfig getOutputConfig();
+
   /**
    *
    *

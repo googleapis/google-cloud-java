@@ -96,6 +96,19 @@ public final class VideoIntelligenceServiceGrpc {
     return VideoIntelligenceServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VideoIntelligenceServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VideoIntelligenceServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VideoIntelligenceServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VideoIntelligenceServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VideoIntelligenceServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -208,6 +221,44 @@ public final class VideoIntelligenceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VideoIntelligenceService.
+   *
+   * <pre>
+   * Service that implements the Video Intelligence API.
+   * </pre>
+   */
+  public static final class VideoIntelligenceServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VideoIntelligenceServiceBlockingV2Stub> {
+    private VideoIntelligenceServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VideoIntelligenceServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VideoIntelligenceServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs asynchronous video annotation. Progress and results can be
+     * retrieved through the `google.longrunning.Operations` interface.
+     * `Operation.metadata` contains `AnnotateVideoProgress` (progress).
+     * `Operation.response` contains `AnnotateVideoResponse` (results).
+     * </pre>
+     */
+    public com.google.longrunning.Operation annotateVideo(
+        com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnnotateVideoMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * VideoIntelligenceService.
    *
    * <pre>
    * Service that implements the Video Intelligence API.

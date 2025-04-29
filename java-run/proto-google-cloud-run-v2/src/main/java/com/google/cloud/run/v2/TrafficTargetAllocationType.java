@@ -72,6 +72,7 @@ public enum TrafficTargetAllocationType implements com.google.protobuf.ProtocolM
    * <code>TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum TrafficTargetAllocationType implements com.google.protobuf.ProtocolM
    * <code>TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST = 1;</code>
    */
   public static final int TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST_VALUE = 1;
+
   /**
    *
    *

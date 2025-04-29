@@ -36,6 +36,7 @@ public interface TemporalAssetOrBuilder
    * @return Whether the window field is set.
    */
   boolean hasWindow();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TemporalAssetOrBuilder
    * @return The window.
    */
   com.google.cloud.asset.v1p2beta1.TimeWindow getWindow();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface TemporalAssetOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface TemporalAssetOrBuilder
    * @return The asset.
    */
   com.google.cloud.asset.v1p2beta1.Asset getAsset();
+
   /**
    *
    *

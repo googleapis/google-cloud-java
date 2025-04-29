@@ -33,6 +33,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FraudSignals)
     FraudSignalsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FraudSignals.newBuilder() to construct.
   private FraudSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,6 +96,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
      */
     float getSyntheticRisk();
   }
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FraudSignals.UserSignals)
       UserSignalsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UserSignals.newBuilder() to construct.
     private UserSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -139,6 +142,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ACTIVE_DAYS_LOWER_BOUND_FIELD_NUMBER = 1;
     private int activeDaysLowerBound_ = 0;
+
     /**
      *
      *
@@ -158,6 +162,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SYNTHETIC_RISK_FIELD_NUMBER = 2;
     private float syntheticRisk_ = 0F;
+
     /**
      *
      *
@@ -347,6 +352,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -548,6 +554,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int activeDaysLowerBound_;
+
       /**
        *
        *
@@ -565,6 +572,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       public int getActiveDaysLowerBound() {
         return activeDaysLowerBound_;
       }
+
       /**
        *
        *
@@ -586,6 +594,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -607,6 +616,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float syntheticRisk_;
+
       /**
        *
        *
@@ -624,6 +634,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       public float getSyntheticRisk() {
         return syntheticRisk_;
       }
+
       /**
        *
        *
@@ -645,6 +656,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -750,6 +762,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.recaptchaenterprise.v1.FraudSignals.CardSignals.CardLabel>
         getCardLabelsList();
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
      * @return The count of cardLabels.
      */
     int getCardLabelsCount();
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
      * @return The cardLabels at the given index.
      */
     com.google.recaptchaenterprise.v1.FraudSignals.CardSignals.CardLabel getCardLabels(int index);
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enum numeric values on the wire for cardLabels.
      */
     java.util.List<java.lang.Integer> getCardLabelsValueList();
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
      */
     int getCardLabelsValue(int index);
   }
+
   /**
    *
    *
@@ -823,6 +840,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FraudSignals.CardSignals)
       CardSignalsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CardSignals.newBuilder() to construct.
     private CardSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -919,6 +937,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
        * <code>CARD_LABEL_UNSPECIFIED = 0;</code>
        */
       public static final int CARD_LABEL_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -929,6 +948,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
        * <code>PREPAID = 1;</code>
        */
       public static final int PREPAID_VALUE = 1;
+
       /**
        *
        *
@@ -940,6 +960,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
        * <code>VIRTUAL = 2;</code>
        */
       public static final int VIRTUAL_VALUE = 2;
+
       /**
        *
        *
@@ -1061,6 +1082,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
                     : result;
               }
             };
+
     /**
      *
      *
@@ -1081,6 +1103,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.recaptchaenterprise.v1.FraudSignals.CardSignals.CardLabel>(
           cardLabels_, cardLabels_converter_);
     }
+
     /**
      *
      *
@@ -1098,6 +1121,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
     public int getCardLabelsCount() {
       return cardLabels_.size();
     }
+
     /**
      *
      *
@@ -1117,6 +1141,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return cardLabels_converter_.convert(cardLabels_.get(index));
     }
+
     /**
      *
      *
@@ -1134,6 +1159,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getCardLabelsValueList() {
       return cardLabels_;
     }
+
     /**
      *
      *
@@ -1333,6 +1359,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1556,6 +1583,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
         }
       }
+
       /**
        *
        *
@@ -1576,6 +1604,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FraudSignals.CardSignals.CardLabel>(
             cardLabels_, cardLabels_converter_);
       }
+
       /**
        *
        *
@@ -1592,6 +1621,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       public int getCardLabelsCount() {
         return cardLabels_.size();
       }
+
       /**
        *
        *
@@ -1610,6 +1640,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return cardLabels_converter_.convert(cardLabels_.get(index));
       }
+
       /**
        *
        *
@@ -1635,6 +1666,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1659,6 +1691,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1684,6 +1717,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1703,6 +1737,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1719,6 +1754,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getCardLabelsValueList() {
         return java.util.Collections.unmodifiableList(cardLabels_);
       }
+
       /**
        *
        *
@@ -1736,6 +1772,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       public int getCardLabelsValue(int index) {
         return cardLabels_.get(index);
       }
+
       /**
        *
        *
@@ -1757,6 +1794,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1777,6 +1815,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1868,6 +1907,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int USER_SIGNALS_FIELD_NUMBER = 1;
   private com.google.recaptchaenterprise.v1.FraudSignals.UserSignals userSignals_;
+
   /**
    *
    *
@@ -1885,6 +1925,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserSignals() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1904,6 +1945,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.FraudSignals.UserSignals.getDefaultInstance()
         : userSignals_;
   }
+
   /**
    *
    *
@@ -1925,6 +1967,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CARD_SIGNALS_FIELD_NUMBER = 2;
   private com.google.recaptchaenterprise.v1.FraudSignals.CardSignals cardSignals_;
+
   /**
    *
    *
@@ -1943,6 +1986,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCardSignals() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1963,6 +2007,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.FraudSignals.CardSignals.getDefaultInstance()
         : cardSignals_;
   }
+
   /**
    *
    *
@@ -2161,6 +2206,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2384,6 +2430,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FraudSignals.UserSignals.Builder,
             com.google.recaptchaenterprise.v1.FraudSignals.UserSignalsOrBuilder>
         userSignalsBuilder_;
+
     /**
      *
      *
@@ -2400,6 +2447,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserSignals() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2422,6 +2470,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         return userSignalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2447,6 +2496,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2469,6 +2519,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2501,6 +2552,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2522,6 +2574,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2539,6 +2592,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserSignalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2560,6 +2614,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
             : userSignals_;
       }
     }
+
     /**
      *
      *
@@ -2594,6 +2649,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FraudSignals.CardSignals.Builder,
             com.google.recaptchaenterprise.v1.FraudSignals.CardSignalsOrBuilder>
         cardSignalsBuilder_;
+
     /**
      *
      *
@@ -2611,6 +2667,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCardSignals() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2634,6 +2691,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
         return cardSignalsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2660,6 +2718,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2683,6 +2742,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2716,6 +2776,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2738,6 +2799,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2756,6 +2818,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCardSignalsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2778,6 +2841,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessageV3
             : cardSignals_;
       }
     }
+
     /**
      *
      *

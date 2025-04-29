@@ -36,6 +36,7 @@ public interface ProcessedDocumentOrBuilder
    * @return Whether the jsonData field is set.
    */
   boolean hasJsonData();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProcessedDocumentOrBuilder
    * @return The jsonData.
    */
   java.lang.String getJsonData();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ProcessedDocumentOrBuilder
    * @return The document.
    */
   java.lang.String getDocument();
+
   /**
    *
    *

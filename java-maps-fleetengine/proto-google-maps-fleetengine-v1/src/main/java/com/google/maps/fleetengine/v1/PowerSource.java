@@ -92,6 +92,7 @@ public enum PowerSource implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_POWER_SOURCE = 0;</code>
    */
   public static final int UNKNOWN_POWER_SOURCE_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum PowerSource implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POWER_SOURCE_AC = 1;</code>
    */
   public static final int POWER_SOURCE_AC_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum PowerSource implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POWER_SOURCE_USB = 2;</code>
    */
   public static final int POWER_SOURCE_USB_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum PowerSource implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POWER_SOURCE_WIRELESS = 3;</code>
    */
   public static final int POWER_SOURCE_WIRELESS_VALUE = 3;
+
   /**
    *
    *

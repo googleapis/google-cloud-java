@@ -73,7 +73,8 @@ public class MockCmekServiceImpl extends CmekServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateEncryptionConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateEncryptionConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -94,7 +95,8 @@ public class MockCmekServiceImpl extends CmekServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateEncryptionConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateEncryptionConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -115,7 +117,8 @@ public class MockCmekServiceImpl extends CmekServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteEncryptionConfig, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteEncryptionConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +140,8 @@ public class MockCmekServiceImpl extends CmekServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListEncryptionConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method ListEncryptionConfigs, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEncryptionConfigsResponse.class.getName(),
                   Exception.class.getName())));

@@ -36,6 +36,7 @@ public interface PscAutomatedEndpointsOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PscAutomatedEndpointsOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PscAutomatedEndpointsOrBuilder
    * @return The matchAddress.
    */
   java.lang.String getMatchAddress();
+
   /**
    *
    *

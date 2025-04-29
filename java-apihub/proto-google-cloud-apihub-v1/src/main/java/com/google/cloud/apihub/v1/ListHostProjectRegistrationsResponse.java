@@ -36,6 +36,7 @@ public final class ListHostProjectRegistrationsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ListHostProjectRegistrationsResponse)
     ListHostProjectRegistrationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListHostProjectRegistrationsResponse.newBuilder() to construct.
   private ListHostProjectRegistrationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class ListHostProjectRegistrationsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.apihub.v1.HostProjectRegistration>
       hostProjectRegistrations_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ListHostProjectRegistrationsResponse
       getHostProjectRegistrationsList() {
     return hostProjectRegistrations_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ListHostProjectRegistrationsResponse
       getHostProjectRegistrationsOrBuilderList() {
     return hostProjectRegistrations_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ListHostProjectRegistrationsResponse
   public int getHostProjectRegistrationsCount() {
     return hostProjectRegistrations_.size();
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class ListHostProjectRegistrationsResponse
   public com.google.cloud.apihub.v1.HostProjectRegistration getHostProjectRegistrations(int index) {
     return hostProjectRegistrations_.get(index);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class ListHostProjectRegistrationsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public final class ListHostProjectRegistrationsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -374,6 +382,7 @@ public final class ListHostProjectRegistrationsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +672,7 @@ public final class ListHostProjectRegistrationsResponse
         return hostProjectRegistrationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -681,6 +691,7 @@ public final class ListHostProjectRegistrationsResponse
         return hostProjectRegistrationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class ListHostProjectRegistrationsResponse
         return hostProjectRegistrationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +835,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class ListHostProjectRegistrationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class ListHostProjectRegistrationsResponse
         getHostProjectRegistrationsBuilder(int index) {
       return getHostProjectRegistrationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class ListHostProjectRegistrationsResponse
         return hostProjectRegistrationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -958,6 +981,7 @@ public final class ListHostProjectRegistrationsResponse
         return java.util.Collections.unmodifiableList(hostProjectRegistrations_);
       }
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class ListHostProjectRegistrationsResponse
       return getHostProjectRegistrationsFieldBuilder()
           .addBuilder(com.google.cloud.apihub.v1.HostProjectRegistration.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class ListHostProjectRegistrationsResponse
           .addBuilder(
               index, com.google.cloud.apihub.v1.HostProjectRegistration.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1028,6 +1054,7 @@ public final class ListHostProjectRegistrationsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class ListHostProjectRegistrationsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1102,7 @@ public final class ListHostProjectRegistrationsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class ListHostProjectRegistrationsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1144,7 @@ public final class ListHostProjectRegistrationsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

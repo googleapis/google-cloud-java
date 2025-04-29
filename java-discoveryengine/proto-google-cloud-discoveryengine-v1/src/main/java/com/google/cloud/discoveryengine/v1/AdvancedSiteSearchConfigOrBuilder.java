@@ -36,6 +36,7 @@ public interface AdvancedSiteSearchConfigOrBuilder
    * @return Whether the disableInitialIndex field is set.
    */
   boolean hasDisableInitialIndex();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AdvancedSiteSearchConfigOrBuilder
    * @return Whether the disableAutomaticRefresh field is set.
    */
   boolean hasDisableAutomaticRefresh();
+
   /**
    *
    *

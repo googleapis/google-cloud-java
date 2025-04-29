@@ -33,6 +33,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ProductReviewStatus)
     ProductReviewStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductReviewStatus.newBuilder() to construct.
   private ProductReviewStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      */
     com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext();
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ProductReviewStatus.ProductReviewDestinationStatus)
       ProductReviewDestinationStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProductReviewDestinationStatus.newBuilder() to construct.
     private ProductReviewDestinationStatus(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -149,6 +153,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 1;
     private int reportingContext_ = 0;
+
     /**
      *
      *
@@ -166,6 +171,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     public int getReportingContextValue() {
       return reportingContext_;
     }
+
     /**
      *
      *
@@ -382,6 +388,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -597,6 +604,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int reportingContext_ = 0;
+
       /**
        *
        *
@@ -614,6 +622,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       public int getReportingContextValue() {
         return reportingContext_;
       }
+
       /**
        *
        *
@@ -634,6 +643,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -656,6 +666,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -680,6 +691,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -789,6 +801,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The code.
      */
     java.lang.String getCode();
+
     /**
      *
      *
@@ -816,6 +829,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
+
     /**
      *
      *
@@ -845,6 +859,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The resolution.
      */
     java.lang.String getResolution();
+
     /**
      *
      *
@@ -871,6 +886,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The attribute.
      */
     java.lang.String getAttribute();
+
     /**
      *
      *
@@ -899,6 +915,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
+
     /**
      *
      *
@@ -926,6 +943,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -951,6 +969,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The detail.
      */
     java.lang.String getDetail();
+
     /**
      *
      *
@@ -976,6 +995,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      * @return The documentation.
      */
     java.lang.String getDocumentation();
+
     /**
      *
      *
@@ -989,6 +1009,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getDocumentationBytes();
   }
+
   /**
    *
    *
@@ -1005,6 +1026,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ProductReviewStatus.ProductReviewItemLevelIssue)
       ProductReviewItemLevelIssueOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProductReviewItemLevelIssue.newBuilder() to construct.
     private ProductReviewItemLevelIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1099,6 +1121,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
        * <code>SEVERITY_UNSPECIFIED = 0;</code>
        */
       public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1110,6 +1133,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
        * <code>NOT_IMPACTED = 1;</code>
        */
       public static final int NOT_IMPACTED_VALUE = 1;
+
       /**
        *
        *
@@ -1211,6 +1235,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
+
     /**
      *
      *
@@ -1234,6 +1259,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1260,6 +1286,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     public static final int SEVERITY_FIELD_NUMBER = 2;
     private int severity_ = 0;
+
     /**
      *
      *
@@ -1277,6 +1304,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -1309,6 +1337,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resolution_ = "";
+
     /**
      *
      *
@@ -1332,6 +1361,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1360,6 +1390,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attribute_ = "";
+
     /**
      *
      *
@@ -1384,6 +1415,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1411,6 +1443,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 5;
     private int reportingContext_ = 0;
+
     /**
      *
      *
@@ -1428,6 +1461,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     public int getReportingContextValue() {
       return reportingContext_;
     }
+
     /**
      *
      *
@@ -1455,6 +1489,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1478,6 +1513,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1506,6 +1542,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object detail_ = "";
+
     /**
      *
      *
@@ -1529,6 +1566,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1557,6 +1595,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentation_ = "";
+
     /**
      *
      *
@@ -1580,6 +1619,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1865,6 +1905,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2181,6 +2222,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object code_ = "";
+
       /**
        *
        *
@@ -2203,6 +2245,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2225,6 +2268,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2246,6 +2290,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2263,6 +2308,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2287,6 +2333,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private int severity_ = 0;
+
       /**
        *
        *
@@ -2304,6 +2351,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       public int getSeverityValue() {
         return severity_;
       }
+
       /**
        *
        *
@@ -2324,6 +2372,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2351,6 +2400,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
                 .ProductReviewItemLevelIssue.Severity.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2377,6 +2427,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2398,6 +2449,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object resolution_ = "";
+
       /**
        *
        *
@@ -2420,6 +2472,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2442,6 +2495,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2463,6 +2517,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2480,6 +2535,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2504,6 +2560,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object attribute_ = "";
+
       /**
        *
        *
@@ -2527,6 +2584,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2550,6 +2608,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2572,6 +2631,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2590,6 +2650,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2615,6 +2676,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private int reportingContext_ = 0;
+
       /**
        *
        *
@@ -2632,6 +2694,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       public int getReportingContextValue() {
         return reportingContext_;
       }
+
       /**
        *
        *
@@ -2652,6 +2715,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2674,6 +2738,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2698,6 +2763,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2719,6 +2785,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -2741,6 +2808,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2763,6 +2831,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2784,6 +2853,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2801,6 +2871,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2825,6 +2896,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object detail_ = "";
+
       /**
        *
        *
@@ -2847,6 +2919,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2869,6 +2942,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2890,6 +2964,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2907,6 +2982,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2931,6 +3007,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object documentation_ = "";
+
       /**
        *
        *
@@ -2953,6 +3030,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2975,6 +3053,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2996,6 +3075,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3013,6 +3093,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3116,6 +3197,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
               .ProductReviewDestinationStatus>
       destinationStatuses_;
+
   /**
    *
    *
@@ -3134,6 +3216,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       getDestinationStatusesList() {
     return destinationStatuses_;
   }
+
   /**
    *
    *
@@ -3153,6 +3236,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       getDestinationStatusesOrBuilderList() {
     return destinationStatuses_;
   }
+
   /**
    *
    *
@@ -3168,6 +3252,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
   public int getDestinationStatusesCount() {
     return destinationStatuses_.size();
   }
+
   /**
    *
    *
@@ -3185,6 +3270,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       getDestinationStatuses(int index) {
     return destinationStatuses_.get(index);
   }
+
   /**
    *
    *
@@ -3210,6 +3296,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
           com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
               .ProductReviewItemLevelIssue>
       itemLevelIssues_;
+
   /**
    *
    *
@@ -3228,6 +3315,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       getItemLevelIssuesList() {
     return itemLevelIssues_;
   }
+
   /**
    *
    *
@@ -3247,6 +3335,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       getItemLevelIssuesOrBuilderList() {
     return itemLevelIssues_;
   }
+
   /**
    *
    *
@@ -3262,6 +3351,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
   public int getItemLevelIssuesCount() {
     return itemLevelIssues_.size();
   }
+
   /**
    *
    *
@@ -3278,6 +3368,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       getItemLevelIssues(int index) {
     return itemLevelIssues_.get(index);
   }
+
   /**
    *
    *
@@ -3298,6 +3389,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -3315,6 +3407,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3332,6 +3425,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -3350,6 +3444,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -3368,6 +3463,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3388,6 +3484,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -3609,6 +3706,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4002,6 +4100,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return destinationStatusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4020,6 +4119,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return destinationStatusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4040,6 +4140,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return destinationStatusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4068,6 +4169,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4093,6 +4195,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4120,6 +4223,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4148,6 +4252,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4172,6 +4277,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4197,6 +4303,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4223,6 +4330,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4244,6 +4352,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4265,6 +4374,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4281,6 +4391,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         getDestinationStatusesBuilder(int index) {
       return getDestinationStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4301,6 +4412,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return destinationStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4323,6 +4435,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(destinationStatuses_);
       }
     }
+
     /**
      *
      *
@@ -4342,6 +4455,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
               com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
                   .ProductReviewDestinationStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4362,6 +4476,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
               com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
                   .ProductReviewDestinationStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4451,6 +4566,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return itemLevelIssuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4469,6 +4585,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return itemLevelIssuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4489,6 +4606,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return itemLevelIssuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4516,6 +4634,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4541,6 +4660,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4567,6 +4687,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4594,6 +4715,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4618,6 +4740,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4643,6 +4766,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4669,6 +4793,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4690,6 +4815,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4711,6 +4837,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4727,6 +4854,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         getItemLevelIssuesBuilder(int index) {
       return getItemLevelIssuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4747,6 +4875,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return itemLevelIssuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4769,6 +4898,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(itemLevelIssues_);
       }
     }
+
     /**
      *
      *
@@ -4788,6 +4918,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
               com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
                   .ProductReviewItemLevelIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4808,6 +4939,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
               com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus
                   .ProductReviewItemLevelIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4858,6 +4990,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4875,6 +5008,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4898,6 +5032,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4923,6 +5058,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4945,6 +5081,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4975,6 +5112,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4997,6 +5135,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5014,6 +5153,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5035,6 +5175,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -5070,6 +5211,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -5087,6 +5229,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5110,6 +5253,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5135,6 +5279,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5157,6 +5302,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5187,6 +5333,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -5209,6 +5356,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5226,6 +5374,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5247,6 +5396,7 @@ public final class ProductReviewStatus extends com.google.protobuf.GeneratedMess
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *

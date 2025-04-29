@@ -39,6 +39,7 @@ public interface RankRequestOrBuilder
    * @return The rankingConfig.
    */
   java.lang.String getRankingConfig();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface RankRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface RankRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface RankRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.RankingRecord> getRecordsList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface RankRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.RankingRecord getRecords(int index);
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface RankRequestOrBuilder
    * </code>
    */
   int getRecordsCount();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface RankRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.RankingRecordOrBuilder>
       getRecordsOrBuilderList();
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public interface RankRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 7;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -257,9 +265,11 @@ public interface RankRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 7;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public interface RankRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public interface RankRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

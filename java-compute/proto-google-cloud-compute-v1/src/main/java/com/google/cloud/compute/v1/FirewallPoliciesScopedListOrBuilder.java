@@ -34,6 +34,7 @@ public interface FirewallPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicy firewall_policies = 392512943;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicy> getFirewallPoliciesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface FirewallPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicy firewall_policies = 392512943;</code>
    */
   com.google.cloud.compute.v1.FirewallPolicy getFirewallPolicies(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface FirewallPoliciesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicy firewall_policies = 392512943;</code>
    */
   int getFirewallPoliciesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface FirewallPoliciesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyOrBuilder>
       getFirewallPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface FirewallPoliciesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface FirewallPoliciesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

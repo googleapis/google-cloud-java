@@ -36,6 +36,7 @@ public interface SecretEnvVarOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SecretEnvVarOrBuilder
    * @return Whether the secretRef field is set.
    */
   boolean hasSecretRef();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SecretEnvVarOrBuilder
    * @return The secretRef.
    */
   com.google.cloud.aiplatform.v1.SecretRef getSecretRef();
+
   /**
    *
    *

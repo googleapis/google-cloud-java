@@ -36,6 +36,7 @@ public interface StoredContentsExampleParametersOrBuilder
    * @return Whether the searchKey field is set.
    */
   boolean hasSearchKey();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StoredContentsExampleParametersOrBuilder
    * @return The searchKey.
    */
   java.lang.String getSearchKey();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface StoredContentsExampleParametersOrBuilder
    * @return Whether the contentSearchKey field is set.
    */
   boolean hasContentSearchKey();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface StoredContentsExampleParametersOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters.ContentSearchKey
       getContentSearchKey();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface StoredContentsExampleParametersOrBuilder
    * @return Whether the functionNames field is set.
    */
   boolean hasFunctionNames();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface StoredContentsExampleParametersOrBuilder
    * @return The functionNames.
    */
   com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter getFunctionNames();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyNetworkFirewallPolicyRequest)
     SetIamPolicyNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyNetworkFirewallPolicyRequest.newBuilder() to construct.
   private SetIamPolicyNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
   private int bitField0_;
   public static final int GLOBAL_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 337048498;
   private com.google.cloud.compute.v1.GlobalSetPolicyRequest globalSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
   public boolean hasGlobalSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
         ? com.google.cloud.compute.v1.GlobalSetPolicyRequest.getDefaultInstance()
         : globalSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
             com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder>
         globalSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
     public boolean hasGlobalSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
         return globalSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -722,6 +734,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return getGlobalSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
             : globalSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +992,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class SetIamPolicyNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

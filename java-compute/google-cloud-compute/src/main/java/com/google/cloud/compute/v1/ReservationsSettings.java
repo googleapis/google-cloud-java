@@ -157,6 +157,18 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     return ((ReservationsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).performMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return ((ReservationsStubSettings) getStubSettings()).performMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeReservationRequest, Operation> resizeSettings() {
     return ((ReservationsStubSettings) getStubSettings()).resizeSettings();
@@ -333,6 +345,18 @@ public class ReservationsSettings extends ClientSettings<ReservationsSettings> {
     public PagedCallSettings.Builder<ListReservationsRequest, ReservationList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceReservationRequest, Operation>
+        performMaintenanceSettings() {
+      return getStubSettingsBuilder().performMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceReservationRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to resize. */

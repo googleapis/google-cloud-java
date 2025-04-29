@@ -38,6 +38,7 @@ public interface ListOSPolicyAssignmentRevisionsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ListOSPolicyAssignmentRevisionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

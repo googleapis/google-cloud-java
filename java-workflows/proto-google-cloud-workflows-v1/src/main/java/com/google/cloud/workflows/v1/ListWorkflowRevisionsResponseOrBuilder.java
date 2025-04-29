@@ -34,6 +34,7 @@ public interface ListWorkflowRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
    */
   java.util.List<com.google.cloud.workflows.v1.Workflow> getWorkflowsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListWorkflowRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
    */
   com.google.cloud.workflows.v1.Workflow getWorkflows(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListWorkflowRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
    */
   int getWorkflowsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListWorkflowRevisionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.workflows.v1.WorkflowOrBuilder>
       getWorkflowsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListWorkflowRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

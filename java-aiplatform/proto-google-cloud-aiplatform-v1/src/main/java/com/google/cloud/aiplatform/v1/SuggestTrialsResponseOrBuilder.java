@@ -34,6 +34,7 @@ public interface SuggestTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Trial> getTrialsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SuggestTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Trial getTrials(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SuggestTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   int getTrialsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface SuggestTrialsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Trial trials = 1;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TrialOrBuilder> getTrialsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface SuggestTrialsResponseOrBuilder
    * @return The enum numeric value on the wire for studyState.
    */
   int getStudyStateValue();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface SuggestTrialsResponseOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface SuggestTrialsResponseOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface SuggestTrialsResponseOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -159,6 +167,7 @@ public interface SuggestTrialsResponseOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

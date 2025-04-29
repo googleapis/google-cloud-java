@@ -72,6 +72,7 @@ public enum FilterMatchState implements com.google.protobuf.ProtocolMessageEnum 
    * <code>FILTER_MATCH_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int FILTER_MATCH_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum FilterMatchState implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NO_MATCH_FOUND = 1;</code>
    */
   public static final int NO_MATCH_FOUND_VALUE = 1;
+
   /**
    *
    *

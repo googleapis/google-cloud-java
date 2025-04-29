@@ -33,6 +33,7 @@ public final class SparkSQLDialect extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.SparkSQLDialect)
     SparkSQLDialectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SparkSQLDialect.newBuilder() to construct.
   private SparkSQLDialect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class SparkSQLDialect extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

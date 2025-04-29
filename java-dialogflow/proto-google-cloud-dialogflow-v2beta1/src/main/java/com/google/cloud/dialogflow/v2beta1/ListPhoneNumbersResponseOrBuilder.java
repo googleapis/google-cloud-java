@@ -35,6 +35,7 @@ public interface ListPhoneNumbersResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.PhoneNumber phone_numbers = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.PhoneNumber> getPhoneNumbersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListPhoneNumbersResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.PhoneNumber phone_numbers = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.PhoneNumber getPhoneNumbers(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListPhoneNumbersResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.PhoneNumber phone_numbers = 1;</code>
    */
   int getPhoneNumbersCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListPhoneNumbersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.PhoneNumberOrBuilder>
       getPhoneNumbersOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListPhoneNumbersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

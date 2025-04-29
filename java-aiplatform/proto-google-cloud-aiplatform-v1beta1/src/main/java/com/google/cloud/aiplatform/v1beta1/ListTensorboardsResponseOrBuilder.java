@@ -34,6 +34,7 @@ public interface ListTensorboardsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensorboard tensorboards = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tensorboard> getTensorboardsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTensorboardsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensorboard tensorboards = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Tensorboard getTensorboards(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTensorboardsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensorboard tensorboards = 1;</code>
    */
   int getTensorboardsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTensorboardsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TensorboardOrBuilder>
       getTensorboardsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListTensorboardsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

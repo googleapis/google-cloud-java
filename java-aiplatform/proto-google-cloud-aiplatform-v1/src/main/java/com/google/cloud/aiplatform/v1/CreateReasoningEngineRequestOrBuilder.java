@@ -39,6 +39,7 @@ public interface CreateReasoningEngineRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReasoningEngineRequestOrBuilder
    * @return Whether the reasoningEngine field is set.
    */
   boolean hasReasoningEngine();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateReasoningEngineRequestOrBuilder
    * @return The reasoningEngine.
    */
   com.google.cloud.aiplatform.v1.ReasoningEngine getReasoningEngine();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DomainMappingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface DomainMappingOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface DomainMappingOrBuilder
    * @return Whether the sslSettings field is set.
    */
   boolean hasSslSettings();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface DomainMappingOrBuilder
    * @return The sslSettings.
    */
   com.google.appengine.v1.SslSettings getSslSettings();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface DomainMappingOrBuilder
    * <code>repeated .google.appengine.v1.ResourceRecord resource_records = 4;</code>
    */
   java.util.List<com.google.appengine.v1.ResourceRecord> getResourceRecordsList();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface DomainMappingOrBuilder
    * <code>repeated .google.appengine.v1.ResourceRecord resource_records = 4;</code>
    */
   com.google.appengine.v1.ResourceRecord getResourceRecords(int index);
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface DomainMappingOrBuilder
    * <code>repeated .google.appengine.v1.ResourceRecord resource_records = 4;</code>
    */
   int getResourceRecordsCount();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface DomainMappingOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.ResourceRecordOrBuilder>
       getResourceRecordsOrBuilderList();
+
   /**
    *
    *

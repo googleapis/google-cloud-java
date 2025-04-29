@@ -221,7 +221,8 @@ public class MockMigrationCenterImpl extends MigrationCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AggregateAssetsValues, expected %s or %s",
+                  "Unrecognized response type %s for method AggregateAssetsValues, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AggregateAssetsValuesResponse.class.getName(),
                   Exception.class.getName())));
@@ -432,7 +433,8 @@ public class MockMigrationCenterImpl extends MigrationCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateImportDataFile, expected %s or %s",
+                  "Unrecognized response type %s for method CreateImportDataFile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -453,7 +455,8 @@ public class MockMigrationCenterImpl extends MigrationCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteImportDataFile, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteImportDataFile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -596,7 +599,8 @@ public class MockMigrationCenterImpl extends MigrationCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveAssetsFromGroup, expected %s or %s",
+                  "Unrecognized response type %s for method RemoveAssetsFromGroup, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

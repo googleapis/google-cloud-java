@@ -33,6 +33,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SdpFilterSettings)
     SdpFilterSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SdpFilterSettings.newBuilder() to construct.
   private SdpFilterSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     private SdpConfigurationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
   public boolean hasBasicConfig() {
     return sdpConfigurationCase_ == 1;
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.modelarmor.v1.SdpBasicConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ADVANCED_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
   public boolean hasAdvancedConfig() {
     return sdpConfigurationCase_ == 2;
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.modelarmor.v1.SdpAdvancedConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -431,6 +439,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +675,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
             com.google.cloud.modelarmor.v1.SdpBasicConfig.Builder,
             com.google.cloud.modelarmor.v1.SdpBasicConfigOrBuilder>
         basicConfigBuilder_;
+
     /**
      *
      *
@@ -687,6 +697,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasBasicConfig() {
       return sdpConfigurationCase_ == 1;
     }
+
     /**
      *
      *
@@ -718,6 +729,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.modelarmor.v1.SdpBasicConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       sdpConfigurationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       sdpConfigurationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       sdpConfigurationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +857,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +876,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.modelarmor.v1.SdpBasicConfig.Builder getBasicConfigBuilder() {
       return getBasicConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -886,6 +903,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.modelarmor.v1.SdpBasicConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -930,6 +948,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
             com.google.cloud.modelarmor.v1.SdpAdvancedConfig.Builder,
             com.google.cloud.modelarmor.v1.SdpAdvancedConfigOrBuilder>
         advancedConfigBuilder_;
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     public boolean hasAdvancedConfig() {
       return sdpConfigurationCase_ == 2;
     }
+
     /**
      *
      *
@@ -978,6 +998,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.modelarmor.v1.SdpAdvancedConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1025,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       sdpConfigurationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1050,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       sdpConfigurationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1088,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       sdpConfigurationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1118,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.modelarmor.v1.SdpAdvancedConfig.Builder getAdvancedConfigBuilder() {
       return getAdvancedConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1134,6 +1160,7 @@ public final class SdpFilterSettings extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.modelarmor.v1.SdpAdvancedConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

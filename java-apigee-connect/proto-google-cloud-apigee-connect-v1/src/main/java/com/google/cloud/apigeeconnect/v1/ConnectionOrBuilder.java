@@ -37,6 +37,7 @@ public interface ConnectionOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ConnectionOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ConnectionOrBuilder
    * @return The cluster.
    */
   com.google.cloud.apigeeconnect.v1.Cluster getCluster();
+
   /**
    *
    *

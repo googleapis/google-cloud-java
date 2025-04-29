@@ -33,6 +33,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagFileTransformationConfig)
     RagFileTransformationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFileTransformationConfig.newBuilder() to construct.
   private RagFileTransformationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.RagFileChunkingConfig ragFileChunkingConfig_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
   public boolean hasRagFileChunkingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1.RagFileChunkingConfig.getDefaultInstance()
         : ragFileChunkingConfig_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -486,6 +491,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1.RagFileChunkingConfig.Builder,
             com.google.cloud.aiplatform.v1.RagFileChunkingConfigOrBuilder>
         ragFileChunkingConfigBuilder_;
+
     /**
      *
      *
@@ -500,6 +506,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
     public boolean hasRagFileChunkingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -520,6 +527,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
         return ragFileChunkingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -543,6 +551,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -563,6 +572,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -592,6 +602,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +622,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +638,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
       onChanged();
       return getRagFileChunkingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -645,6 +658,7 @@ public final class RagFileTransformationConfig extends com.google.protobuf.Gener
             : ragFileChunkingConfig_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.productstudio.v1alpha.ProductInfo)
     ProductInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductInfo.newBuilder() to construct.
   private ProductInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,6 +103,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
   public int getProductAttributesCount() {
     return internalGetProductAttributes().getMap().size();
   }
+
   /**
    *
    *
@@ -121,12 +123,14 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProductAttributes().getMap().containsKey(key);
   }
+
   /** Use {@link #getProductAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProductAttributes() {
     return getProductAttributesMap();
   }
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getProductAttributesMap() {
     return internalGetProductAttributes().getMap();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProductAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCT_IMAGE_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.productstudio.v1alpha.Image productImage_;
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductImage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.productstudio.v1alpha.Image.getDefaultInstance()
         : productImage_;
   }
+
   /**
    *
    *
@@ -432,6 +441,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -704,6 +714,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     public int getProductAttributesCount() {
       return internalGetProductAttributes().getMap().size();
     }
+
     /**
      *
      *
@@ -723,12 +734,14 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProductAttributes().getMap().containsKey(key);
     }
+
     /** Use {@link #getProductAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProductAttributes() {
       return getProductAttributesMap();
     }
+
     /**
      *
      *
@@ -745,6 +758,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getProductAttributesMap() {
       return internalGetProductAttributes().getMap();
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
           internalGetProductAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProductAttributes().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -818,12 +834,14 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProductAttributes().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProductAttributes() {
       bitField0_ |= 0x00000001;
       return internalGetMutableProductAttributes().getMutableMap();
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.productstudio.v1alpha.Image.Builder,
             com.google.shopping.merchant.productstudio.v1alpha.ImageOrBuilder>
         productImageBuilder_;
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductImage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
         return productImageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +979,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1051,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1046,6 +1073,7 @@ public final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
             : productImage_;
       }
     }
+
     /**
      *
      *

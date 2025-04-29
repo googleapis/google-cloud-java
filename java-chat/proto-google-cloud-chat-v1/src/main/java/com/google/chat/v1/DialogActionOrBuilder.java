@@ -38,6 +38,7 @@ public interface DialogActionOrBuilder
    * @return Whether the dialog field is set.
    */
   boolean hasDialog();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DialogActionOrBuilder
    * @return The dialog.
    */
   com.google.chat.v1.Dialog getDialog();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface DialogActionOrBuilder
    * @return Whether the actionStatus field is set.
    */
   boolean hasActionStatus();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface DialogActionOrBuilder
    * @return The actionStatus.
    */
   com.google.chat.v1.ActionStatus getActionStatus();
+
   /**
    *
    *

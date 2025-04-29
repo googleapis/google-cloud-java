@@ -23,6 +23,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest;
+import com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
@@ -36,6 +38,7 @@ import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -112,6 +115,17 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: exportPublisherModelCallable()");
+  }
+
+  public UnaryCallable<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: checkPublisherModelEulaAcceptanceCallable()");
+  }
+
+  public UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaCallable() {
+    throw new UnsupportedOperationException("Not implemented: acceptPublisherModelEulaCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
