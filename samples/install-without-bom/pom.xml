@@ -18,7 +18,7 @@
   </parent>
 
   <properties>
-    <project.protobuf-java.version>3.25.4</project.protobuf-java.version>
+    <project.protobuf-java.version>3.25.7</project.protobuf-java.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
