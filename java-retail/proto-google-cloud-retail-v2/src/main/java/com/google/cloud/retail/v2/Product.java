@@ -3508,7 +3508,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
    *
-   *
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
@@ -3519,7 +3518,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
-   *     google/cloud/retail/v2/product.proto;l=570
+   *     google/cloud/retail/v2/product.proto;l=569
    * @return Whether the retrievableFields field is set.
    */
   @java.lang.Override
@@ -3583,7 +3582,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
    *
-   *
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
@@ -3594,7 +3592,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
-   *     google/cloud/retail/v2/product.proto;l=570
+   *     google/cloud/retail/v2/product.proto;l=569
    * @return The retrievableFields.
    */
   @java.lang.Override
@@ -3659,7 +3657,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   *
    *
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
@@ -13865,7 +13862,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
      *
-     *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
@@ -13876,7 +13872,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
-     *     google/cloud/retail/v2/product.proto;l=570
+     *     google/cloud/retail/v2/product.proto;l=569
      * @return Whether the retrievableFields field is set.
      */
     @java.lang.Deprecated
@@ -13939,7 +13935,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
      *
-     *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
@@ -13950,7 +13945,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
-     *     google/cloud/retail/v2/product.proto;l=570
+     *     google/cloud/retail/v2/product.proto;l=569
      * @return The retrievableFields.
      */
     @java.lang.Deprecated
@@ -14018,7 +14013,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     *
      *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
@@ -14099,7 +14093,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
      *
-     *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
@@ -14175,7 +14168,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     *
      *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
@@ -14261,7 +14253,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
      *
-     *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
@@ -14338,7 +14329,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
      *
-     *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
@@ -14409,7 +14399,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     *
      *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
@@ -14485,7 +14474,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     *
      *
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase

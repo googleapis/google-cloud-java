@@ -156,6 +156,19 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. Whether to extract images in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageExtraction.
+     */
+    boolean getEnableImageExtraction();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Whether to refine PDF layout using LLM.
      * </pre>
      *
@@ -164,6 +177,19 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The enableLlmLayoutParsing.
      */
     boolean getEnableLlmLayoutParsing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include table annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableAnnotation.
+     */
+    boolean getEnableTableAnnotation();
   }
 
   /**
@@ -1287,6 +1313,25 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       return enableImageAnnotation_;
     }
 
+    public static final int ENABLE_IMAGE_EXTRACTION_FIELD_NUMBER = 7;
+    private boolean enableImageExtraction_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract images in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageExtraction.
+     */
+    @java.lang.Override
+    public boolean getEnableImageExtraction() {
+      return enableImageExtraction_;
+    }
+
     public static final int ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER = 5;
     private boolean enableLlmLayoutParsing_ = false;
 
@@ -1304,6 +1349,25 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean getEnableLlmLayoutParsing() {
       return enableLlmLayoutParsing_;
+    }
+
+    public static final int ENABLE_TABLE_ANNOTATION_FIELD_NUMBER = 6;
+    private boolean enableTableAnnotation_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include table annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableAnnotation.
+     */
+    @java.lang.Override
+    public boolean getEnableTableAnnotation() {
+      return enableTableAnnotation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1335,6 +1399,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (enableLlmLayoutParsing_ != false) {
         output.writeBool(5, enableLlmLayoutParsing_);
       }
+      if (enableTableAnnotation_ != false) {
+        output.writeBool(6, enableTableAnnotation_);
+      }
+      if (enableImageExtraction_ != false) {
+        output.writeBool(7, enableImageExtraction_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1359,6 +1429,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (enableLlmLayoutParsing_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableLlmLayoutParsing_);
       }
+      if (enableTableAnnotation_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableTableAnnotation_);
+      }
+      if (enableImageExtraction_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, enableImageExtraction_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1382,7 +1458,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (getReturnImages() != other.getReturnImages()) return false;
       if (getReturnBoundingBoxes() != other.getReturnBoundingBoxes()) return false;
       if (getEnableImageAnnotation() != other.getEnableImageAnnotation()) return false;
+      if (getEnableImageExtraction() != other.getEnableImageExtraction()) return false;
       if (getEnableLlmLayoutParsing() != other.getEnableLlmLayoutParsing()) return false;
+      if (getEnableTableAnnotation() != other.getEnableTableAnnotation()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1404,8 +1482,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnBoundingBoxes());
       hash = (37 * hash) + ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageAnnotation());
+      hash = (37 * hash) + ENABLE_IMAGE_EXTRACTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageExtraction());
       hash = (37 * hash) + ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLlmLayoutParsing());
+      hash = (37 * hash) + ENABLE_TABLE_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableAnnotation());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1568,7 +1650,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         returnImages_ = false;
         returnBoundingBoxes_ = false;
         enableImageAnnotation_ = false;
+        enableImageExtraction_ = false;
         enableLlmLayoutParsing_ = false;
+        enableTableAnnotation_ = false;
         return this;
       }
 
@@ -1623,7 +1707,13 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           result.enableImageAnnotation_ = enableImageAnnotation_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.enableImageExtraction_ = enableImageExtraction_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.enableLlmLayoutParsing_ = enableLlmLayoutParsing_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enableTableAnnotation_ = enableTableAnnotation_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1690,8 +1780,14 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         if (other.getEnableImageAnnotation() != false) {
           setEnableImageAnnotation(other.getEnableImageAnnotation());
         }
+        if (other.getEnableImageExtraction() != false) {
+          setEnableImageExtraction(other.getEnableImageExtraction());
+        }
         if (other.getEnableLlmLayoutParsing() != false) {
           setEnableLlmLayoutParsing(other.getEnableLlmLayoutParsing());
+        }
+        if (other.getEnableTableAnnotation() != false) {
+          setEnableTableAnnotation(other.getEnableTableAnnotation());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1747,9 +1843,21 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               case 40:
                 {
                   enableLlmLayoutParsing_ = input.readBool();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 40
+              case 48:
+                {
+                  enableTableAnnotation_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 48
+              case 56:
+                {
+                  enableImageExtraction_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 56
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2170,6 +2278,62 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private boolean enableImageExtraction_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract images in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageExtraction.
+       */
+      @java.lang.Override
+      public boolean getEnableImageExtraction() {
+        return enableImageExtraction_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract images in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableImageExtraction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableImageExtraction(boolean value) {
+
+        enableImageExtraction_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract images in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableImageExtraction() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        enableImageExtraction_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean enableLlmLayoutParsing_;
 
       /**
@@ -2203,7 +2367,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableLlmLayoutParsing(boolean value) {
 
         enableLlmLayoutParsing_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2220,8 +2384,64 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableLlmLayoutParsing() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         enableLlmLayoutParsing_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableTableAnnotation_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableTableAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableTableAnnotation() {
+        return enableTableAnnotation_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableTableAnnotation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableTableAnnotation(boolean value) {
+
+        enableTableAnnotation_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableTableAnnotation() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        enableTableAnnotation_ = false;
         onChanged();
         return this;
       }

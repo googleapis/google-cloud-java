@@ -28,10 +28,10 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * The place ID for the current set of inventory information.
+   * Optional. The place ID for the current set of inventory information.
    * </pre>
    *
-   * <code>string place_id = 1;</code>
+   * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The placeId.
    */
@@ -41,10 +41,10 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * The place ID for the current set of inventory information.
+   * Optional. The place ID for the current set of inventory information.
    * </pre>
    *
-   * <code>string place_id = 1;</code>
+   * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for placeId.
    */
@@ -54,13 +54,15 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Product price and cost information.
+   * Optional. Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.PriceInfo price_info = 2;</code>
+   * <code>
+   * .google.cloud.retail.v2.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the priceInfo field is set.
    */
@@ -70,13 +72,15 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Product price and cost information.
+   * Optional. Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.PriceInfo price_info = 2;</code>
+   * <code>
+   * .google.cloud.retail.v2.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The priceInfo.
    */
@@ -86,13 +90,15 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Product price and cost information.
+   * Optional. Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.PriceInfo price_info = 2;</code>
+   * <code>
+   * .google.cloud.retail.v2.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.retail.v2.PriceInfoOrBuilder getPriceInfoOrBuilder();
 
@@ -100,8 +106,8 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -120,7 +126,9 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAttributesCount();
 
@@ -128,8 +136,8 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -148,7 +156,9 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAttributes(java.lang.String key);
 
@@ -160,8 +170,8 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -180,7 +190,9 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> getAttributesMap();
 
@@ -188,8 +200,8 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -208,7 +220,9 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
@@ -220,8 +234,8 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -240,7 +254,9 @@ public interface LocalInventoryOrBuilder
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.retail.v2.CustomAttribute getAttributesOrThrow(java.lang.String key);
 
@@ -248,7 +264,7 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -272,7 +288,7 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the fulfillmentTypes.
    */
@@ -282,7 +298,7 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -306,7 +322,7 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of fulfillmentTypes.
    */
@@ -316,7 +332,7 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -340,7 +356,7 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The fulfillmentTypes at the given index.
@@ -351,7 +367,7 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -375,7 +391,7 @@ public interface LocalInventoryOrBuilder
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the fulfillmentTypes at the given index.

@@ -385,7 +385,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=471
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=471
    * @return The document.
    */
   @java.lang.Override
@@ -2245,7 +2245,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=471
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -2266,7 +2266,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=471
      * @return The document.
      */
     @java.lang.Deprecated

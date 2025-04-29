@@ -382,6 +382,58 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.PinControlMetadata pin_control_metadata = 22;</code>
+   *
+   * @return Whether the pinControlMetadata field is set.
+   */
+  boolean hasPinControlMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.PinControlMetadata pin_control_metadata = 22;</code>
+   *
+   * @return The pinControlMetadata.
+   */
+  com.google.cloud.retail.v2.PinControlMetadata getPinControlMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.PinControlMetadata pin_control_metadata = 22;</code>
+   */
+  com.google.cloud.retail.v2.PinControlMetadataOrBuilder getPinControlMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The invalid
    * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
    * that are not applied during serving.
@@ -462,7 +514,7 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata related to A/B testing [Experiment][] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -474,7 +526,7 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata related to A/B testing [Experiment][] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -486,7 +538,7 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata related to A/B testing [Experiment][] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -498,7 +550,7 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata related to A/B testing [Experiment][] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -511,7 +563,7 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata related to A/B testing [Experiment][] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *

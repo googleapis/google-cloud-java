@@ -1887,7 +1887,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=594
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=600
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
@@ -1908,7 +1908,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=594
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=600
    * @return The outputConfig.
    */
   @java.lang.Override
@@ -3525,7 +3525,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=594
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=600
      * @return Whether the outputConfig field is set.
      */
     @java.lang.Deprecated
@@ -3545,7 +3545,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=594
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=600
      * @return The outputConfig.
      */
     @java.lang.Deprecated

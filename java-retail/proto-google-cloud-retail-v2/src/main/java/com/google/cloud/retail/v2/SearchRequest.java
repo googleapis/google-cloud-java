@@ -54,6 +54,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchMode_ = 0;
     entity_ = "";
+    languageCode_ = "";
+    regionCode_ = "";
+    placeId_ = "";
   }
 
   @java.lang.Override
@@ -371,7 +374,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of keys to exclude when faceting.
      *
-     *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
@@ -410,7 +412,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -451,7 +452,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of keys to exclude when faceting.
      *
-     *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
@@ -491,7 +491,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -5226,7 +5225,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of keys to exclude when faceting.
      *
-     *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
@@ -5267,7 +5265,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -5310,7 +5307,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of keys to exclude when faceting.
      *
-     *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
@@ -5352,7 +5348,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6188,7 +6183,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * List of keys to exclude when faceting.
        *
-       *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
@@ -6231,7 +6225,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * List of keys to exclude when faceting.
        *
-       *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
@@ -6272,7 +6265,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6316,7 +6308,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * List of keys to exclude when faceting.
        *
-       *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
@@ -6358,7 +6349,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6410,7 +6400,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * List of keys to exclude when faceting.
        *
-       *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
@@ -6460,7 +6449,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * List of keys to exclude when faceting.
        *
-       *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
@@ -6507,7 +6495,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * List of keys to exclude when faceting.
        *
-       *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
@@ -6552,7 +6539,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -7624,7 +7610,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7641,7 +7627,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7658,7 +7644,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7674,7 +7660,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7693,7 +7679,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8761,7 +8747,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8781,7 +8767,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8803,7 +8789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8822,7 +8808,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8842,7 +8828,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -9355,7 +9341,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9378,7 +9364,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9400,7 +9386,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9423,7 +9409,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9452,7 +9438,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9480,7 +9466,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9509,7 +9495,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9538,7 +9524,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9565,7 +9551,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9593,7 +9579,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9621,7 +9607,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9646,7 +9632,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9671,7 +9657,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9690,7 +9676,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9713,7 +9699,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9738,7 +9724,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9760,7 +9746,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9783,7 +9769,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -16680,9 +16666,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16694,9 +16685,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16708,9 +16704,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16722,9 +16723,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16737,9 +16743,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16822,9 +16833,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16839,9 +16855,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16857,9 +16878,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16874,9 +16900,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16891,9 +16922,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -17404,9 +17440,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17424,9 +17465,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17444,9 +17490,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17464,9 +17515,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17490,9 +17546,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17514,9 +17575,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17540,9 +17606,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17566,9 +17637,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17589,9 +17665,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17613,9 +17694,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17637,9 +17723,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17660,9 +17751,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17683,9 +17779,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17699,9 +17800,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17719,9 +17825,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17740,9 +17851,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17757,9 +17873,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17774,9 +17895,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -18612,7 +18738,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=696
+   *     google/cloud/retail/v2/search_service.proto;l=700
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -18637,7 +18763,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=696
+   *     google/cloud/retail/v2/search_service.proto;l=700
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -19818,6 +19944,189 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : tileNavigationSpec_;
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 43;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+   * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+   * information, see [Standardized codes](https://google.aip.dev/143). This
+   * field helps to better interpret the query. If a value isn't specified, the
+   * query language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+   * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+   * information, see [Standardized codes](https://google.aip.dev/143). This
+   * field helps to better interpret the query. If a value isn't specified, the
+   * query language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_CODE_FIELD_NUMBER = 44;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object regionCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Unicode country/region code (CLDR) of a location, such as
+   * "US" and "419"
+   * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+   * For more information, see [Standardized codes](https://google.aip.dev/143).
+   * If set, then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The regionCode.
+   */
+  @java.lang.Override
+  public java.lang.String getRegionCode() {
+    java.lang.Object ref = regionCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      regionCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Unicode country/region code (CLDR) of a location, such as
+   * "US" and "419"
+   * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+   * For more information, see [Standardized codes](https://google.aip.dev/143).
+   * If set, then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for regionCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionCodeBytes() {
+    java.lang.Object ref = regionCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      regionCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLACE_ID_FIELD_NUMBER = 46;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object placeId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id corresponding to a place, such as a store id or region id.
+   * When specified, we use the price from the local inventory with the matching
+   * product's
+   * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+   * for revenue optimization.
+   * </pre>
+   *
+   * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The placeId.
+   */
+  @java.lang.Override
+  public java.lang.String getPlaceId() {
+    java.lang.Object ref = placeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      placeId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id corresponding to a place, such as a store id or region id.
+   * When specified, we use the price from the local inventory with the matching
+   * product's
+   * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+   * for revenue optimization.
+   * </pre>
+   *
+   * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for placeId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPlaceIdBytes() {
+    java.lang.Object ref = placeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      placeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -19904,6 +20213,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(41, getTileNavigationSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 43, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 44, regionCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 46, placeId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -20009,6 +20327,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, getTileNavigationSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44, regionCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46, placeId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -20072,6 +20399,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasTileNavigationSpec()) {
       if (!getTileNavigationSpec().equals(other.getTileNavigationSpec())) return false;
     }
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getRegionCode().equals(other.getRegionCode())) return false;
+    if (!getPlaceId().equals(other.getPlaceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -20155,6 +20485,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TILE_NAVIGATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getTileNavigationSpec().hashCode();
     }
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getRegionCode().hashCode();
+    hash = (37 * hash) + PLACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPlaceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -20397,6 +20733,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         tileNavigationSpecBuilder_.dispose();
         tileNavigationSpecBuilder_ = null;
       }
+      languageCode_ = "";
+      regionCode_ = "";
+      placeId_ = "";
       return this;
     }
 
@@ -20542,6 +20881,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 ? tileNavigationSpec_
                 : tileNavigationSpecBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.regionCode_ = regionCode_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.placeId_ = placeId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -20717,6 +21065,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTileNavigationSpec()) {
         mergeTileNavigationSpec(other.getTileNavigationSpec());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      if (!other.getRegionCode().isEmpty()) {
+        regionCode_ = other.regionCode_;
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      if (!other.getPlaceId().isEmpty()) {
+        placeId_ = other.placeId_;
+        bitField0_ |= 0x04000000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -20910,6 +21273,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00800000;
                 break;
               } // case 330
+            case 346:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 346
+            case 354:
+              {
+                regionCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 354
+            case 370:
+              {
+                placeId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -22875,7 +23256,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=696
+     *     google/cloud/retail/v2/search_service.proto;l=700
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -22899,7 +23280,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=696
+     *     google/cloud/retail/v2/search_service.proto;l=700
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -26197,6 +26578,399 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         tileNavigationSpec_ = null;
       }
       return tileNavigationSpecBuilder_;
+    }
+
+    private java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object regionCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The regionCode.
+     */
+    public java.lang.String getRegionCode() {
+      java.lang.Object ref = regionCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        regionCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for regionCode.
+     */
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        regionCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The regionCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      regionCode_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegionCode() {
+      regionCode_ = getDefaultInstance().getRegionCode();
+      bitField0_ = (bitField0_ & ~0x02000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for regionCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      regionCode_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object placeId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The placeId.
+     */
+    public java.lang.String getPlaceId() {
+      java.lang.Object ref = placeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        placeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for placeId.
+     */
+    public com.google.protobuf.ByteString getPlaceIdBytes() {
+      java.lang.Object ref = placeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        placeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The placeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlaceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      placeId_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPlaceId() {
+      placeId_ = getDefaultInstance().getPlaceId();
+      bitField0_ = (bitField0_ & ~0x04000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for placeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlaceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      placeId_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

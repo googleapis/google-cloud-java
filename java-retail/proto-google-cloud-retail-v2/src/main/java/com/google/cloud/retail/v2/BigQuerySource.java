@@ -122,9 +122,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   *
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -141,9 +138,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   *
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -163,9 +157,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   *
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -1021,9 +1012,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1040,9 +1028,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1069,9 +1054,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1095,9 +1077,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1118,9 +1097,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1152,9 +1128,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1181,9 +1154,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1197,9 +1167,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1221,9 +1188,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     *
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>

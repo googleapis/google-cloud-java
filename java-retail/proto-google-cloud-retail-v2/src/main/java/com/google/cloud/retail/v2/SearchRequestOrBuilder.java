@@ -500,7 +500,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=696
+   *     google/cloud/retail/v2/search_service.proto;l=700
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -522,7 +522,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=696
+   *     google/cloud/retail/v2/search_service.proto;l=700
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated
@@ -1497,4 +1497,106 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.retail.v2.SearchRequest.TileNavigationSpecOrBuilder
       getTileNavigationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+   * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+   * information, see [Standardized codes](https://google.aip.dev/143). This
+   * field helps to better interpret the query. If a value isn't specified, the
+   * query language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+   * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+   * information, see [Standardized codes](https://google.aip.dev/143). This
+   * field helps to better interpret the query. If a value isn't specified, the
+   * query language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Unicode country/region code (CLDR) of a location, such as
+   * "US" and "419"
+   * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+   * For more information, see [Standardized codes](https://google.aip.dev/143).
+   * If set, then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The regionCode.
+   */
+  java.lang.String getRegionCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Unicode country/region code (CLDR) of a location, such as
+   * "US" and "419"
+   * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+   * For more information, see [Standardized codes](https://google.aip.dev/143).
+   * If set, then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for regionCode.
+   */
+  com.google.protobuf.ByteString getRegionCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id corresponding to a place, such as a store id or region id.
+   * When specified, we use the price from the local inventory with the matching
+   * product's
+   * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+   * for revenue optimization.
+   * </pre>
+   *
+   * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The placeId.
+   */
+  java.lang.String getPlaceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id corresponding to a place, such as a store id or region id.
+   * When specified, we use the price from the local inventory with the matching
+   * product's
+   * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+   * for revenue optimization.
+   * </pre>
+   *
+   * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for placeId.
+   */
+  com.google.protobuf.ByteString getPlaceIdBytes();
 }

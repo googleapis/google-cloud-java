@@ -405,6 +405,46 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
+   * Pins one or more specified products to a specific position in the
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.PinAction pin_action = 14;</code>
+   *
+   * @return Whether the pinAction field is set.
+   */
+  boolean hasPinAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pins one or more specified products to a specific position in the
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.PinAction pin_action = 14;</code>
+   *
+   * @return The pinAction.
+   */
+  com.google.cloud.retail.v2.Rule.PinAction getPinAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pins one or more specified products to a specific position in the
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.Rule.PinAction pin_action = 14;</code>
+   */
+  com.google.cloud.retail.v2.Rule.PinActionOrBuilder getPinActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The condition that triggers the rule.
    * If the condition is empty, the rule will always apply.
    * </pre>
