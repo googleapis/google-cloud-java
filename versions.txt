@@ -840,3 +840,6 @@ grpc-google-cloud-chronicle-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-storagebatchoperations:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-storagebatchoperations-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-storagebatchoperations-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-lustre:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-lustre-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-lustre-v1:0.0.0:0.0.1-SNAPSHOT
