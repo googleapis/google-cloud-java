@@ -49,6 +49,7 @@ public interface ContainerStartedEventOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 2;</code>
    */
   int getPortMappingsCount();
+
   /**
    *
    *
@@ -61,9 +62,11 @@ public interface ContainerStartedEventOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 2;</code>
    */
   boolean containsPortMappings(int key);
+
   /** Use {@link #getPortMappingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappings();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ContainerStartedEventOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 2;</code>
    */
   java.util.Map<java.lang.Integer, java.lang.Integer> getPortMappingsMap();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ContainerStartedEventOrBuilder
    * <code>map&lt;int32, int32&gt; port_mappings = 2;</code>
    */
   int getPortMappingsOrDefault(int key, int defaultValue);
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ContainerStartedEventOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *

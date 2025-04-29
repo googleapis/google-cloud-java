@@ -34,6 +34,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.AuthorizeEnvironmentRequest)
     AuthorizeEnvironmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuthorizeEnvironmentRequest.newBuilder() to construct.
   private AuthorizeEnvironmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object idToken_ = "";
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -465,6 +475,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +720,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object accessToken_ = "";
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +952,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object idToken_ = "";
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1078,6 +1106,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1130,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1151,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1180,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1201,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1217,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1203,6 +1237,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
             : expireTime_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.EventUpdate)
     EventUpdateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EventUpdate.newBuilder() to construct.
   private EventUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stream_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object event_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object series_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OFFSET_FIELD_NUMBER = 5;
   private long offset_ = 0L;
+
   /**
    *
    *
@@ -483,6 +494,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -738,6 +750,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object stream_ = "";
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +861,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object event_ = "";
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +907,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +947,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object series_ = "";
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1040,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1058,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1075,6 +1103,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1095,6 +1124,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1147,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1195,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1215,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1230,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1214,6 +1249,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1241,6 +1277,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long offset_;
+
     /**
      *
      *
@@ -1257,6 +1294,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
     public long getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -1277,6 +1315,7 @@ public final class EventUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

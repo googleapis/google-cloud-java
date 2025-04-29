@@ -43,6 +43,7 @@ public interface HttpEndpointOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

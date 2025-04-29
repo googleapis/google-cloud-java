@@ -37,6 +37,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.ReportRow)
     ReportRowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportRow.newBuilder() to construct.
   private ReportRow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int PRODUCT_PERFORMANCE_VIEW_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.reports.v1beta.ProductPerformanceView
       productPerformanceView_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductPerformanceView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.reports.v1beta.ProductPerformanceView.getDefaultInstance()
         : productPerformanceView_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int NON_PRODUCT_PERFORMANCE_VIEW_FIELD_NUMBER = 7;
   private com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView
       nonProductPerformanceView_;
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNonProductPerformanceView() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView.getDefaultInstance()
         : nonProductPerformanceView_;
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCT_VIEW_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.reports.v1beta.ProductView productView_;
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductView() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.reports.v1beta.ProductView.getDefaultInstance()
         : productView_;
   }
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int PRICE_COMPETITIVENESS_PRODUCT_VIEW_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.reports.v1beta.PriceCompetitivenessProductView
       priceCompetitivenessProductView_;
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPriceCompetitivenessProductView() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -276,6 +288,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : priceCompetitivenessProductView_;
   }
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int PRICE_INSIGHTS_PRODUCT_VIEW_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView
       priceInsightsProductView_;
+
   /**
    *
    *
@@ -316,6 +330,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPriceInsightsProductView() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.getDefaultInstance()
         : priceInsightsProductView_;
   }
+
   /**
    *
    *
@@ -358,6 +374,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int BEST_SELLERS_PRODUCT_CLUSTER_VIEW_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.reports.v1beta.BestSellersProductClusterView
       bestSellersProductClusterView_;
+
   /**
    *
    *
@@ -375,6 +392,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBestSellersProductClusterView() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -396,6 +414,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : bestSellersProductClusterView_;
   }
+
   /**
    *
    *
@@ -418,6 +437,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BEST_SELLERS_BRAND_VIEW_FIELD_NUMBER = 6;
   private com.google.shopping.merchant.reports.v1beta.BestSellersBrandView bestSellersBrandView_;
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBestSellersBrandView() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -455,6 +476,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.reports.v1beta.BestSellersBrandView.getDefaultInstance()
         : bestSellersBrandView_;
   }
+
   /**
    *
    *
@@ -477,6 +499,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int COMPETITIVE_VISIBILITY_COMPETITOR_VIEW_FIELD_NUMBER = 8;
   private com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityCompetitorView
       competitiveVisibilityCompetitorView_;
+
   /**
    *
    *
@@ -495,6 +518,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompetitiveVisibilityCompetitorView() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -517,6 +541,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : competitiveVisibilityCompetitorView_;
   }
+
   /**
    *
    *
@@ -541,6 +566,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int COMPETITIVE_VISIBILITY_TOP_MERCHANT_VIEW_FIELD_NUMBER = 9;
   private com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityTopMerchantView
       competitiveVisibilityTopMerchantView_;
+
   /**
    *
    *
@@ -559,6 +585,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompetitiveVisibilityTopMerchantView() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -581,6 +608,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : competitiveVisibilityTopMerchantView_;
   }
+
   /**
    *
    *
@@ -605,6 +633,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public static final int COMPETITIVE_VISIBILITY_BENCHMARK_VIEW_FIELD_NUMBER = 10;
   private com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityBenchmarkView
       competitiveVisibilityBenchmarkView_;
+
   /**
    *
    *
@@ -623,6 +652,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompetitiveVisibilityBenchmarkView() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -645,6 +675,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : competitiveVisibilityBenchmarkView_;
   }
+
   /**
    *
    *
@@ -984,6 +1015,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1404,6 +1436,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.ProductPerformanceView.Builder,
             com.google.shopping.merchant.reports.v1beta.ProductPerformanceViewOrBuilder>
         productPerformanceViewBuilder_;
+
     /**
      *
      *
@@ -1420,6 +1453,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductPerformanceView() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1444,6 +1478,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return productPerformanceViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1469,6 +1504,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1528,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1561,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1583,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1562,6 +1601,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductPerformanceViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1584,6 +1624,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : productPerformanceView_;
       }
     }
+
     /**
      *
      *
@@ -1619,6 +1660,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView.Builder,
             com.google.shopping.merchant.reports.v1beta.NonProductPerformanceViewOrBuilder>
         nonProductPerformanceViewBuilder_;
+
     /**
      *
      *
@@ -1635,6 +1677,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNonProductPerformanceView() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1659,6 +1702,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return nonProductPerformanceViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1728,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1752,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1739,6 +1785,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1807,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1825,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNonProductPerformanceViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1799,6 +1848,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : nonProductPerformanceView_;
       }
     }
+
     /**
      *
      *
@@ -1833,6 +1883,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.ProductView.Builder,
             com.google.shopping.merchant.reports.v1beta.ProductViewOrBuilder>
         productViewBuilder_;
+
     /**
      *
      *
@@ -1847,6 +1898,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductView() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1867,6 +1919,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return productViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1889,6 +1942,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1909,6 +1963,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1992,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2012,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2027,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1989,6 +2047,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : productView_;
       }
     }
+
     /**
      *
      *
@@ -2022,6 +2081,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.PriceCompetitivenessProductView.Builder,
             com.google.shopping.merchant.reports.v1beta.PriceCompetitivenessProductViewOrBuilder>
         priceCompetitivenessProductViewBuilder_;
+
     /**
      *
      *
@@ -2038,6 +2098,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPriceCompetitivenessProductView() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2062,6 +2123,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return priceCompetitivenessProductViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2087,6 +2149,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2110,6 +2173,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2142,6 +2206,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2228,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2246,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriceCompetitivenessProductViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2202,6 +2269,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : priceCompetitivenessProductView_;
       }
     }
+
     /**
      *
      *
@@ -2238,6 +2306,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView.Builder,
             com.google.shopping.merchant.reports.v1beta.PriceInsightsProductViewOrBuilder>
         priceInsightsProductViewBuilder_;
+
     /**
      *
      *
@@ -2254,6 +2323,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPriceInsightsProductView() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2278,6 +2348,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return priceInsightsProductViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2303,6 +2374,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2398,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2431,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2453,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2396,6 +2471,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriceInsightsProductViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2418,6 +2494,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : priceInsightsProductView_;
       }
     }
+
     /**
      *
      *
@@ -2453,6 +2530,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.BestSellersProductClusterView.Builder,
             com.google.shopping.merchant.reports.v1beta.BestSellersProductClusterViewOrBuilder>
         bestSellersProductClusterViewBuilder_;
+
     /**
      *
      *
@@ -2469,6 +2547,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBestSellersProductClusterView() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2493,6 +2572,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return bestSellersProductClusterViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2598,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2541,6 +2622,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2573,6 +2655,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2594,6 +2677,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2611,6 +2695,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBestSellersProductClusterViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2633,6 +2718,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : bestSellersProductClusterView_;
       }
     }
+
     /**
      *
      *
@@ -2667,6 +2753,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.BestSellersBrandView.Builder,
             com.google.shopping.merchant.reports.v1beta.BestSellersBrandViewOrBuilder>
         bestSellersBrandViewBuilder_;
+
     /**
      *
      *
@@ -2683,6 +2770,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBestSellersBrandView() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2706,6 +2794,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return bestSellersBrandViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2731,6 +2820,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2753,6 +2843,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2785,6 +2876,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2806,6 +2898,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2823,6 +2916,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBestSellersBrandViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2844,6 +2938,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : bestSellersBrandView_;
       }
     }
+
     /**
      *
      *
@@ -2880,6 +2975,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta
                 .CompetitiveVisibilityCompetitorViewOrBuilder>
         competitiveVisibilityCompetitorViewBuilder_;
+
     /**
      *
      *
@@ -2897,6 +2993,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompetitiveVisibilityCompetitorView() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2922,6 +3019,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return competitiveVisibilityCompetitorViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2948,6 +3046,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2972,6 +3071,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3005,6 +3105,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3027,6 +3128,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3045,6 +3147,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCompetitiveVisibilityCompetitorViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3068,6 +3171,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : competitiveVisibilityCompetitorView_;
       }
     }
+
     /**
      *
      *
@@ -3109,6 +3213,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta
                 .CompetitiveVisibilityTopMerchantViewOrBuilder>
         competitiveVisibilityTopMerchantViewBuilder_;
+
     /**
      *
      *
@@ -3126,6 +3231,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompetitiveVisibilityTopMerchantView() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3151,6 +3257,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return competitiveVisibilityTopMerchantViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3177,6 +3284,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3201,6 +3309,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3234,6 +3343,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3256,6 +3366,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3274,6 +3385,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCompetitiveVisibilityTopMerchantViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3297,6 +3409,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : competitiveVisibilityTopMerchantView_;
       }
     }
+
     /**
      *
      *
@@ -3337,6 +3450,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityBenchmarkView.Builder,
             com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityBenchmarkViewOrBuilder>
         competitiveVisibilityBenchmarkViewBuilder_;
+
     /**
      *
      *
@@ -3354,6 +3468,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompetitiveVisibilityBenchmarkView() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3379,6 +3494,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
         return competitiveVisibilityBenchmarkViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3405,6 +3521,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3429,6 +3546,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3462,6 +3580,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3484,6 +3603,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3502,6 +3622,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCompetitiveVisibilityBenchmarkViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3525,6 +3646,7 @@ public final class ReportRow extends com.google.protobuf.GeneratedMessageV3
             : competitiveVisibilityBenchmarkView_;
       }
     }
+
     /**
      *
      *

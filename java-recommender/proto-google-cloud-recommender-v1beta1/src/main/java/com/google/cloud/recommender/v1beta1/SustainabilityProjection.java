@@ -34,6 +34,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.SustainabilityProjection)
     SustainabilityProjectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SustainabilityProjection.newBuilder() to construct.
   private SustainabilityProjection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int KG_C_O2E_FIELD_NUMBER = 1;
   private double kgCO2E_ = 0D;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
 
   public static final int DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration duration_;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
+
   /**
    *
    *
@@ -305,6 +310,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -520,6 +526,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     private int bitField0_;
 
     private double kgCO2E_;
+
     /**
      *
      *
@@ -536,6 +543,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     public double getKgCO2E() {
       return kgCO2E_;
     }
+
     /**
      *
      *
@@ -556,6 +564,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +624,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
         return durationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -635,6 +647,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +667,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +695,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +730,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -730,6 +747,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
+
     /**
      *
      *

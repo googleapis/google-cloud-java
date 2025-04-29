@@ -34,6 +34,7 @@ public interface LanguageMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.ModelMetadata&gt; models = 1;</code>
    */
   int getModelsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface LanguageMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.ModelMetadata&gt; models = 1;</code>
    */
   boolean containsModels(java.lang.String key);
+
   /** Use {@link #getModelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelMetadata> getModels();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface LanguageMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.ModelMetadata&gt; models = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelMetadata> getModelsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface LanguageMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.speech.v2.ModelMetadata defaultValue);
+
   /**
    *
    *

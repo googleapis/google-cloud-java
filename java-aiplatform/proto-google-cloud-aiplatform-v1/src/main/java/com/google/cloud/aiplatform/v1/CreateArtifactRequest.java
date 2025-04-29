@@ -34,6 +34,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateArtifactRequest)
     CreateArtifactRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateArtifactRequest.newBuilder() to construct.
   private CreateArtifactRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ARTIFACT_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.Artifact artifact_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
   public boolean hasArtifact() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.aiplatform.v1.Artifact.getDefaultInstance()
         : artifact_;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifactId_ = "";
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -428,6 +436,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -684,6 +694,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -711,6 +722,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -737,6 +749,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1.Artifact.Builder,
             com.google.cloud.aiplatform.v1.ArtifactOrBuilder>
         artifactBuilder_;
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     public boolean hasArtifact() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         return artifactBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -855,6 +872,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +924,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +946,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +963,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getArtifactFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
             : artifact_;
       }
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object artifactId_ = "";
+
     /**
      *
      *
@@ -1019,6 +1043,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1072,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1100,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1124,7 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

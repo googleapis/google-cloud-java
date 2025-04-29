@@ -40,6 +40,7 @@ public interface StreamingAudioConfigOrBuilder
    * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
+
   /**
    *
    *

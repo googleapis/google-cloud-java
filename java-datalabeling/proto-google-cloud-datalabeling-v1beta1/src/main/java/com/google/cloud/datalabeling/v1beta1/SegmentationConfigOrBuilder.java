@@ -37,6 +37,7 @@ public interface SegmentationConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SegmentationConfigOrBuilder
    * @return The instructionMessage.
    */
   java.lang.String getInstructionMessage();
+
   /**
    *
    *

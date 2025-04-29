@@ -34,6 +34,7 @@ public interface NetworkConnectionListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.NetworkConnection entries = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.NetworkConnection> getEntriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface NetworkConnectionListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.NetworkConnection entries = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.NetworkConnection getEntries(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface NetworkConnectionListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.NetworkConnection entries = 1;</code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface NetworkConnectionListOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.NetworkConnectionOrBuilder>
       getEntriesOrBuilderList();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface UserOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface UserOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface UserOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface UserOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface UserOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
+
   /**
    *
    *
@@ -218,6 +223,7 @@ public interface UserOrBuilder
    * @return The ordersUiLocalTimeZone.
    */
   java.lang.String getOrdersUiLocalTimeZone();
+
   /**
    *
    *

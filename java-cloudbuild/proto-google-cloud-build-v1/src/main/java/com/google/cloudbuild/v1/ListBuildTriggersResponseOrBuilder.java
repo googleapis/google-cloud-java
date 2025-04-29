@@ -34,6 +34,7 @@ public interface ListBuildTriggersResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v1.BuildTrigger> getTriggersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBuildTriggersResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
   com.google.cloudbuild.v1.BuildTrigger getTriggers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBuildTriggersResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
   int getTriggersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBuildTriggersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.BuildTriggerOrBuilder>
       getTriggersOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListBuildTriggersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

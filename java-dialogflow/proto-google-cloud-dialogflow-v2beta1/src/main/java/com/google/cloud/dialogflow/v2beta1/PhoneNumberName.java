@@ -253,7 +253,8 @@ public class PhoneNumberName implements ResourceName {
     private Builder(PhoneNumberName phoneNumberName) {
       Preconditions.checkArgument(
           Objects.equals(phoneNumberName.pathTemplate, PROJECT_PHONE_NUMBER),
-          "toBuilder is only supported when PhoneNumberName has the pattern of projects/{project}/phoneNumbers/{phone_number}");
+          "toBuilder is only supported when PhoneNumberName has the pattern of"
+              + " projects/{project}/phoneNumbers/{phone_number}");
       this.project = phoneNumberName.project;
       this.phoneNumber = phoneNumberName.phoneNumber;
     }

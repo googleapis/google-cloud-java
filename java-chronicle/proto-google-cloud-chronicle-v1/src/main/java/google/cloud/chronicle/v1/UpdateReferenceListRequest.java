@@ -33,6 +33,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.UpdateReferenceListRequest)
     UpdateReferenceListRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateReferenceListRequest.newBuilder() to construct.
   private UpdateReferenceListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int REFERENCE_LIST_FIELD_NUMBER = 1;
   private google.cloud.chronicle.v1.ReferenceList referenceList_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
   public boolean hasReferenceList() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
         ? google.cloud.chronicle.v1.ReferenceList.getDefaultInstance()
         : referenceList_;
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -363,6 +370,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -586,6 +594,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
             google.cloud.chronicle.v1.ReferenceList.Builder,
             google.cloud.chronicle.v1.ReferenceListOrBuilder>
         referenceListBuilder_;
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
     public boolean hasReferenceList() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
         return referenceListBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return getReferenceListFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
             : referenceList_;
       }
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -851,6 +869,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +939,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +991,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class UpdateReferenceListRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
+
     /**
      *
      *

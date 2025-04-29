@@ -41,6 +41,7 @@ public interface ProductInputOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ProductInputOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface ProductInputOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public interface ProductInputOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public interface ProductInputOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -209,6 +214,7 @@ public interface ProductInputOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -250,6 +256,7 @@ public interface ProductInputOrBuilder
    * @return Whether the versionNumber field is set.
    */
   boolean hasVersionNumber();
+
   /**
    *
    *
@@ -289,6 +296,7 @@ public interface ProductInputOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -303,6 +311,7 @@ public interface ProductInputOrBuilder
    * @return The attributes.
    */
   com.google.shopping.merchant.products.v1beta.Attributes getAttributes();
+
   /**
    *
    *
@@ -338,6 +347,7 @@ public interface ProductInputOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -360,6 +370,7 @@ public interface ProductInputOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -382,6 +393,7 @@ public interface ProductInputOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -405,6 +417,7 @@ public interface ProductInputOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *

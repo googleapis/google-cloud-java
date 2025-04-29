@@ -36,6 +36,7 @@ public interface SearchTripsRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SearchTripsRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface SearchTripsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SearchTripsRequestOrBuilder
    * @return The vehicleId.
    */
   java.lang.String getVehicleId();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface SearchTripsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface SearchTripsRequestOrBuilder
    * @return Whether the minimumStaleness field is set.
    */
   boolean hasMinimumStaleness();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface SearchTripsRequestOrBuilder
    * @return The minimumStaleness.
    */
   com.google.protobuf.Duration getMinimumStaleness();
+
   /**
    *
    *

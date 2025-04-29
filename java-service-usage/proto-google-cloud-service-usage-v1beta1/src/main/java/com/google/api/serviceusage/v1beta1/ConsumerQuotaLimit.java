@@ -33,6 +33,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ConsumerQuotaLimit)
     ConsumerQuotaLimitOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConsumerQuotaLimit.newBuilder() to construct.
   private ConsumerQuotaLimit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metric_ = "";
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -250,6 +257,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_PRECISE_FIELD_NUMBER = 3;
   private boolean isPrecise_ = false;
+
   /**
    *
    *
@@ -268,6 +276,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
   public static final int ALLOWS_ADMIN_OVERRIDES_FIELD_NUMBER = 7;
   private boolean allowsAdminOverrides_ = false;
+
   /**
    *
    *
@@ -288,6 +297,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.QuotaBucket> quotaBuckets_;
+
   /**
    *
    *
@@ -303,6 +313,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.api.serviceusage.v1beta1.QuotaBucket> getQuotaBucketsList() {
     return quotaBuckets_;
   }
+
   /**
    *
    *
@@ -319,6 +330,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       getQuotaBucketsOrBuilderList() {
     return quotaBuckets_;
   }
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   public int getQuotaBucketsCount() {
     return quotaBuckets_.size();
   }
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   public com.google.api.serviceusage.v1beta1.QuotaBucket getQuotaBuckets(int index) {
     return quotaBuckets_.get(index);
   }
+
   /**
    *
    *
@@ -371,6 +385,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList supportedLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -386,6 +401,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getSupportedLocationsList() {
     return supportedLocations_;
   }
+
   /**
    *
    *
@@ -401,6 +417,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   public int getSupportedLocationsCount() {
     return supportedLocations_.size();
   }
+
   /**
    *
    *
@@ -417,6 +434,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
   public java.lang.String getSupportedLocations(int index) {
     return supportedLocations_.get(index);
   }
+
   /**
    *
    *
@@ -657,6 +675,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -981,6 +1000,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1086,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1141,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object metric_ = "";
+
     /**
      *
      *
@@ -1142,6 +1167,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1193,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1218,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1239,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1267,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object unit_ = "";
+
     /**
      *
      *
@@ -1265,6 +1295,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1292,6 +1323,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1318,6 +1350,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1373,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1403,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isPrecise_;
+
     /**
      *
      *
@@ -1384,6 +1419,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     public boolean getIsPrecise() {
       return isPrecise_;
     }
+
     /**
      *
      *
@@ -1403,6 +1439,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1459,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean allowsAdminOverrides_;
+
     /**
      *
      *
@@ -1437,6 +1475,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     public boolean getAllowsAdminOverrides() {
       return allowsAdminOverrides_;
     }
+
     /**
      *
      *
@@ -1456,6 +1495,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1549,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return quotaBucketsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1527,6 +1568,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return quotaBucketsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1545,6 +1587,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return quotaBucketsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1570,6 +1613,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1592,6 +1636,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1661,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1687,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1663,6 +1710,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1733,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1756,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1778,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1800,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1816,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         int index) {
       return getQuotaBucketsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1783,6 +1836,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return quotaBucketsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1802,6 +1856,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(quotaBuckets_);
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1872,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       return getQuotaBucketsFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.QuotaBucket.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1833,6 +1889,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       return getQuotaBucketsFieldBuilder()
           .addBuilder(index, com.google.api.serviceusage.v1beta1.QuotaBucket.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1875,6 +1932,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -1891,6 +1949,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       supportedLocations_.makeImmutable();
       return supportedLocations_;
     }
+
     /**
      *
      *
@@ -1906,6 +1965,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     public int getSupportedLocationsCount() {
       return supportedLocations_.size();
     }
+
     /**
      *
      *
@@ -1922,6 +1982,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     public java.lang.String getSupportedLocations(int index) {
       return supportedLocations_.get(index);
     }
+
     /**
      *
      *
@@ -1938,6 +1999,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getSupportedLocationsBytes(int index) {
       return supportedLocations_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1962,6 +2024,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1985,6 +2048,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2069,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2024,6 +2089,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

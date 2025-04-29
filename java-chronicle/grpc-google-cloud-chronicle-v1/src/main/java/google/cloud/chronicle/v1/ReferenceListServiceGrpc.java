@@ -243,6 +243,19 @@ public final class ReferenceListServiceGrpc {
     return ReferenceListServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ReferenceListServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ReferenceListServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReferenceListServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ReferenceListServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReferenceListServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ReferenceListServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -441,6 +454,79 @@ public final class ReferenceListServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ReferenceListService.
+   *
+   * <pre>
+   * ReferenceListService provides an interface for managing reference lists.
+   * </pre>
+   */
+  public static final class ReferenceListServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ReferenceListServiceBlockingV2Stub> {
+    private ReferenceListServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ReferenceListServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ReferenceListServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single reference list.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ReferenceList getReferenceList(
+        google.cloud.chronicle.v1.GetReferenceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReferenceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a collection of reference lists.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListReferenceListsResponse listReferenceLists(
+        google.cloud.chronicle.v1.ListReferenceListsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReferenceListsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reference list.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ReferenceList createReferenceList(
+        google.cloud.chronicle.v1.CreateReferenceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReferenceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reference list.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ReferenceList updateReferenceList(
+        google.cloud.chronicle.v1.UpdateReferenceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReferenceListMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ReferenceListService.
    *
    * <pre>
    * ReferenceListService provides an interface for managing reference lists.

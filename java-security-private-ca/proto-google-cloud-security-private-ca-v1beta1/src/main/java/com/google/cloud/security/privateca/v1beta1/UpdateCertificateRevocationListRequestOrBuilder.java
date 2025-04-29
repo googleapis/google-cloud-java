@@ -38,6 +38,7 @@ public interface UpdateCertificateRevocationListRequestOrBuilder
    * @return Whether the certificateRevocationList field is set.
    */
   boolean hasCertificateRevocationList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface UpdateCertificateRevocationListRequestOrBuilder
    */
   com.google.cloud.security.privateca.v1beta1.CertificateRevocationList
       getCertificateRevocationList();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateCertificateRevocationListRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateCertificateRevocationListRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface UpdateCertificateRevocationListRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

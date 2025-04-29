@@ -39,6 +39,7 @@ public interface AlertConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface AlertConfigOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.AlertConfig.AlertPolicy alert_policies = 2;</code>
    */
   java.util.List<com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy> getAlertPoliciesList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AlertConfigOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.AlertConfig.AlertPolicy alert_policies = 2;</code>
    */
   com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy getAlertPolicies(int index);
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface AlertConfigOrBuilder
    * <code>repeated .google.cloud.retail.v2beta.AlertConfig.AlertPolicy alert_policies = 2;</code>
    */
   int getAlertPoliciesCount();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface AlertConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2beta.AlertConfig.AlertPolicyOrBuilder>
       getAlertPoliciesOrBuilderList();
+
   /**
    *
    *

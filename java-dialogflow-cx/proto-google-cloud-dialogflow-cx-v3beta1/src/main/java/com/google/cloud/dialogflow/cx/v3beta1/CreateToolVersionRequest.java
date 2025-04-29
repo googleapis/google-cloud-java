@@ -36,6 +36,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest)
     CreateToolVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateToolVersionRequest.newBuilder() to construct.
   private CreateToolVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
 
   public static final int TOOL_VERSION_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3beta1.ToolVersion toolVersion_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
   public boolean hasToolVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
         ? com.google.cloud.dialogflow.cx.v3beta1.ToolVersion.getDefaultInstance()
         : toolVersion_;
   }
+
   /**
    *
    *
@@ -356,6 +362,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +584,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -603,6 +611,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -629,6 +638,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.cx.v3beta1.ToolVersion.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.ToolVersionOrBuilder>
         toolVersionBuilder_;
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
     public boolean hasToolVersion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
         return toolVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
       onChanged();
       return getToolVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class CreateToolVersionRequest extends com.google.protobuf.Generate
             : toolVersion_;
       }
     }
+
     /**
      *
      *

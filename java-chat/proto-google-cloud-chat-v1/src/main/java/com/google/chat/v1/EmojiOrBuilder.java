@@ -36,6 +36,7 @@ public interface EmojiOrBuilder
    * @return Whether the unicode field is set.
    */
   boolean hasUnicode();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EmojiOrBuilder
    * @return The unicode.
    */
   java.lang.String getUnicode();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface EmojiOrBuilder
    * @return Whether the customEmoji field is set.
    */
   boolean hasCustomEmoji();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface EmojiOrBuilder
    * @return The customEmoji.
    */
   com.google.chat.v1.CustomEmoji getCustomEmoji();
+
   /**
    *
    *

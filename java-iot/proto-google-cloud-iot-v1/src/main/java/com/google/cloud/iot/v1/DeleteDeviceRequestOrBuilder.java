@@ -40,6 +40,7 @@ public interface DeleteDeviceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

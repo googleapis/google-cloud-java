@@ -40,6 +40,7 @@ public interface RetrohuntOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface RetrohuntOrBuilder
    * @return Whether the processInterval field is set.
    */
   boolean hasProcessInterval();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface RetrohuntOrBuilder
    * @return The processInterval.
    */
   com.google.type.Interval getProcessInterval();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface RetrohuntOrBuilder
    * @return Whether the executionInterval field is set.
    */
   boolean hasExecutionInterval();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface RetrohuntOrBuilder
    * @return The executionInterval.
    */
   com.google.type.Interval getExecutionInterval();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface RetrohuntOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

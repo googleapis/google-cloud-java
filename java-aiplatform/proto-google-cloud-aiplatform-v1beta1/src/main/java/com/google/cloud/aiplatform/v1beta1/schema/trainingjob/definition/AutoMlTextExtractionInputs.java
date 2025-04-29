@@ -29,6 +29,7 @@ public final class AutoMlTextExtractionInputs extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs)
     AutoMlTextExtractionInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlTextExtractionInputs.newBuilder() to construct.
   private AutoMlTextExtractionInputs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -237,6 +238,7 @@ public final class AutoMlTextExtractionInputs extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs}

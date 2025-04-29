@@ -35,6 +35,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore)
     FeatureOnlineStoreOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureOnlineStore.newBuilder() to construct.
   private FeatureOnlineStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -149,6 +151,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * <code>STABLE = 1;</code>
      */
     public static final int STABLE_VALUE = 1;
+
     /**
      *
      *
@@ -267,6 +270,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return Whether the autoScaling field is set.
      */
     boolean hasAutoScaling();
+
     /**
      *
      *
@@ -281,6 +285,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return The autoScaling.
      */
     com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScaling getAutoScaling();
+
     /**
      *
      *
@@ -295,12 +300,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScalingOrBuilder
         getAutoScalingOrBuilder();
   }
+
   /** Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable} */
   public static final class Bigtable extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable)
       BigtableOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Bigtable.newBuilder() to construct.
     private Bigtable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -380,6 +387,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        */
       int getCpuUtilizationTarget();
     }
+
     /**
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScaling}
      */
@@ -388,6 +396,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScaling)
         AutoScalingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AutoScaling.newBuilder() to construct.
       private AutoScaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -419,6 +428,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
       public static final int MIN_NODE_COUNT_FIELD_NUMBER = 1;
       private int minNodeCount_ = 0;
+
       /**
        *
        *
@@ -438,6 +448,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
       public static final int MAX_NODE_COUNT_FIELD_NUMBER = 2;
       private int maxNodeCount_ = 0;
+
       /**
        *
        *
@@ -458,6 +469,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
       public static final int CPU_UTILIZATION_TARGET_FIELD_NUMBER = 3;
       private int cpuUtilizationTarget_ = 0;
+
       /**
        *
        *
@@ -667,6 +679,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        * Protobuf type {@code
        * google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScaling}
@@ -886,6 +899,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private int minNodeCount_;
+
         /**
          *
          *
@@ -902,6 +916,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         public int getMinNodeCount() {
           return minNodeCount_;
         }
+
         /**
          *
          *
@@ -922,6 +937,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -942,6 +958,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         }
 
         private int maxNodeCount_;
+
         /**
          *
          *
@@ -959,6 +976,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         public int getMaxNodeCount() {
           return maxNodeCount_;
         }
+
         /**
          *
          *
@@ -980,6 +998,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1001,6 +1020,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         }
 
         private int cpuUtilizationTarget_;
+
         /**
          *
          *
@@ -1020,6 +1040,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         public int getCpuUtilizationTarget() {
           return cpuUtilizationTarget_;
         }
+
         /**
          *
          *
@@ -1043,6 +1064,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1138,6 +1160,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public static final int AUTO_SCALING_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScaling
         autoScaling_;
+
     /**
      *
      *
@@ -1155,6 +1178,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasAutoScaling() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1176,6 +1200,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance()
           : autoScaling_;
     }
+
     /**
      *
      *
@@ -1363,6 +1388,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -1568,6 +1594,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScaling.Builder,
               com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScalingOrBuilder>
           autoScalingBuilder_;
+
       /**
        *
        *
@@ -1584,6 +1611,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       public boolean hasAutoScaling() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1608,6 +1636,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           return autoScalingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1633,6 +1662,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1656,6 +1686,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1688,6 +1719,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1709,6 +1741,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1726,6 +1759,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getAutoScalingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1748,6 +1782,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
               : autoScaling_;
         }
       }
+
       /**
        *
        *
@@ -1848,6 +1883,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1862,6 +1898,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
       OptimizedOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Optimized.newBuilder() to construct.
     private Optimized(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2043,6 +2080,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2296,6 +2334,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return The publicEndpointDomainName.
      */
     java.lang.String getPublicEndpointDomainName();
+
     /**
      *
      *
@@ -2330,6 +2369,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return Whether the privateServiceConnectConfig field is set.
      */
     boolean hasPrivateServiceConnectConfig();
+
     /**
      *
      *
@@ -2350,6 +2390,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
         getPrivateServiceConnectConfig();
+
     /**
      *
      *
@@ -2382,6 +2423,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return The serviceAttachment.
      */
     java.lang.String getServiceAttachment();
+
     /**
      *
      *
@@ -2396,6 +2438,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getServiceAttachmentBytes();
   }
+
   /**
    *
    *
@@ -2413,6 +2456,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
       DedicatedServingEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DedicatedServingEndpoint.newBuilder() to construct.
     private DedicatedServingEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2450,6 +2494,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object publicEndpointDomainName_ = "";
+
     /**
      *
      *
@@ -2475,6 +2520,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2504,6 +2550,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public static final int PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
         privateServiceConnectConfig_;
+
     /**
      *
      *
@@ -2526,6 +2573,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasPrivateServiceConnectConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2551,6 +2599,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
           : privateServiceConnectConfig_;
     }
+
     /**
      *
      *
@@ -2579,6 +2628,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceAttachment_ = "";
+
     /**
      *
      *
@@ -2603,6 +2653,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -2824,6 +2875,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3078,6 +3130,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object publicEndpointDomainName_ = "";
+
       /**
        *
        *
@@ -3102,6 +3155,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3126,6 +3180,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3149,6 +3204,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3168,6 +3224,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3200,6 +3257,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
               com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>
           privateServiceConnectConfigBuilder_;
+
       /**
        *
        *
@@ -3221,6 +3279,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       public boolean hasPrivateServiceConnectConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3249,6 +3308,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           return privateServiceConnectConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3279,6 +3339,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3306,6 +3367,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3343,6 +3405,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -3369,6 +3432,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3391,6 +3455,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getPrivateServiceConnectConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3417,6 +3482,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
               : privateServiceConnectConfig_;
         }
       }
+
       /**
        *
        *
@@ -3451,6 +3517,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object serviceAttachment_ = "";
+
       /**
        *
        *
@@ -3474,6 +3541,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3497,6 +3565,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3519,6 +3588,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3537,6 +3607,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3653,6 +3724,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     boolean getEnabled();
   }
+
   /**
    *
    *
@@ -3670,6 +3742,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement)
       EmbeddingManagementOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EmbeddingManagement.newBuilder() to construct.
     private EmbeddingManagement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3701,6 +3774,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -3889,6 +3963,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4087,6 +4162,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -4106,6 +4182,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -4129,6 +4206,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4237,6 +4315,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     private StorageTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4270,6 +4349,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BIGTABLE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -4287,6 +4367,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasBigtable() {
     return storageTypeCase_ == 8;
   }
+
   /**
    *
    *
@@ -4307,6 +4388,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4328,6 +4410,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OPTIMIZED_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -4347,6 +4430,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasOptimized() {
     return storageTypeCase_ == 12;
   }
+
   /**
    *
    *
@@ -4369,6 +4453,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4395,6 +4480,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -4419,6 +4505,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -4446,6 +4533,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -4462,6 +4550,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4478,6 +4567,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -4495,6 +4585,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -4511,6 +4602,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4527,6 +4619,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -4546,6 +4639,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -4570,6 +4664,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -4621,6 +4716,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -4647,12 +4743,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -4676,6 +4774,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -4706,6 +4805,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -4739,6 +4839,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -4756,6 +4857,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -4781,6 +4883,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public static final int DEDICATED_SERVING_ENDPOINT_FIELD_NUMBER = 10;
   private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
       dedicatedServingEndpoint_;
+
   /**
    *
    *
@@ -4799,6 +4902,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasDedicatedServingEndpoint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4821,6 +4925,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : dedicatedServingEndpoint_;
   }
+
   /**
    *
    *
@@ -4845,6 +4950,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public static final int EMBEDDING_MANAGEMENT_FIELD_NUMBER = 11;
   private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
       embeddingManagement_;
+
   /**
    *
    *
@@ -4866,6 +4972,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasEmbeddingManagement() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4891,6 +4998,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : embeddingManagement_;
   }
+
   /**
    *
    *
@@ -4915,6 +5023,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 13;
   private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+
   /**
    *
    *
@@ -4933,6 +5042,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -4953,6 +5063,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
+
   /**
    *
    *
@@ -4974,6 +5085,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 15;
   private boolean satisfiesPzs_ = false;
+
   /**
    *
    *
@@ -4992,6 +5104,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 16;
   private boolean satisfiesPzi_ = false;
+
   /**
    *
    *
@@ -5339,6 +5452,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5800,6 +5914,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.BigtableOrBuilder>
         bigtableBuilder_;
+
     /**
      *
      *
@@ -5817,6 +5932,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasBigtable() {
       return storageTypeCase_ == 8;
     }
+
     /**
      *
      *
@@ -5844,6 +5960,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5869,6 +5986,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       storageTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -5891,6 +6009,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       storageTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -5929,6 +6048,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       storageTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -5956,6 +6076,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5971,6 +6092,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         getBigtableBuilder() {
       return getBigtableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5994,6 +6116,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6035,6 +6158,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder>
         optimizedBuilder_;
+
     /**
      *
      *
@@ -6054,6 +6178,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasOptimized() {
       return storageTypeCase_ == 12;
     }
+
     /**
      *
      *
@@ -6085,6 +6210,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6112,6 +6238,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       storageTypeCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -6136,6 +6263,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       storageTypeCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -6176,6 +6304,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       storageTypeCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -6205,6 +6334,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6222,6 +6352,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         getOptimizedBuilder() {
       return getOptimizedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6248,6 +6379,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6287,6 +6419,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -6310,6 +6443,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6333,6 +6467,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6355,6 +6490,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6373,6 +6509,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6403,6 +6540,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -6419,6 +6557,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -6441,6 +6580,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6465,6 +6605,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6486,6 +6627,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6515,6 +6657,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6536,6 +6679,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6552,6 +6696,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6572,6 +6717,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -6606,6 +6752,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -6622,6 +6769,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -6644,6 +6792,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6668,6 +6817,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6689,6 +6839,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6718,6 +6869,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6739,6 +6891,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6755,6 +6908,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6775,6 +6929,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -6804,6 +6959,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -6827,6 +6983,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6850,6 +7007,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6872,6 +7030,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6890,6 +7049,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6939,6 +7099,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -6965,12 +7126,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -6994,6 +7157,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -7024,6 +7188,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -7060,6 +7225,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -7086,12 +7252,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -7122,6 +7290,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -7148,6 +7317,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -7165,6 +7335,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -7185,6 +7356,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7206,6 +7378,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -7229,6 +7402,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7257,6 +7431,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
                 .DedicatedServingEndpointOrBuilder>
         dedicatedServingEndpointBuilder_;
+
     /**
      *
      *
@@ -7274,6 +7449,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasDedicatedServingEndpoint() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -7299,6 +7475,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return dedicatedServingEndpointBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7325,6 +7502,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7349,6 +7527,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7382,6 +7561,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -7404,6 +7584,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7422,6 +7603,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDedicatedServingEndpointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7445,6 +7627,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             : dedicatedServingEndpoint_;
       }
     }
+
     /**
      *
      *
@@ -7484,6 +7667,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagementOrBuilder>
         embeddingManagementBuilder_;
+
     /**
      *
      *
@@ -7504,6 +7688,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasEmbeddingManagement() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -7532,6 +7717,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return embeddingManagementBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7559,6 +7745,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7584,6 +7771,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7618,6 +7806,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -7641,6 +7830,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7660,6 +7850,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEmbeddingManagementFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7684,6 +7875,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             : embeddingManagement_;
       }
     }
+
     /**
      *
      *
@@ -7720,6 +7912,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
+
     /**
      *
      *
@@ -7737,6 +7930,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -7760,6 +7954,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return encryptionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7785,6 +7980,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7808,6 +8004,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7839,6 +8036,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -7861,6 +8059,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7878,6 +8077,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7900,6 +8100,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             : encryptionSpec_;
       }
     }
+
     /**
      *
      *
@@ -7930,6 +8131,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean satisfiesPzs_;
+
     /**
      *
      *
@@ -7945,6 +8147,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
+
     /**
      *
      *
@@ -7964,6 +8167,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7983,6 +8187,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean satisfiesPzi_;
+
     /**
      *
      *
@@ -7998,6 +8203,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
+
     /**
      *
      *
@@ -8017,6 +8223,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

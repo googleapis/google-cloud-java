@@ -38,6 +38,7 @@ public interface AugmentPromptRequestOrBuilder
    * @return Whether the vertexRagStore field is set.
    */
   boolean hasVertexRagStore();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AugmentPromptRequestOrBuilder
    * @return The vertexRagStore.
    */
   com.google.cloud.aiplatform.v1beta1.VertexRagStore getVertexRagStore();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface AugmentPromptRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface AugmentPromptRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface AugmentPromptRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface AugmentPromptRequestOrBuilder
    * </code>
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface AugmentPromptRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getContentsOrBuilderList();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface AugmentPromptRequestOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public interface AugmentPromptRequestOrBuilder
    * @return The model.
    */
   com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest.Model getModel();
+
   /**
    *
    *

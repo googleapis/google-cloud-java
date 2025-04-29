@@ -34,6 +34,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ContentLocation)
     ContentLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContentLocation.newBuilder() to construct.
   private ContentLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     private LocationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,6 +127,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerName_ = "";
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +195,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RECORD_LOCATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   public boolean hasRecordLocation() {
     return locationCase_ == 2;
   }
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -242,6 +249,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_LOCATION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   public boolean hasImageLocation() {
     return locationCase_ == 3;
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DOCUMENT_LOCATION_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -308,6 +319,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   public boolean hasDocumentLocation() {
     return locationCase_ == 5;
   }
+
   /**
    *
    *
@@ -326,6 +338,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int METADATA_LOCATION_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -359,6 +373,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   public boolean hasMetadataLocation() {
     return locationCase_ == 8;
   }
+
   /**
    *
    *
@@ -377,6 +392,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -396,6 +412,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONTAINER_TIMESTAMP_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp containerTimestamp_;
+
   /**
    *
    *
@@ -414,6 +431,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   public boolean hasContainerTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -434,6 +452,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : containerTimestamp_;
   }
+
   /**
    *
    *
@@ -457,6 +476,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerVersion_ = "";
+
   /**
    *
    *
@@ -481,6 +501,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -757,6 +778,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1087,6 +1109,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object containerName_ = "";
+
     /**
      *
      *
@@ -1118,6 +1141,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1149,6 +1173,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1204,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1231,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1269,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.RecordLocation.Builder,
             com.google.privacy.dlp.v2.RecordLocationOrBuilder>
         recordLocationBuilder_;
+
     /**
      *
      *
@@ -1257,6 +1285,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public boolean hasRecordLocation() {
       return locationCase_ == 2;
     }
+
     /**
      *
      *
@@ -1282,6 +1311,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1304,6 +1334,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1355,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1388,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1414,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1427,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.RecordLocation.Builder getRecordLocationBuilder() {
       return getRecordLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1413,6 +1448,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1451,6 +1487,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.ImageLocation.Builder,
             com.google.privacy.dlp.v2.ImageLocationOrBuilder>
         imageLocationBuilder_;
+
     /**
      *
      *
@@ -1466,6 +1503,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public boolean hasImageLocation() {
       return locationCase_ == 3;
     }
+
     /**
      *
      *
@@ -1491,6 +1529,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1513,6 +1552,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1533,6 +1573,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1606,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1632,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1645,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.ImageLocation.Builder getImageLocationBuilder() {
       return getImageLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1622,6 +1666,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1660,6 +1705,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.DocumentLocation.Builder,
             com.google.privacy.dlp.v2.DocumentLocationOrBuilder>
         documentLocationBuilder_;
+
     /**
      *
      *
@@ -1675,6 +1721,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public boolean hasDocumentLocation() {
       return locationCase_ == 5;
     }
+
     /**
      *
      *
@@ -1700,6 +1747,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1770,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1791,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1824,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1799,6 +1850,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1811,6 +1863,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.DocumentLocation.Builder getDocumentLocationBuilder() {
       return getDocumentLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1831,6 +1884,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1869,6 +1923,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.MetadataLocation.Builder,
             com.google.privacy.dlp.v2.MetadataLocationOrBuilder>
         metadataLocationBuilder_;
+
     /**
      *
      *
@@ -1884,6 +1939,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public boolean hasMetadataLocation() {
       return locationCase_ == 8;
     }
+
     /**
      *
      *
@@ -1909,6 +1965,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1931,6 +1988,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1951,6 +2009,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2042,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       locationCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2008,6 +2068,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2081,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.MetadataLocation.Builder getMetadataLocationBuilder() {
       return getMetadataLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2040,6 +2102,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2079,6 +2142,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         containerTimestampBuilder_;
+
     /**
      *
      *
@@ -2096,6 +2160,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public boolean hasContainerTimestamp() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2119,6 +2184,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return containerTimestampBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2210,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2166,6 +2233,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2196,6 +2264,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2218,6 +2287,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2235,6 +2305,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getContainerTimestampFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2256,6 +2327,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             : containerTimestamp_;
       }
     }
+
     /**
      *
      *
@@ -2286,6 +2358,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object containerVersion_ = "";
+
     /**
      *
      *
@@ -2309,6 +2382,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2332,6 +2406,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2354,6 +2429,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2372,6 +2448,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

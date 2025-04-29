@@ -40,6 +40,7 @@ public interface RemoveDatapointsRequestOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RemoveDatapointsRequestOrBuilder
    * @return A list containing the datapointIds.
    */
   java.util.List<java.lang.String> getDatapointIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface RemoveDatapointsRequestOrBuilder
    * @return The count of datapointIds.
    */
   int getDatapointIdsCount();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface RemoveDatapointsRequestOrBuilder
    * @return The datapointIds at the given index.
    */
   java.lang.String getDatapointIds(int index);
+
   /**
    *
    *

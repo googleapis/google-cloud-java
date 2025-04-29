@@ -40,6 +40,7 @@ public interface CreateSecretRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CreateSecretRequestOrBuilder
    * @return The secretId.
    */
   java.lang.String getSecretId();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface CreateSecretRequestOrBuilder
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CreateSecretRequestOrBuilder
    * @return The secret.
    */
   com.google.cloud.secretmanager.v1.Secret getSecret();
+
   /**
    *
    *

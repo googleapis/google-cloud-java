@@ -558,6 +558,19 @@ public final class DataAccessControlServiceGrpc {
     return DataAccessControlServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataAccessControlServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataAccessControlServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataAccessControlServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DataAccessControlServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataAccessControlServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataAccessControlServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -965,6 +978,171 @@ public final class DataAccessControlServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataAccessControlService.
+   *
+   * <pre>
+   * DataAccessControlService exposes resources and endpoints related to data
+   * access control.
+   * </pre>
+   */
+  public static final class DataAccessControlServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataAccessControlServiceBlockingV2Stub> {
+    private DataAccessControlServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataAccessControlServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataAccessControlServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a data access label.
+     * Data access labels are applied to incoming event data and selected in data
+     * access scopes (another resource), and only users with scopes containing the
+     * label can see data with that label. Currently, the data access label
+     * resource only includes custom labels, which are labels that correspond
+     * to UDM queries over event data.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.DataAccessLabel createDataAccessLabel(
+        google.cloud.chronicle.v1.CreateDataAccessLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataAccessLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a data access label.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.DataAccessLabel getDataAccessLabel(
+        google.cloud.chronicle.v1.GetDataAccessLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataAccessLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all data access labels for the customer.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListDataAccessLabelsResponse listDataAccessLabels(
+        google.cloud.chronicle.v1.ListDataAccessLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataAccessLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data access label.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.DataAccessLabel updateDataAccessLabel(
+        google.cloud.chronicle.v1.UpdateDataAccessLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataAccessLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data access label. When a label is deleted, new
+     * data that enters in the system will not receive the label, but the label
+     * will not be removed from old data that still refers to it.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataAccessLabel(
+        google.cloud.chronicle.v1.DeleteDataAccessLabelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataAccessLabelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a data access scope.
+     * Data access scope is a combination of allowed and denied labels attached
+     * to a permission group. If a scope has allowed labels A and B and denied
+     * labels C and D, then the group of people attached to the scope
+     * will have permissions to see all events labeled with A or B (or both) and
+     * not labeled with either C or D.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.DataAccessScope createDataAccessScope(
+        google.cloud.chronicle.v1.CreateDataAccessScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataAccessScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an existing data access scope.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.DataAccessScope getDataAccessScope(
+        google.cloud.chronicle.v1.GetDataAccessScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataAccessScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all existing data access scopes for the customer.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListDataAccessScopesResponse listDataAccessScopes(
+        google.cloud.chronicle.v1.ListDataAccessScopesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataAccessScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data access scope.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.DataAccessScope updateDataAccessScope(
+        google.cloud.chronicle.v1.UpdateDataAccessScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataAccessScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data access scope.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataAccessScope(
+        google.cloud.chronicle.v1.DeleteDataAccessScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataAccessScopeMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * DataAccessControlService.
    *
    * <pre>
    * DataAccessControlService exposes resources and endpoints related to data

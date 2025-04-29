@@ -37,6 +37,7 @@ public interface TransferErrorLogEntryOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TransferErrorLogEntryOrBuilder
    * @return A list containing the errorDetails.
    */
   java.util.List<java.lang.String> getErrorDetailsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface TransferErrorLogEntryOrBuilder
    * @return The count of errorDetails.
    */
   int getErrorDetailsCount();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface TransferErrorLogEntryOrBuilder
    * @return The errorDetails at the given index.
    */
   java.lang.String getErrorDetails(int index);
+
   /**
    *
    *

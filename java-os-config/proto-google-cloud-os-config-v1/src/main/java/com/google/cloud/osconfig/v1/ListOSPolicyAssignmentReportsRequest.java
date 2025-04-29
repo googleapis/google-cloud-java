@@ -34,6 +34,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest)
     ListOSPolicyAssignmentReportsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListOSPolicyAssignmentReportsRequest.newBuilder() to construct.
   private ListOSPolicyAssignmentReportsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListOSPolicyAssignmentReportsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -164,6 +167,7 @@ public final class ListOSPolicyAssignmentReportsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -184,6 +188,7 @@ public final class ListOSPolicyAssignmentReportsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -208,6 +213,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +243,7 @@ public final class ListOSPolicyAssignmentReportsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -262,6 +269,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -476,6 +484,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -708,6 +717,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -752,6 +762,7 @@ public final class ListOSPolicyAssignmentReportsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +807,7 @@ public final class ListOSPolicyAssignmentReportsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -839,6 +851,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +891,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +938,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -939,6 +954,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -958,6 +974,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +994,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1000,6 +1018,7 @@ public final class ListOSPolicyAssignmentReportsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1042,7 @@ public final class ListOSPolicyAssignmentReportsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1065,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1084,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1110,7 @@ public final class ListOSPolicyAssignmentReportsRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1112,6 +1135,7 @@ public final class ListOSPolicyAssignmentReportsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1160,7 @@ public final class ListOSPolicyAssignmentReportsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1184,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1204,7 @@ public final class ListOSPolicyAssignmentReportsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

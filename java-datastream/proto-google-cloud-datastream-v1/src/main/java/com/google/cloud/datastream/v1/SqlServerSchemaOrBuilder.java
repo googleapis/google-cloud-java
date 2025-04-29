@@ -36,6 +36,7 @@ public interface SqlServerSchemaOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface SqlServerSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerTable tables = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.SqlServerTable> getTablesList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface SqlServerSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerTable tables = 2;</code>
    */
   com.google.cloud.datastream.v1.SqlServerTable getTables(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface SqlServerSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerTable tables = 2;</code>
    */
   int getTablesCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface SqlServerSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.SqlServerTableOrBuilder>
       getTablesOrBuilderList();
+
   /**
    *
    *

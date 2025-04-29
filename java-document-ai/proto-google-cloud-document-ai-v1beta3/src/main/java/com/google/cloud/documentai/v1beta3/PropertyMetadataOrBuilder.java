@@ -50,6 +50,7 @@ public interface PropertyMetadataOrBuilder
    * @return Whether the fieldExtractionMetadata field is set.
    */
   boolean hasFieldExtractionMetadata();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PropertyMetadataOrBuilder
    * @return The fieldExtractionMetadata.
    */
   com.google.cloud.documentai.v1beta3.FieldExtractionMetadata getFieldExtractionMetadata();
+
   /**
    *
    *

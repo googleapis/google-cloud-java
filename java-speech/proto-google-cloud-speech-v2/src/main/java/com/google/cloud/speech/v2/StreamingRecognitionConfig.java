@@ -33,6 +33,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.StreamingRecognitionConfig)
     StreamingRecognitionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingRecognitionConfig.newBuilder() to construct.
   private StreamingRecognitionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v2.RecognitionConfig config_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         ? com.google.cloud.speech.v2.RecognitionConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
   public static final int CONFIG_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask configMask_;
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public boolean hasConfigMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getConfigMask() {
     return configMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : configMask_;
   }
+
   /**
    *
    *
@@ -217,6 +224,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
   public static final int STREAMING_FEATURES_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v2.StreamingRecognitionFeatures streamingFeatures_;
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public boolean hasStreamingFeatures() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         ? com.google.cloud.speech.v2.StreamingRecognitionFeatures.getDefaultInstance()
         : streamingFeatures_;
   }
+
   /**
    *
    *
@@ -462,6 +472,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -707,6 +718,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             com.google.cloud.speech.v2.RecognitionConfig.Builder,
             com.google.cloud.speech.v2.RecognitionConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             : config_;
       }
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         configMaskBuilder_;
+
     /**
      *
      *
@@ -981,6 +1002,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasConfigMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         return configMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1142,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1174,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1201,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return getConfigMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1204,6 +1232,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             : configMask_;
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1277,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             com.google.cloud.speech.v2.StreamingRecognitionFeatures.Builder,
             com.google.cloud.speech.v2.StreamingRecognitionFeaturesOrBuilder>
         streamingFeaturesBuilder_;
+
     /**
      *
      *
@@ -1263,6 +1293,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasStreamingFeatures() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1284,6 +1315,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         return streamingFeaturesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1340,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1329,6 +1362,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1393,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1414,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1395,6 +1431,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return getStreamingFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1415,6 +1452,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             : streamingFeatures_;
       }
     }
+
     /**
      *
      *

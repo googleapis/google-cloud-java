@@ -33,6 +33,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CreateViewRequest)
     CreateViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateViewRequest.newBuilder() to construct.
   private CreateViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private com.google.cloud.contactcenterinsights.v1.View view_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.contactcenterinsights.v1.View.getDefaultInstance()
         : view_;
   }
+
   /**
    *
    *
@@ -355,6 +361,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -595,6 +603,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -622,6 +631,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +681,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.contactcenterinsights.v1.View.Builder,
             com.google.cloud.contactcenterinsights.v1.ViewOrBuilder>
         viewBuilder_;
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasView() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return viewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -873,6 +893,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
             : view_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface EndpointConfigOrBuilder
    * </code>
    */
   int getHttpPortsCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface EndpointConfigOrBuilder
    * </code>
    */
   boolean containsHttpPorts(java.lang.String key);
+
   /** Use {@link #getHttpPortsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHttpPorts();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface EndpointConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap();
+
   /**
    *
    *
@@ -79,6 +83,7 @@ public interface EndpointConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

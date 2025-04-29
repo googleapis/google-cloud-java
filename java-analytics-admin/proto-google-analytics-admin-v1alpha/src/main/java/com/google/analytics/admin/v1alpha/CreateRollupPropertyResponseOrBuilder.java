@@ -36,6 +36,7 @@ public interface CreateRollupPropertyResponseOrBuilder
    * @return Whether the rollupProperty field is set.
    */
   boolean hasRollupProperty();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CreateRollupPropertyResponseOrBuilder
    * @return The rollupProperty.
    */
   com.google.analytics.admin.v1alpha.Property getRollupProperty();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface CreateRollupPropertyResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
       getRollupPropertySourceLinksList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface CreateRollupPropertyResponseOrBuilder
    */
   com.google.analytics.admin.v1alpha.RollupPropertySourceLink getRollupPropertySourceLinks(
       int index);
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface CreateRollupPropertyResponseOrBuilder
    * </code>
    */
   int getRollupPropertySourceLinksCount();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface CreateRollupPropertyResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.RollupPropertySourceLinkOrBuilder>
       getRollupPropertySourceLinksOrBuilderList();
+
   /**
    *
    *

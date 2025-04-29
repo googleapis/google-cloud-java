@@ -306,7 +306,8 @@ public class ParticipantName implements ResourceName {
     private Builder(ParticipantName participantName) {
       Preconditions.checkArgument(
           Objects.equals(participantName.pathTemplate, PROJECT_CONVERSATION_PARTICIPANT),
-          "toBuilder is only supported when ParticipantName has the pattern of projects/{project}/conversations/{conversation}/participants/{participant}");
+          "toBuilder is only supported when ParticipantName has the pattern of"
+              + " projects/{project}/conversations/{conversation}/participants/{participant}");
       this.project = participantName.project;
       this.conversation = participantName.conversation;
       this.participant = participantName.participant;

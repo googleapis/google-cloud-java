@@ -40,6 +40,7 @@ public interface GetClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

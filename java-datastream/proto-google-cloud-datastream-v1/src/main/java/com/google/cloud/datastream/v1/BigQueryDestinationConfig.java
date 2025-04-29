@@ -33,6 +33,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig)
     BigQueryDestinationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryDestinationConfig.newBuilder() to construct.
   private BigQueryDestinationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The datasetId.
      */
     java.lang.String getDatasetId();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getDatasetIdBytes();
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset)
       SingleTargetDatasetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SingleTargetDataset.newBuilder() to construct.
     private SingleTargetDataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -144,6 +148,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetId_ = "";
+
     /**
      *
      *
@@ -169,6 +174,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -364,6 +370,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object datasetId_ = "";
+
       /**
        *
        *
@@ -588,6 +596,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -612,6 +621,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -635,6 +645,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -654,6 +665,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -767,6 +779,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return Whether the datasetTemplate field is set.
      */
     boolean hasDatasetTemplate();
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets.DatasetTemplate
         getDatasetTemplate();
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .DatasetTemplateOrBuilder
         getDatasetTemplateOrBuilder();
   }
+
   /**
    *
    *
@@ -813,6 +828,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets)
       SourceHierarchyDatasetsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SourceHierarchyDatasets.newBuilder() to construct.
     private SourceHierarchyDatasets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -862,6 +878,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * @return The location.
        */
       java.lang.String getLocation();
+
       /**
        *
        *
@@ -891,6 +908,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * @return The datasetIdPrefix.
        */
       java.lang.String getDatasetIdPrefix();
+
       /**
        *
        *
@@ -924,6 +942,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * @return The kmsKeyName.
        */
       java.lang.String getKmsKeyName();
+
       /**
        *
        *
@@ -943,6 +962,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        */
       com.google.protobuf.ByteString getKmsKeyNameBytes();
     }
+
     /**
      *
      *
@@ -958,6 +978,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets.DatasetTemplate)
         DatasetTemplateOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DatasetTemplate.newBuilder() to construct.
       private DatasetTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -996,6 +1017,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object location_ = "";
+
       /**
        *
        *
@@ -1021,6 +1043,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return s;
         }
       }
+
       /**
        *
        *
@@ -1051,6 +1074,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object datasetIdPrefix_ = "";
+
       /**
        *
        *
@@ -1076,6 +1100,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return s;
         }
       }
+
       /**
        *
        *
@@ -1106,6 +1131,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object kmsKeyName_ = "";
+
       /**
        *
        *
@@ -1135,6 +1161,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return s;
         }
       }
+
       /**
        *
        *
@@ -1373,6 +1400,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1620,6 +1648,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         private int bitField0_;
 
         private java.lang.Object location_ = "";
+
         /**
          *
          *
@@ -1644,6 +1673,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1668,6 +1698,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1691,6 +1722,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1710,6 +1742,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1736,6 +1769,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         }
 
         private java.lang.Object datasetIdPrefix_ = "";
+
         /**
          *
          *
@@ -1760,6 +1794,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1784,6 +1819,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1807,6 +1843,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1826,6 +1863,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1852,6 +1890,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         }
 
         private java.lang.Object kmsKeyName_ = "";
+
         /**
          *
          *
@@ -1880,6 +1919,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1908,6 +1948,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1935,6 +1976,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1958,6 +2000,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2064,6 +2107,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
             .DatasetTemplate
         datasetTemplate_;
+
     /**
      *
      *
@@ -2081,6 +2125,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasDatasetTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2103,6 +2148,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
               .DatasetTemplate.getDefaultInstance()
           : datasetTemplate_;
     }
+
     /**
      *
      *
@@ -2299,6 +2345,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2530,6 +2577,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
               com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
                   .DatasetTemplateOrBuilder>
           datasetTemplateBuilder_;
+
       /**
        *
        *
@@ -2546,6 +2594,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       public boolean hasDatasetTemplate() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2571,6 +2620,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return datasetTemplateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2598,6 +2648,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2622,6 +2673,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2656,6 +2708,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         }
         return this;
       }
+
       /**
        *
        *
@@ -2677,6 +2730,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2695,6 +2749,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return getDatasetTemplateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2718,6 +2773,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
               : datasetTemplate_;
         }
       }
+
       /**
        *
        *
@@ -2838,6 +2894,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The bucket.
      */
     java.lang.String getBucket();
+
     /**
      *
      *
@@ -2863,6 +2920,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The rootPath.
      */
     java.lang.String getRootPath();
+
     /**
      *
      *
@@ -2889,6 +2947,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The connectionName.
      */
     java.lang.String getConnectionName();
+
     /**
      *
      *
@@ -2917,6 +2976,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The enum numeric value on the wire for fileFormat.
      */
     int getFileFormatValue();
+
     /**
      *
      *
@@ -2946,6 +3006,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The enum numeric value on the wire for tableFormat.
      */
     int getTableFormatValue();
+
     /**
      *
      *
@@ -2962,6 +3023,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
         getTableFormat();
   }
+
   /**
    *
    *
@@ -2976,6 +3038,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)
       BlmtConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BlmtConfig.newBuilder() to construct.
     private BlmtConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3054,6 +3117,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * <code>FILE_FORMAT_UNSPECIFIED = 0;</code>
        */
       public static final int FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -3192,6 +3256,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * <code>TABLE_FORMAT_UNSPECIFIED = 0;</code>
        */
       public static final int TABLE_FORMAT_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -3290,6 +3355,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -3313,6 +3379,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -3341,6 +3408,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rootPath_ = "";
+
     /**
      *
      *
@@ -3364,6 +3432,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -3392,6 +3461,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object connectionName_ = "";
+
     /**
      *
      *
@@ -3416,6 +3486,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -3443,6 +3514,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     public static final int FILE_FORMAT_FIELD_NUMBER = 4;
     private int fileFormat_ = 0;
+
     /**
      *
      *
@@ -3460,6 +3532,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public int getFileFormatValue() {
       return fileFormat_;
     }
+
     /**
      *
      *
@@ -3487,6 +3560,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     public static final int TABLE_FORMAT_FIELD_NUMBER = 5;
     private int tableFormat_ = 0;
+
     /**
      *
      *
@@ -3504,6 +3578,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public int getTableFormatValue() {
       return tableFormat_;
     }
+
     /**
      *
      *
@@ -3739,6 +3814,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3989,6 +4065,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object bucket_ = "";
+
       /**
        *
        *
@@ -4011,6 +4088,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4033,6 +4111,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4054,6 +4133,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4071,6 +4151,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4095,6 +4176,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
 
       private java.lang.Object rootPath_ = "";
+
       /**
        *
        *
@@ -4117,6 +4199,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4139,6 +4222,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4160,6 +4244,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4177,6 +4262,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4201,6 +4287,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
 
       private java.lang.Object connectionName_ = "";
+
       /**
        *
        *
@@ -4224,6 +4311,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4247,6 +4335,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4269,6 +4358,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4287,6 +4377,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4312,6 +4403,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
 
       private int fileFormat_ = 0;
+
       /**
        *
        *
@@ -4329,6 +4421,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       public int getFileFormatValue() {
         return fileFormat_;
       }
+
       /**
        *
        *
@@ -4349,6 +4442,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4373,6 +4467,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4397,6 +4492,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4418,6 +4514,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
 
       private int tableFormat_ = 0;
+
       /**
        *
        *
@@ -4435,6 +4532,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       public int getTableFormatValue() {
         return tableFormat_;
       }
+
       /**
        *
        *
@@ -4455,6 +4553,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4479,6 +4578,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4503,6 +4603,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4594,6 +4695,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -4609,6 +4711,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
       AppendOnlyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AppendOnly.newBuilder() to construct.
     private AppendOnly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4790,6 +4893,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5029,6 +5133,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -5044,6 +5149,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
       MergeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Merge.newBuilder() to construct.
     private Merge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5224,6 +5330,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5474,6 +5581,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private DatasetConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5523,6 +5631,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private WriteModeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5556,6 +5665,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int SINGLE_TARGET_DATASET_FIELD_NUMBER = 201;
+
   /**
    *
    *
@@ -5573,6 +5683,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasSingleTargetDataset() {
     return datasetConfigCase_ == 201;
   }
+
   /**
    *
    *
@@ -5596,6 +5707,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5619,6 +5731,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_HIERARCHY_DATASETS_FIELD_NUMBER = 202;
+
   /**
    *
    *
@@ -5636,6 +5749,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasSourceHierarchyDatasets() {
     return datasetConfigCase_ == 202;
   }
+
   /**
    *
    *
@@ -5659,6 +5773,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5683,6 +5798,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
   public static final int DATA_FRESHNESS_FIELD_NUMBER = 300;
   private com.google.protobuf.Duration dataFreshness_;
+
   /**
    *
    *
@@ -5701,6 +5817,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasDataFreshness() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5721,6 +5838,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         ? com.google.protobuf.Duration.getDefaultInstance()
         : dataFreshness_;
   }
+
   /**
    *
    *
@@ -5742,6 +5860,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
   public static final int BLMT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmtConfig_;
+
   /**
    *
    *
@@ -5759,6 +5878,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasBlmtConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5778,6 +5898,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.getDefaultInstance()
         : blmtConfig_;
   }
+
   /**
    *
    *
@@ -5798,6 +5919,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int MERGE_FIELD_NUMBER = 301;
+
   /**
    *
    *
@@ -5813,6 +5935,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasMerge() {
     return writeModeCase_ == 301;
   }
+
   /**
    *
    *
@@ -5831,6 +5954,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5850,6 +5974,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int APPEND_ONLY_FIELD_NUMBER = 302;
+
   /**
    *
    *
@@ -5866,6 +5991,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasAppendOnly() {
     return writeModeCase_ == 302;
   }
+
   /**
    *
    *
@@ -5885,6 +6011,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6174,6 +6301,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6519,6 +6647,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDatasetOrBuilder>
         singleTargetDatasetBuilder_;
+
     /**
      *
      *
@@ -6536,6 +6665,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasSingleTargetDataset() {
       return datasetConfigCase_ == 201;
     }
+
     /**
      *
      *
@@ -6567,6 +6697,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6592,6 +6723,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -6615,6 +6747,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -6654,6 +6787,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -6681,6 +6815,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -6696,6 +6831,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getSingleTargetDatasetBuilder() {
       return getSingleTargetDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6721,6 +6857,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6768,6 +6905,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig
                 .SourceHierarchyDatasetsOrBuilder>
         sourceHierarchyDatasetsBuilder_;
+
     /**
      *
      *
@@ -6785,6 +6923,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasSourceHierarchyDatasets() {
       return datasetConfigCase_ == 202;
     }
+
     /**
      *
      *
@@ -6816,6 +6955,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6841,6 +6981,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -6864,6 +7005,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -6904,6 +7046,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -6931,6 +7074,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -6946,6 +7090,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getSourceHierarchyDatasetsBuilder() {
       return getSourceHierarchyDatasetsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6971,6 +7116,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7019,6 +7165,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         dataFreshnessBuilder_;
+
     /**
      *
      *
@@ -7036,6 +7183,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasDataFreshness() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -7059,6 +7207,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return dataFreshnessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7084,6 +7233,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7106,6 +7256,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7136,6 +7287,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -7158,6 +7310,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7175,6 +7328,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return getDataFreshnessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7196,6 +7350,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             : dataFreshness_;
       }
     }
+
     /**
      *
      *
@@ -7231,6 +7386,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder>
         blmtConfigBuilder_;
+
     /**
      *
      *
@@ -7247,6 +7403,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasBlmtConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -7270,6 +7427,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return blmtConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7295,6 +7453,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7318,6 +7477,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7350,6 +7510,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -7371,6 +7532,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7388,6 +7550,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return getBlmtConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7410,6 +7573,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             : blmtConfig_;
       }
     }
+
     /**
      *
      *
@@ -7443,6 +7607,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder>
         mergeBuilder_;
+
     /**
      *
      *
@@ -7458,6 +7623,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasMerge() {
       return writeModeCase_ == 301;
     }
+
     /**
      *
      *
@@ -7483,6 +7649,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7505,6 +7672,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 301;
       return this;
     }
+
     /**
      *
      *
@@ -7525,6 +7693,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 301;
       return this;
     }
+
     /**
      *
      *
@@ -7560,6 +7729,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 301;
       return this;
     }
+
     /**
      *
      *
@@ -7585,6 +7755,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -7598,6 +7769,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getMergeBuilder() {
       return getMergeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7619,6 +7791,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7658,6 +7831,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder>
         appendOnlyBuilder_;
+
     /**
      *
      *
@@ -7674,6 +7848,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasAppendOnly() {
       return writeModeCase_ == 302;
     }
+
     /**
      *
      *
@@ -7702,6 +7877,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7726,6 +7902,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 302;
       return this;
     }
+
     /**
      *
      *
@@ -7748,6 +7925,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 302;
       return this;
     }
+
     /**
      *
      *
@@ -7785,6 +7963,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 302;
       return this;
     }
+
     /**
      *
      *
@@ -7811,6 +7990,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -7825,6 +8005,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getAppendOnlyBuilder() {
       return getAppendOnlyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7848,6 +8029,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

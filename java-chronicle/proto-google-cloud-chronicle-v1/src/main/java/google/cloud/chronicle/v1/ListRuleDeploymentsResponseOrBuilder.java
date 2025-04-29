@@ -34,6 +34,7 @@ public interface ListRuleDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.RuleDeployment rule_deployments = 1;</code>
    */
   java.util.List<google.cloud.chronicle.v1.RuleDeployment> getRuleDeploymentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRuleDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.RuleDeployment rule_deployments = 1;</code>
    */
   google.cloud.chronicle.v1.RuleDeployment getRuleDeployments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRuleDeploymentsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.RuleDeployment rule_deployments = 1;</code>
    */
   int getRuleDeploymentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRuleDeploymentsResponseOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.RuleDeploymentOrBuilder>
       getRuleDeploymentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListRuleDeploymentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

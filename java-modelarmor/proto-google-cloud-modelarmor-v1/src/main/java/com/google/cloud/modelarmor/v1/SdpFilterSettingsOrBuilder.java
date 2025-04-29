@@ -42,6 +42,7 @@ public interface SdpFilterSettingsOrBuilder
    * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface SdpFilterSettingsOrBuilder
    * @return The basicConfig.
    */
   com.google.cloud.modelarmor.v1.SdpBasicConfig getBasicConfig();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface SdpFilterSettingsOrBuilder
    * @return Whether the advancedConfig field is set.
    */
   boolean hasAdvancedConfig();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface SdpFilterSettingsOrBuilder
    * @return The advancedConfig.
    */
   com.google.cloud.modelarmor.v1.SdpAdvancedConfig getAdvancedConfig();
+
   /**
    *
    *

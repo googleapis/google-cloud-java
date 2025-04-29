@@ -92,6 +92,7 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NODE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int NODE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REDIS_SHARED_CORE_NANO = 1;</code>
    */
   public static final int REDIS_SHARED_CORE_NANO_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REDIS_HIGHMEM_MEDIUM = 2;</code>
    */
   public static final int REDIS_HIGHMEM_MEDIUM_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REDIS_HIGHMEM_XLARGE = 3;</code>
    */
   public static final int REDIS_HIGHMEM_XLARGE_VALUE = 3;
+
   /**
    *
    *

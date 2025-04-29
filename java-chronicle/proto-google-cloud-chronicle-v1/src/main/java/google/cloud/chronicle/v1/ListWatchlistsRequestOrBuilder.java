@@ -39,6 +39,7 @@ public interface ListWatchlistsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface ListWatchlistsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public interface ListWatchlistsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

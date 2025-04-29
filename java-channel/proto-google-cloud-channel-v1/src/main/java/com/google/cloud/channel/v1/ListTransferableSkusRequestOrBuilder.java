@@ -36,6 +36,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return Whether the cloudIdentityId field is set.
    */
   boolean hasCloudIdentityId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return The cloudIdentityId.
    */
   java.lang.String getCloudIdentityId();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return Whether the customerName field is set.
    */
   boolean hasCustomerName();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return The customerName.
    */
   java.lang.String getCustomerName();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return The authToken.
    */
   java.lang.String getAuthToken();
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public interface ListTransferableSkusRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

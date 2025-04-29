@@ -34,6 +34,7 @@ public final class ReportGranularity extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.ReportGranularity)
     ReportGranularityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportGranularity.newBuilder() to construct.
   private ReportGranularity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class ReportGranularity extends com.google.protobuf.GeneratedMessag
      * <code>REPORT_GRANULARITY_ENUM_UNSPECIFIED = 0;</code>
      */
     public static final int REPORT_GRANULARITY_ENUM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class ReportGranularity extends com.google.protobuf.GeneratedMessag
      * <code>WEEKLY = 1;</code>
      */
     public static final int WEEKLY_VALUE = 1;
+
     /**
      *
      *
@@ -376,6 +379,7 @@ public final class ReportGranularity extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -47,6 +47,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

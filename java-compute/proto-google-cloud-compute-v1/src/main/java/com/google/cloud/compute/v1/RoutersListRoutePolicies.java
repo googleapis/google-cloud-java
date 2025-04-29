@@ -32,6 +32,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RoutersListRoutePolicies)
     RoutersListRoutePoliciesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RoutersListRoutePolicies.newBuilder() to construct.
   private RoutersListRoutePolicies(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -82,6 +84,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -99,6 +102,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -121,6 +125,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public boolean hasId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public boolean hasKind() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RoutePolicy> result_;
+
   /**
    *
    *
@@ -332,6 +346,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.compute.v1.RoutePolicy> getResultList() {
     return result_;
   }
+
   /**
    *
    *
@@ -346,6 +361,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       getResultOrBuilderList() {
     return result_;
   }
+
   /**
    *
    *
@@ -359,6 +375,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public int getResultCount() {
     return result_.size();
   }
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.RoutePolicy getResult(int index) {
     return result_.get(index);
   }
+
   /**
    *
    *
@@ -390,6 +408,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -405,6 +424,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -428,6 +448,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -457,6 +478,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -471,6 +493,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getUnreachablesList() {
     return unreachables_;
   }
+
   /**
    *
    *
@@ -485,6 +508,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public int getUnreachablesCount() {
     return unreachables_.size();
   }
+
   /**
    *
    *
@@ -500,6 +524,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public java.lang.String getUnreachables(int index) {
     return unreachables_.get(index);
   }
+
   /**
    *
    *
@@ -518,6 +543,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -533,6 +559,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -548,6 +575,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -824,6 +852,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1185,6 +1214,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object etag_ = "";
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1193,6 +1223,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1209,6 +1240,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1225,6 +1257,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1240,6 +1273,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1251,6 +1285,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1269,6 +1304,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1283,6 +1319,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1305,6 +1342,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1365,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1387,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1405,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1430,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1403,6 +1445,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1425,6 +1468,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1491,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1468,6 +1513,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1531,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1556,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1523,6 +1571,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1545,6 +1594,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1567,6 +1617,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1588,6 +1639,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1657,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1713,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return resultBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1676,6 +1730,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return resultBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1692,6 +1747,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return resultBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1714,6 +1770,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1791,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1814,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1778,6 +1837,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1857,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1878,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1837,6 +1899,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1919,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1939,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1887,6 +1952,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.RoutePolicy.Builder getResultBuilder(int index) {
       return getResultFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1903,6 +1969,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return resultBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1920,6 +1987,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(result_);
       }
     }
+
     /**
      *
      *
@@ -1933,6 +2001,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return getResultFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.RoutePolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1946,6 +2015,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       return getResultFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.RoutePolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1977,6 +2047,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1991,6 +2062,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2013,6 +2085,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2035,6 +2108,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2056,6 +2130,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2148,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2105,6 +2181,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2120,6 +2197,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       unreachables_.makeImmutable();
       return unreachables_;
     }
+
     /**
      *
      *
@@ -2134,6 +2212,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public int getUnreachablesCount() {
       return unreachables_.size();
     }
+
     /**
      *
      *
@@ -2149,6 +2228,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public java.lang.String getUnreachables(int index) {
       return unreachables_.get(index);
     }
+
     /**
      *
      *
@@ -2164,6 +2244,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getUnreachablesBytes(int index) {
       return unreachables_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2187,6 +2268,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2209,6 +2291,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2228,6 +2311,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2246,6 +2330,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2361,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -2290,6 +2376,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2310,6 +2397,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2332,6 +2420,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2440,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2378,6 +2468,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2397,6 +2488,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2411,6 +2503,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2429,6 +2522,7 @@ public final class RoutersListRoutePolicies extends com.google.protobuf.Generate
             : warning_;
       }
     }
+
     /**
      *
      *

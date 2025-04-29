@@ -35,6 +35,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.CompilationDiagnostic)
     CompilationDiagnosticOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompilationDiagnostic.newBuilder() to construct.
   private CompilationDiagnostic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
      * <code>WARNING = 1;</code>
      */
     public static final int WARNING_VALUE = 1;
+
     /**
      *
      *
@@ -229,6 +232,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +283,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
 
   public static final int POSITION_FIELD_NUMBER = 2;
   private google.cloud.chronicle.v1.CompilationPosition position_;
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
   public boolean hasPosition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -318,6 +325,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
         ? google.cloud.chronicle.v1.CompilationPosition.getDefaultInstance()
         : position_;
   }
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private int severity_ = 0;
+
   /**
    *
    *
@@ -357,6 +366,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
   public int getSeverityValue() {
     return severity_;
   }
+
   /**
    *
    *
@@ -383,6 +393,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -407,6 +418,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -627,6 +639,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -870,6 +883,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -892,6 +906,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -914,6 +929,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +951,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +969,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +999,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
             google.cloud.chronicle.v1.CompilationPosition.Builder,
             google.cloud.chronicle.v1.CompilationPositionOrBuilder>
         positionBuilder_;
+
     /**
      *
      *
@@ -999,6 +1018,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     public boolean hasPosition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1023,6 +1043,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
         return positionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1070,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1095,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1127,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1151,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPositionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1167,6 +1193,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
             : position_;
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1225,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     }
 
     private int severity_ = 0;
+
     /**
      *
      *
@@ -1215,6 +1243,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -1235,6 +1264,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1286,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
           ? google.cloud.chronicle.v1.CompilationDiagnostic.Severity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1279,6 +1310,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1332,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1323,6 +1356,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1380,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1368,6 +1403,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1422,7 @@ public final class CompilationDiagnostic extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

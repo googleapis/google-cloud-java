@@ -38,6 +38,7 @@ public interface DeleteResourceValueConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

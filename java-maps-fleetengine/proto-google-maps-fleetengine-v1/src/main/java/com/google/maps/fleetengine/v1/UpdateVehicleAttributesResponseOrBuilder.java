@@ -37,6 +37,7 @@ public interface UpdateVehicleAttributesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.fleetengine.v1.VehicleAttribute> getAttributesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateVehicleAttributesResponseOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface UpdateVehicleAttributesResponseOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface UpdateVehicleAttributesResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *

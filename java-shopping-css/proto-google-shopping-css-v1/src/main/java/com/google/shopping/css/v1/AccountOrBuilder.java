@@ -37,6 +37,7 @@ public interface AccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AccountOrBuilder
    * @return The fullName.
    */
   java.lang.String getFullName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AccountOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AccountOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface AccountOrBuilder
    * @return Whether the homepageUri field is set.
    */
   boolean hasHomepageUri();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface AccountOrBuilder
    * @return The homepageUri.
    */
   java.lang.String getHomepageUri();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface AccountOrBuilder
    * @return Whether the parent field is set.
    */
   boolean hasParent();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface AccountOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface AccountOrBuilder
    * @return A list containing the labelIds.
    */
   java.util.List<java.lang.Long> getLabelIdsList();
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public interface AccountOrBuilder
    * @return The count of labelIds.
    */
   int getLabelIdsCount();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface AccountOrBuilder
    * @return A list containing the automaticLabelIds.
    */
   java.util.List<java.lang.Long> getAutomaticLabelIdsList();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface AccountOrBuilder
    * @return The count of automaticLabelIds.
    */
   int getAutomaticLabelIdsCount();
+
   /**
    *
    *
@@ -308,6 +320,7 @@ public interface AccountOrBuilder
    * @return The enum numeric value on the wire for accountType.
    */
   int getAccountTypeValue();
+
   /**
    *
    *

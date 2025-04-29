@@ -35,6 +35,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.BatchOperationMetadata)
     BatchOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchOperationMetadata.newBuilder() to construct.
   private BatchOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,6 +158,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -167,6 +169,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>INITIALIZING = 1;</code>
      */
     public static final int INITIALIZING_VALUE = 1;
+
     /**
      *
      *
@@ -177,6 +180,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>PROCESSING = 2;</code>
      */
     public static final int PROCESSING_VALUE = 2;
+
     /**
      *
      *
@@ -188,6 +192,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
+
     /**
      *
      *
@@ -198,6 +203,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+
     /**
      *
      *
@@ -210,6 +216,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>CANCELLING = 5;</code>
      */
     public static final int CANCELLING_VALUE = 5;
+
     /**
      *
      *
@@ -320,6 +327,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -335,6 +343,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -359,6 +368,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDescription_ = "";
+
   /**
    *
    *
@@ -382,6 +392,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 3;
   private int successCount_ = 0;
+
   /**
    *
    *
@@ -426,6 +438,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int FAILURE_COUNT_FIELD_NUMBER = 4;
   private int failureCount_ = 0;
+
   /**
    *
    *
@@ -444,6 +457,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int TOTAL_COUNT_FIELD_NUMBER = 5;
   private int totalCount_ = 0;
+
   /**
    *
    *
@@ -462,6 +476,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -477,6 +492,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -492,6 +508,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -508,6 +525,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -525,6 +543,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -542,6 +561,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -560,6 +580,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int END_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -577,6 +598,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -594,6 +616,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -849,6 +872,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1154,6 +1178,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1169,6 +1194,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1187,6 +1213,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1233,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
           ? com.google.cloud.talent.v4.BatchOperationMetadata.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1227,6 +1255,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1275,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object stateDescription_ = "";
+
     /**
      *
      *
@@ -1268,6 +1298,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1321,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1311,6 +1343,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1361,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1386,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int successCount_;
+
     /**
      *
      *
@@ -1367,6 +1402,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getSuccessCount() {
       return successCount_;
     }
+
     /**
      *
      *
@@ -1386,6 +1422,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1442,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int failureCount_;
+
     /**
      *
      *
@@ -1420,6 +1458,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getFailureCount() {
       return failureCount_;
     }
+
     /**
      *
      *
@@ -1439,6 +1478,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1498,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int totalCount_;
+
     /**
      *
      *
@@ -1473,6 +1514,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public int getTotalCount() {
       return totalCount_;
     }
+
     /**
      *
      *
@@ -1492,6 +1534,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1516,6 +1559,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1530,6 +1574,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1550,6 +1595,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1572,6 +1618,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1638,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +1666,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1686,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1701,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1669,6 +1720,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1701,6 +1753,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1717,6 +1770,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1739,6 +1793,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1818,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1840,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1870,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1892,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1909,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1870,6 +1930,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1904,6 +1965,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1920,6 +1982,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1940,6 +2003,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1964,6 +2028,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1985,6 +2050,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2080,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2035,6 +2102,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2119,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2069,6 +2138,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

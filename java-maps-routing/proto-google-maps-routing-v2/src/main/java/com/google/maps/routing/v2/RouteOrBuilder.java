@@ -37,6 +37,7 @@ public interface RouteOrBuilder
    * @return A list containing the routeLabels.
    */
   java.util.List<com.google.maps.routing.v2.RouteLabel> getRouteLabelsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RouteOrBuilder
    * @return The count of routeLabels.
    */
   int getRouteLabelsCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface RouteOrBuilder
    * @return The routeLabels at the given index.
    */
   com.google.maps.routing.v2.RouteLabel getRouteLabels(int index);
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface RouteOrBuilder
    * @return A list containing the enum numeric values on the wire for routeLabels.
    */
   java.util.List<java.lang.Integer> getRouteLabelsValueList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
    */
   java.util.List<com.google.maps.routing.v2.RouteLeg> getLegsList();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
    */
   com.google.maps.routing.v2.RouteLeg getLegs(int index);
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
    */
   int getLegsCount();
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
    */
   java.util.List<? extends com.google.maps.routing.v2.RouteLegOrBuilder> getLegsOrBuilderList();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface RouteOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface RouteOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface RouteOrBuilder
    * @return Whether the staticDuration field is set.
    */
   boolean hasStaticDuration();
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface RouteOrBuilder
    * @return The staticDuration.
    */
   com.google.protobuf.Duration getStaticDuration();
+
   /**
    *
    *
@@ -284,6 +296,7 @@ public interface RouteOrBuilder
    * @return Whether the polyline field is set.
    */
   boolean hasPolyline();
+
   /**
    *
    *
@@ -297,6 +310,7 @@ public interface RouteOrBuilder
    * @return The polyline.
    */
   com.google.maps.routing.v2.Polyline getPolyline();
+
   /**
    *
    *
@@ -321,6 +335,7 @@ public interface RouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -346,6 +361,7 @@ public interface RouteOrBuilder
    * @return A list containing the warnings.
    */
   java.util.List<java.lang.String> getWarningsList();
+
   /**
    *
    *
@@ -358,6 +374,7 @@ public interface RouteOrBuilder
    * @return The count of warnings.
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -371,6 +388,7 @@ public interface RouteOrBuilder
    * @return The warnings at the given index.
    */
   java.lang.String getWarnings(int index);
+
   /**
    *
    *
@@ -397,6 +415,7 @@ public interface RouteOrBuilder
    * @return Whether the viewport field is set.
    */
   boolean hasViewport();
+
   /**
    *
    *
@@ -409,6 +428,7 @@ public interface RouteOrBuilder
    * @return The viewport.
    */
   com.google.geo.type.Viewport getViewport();
+
   /**
    *
    *
@@ -432,6 +452,7 @@ public interface RouteOrBuilder
    * @return Whether the travelAdvisory field is set.
    */
   boolean hasTravelAdvisory();
+
   /**
    *
    *
@@ -444,6 +465,7 @@ public interface RouteOrBuilder
    * @return The travelAdvisory.
    */
   com.google.maps.routing.v2.RouteTravelAdvisory getTravelAdvisory();
+
   /**
    *
    *
@@ -475,6 +497,7 @@ public interface RouteOrBuilder
    * @return A list containing the optimizedIntermediateWaypointIndex.
    */
   java.util.List<java.lang.Integer> getOptimizedIntermediateWaypointIndexList();
+
   /**
    *
    *
@@ -495,6 +518,7 @@ public interface RouteOrBuilder
    * @return The count of optimizedIntermediateWaypointIndex.
    */
   int getOptimizedIntermediateWaypointIndexCount();
+
   /**
    *
    *
@@ -529,6 +553,7 @@ public interface RouteOrBuilder
    * @return Whether the localizedValues field is set.
    */
   boolean hasLocalizedValues();
+
   /**
    *
    *
@@ -541,6 +566,7 @@ public interface RouteOrBuilder
    * @return The localizedValues.
    */
   com.google.maps.routing.v2.Route.RouteLocalizedValues getLocalizedValues();
+
   /**
    *
    *
@@ -574,6 +600,7 @@ public interface RouteOrBuilder
    * @return The routeToken.
    */
   java.lang.String getRouteToken();
+
   /**
    *
    *
@@ -609,6 +636,7 @@ public interface RouteOrBuilder
    * @return Whether the polylineDetails field is set.
    */
   boolean hasPolylineDetails();
+
   /**
    *
    *
@@ -621,6 +649,7 @@ public interface RouteOrBuilder
    * @return The polylineDetails.
    */
   com.google.maps.routing.v2.PolylineDetails getPolylineDetails();
+
   /**
    *
    *

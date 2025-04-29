@@ -33,6 +33,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CometInput)
     CometInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CometInput.newBuilder() to construct.
   private CometInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.CometSpec metricSpec_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.CometSpec.getDefaultInstance()
         : metricSpec_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.CometInstance instance_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.CometInstance.getDefaultInstance()
         : instance_;
   }
+
   /**
    *
    *
@@ -352,6 +359,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +581,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.CometSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.CometSpecOrBuilder>
         metricSpecBuilder_;
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
         return metricSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -635,6 +646,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +738,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
             : metricSpec_;
       }
     }
+
     /**
      *
      *
@@ -777,6 +794,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.CometInstance.Builder,
             com.google.cloud.aiplatform.v1beta1.CometInstanceOrBuilder>
         instanceBuilder_;
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -815,6 +834,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
         return instanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -839,6 +859,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +913,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +952,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -948,6 +973,7 @@ public final class CometInput extends com.google.protobuf.GeneratedMessageV3
             : instance_;
       }
     }
+
     /**
      *
      *

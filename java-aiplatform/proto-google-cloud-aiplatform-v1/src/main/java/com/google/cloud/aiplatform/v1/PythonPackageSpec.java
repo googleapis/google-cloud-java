@@ -33,6 +33,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PythonPackageSpec)
     PythonPackageSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PythonPackageSpec.newBuilder() to construct.
   private PythonPackageSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object executorImageUri_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList packageUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getPackageUrisList() {
     return packageUris_;
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public int getPackageUrisCount() {
     return packageUris_.size();
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public java.lang.String getPackageUris(int index) {
     return packageUris_.get(index);
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pythonModule_ = "";
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList args_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
   }
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public int getArgsCount() {
     return args_.size();
   }
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public java.lang.String getArgs(int index) {
     return args_.get(index);
   }
+
   /**
    *
    *
@@ -319,6 +332,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.EnvVar> env_;
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.aiplatform.v1.EnvVar> getEnvList() {
     return env_;
   }
+
   /**
    *
    *
@@ -348,6 +363,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       getEnvOrBuilderList() {
     return env_;
   }
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public int getEnvCount() {
     return env_.size();
   }
+
   /**
    *
    *
@@ -376,6 +393,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.aiplatform.v1.EnvVar getEnv(int index) {
     return env_.get(index);
   }
+
   /**
    *
    *
@@ -602,6 +620,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -906,6 +925,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object executorImageUri_ = "";
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1008,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1062,6 +1087,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       packageUris_.makeImmutable();
       return packageUris_;
     }
+
     /**
      *
      *
@@ -1078,6 +1104,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public int getPackageUrisCount() {
       return packageUris_.size();
     }
+
     /**
      *
      *
@@ -1095,6 +1122,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public java.lang.String getPackageUris(int index) {
       return packageUris_.get(index);
     }
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getPackageUrisBytes(int index) {
       return packageUris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1213,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1234,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1262,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pythonModule_ = "";
+
     /**
      *
      *
@@ -1251,6 +1285,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1308,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1330,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1348,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1381,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1358,6 +1397,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       args_.makeImmutable();
       return args_;
     }
+
     /**
      *
      *
@@ -1372,6 +1412,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public int getArgsCount() {
       return args_.size();
     }
+
     /**
      *
      *
@@ -1387,6 +1428,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public java.lang.String getArgs(int index) {
       return args_.get(index);
     }
+
     /**
      *
      *
@@ -1402,6 +1444,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1425,6 +1468,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1491,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1511,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1530,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1588,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return envBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1558,6 +1606,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return envBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1575,6 +1624,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return envBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1648,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1670,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1694,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1665,6 +1718,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1739,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1761,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1783,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1804,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1825,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1839,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.aiplatform.v1.EnvVar.Builder getEnvBuilder(int index) {
       return getEnvFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1797,6 +1857,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return envBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1815,6 +1876,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(env_);
       }
     }
+
     /**
      *
      *
@@ -1829,6 +1891,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       return getEnvFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.EnvVar.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1843,6 +1906,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       return getEnvFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.EnvVar.getDefaultInstance());
     }
+
     /**
      *
      *

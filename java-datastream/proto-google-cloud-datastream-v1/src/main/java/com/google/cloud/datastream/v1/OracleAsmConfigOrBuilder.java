@@ -36,6 +36,7 @@ public interface OracleAsmConfigOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface OracleAsmConfigOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface OracleAsmConfigOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface OracleAsmConfigOrBuilder
    * @return The asmService.
    */
   java.lang.String getAsmService();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface OracleAsmConfigOrBuilder
    * </code>
    */
   int getConnectionAttributesCount();
+
   /**
    *
    *
@@ -163,9 +168,11 @@ public interface OracleAsmConfigOrBuilder
    * </code>
    */
   boolean containsConnectionAttributes(java.lang.String key);
+
   /** Use {@link #getConnectionAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getConnectionAttributes();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface OracleAsmConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getConnectionAttributesMap();
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public interface OracleAsmConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface OracleAsmConfigOrBuilder
    * @return Whether the oracleSslConfig field is set.
    */
   boolean hasOracleSslConfig();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface OracleAsmConfigOrBuilder
    * @return The oracleSslConfig.
    */
   com.google.cloud.datastream.v1.OracleSslConfig getOracleSslConfig();
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public interface OracleAsmConfigOrBuilder
    * @return The secretManagerStoredPassword.
    */
   java.lang.String getSecretManagerStoredPassword();
+
   /**
    *
    *

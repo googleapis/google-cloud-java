@@ -36,6 +36,7 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    * </code>
    */
   int getPerLocationStatusCount();
+
   /**
    *
    *
@@ -48,10 +49,12 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    * </code>
    */
   boolean containsPerLocationStatus(java.lang.String key);
+
   /** Use {@link #getPerLocationStatusMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.BulkInsertOperationStatus>
       getPerLocationStatus();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.BulkInsertOperationStatus>
       getPerLocationStatusMap();
+
   /**
    *
    *
@@ -81,6 +85,7 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.BulkInsertOperationStatus defaultValue);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.Slate)
     SlateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Slate.newBuilder() to construct.
   private Slate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
      * @return The networkCode.
      */
     java.lang.String getNetworkCode();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
      */
     long getGamSlateId();
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.Slate.GamSlate)
       GamSlateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GamSlate.newBuilder() to construct.
     private GamSlate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -156,6 +160,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object networkCode_ = "";
+
     /**
      *
      *
@@ -179,6 +184,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -205,6 +211,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
 
     public static final int GAM_SLATE_ID_FIELD_NUMBER = 2;
     private long gamSlateId_ = 0L;
+
     /**
      *
      *
@@ -390,6 +397,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object networkCode_ = "";
+
       /**
        *
        *
@@ -613,6 +622,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -635,6 +645,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -656,6 +667,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -673,6 +685,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -697,6 +710,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long gamSlateId_;
+
       /**
        *
        *
@@ -712,6 +726,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       public long getGamSlateId() {
         return gamSlateId_;
       }
+
       /**
        *
        *
@@ -731,6 +746,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -818,6 +834,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -842,6 +859,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -871,6 +889,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -895,6 +914,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -922,6 +942,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GAM_SLATE_FIELD_NUMBER = 3;
   private com.google.cloud.video.stitcher.v1.Slate.GamSlate gamSlate_;
+
   /**
    *
    *
@@ -937,6 +958,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGamSlate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -954,6 +976,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.Slate.GamSlate.getDefaultInstance()
         : gamSlate_;
   }
+
   /**
    *
    *
@@ -1151,6 +1174,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1378,6 +1402,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1401,6 +1426,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1450,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1446,6 +1473,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1492,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1518,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1512,6 +1542,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1566,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1557,6 +1589,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1608,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1639,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.Slate.GamSlate.Builder,
             com.google.cloud.video.stitcher.v1.Slate.GamSlateOrBuilder>
         gamSlateBuilder_;
+
     /**
      *
      *
@@ -1619,6 +1654,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGamSlate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1639,6 +1675,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
         return gamSlateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1698,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1719,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1748,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1768,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1783,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGamSlateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1760,6 +1802,7 @@ public final class Slate extends com.google.protobuf.GeneratedMessageV3
             : gamSlate_;
       }
     }
+
     /**
      *
      *

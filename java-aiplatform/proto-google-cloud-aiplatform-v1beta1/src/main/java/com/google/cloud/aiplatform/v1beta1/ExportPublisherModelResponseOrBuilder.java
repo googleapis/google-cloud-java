@@ -38,6 +38,7 @@ public interface ExportPublisherModelResponseOrBuilder
    * @return The publisherModel.
    */
   java.lang.String getPublisherModel();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ExportPublisherModelResponseOrBuilder
    * @return The destinationUri.
    */
   java.lang.String getDestinationUri();
+
   /**
    *
    *

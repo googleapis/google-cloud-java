@@ -33,6 +33,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ScopeInfo)
     ScopeInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScopeInfo.newBuilder() to construct.
   private ScopeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int REFERENCE_LIST_SCOPE_FIELD_NUMBER = 2;
   private google.cloud.chronicle.v1.ReferenceListScope referenceListScope_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReferenceListScope() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
         ? google.cloud.chronicle.v1.ReferenceListScope.getDefaultInstance()
         : referenceListScope_;
   }
+
   /**
    *
    *
@@ -283,6 +287,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -488,6 +493,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
             google.cloud.chronicle.v1.ReferenceListScope.Builder,
             google.cloud.chronicle.v1.ReferenceListScopeOrBuilder>
         referenceListScopeBuilder_;
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReferenceListScope() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -528,6 +535,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
         return referenceListScopeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -576,6 +585,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReferenceListScopeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class ScopeInfo extends com.google.protobuf.GeneratedMessageV3
             : referenceListScope_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.DailyMaintenanceWindow)
     DailyMaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DailyMaintenanceWindow.newBuilder() to construct.
   private DailyMaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object duration_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -338,6 +343,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -537,6 +543,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object startTime_ = "";
+
     /**
      *
      *
@@ -560,6 +567,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -605,6 +614,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object duration_ = "";
+
     /**
      *
      *
@@ -671,6 +683,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

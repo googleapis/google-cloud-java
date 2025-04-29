@@ -49,6 +49,7 @@ public interface SpellingCorrectionOrBuilder
    * @return The correctedText.
    */
   java.lang.String getCorrectedText();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface SpellingCorrectionOrBuilder
    * @return The correctedHtml.
    */
   java.lang.String getCorrectedHtml();
+
   /**
    *
    *

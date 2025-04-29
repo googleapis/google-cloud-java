@@ -38,6 +38,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The enum numeric value on the wire for annotationSource.
    */
   int getAnnotationSourceValue();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The enum numeric value on the wire for annotationType.
    */
   int getAnnotationTypeValue();
+
   /**
    *
    *
@@ -202,6 +207,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return Whether the labelStats field is set.
    */
   boolean hasLabelStats();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The labelStats.
    */
   com.google.cloud.datalabeling.v1beta1.LabelStats getLabelStats();
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The metadata.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata getMetadata();
+
   /**
    *
    *
@@ -308,6 +319,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return A list containing the blockingResources.
    */
   java.util.List<java.lang.String> getBlockingResourcesList();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The count of blockingResources.
    */
   int getBlockingResourcesCount();
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public interface AnnotatedDatasetOrBuilder
    * @return The blockingResources at the given index.
    */
   java.lang.String getBlockingResources(int index);
+
   /**
    *
    *

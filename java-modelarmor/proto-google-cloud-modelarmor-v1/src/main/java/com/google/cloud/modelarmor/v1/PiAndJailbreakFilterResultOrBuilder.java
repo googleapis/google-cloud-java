@@ -39,6 +39,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   int getMessageItemsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.MessageItemOrBuilder>
       getMessageItemsOrBuilderList();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    * @return The enum numeric value on the wire for matchState.
    */
   int getMatchStateValue();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface PiAndJailbreakFilterResultOrBuilder
    * @return The enum numeric value on the wire for confidenceLevel.
    */
   int getConfidenceLevelValue();
+
   /**
    *
    *

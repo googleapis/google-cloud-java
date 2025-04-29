@@ -30,6 +30,7 @@ public interface PrivateConnectivityOrBuilder
    * @return The privateConnectionName.
    */
   java.lang.String getPrivateConnectionName();
+
   /**
    * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *

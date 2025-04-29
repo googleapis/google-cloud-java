@@ -38,6 +38,7 @@ public interface ProvisionedServiceOrBuilder
    * @return The provisioningId.
    */
   java.lang.String getProvisioningId();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ProvisionedServiceOrBuilder
    * @return The productId.
    */
   java.lang.String getProductId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ProvisionedServiceOrBuilder
    * @return The skuId.
    */
   java.lang.String getSkuId();
+
   /**
    *
    *

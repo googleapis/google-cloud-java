@@ -74,6 +74,7 @@ public enum GoogleSignalsState implements com.google.protobuf.ProtocolMessageEnu
    * <code>GOOGLE_SIGNALS_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int GOOGLE_SIGNALS_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum GoogleSignalsState implements com.google.protobuf.ProtocolMessageEnu
    * <code>GOOGLE_SIGNALS_ENABLED = 1;</code>
    */
   public static final int GOOGLE_SIGNALS_ENABLED_VALUE = 1;
+
   /**
    *
    *

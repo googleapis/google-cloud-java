@@ -835,6 +835,19 @@ public final class LineageGrpc {
     return LineageStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LineageBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LineageBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LineageBlockingV2Stub>() {
+          @java.lang.Override
+          public LineageBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LineageBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LineageBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1485,6 +1498,276 @@ public final class LineageGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Lineage.
+   *
+   * <pre>
+   * Lineage is used to track data flows between assets over time. You can
+   * create [LineageEvents][google.cloud.datacatalog.lineage.v1.LineageEvent]
+   * to record lineage between multiple sources and a single target, for
+   * example, when table data is based on data from multiple tables.
+   * </pre>
+   */
+  public static final class LineageBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LineageBlockingV2Stub> {
+    private LineageBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LineageBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LineageBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new lineage events together with their parents: process and run.
+     * Updates the process and run if they already exist.
+     * Mapped from Open Lineage specification:
+     * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse
+        processOpenLineageRunEvent(
+            com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProcessOpenLineageRunEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new process.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Process createProcess(
+        com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a process.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Process updateProcess(
+        com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of the specified process.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Process getProcess(
+        com.google.cloud.datacatalog.lineage.v1.GetProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List processes in the given project and location. List order is descending
+     * by insertion time.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ListProcessesResponse listProcesses(
+        com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProcessesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the process with the specified name.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProcess(
+        com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new run.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Run createRun(
+        com.google.cloud.datacatalog.lineage.v1.CreateRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a run.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Run updateRun(
+        com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of the specified run.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Run getRun(
+        com.google.cloud.datacatalog.lineage.v1.GetRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists runs in the given project and location. List order is descending by
+     * `start_time`.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ListRunsResponse listRuns(
+        com.google.cloud.datacatalog.lineage.v1.ListRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the run with the specified name.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRun(
+        com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new lineage event.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.LineageEvent createLineageEvent(
+        com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLineageEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specified lineage event.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.LineageEvent getLineageEvent(
+        com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLineageEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists lineage events in the given project and location. The list order is
+     * not defined.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse listLineageEvents(
+        com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLineageEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the lineage event with the specified name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteLineageEvent(
+        com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLineageEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a list of links connected to a specific asset.
+     * Links represent the data flow between **source** (upstream)
+     * and **target** (downstream) assets in transformation pipelines.
+     * Links are stored in the same project as the Lineage Events that create
+     * them.
+     * You can retrieve links in every project where you have the
+     * `datalineage.events.get` permission. The project provided in the URL
+     * is used for Billing and Quota.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse searchLinks(
+        com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve information about LineageProcesses associated with specific
+     * links. LineageProcesses are transformation pipelines that result in data
+     * flowing from **source** to **target** assets. Links between assets
+     * represent this operation.
+     * If you have specific link names, you can use this method to
+     * verify which LineageProcesses contribute to creating those links.
+     * See the
+     * [SearchLinks][google.cloud.datacatalog.lineage.v1.Lineage.SearchLinks]
+     * method for more information on how to retrieve link name.
+     * You can retrieve the LineageProcess information in every project where you
+     * have the `datalineage.events.get` permission. The project provided in the
+     * URL is used for Billing and Quota.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse
+        batchSearchLinkProcesses(
+            com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchSearchLinkProcessesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Lineage.
    *
    * <pre>
    * Lineage is used to track data flows between assets over time. You can

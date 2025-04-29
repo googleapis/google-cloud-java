@@ -34,6 +34,7 @@ public interface ListSessionsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Session sessions = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.Session> getSessionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSessionsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Session sessions = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.Session getSessions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSessionsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Session sessions = 1;</code>
    */
   int getSessionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSessionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.SessionOrBuilder>
       getSessionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSessionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

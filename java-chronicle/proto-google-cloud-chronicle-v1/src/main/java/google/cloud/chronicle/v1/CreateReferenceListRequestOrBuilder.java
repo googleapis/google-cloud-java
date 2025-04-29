@@ -39,6 +39,7 @@ public interface CreateReferenceListRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReferenceListRequestOrBuilder
    * @return Whether the referenceList field is set.
    */
   boolean hasReferenceList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateReferenceListRequestOrBuilder
    * @return The referenceList.
    */
   google.cloud.chronicle.v1.ReferenceList getReferenceList();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface CreateReferenceListRequestOrBuilder
    * @return The referenceListId.
    */
   java.lang.String getReferenceListId();
+
   /**
    *
    *

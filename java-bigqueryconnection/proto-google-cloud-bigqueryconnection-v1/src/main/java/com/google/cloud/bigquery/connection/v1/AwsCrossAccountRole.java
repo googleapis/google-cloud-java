@@ -34,6 +34,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.AwsCrossAccountRole)
     AwsCrossAccountRoleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsCrossAccountRole.newBuilder() to construct.
   private AwsCrossAccountRole(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object iamRoleId_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object iamUserId_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalId_ = "";
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -405,6 +412,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -620,6 +628,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object iamRoleId_ = "";
+
     /**
      *
      *
@@ -643,6 +652,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object iamUserId_ = "";
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -775,6 +790,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object externalId_ = "";
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +932,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +953,7 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

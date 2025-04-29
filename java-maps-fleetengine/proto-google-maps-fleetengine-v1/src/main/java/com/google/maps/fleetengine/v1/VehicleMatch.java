@@ -34,6 +34,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.VehicleMatch)
     VehicleMatchOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VehicleMatch.newBuilder() to construct.
   private VehicleMatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,6 +147,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -157,6 +159,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      * <code>EXCLUSIVE = 1;</code>
      */
     public static final int EXCLUSIVE_VALUE = 1;
+
     /**
      *
      *
@@ -169,6 +172,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      * <code>BACK_TO_BACK = 2;</code>
      */
     public static final int BACK_TO_BACK_VALUE = 2;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
      * <code>CARPOOL = 3;</code>
      */
     public static final int CARPOOL_VALUE = 3;
+
     /**
      *
      *
@@ -284,6 +289,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int VEHICLE_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.Vehicle vehicle_;
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehicle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -318,6 +325,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.Vehicle.getDefaultInstance()
         : vehicle_;
   }
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_PICKUP_ETA_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp vehiclePickupEta_;
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehiclePickupEta() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -377,6 +387,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : vehiclePickupEta_;
   }
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_PICKUP_DISTANCE_METERS_FIELD_NUMBER = 3;
   private com.google.protobuf.Int32Value vehiclePickupDistanceMeters_;
+
   /**
    *
    *
@@ -420,6 +432,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehiclePickupDistanceMeters() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -443,6 +456,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : vehiclePickupDistanceMeters_;
   }
+
   /**
    *
    *
@@ -467,6 +481,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_PICKUP_STRAIGHT_LINE_DISTANCE_METERS_FIELD_NUMBER = 11;
   private com.google.protobuf.Int32Value vehiclePickupStraightLineDistanceMeters_;
+
   /**
    *
    *
@@ -485,6 +500,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehiclePickupStraightLineDistanceMeters() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -505,6 +521,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : vehiclePickupStraightLineDistanceMeters_;
   }
+
   /**
    *
    *
@@ -527,6 +544,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_DROPOFF_ETA_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp vehicleDropoffEta_;
+
   /**
    *
    *
@@ -546,6 +564,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehicleDropoffEta() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -567,6 +586,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : vehicleDropoffEta_;
   }
+
   /**
    *
    *
@@ -589,6 +609,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_PICKUP_TO_DROPOFF_DISTANCE_METERS_FIELD_NUMBER = 5;
   private com.google.protobuf.Int32Value vehiclePickupToDropoffDistanceMeters_;
+
   /**
    *
    *
@@ -611,6 +632,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehiclePickupToDropoffDistanceMeters() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -635,6 +657,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : vehiclePickupToDropoffDistanceMeters_;
   }
+
   /**
    *
    *
@@ -661,6 +684,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRIP_TYPE_FIELD_NUMBER = 6;
   private int tripType_ = 0;
+
   /**
    *
    *
@@ -678,6 +702,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public int getTripTypeValue() {
     return tripType_;
   }
+
   /**
    *
    *
@@ -702,6 +727,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.Waypoint> vehicleTripsWaypoints_;
+
   /**
    *
    *
@@ -719,6 +745,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.fleetengine.v1.Waypoint> getVehicleTripsWaypointsList() {
     return vehicleTripsWaypoints_;
   }
+
   /**
    *
    *
@@ -737,6 +764,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       getVehicleTripsWaypointsOrBuilderList() {
     return vehicleTripsWaypoints_;
   }
+
   /**
    *
    *
@@ -754,6 +782,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public int getVehicleTripsWaypointsCount() {
     return vehicleTripsWaypoints_.size();
   }
+
   /**
    *
    *
@@ -771,6 +800,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.fleetengine.v1.Waypoint getVehicleTripsWaypoints(int index) {
     return vehicleTripsWaypoints_.get(index);
   }
+
   /**
    *
    *
@@ -792,6 +822,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_MATCH_TYPE_FIELD_NUMBER = 8;
   private int vehicleMatchType_ = 0;
+
   /**
    *
    *
@@ -807,6 +838,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public int getVehicleMatchTypeValue() {
     return vehicleMatchType_;
   }
+
   /**
    *
    *
@@ -829,6 +861,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUESTED_ORDERED_BY_FIELD_NUMBER = 9;
   private int requestedOrderedBy_ = 0;
+
   /**
    *
    *
@@ -846,6 +879,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public int getRequestedOrderedByValue() {
     return requestedOrderedBy_;
   }
+
   /**
    *
    *
@@ -872,6 +906,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORDERED_BY_FIELD_NUMBER = 10;
   private int orderedBy_ = 0;
+
   /**
    *
    *
@@ -888,6 +923,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
   public int getOrderedByValue() {
     return orderedBy_;
   }
+
   /**
    *
    *
@@ -1218,6 +1254,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1650,6 +1687,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.Vehicle.Builder,
             com.google.maps.fleetengine.v1.VehicleOrBuilder>
         vehicleBuilder_;
+
     /**
      *
      *
@@ -1665,6 +1703,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehicle() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1686,6 +1725,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehicleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1709,6 +1749,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1770,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1799,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1820,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1792,6 +1836,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehicleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1811,6 +1856,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             : vehicle_;
       }
     }
+
     /**
      *
      *
@@ -1844,6 +1890,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         vehiclePickupEtaBuilder_;
+
     /**
      *
      *
@@ -1862,6 +1909,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehiclePickupEta() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1886,6 +1934,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehiclePickupEtaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1961,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1985,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1966,6 +2017,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1989,6 +2041,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2007,6 +2060,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehiclePickupEtaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2029,6 +2083,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             : vehiclePickupEta_;
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2120,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         vehiclePickupDistanceMetersBuilder_;
+
     /**
      *
      *
@@ -2085,6 +2141,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehiclePickupDistanceMeters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2111,6 +2168,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehiclePickupDistanceMetersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2139,6 +2197,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2165,6 +2224,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2199,6 +2259,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2285,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2306,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehiclePickupDistanceMetersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2268,6 +2331,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             : vehiclePickupDistanceMeters_;
       }
     }
+
     /**
      *
      *
@@ -2306,6 +2370,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         vehiclePickupStraightLineDistanceMetersBuilder_;
+
     /**
      *
      *
@@ -2323,6 +2388,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehiclePickupStraightLineDistanceMeters() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2346,6 +2412,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehiclePickupStraightLineDistanceMetersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2372,6 +2439,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2395,6 +2463,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2427,6 +2496,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2519,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +2538,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehiclePickupStraightLineDistanceMetersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2489,6 +2561,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             : vehiclePickupStraightLineDistanceMeters_;
       }
     }
+
     /**
      *
      *
@@ -2524,6 +2597,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         vehicleDropoffEtaBuilder_;
+
     /**
      *
      *
@@ -2542,6 +2616,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehicleDropoffEta() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2566,6 +2641,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehicleDropoffEtaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2592,6 +2668,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2615,6 +2692,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2646,6 +2724,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2669,6 +2748,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2687,6 +2767,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehicleDropoffEtaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2709,6 +2790,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             : vehicleDropoffEta_;
       }
     }
+
     /**
      *
      *
@@ -2745,6 +2827,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         vehiclePickupToDropoffDistanceMetersBuilder_;
+
     /**
      *
      *
@@ -2766,6 +2849,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehiclePickupToDropoffDistanceMeters() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2793,6 +2877,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehiclePickupToDropoffDistanceMetersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2822,6 +2907,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2849,6 +2935,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2884,6 +2971,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2910,6 +2998,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2931,6 +3020,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehiclePickupToDropoffDistanceMetersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2957,6 +3047,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
             : vehiclePickupToDropoffDistanceMeters_;
       }
     }
+
     /**
      *
      *
@@ -2991,6 +3082,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tripType_ = 0;
+
     /**
      *
      *
@@ -3008,6 +3100,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public int getTripTypeValue() {
       return tripType_;
     }
+
     /**
      *
      *
@@ -3028,6 +3121,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3047,6 +3141,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.fleetengine.v1.TripType.forNumber(tripType_);
       return result == null ? com.google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3070,6 +3165,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3128,6 +3224,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehicleTripsWaypointsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3148,6 +3245,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehicleTripsWaypointsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3168,6 +3266,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehicleTripsWaypointsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3195,6 +3294,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3219,6 +3319,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3245,6 +3346,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3272,6 +3374,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3296,6 +3399,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3320,6 +3424,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3344,6 +3449,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3367,6 +3473,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3390,6 +3497,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3407,6 +3515,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getVehicleTripsWaypointsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3428,6 +3537,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return vehicleTripsWaypointsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3449,6 +3559,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vehicleTripsWaypoints_);
       }
     }
+
     /**
      *
      *
@@ -3466,6 +3577,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       return getVehicleTripsWaypointsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.Waypoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3484,6 +3596,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       return getVehicleTripsWaypointsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.Waypoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3523,6 +3636,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vehicleMatchType_ = 0;
+
     /**
      *
      *
@@ -3538,6 +3652,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public int getVehicleMatchTypeValue() {
       return vehicleMatchType_;
     }
+
     /**
      *
      *
@@ -3556,6 +3671,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3575,6 +3691,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3597,6 +3714,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3616,6 +3734,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int requestedOrderedBy_ = 0;
+
     /**
      *
      *
@@ -3633,6 +3752,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public int getRequestedOrderedByValue() {
       return requestedOrderedBy_;
     }
+
     /**
      *
      *
@@ -3653,6 +3773,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3797,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3700,6 +3822,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3721,6 +3844,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int orderedBy_ = 0;
+
     /**
      *
      *
@@ -3737,6 +3861,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
     public int getOrderedByValue() {
       return orderedBy_;
     }
+
     /**
      *
      *
@@ -3756,6 +3881,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3777,6 +3903,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3800,6 +3927,7 @@ public final class VehicleMatch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

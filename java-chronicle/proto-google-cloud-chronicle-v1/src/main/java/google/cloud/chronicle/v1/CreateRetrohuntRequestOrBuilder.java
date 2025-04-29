@@ -40,6 +40,7 @@ public interface CreateRetrohuntRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateRetrohuntRequestOrBuilder
    * @return Whether the retrohunt field is set.
    */
   boolean hasRetrohunt();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateRetrohuntRequestOrBuilder
    * @return The retrohunt.
    */
   google.cloud.chronicle.v1.Retrohunt getRetrohunt();
+
   /**
    *
    *

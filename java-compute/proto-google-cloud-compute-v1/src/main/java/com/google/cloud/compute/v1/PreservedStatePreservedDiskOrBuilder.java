@@ -37,6 +37,7 @@ public interface PreservedStatePreservedDiskOrBuilder
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PreservedStatePreservedDiskOrBuilder
    * @return The autoDelete.
    */
   java.lang.String getAutoDelete();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PreservedStatePreservedDiskOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface PreservedStatePreservedDiskOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface PreservedStatePreservedDiskOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface PreservedStatePreservedDiskOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *

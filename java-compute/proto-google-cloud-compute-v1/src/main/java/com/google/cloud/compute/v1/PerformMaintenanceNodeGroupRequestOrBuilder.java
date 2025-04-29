@@ -36,6 +36,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    * @return The nodeGroup.
    */
   java.lang.String getNodeGroup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    * @return Whether the nodeGroupsPerformMaintenanceRequestResource field is set.
    */
   boolean hasNodeGroupsPerformMaintenanceRequestResource();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    */
   com.google.cloud.compute.v1.NodeGroupsPerformMaintenanceRequest
       getNodeGroupsPerformMaintenanceRequestResource();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface PerformMaintenanceNodeGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface WindowsVersionsOrBuilder
    */
   java.util.List<com.google.container.v1beta1.WindowsVersions.WindowsVersion>
       getWindowsVersionsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface WindowsVersionsOrBuilder
    * </code>
    */
   com.google.container.v1beta1.WindowsVersions.WindowsVersion getWindowsVersions(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface WindowsVersionsOrBuilder
    * </code>
    */
   int getWindowsVersionsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface WindowsVersionsOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.WindowsVersions.WindowsVersionOrBuilder>
       getWindowsVersionsOrBuilderList();
+
   /**
    *
    *

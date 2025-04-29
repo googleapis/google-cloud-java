@@ -39,6 +39,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Program)
     ProgramOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Program.newBuilder() to construct.
   private Program(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_ELIGIBLE = 1;</code>
      */
     public static final int NOT_ELIGIBLE_VALUE = 1;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * <code>ELIGIBLE = 2;</code>
      */
     public static final int ELIGIBLE_VALUE = 2;
+
     /**
      *
      *
@@ -271,6 +275,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
+
     /**
      *
      *
@@ -296,6 +301,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * @return The documentationUri.
      */
     java.lang.String getDocumentationUri();
+
     /**
      *
      *
@@ -327,6 +333,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the affectedRegionCodes.
      */
     java.util.List<java.lang.String> getAffectedRegionCodesList();
+
     /**
      *
      *
@@ -345,6 +352,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * @return The count of affectedRegionCodes.
      */
     int getAffectedRegionCodesCount();
+
     /**
      *
      *
@@ -364,6 +372,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      * @return The affectedRegionCodes at the given index.
      */
     java.lang.String getAffectedRegionCodes(int index);
+
     /**
      *
      *
@@ -384,6 +393,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAffectedRegionCodesBytes(int index);
   }
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Program.Requirement)
       RequirementOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Requirement.newBuilder() to construct.
     private Requirement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -434,6 +445,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -457,6 +469,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -485,6 +498,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentationUri_ = "";
+
     /**
      *
      *
@@ -508,6 +522,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -537,6 +552,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList affectedRegionCodes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -557,6 +573,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAffectedRegionCodesList() {
       return affectedRegionCodes_;
     }
+
     /**
      *
      *
@@ -577,6 +594,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public int getAffectedRegionCodesCount() {
       return affectedRegionCodes_.size();
     }
+
     /**
      *
      *
@@ -598,6 +616,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAffectedRegionCodes(int index) {
       return affectedRegionCodes_.get(index);
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1039,6 +1059,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -1061,6 +1082,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1083,6 +1105,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1104,6 +1127,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1121,6 +1145,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1145,6 +1170,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object documentationUri_ = "";
+
       /**
        *
        *
@@ -1167,6 +1193,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1189,6 +1216,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1210,6 +1238,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1227,6 +1256,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1259,6 +1289,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -1281,6 +1312,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         affectedRegionCodes_.makeImmutable();
         return affectedRegionCodes_;
       }
+
       /**
        *
        *
@@ -1302,6 +1334,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       public int getAffectedRegionCodesCount() {
         return affectedRegionCodes_.size();
       }
+
       /**
        *
        *
@@ -1324,6 +1357,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAffectedRegionCodes(int index) {
         return affectedRegionCodes_.get(index);
       }
+
       /**
        *
        *
@@ -1346,6 +1380,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAffectedRegionCodesBytes(int index) {
         return affectedRegionCodes_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1376,6 +1411,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1405,6 +1441,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1431,6 +1468,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1456,6 +1494,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1558,6 +1597,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1582,6 +1622,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1611,6 +1652,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentationUri_ = "";
+
   /**
    *
    *
@@ -1634,6 +1676,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1660,6 +1703,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1677,6 +1721,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1704,6 +1749,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList activeRegionCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1725,6 +1771,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getActiveRegionCodesList() {
     return activeRegionCodes_;
   }
+
   /**
    *
    *
@@ -1746,6 +1793,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   public int getActiveRegionCodesCount() {
     return activeRegionCodes_.size();
   }
+
   /**
    *
    *
@@ -1768,6 +1816,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getActiveRegionCodes(int index) {
     return activeRegionCodes_.get(index);
   }
+
   /**
    *
    *
@@ -1796,6 +1845,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Program.Requirement>
       unmetRequirements_;
+
   /**
    *
    *
@@ -1813,6 +1863,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       getUnmetRequirementsList() {
     return unmetRequirements_;
   }
+
   /**
    *
    *
@@ -1831,6 +1882,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       getUnmetRequirementsOrBuilderList() {
     return unmetRequirements_;
   }
+
   /**
    *
    *
@@ -1847,6 +1899,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
   public int getUnmetRequirementsCount() {
     return unmetRequirements_.size();
   }
+
   /**
    *
    *
@@ -1864,6 +1917,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return unmetRequirements_.get(index);
   }
+
   /**
    *
    *
@@ -2091,6 +2145,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2393,6 +2448,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2416,6 +2472,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2439,6 +2496,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2461,6 +2519,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2538,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2504,6 +2564,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object documentationUri_ = "";
+
     /**
      *
      *
@@ -2526,6 +2587,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2548,6 +2610,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2569,6 +2632,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2586,6 +2650,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2610,6 +2675,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2627,6 +2693,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2647,6 +2714,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2668,6 +2736,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.Program.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2691,6 +2760,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2720,6 +2790,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -2742,6 +2813,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       activeRegionCodes_.makeImmutable();
       return activeRegionCodes_;
     }
+
     /**
      *
      *
@@ -2763,6 +2835,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public int getActiveRegionCodesCount() {
       return activeRegionCodes_.size();
     }
+
     /**
      *
      *
@@ -2785,6 +2858,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getActiveRegionCodes(int index) {
       return activeRegionCodes_.get(index);
     }
+
     /**
      *
      *
@@ -2807,6 +2881,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getActiveRegionCodesBytes(int index) {
       return activeRegionCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2837,6 +2912,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2866,6 +2942,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2892,6 +2969,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2917,6 +2995,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2987,6 +3066,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return unmetRequirementsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3006,6 +3086,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return unmetRequirementsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3026,6 +3107,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return unmetRequirementsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3052,6 +3134,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3076,6 +3159,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3102,6 +3186,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3128,6 +3213,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3151,6 +3237,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3175,6 +3262,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3200,6 +3288,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3311,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3244,6 +3334,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3260,6 +3351,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         getUnmetRequirementsBuilder(int index) {
       return getUnmetRequirementsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3280,6 +3372,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return unmetRequirementsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3301,6 +3394,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(unmetRequirements_);
       }
     }
+
     /**
      *
      *
@@ -3320,6 +3414,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.Program.Requirement
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3340,6 +3435,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.Program.Requirement
                   .getDefaultInstance());
     }
+
     /**
      *
      *

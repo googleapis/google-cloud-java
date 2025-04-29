@@ -28,8 +28,8 @@ public interface GetCustomConstraintRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the custom constraint. See the custom constraint
-   * entry for naming requirements.
+   * Required. Resource name of the custom or managed constraint. See the custom
+   * constraint entry for naming requirements.
    * </pre>
    *
    * <code>
@@ -39,12 +39,13 @@ public interface GetCustomConstraintRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * Required. Resource name of the custom constraint. See the custom constraint
-   * entry for naming requirements.
+   * Required. Resource name of the custom or managed constraint. See the custom
+   * constraint entry for naming requirements.
    * </pre>
    *
    * <code>

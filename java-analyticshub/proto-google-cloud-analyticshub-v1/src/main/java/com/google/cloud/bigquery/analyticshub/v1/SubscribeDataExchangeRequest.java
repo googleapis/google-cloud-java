@@ -33,6 +33,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest)
     SubscribeDataExchangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubscribeDataExchangeRequest.newBuilder() to construct.
   private SubscribeDataExchangeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destination_ = "";
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   public static final int DESTINATION_DATASET_FIELD_NUMBER = 5;
   private com.google.cloud.bigquery.analyticshub.v1.DestinationDataset destinationDataset_;
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
   public boolean hasDestinationDataset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +226,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         ? com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance()
         : destinationDataset_;
   }
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscription_ = "";
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscriberContact_ = "";
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -544,6 +556,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -814,6 +827,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -839,6 +853,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +879,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +904,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +925,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object destination_ = "";
+
     /**
      *
      *
@@ -960,6 +979,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -985,6 +1005,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1030,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1051,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1084,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
             com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder>
         destinationDatasetBuilder_;
+
     /**
      *
      *
@@ -1077,6 +1101,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     public boolean hasDestinationDataset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1099,6 +1124,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return destinationDatasetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1150,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1173,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1206,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1228,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1246,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return getDestinationDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
             : destinationDataset_;
       }
     }
+
     /**
      *
      *
@@ -1266,6 +1298,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object subscription_ = "";
+
     /**
      *
      *
@@ -1289,6 +1322,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1312,6 +1346,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1334,6 +1369,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1388,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1414,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object subscriberContact_ = "";
+
     /**
      *
      *
@@ -1399,6 +1437,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1421,6 +1460,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1442,6 +1482,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1500,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

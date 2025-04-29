@@ -37,6 +37,7 @@ public interface DeployPublisherModelOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface DeployPublisherModelOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface DeployPublisherModelOperationMetadataOrBuilder
    * @return The publisherModel.
    */
   java.lang.String getPublisherModel();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DeployPublisherModelOperationMetadataOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
+
   /**
    *
    *

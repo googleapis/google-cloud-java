@@ -48,6 +48,7 @@ public interface MachineSpecOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface MachineSpecOrBuilder
    * @return The enum numeric value on the wire for acceleratorType.
    */
   int getAcceleratorTypeValue();
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public interface MachineSpecOrBuilder
    * @return The tpuTopology.
    */
   java.lang.String getTpuTopology();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface MachineSpecOrBuilder
    * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public interface MachineSpecOrBuilder
    * @return The reservationAffinity.
    */
   com.google.cloud.vertexai.api.ReservationAffinity getReservationAffinity();
+
   /**
    *
    *

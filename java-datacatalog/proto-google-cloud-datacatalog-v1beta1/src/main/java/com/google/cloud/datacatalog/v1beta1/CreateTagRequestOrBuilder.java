@@ -45,6 +45,7 @@ public interface CreateTagRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface CreateTagRequestOrBuilder
    * @return Whether the tag field is set.
    */
   boolean hasTag();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreateTagRequestOrBuilder
    * @return The tag.
    */
   com.google.cloud.datacatalog.v1beta1.Tag getTag();
+
   /**
    *
    *

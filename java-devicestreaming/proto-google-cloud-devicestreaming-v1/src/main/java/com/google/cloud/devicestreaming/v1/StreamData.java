@@ -33,6 +33,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.StreamData)
     StreamDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamData.newBuilder() to construct.
   private StreamData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     private ContentsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAM_ID_FIELD_NUMBER = 1;
   private int streamId_ = 0;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasData() {
     return contentsCase_ == 2;
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOSE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClose() {
     return contentsCase_ == 3;
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.devicestreaming.v1.Close.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int streamId_;
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     public int getStreamId() {
       return streamId_;
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasData() {
       return contentsCase_ == 2;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.devicestreaming.v1.Close.Builder,
             com.google.cloud.devicestreaming.v1.CloseOrBuilder>
         closeBuilder_;
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClose() {
       return contentsCase_ == 3;
     }
+
     /**
      *
      *
@@ -818,6 +835,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Close.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -840,6 +858,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +911,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       contentsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.devicestreaming.v1.Close.Builder getCloseBuilder() {
       return getCloseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -948,6 +971,7 @@ public final class StreamData extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.devicestreaming.v1.Close.getDefaultInstance();
       }
     }
+
     /**
      *
      *

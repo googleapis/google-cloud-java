@@ -42,6 +42,7 @@ public interface UpdateDataAccessLabelRequestOrBuilder
    * @return Whether the dataAccessLabel field is set.
    */
   boolean hasDataAccessLabel();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateDataAccessLabelRequestOrBuilder
    * @return The dataAccessLabel.
    */
   google.cloud.chronicle.v1.DataAccessLabel getDataAccessLabel();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface UpdateDataAccessLabelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface UpdateDataAccessLabelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

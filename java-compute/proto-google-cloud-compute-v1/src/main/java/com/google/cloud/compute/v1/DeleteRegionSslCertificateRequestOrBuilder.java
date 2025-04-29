@@ -38,6 +38,7 @@ public interface DeleteRegionSslCertificateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DeleteRegionSslCertificateRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeleteRegionSslCertificateRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface DeleteRegionSslCertificateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DeleteRegionSslCertificateRequestOrBuilder
    * @return The sslCertificate.
    */
   java.lang.String getSslCertificate();
+
   /**
    *
    *

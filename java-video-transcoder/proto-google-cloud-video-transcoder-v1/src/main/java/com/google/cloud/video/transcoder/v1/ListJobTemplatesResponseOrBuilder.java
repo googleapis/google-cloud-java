@@ -34,6 +34,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.JobTemplate job_templates = 1;</code>
    */
   java.util.List<com.google.cloud.video.transcoder.v1.JobTemplate> getJobTemplatesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.JobTemplate job_templates = 1;</code>
    */
   com.google.cloud.video.transcoder.v1.JobTemplate getJobTemplates(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.JobTemplate job_templates = 1;</code>
    */
   int getJobTemplatesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListJobTemplatesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.transcoder.v1.JobTemplateOrBuilder>
       getJobTemplatesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListJobTemplatesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface AutomationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AutomationEventOrBuilder
    * @return The automation.
    */
   java.lang.String getAutomation();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface AutomationEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface AutomationEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

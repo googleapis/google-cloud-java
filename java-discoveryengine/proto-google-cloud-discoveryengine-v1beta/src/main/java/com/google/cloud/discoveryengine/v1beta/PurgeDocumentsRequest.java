@@ -35,6 +35,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest)
     PurgeDocumentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurgeDocumentsRequest.newBuilder() to construct.
   private PurgeDocumentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      * @return A list containing the documents.
      */
     java.util.List<java.lang.String> getDocumentsList();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      * @return The count of documents.
      */
     int getDocumentsCount();
+
     /**
      *
      *
@@ -123,6 +126,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      * @return The documents at the given index.
      */
     java.lang.String getDocuments(int index);
+
     /**
      *
      *
@@ -142,6 +146,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getDocumentsBytes(int index);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource)
       InlineSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InlineSource.newBuilder() to construct.
     private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -194,6 +200,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList documents_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -213,6 +220,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ProtocolStringList getDocumentsList() {
       return documents_;
     }
+
     /**
      *
      *
@@ -232,6 +240,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public int getDocumentsCount() {
       return documents_.size();
     }
+
     /**
      *
      *
@@ -252,6 +261,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getDocuments(int index) {
       return documents_.get(index);
     }
+
     /**
      *
      *
@@ -448,6 +458,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -683,6 +695,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         documents_.makeImmutable();
         return documents_;
       }
+
       /**
        *
        *
@@ -702,6 +715,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       public int getDocumentsCount() {
         return documents_.size();
       }
+
       /**
        *
        *
@@ -722,6 +736,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       public java.lang.String getDocuments(int index) {
         return documents_.get(index);
       }
+
       /**
        *
        *
@@ -742,6 +757,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.ByteString getDocumentsBytes(int index) {
         return documents_.getByteString(index);
       }
+
       /**
        *
        *
@@ -770,6 +786,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -797,6 +814,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -821,6 +839,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -844,6 +863,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -959,6 +979,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -992,6 +1013,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -1010,6 +1032,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasGcsSource() {
     return sourceCase_ == 5;
   }
+
   /**
    *
    *
@@ -1031,6 +1054,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1052,6 +1076,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INLINE_SOURCE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1069,6 +1094,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInlineSource() {
     return sourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -1091,6 +1117,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     return com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1116,6 +1143,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -1142,6 +1170,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -1173,6 +1202,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -1198,6 +1228,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -1226,6 +1257,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig errorConfig_;
+
   /**
    *
    *
@@ -1241,6 +1273,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1258,6 +1291,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
+
   /**
    *
    *
@@ -1277,6 +1311,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -1527,6 +1562,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1841,6 +1877,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1beta.GcsSource.Builder,
             com.google.cloud.discoveryengine.v1beta.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -1859,6 +1896,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasGcsSource() {
       return sourceCase_ == 5;
     }
+
     /**
      *
      *
@@ -1887,6 +1925,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1951,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +1975,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2011,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1998,6 +2040,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2013,6 +2056,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.discoveryengine.v1beta.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2036,6 +2080,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.discoveryengine.v1beta.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2077,6 +2122,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSource.Builder,
             com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.InlineSourceOrBuilder>
         inlineSourceBuilder_;
+
     /**
      *
      *
@@ -2094,6 +2140,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInlineSource() {
       return sourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -2125,6 +2172,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2150,6 +2198,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2222,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2261,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2238,6 +2289,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2305,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         getInlineSourceBuilder() {
       return getInlineSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2278,6 +2331,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2318,6 +2372,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -2343,6 +2398,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2368,6 +2424,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2392,6 +2449,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2412,6 +2470,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2439,6 +2498,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -2463,6 +2523,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2487,6 +2548,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2510,6 +2572,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2529,6 +2592,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2560,6 +2624,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1beta.PurgeErrorConfigOrBuilder>
         errorConfigBuilder_;
+
     /**
      *
      *
@@ -2574,6 +2639,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2594,6 +2660,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
         return errorConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2616,6 +2683,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2636,6 +2704,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2665,6 +2734,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2684,6 +2754,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2699,6 +2770,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2718,6 +2790,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
             : errorConfig_;
       }
     }
+
     /**
      *
      *
@@ -2745,6 +2818,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -2761,6 +2835,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -2781,6 +2856,7 @@ public final class PurgeDocumentsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -72,6 +72,7 @@ public enum ExecutionHistoryLevel implements com.google.protobuf.ProtocolMessage
    * <code>EXECUTION_HISTORY_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int EXECUTION_HISTORY_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ExecutionHistoryLevel implements com.google.protobuf.ProtocolMessage
    * <code>EXECUTION_HISTORY_BASIC = 1;</code>
    */
   public static final int EXECUTION_HISTORY_BASIC_VALUE = 1;
+
   /**
    *
    *

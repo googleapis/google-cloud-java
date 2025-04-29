@@ -34,6 +34,7 @@ public interface ListConnectorsResponseOrBuilder
    * <code>repeated .google.cloud.vpcaccess.v1.Connector connectors = 1;</code>
    */
   java.util.List<com.google.cloud.vpcaccess.v1.Connector> getConnectorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListConnectorsResponseOrBuilder
    * <code>repeated .google.cloud.vpcaccess.v1.Connector connectors = 1;</code>
    */
   com.google.cloud.vpcaccess.v1.Connector getConnectors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListConnectorsResponseOrBuilder
    * <code>repeated .google.cloud.vpcaccess.v1.Connector connectors = 1;</code>
    */
   int getConnectorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListConnectorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vpcaccess.v1.ConnectorOrBuilder>
       getConnectorsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListConnectorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DiscoveredOrBuilder
    * @return The enum numeric value on the wire for continuousAnalysis.
    */
   int getContinuousAnalysisValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DiscoveredOrBuilder
    * @return Whether the lastAnalysisTime field is set.
    */
   boolean hasLastAnalysisTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DiscoveredOrBuilder
    * @return The lastAnalysisTime.
    */
   com.google.protobuf.Timestamp getLastAnalysisTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface DiscoveredOrBuilder
    * @return The enum numeric value on the wire for analysisStatus.
    */
   int getAnalysisStatusValue();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface DiscoveredOrBuilder
    * @return Whether the analysisStatusError field is set.
    */
   boolean hasAnalysisStatusError();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface DiscoveredOrBuilder
    * @return The analysisStatusError.
    */
   com.google.rpc.Status getAnalysisStatusError();
+
   /**
    *
    *

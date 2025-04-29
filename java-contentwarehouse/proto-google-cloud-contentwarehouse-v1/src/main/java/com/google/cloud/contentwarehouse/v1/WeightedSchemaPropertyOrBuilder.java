@@ -36,6 +36,7 @@ public interface WeightedSchemaPropertyOrBuilder
    * @return The documentSchemaName.
    */
   java.lang.String getDocumentSchemaName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WeightedSchemaPropertyOrBuilder
    * @return A list containing the propertyNames.
    */
   java.util.List<java.lang.String> getPropertyNamesList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface WeightedSchemaPropertyOrBuilder
    * @return The count of propertyNames.
    */
   int getPropertyNamesCount();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface WeightedSchemaPropertyOrBuilder
    * @return The propertyNames at the given index.
    */
   java.lang.String getPropertyNames(int index);
+
   /**
    *
    *

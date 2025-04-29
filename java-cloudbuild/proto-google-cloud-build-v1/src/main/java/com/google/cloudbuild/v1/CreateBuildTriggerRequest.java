@@ -33,6 +33,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.CreateBuildTriggerRequest)
     CreateBuildTriggerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateBuildTriggerRequest.newBuilder() to construct.
   private CreateBuildTriggerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
 
   public static final int TRIGGER_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.BuildTrigger trigger_;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
   public boolean hasTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
   public com.google.cloudbuild.v1.BuildTrigger getTrigger() {
     return trigger_ == null ? com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance() : trigger_;
   }
+
   /**
    *
    *
@@ -403,6 +411,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -631,6 +640,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
             com.google.cloudbuild.v1.BuildTrigger.Builder,
             com.google.cloudbuild.v1.BuildTriggerOrBuilder>
         triggerBuilder_;
+
     /**
      *
      *
@@ -869,6 +889,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
     public boolean hasTrigger() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -891,6 +912,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
         return triggerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +959,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +989,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1011,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
       onChanged();
       return getTriggerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1022,6 +1049,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
             : trigger_;
       }
     }
+
     /**
      *
      *

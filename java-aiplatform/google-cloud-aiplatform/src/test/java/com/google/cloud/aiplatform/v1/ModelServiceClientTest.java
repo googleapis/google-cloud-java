@@ -252,6 +252,7 @@ public class ModelServiceClientTest {
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -326,6 +327,7 @@ public class ModelServiceClientTest {
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -668,6 +670,7 @@ public class ModelServiceClientTest {
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1005,6 +1008,7 @@ public class ModelServiceClientTest {
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1082,6 +1086,7 @@ public class ModelServiceClientTest {
             .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 

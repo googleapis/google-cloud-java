@@ -39,6 +39,7 @@ public interface GetDnsAuthorizationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -439,6 +439,20 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
     return IdentityAwareProxyOAuthServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static IdentityAwareProxyOAuthServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<IdentityAwareProxyOAuthServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IdentityAwareProxyOAuthServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public IdentityAwareProxyOAuthServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IdentityAwareProxyOAuthServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return IdentityAwareProxyOAuthServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -791,6 +805,147 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service IdentityAwareProxyOAuthService.
+   *
+   * <pre>
+   * API to programmatically create, list and retrieve Identity Aware Proxy (IAP)
+   * OAuth brands; and create, retrieve, delete and reset-secret of IAP OAuth
+   * clients.
+   * </pre>
+   */
+  public static final class IdentityAwareProxyOAuthServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<IdentityAwareProxyOAuthServiceBlockingV2Stub> {
+    private IdentityAwareProxyOAuthServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected IdentityAwareProxyOAuthServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new IdentityAwareProxyOAuthServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing brands for the project.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.ListBrandsResponse listBrands(
+        com.google.cloud.iap.v1.ListBrandsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBrandsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Constructs a new OAuth brand for the project if one does not exist.
+     * The created brand is "internal only", meaning that OAuth clients created
+     * under it only accept requests from users who belong to the same Google
+     * Workspace organization as the project. The brand is created in an
+     * un-reviewed status. NOTE: The "internal only" status can be manually
+     * changed in the Google Cloud Console. Requires that a brand does not already
+     * exist for the project, and that the specified support email is owned by the
+     * caller.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.Brand createBrand(
+        com.google.cloud.iap.v1.CreateBrandRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBrandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the OAuth brand of the project.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.Brand getBrand(com.google.cloud.iap.v1.GetBrandRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBrandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Identity Aware Proxy (IAP) OAuth client. The client is owned
+     * by IAP. Requires that the brand for the project exists and that it is
+     * set for internal-only use.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.IdentityAwareProxyClient createIdentityAwareProxyClient(
+        com.google.cloud.iap.v1.CreateIdentityAwareProxyClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIdentityAwareProxyClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing clients for the brand.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.ListIdentityAwareProxyClientsResponse
+        listIdentityAwareProxyClients(
+            com.google.cloud.iap.v1.ListIdentityAwareProxyClientsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIdentityAwareProxyClientsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an Identity Aware Proxy (IAP) OAuth client.
+     * Requires that the client is owned by IAP.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.IdentityAwareProxyClient getIdentityAwareProxyClient(
+        com.google.cloud.iap.v1.GetIdentityAwareProxyClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIdentityAwareProxyClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets an Identity Aware Proxy (IAP) OAuth client secret. Useful if the
+     * secret was compromised. Requires that the client is owned by IAP.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.IdentityAwareProxyClient resetIdentityAwareProxyClientSecret(
+        com.google.cloud.iap.v1.ResetIdentityAwareProxyClientSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetIdentityAwareProxyClientSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Identity Aware Proxy (IAP) OAuth client. Useful for removing
+     * obsolete clients, managing the number of clients in a given project, and
+     * cleaning up after tests. Requires that the client is owned by IAP.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteIdentityAwareProxyClient(
+        com.google.cloud.iap.v1.DeleteIdentityAwareProxyClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIdentityAwareProxyClientMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * IdentityAwareProxyOAuthService.
    *
    * <pre>
    * API to programmatically create, list and retrieve Identity Aware Proxy (IAP)

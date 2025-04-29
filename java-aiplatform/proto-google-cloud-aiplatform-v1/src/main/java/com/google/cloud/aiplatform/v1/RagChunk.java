@@ -34,6 +34,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagChunk)
     RagChunkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagChunk.newBuilder() to construct.
   private RagChunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,6 +96,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
      */
     int getLastPage();
   }
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagChunk.PageSpan)
       PageSpanOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PageSpan.newBuilder() to construct.
     private PageSpan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -139,6 +142,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FIRST_PAGE_FIELD_NUMBER = 1;
     private int firstPage_ = 0;
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_PAGE_FIELD_NUMBER = 2;
     private int lastPage_ = 0;
+
     /**
      *
      *
@@ -342,6 +347,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -540,6 +546,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int firstPage_;
+
       /**
        *
        *
@@ -555,6 +562,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       public int getFirstPage() {
         return firstPage_;
       }
+
       /**
        *
        *
@@ -574,6 +582,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -593,6 +602,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int lastPage_;
+
       /**
        *
        *
@@ -608,6 +618,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       public int getLastPage() {
         return lastPage_;
       }
+
       /**
        *
        *
@@ -627,6 +638,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -714,6 +726,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
+
   /**
    *
    *
@@ -737,6 +750,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -763,6 +777,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAGE_SPAN_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.RagChunk.PageSpan pageSpan_;
+
   /**
    *
    *
@@ -778,6 +793,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPageSpan() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -795,6 +811,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.RagChunk.PageSpan.getDefaultInstance()
         : pageSpan_;
   }
+
   /**
    *
    *
@@ -983,6 +1000,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1196,6 +1214,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -1218,6 +1237,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1260,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1282,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1300,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1330,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.RagChunk.PageSpan.Builder,
             com.google.cloud.aiplatform.v1.RagChunk.PageSpanOrBuilder>
         pageSpanBuilder_;
+
     /**
      *
      *
@@ -1321,6 +1345,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPageSpan() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1341,6 +1366,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
         return pageSpanBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1363,6 +1389,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1410,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1438,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1429,6 +1458,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1473,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPageSpanFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1461,6 +1492,7 @@ public final class RagChunk extends com.google.protobuf.GeneratedMessageV3
             : pageSpan_;
       }
     }
+
     /**
      *
      *

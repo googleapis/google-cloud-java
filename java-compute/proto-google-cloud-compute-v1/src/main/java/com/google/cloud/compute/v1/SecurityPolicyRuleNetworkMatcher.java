@@ -33,6 +33,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcher)
     SecurityPolicyRuleNetworkMatcherOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleNetworkMatcher.newBuilder() to construct.
   private SecurityPolicyRuleNetworkMatcher(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,6 +77,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destIpRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getDestIpRangesList() {
     return destIpRanges_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getDestIpRangesCount() {
     return destIpRanges_.size();
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.lang.String getDestIpRanges(int index) {
     return destIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destPorts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getDestPortsList() {
     return destPorts_;
   }
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getDestPortsCount() {
     return destPorts_.size();
   }
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.lang.String getDestPorts(int index) {
     return destPorts_.get(index);
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ipProtocols_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -218,6 +228,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getIpProtocolsList() {
     return ipProtocols_;
   }
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getIpProtocolsCount() {
     return ipProtocols_.size();
   }
+
   /**
    *
    *
@@ -247,6 +259,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.lang.String getIpProtocols(int index) {
     return ipProtocols_.get(index);
   }
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList srcAsns_ = emptyIntList();
+
   /**
    *
    *
@@ -282,6 +296,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.util.List<java.lang.Integer> getSrcAsnsList() {
     return srcAsns_;
   }
+
   /**
    *
    *
@@ -296,6 +311,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getSrcAsnsCount() {
     return srcAsns_.size();
   }
+
   /**
    *
    *
@@ -319,6 +335,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -333,6 +350,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getSrcIpRangesList() {
     return srcIpRanges_;
   }
+
   /**
    *
    *
@@ -347,6 +365,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getSrcIpRangesCount() {
     return srcIpRanges_.size();
   }
+
   /**
    *
    *
@@ -362,6 +381,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.lang.String getSrcIpRanges(int index) {
     return srcIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -383,6 +403,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcPorts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -397,6 +418,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getSrcPortsList() {
     return srcPorts_;
   }
+
   /**
    *
    *
@@ -411,6 +433,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getSrcPortsCount() {
     return srcPorts_.size();
   }
+
   /**
    *
    *
@@ -426,6 +449,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.lang.String getSrcPorts(int index) {
     return srcPorts_.get(index);
   }
+
   /**
    *
    *
@@ -447,6 +471,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcRegionCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -461,6 +486,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getSrcRegionCodesList() {
     return srcRegionCodes_;
   }
+
   /**
    *
    *
@@ -475,6 +501,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getSrcRegionCodesCount() {
     return srcRegionCodes_.size();
   }
+
   /**
    *
    *
@@ -490,6 +517,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public java.lang.String getSrcRegionCodes(int index) {
     return srcRegionCodes_.get(index);
   }
+
   /**
    *
    *
@@ -512,6 +540,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   private java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch>
       userDefinedFields_;
+
   /**
    *
    *
@@ -529,6 +558,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       getUserDefinedFieldsList() {
     return userDefinedFields_;
   }
+
   /**
    *
    *
@@ -548,6 +578,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       getUserDefinedFieldsOrBuilderList() {
     return userDefinedFields_;
   }
+
   /**
    *
    *
@@ -563,6 +594,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
   public int getUserDefinedFieldsCount() {
     return userDefinedFields_.size();
   }
+
   /**
    *
    *
@@ -579,6 +611,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       getUserDefinedFields(int index) {
     return userDefinedFields_.get(index);
   }
+
   /**
    *
    *
@@ -884,6 +917,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1294,6 +1328,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1309,6 +1344,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       destIpRanges_.makeImmutable();
       return destIpRanges_;
     }
+
     /**
      *
      *
@@ -1323,6 +1359,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getDestIpRangesCount() {
       return destIpRanges_.size();
     }
+
     /**
      *
      *
@@ -1338,6 +1375,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public java.lang.String getDestIpRanges(int index) {
       return destIpRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public com.google.protobuf.ByteString getDestIpRangesBytes(int index) {
       return destIpRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1438,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1458,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1477,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1468,6 +1511,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1483,6 +1527,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       destPorts_.makeImmutable();
       return destPorts_;
     }
+
     /**
      *
      *
@@ -1497,6 +1542,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getDestPortsCount() {
       return destPorts_.size();
     }
+
     /**
      *
      *
@@ -1512,6 +1558,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public java.lang.String getDestPorts(int index) {
       return destPorts_.get(index);
     }
+
     /**
      *
      *
@@ -1527,6 +1574,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public com.google.protobuf.ByteString getDestPortsBytes(int index) {
       return destPorts_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1550,6 +1598,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1572,6 +1621,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1641,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1660,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1694,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1657,6 +1710,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       ipProtocols_.makeImmutable();
       return ipProtocols_;
     }
+
     /**
      *
      *
@@ -1671,6 +1725,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getIpProtocolsCount() {
       return ipProtocols_.size();
     }
+
     /**
      *
      *
@@ -1686,6 +1741,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public java.lang.String getIpProtocols(int index) {
       return ipProtocols_.get(index);
     }
+
     /**
      *
      *
@@ -1701,6 +1757,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public com.google.protobuf.ByteString getIpProtocolsBytes(int index) {
       return ipProtocols_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1724,6 +1781,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1804,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1824,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1843,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1876,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1830,6 +1892,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       srcAsns_.makeImmutable();
       return srcAsns_;
     }
+
     /**
      *
      *
@@ -1844,6 +1907,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getSrcAsnsCount() {
       return srcAsns_.size();
     }
+
     /**
      *
      *
@@ -1859,6 +1923,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getSrcAsns(int index) {
       return srcAsns_.getInt(index);
     }
+
     /**
      *
      *
@@ -1880,6 +1945,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1966,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1986,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +2014,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1961,6 +2030,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       srcIpRanges_.makeImmutable();
       return srcIpRanges_;
     }
+
     /**
      *
      *
@@ -1975,6 +2045,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getSrcIpRangesCount() {
       return srcIpRanges_.size();
     }
+
     /**
      *
      *
@@ -1990,6 +2061,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public java.lang.String getSrcIpRanges(int index) {
       return srcIpRanges_.get(index);
     }
+
     /**
      *
      *
@@ -2005,6 +2077,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public com.google.protobuf.ByteString getSrcIpRangesBytes(int index) {
       return srcIpRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2028,6 +2101,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2124,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2069,6 +2144,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2163,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2197,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2135,6 +2213,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       srcPorts_.makeImmutable();
       return srcPorts_;
     }
+
     /**
      *
      *
@@ -2149,6 +2228,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getSrcPortsCount() {
       return srcPorts_.size();
     }
+
     /**
      *
      *
@@ -2164,6 +2244,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public java.lang.String getSrcPorts(int index) {
       return srcPorts_.get(index);
     }
+
     /**
      *
      *
@@ -2179,6 +2260,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public com.google.protobuf.ByteString getSrcPortsBytes(int index) {
       return srcPorts_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2202,6 +2284,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2307,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2243,6 +2327,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2346,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2294,6 +2380,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2309,6 +2396,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       srcRegionCodes_.makeImmutable();
       return srcRegionCodes_;
     }
+
     /**
      *
      *
@@ -2323,6 +2411,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public int getSrcRegionCodesCount() {
       return srcRegionCodes_.size();
     }
+
     /**
      *
      *
@@ -2338,6 +2427,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public java.lang.String getSrcRegionCodes(int index) {
       return srcRegionCodes_.get(index);
     }
+
     /**
      *
      *
@@ -2353,6 +2443,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
     public com.google.protobuf.ByteString getSrcRegionCodesBytes(int index) {
       return srcRegionCodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2376,6 +2467,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2398,6 +2490,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2417,6 +2510,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2435,6 +2529,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2501,6 +2596,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
         return userDefinedFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2519,6 +2615,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
         return userDefinedFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2538,6 +2635,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
         return userDefinedFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2564,6 +2662,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2588,6 +2687,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2713,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2639,6 +2740,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2662,6 +2764,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2686,6 +2789,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2712,6 +2816,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2838,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2754,6 +2860,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2769,6 +2876,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
         getUserDefinedFieldsBuilder(int index) {
       return getUserDefinedFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2789,6 +2897,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
         return userDefinedFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2811,6 +2920,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(userDefinedFields_);
       }
     }
+
     /**
      *
      *
@@ -2829,6 +2939,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
               com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2848,6 +2959,7 @@ public final class SecurityPolicyRuleNetworkMatcher extends com.google.protobuf.
               com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
                   .getDefaultInstance());
     }
+
     /**
      *
      *

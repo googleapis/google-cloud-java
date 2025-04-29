@@ -676,6 +676,19 @@ public final class ManagedKafkaGrpc {
     return ManagedKafkaStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ManagedKafkaBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ManagedKafkaBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ManagedKafkaBlockingV2Stub>() {
+          @java.lang.Override
+          public ManagedKafkaBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ManagedKafkaBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ManagedKafkaBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1175,6 +1188,209 @@ public final class ManagedKafkaGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ManagedKafka.
+   *
+   * <pre>
+   * The service that a client application uses to manage Apache Kafka clusters,
+   * topics and consumer groups.
+   * </pre>
+   */
+  public static final class ManagedKafkaBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ManagedKafkaBlockingV2Stub> {
+    private ManagedKafkaBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ManagedKafkaBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ManagedKafkaBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the clusters in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ListClustersResponse listClusters(
+        com.google.cloud.managedkafka.v1.ListClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Cluster getCluster(
+        com.google.cloud.managedkafka.v1.GetClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new cluster in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCluster(
+        com.google.cloud.managedkafka.v1.CreateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCluster(
+        com.google.cloud.managedkafka.v1.UpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCluster(
+        com.google.cloud.managedkafka.v1.DeleteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the topics in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ListTopicsResponse listTopics(
+        com.google.cloud.managedkafka.v1.ListTopicsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTopicsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single topic.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Topic getTopic(
+        com.google.cloud.managedkafka.v1.GetTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new topic in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Topic createTopic(
+        com.google.cloud.managedkafka.v1.CreateTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single topic.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.Topic updateTopic(
+        com.google.cloud.managedkafka.v1.UpdateTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single topic.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTopic(
+        com.google.cloud.managedkafka.v1.DeleteTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the consumer groups in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ListConsumerGroupsResponse listConsumerGroups(
+        com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConsumerGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the properties of a single consumer group.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ConsumerGroup getConsumerGroup(
+        com.google.cloud.managedkafka.v1.GetConsumerGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConsumerGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the properties of a single consumer group.
+     * </pre>
+     */
+    public com.google.cloud.managedkafka.v1.ConsumerGroup updateConsumerGroup(
+        com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConsumerGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single consumer group.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConsumerGroup(
+        com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConsumerGroupMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ManagedKafka.
    *
    * <pre>
    * The service that a client application uses to manage Apache Kafka clusters,

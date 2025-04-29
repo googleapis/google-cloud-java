@@ -42,6 +42,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ClusterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -136,6 +138,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   boolean hasNodeConfig();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1.NodeConfig getNodeConfig();
+
   /**
    *
    *
@@ -199,6 +203,7 @@ public interface ClusterOrBuilder
    * @return Whether the masterAuth field is set.
    */
   boolean hasMasterAuth();
+
   /**
    *
    *
@@ -215,6 +220,7 @@ public interface ClusterOrBuilder
    * @return The masterAuth.
    */
   com.google.container.v1.MasterAuth getMasterAuth();
+
   /**
    *
    *
@@ -252,6 +258,7 @@ public interface ClusterOrBuilder
    * @return The loggingService.
    */
   java.lang.String getLoggingService();
+
   /**
    *
    *
@@ -297,6 +304,7 @@ public interface ClusterOrBuilder
    * @return The monitoringService.
    */
   java.lang.String getMonitoringService();
+
   /**
    *
    *
@@ -335,6 +343,7 @@ public interface ClusterOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -366,6 +375,7 @@ public interface ClusterOrBuilder
    * @return The clusterIpv4Cidr.
    */
   java.lang.String getClusterIpv4Cidr();
+
   /**
    *
    *
@@ -394,6 +404,7 @@ public interface ClusterOrBuilder
    * @return Whether the addonsConfig field is set.
    */
   boolean hasAddonsConfig();
+
   /**
    *
    *
@@ -406,6 +417,7 @@ public interface ClusterOrBuilder
    * @return The addonsConfig.
    */
   com.google.container.v1.AddonsConfig getAddonsConfig();
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public interface ClusterOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -458,6 +471,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
   java.util.List<com.google.container.v1.NodePool> getNodePoolsList();
+
   /**
    *
    *
@@ -470,6 +484,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
   com.google.container.v1.NodePool getNodePools(int index);
+
   /**
    *
    *
@@ -482,6 +497,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
   int getNodePoolsCount();
+
   /**
    *
    *
@@ -494,6 +510,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
   java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> getNodePoolsOrBuilderList();
+
   /**
    *
    *
@@ -529,6 +546,7 @@ public interface ClusterOrBuilder
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String> getLocationsList();
+
   /**
    *
    *
@@ -551,6 +569,7 @@ public interface ClusterOrBuilder
    * @return The count of locations.
    */
   int getLocationsCount();
+
   /**
    *
    *
@@ -574,6 +593,7 @@ public interface ClusterOrBuilder
    * @return The locations at the given index.
    */
   java.lang.String getLocations(int index);
+
   /**
    *
    *
@@ -627,6 +647,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
   int getResourceLabelsCount();
+
   /**
    *
    *
@@ -638,9 +659,11 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
   boolean containsResourceLabels(java.lang.String key);
+
   /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
+
   /**
    *
    *
@@ -652,6 +675,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
+
   /**
    *
    *
@@ -667,6 +691,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -691,6 +716,7 @@ public interface ClusterOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -716,6 +742,7 @@ public interface ClusterOrBuilder
    * @return Whether the legacyAbac field is set.
    */
   boolean hasLegacyAbac();
+
   /**
    *
    *
@@ -728,6 +755,7 @@ public interface ClusterOrBuilder
    * @return The legacyAbac.
    */
   com.google.container.v1.LegacyAbac getLegacyAbac();
+
   /**
    *
    *
@@ -751,6 +779,7 @@ public interface ClusterOrBuilder
    * @return Whether the networkPolicy field is set.
    */
   boolean hasNetworkPolicy();
+
   /**
    *
    *
@@ -763,6 +792,7 @@ public interface ClusterOrBuilder
    * @return The networkPolicy.
    */
   com.google.container.v1.NetworkPolicy getNetworkPolicy();
+
   /**
    *
    *
@@ -786,6 +816,7 @@ public interface ClusterOrBuilder
    * @return Whether the ipAllocationPolicy field is set.
    */
   boolean hasIpAllocationPolicy();
+
   /**
    *
    *
@@ -798,6 +829,7 @@ public interface ClusterOrBuilder
    * @return The ipAllocationPolicy.
    */
   com.google.container.v1.IPAllocationPolicy getIpAllocationPolicy();
+
   /**
    *
    *
@@ -830,6 +862,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   boolean hasMasterAuthorizedNetworksConfig();
+
   /**
    *
    *
@@ -851,6 +884,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig();
+
   /**
    *
    *
@@ -882,6 +916,7 @@ public interface ClusterOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
+
   /**
    *
    *
@@ -894,6 +929,7 @@ public interface ClusterOrBuilder
    * @return The maintenancePolicy.
    */
   com.google.container.v1.MaintenancePolicy getMaintenancePolicy();
+
   /**
    *
    *
@@ -917,6 +953,7 @@ public interface ClusterOrBuilder
    * @return Whether the binaryAuthorization field is set.
    */
   boolean hasBinaryAuthorization();
+
   /**
    *
    *
@@ -929,6 +966,7 @@ public interface ClusterOrBuilder
    * @return The binaryAuthorization.
    */
   com.google.container.v1.BinaryAuthorization getBinaryAuthorization();
+
   /**
    *
    *
@@ -952,6 +990,7 @@ public interface ClusterOrBuilder
    * @return Whether the autoscaling field is set.
    */
   boolean hasAutoscaling();
+
   /**
    *
    *
@@ -964,6 +1003,7 @@ public interface ClusterOrBuilder
    * @return The autoscaling.
    */
   com.google.container.v1.ClusterAutoscaling getAutoscaling();
+
   /**
    *
    *
@@ -987,6 +1027,7 @@ public interface ClusterOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -999,6 +1040,7 @@ public interface ClusterOrBuilder
    * @return The networkConfig.
    */
   com.google.container.v1.NetworkConfig getNetworkConfig();
+
   /**
    *
    *
@@ -1024,6 +1066,7 @@ public interface ClusterOrBuilder
    * @return Whether the defaultMaxPodsConstraint field is set.
    */
   boolean hasDefaultMaxPodsConstraint();
+
   /**
    *
    *
@@ -1038,6 +1081,7 @@ public interface ClusterOrBuilder
    * @return The defaultMaxPodsConstraint.
    */
   com.google.container.v1.MaxPodsConstraint getDefaultMaxPodsConstraint();
+
   /**
    *
    *
@@ -1064,6 +1108,7 @@ public interface ClusterOrBuilder
    * @return Whether the resourceUsageExportConfig field is set.
    */
   boolean hasResourceUsageExportConfig();
+
   /**
    *
    *
@@ -1077,6 +1122,7 @@ public interface ClusterOrBuilder
    * @return The resourceUsageExportConfig.
    */
   com.google.container.v1.ResourceUsageExportConfig getResourceUsageExportConfig();
+
   /**
    *
    *
@@ -1102,6 +1148,7 @@ public interface ClusterOrBuilder
    * @return Whether the authenticatorGroupsConfig field is set.
    */
   boolean hasAuthenticatorGroupsConfig();
+
   /**
    *
    *
@@ -1114,6 +1161,7 @@ public interface ClusterOrBuilder
    * @return The authenticatorGroupsConfig.
    */
   com.google.container.v1.AuthenticatorGroupsConfig getAuthenticatorGroupsConfig();
+
   /**
    *
    *
@@ -1138,6 +1186,7 @@ public interface ClusterOrBuilder
    * @return Whether the privateClusterConfig field is set.
    */
   boolean hasPrivateClusterConfig();
+
   /**
    *
    *
@@ -1150,6 +1199,7 @@ public interface ClusterOrBuilder
    * @return The privateClusterConfig.
    */
   com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig();
+
   /**
    *
    *
@@ -1173,6 +1223,7 @@ public interface ClusterOrBuilder
    * @return Whether the databaseEncryption field is set.
    */
   boolean hasDatabaseEncryption();
+
   /**
    *
    *
@@ -1185,6 +1236,7 @@ public interface ClusterOrBuilder
    * @return The databaseEncryption.
    */
   com.google.container.v1.DatabaseEncryption getDatabaseEncryption();
+
   /**
    *
    *
@@ -1208,6 +1260,7 @@ public interface ClusterOrBuilder
    * @return Whether the verticalPodAutoscaling field is set.
    */
   boolean hasVerticalPodAutoscaling();
+
   /**
    *
    *
@@ -1220,6 +1273,7 @@ public interface ClusterOrBuilder
    * @return The verticalPodAutoscaling.
    */
   com.google.container.v1.VerticalPodAutoscaling getVerticalPodAutoscaling();
+
   /**
    *
    *
@@ -1243,6 +1297,7 @@ public interface ClusterOrBuilder
    * @return Whether the shieldedNodes field is set.
    */
   boolean hasShieldedNodes();
+
   /**
    *
    *
@@ -1255,6 +1310,7 @@ public interface ClusterOrBuilder
    * @return The shieldedNodes.
    */
   com.google.container.v1.ShieldedNodes getShieldedNodes();
+
   /**
    *
    *
@@ -1283,6 +1339,7 @@ public interface ClusterOrBuilder
    * @return Whether the releaseChannel field is set.
    */
   boolean hasReleaseChannel();
+
   /**
    *
    *
@@ -1300,6 +1357,7 @@ public interface ClusterOrBuilder
    * @return The releaseChannel.
    */
   com.google.container.v1.ReleaseChannel getReleaseChannel();
+
   /**
    *
    *
@@ -1329,6 +1387,7 @@ public interface ClusterOrBuilder
    * @return Whether the workloadIdentityConfig field is set.
    */
   boolean hasWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -1342,6 +1401,7 @@ public interface ClusterOrBuilder
    * @return The workloadIdentityConfig.
    */
   com.google.container.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
   /**
    *
    *
@@ -1367,6 +1427,7 @@ public interface ClusterOrBuilder
    * @return Whether the meshCertificates field is set.
    */
   boolean hasMeshCertificates();
+
   /**
    *
    *
@@ -1380,6 +1441,7 @@ public interface ClusterOrBuilder
    * @return The meshCertificates.
    */
   com.google.container.v1.MeshCertificates getMeshCertificates();
+
   /**
    *
    *
@@ -1404,6 +1466,7 @@ public interface ClusterOrBuilder
    * @return Whether the costManagementConfig field is set.
    */
   boolean hasCostManagementConfig();
+
   /**
    *
    *
@@ -1416,6 +1479,7 @@ public interface ClusterOrBuilder
    * @return The costManagementConfig.
    */
   com.google.container.v1.CostManagementConfig getCostManagementConfig();
+
   /**
    *
    *
@@ -1439,6 +1503,7 @@ public interface ClusterOrBuilder
    * @return Whether the notificationConfig field is set.
    */
   boolean hasNotificationConfig();
+
   /**
    *
    *
@@ -1451,6 +1516,7 @@ public interface ClusterOrBuilder
    * @return The notificationConfig.
    */
   com.google.container.v1.NotificationConfig getNotificationConfig();
+
   /**
    *
    *
@@ -1475,6 +1541,7 @@ public interface ClusterOrBuilder
    * @return Whether the confidentialNodes field is set.
    */
   boolean hasConfidentialNodes();
+
   /**
    *
    *
@@ -1488,6 +1555,7 @@ public interface ClusterOrBuilder
    * @return The confidentialNodes.
    */
   com.google.container.v1.ConfidentialNodes getConfidentialNodes();
+
   /**
    *
    *
@@ -1512,6 +1580,7 @@ public interface ClusterOrBuilder
    * @return Whether the identityServiceConfig field is set.
    */
   boolean hasIdentityServiceConfig();
+
   /**
    *
    *
@@ -1524,6 +1593,7 @@ public interface ClusterOrBuilder
    * @return The identityServiceConfig.
    */
   com.google.container.v1.IdentityServiceConfig getIdentityServiceConfig();
+
   /**
    *
    *
@@ -1547,6 +1617,7 @@ public interface ClusterOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -1577,6 +1648,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -1612,6 +1684,7 @@ public interface ClusterOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -1654,6 +1727,7 @@ public interface ClusterOrBuilder
    * @return The initialClusterVersion.
    */
   java.lang.String getInitialClusterVersion();
+
   /**
    *
    *
@@ -1691,6 +1765,7 @@ public interface ClusterOrBuilder
    * @return The currentMasterVersion.
    */
   java.lang.String getCurrentMasterVersion();
+
   /**
    *
    *
@@ -1725,6 +1800,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getCurrentNodeVersion();
+
   /**
    *
    *
@@ -1760,6 +1836,7 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   java.lang.String getCreateTime();
+
   /**
    *
    *
@@ -1788,6 +1865,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -1822,6 +1900,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -1874,6 +1953,7 @@ public interface ClusterOrBuilder
    * @return The servicesIpv4Cidr.
    */
   java.lang.String getServicesIpv4Cidr();
+
   /**
    *
    *
@@ -1908,6 +1988,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getInstanceGroupUrlsList();
+
   /**
    *
    *
@@ -1925,6 +2006,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   int getInstanceGroupUrlsCount();
+
   /**
    *
    *
@@ -1943,6 +2025,7 @@ public interface ClusterOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getInstanceGroupUrls(int index);
+
   /**
    *
    *
@@ -1994,6 +2077,7 @@ public interface ClusterOrBuilder
    * @return The expireTime.
    */
   java.lang.String getExpireTime();
+
   /**
    *
    *
@@ -2024,6 +2108,7 @@ public interface ClusterOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -2068,6 +2153,7 @@ public interface ClusterOrBuilder
    * @return The tpuIpv4CidrBlock.
    */
   java.lang.String getTpuIpv4CidrBlock();
+
   /**
    *
    *
@@ -2093,6 +2179,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
   java.util.List<com.google.container.v1.StatusCondition> getConditionsList();
+
   /**
    *
    *
@@ -2103,6 +2190,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
   com.google.container.v1.StatusCondition getConditions(int index);
+
   /**
    *
    *
@@ -2113,6 +2201,7 @@ public interface ClusterOrBuilder
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -2124,6 +2213,7 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -2147,6 +2237,7 @@ public interface ClusterOrBuilder
    * @return Whether the autopilot field is set.
    */
   boolean hasAutopilot();
+
   /**
    *
    *
@@ -2159,6 +2250,7 @@ public interface ClusterOrBuilder
    * @return The autopilot.
    */
   com.google.container.v1.Autopilot getAutopilot();
+
   /**
    *
    *
@@ -2182,6 +2274,7 @@ public interface ClusterOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -2208,6 +2301,7 @@ public interface ClusterOrBuilder
    * @return Whether the nodePoolDefaults field is set.
    */
   boolean hasNodePoolDefaults();
+
   /**
    *
    *
@@ -2221,6 +2315,7 @@ public interface ClusterOrBuilder
    * @return The nodePoolDefaults.
    */
   com.google.container.v1.NodePoolDefaults getNodePoolDefaults();
+
   /**
    *
    *
@@ -2245,6 +2340,7 @@ public interface ClusterOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -2257,6 +2353,7 @@ public interface ClusterOrBuilder
    * @return The loggingConfig.
    */
   com.google.container.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -2280,6 +2377,7 @@ public interface ClusterOrBuilder
    * @return Whether the monitoringConfig field is set.
    */
   boolean hasMonitoringConfig();
+
   /**
    *
    *
@@ -2292,6 +2390,7 @@ public interface ClusterOrBuilder
    * @return The monitoringConfig.
    */
   com.google.container.v1.MonitoringConfig getMonitoringConfig();
+
   /**
    *
    *
@@ -2316,6 +2415,7 @@ public interface ClusterOrBuilder
    * @return Whether the nodePoolAutoConfig field is set.
    */
   boolean hasNodePoolAutoConfig();
+
   /**
    *
    *
@@ -2329,6 +2429,7 @@ public interface ClusterOrBuilder
    * @return The nodePoolAutoConfig.
    */
   com.google.container.v1.NodePoolAutoConfig getNodePoolAutoConfig();
+
   /**
    *
    *
@@ -2355,6 +2456,7 @@ public interface ClusterOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -2382,6 +2484,7 @@ public interface ClusterOrBuilder
    * @return Whether the fleet field is set.
    */
   boolean hasFleet();
+
   /**
    *
    *
@@ -2394,6 +2497,7 @@ public interface ClusterOrBuilder
    * @return The fleet.
    */
   com.google.container.v1.Fleet getFleet();
+
   /**
    *
    *
@@ -2417,6 +2521,7 @@ public interface ClusterOrBuilder
    * @return Whether the securityPostureConfig field is set.
    */
   boolean hasSecurityPostureConfig();
+
   /**
    *
    *
@@ -2429,6 +2534,7 @@ public interface ClusterOrBuilder
    * @return The securityPostureConfig.
    */
   com.google.container.v1.SecurityPostureConfig getSecurityPostureConfig();
+
   /**
    *
    *
@@ -2453,6 +2559,7 @@ public interface ClusterOrBuilder
    * @return Whether the controlPlaneEndpointsConfig field is set.
    */
   boolean hasControlPlaneEndpointsConfig();
+
   /**
    *
    *
@@ -2466,6 +2573,7 @@ public interface ClusterOrBuilder
    * @return The controlPlaneEndpointsConfig.
    */
   com.google.container.v1.ControlPlaneEndpointsConfig getControlPlaneEndpointsConfig();
+
   /**
    *
    *
@@ -2491,6 +2599,7 @@ public interface ClusterOrBuilder
    * @return Whether the enableK8sBetaApis field is set.
    */
   boolean hasEnableK8SBetaApis();
+
   /**
    *
    *
@@ -2503,6 +2612,7 @@ public interface ClusterOrBuilder
    * @return The enableK8sBetaApis.
    */
   com.google.container.v1.K8sBetaAPIConfig getEnableK8SBetaApis();
+
   /**
    *
    *
@@ -2526,6 +2636,7 @@ public interface ClusterOrBuilder
    * @return Whether the enterpriseConfig field is set.
    */
   boolean hasEnterpriseConfig();
+
   /**
    *
    *
@@ -2538,6 +2649,7 @@ public interface ClusterOrBuilder
    * @return The enterpriseConfig.
    */
   com.google.container.v1.EnterpriseConfig getEnterpriseConfig();
+
   /**
    *
    *
@@ -2561,6 +2673,7 @@ public interface ClusterOrBuilder
    * @return Whether the secretManagerConfig field is set.
    */
   boolean hasSecretManagerConfig();
+
   /**
    *
    *
@@ -2573,6 +2686,7 @@ public interface ClusterOrBuilder
    * @return The secretManagerConfig.
    */
   com.google.container.v1.SecretManagerConfig getSecretManagerConfig();
+
   /**
    *
    *
@@ -2596,6 +2710,7 @@ public interface ClusterOrBuilder
    * @return Whether the compliancePostureConfig field is set.
    */
   boolean hasCompliancePostureConfig();
+
   /**
    *
    *
@@ -2608,6 +2723,7 @@ public interface ClusterOrBuilder
    * @return The compliancePostureConfig.
    */
   com.google.container.v1.CompliancePostureConfig getCompliancePostureConfig();
+
   /**
    *
    *
@@ -2631,6 +2747,7 @@ public interface ClusterOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -2656,6 +2773,7 @@ public interface ClusterOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -2682,6 +2800,7 @@ public interface ClusterOrBuilder
    * @return Whether the userManagedKeysConfig field is set.
    */
   boolean hasUserManagedKeysConfig();
+
   /**
    *
    *
@@ -2695,6 +2814,7 @@ public interface ClusterOrBuilder
    * @return The userManagedKeysConfig.
    */
   com.google.container.v1.UserManagedKeysConfig getUserManagedKeysConfig();
+
   /**
    *
    *
@@ -2720,6 +2840,7 @@ public interface ClusterOrBuilder
    * @return Whether the rbacBindingConfig field is set.
    */
   boolean hasRbacBindingConfig();
+
   /**
    *
    *
@@ -2733,6 +2854,7 @@ public interface ClusterOrBuilder
    * @return The rbacBindingConfig.
    */
   com.google.container.v1.RBACBindingConfig getRbacBindingConfig();
+
   /**
    *
    *

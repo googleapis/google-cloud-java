@@ -1816,6 +1816,19 @@ public final class TranslationServiceGrpc {
     return TranslationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TranslationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TranslationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TranslationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TranslationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TranslationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TranslationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3089,6 +3102,539 @@ public final class TranslationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TranslationService.
+   *
+   * <pre>
+   * Provides natural language translation operations.
+   * </pre>
+   */
+  public static final class TranslationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TranslationServiceBlockingV2Stub> {
+    private TranslationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TranslationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TranslationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates input text and returns translated text.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.TranslateTextResponse translateText(
+        com.google.cloud.translate.v3.TranslateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Romanize input text written in non-Latin scripts to Latin text.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.RomanizeTextResponse romanizeText(
+        com.google.cloud.translate.v3.RomanizeTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRomanizeTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detects the language of text within a request.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.DetectLanguageResponse detectLanguage(
+        com.google.cloud.translate.v3.DetectLanguageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetectLanguageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of supported languages for translation.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.SupportedLanguages getSupportedLanguages(
+        com.google.cloud.translate.v3.GetSupportedLanguagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSupportedLanguagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.TranslateDocumentResponse translateDocument(
+        com.google.cloud.translate.v3.TranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates a large volume of text in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can
+     * use google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateText(
+        com.google.cloud.translate.v3.BatchTranslateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates a large volume of document in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateDocument(
+        com.google.cloud.translate.v3.BatchTranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a glossary and returns the long-running operation. Returns
+     * NOT_FOUND, if the project doesn't exist.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGlossary(
+        com.google.cloud.translate.v3.CreateGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a glossary. A LRO is used since the update can be async if the
+     * glossary's entry file is updated.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGlossary(
+        com.google.cloud.translate.v3.UpdateGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListGlossariesResponse listGlossaries(
+        com.google.cloud.translate.v3.ListGlossariesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGlossariesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.Glossary getGlossary(
+        com.google.cloud.translate.v3.GetGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a glossary, or cancels glossary construction
+     * if the glossary isn't created yet.
+     * Returns NOT_FOUND, if the glossary doesn't exist.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGlossary(
+        com.google.cloud.translate.v3.DeleteGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single glossary entry by the given id.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.GlossaryEntry getGlossaryEntry(
+        com.google.cloud.translate.v3.GetGlossaryEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGlossaryEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the entries for the glossary.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListGlossaryEntriesResponse listGlossaryEntries(
+        com.google.cloud.translate.v3.ListGlossaryEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGlossaryEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a glossary entry.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.GlossaryEntry createGlossaryEntry(
+        com.google.cloud.translate.v3.CreateGlossaryEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGlossaryEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a glossary entry.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.GlossaryEntry updateGlossaryEntry(
+        com.google.cloud.translate.v3.UpdateGlossaryEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGlossaryEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single entry from the glossary
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteGlossaryEntry(
+        com.google.cloud.translate.v3.DeleteGlossaryEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGlossaryEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDataset(
+        com.google.cloud.translate.v3.CreateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.Dataset getDataset(
+        com.google.cloud.translate.v3.GetDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListDatasetsResponse listDatasets(
+        com.google.cloud.translate.v3.ListDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset and all of its contents.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataset(
+        com.google.cloud.translate.v3.DeleteDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Adaptive MT dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtDataset createAdaptiveMtDataset(
+        com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdaptiveMtDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Adaptive MT dataset, including all its entries and associated
+     * metadata.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAdaptiveMtDataset(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdaptiveMtDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Adaptive MT dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtDataset getAdaptiveMtDataset(
+        com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdaptiveMtDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Adaptive MT datasets for which the caller has read permission.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse listAdaptiveMtDatasets(
+        com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdaptiveMtDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translate text using Adaptive MT.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtTranslateResponse adaptiveMtTranslate(
+        com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAdaptiveMtTranslateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets and AdaptiveMtFile
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtFile getAdaptiveMtFile(
+        com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdaptiveMtFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdaptiveMtFile along with its sentences.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAdaptiveMtFile(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdaptiveMtFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an AdaptiveMtFile and adds all of its sentences into the
+     * AdaptiveMtDataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse importAdaptiveMtFile(
+        com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAdaptiveMtFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse listAdaptiveMtFiles(
+        com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdaptiveMtFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtSentences under a given file/dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse listAdaptiveMtSentences(
+        com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdaptiveMtSentencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Import sentence pairs into translation Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.translate.v3.ImportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports dataset's data to the provided output location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.translate.v3.ExportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sentence pairs in the dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListExamplesResponse listExamples(
+        com.google.cloud.translate.v3.ListExamplesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExamplesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createModel(
+        com.google.cloud.translate.v3.CreateModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists models.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListModelsResponse listModels(
+        com.google.cloud.translate.v3.ListModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.Model getModel(
+        com.google.cloud.translate.v3.GetModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModel(
+        com.google.cloud.translate.v3.DeleteModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TranslationService.
    *
    * <pre>
    * Provides natural language translation operations.

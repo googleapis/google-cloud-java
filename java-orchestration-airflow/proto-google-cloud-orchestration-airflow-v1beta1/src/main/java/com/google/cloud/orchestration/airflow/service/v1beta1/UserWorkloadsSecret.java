@@ -34,6 +34,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret)
     UserWorkloadsSecretOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserWorkloadsSecret.newBuilder() to construct.
   private UserWorkloadsSecret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -156,6 +159,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
   public int getDataCount() {
     return internalGetData().getMap().size();
   }
+
   /**
    *
    *
@@ -182,12 +186,14 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     }
     return internalGetData().getMap().containsKey(key);
   }
+
   /** Use {@link #getDataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getData() {
     return getDataMap();
   }
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
     return internalGetData().getMap();
   }
+
   /**
    *
    *
@@ -241,6 +248,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetData().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -456,6 +464,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -690,6 +699,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -713,6 +723,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -736,6 +747,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +839,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     public int getDataCount() {
       return internalGetData().getMap().size();
     }
+
     /**
      *
      *
@@ -851,12 +866,14 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       }
       return internalGetData().getMap().containsKey(key);
     }
+
     /** Use {@link #getDataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getData() {
       return getDataMap();
     }
+
     /**
      *
      *
@@ -880,6 +897,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
       return internalGetData().getMap();
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetData().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -946,6 +965,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       internalGetMutableData().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -972,12 +992,14 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       internalGetMutableData().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableData() {
       bitField0_ |= 0x00000002;
       return internalGetMutableData().getMutableMap();
     }
+
     /**
      *
      *
@@ -1008,6 +1030,7 @@ public final class UserWorkloadsSecret extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

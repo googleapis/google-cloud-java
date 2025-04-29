@@ -37,6 +37,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.ServiceConnectionToken>
       getServiceConnectionTokensList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionToken getServiceConnectionTokens(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    * </code>
    */
   int getServiceConnectionTokensCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.ServiceConnectionTokenOrBuilder>
       getServiceConnectionTokensOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface ListServiceConnectionTokensResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

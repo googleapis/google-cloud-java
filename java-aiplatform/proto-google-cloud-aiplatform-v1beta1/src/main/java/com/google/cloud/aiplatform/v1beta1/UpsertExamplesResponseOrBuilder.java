@@ -38,6 +38,7 @@ public interface UpsertExamplesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult>
       getResultsList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface UpsertExamplesResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResult getResults(int index);
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface UpsertExamplesResponseOrBuilder
    * </code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface UpsertExamplesResponseOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.UpsertExamplesResponse.UpsertResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *

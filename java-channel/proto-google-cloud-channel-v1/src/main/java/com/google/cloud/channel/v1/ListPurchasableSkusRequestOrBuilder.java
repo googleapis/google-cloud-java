@@ -38,6 +38,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    * @return Whether the createEntitlementPurchase field is set.
    */
   boolean hasCreateEntitlementPurchase();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    */
   com.google.cloud.channel.v1.ListPurchasableSkusRequest.CreateEntitlementPurchase
       getCreateEntitlementPurchase();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    * @return Whether the changeOfferPurchase field is set.
    */
   boolean hasChangeOfferPurchase();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    */
   com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase
       getChangeOfferPurchase();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    * @return The customer.
    */
   java.lang.String getCustomer();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public interface ListPurchasableSkusRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

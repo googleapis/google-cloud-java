@@ -38,6 +38,7 @@ public interface UpdateNetworkPolicyRequestOrBuilder
    * @return Whether the networkPolicy field is set.
    */
   boolean hasNetworkPolicy();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateNetworkPolicyRequestOrBuilder
    * @return The networkPolicy.
    */
   com.google.cloud.vmwareengine.v1.NetworkPolicy getNetworkPolicy();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateNetworkPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateNetworkPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateNetworkPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

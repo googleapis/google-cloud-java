@@ -33,6 +33,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest)
     StopAutonomousDatabaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopAutonomousDatabaseRequest.newBuilder() to construct.
   private StopAutonomousDatabaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +283,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -468,6 +472,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -493,6 +498,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -542,6 +549,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -562,6 +570,7 @@ public final class StopAutonomousDatabaseRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

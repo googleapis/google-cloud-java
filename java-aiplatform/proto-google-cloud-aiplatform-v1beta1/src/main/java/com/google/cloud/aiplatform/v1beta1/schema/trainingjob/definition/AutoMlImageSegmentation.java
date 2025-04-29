@@ -35,6 +35,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation)
     AutoMlImageSegmentationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlImageSegmentation.newBuilder() to construct.
   private AutoMlImageSegmentation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageSegmentationInputs
       inputs_;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
             .AutoMlImageSegmentationInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageSegmentationMetadata
       metadata_;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
             .AutoMlImageSegmentationMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -400,6 +407,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -653,6 +661,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageSegmentationInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -669,6 +678,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -694,6 +704,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -721,6 +732,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +757,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +792,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
             : inputs_;
       }
     }
+
     /**
      *
      *
@@ -886,6 +903,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageSegmentationMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -902,6 +920,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +999,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1034,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1056,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1074,6 +1099,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
             : metadata_;
       }
     }
+
     /**
      *
      *

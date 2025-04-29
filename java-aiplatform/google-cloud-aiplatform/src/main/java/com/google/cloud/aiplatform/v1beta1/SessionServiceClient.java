@@ -63,7 +63,7 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
  *   SessionName name =
- *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+ *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
  *   Session response = sessionServiceClient.getSession(name);
  * }
  * }</pre>
@@ -80,7 +80,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSession</td>
- *      <td><p> Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and location.</td>
+ *      <td><p> Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,6 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li><p> createSessionAsync(LocationName parent, Session session)
  *           <li><p> createSessionAsync(ReasoningEngineName parent, Session session)
  *           <li><p> createSessionAsync(String parent, Session session)
  *      </ul>
@@ -120,7 +119,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListSessions</td>
- *      <td><p> Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.</td>
+ *      <td><p> Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given reasoning engine.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -128,7 +127,6 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li><p> listSessions(LocationName parent)
  *           <li><p> listSessions(ReasoningEngineName parent)
  *           <li><p> listSessions(String parent)
  *      </ul>
@@ -394,44 +392,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and
-   * location.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Session session = Session.newBuilder().build();
-   *   Session response = sessionServiceClient.createSessionAsync(parent, session).get();
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the location to create the session in. Format:
-   *     `projects/{project}/locations/{location}` or
-   *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
-   * @param session Required. The session to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Session, CreateSessionOperationMetadata> createSessionAsync(
-      LocationName parent, Session session) {
-    CreateSessionRequest request =
-        CreateSessionRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setSession(session)
-            .build();
-    return createSessionAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and
-   * location.
+   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
    *
    * <p>Sample code:
    *
@@ -450,7 +411,6 @@ public class SessionServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the location to create the session in. Format:
-   *     `projects/{project}/locations/{location}` or
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * @param session Required. The session to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -467,8 +427,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and
-   * location.
+   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
    *
    * <p>Sample code:
    *
@@ -479,14 +438,14 @@ public class SessionServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String parent =
+   *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
    *   Session session = Session.newBuilder().build();
    *   Session response = sessionServiceClient.createSessionAsync(parent, session).get();
    * }
    * }</pre>
    *
    * @param parent Required. The resource name of the location to create the session in. Format:
-   *     `projects/{project}/locations/{location}` or
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * @param session Required. The session to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -500,8 +459,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and
-   * location.
+   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
    *
    * <p>Sample code:
    *
@@ -514,7 +472,9 @@ public class SessionServiceClient implements BackgroundResource {
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   CreateSessionRequest request =
    *       CreateSessionRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
    *           .setSession(Session.newBuilder().build())
    *           .build();
    *   Session response = sessionServiceClient.createSessionAsync(request).get();
@@ -531,8 +491,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and
-   * location.
+   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
    *
    * <p>Sample code:
    *
@@ -545,7 +504,9 @@ public class SessionServiceClient implements BackgroundResource {
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   CreateSessionRequest request =
    *       CreateSessionRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
    *           .setSession(Session.newBuilder().build())
    *           .build();
    *   OperationFuture<Session, CreateSessionOperationMetadata> future =
@@ -562,8 +523,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given project and
-   * location.
+   * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
    *
    * <p>Sample code:
    *
@@ -576,7 +536,9 @@ public class SessionServiceClient implements BackgroundResource {
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   CreateSessionRequest request =
    *       CreateSessionRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
    *           .setSession(Session.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -604,7 +566,7 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   SessionName name =
-   *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
    *   Session response = sessionServiceClient.getSession(name);
    * }
    * }</pre>
@@ -633,8 +595,7 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   String name =
-   *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-   *           .toString();
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
    *   Session response = sessionServiceClient.getSession(name);
    * }
    * }</pre>
@@ -664,7 +625,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   GetSessionRequest request =
    *       GetSessionRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .build();
    *   Session response = sessionServiceClient.getSession(request);
@@ -694,7 +655,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   GetSessionRequest request =
    *       GetSessionRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Session> future = sessionServiceClient.getSessionCallable().futureCall(request);
@@ -709,39 +670,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Session element : sessionServiceClient.listSessions(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The resource name of the location to list sessions from. Format:
-   *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSessionsPagedResponse listSessions(LocationName parent) {
-    ListSessionsRequest request =
-        ListSessionsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listSessions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.
+   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given reasoning engine.
    *
    * <p>Sample code:
    *
@@ -774,7 +703,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.
+   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given reasoning engine.
    *
    * <p>Sample code:
    *
@@ -785,7 +714,8 @@ public class SessionServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String parent =
+   *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString();
    *   for (Session element : sessionServiceClient.listSessions(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -803,7 +733,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.
+   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given reasoning engine.
    *
    * <p>Sample code:
    *
@@ -816,7 +746,9 @@ public class SessionServiceClient implements BackgroundResource {
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   ListSessionsRequest request =
    *       ListSessionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -837,7 +769,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.
+   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given reasoning engine.
    *
    * <p>Sample code:
    *
@@ -850,7 +782,9 @@ public class SessionServiceClient implements BackgroundResource {
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   ListSessionsRequest request =
    *       ListSessionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -872,7 +806,7 @@ public class SessionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given project and location.
+   * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given reasoning engine.
    *
    * <p>Sample code:
    *
@@ -885,7 +819,9 @@ public class SessionServiceClient implements BackgroundResource {
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   ListSessionsRequest request =
    *       ListSessionsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1012,13 +948,12 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   SessionName name =
-   *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
    *   sessionServiceClient.deleteSessionAsync(name).get();
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the session. Format:
-   *     `projects/{project}/locations/{location}/sessions/{session}` or
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1043,14 +978,12 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   String name =
-   *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-   *           .toString();
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
    *   sessionServiceClient.deleteSessionAsync(name).get();
    * }
    * }</pre>
    *
    * @param name Required. The resource name of the session. Format:
-   *     `projects/{project}/locations/{location}/sessions/{session}` or
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1075,7 +1008,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   DeleteSessionRequest request =
    *       DeleteSessionRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .build();
    *   sessionServiceClient.deleteSessionAsync(request).get();
@@ -1106,7 +1039,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   DeleteSessionRequest request =
    *       DeleteSessionRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .build();
    *   OperationFuture<Empty, DeleteOperationMetadata> future =
@@ -1137,7 +1070,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   DeleteSessionRequest request =
    *       DeleteSessionRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1165,8 +1098,7 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   SessionName parent =
-   *       SessionName.ofProjectLocationReasoningEngineSessionName(
-   *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
    *   for (SessionEvent element : sessionServiceClient.listEvents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1197,8 +1129,7 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   String parent =
-   *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-   *           .toString();
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
    *   for (SessionEvent element : sessionServiceClient.listEvents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1230,8 +1161,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
    *           .setParent(
-   *               SessionName.ofProjectLocationReasoningEngineSessionName(
-   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1265,8 +1195,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
    *           .setParent(
-   *               SessionName.ofProjectLocationReasoningEngineSessionName(
-   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1300,8 +1229,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
    *           .setParent(
-   *               SessionName.ofProjectLocationReasoningEngineSessionName(
-   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1339,8 +1267,7 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   SessionName name =
-   *       SessionName.ofProjectLocationReasoningEngineSessionName(
-   *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
    *   SessionEvent event = SessionEvent.newBuilder().build();
    *   AppendEventResponse response = sessionServiceClient.appendEvent(name, event);
    * }
@@ -1374,8 +1301,7 @@ public class SessionServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
    *   String name =
-   *       SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-   *           .toString();
+   *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
    *   SessionEvent event = SessionEvent.newBuilder().build();
    *   AppendEventResponse response = sessionServiceClient.appendEvent(name, event);
    * }
@@ -1408,8 +1334,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   AppendEventRequest request =
    *       AppendEventRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationReasoningEngineSessionName(
-   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .setEvent(SessionEvent.newBuilder().build())
    *           .build();
@@ -1440,8 +1365,7 @@ public class SessionServiceClient implements BackgroundResource {
    *   AppendEventRequest request =
    *       AppendEventRequest.newBuilder()
    *           .setName(
-   *               SessionName.ofProjectLocationReasoningEngineSessionName(
-   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
+   *               SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
    *                   .toString())
    *           .setEvent(SessionEvent.newBuilder().build())
    *           .build();

@@ -39,6 +39,7 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface VersionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface VersionOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface VersionOrBuilder
    * @return The asset.
    */
   com.google.protobuf.Struct getAsset();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface VersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface VersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface VersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface VersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

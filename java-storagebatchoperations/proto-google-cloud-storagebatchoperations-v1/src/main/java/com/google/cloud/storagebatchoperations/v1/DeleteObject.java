@@ -33,6 +33,7 @@ public final class DeleteObject extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.DeleteObject)
     DeleteObjectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteObject.newBuilder() to construct.
   private DeleteObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DeleteObject extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERMANENT_OBJECT_DELETION_ENABLED_FIELD_NUMBER = 1;
   private boolean permanentObjectDeletionEnabled_ = false;
+
   /**
    *
    *
@@ -251,6 +253,7 @@ public final class DeleteObject extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -433,6 +436,7 @@ public final class DeleteObject extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean permanentObjectDeletionEnabled_;
+
     /**
      *
      *
@@ -457,6 +461,7 @@ public final class DeleteObject extends com.google.protobuf.GeneratedMessageV3
     public boolean getPermanentObjectDeletionEnabled() {
       return permanentObjectDeletionEnabled_;
     }
+
     /**
      *
      *
@@ -485,6 +490,7 @@ public final class DeleteObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

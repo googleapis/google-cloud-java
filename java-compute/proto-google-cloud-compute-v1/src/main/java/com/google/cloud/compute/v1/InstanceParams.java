@@ -33,6 +33,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceParams)
     InstanceParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceParams.newBuilder() to construct.
   private InstanceParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,6 +102,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
   public int getResourceManagerTagsCount() {
     return internalGetResourceManagerTags().getMap().size();
   }
+
   /**
    *
    *
@@ -117,12 +119,14 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetResourceManagerTags().getMap().containsKey(key);
   }
+
   /** Use {@link #getResourceManagerTagsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
     return getResourceManagerTagsMap();
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
     return internalGetResourceManagerTags().getMap();
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
         internalGetResourceManagerTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -590,6 +597,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     public int getResourceManagerTagsCount() {
       return internalGetResourceManagerTags().getMap().size();
     }
+
     /**
      *
      *
@@ -606,12 +614,14 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetResourceManagerTags().getMap().containsKey(key);
     }
+
     /** Use {@link #getResourceManagerTagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
       return getResourceManagerTagsMap();
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
       return internalGetResourceManagerTags().getMap();
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
           internalGetResourceManagerTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourceManagerTags().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -689,12 +702,14 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourceManagerTags().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
       bitField0_ |= 0x00000001;
       return internalGetMutableResourceManagerTags().getMutableMap();
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

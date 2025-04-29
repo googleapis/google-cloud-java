@@ -34,6 +34,7 @@ public interface ListSnoozesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Snooze snoozes = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.Snooze> getSnoozesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSnoozesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Snooze snoozes = 1;</code>
    */
   com.google.monitoring.v3.Snooze getSnoozes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSnoozesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Snooze snoozes = 1;</code>
    */
   int getSnoozesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListSnoozesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Snooze snoozes = 1;</code>
    */
   java.util.List<? extends com.google.monitoring.v3.SnoozeOrBuilder> getSnoozesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSnoozesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

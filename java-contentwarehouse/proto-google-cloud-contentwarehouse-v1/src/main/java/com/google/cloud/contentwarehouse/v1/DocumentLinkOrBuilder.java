@@ -40,6 +40,7 @@ public interface DocumentLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DocumentLinkOrBuilder
    * @return Whether the sourceDocumentReference field is set.
    */
   boolean hasSourceDocumentReference();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DocumentLinkOrBuilder
    * @return The sourceDocumentReference.
    */
   com.google.cloud.contentwarehouse.v1.DocumentReference getSourceDocumentReference();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface DocumentLinkOrBuilder
    * @return Whether the targetDocumentReference field is set.
    */
   boolean hasTargetDocumentReference();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface DocumentLinkOrBuilder
    * @return The targetDocumentReference.
    */
   com.google.cloud.contentwarehouse.v1.DocumentReference getTargetDocumentReference();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface DocumentLinkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface DocumentLinkOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface DocumentLinkOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface DocumentLinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface DocumentLinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface DocumentLinkOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

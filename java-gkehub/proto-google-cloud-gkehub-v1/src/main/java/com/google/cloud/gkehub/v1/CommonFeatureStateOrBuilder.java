@@ -38,6 +38,7 @@ public interface CommonFeatureStateOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CommonFeatureStateOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.v1.FeatureState getState();
+
   /**
    *
    *

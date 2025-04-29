@@ -34,6 +34,7 @@ public interface QAResultOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.QAResult.Highlight highlights = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.QAResult.Highlight> getHighlightsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface QAResultOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.QAResult.Highlight highlights = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.QAResult.Highlight getHighlights(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface QAResultOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.QAResult.Highlight highlights = 1;</code>
    */
   int getHighlightsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface QAResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.QAResult.HighlightOrBuilder>
       getHighlightsOrBuilderList();
+
   /**
    *
    *

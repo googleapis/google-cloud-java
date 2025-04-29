@@ -33,6 +33,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GeminiTemplateConfig)
     GeminiTemplateConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GeminiTemplateConfig.newBuilder() to construct.
   private GeminiTemplateConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int GEMINI_EXAMPLE_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GeminiExample geminiExample_;
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGeminiExample() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.GeminiExample.getDefaultInstance()
         : geminiExample_;
   }
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
   public int getFieldMappingCount() {
     return internalGetFieldMapping().getMap().size();
   }
+
   /**
    *
    *
@@ -178,12 +183,14 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     }
     return internalGetFieldMapping().getMap().containsKey(key);
   }
+
   /** Use {@link #getFieldMappingMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getFieldMapping() {
     return getFieldMappingMap();
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getFieldMappingMap() {
     return internalGetFieldMapping().getMap();
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetFieldMapping().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -423,6 +432,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +678,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.GeminiExample.Builder,
             com.google.cloud.aiplatform.v1beta1.GeminiExampleOrBuilder>
         geminiExampleBuilder_;
+
     /**
      *
      *
@@ -685,6 +696,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGeminiExample() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
         return geminiExampleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getGeminiExampleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
             : geminiExample_;
       }
     }
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     public int getFieldMappingCount() {
       return internalGetFieldMapping().getMap().size();
     }
+
     /**
      *
      *
@@ -921,12 +941,14 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       }
       return internalGetFieldMapping().getMap().containsKey(key);
     }
+
     /** Use {@link #getFieldMappingMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getFieldMapping() {
       return getFieldMappingMap();
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getFieldMappingMap() {
       return internalGetFieldMapping().getMap();
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetFieldMapping().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       internalGetMutableFieldMapping().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1006,12 +1031,14 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       internalGetMutableFieldMapping().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableFieldMapping() {
       bitField0_ |= 0x00000002;
       return internalGetMutableFieldMapping().getMutableMap();
     }
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class GeminiTemplateConfig extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

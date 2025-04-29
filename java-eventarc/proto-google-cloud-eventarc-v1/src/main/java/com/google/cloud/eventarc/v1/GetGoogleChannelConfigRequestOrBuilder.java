@@ -38,6 +38,7 @@ public interface GetGoogleChannelConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

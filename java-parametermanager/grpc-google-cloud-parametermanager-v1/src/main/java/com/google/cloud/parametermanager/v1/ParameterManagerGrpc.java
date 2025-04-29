@@ -576,6 +576,19 @@ public final class ParameterManagerGrpc {
     return ParameterManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ParameterManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ParameterManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ParameterManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public ParameterManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ParameterManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ParameterManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1003,6 +1016,171 @@ public final class ParameterManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ParameterManager.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class ParameterManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ParameterManagerBlockingV2Stub> {
+    private ParameterManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ParameterManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ParameterManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Parameters in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ListParametersResponse listParameters(
+        com.google.cloud.parametermanager.v1.ListParametersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListParametersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Parameter.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Parameter getParameter(
+        com.google.cloud.parametermanager.v1.GetParameterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetParameterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Parameter in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Parameter createParameter(
+        com.google.cloud.parametermanager.v1.CreateParameterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateParameterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Parameter.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Parameter updateParameter(
+        com.google.cloud.parametermanager.v1.UpdateParameterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateParameterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Parameter.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteParameter(
+        com.google.cloud.parametermanager.v1.DeleteParameterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteParameterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ParameterVersions in a given project, location, and parameter.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ListParameterVersionsResponse listParameterVersions(
+        com.google.cloud.parametermanager.v1.ListParameterVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListParameterVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ParameterVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ParameterVersion getParameterVersion(
+        com.google.cloud.parametermanager.v1.GetParameterVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetParameterVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets rendered version of a ParameterVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.RenderParameterVersionResponse
+        renderParameterVersion(
+            com.google.cloud.parametermanager.v1.RenderParameterVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenderParameterVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ParameterVersion in a given project, location, and parameter.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ParameterVersion createParameterVersion(
+        com.google.cloud.parametermanager.v1.CreateParameterVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateParameterVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single ParameterVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ParameterVersion updateParameterVersion(
+        com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateParameterVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ParameterVersion.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteParameterVersion(
+        com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteParameterVersionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ParameterManager.
    *
    * <pre>
    * Service describing handlers for resources

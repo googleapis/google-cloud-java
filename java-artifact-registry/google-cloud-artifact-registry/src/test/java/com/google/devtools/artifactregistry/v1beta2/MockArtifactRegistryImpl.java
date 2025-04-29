@@ -574,7 +574,8 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateProjectSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateProjectSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProjectSettings.class.getName(),
                   Exception.class.getName())));

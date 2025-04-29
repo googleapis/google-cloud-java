@@ -36,6 +36,7 @@ public interface RetrieveTransferParametersRequestOrBuilder
    * @return The domainName.
    */
   java.lang.String getDomainName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RetrieveTransferParametersRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

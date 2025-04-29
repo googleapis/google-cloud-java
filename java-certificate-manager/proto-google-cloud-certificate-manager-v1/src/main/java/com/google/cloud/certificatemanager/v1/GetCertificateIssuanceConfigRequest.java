@@ -34,6 +34,7 @@ public final class GetCertificateIssuanceConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest)
     GetCertificateIssuanceConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetCertificateIssuanceConfigRequest.newBuilder() to construct.
   private GetCertificateIssuanceConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetCertificateIssuanceConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetCertificateIssuanceConfigRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +293,7 @@ public final class GetCertificateIssuanceConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +489,7 @@ public final class GetCertificateIssuanceConfigRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -510,6 +515,7 @@ public final class GetCertificateIssuanceConfigRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -535,6 +541,7 @@ public final class GetCertificateIssuanceConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class GetCertificateIssuanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class GetCertificateIssuanceConfigRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface SubnetworksExpandIpCidrRangeRequestOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SubnetworksExpandIpCidrRangeRequestOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *

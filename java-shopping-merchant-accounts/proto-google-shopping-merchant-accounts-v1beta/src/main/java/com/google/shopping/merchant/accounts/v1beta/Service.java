@@ -33,6 +33,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Service)
     ServiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Service.newBuilder() to construct.
   private Service(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>SHIPMENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SHIPMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -143,6 +145,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>DELIVERY = 1;</code>
      */
     public static final int DELIVERY_VALUE = 1;
+
     /**
      *
      *
@@ -154,6 +157,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCAL_DELIVERY = 2;</code>
      */
     public static final int LOCAL_DELIVERY_VALUE = 2;
+
     /**
      *
      *
@@ -273,6 +277,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storeServiceType field is set.
      */
     boolean hasStoreServiceType();
+
     /**
      *
      *
@@ -288,6 +293,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for storeServiceType.
      */
     int getStoreServiceTypeValue();
+
     /**
      *
      *
@@ -318,6 +324,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the storeCodes.
      */
     java.util.List<java.lang.String> getStoreCodesList();
+
     /**
      *
      *
@@ -331,6 +338,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return The count of storeCodes.
      */
     int getStoreCodesCount();
+
     /**
      *
      *
@@ -345,6 +353,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return The storeCodes at the given index.
      */
     java.lang.String getStoreCodes(int index);
+
     /**
      *
      *
@@ -374,6 +383,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cutoffConfig field is set.
      */
     boolean hasCutoffConfig();
+
     /**
      *
      *
@@ -388,6 +398,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return The cutoffConfig.
      */
     com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig getCutoffConfig();
+
     /**
      *
      *
@@ -415,6 +426,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceRadius field is set.
      */
     boolean hasServiceRadius();
+
     /**
      *
      *
@@ -428,6 +440,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceRadius.
      */
     com.google.shopping.merchant.accounts.v1beta.Distance getServiceRadius();
+
     /**
      *
      *
@@ -440,6 +453,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.shopping.merchant.accounts.v1beta.DistanceOrBuilder getServiceRadiusOrBuilder();
   }
+
   /**
    *
    *
@@ -455,6 +469,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Service.StoreConfig)
       StoreConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StoreConfig.newBuilder() to construct.
     private StoreConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -543,6 +558,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * <code>STORE_SERVICE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int STORE_SERVICE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -554,6 +570,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * <code>ALL_STORES = 1;</code>
        */
       public static final int ALL_STORES_VALUE = 1;
+
       /**
        *
        *
@@ -673,6 +690,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the localCutoffTime field is set.
        */
       boolean hasLocalCutoffTime();
+
       /**
        *
        *
@@ -688,6 +706,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig.LocalCutoffTime
           getLocalCutoffTime();
+
       /**
        *
        *
@@ -717,6 +736,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the storeCloseOffsetHours field is set.
        */
       boolean hasStoreCloseOffsetHours();
+
       /**
        *
        *
@@ -750,6 +770,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the noDeliveryPostCutoff field is set.
        */
       boolean hasNoDeliveryPostCutoff();
+
       /**
        *
        *
@@ -769,6 +790,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        */
       boolean getNoDeliveryPostCutoff();
     }
+
     /**
      *
      *
@@ -784,6 +806,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig)
         CutoffConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CutoffConfig.newBuilder() to construct.
       private CutoffConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -831,6 +854,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the hour field is set.
          */
         boolean hasHour();
+
         /**
          *
          *
@@ -858,6 +882,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the minute field is set.
          */
         boolean hasMinute();
+
         /**
          *
          *
@@ -872,6 +897,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
          */
         long getMinute();
       }
+
       /**
        *
        *
@@ -887,6 +913,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig.LocalCutoffTime)
           LocalCutoffTimeOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use LocalCutoffTime.newBuilder() to construct.
         private LocalCutoffTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -920,6 +947,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
         public static final int HOUR_FIELD_NUMBER = 1;
         private long hour_ = 0L;
+
         /**
          *
          *
@@ -936,6 +964,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean hasHour() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -955,6 +984,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
         public static final int MINUTE_FIELD_NUMBER = 2;
         private long minute_ = 0L;
+
         /**
          *
          *
@@ -971,6 +1001,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean hasMinute() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -1200,6 +1231,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -1432,6 +1464,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private long hour_;
+
           /**
            *
            *
@@ -1448,6 +1481,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           public boolean hasHour() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -1464,6 +1498,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           public long getHour() {
             return hour_;
           }
+
           /**
            *
            *
@@ -1484,6 +1519,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1504,6 +1540,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           }
 
           private long minute_;
+
           /**
            *
            *
@@ -1520,6 +1557,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           public boolean hasMinute() {
             return ((bitField0_ & 0x00000002) != 0);
           }
+
           /**
            *
            *
@@ -1536,6 +1574,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           public long getMinute() {
             return minute_;
           }
+
           /**
            *
            *
@@ -1556,6 +1595,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1652,6 +1692,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       private com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig
               .LocalCutoffTime
           localCutoffTime_;
+
       /**
        *
        *
@@ -1669,6 +1710,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLocalCutoffTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1691,6 +1733,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 .LocalCutoffTime.getDefaultInstance()
             : localCutoffTime_;
       }
+
       /**
        *
        *
@@ -1714,6 +1757,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
       public static final int STORE_CLOSE_OFFSET_HOURS_FIELD_NUMBER = 2;
       private long storeCloseOffsetHours_ = 0L;
+
       /**
        *
        *
@@ -1731,6 +1775,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStoreCloseOffsetHours() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1751,6 +1796,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
       public static final int NO_DELIVERY_POST_CUTOFF_FIELD_NUMBER = 3;
       private boolean noDeliveryPostCutoff_ = false;
+
       /**
        *
        *
@@ -1772,6 +1818,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNoDeliveryPostCutoff() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1998,6 +2045,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2258,6 +2306,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig
                     .LocalCutoffTimeOrBuilder>
             localCutoffTimeBuilder_;
+
         /**
          *
          *
@@ -2274,6 +2323,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean hasLocalCutoffTime() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2299,6 +2349,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             return localCutoffTimeBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2326,6 +2377,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2350,6 +2402,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2384,6 +2437,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2405,6 +2459,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2423,6 +2478,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getLocalCutoffTimeFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2446,6 +2502,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 : localCutoffTime_;
           }
         }
+
         /**
          *
          *
@@ -2481,6 +2538,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long storeCloseOffsetHours_;
+
         /**
          *
          *
@@ -2498,6 +2556,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean hasStoreCloseOffsetHours() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -2515,6 +2574,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public long getStoreCloseOffsetHours() {
           return storeCloseOffsetHours_;
         }
+
         /**
          *
          *
@@ -2536,6 +2596,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2557,6 +2618,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean noDeliveryPostCutoff_;
+
         /**
          *
          *
@@ -2578,6 +2640,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean hasNoDeliveryPostCutoff() {
           return ((bitField0_ & 0x00000004) != 0);
         }
+
         /**
          *
          *
@@ -2599,6 +2662,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean getNoDeliveryPostCutoff() {
           return noDeliveryPostCutoff_;
         }
+
         /**
          *
          *
@@ -2624,6 +2688,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2720,6 +2785,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STORE_SERVICE_TYPE_FIELD_NUMBER = 1;
     private int storeServiceType_ = 0;
+
     /**
      *
      *
@@ -2738,6 +2804,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStoreServiceType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2756,6 +2823,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getStoreServiceTypeValue() {
       return storeServiceType_;
     }
+
     /**
      *
      *
@@ -2787,6 +2855,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList storeCodes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2802,6 +2871,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getStoreCodesList() {
       return storeCodes_;
     }
+
     /**
      *
      *
@@ -2817,6 +2887,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getStoreCodesCount() {
       return storeCodes_.size();
     }
+
     /**
      *
      *
@@ -2833,6 +2904,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getStoreCodes(int index) {
       return storeCodes_.get(index);
     }
+
     /**
      *
      *
@@ -2853,6 +2925,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public static final int CUTOFF_CONFIG_FIELD_NUMBER = 3;
     private com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.CutoffConfig
         cutoffConfig_;
+
     /**
      *
      *
@@ -2870,6 +2943,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCutoffConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2891,6 +2965,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : cutoffConfig_;
     }
+
     /**
      *
      *
@@ -2913,6 +2988,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SERVICE_RADIUS_FIELD_NUMBER = 4;
     private com.google.shopping.merchant.accounts.v1beta.Distance serviceRadius_;
+
     /**
      *
      *
@@ -2929,6 +3005,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceRadius() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2947,6 +3024,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.Distance.getDefaultInstance()
           : serviceRadius_;
     }
+
     /**
      *
      *
@@ -3176,6 +3254,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3442,6 +3521,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int storeServiceType_ = 0;
+
       /**
        *
        *
@@ -3460,6 +3540,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStoreServiceType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -3478,6 +3559,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public int getStoreServiceTypeValue() {
         return storeServiceType_;
       }
+
       /**
        *
        *
@@ -3499,6 +3581,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3524,6 +3607,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3549,6 +3633,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3579,6 +3664,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -3595,6 +3681,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         storeCodes_.makeImmutable();
         return storeCodes_;
       }
+
       /**
        *
        *
@@ -3610,6 +3697,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public int getStoreCodesCount() {
         return storeCodes_.size();
       }
+
       /**
        *
        *
@@ -3626,6 +3714,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getStoreCodes(int index) {
         return storeCodes_.get(index);
       }
+
       /**
        *
        *
@@ -3642,6 +3731,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getStoreCodesBytes(int index) {
         return storeCodes_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3666,6 +3756,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3689,6 +3780,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3709,6 +3801,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3728,6 +3821,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3761,6 +3855,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig
                   .CutoffConfigOrBuilder>
           cutoffConfigBuilder_;
+
       /**
        *
        *
@@ -3777,6 +3872,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCutoffConfig() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -3801,6 +3897,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return cutoffConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3826,6 +3923,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3849,6 +3947,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3881,6 +3980,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3902,6 +4002,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3919,6 +4020,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCutoffConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3941,6 +4043,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               : cutoffConfig_;
         }
       }
+
       /**
        *
        *
@@ -3977,6 +4080,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.Distance.Builder,
               com.google.shopping.merchant.accounts.v1beta.DistanceOrBuilder>
           serviceRadiusBuilder_;
+
       /**
        *
        *
@@ -3993,6 +4097,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasServiceRadius() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -4015,6 +4120,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return serviceRadiusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4039,6 +4145,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4061,6 +4168,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4092,6 +4200,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4113,6 +4222,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4130,6 +4240,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getServiceRadiusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4151,6 +4262,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               : serviceRadius_;
         }
       }
+
       /**
        *
        *
@@ -4265,6 +4377,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the programLabel field is set.
      */
     boolean hasProgramLabel();
+
     /**
      *
      *
@@ -4279,6 +4392,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return The programLabel.
      */
     java.lang.String getProgramLabel();
+
     /**
      *
      *
@@ -4308,6 +4422,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram.LoyaltyProgramTiers>
         getLoyaltyProgramTiersList();
+
     /**
      *
      *
@@ -4321,6 +4436,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram.LoyaltyProgramTiers
         getLoyaltyProgramTiers(int index);
+
     /**
      *
      *
@@ -4333,6 +4449,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getLoyaltyProgramTiersCount();
+
     /**
      *
      *
@@ -4349,6 +4466,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram
                     .LoyaltyProgramTiersOrBuilder>
         getLoyaltyProgramTiersOrBuilderList();
+
     /**
      *
      *
@@ -4363,6 +4481,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram.LoyaltyProgramTiersOrBuilder
         getLoyaltyProgramTiersOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -4378,6 +4497,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram)
       LoyaltyProgramOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LoyaltyProgram.newBuilder() to construct.
     private LoyaltyProgram(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4429,6 +4549,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the tierLabel field is set.
        */
       boolean hasTierLabel();
+
       /**
        *
        *
@@ -4444,6 +4565,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        * @return The tierLabel.
        */
       java.lang.String getTierLabel();
+
       /**
        *
        *
@@ -4460,6 +4582,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTierLabelBytes();
     }
+
     /**
      *
      *
@@ -4475,6 +4598,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram.LoyaltyProgramTiers)
         LoyaltyProgramTiersOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use LoyaltyProgramTiers.newBuilder() to construct.
       private LoyaltyProgramTiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4512,6 +4636,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object tierLabel_ = "";
+
       /**
        *
        *
@@ -4530,6 +4655,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTierLabel() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4556,6 +4682,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -4776,6 +4903,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4992,6 +5120,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object tierLabel_ = "";
+
         /**
          *
          *
@@ -5009,6 +5138,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         public boolean hasTierLabel() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -5034,6 +5164,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -5059,6 +5190,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -5083,6 +5215,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5103,6 +5236,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5205,6 +5339,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object programLabel_ = "";
+
     /**
      *
      *
@@ -5222,6 +5357,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProgramLabel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5247,6 +5383,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5279,6 +5416,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram.LoyaltyProgramTiers>
         loyaltyProgramTiers_;
+
     /**
      *
      *
@@ -5296,6 +5434,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getLoyaltyProgramTiersList() {
       return loyaltyProgramTiers_;
     }
+
     /**
      *
      *
@@ -5315,6 +5454,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getLoyaltyProgramTiersOrBuilderList() {
       return loyaltyProgramTiers_;
     }
+
     /**
      *
      *
@@ -5330,6 +5470,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getLoyaltyProgramTiersCount() {
       return loyaltyProgramTiers_.size();
     }
+
     /**
      *
      *
@@ -5346,6 +5487,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getLoyaltyProgramTiers(int index) {
       return loyaltyProgramTiers_.get(index);
     }
+
     /**
      *
      *
@@ -5544,6 +5686,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5807,6 +5950,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object programLabel_ = "";
+
       /**
        *
        *
@@ -5823,6 +5967,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       public boolean hasProgramLabel() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5847,6 +5992,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5871,6 +6017,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5894,6 +6041,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5913,6 +6061,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5983,6 +6132,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return loyaltyProgramTiersBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -6001,6 +6151,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return loyaltyProgramTiersBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -6020,6 +6171,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return loyaltyProgramTiersBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -6047,6 +6199,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6072,6 +6225,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6098,6 +6252,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6125,6 +6280,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6149,6 +6305,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6174,6 +6331,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6200,6 +6358,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6221,6 +6380,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6242,6 +6402,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6258,6 +6419,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           getLoyaltyProgramTiersBuilder(int index) {
         return getLoyaltyProgramTiersFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -6278,6 +6440,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return loyaltyProgramTiersBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -6300,6 +6463,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(loyaltyProgramTiers_);
         }
       }
+
       /**
        *
        *
@@ -6319,6 +6483,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram
                     .LoyaltyProgramTiers.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -6339,6 +6504,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram
                     .LoyaltyProgramTiers.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -6455,6 +6621,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
+
   /**
    *
    *
@@ -6471,6 +6638,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServiceName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -6495,6 +6663,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6522,6 +6691,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTIVE_FIELD_NUMBER = 2;
   private boolean active_ = false;
+
   /**
    *
    *
@@ -6537,6 +6707,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActive() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -6558,6 +6729,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList deliveryCountries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -6573,6 +6745,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDeliveryCountriesList() {
     return deliveryCountries_;
   }
+
   /**
    *
    *
@@ -6588,6 +6761,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getDeliveryCountriesCount() {
     return deliveryCountries_.size();
   }
+
   /**
    *
    *
@@ -6604,6 +6778,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDeliveryCountries(int index) {
     return deliveryCountries_.get(index);
   }
+
   /**
    *
    *
@@ -6625,6 +6800,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
+
   /**
    *
    *
@@ -6641,6 +6817,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrencyCode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -6665,6 +6842,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6692,6 +6870,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELIVERY_TIME_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.accounts.v1beta.DeliveryTime deliveryTime_;
+
   /**
    *
    *
@@ -6710,6 +6889,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeliveryTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -6730,6 +6910,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.DeliveryTime.getDefaultInstance()
         : deliveryTime_;
   }
+
   /**
    *
    *
@@ -6754,6 +6935,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.RateGroup> rateGroups_;
+
   /**
    *
    *
@@ -6772,6 +6954,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       getRateGroupsList() {
     return rateGroups_;
   }
+
   /**
    *
    *
@@ -6790,6 +6973,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       getRateGroupsOrBuilderList() {
     return rateGroups_;
   }
+
   /**
    *
    *
@@ -6807,6 +6991,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getRateGroupsCount() {
     return rateGroups_.size();
   }
+
   /**
    *
    *
@@ -6824,6 +7009,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.merchant.accounts.v1beta.RateGroup getRateGroups(int index) {
     return rateGroups_.get(index);
   }
+
   /**
    *
    *
@@ -6845,6 +7031,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHIPMENT_TYPE_FIELD_NUMBER = 7;
   private int shipmentType_ = 0;
+
   /**
    *
    *
@@ -6862,6 +7049,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShipmentType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -6879,6 +7067,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getShipmentTypeValue() {
     return shipmentType_;
   }
+
   /**
    *
    *
@@ -6903,6 +7092,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINIMUM_ORDER_VALUE_FIELD_NUMBER = 8;
   private com.google.shopping.type.Price minimumOrderValue_;
+
   /**
    *
    *
@@ -6921,6 +7111,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinimumOrderValue() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -6941,6 +7132,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.type.Price.getDefaultInstance()
         : minimumOrderValue_;
   }
+
   /**
    *
    *
@@ -6963,6 +7155,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public static final int MINIMUM_ORDER_VALUE_TABLE_FIELD_NUMBER = 9;
   private com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable
       minimumOrderValueTable_;
+
   /**
    *
    *
@@ -6981,6 +7174,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinimumOrderValueTable() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -7002,6 +7196,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable.getDefaultInstance()
         : minimumOrderValueTable_;
   }
+
   /**
    *
    *
@@ -7024,6 +7219,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STORE_CONFIG_FIELD_NUMBER = 10;
   private com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig storeConfig_;
+
   /**
    *
    *
@@ -7041,6 +7237,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStoreConfig() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -7060,6 +7257,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.getDefaultInstance()
         : storeConfig_;
   }
+
   /**
    *
    *
@@ -7084,6 +7282,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram>
       loyaltyPrograms_;
+
   /**
    *
    *
@@ -7100,6 +7299,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       getLoyaltyProgramsList() {
     return loyaltyPrograms_;
   }
+
   /**
    *
    *
@@ -7117,6 +7317,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       getLoyaltyProgramsOrBuilderList() {
     return loyaltyPrograms_;
   }
+
   /**
    *
    *
@@ -7132,6 +7333,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getLoyaltyProgramsCount() {
     return loyaltyPrograms_.size();
   }
+
   /**
    *
    *
@@ -7148,6 +7350,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return loyaltyPrograms_.get(index);
   }
+
   /**
    *
    *
@@ -7466,6 +7669,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7935,6 +8139,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
+
     /**
      *
      *
@@ -7950,6 +8155,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7973,6 +8179,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7996,6 +8203,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8018,6 +8226,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8036,6 +8245,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8061,6 +8271,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean active_;
+
     /**
      *
      *
@@ -8076,6 +8287,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActive() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -8091,6 +8303,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean getActive() {
       return active_;
     }
+
     /**
      *
      *
@@ -8110,6 +8323,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8137,6 +8351,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -8154,6 +8369,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       deliveryCountries_.makeImmutable();
       return deliveryCountries_;
     }
+
     /**
      *
      *
@@ -8170,6 +8386,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getDeliveryCountriesCount() {
       return deliveryCountries_.size();
     }
+
     /**
      *
      *
@@ -8187,6 +8404,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDeliveryCountries(int index) {
       return deliveryCountries_.get(index);
     }
+
     /**
      *
      *
@@ -8204,6 +8422,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDeliveryCountriesBytes(int index) {
       return deliveryCountries_.getByteString(index);
     }
+
     /**
      *
      *
@@ -8229,6 +8448,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8253,6 +8473,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8274,6 +8495,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8294,6 +8516,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8321,6 +8544,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -8336,6 +8560,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrencyCode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -8359,6 +8584,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8382,6 +8608,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8404,6 +8631,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8422,6 +8650,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8452,6 +8681,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.DeliveryTime.Builder,
             com.google.shopping.merchant.accounts.v1beta.DeliveryTimeOrBuilder>
         deliveryTimeBuilder_;
+
     /**
      *
      *
@@ -8469,6 +8699,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeliveryTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -8492,6 +8723,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return deliveryTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8518,6 +8750,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8541,6 +8774,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8573,6 +8807,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8595,6 +8830,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8613,6 +8849,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeliveryTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8635,6 +8872,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             : deliveryTime_;
       }
     }
+
     /**
      *
      *
@@ -8703,6 +8941,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return rateGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -8723,6 +8962,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return rateGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -8743,6 +8983,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return rateGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -8770,6 +9011,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8794,6 +9036,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8820,6 +9063,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8847,6 +9091,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8871,6 +9116,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8895,6 +9141,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8920,6 +9167,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8943,6 +9191,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8966,6 +9215,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8983,6 +9233,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRateGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -9004,6 +9255,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return rateGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -9025,6 +9277,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rateGroups_);
       }
     }
+
     /**
      *
      *
@@ -9042,6 +9295,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return getRateGroupsFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.RateGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9061,6 +9315,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.RateGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9097,6 +9352,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int shipmentType_ = 0;
+
     /**
      *
      *
@@ -9114,6 +9370,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShipmentType() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -9131,6 +9388,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getShipmentTypeValue() {
       return shipmentType_;
     }
+
     /**
      *
      *
@@ -9151,6 +9409,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9173,6 +9432,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.Service.ShipmentType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -9197,6 +9457,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9223,6 +9484,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         minimumOrderValueBuilder_;
+
     /**
      *
      *
@@ -9240,6 +9502,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinimumOrderValue() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -9263,6 +9526,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return minimumOrderValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9288,6 +9552,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9310,6 +9575,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9340,6 +9606,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9362,6 +9629,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9379,6 +9647,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMinimumOrderValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9400,6 +9669,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             : minimumOrderValue_;
       }
     }
+
     /**
      *
      *
@@ -9436,6 +9706,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable.Builder,
             com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTableOrBuilder>
         minimumOrderValueTableBuilder_;
+
     /**
      *
      *
@@ -9453,6 +9724,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinimumOrderValueTable() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -9478,6 +9750,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return minimumOrderValueTableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9504,6 +9777,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9528,6 +9802,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9561,6 +9836,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9583,6 +9859,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9601,6 +9878,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMinimumOrderValueTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9624,6 +9902,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             : minimumOrderValueTable_;
       }
     }
+
     /**
      *
      *
@@ -9659,6 +9938,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig.Builder,
             com.google.shopping.merchant.accounts.v1beta.Service.StoreConfigOrBuilder>
         storeConfigBuilder_;
+
     /**
      *
      *
@@ -9676,6 +9956,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStoreConfig() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -9699,6 +9980,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return storeConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9725,6 +10007,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9748,6 +10031,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9781,6 +10065,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9803,6 +10088,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9821,6 +10107,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStoreConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9843,6 +10130,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             : storeConfig_;
       }
     }
+
     /**
      *
      *
@@ -9910,6 +10198,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return loyaltyProgramsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9928,6 +10217,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return loyaltyProgramsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9947,6 +10237,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return loyaltyProgramsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9972,6 +10263,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9996,6 +10288,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10021,6 +10314,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10046,6 +10340,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10069,6 +10364,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10093,6 +10389,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10117,6 +10414,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10138,6 +10436,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10159,6 +10458,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10174,6 +10474,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getLoyaltyProgramsBuilder(int index) {
       return getLoyaltyProgramsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10193,6 +10494,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return loyaltyProgramsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10213,6 +10515,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(loyaltyPrograms_);
       }
     }
+
     /**
      *
      *
@@ -10231,6 +10534,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10250,6 +10554,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram
                   .getDefaultInstance());
     }
+
     /**
      *
      *

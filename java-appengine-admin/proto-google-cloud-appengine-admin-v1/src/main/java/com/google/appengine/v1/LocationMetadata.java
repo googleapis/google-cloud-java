@@ -33,6 +33,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.appengine.v1.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int STANDARD_ENVIRONMENT_AVAILABLE_FIELD_NUMBER = 2;
   private boolean standardEnvironmentAvailable_ = false;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int FLEXIBLE_ENVIRONMENT_AVAILABLE_FIELD_NUMBER = 4;
   private boolean flexibleEnvironmentAvailable_ = false;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int SEARCH_API_AVAILABLE_FIELD_NUMBER = 6;
   private boolean searchApiAvailable_ = false;
+
   /**
    *
    *
@@ -300,6 +304,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -507,6 +512,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean standardEnvironmentAvailable_;
+
     /**
      *
      *
@@ -524,6 +530,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getStandardEnvironmentAvailable() {
       return standardEnvironmentAvailable_;
     }
+
     /**
      *
      *
@@ -545,6 +552,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -566,6 +574,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean flexibleEnvironmentAvailable_;
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getFlexibleEnvironmentAvailable() {
       return flexibleEnvironmentAvailable_;
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -625,6 +636,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean searchApiAvailable_;
+
     /**
      *
      *
@@ -641,6 +653,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getSearchApiAvailable() {
       return searchApiAvailable_;
     }
+
     /**
      *
      *
@@ -661,6 +674,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

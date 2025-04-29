@@ -193,6 +193,19 @@ public final class ProfilerServiceGrpc {
     return ProfilerServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProfilerServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProfilerServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProfilerServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProfilerServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProfilerServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProfilerServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -427,6 +440,96 @@ public final class ProfilerServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProfilerService.
+   *
+   * <pre>
+   * Manage the collection of continuous profiling data provided by profiling
+   * agents running in the cloud or by an offline provider of profiling data.
+   * __The APIs listed in this service are intended for use within our profiler
+   * agents only.__
+   * </pre>
+   */
+  public static final class ProfilerServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProfilerServiceBlockingV2Stub> {
+    private ProfilerServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProfilerServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProfilerServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateProfile creates a new profile resource in the online mode.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
+     * The server ensures that the new profiles are created at a constant rate per
+     * deployment, so the creation request may hang for some time until the next
+     * profile session is available.
+     * The request may fail with ABORTED error if the creation is not available
+     * within ~1m, the response will indicate the duration of the backoff the
+     * client should take before attempting creating a profile again. The backoff
+     * duration is returned in google.rpc.RetryInfo extension on the response
+     * status. To a gRPC client, the extension will be return as a
+     * binary-serialized proto in the trailing metadata item named
+     * "google.rpc.retryinfo-bin".
+     * </pre>
+     */
+    public com.google.devtools.cloudprofiler.v2.Profile createProfile(
+        com.google.devtools.cloudprofiler.v2.CreateProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateOfflineProfile creates a new profile resource in the offline
+     * mode. The client provides the profile to create along with the profile
+     * bytes, the server records it.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
+     * </pre>
+     */
+    public com.google.devtools.cloudprofiler.v2.Profile createOfflineProfile(
+        com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOfflineProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * UpdateProfile updates the profile bytes and labels on the profile resource
+     * created in the online mode. Updating the bytes for profiles created in the
+     * offline mode is currently not supported: the profile content must be
+     * provided at the time of the profile creation.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
+     * </pre>
+     */
+    public com.google.devtools.cloudprofiler.v2.Profile updateProfile(
+        com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProfilerService.
    *
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling

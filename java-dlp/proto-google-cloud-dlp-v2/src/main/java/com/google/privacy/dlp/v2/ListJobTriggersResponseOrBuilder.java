@@ -34,6 +34,7 @@ public interface ListJobTriggersResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.JobTrigger> getJobTriggersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListJobTriggersResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTriggers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListJobTriggersResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
   int getJobTriggersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListJobTriggersResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.JobTriggerOrBuilder>
       getJobTriggersOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListJobTriggersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

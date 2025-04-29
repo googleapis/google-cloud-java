@@ -33,6 +33,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest)
     RegionInstanceGroupsListInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupsListInstancesRequest.newBuilder() to construct.
   private RegionInstanceGroupsListInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -119,6 +120,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * <code>UNDEFINED_INSTANCE_STATE = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * <code>ALL = 64897;</code>
      */
     public static final int ALL_VALUE = 64897;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class RegionInstanceGroupsListInstancesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceState_ = "";
+
   /**
    *
    *
@@ -246,6 +250,7 @@ public final class RegionInstanceGroupsListInstancesRequest
   public boolean hasInstanceState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +275,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class RegionInstanceGroupsListInstancesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object portName_ = "";
+
   /**
    *
    *
@@ -314,6 +321,7 @@ public final class RegionInstanceGroupsListInstancesRequest
   public boolean hasPortName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -541,6 +550,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -750,6 +760,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     private int bitField0_;
 
     private java.lang.Object instanceState_ = "";
+
     /**
      *
      *
@@ -765,6 +776,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     public boolean hasInstanceState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -788,6 +800,7 @@ public final class RegionInstanceGroupsListInstancesRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +824,7 @@ public final class RegionInstanceGroupsListInstancesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -833,6 +847,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     }
 
     private java.lang.Object portName_ = "";
+
     /**
      *
      *
@@ -890,6 +907,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     public boolean hasPortName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -912,6 +930,7 @@ public final class RegionInstanceGroupsListInstancesRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -934,6 +953,7 @@ public final class RegionInstanceGroupsListInstancesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

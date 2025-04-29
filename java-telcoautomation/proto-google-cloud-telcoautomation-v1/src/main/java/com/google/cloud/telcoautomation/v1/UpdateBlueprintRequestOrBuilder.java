@@ -38,6 +38,7 @@ public interface UpdateBlueprintRequestOrBuilder
    * @return Whether the blueprint field is set.
    */
   boolean hasBlueprint();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateBlueprintRequestOrBuilder
    * @return The blueprint.
    */
   com.google.cloud.telcoautomation.v1.Blueprint getBlueprint();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateBlueprintRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateBlueprintRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.parametermanager.v1.UpdateParameterRequest)
     UpdateParameterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateParameterRequest.newBuilder() to construct.
   private UpdateParameterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
 
   public static final int PARAMETER_FIELD_NUMBER = 2;
   private com.google.cloud.parametermanager.v1.Parameter parameter_;
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
   public boolean hasParameter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.parametermanager.v1.Parameter.getDefaultInstance()
         : parameter_;
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -451,6 +460,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -688,6 +698,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -708,6 +719,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +801,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.parametermanager.v1.Parameter.Builder,
             com.google.cloud.parametermanager.v1.ParameterOrBuilder>
         parameterBuilder_;
+
     /**
      *
      *
@@ -943,6 +963,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
     public boolean hasParameter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -965,6 +986,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
         return parameterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -989,6 +1011,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1034,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1086,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getParameterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1097,6 +1124,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
             : parameter_;
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1154,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1162,6 +1191,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1228,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1264,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class UpdateParameterRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

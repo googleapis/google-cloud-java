@@ -36,6 +36,7 @@ public interface MysqlGtidPositionOrBuilder
    * @return The gtidSet.
    */
   java.lang.String getGtidSet();
+
   /**
    *
    *

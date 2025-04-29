@@ -143,6 +143,19 @@ public final class EvaluationServiceGrpc {
     return EvaluationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EvaluationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EvaluationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EvaluationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EvaluationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -281,6 +294,53 @@ public final class EvaluationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EvaluationService.
+   *
+   * <pre>
+   * Vertex AI Online Evaluation Service.
+   * </pre>
+   */
+  public static final class EvaluationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EvaluationServiceBlockingV2Stub> {
+    private EvaluationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EvaluationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EvaluationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates instances based on a given metric.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse evaluateInstances(
+        com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEvaluateInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates a dataset based on a set of given metrics.
+     * </pre>
+     */
+    public com.google.longrunning.Operation evaluateDataset(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEvaluateDatasetMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EvaluationService.
    *
    * <pre>
    * Vertex AI Online Evaluation Service.

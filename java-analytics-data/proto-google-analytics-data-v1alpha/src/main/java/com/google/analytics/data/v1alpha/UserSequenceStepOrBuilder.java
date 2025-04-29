@@ -61,6 +61,7 @@ public interface UserSequenceStepOrBuilder
    * @return The enum numeric value on the wire for stepScoping.
    */
   int getStepScopingValue();
+
   /**
    *
    *
@@ -97,6 +98,7 @@ public interface UserSequenceStepOrBuilder
    * @return Whether the segmentFilterExpression field is set.
    */
   boolean hasSegmentFilterExpression();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface UserSequenceStepOrBuilder
    * @return The segmentFilterExpression.
    */
   com.google.analytics.data.v1alpha.SegmentFilterExpression getSegmentFilterExpression();
+
   /**
    *
    *

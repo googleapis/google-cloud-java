@@ -33,6 +33,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessOptions)
     ProcessOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProcessOptions.newBuilder() to construct.
   private ProcessOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the chunkingConfig field is set.
      */
     boolean hasChunkingConfig();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig.ChunkingConfig
         getChunkingConfig();
+
     /**
      *
      *
@@ -140,6 +143,32 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. Whether to include image annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageAnnotation.
+     */
+    boolean getEnableImageAnnotation();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract images in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageExtraction.
+     */
+    boolean getEnableImageExtraction();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Whether to refine PDF layout using LLM.
      * </pre>
      *
@@ -148,7 +177,21 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The enableLlmLayoutParsing.
      */
     boolean getEnableLlmLayoutParsing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include table annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableAnnotation.
+     */
+    boolean getEnableTableAnnotation();
   }
+
   /**
    *
    *
@@ -163,6 +206,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig)
       LayoutConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LayoutConfig.newBuilder() to construct.
     private LayoutConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -254,6 +298,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        */
       int getBreakpointPercentileThreshold();
     }
+
     /**
      *
      *
@@ -269,6 +314,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig.ChunkingConfig)
         ChunkingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ChunkingConfig.newBuilder() to construct.
       private ChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -301,6 +347,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
       public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
       private int chunkSize_ = 0;
+
       /**
        *
        *
@@ -320,6 +367,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
       public static final int INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER = 2;
       private boolean includeAncestorHeadings_ = false;
+
       /**
        *
        *
@@ -338,6 +386,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
       public static final int SEMANTIC_CHUNKING_GROUP_SIZE_FIELD_NUMBER = 3;
       private boolean semanticChunkingGroupSize_ = false;
+
       /**
        *
        *
@@ -358,6 +407,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
       public static final int BREAKPOINT_PERCENTILE_THRESHOLD_FIELD_NUMBER = 4;
       private int breakpointPercentileThreshold_ = 0;
+
       /**
        *
        *
@@ -582,6 +632,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -823,6 +874,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int chunkSize_;
+
         /**
          *
          *
@@ -839,6 +891,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         public int getChunkSize() {
           return chunkSize_;
         }
+
         /**
          *
          *
@@ -859,6 +912,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -879,6 +933,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean includeAncestorHeadings_;
+
         /**
          *
          *
@@ -895,6 +950,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         public boolean getIncludeAncestorHeadings() {
           return includeAncestorHeadings_;
         }
+
         /**
          *
          *
@@ -915,6 +971,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -935,6 +992,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean semanticChunkingGroupSize_;
+
         /**
          *
          *
@@ -952,6 +1010,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         public boolean getSemanticChunkingGroupSize() {
           return semanticChunkingGroupSize_;
         }
+
         /**
          *
          *
@@ -973,6 +1032,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -994,6 +1054,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int breakpointPercentileThreshold_;
+
         /**
          *
          *
@@ -1013,6 +1074,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         public int getBreakpointPercentileThreshold() {
           return breakpointPercentileThreshold_;
         }
+
         /**
          *
          *
@@ -1036,6 +1098,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1131,6 +1194,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public static final int CHUNKING_CONFIG_FIELD_NUMBER = 1;
     private com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig.ChunkingConfig
         chunkingConfig_;
+
     /**
      *
      *
@@ -1148,6 +1212,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChunkingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1169,6 +1234,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : chunkingConfig_;
     }
+
     /**
      *
      *
@@ -1191,6 +1257,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RETURN_IMAGES_FIELD_NUMBER = 2;
     private boolean returnImages_ = false;
+
     /**
      *
      *
@@ -1209,6 +1276,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RETURN_BOUNDING_BOXES_FIELD_NUMBER = 3;
     private boolean returnBoundingBoxes_ = false;
+
     /**
      *
      *
@@ -1226,8 +1294,47 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       return returnBoundingBoxes_;
     }
 
+    public static final int ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER = 4;
+    private boolean enableImageAnnotation_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include image annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageAnnotation.
+     */
+    @java.lang.Override
+    public boolean getEnableImageAnnotation() {
+      return enableImageAnnotation_;
+    }
+
+    public static final int ENABLE_IMAGE_EXTRACTION_FIELD_NUMBER = 7;
+    private boolean enableImageExtraction_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to extract images in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageExtraction.
+     */
+    @java.lang.Override
+    public boolean getEnableImageExtraction() {
+      return enableImageExtraction_;
+    }
+
     public static final int ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER = 5;
     private boolean enableLlmLayoutParsing_ = false;
+
     /**
      *
      *
@@ -1242,6 +1349,25 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean getEnableLlmLayoutParsing() {
       return enableLlmLayoutParsing_;
+    }
+
+    public static final int ENABLE_TABLE_ANNOTATION_FIELD_NUMBER = 6;
+    private boolean enableTableAnnotation_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include table annotations in layout parser response.
+     * </pre>
+     *
+     * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTableAnnotation.
+     */
+    @java.lang.Override
+    public boolean getEnableTableAnnotation() {
+      return enableTableAnnotation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1267,8 +1393,17 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (returnBoundingBoxes_ != false) {
         output.writeBool(3, returnBoundingBoxes_);
       }
+      if (enableImageAnnotation_ != false) {
+        output.writeBool(4, enableImageAnnotation_);
+      }
       if (enableLlmLayoutParsing_ != false) {
         output.writeBool(5, enableLlmLayoutParsing_);
+      }
+      if (enableTableAnnotation_ != false) {
+        output.writeBool(6, enableTableAnnotation_);
+      }
+      if (enableImageExtraction_ != false) {
+        output.writeBool(7, enableImageExtraction_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1288,8 +1423,17 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (returnBoundingBoxes_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, returnBoundingBoxes_);
       }
+      if (enableImageAnnotation_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableImageAnnotation_);
+      }
       if (enableLlmLayoutParsing_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableLlmLayoutParsing_);
+      }
+      if (enableTableAnnotation_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableTableAnnotation_);
+      }
+      if (enableImageExtraction_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, enableImageExtraction_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1313,7 +1457,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (getReturnImages() != other.getReturnImages()) return false;
       if (getReturnBoundingBoxes() != other.getReturnBoundingBoxes()) return false;
+      if (getEnableImageAnnotation() != other.getEnableImageAnnotation()) return false;
+      if (getEnableImageExtraction() != other.getEnableImageExtraction()) return false;
       if (getEnableLlmLayoutParsing() != other.getEnableLlmLayoutParsing()) return false;
+      if (getEnableTableAnnotation() != other.getEnableTableAnnotation()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1333,8 +1480,14 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnImages());
       hash = (37 * hash) + RETURN_BOUNDING_BOXES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnBoundingBoxes());
+      hash = (37 * hash) + ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageAnnotation());
+      hash = (37 * hash) + ENABLE_IMAGE_EXTRACTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageExtraction());
       hash = (37 * hash) + ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLlmLayoutParsing());
+      hash = (37 * hash) + ENABLE_TABLE_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableAnnotation());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1438,6 +1591,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1495,7 +1649,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
         returnImages_ = false;
         returnBoundingBoxes_ = false;
+        enableImageAnnotation_ = false;
+        enableImageExtraction_ = false;
         enableLlmLayoutParsing_ = false;
+        enableTableAnnotation_ = false;
         return this;
       }
 
@@ -1547,7 +1704,16 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           result.returnBoundingBoxes_ = returnBoundingBoxes_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableImageAnnotation_ = enableImageAnnotation_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.enableImageExtraction_ = enableImageExtraction_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.enableLlmLayoutParsing_ = enableLlmLayoutParsing_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enableTableAnnotation_ = enableTableAnnotation_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1611,8 +1777,17 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         if (other.getReturnBoundingBoxes() != false) {
           setReturnBoundingBoxes(other.getReturnBoundingBoxes());
         }
+        if (other.getEnableImageAnnotation() != false) {
+          setEnableImageAnnotation(other.getEnableImageAnnotation());
+        }
+        if (other.getEnableImageExtraction() != false) {
+          setEnableImageExtraction(other.getEnableImageExtraction());
+        }
         if (other.getEnableLlmLayoutParsing() != false) {
           setEnableLlmLayoutParsing(other.getEnableLlmLayoutParsing());
+        }
+        if (other.getEnableTableAnnotation() != false) {
+          setEnableTableAnnotation(other.getEnableTableAnnotation());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1659,12 +1834,30 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 32:
+                {
+                  enableImageAnnotation_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               case 40:
                 {
                   enableLlmLayoutParsing_ = input.readBool();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 40
+              case 48:
+                {
+                  enableTableAnnotation_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 48
+              case 56:
+                {
+                  enableImageExtraction_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 56
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1693,6 +1886,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig
                   .ChunkingConfigOrBuilder>
           chunkingConfigBuilder_;
+
       /**
        *
        *
@@ -1709,6 +1903,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean hasChunkingConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1733,6 +1928,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           return chunkingConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1758,6 +1954,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1781,6 +1978,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1813,6 +2011,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1834,6 +2033,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1851,6 +2051,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getChunkingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1873,6 +2074,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               : chunkingConfig_;
         }
       }
+
       /**
        *
        *
@@ -1906,6 +2108,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean returnImages_;
+
       /**
        *
        *
@@ -1921,6 +2124,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean getReturnImages() {
         return returnImages_;
       }
+
       /**
        *
        *
@@ -1940,6 +2144,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1959,6 +2164,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean returnBoundingBoxes_;
+
       /**
        *
        *
@@ -1975,6 +2181,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean getReturnBoundingBoxes() {
         return returnBoundingBoxes_;
       }
+
       /**
        *
        *
@@ -1995,6 +2202,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2014,7 +2222,120 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private boolean enableImageAnnotation_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include image annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableImageAnnotation() {
+        return enableImageAnnotation_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include image annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableImageAnnotation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableImageAnnotation(boolean value) {
+
+        enableImageAnnotation_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include image annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableImageAnnotation() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        enableImageAnnotation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableImageExtraction_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract images in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageExtraction.
+       */
+      @java.lang.Override
+      public boolean getEnableImageExtraction() {
+        return enableImageExtraction_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract images in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableImageExtraction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableImageExtraction(boolean value) {
+
+        enableImageExtraction_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to extract images in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_image_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableImageExtraction() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        enableImageExtraction_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean enableLlmLayoutParsing_;
+
       /**
        *
        *
@@ -2030,6 +2351,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableLlmLayoutParsing() {
         return enableLlmLayoutParsing_;
       }
+
       /**
        *
        *
@@ -2045,10 +2367,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableLlmLayoutParsing(boolean value) {
 
         enableLlmLayoutParsing_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2061,8 +2384,64 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableLlmLayoutParsing() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         enableLlmLayoutParsing_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableTableAnnotation_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableTableAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableTableAnnotation() {
+        return enableTableAnnotation_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableTableAnnotation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableTableAnnotation(boolean value) {
+
+        enableTableAnnotation_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include table annotations in layout parser response.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableTableAnnotation() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        enableTableAnnotation_ = false;
         onChanged();
         return this;
       }
@@ -2151,6 +2530,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the pages.
      */
     java.util.List<java.lang.Integer> getPagesList();
+
     /**
      *
      *
@@ -2163,6 +2543,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The count of pages.
      */
     int getPagesCount();
+
     /**
      *
      *
@@ -2177,6 +2558,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     int getPages(int index);
   }
+
   /**
    *
    *
@@ -2191,6 +2573,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector)
       IndividualPageSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualPageSelector.newBuilder() to construct.
     private IndividualPageSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2226,6 +2609,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList pages_ = emptyIntList();
+
     /**
      *
      *
@@ -2241,6 +2625,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getPagesList() {
       return pages_;
     }
+
     /**
      *
      *
@@ -2255,6 +2640,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public int getPagesCount() {
       return pages_.size();
     }
+
     /**
      *
      *
@@ -2457,6 +2843,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2681,6 +3068,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -2696,6 +3084,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         pages_.makeImmutable();
         return pages_;
       }
+
       /**
        *
        *
@@ -2710,6 +3099,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public int getPagesCount() {
         return pages_.size();
       }
+
       /**
        *
        *
@@ -2725,6 +3115,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public int getPages(int index) {
         return pages_.getInt(index);
       }
+
       /**
        *
        *
@@ -2746,6 +3137,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2766,6 +3158,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2785,6 +3178,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2890,6 +3284,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     private PageRangeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2925,6 +3320,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDIVIDUAL_PAGE_SELECTOR_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -2942,6 +3338,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIndividualPageSelector() {
     return pageRangeCase_ == 5;
   }
+
   /**
    *
    *
@@ -2964,6 +3361,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2986,6 +3384,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FROM_START_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -3002,6 +3401,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFromStart() {
     return pageRangeCase_ == 6;
   }
+
   /**
    *
    *
@@ -3023,6 +3423,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FROM_END_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -3038,6 +3439,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFromEnd() {
     return pageRangeCase_ == 7;
   }
+
   /**
    *
    *
@@ -3059,6 +3461,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OCR_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1beta3.OcrConfig ocrConfig_;
+
   /**
    *
    *
@@ -3075,6 +3478,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOcrConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3093,6 +3497,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1beta3.OcrConfig.getDefaultInstance()
         : ocrConfig_;
   }
+
   /**
    *
    *
@@ -3112,6 +3517,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAYOUT_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig layoutConfig_;
+
   /**
    *
    *
@@ -3130,6 +3536,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLayoutConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3150,6 +3557,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig.getDefaultInstance()
         : layoutConfig_;
   }
+
   /**
    *
    *
@@ -3172,6 +3580,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEMA_OVERRIDE_FIELD_NUMBER = 8;
   private com.google.cloud.documentai.v1beta3.DocumentSchema schemaOverride_;
+
   /**
    *
    *
@@ -3193,6 +3602,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSchemaOverride() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3216,6 +3626,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
         : schemaOverride_;
   }
+
   /**
    *
    *
@@ -3488,6 +3899,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3798,6 +4210,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector.Builder,
             com.google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelectorOrBuilder>
         individualPageSelectorBuilder_;
+
     /**
      *
      *
@@ -3815,6 +4228,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIndividualPageSelector() {
       return pageRangeCase_ == 5;
     }
+
     /**
      *
      *
@@ -3846,6 +4260,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3871,6 +4286,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       pageRangeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3894,6 +4310,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       pageRangeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3932,6 +4349,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       pageRangeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3959,6 +4377,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3974,6 +4393,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         getIndividualPageSelectorBuilder() {
       return getIndividualPageSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3999,6 +4419,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4052,6 +4473,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFromStart() {
       return pageRangeCase_ == 6;
     }
+
     /**
      *
      *
@@ -4070,6 +4492,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -4090,6 +4513,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4125,6 +4549,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFromEnd() {
       return pageRangeCase_ == 7;
     }
+
     /**
      *
      *
@@ -4142,6 +4567,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -4161,6 +4587,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4187,6 +4614,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.OcrConfig.Builder,
             com.google.cloud.documentai.v1beta3.OcrConfigOrBuilder>
         ocrConfigBuilder_;
+
     /**
      *
      *
@@ -4202,6 +4630,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOcrConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4223,6 +4652,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return ocrConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4246,6 +4676,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4267,6 +4698,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4295,6 +4727,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4315,6 +4748,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4330,6 +4764,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOcrConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4349,6 +4784,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             : ocrConfig_;
       }
     }
+
     /**
      *
      *
@@ -4382,6 +4818,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig.Builder,
             com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfigOrBuilder>
         layoutConfigBuilder_;
+
     /**
      *
      *
@@ -4399,6 +4836,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLayoutConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4422,6 +4860,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return layoutConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4448,6 +4887,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4471,6 +4911,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4504,6 +4945,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4526,6 +4968,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4544,6 +4987,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLayoutConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4566,6 +5010,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             : layoutConfig_;
       }
     }
+
     /**
      *
      *
@@ -4601,6 +5046,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
             com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>
         schemaOverrideBuilder_;
+
     /**
      *
      *
@@ -4621,6 +5067,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchemaOverride() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4647,6 +5094,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return schemaOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4675,6 +5123,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4701,6 +5150,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4735,6 +5185,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4760,6 +5211,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4780,6 +5232,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSchemaOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4805,6 +5258,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             : schemaOverride_;
       }
     }
+
     /**
      *
      *

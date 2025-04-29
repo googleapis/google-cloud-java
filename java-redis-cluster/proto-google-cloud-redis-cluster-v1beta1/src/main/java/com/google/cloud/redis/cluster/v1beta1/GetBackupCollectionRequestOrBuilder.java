@@ -40,6 +40,7 @@ public interface GetBackupCollectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

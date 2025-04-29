@@ -38,6 +38,7 @@ public interface CreateTagBindingRequestOrBuilder
    * @return Whether the tagBinding field is set.
    */
   boolean hasTagBinding();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CreateTagBindingRequestOrBuilder
    * @return The tagBinding.
    */
   com.google.cloud.resourcemanager.v3.TagBinding getTagBinding();
+
   /**
    *
    *

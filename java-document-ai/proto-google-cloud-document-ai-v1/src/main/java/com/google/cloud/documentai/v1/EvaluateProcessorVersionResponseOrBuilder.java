@@ -36,6 +36,7 @@ public interface EvaluateProcessorVersionResponseOrBuilder
    * @return The evaluation.
    */
   java.lang.String getEvaluation();
+
   /**
    *
    *

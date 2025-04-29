@@ -33,6 +33,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ProducerQuotaPolicy)
     ProducerQuotaPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProducerQuotaPolicy.newBuilder() to construct.
   private ProducerQuotaPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
 
   public static final int POLICY_VALUE_FIELD_NUMBER = 2;
   private long policyValue_ = 0L;
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
   public int getDimensionsCount() {
     return internalGetDimensions().getMap().size();
   }
+
   /**
    *
    *
@@ -219,12 +224,14 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     }
     return internalGetDimensions().getMap().containsKey(key);
   }
+
   /** Use {@link #getDimensionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
     return getDimensionsMap();
   }
+
   /**
    *
    *
@@ -259,6 +266,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
     return internalGetDimensions().getMap();
   }
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDimensions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -346,6 +355,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metric_ = "";
+
   /**
    *
    *
@@ -372,6 +382,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -464,6 +477,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object container_ = "";
+
   /**
    *
    *
@@ -488,6 +502,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -726,6 +741,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1009,6 +1025,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1035,6 +1052,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1079,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1086,6 +1105,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1127,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1156,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     }
 
     private long policyValue_;
+
     /**
      *
      *
@@ -1151,6 +1173,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     public long getPolicyValue() {
       return policyValue_;
     }
+
     /**
      *
      *
@@ -1171,6 +1194,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1242,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     public int getDimensionsCount() {
       return internalGetDimensions().getMap().size();
     }
+
     /**
      *
      *
@@ -1255,12 +1280,14 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       }
       return internalGetDimensions().getMap().containsKey(key);
     }
+
     /** Use {@link #getDimensionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
       return getDimensionsMap();
     }
+
     /**
      *
      *
@@ -1295,6 +1322,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
       return internalGetDimensions().getMap();
     }
+
     /**
      *
      *
@@ -1336,6 +1364,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDimensions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1383,6 +1412,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       internalGetMutableDimensions().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1420,12 +1450,14 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       internalGetMutableDimensions().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDimensions() {
       bitField0_ |= 0x00000004;
       return internalGetMutableDimensions().getMutableMap();
     }
+
     /**
      *
      *
@@ -1467,6 +1499,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1537,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object metric_ = "";
+
     /**
      *
      *
@@ -1529,6 +1563,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1554,6 +1589,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1578,6 +1614,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1635,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1663,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object unit_ = "";
+
     /**
      *
      *
@@ -1652,6 +1691,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1679,6 +1719,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1705,6 +1746,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1769,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1799,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object container_ = "";
+
     /**
      *
      *
@@ -1779,6 +1823,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1802,6 +1847,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1824,6 +1870,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1889,7 @@ public final class ProducerQuotaPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

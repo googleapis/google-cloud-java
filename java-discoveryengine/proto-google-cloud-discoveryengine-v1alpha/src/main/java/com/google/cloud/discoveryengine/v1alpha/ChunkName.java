@@ -443,7 +443,8 @@ public class ChunkName implements ResourceName {
     private Builder(ChunkName chunkName) {
       Preconditions.checkArgument(
           Objects.equals(chunkName.pathTemplate, PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT_CHUNK),
-          "toBuilder is only supported when ChunkName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}/chunks/{chunk}");
+          "toBuilder is only supported when ChunkName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}/chunks/{chunk}");
       this.project = chunkName.project;
       this.location = chunkName.location;
       this.dataStore = chunkName.dataStore;

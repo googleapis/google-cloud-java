@@ -37,6 +37,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for complianceRegime.
    */
   int getComplianceRegimeValue();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    */
   java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
       getResourceSettingsList();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(
       int index);
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    * </code>
    */
   int getResourceSettingsCount();
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public interface CreateWorkloadOperationMetadataOrBuilder
   java.util.List<
           ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
       getResourceSettingsOrBuilderList();
+
   /**
    *
    *

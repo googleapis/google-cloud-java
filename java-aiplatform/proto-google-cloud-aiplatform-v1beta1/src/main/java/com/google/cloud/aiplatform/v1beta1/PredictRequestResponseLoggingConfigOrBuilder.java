@@ -68,6 +68,7 @@ public interface PredictRequestResponseLoggingConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface PredictRequestResponseLoggingConfigOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigqueryDestination();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface PredictRequestResponseLoggingConfigOrBuilder
    * @return The requestResponseLoggingSchemaVersion.
    */
   java.lang.String getRequestResponseLoggingSchemaVersion();
+
   /**
    *
    *

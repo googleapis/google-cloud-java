@@ -33,6 +33,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.AutomatedDiscounts)
     AutomatedDiscountsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomatedDiscounts.newBuilder() to construct.
   private AutomatedDiscounts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int PRIOR_PRICE_FIELD_NUMBER = 1;
   private com.google.shopping.type.Price priorPrice_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
   public boolean hasPriorPrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
   public com.google.shopping.type.Price getPriorPrice() {
     return priorPrice_ == null ? com.google.shopping.type.Price.getDefaultInstance() : priorPrice_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
 
   public static final int PRIOR_PRICE_PROGRESSIVE_FIELD_NUMBER = 2;
   private com.google.shopping.type.Price priorPriceProgressive_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
   public boolean hasPriorPriceProgressive() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
         ? com.google.shopping.type.Price.getDefaultInstance()
         : priorPriceProgressive_;
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
 
   public static final int GAD_PRICE_FIELD_NUMBER = 3;
   private com.google.shopping.type.Price gadPrice_;
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
   public boolean hasGadPrice() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
   public com.google.shopping.type.Price getGadPrice() {
     return gadPrice_ == null ? com.google.shopping.type.Price.getDefaultInstance() : gadPrice_;
   }
+
   /**
    *
    *
@@ -416,6 +426,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +676,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priorPriceBuilder_;
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
     public boolean hasPriorPrice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
         return priorPriceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPriorPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
             : priorPrice_;
       }
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priorPriceProgressiveBuilder_;
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
     public boolean hasPriorPriceProgressive() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
         return priorPriceProgressiveBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -930,6 +953,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +976,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1006,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPriorPriceProgressiveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1038,6 +1066,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
             : priorPriceProgressive_;
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1101,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         gadPriceBuilder_;
+
     /**
      *
      *
@@ -1088,6 +1118,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
     public boolean hasGadPrice() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1108,6 +1139,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
         return gadPriceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1132,6 +1164,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1186,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1216,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1238,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1255,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGadPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1237,6 +1274,7 @@ public final class AutomatedDiscounts extends com.google.protobuf.GeneratedMessa
         return gadPrice_ == null ? com.google.shopping.type.Price.getDefaultInstance() : gadPrice_;
       }
     }
+
     /**
      *
      *

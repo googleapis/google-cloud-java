@@ -37,6 +37,7 @@ public interface RepositoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RepositoryOrBuilder
    * @return The remoteUri.
    */
   java.lang.String getRemoteUri();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface RepositoryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface RepositoryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface RepositoryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface RepositoryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -172,9 +179,11 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface RepositoryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public interface RepositoryOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface RepositoryOrBuilder
    * @return The webhookId.
    */
   java.lang.String getWebhookId();
+
   /**
    *
    *

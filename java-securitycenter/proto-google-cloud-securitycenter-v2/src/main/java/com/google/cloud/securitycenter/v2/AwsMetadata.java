@@ -34,6 +34,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AwsMetadata)
     AwsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AwsMetadata.newBuilder() to construct.
   private AwsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIdBytes();
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AwsMetadata.AwsOrganization)
       AwsOrganizationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsOrganization.newBuilder() to construct.
     private AwsOrganization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -148,6 +152,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -173,6 +178,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -360,6 +366,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -553,6 +560,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -577,6 +585,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -601,6 +610,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -624,6 +634,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -643,6 +654,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -756,6 +768,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -785,6 +798,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -798,6 +812,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -814,6 +829,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnit)
       AwsOrganizationalUnitOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsOrganizationalUnit.newBuilder() to construct.
     private AwsOrganizationalUnit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -849,6 +865,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -876,6 +893,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -908,6 +926,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -931,6 +950,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1146,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1338,6 +1359,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -1364,6 +1386,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1390,6 +1413,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1415,6 +1439,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1436,6 +1461,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1464,6 +1490,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -1486,6 +1513,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1508,6 +1536,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1529,6 +1558,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1546,6 +1576,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1653,6 +1684,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -1678,6 +1710,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -1691,6 +1724,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -1705,6 +1739,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AwsMetadata.AwsAccount)
       AwsAccountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsAccount.newBuilder() to construct.
     private AwsAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1740,6 +1775,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1763,6 +1799,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1791,6 +1828,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1814,6 +1852,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2008,6 +2047,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2210,6 +2250,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -2232,6 +2273,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2254,6 +2296,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2275,6 +2318,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2292,6 +2336,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2316,6 +2361,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -2338,6 +2384,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2360,6 +2407,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2381,6 +2429,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2398,6 +2447,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2488,6 +2538,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ORGANIZATION_FIELD_NUMBER = 1;
   private com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganization organization_;
+
   /**
    *
    *
@@ -2503,6 +2554,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOrganization() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2520,6 +2572,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganization.getDefaultInstance()
         : organization_;
   }
+
   /**
    *
    *
@@ -2542,6 +2595,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnit>
       organizationalUnits_;
+
   /**
    *
    *
@@ -2559,6 +2613,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       getOrganizationalUnitsList() {
     return organizationalUnits_;
   }
+
   /**
    *
    *
@@ -2577,6 +2632,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       getOrganizationalUnitsOrBuilderList() {
     return organizationalUnits_;
   }
+
   /**
    *
    *
@@ -2593,6 +2649,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getOrganizationalUnitsCount() {
     return organizationalUnits_.size();
   }
+
   /**
    *
    *
@@ -2610,6 +2667,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       getOrganizationalUnits(int index) {
     return organizationalUnits_.get(index);
   }
+
   /**
    *
    *
@@ -2630,6 +2688,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v2.AwsMetadata.AwsAccount account_;
+
   /**
    *
    *
@@ -2645,6 +2704,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2662,6 +2722,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.AwsMetadata.AwsAccount.getDefaultInstance()
         : account_;
   }
+
   /**
    *
    *
@@ -2868,6 +2929,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3154,6 +3216,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganization.Builder,
             com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationOrBuilder>
         organizationBuilder_;
+
     /**
      *
      *
@@ -3168,6 +3231,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrganization() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3188,6 +3252,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return organizationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3211,6 +3276,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3231,6 +3297,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3261,6 +3328,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3280,6 +3348,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3295,6 +3364,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOrganizationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3314,6 +3384,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
             : organization_;
       }
     }
+
     /**
      *
      *
@@ -3379,6 +3450,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return organizationalUnitsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3398,6 +3470,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return organizationalUnitsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3418,6 +3491,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return organizationalUnitsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3444,6 +3518,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3469,6 +3544,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3495,6 +3571,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3521,6 +3598,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3545,6 +3623,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3570,6 +3649,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3595,6 +3675,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3617,6 +3698,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3639,6 +3721,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3655,6 +3738,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         getOrganizationalUnitsBuilder(int index) {
       return getOrganizationalUnitsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3675,6 +3759,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return organizationalUnitsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3696,6 +3781,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(organizationalUnits_);
       }
     }
+
     /**
      *
      *
@@ -3715,6 +3801,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnit
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3735,6 +3822,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.AwsMetadata.AwsOrganizationalUnit
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3779,6 +3867,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.AwsMetadata.AwsAccount.Builder,
             com.google.cloud.securitycenter.v2.AwsMetadata.AwsAccountOrBuilder>
         accountBuilder_;
+
     /**
      *
      *
@@ -3793,6 +3882,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3813,6 +3903,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
         return accountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3835,6 +3926,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3855,6 +3947,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3883,6 +3976,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3902,6 +3996,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3916,6 +4011,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3935,6 +4031,7 @@ public final class AwsMetadata extends com.google.protobuf.GeneratedMessageV3
             : account_;
       }
     }
+
     /**
      *
      *

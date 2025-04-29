@@ -33,6 +33,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption)
     EncryptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Encryption.newBuilder() to construct.
   private Encryption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Encryption.Aes128Encryption)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.Aes128Encryption)
       Aes128EncryptionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Aes128Encryption.newBuilder() to construct.
     private Aes128Encryption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -262,6 +265,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -500,6 +504,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Encryption.SampleAesEncryption)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -514,6 +519,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.SampleAesEncryption)
       SampleAesEncryptionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SampleAesEncryption.newBuilder() to construct.
     private SampleAesEncryption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -695,6 +701,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -951,6 +958,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return The scheme.
      */
     java.lang.String getScheme();
+
     /**
      *
      *
@@ -969,6 +977,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSchemeBytes();
   }
+
   /**
    *
    *
@@ -983,6 +992,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.MpegCommonEncryption)
       MpegCommonEncryptionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MpegCommonEncryption.newBuilder() to construct.
     private MpegCommonEncryption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1017,6 +1027,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object scheme_ = "";
+
     /**
      *
      *
@@ -1045,6 +1056,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1248,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1431,6 +1444,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object scheme_ = "";
+
       /**
        *
        *
@@ -1458,6 +1472,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1485,6 +1500,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1511,6 +1527,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1533,6 +1550,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1650,6 +1668,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return The secretVersion.
      */
     java.lang.String getSecretVersion();
+
     /**
      *
      *
@@ -1668,6 +1687,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSecretVersionBytes();
   }
+
   /**
    *
    *
@@ -1682,6 +1702,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.SecretManagerSource)
       SecretManagerSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SecretManagerSource.newBuilder() to construct.
     private SecretManagerSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1716,6 +1737,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object secretVersion_ = "";
+
     /**
      *
      *
@@ -1744,6 +1766,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1935,6 +1958,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2129,6 +2153,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object secretVersion_ = "";
+
       /**
        *
        *
@@ -2156,6 +2181,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2183,6 +2209,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2209,6 +2236,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2231,6 +2259,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2330,6 +2359,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Encryption.Widevine)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -2344,6 +2374,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.Widevine)
       WidevineOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Widevine.newBuilder() to construct.
     private Widevine(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2524,6 +2555,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2753,6 +2785,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Encryption.Fairplay)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -2767,6 +2800,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.Fairplay)
       FairplayOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Fairplay.newBuilder() to construct.
     private Fairplay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2947,6 +2981,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3176,6 +3211,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Encryption.Playready)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3190,6 +3226,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.Playready)
       PlayreadyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Playready.newBuilder() to construct.
     private Playready(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3370,6 +3407,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3599,6 +3637,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Encryption.Clearkey)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3613,6 +3652,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.Clearkey)
       ClearkeyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Clearkey.newBuilder() to construct.
     private Clearkey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3793,6 +3833,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4035,6 +4076,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the widevine field is set.
      */
     boolean hasWidevine();
+
     /**
      *
      *
@@ -4047,6 +4089,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return The widevine.
      */
     com.google.cloud.video.transcoder.v1.Encryption.Widevine getWidevine();
+
     /**
      *
      *
@@ -4070,6 +4113,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fairplay field is set.
      */
     boolean hasFairplay();
+
     /**
      *
      *
@@ -4082,6 +4126,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return The fairplay.
      */
     com.google.cloud.video.transcoder.v1.Encryption.Fairplay getFairplay();
+
     /**
      *
      *
@@ -4105,6 +4150,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the playready field is set.
      */
     boolean hasPlayready();
+
     /**
      *
      *
@@ -4117,6 +4163,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return The playready.
      */
     com.google.cloud.video.transcoder.v1.Encryption.Playready getPlayready();
+
     /**
      *
      *
@@ -4140,6 +4187,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clearkey field is set.
      */
     boolean hasClearkey();
+
     /**
      *
      *
@@ -4152,6 +4200,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      * @return The clearkey.
      */
     com.google.cloud.video.transcoder.v1.Encryption.Clearkey getClearkey();
+
     /**
      *
      *
@@ -4163,6 +4212,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.video.transcoder.v1.Encryption.ClearkeyOrBuilder getClearkeyOrBuilder();
   }
+
   /**
    *
    *
@@ -4177,6 +4227,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Encryption.DrmSystems)
       DrmSystemsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DrmSystems.newBuilder() to construct.
     private DrmSystems(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4208,6 +4259,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int WIDEVINE_FIELD_NUMBER = 1;
     private com.google.cloud.video.transcoder.v1.Encryption.Widevine widevine_;
+
     /**
      *
      *
@@ -4223,6 +4275,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWidevine() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4240,6 +4293,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Encryption.Widevine.getDefaultInstance()
           : widevine_;
     }
+
     /**
      *
      *
@@ -4259,6 +4313,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FAIRPLAY_FIELD_NUMBER = 2;
     private com.google.cloud.video.transcoder.v1.Encryption.Fairplay fairplay_;
+
     /**
      *
      *
@@ -4274,6 +4329,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFairplay() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4291,6 +4347,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Encryption.Fairplay.getDefaultInstance()
           : fairplay_;
     }
+
     /**
      *
      *
@@ -4310,6 +4367,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PLAYREADY_FIELD_NUMBER = 3;
     private com.google.cloud.video.transcoder.v1.Encryption.Playready playready_;
+
     /**
      *
      *
@@ -4325,6 +4383,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlayready() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4342,6 +4401,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Encryption.Playready.getDefaultInstance()
           : playready_;
     }
+
     /**
      *
      *
@@ -4361,6 +4421,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CLEARKEY_FIELD_NUMBER = 4;
     private com.google.cloud.video.transcoder.v1.Encryption.Clearkey clearkey_;
+
     /**
      *
      *
@@ -4376,6 +4437,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClearkey() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4393,6 +4455,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.video.transcoder.v1.Encryption.Clearkey.getDefaultInstance()
           : clearkey_;
     }
+
     /**
      *
      *
@@ -4618,6 +4681,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4884,6 +4948,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Encryption.Widevine.Builder,
               com.google.cloud.video.transcoder.v1.Encryption.WidevineOrBuilder>
           widevineBuilder_;
+
       /**
        *
        *
@@ -4898,6 +4963,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       public boolean hasWidevine() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4918,6 +4984,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return widevineBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4940,6 +5007,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4960,6 +5028,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4989,6 +5058,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5008,6 +5078,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5022,6 +5093,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getWidevineFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5041,6 +5113,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               : widevine_;
         }
       }
+
       /**
        *
        *
@@ -5073,6 +5146,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Encryption.Fairplay.Builder,
               com.google.cloud.video.transcoder.v1.Encryption.FairplayOrBuilder>
           fairplayBuilder_;
+
       /**
        *
        *
@@ -5087,6 +5161,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFairplay() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -5107,6 +5182,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return fairplayBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5129,6 +5205,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5149,6 +5226,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5178,6 +5256,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5197,6 +5276,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5211,6 +5291,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getFairplayFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5230,6 +5311,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               : fairplay_;
         }
       }
+
       /**
        *
        *
@@ -5262,6 +5344,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Encryption.Playready.Builder,
               com.google.cloud.video.transcoder.v1.Encryption.PlayreadyOrBuilder>
           playreadyBuilder_;
+
       /**
        *
        *
@@ -5276,6 +5359,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPlayready() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -5296,6 +5380,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return playreadyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5318,6 +5403,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5338,6 +5424,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5368,6 +5455,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5387,6 +5475,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5402,6 +5491,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getPlayreadyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5421,6 +5511,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               : playready_;
         }
       }
+
       /**
        *
        *
@@ -5453,6 +5544,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.transcoder.v1.Encryption.Clearkey.Builder,
               com.google.cloud.video.transcoder.v1.Encryption.ClearkeyOrBuilder>
           clearkeyBuilder_;
+
       /**
        *
        *
@@ -5467,6 +5559,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       public boolean hasClearkey() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -5487,6 +5580,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
           return clearkeyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5509,6 +5603,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5529,6 +5624,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5558,6 +5654,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5577,6 +5674,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5591,6 +5689,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getClearkeyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5610,6 +5709,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
               : clearkey_;
         }
       }
+
       /**
        *
        *
@@ -5720,6 +5820,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     private EncryptionModeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5770,6 +5871,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     private SecretSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5804,6 +5906,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -5827,6 +5930,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5852,6 +5956,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AES_128_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -5867,6 +5972,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAes128() {
     return encryptionModeCase_ == 3;
   }
+
   /**
    *
    *
@@ -5885,6 +5991,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.Encryption.Aes128Encryption.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5904,6 +6011,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SAMPLE_AES_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -5919,6 +6027,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSampleAes() {
     return encryptionModeCase_ == 4;
   }
+
   /**
    *
    *
@@ -5937,6 +6046,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.Encryption.SampleAesEncryption.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5956,6 +6066,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MPEG_CENC_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -5971,6 +6082,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMpegCenc() {
     return encryptionModeCase_ == 5;
   }
+
   /**
    *
    *
@@ -5990,6 +6102,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.video.transcoder.v1.Encryption.MpegCommonEncryption
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6010,6 +6123,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_MANAGER_KEY_SOURCE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -6027,6 +6141,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecretManagerKeySource() {
     return secretSourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -6048,6 +6163,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.Encryption.SecretManagerSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6070,6 +6186,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DRM_SYSTEMS_FIELD_NUMBER = 8;
   private com.google.cloud.video.transcoder.v1.Encryption.DrmSystems drmSystems_;
+
   /**
    *
    *
@@ -6088,6 +6205,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDrmSystems() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -6108,6 +6226,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.transcoder.v1.Encryption.DrmSystems.getDefaultInstance()
         : drmSystems_;
   }
+
   /**
    *
    *
@@ -6390,6 +6509,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6724,6 +6844,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -6746,6 +6867,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6768,6 +6890,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6789,6 +6912,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6806,6 +6930,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6834,6 +6959,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Encryption.Aes128Encryption.Builder,
             com.google.cloud.video.transcoder.v1.Encryption.Aes128EncryptionOrBuilder>
         aes128Builder_;
+
     /**
      *
      *
@@ -6849,6 +6975,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAes128() {
       return encryptionModeCase_ == 3;
     }
+
     /**
      *
      *
@@ -6876,6 +7003,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6899,6 +7027,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -6919,6 +7048,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -6955,6 +7085,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -6980,6 +7111,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6993,6 +7125,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         getAes128Builder() {
       return getAes128FieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7015,6 +7148,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7054,6 +7188,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Encryption.SampleAesEncryption.Builder,
             com.google.cloud.video.transcoder.v1.Encryption.SampleAesEncryptionOrBuilder>
         sampleAesBuilder_;
+
     /**
      *
      *
@@ -7069,6 +7204,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSampleAes() {
       return encryptionModeCase_ == 4;
     }
+
     /**
      *
      *
@@ -7097,6 +7233,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7120,6 +7257,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7141,6 +7279,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7177,6 +7316,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7202,6 +7342,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7215,6 +7356,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         getSampleAesBuilder() {
       return getSampleAesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7238,6 +7380,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7279,6 +7422,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Encryption.MpegCommonEncryption.Builder,
             com.google.cloud.video.transcoder.v1.Encryption.MpegCommonEncryptionOrBuilder>
         mpegCencBuilder_;
+
     /**
      *
      *
@@ -7294,6 +7438,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMpegCenc() {
       return encryptionModeCase_ == 5;
     }
+
     /**
      *
      *
@@ -7322,6 +7467,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7345,6 +7491,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -7366,6 +7513,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -7402,6 +7550,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       encryptionModeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -7427,6 +7576,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7440,6 +7590,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         getMpegCencBuilder() {
       return getMpegCencFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7463,6 +7614,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7504,6 +7656,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Encryption.SecretManagerSource.Builder,
             com.google.cloud.video.transcoder.v1.Encryption.SecretManagerSourceOrBuilder>
         secretManagerKeySourceBuilder_;
+
     /**
      *
      *
@@ -7521,6 +7674,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecretManagerKeySource() {
       return secretSourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -7552,6 +7706,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7577,6 +7732,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       secretSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -7600,6 +7756,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       secretSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -7638,6 +7795,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       secretSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -7665,6 +7823,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7680,6 +7839,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         getSecretManagerKeySourceBuilder() {
       return getSecretManagerKeySourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7705,6 +7865,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7748,6 +7909,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.Encryption.DrmSystems.Builder,
             com.google.cloud.video.transcoder.v1.Encryption.DrmSystemsOrBuilder>
         drmSystemsBuilder_;
+
     /**
      *
      *
@@ -7765,6 +7927,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDrmSystems() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -7788,6 +7951,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
         return drmSystemsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7813,6 +7977,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7836,6 +8001,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7869,6 +8035,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7891,6 +8058,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7909,6 +8077,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDrmSystemsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7931,6 +8100,7 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
             : drmSystems_;
       }
     }
+
     /**
      *
      *

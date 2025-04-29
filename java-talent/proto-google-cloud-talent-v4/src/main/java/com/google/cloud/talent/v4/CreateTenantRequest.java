@@ -33,6 +33,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.CreateTenantRequest)
     CreateTenantRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTenantRequest.newBuilder() to construct.
   private CreateTenantRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
 
   public static final int TENANT_FIELD_NUMBER = 2;
   private com.google.cloud.talent.v4.Tenant tenant_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
   public boolean hasTenant() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
   public com.google.cloud.talent.v4.Tenant getTenant() {
     return tenant_ == null ? com.google.cloud.talent.v4.Tenant.getDefaultInstance() : tenant_;
   }
+
   /**
    *
    *
@@ -347,6 +353,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.talent.v4.Tenant.Builder,
             com.google.cloud.talent.v4.TenantOrBuilder>
         tenantBuilder_;
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     public boolean hasTenant() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
         return tenantBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTenantFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
         return tenant_ == null ? com.google.cloud.talent.v4.Tenant.getDefaultInstance() : tenant_;
       }
     }
+
     /**
      *
      *

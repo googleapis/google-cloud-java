@@ -36,6 +36,7 @@ public interface SchedulingOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SchedulingOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface SchedulingOrBuilder
    * @return The enum numeric value on the wire for strategy.
    */
   int getStrategyValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface SchedulingOrBuilder
    * @return Whether the maxWaitDuration field is set.
    */
   boolean hasMaxWaitDuration();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface SchedulingOrBuilder
    * @return The maxWaitDuration.
    */
   com.google.protobuf.Duration getMaxWaitDuration();
+
   /**
    *
    *

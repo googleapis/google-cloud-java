@@ -33,6 +33,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.DataAccessLabel)
     DataAccessLabelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataAccessLabel.newBuilder() to construct.
   private DataAccessLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     private DefinitionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int UDM_QUERY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
   public boolean hasUdmQuery() {
     return definitionCase_ == 3;
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,16 +193,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
-   * Required. The unique resource name of the data access label.
+   * The unique resource name of the data access label.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -213,16 +217,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Required. The unique resource name of the data access label.
+   * The unique resource name of the data access label.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -243,6 +246,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -267,6 +271,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -294,6 +299,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -310,6 +316,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -343,6 +351,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -359,6 +368,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -375,6 +385,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -394,6 +405,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object author_ = "";
+
   /**
    *
    *
@@ -417,6 +429,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -445,6 +458,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastEditor_ = "";
+
   /**
    *
    *
@@ -468,6 +482,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -496,6 +511,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -519,6 +535,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -788,6 +805,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1135,6 +1153,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     public boolean hasUdmQuery() {
       return definitionCase_ == 3;
     }
+
     /**
      *
      *
@@ -1163,6 +1182,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1211,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1233,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1253,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1255,16 +1278,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
-     * Required. The unique resource name of the data access label.
+     * The unique resource name of the data access label.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The name.
      */
@@ -1279,16 +1301,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The unique resource name of the data access label.
+     * The unique resource name of the data access label.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for name.
      */
@@ -1303,16 +1324,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The unique resource name of the data access label.
+     * The unique resource name of the data access label.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1326,16 +1346,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The unique resource name of the data access label.
+     * The unique resource name of the data access label.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1345,16 +1364,15 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The unique resource name of the data access label.
+     * The unique resource name of the data access label.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1371,6 +1389,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1394,6 +1413,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1417,6 +1437,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1460,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1479,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1510,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1503,6 +1527,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1525,6 +1550,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1575,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1597,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1627,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1649,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1666,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1656,6 +1687,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1722,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1706,6 +1739,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1728,6 +1762,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1752,6 +1787,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1809,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1839,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1861,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1878,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1859,6 +1899,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1888,6 +1929,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object author_ = "";
+
     /**
      *
      *
@@ -1910,6 +1952,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1932,6 +1975,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1953,6 +1997,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1970,6 +2015,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1994,6 +2040,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object lastEditor_ = "";
+
     /**
      *
      *
@@ -2016,6 +2063,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2038,6 +2086,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2059,6 +2108,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2076,6 +2126,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2100,6 +2151,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2122,6 +2174,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2197,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2165,6 +2219,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2237,7 @@ public final class DataAccessLabel extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

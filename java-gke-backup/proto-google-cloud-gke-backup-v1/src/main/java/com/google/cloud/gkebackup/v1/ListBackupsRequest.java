@@ -33,6 +33,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.ListBackupsRequest)
     ListBackupsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBackupsRequest.newBuilder() to construct.
   private ListBackupsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -285,6 +294,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -307,6 +317,26 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 6;
+  private boolean returnPartialSuccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will return partial results when
+   * some regions are unreachable and the unreachable field will be populated.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialSuccess() {
+    return returnPartialSuccess_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -338,6 +368,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
     }
+    if (returnPartialSuccess_ != false) {
+      output.writeBool(6, returnPartialSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -362,6 +395,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
+    if (returnPartialSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, returnPartialSuccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -383,6 +419,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -404,6 +441,8 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -504,6 +543,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +588,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       pageToken_ = "";
       filter_ = "";
       orderBy_ = "";
+      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -598,6 +639,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
       }
     }
 
@@ -670,6 +714,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getReturnPartialSuccess() != false) {
+        setReturnPartialSuccess(other.getReturnPartialSuccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -726,6 +773,12 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                returnPartialSuccess_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -746,6 +799,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -771,6 +825,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +851,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +876,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +897,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +925,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -887,6 +946,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -911,6 +971,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +996,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -962,6 +1024,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1052,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1079,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1102,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1132,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1088,6 +1155,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1110,6 +1178,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1131,6 +1200,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1218,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1243,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -1194,6 +1266,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1289,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1311,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1329,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1349,65 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialSuccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field will be populated.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnPartialSuccess.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialSuccess() {
+      return returnPartialSuccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field will be populated.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The returnPartialSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialSuccess(boolean value) {
+
+      returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field will be populated.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialSuccess() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }

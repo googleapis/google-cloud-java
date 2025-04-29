@@ -37,6 +37,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The notebookUpgradeSchedule.
    */
   java.lang.String getNotebookUpgradeSchedule();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return Whether the enableHealthMonitoring field is set.
    */
   boolean hasEnableHealthMonitoring();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return Whether the idleShutdown field is set.
    */
   boolean hasIdleShutdown();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The customGpuDriverPath.
    */
   java.lang.String getCustomGpuDriverPath();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The postStartupScript.
    */
   java.lang.String getPostStartupScript();
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v1.ContainerImage> getKernelsList();
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v1.ContainerImage getKernels(int index);
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * </code>
    */
   int getKernelsCount();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
       getKernelsOrBuilderList();
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return Whether the upgradeable field is set.
    */
   boolean hasUpgradeable();
+
   /**
    *
    *
@@ -289,6 +299,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The enum numeric value on the wire for postStartupScriptBehavior.
    */
   int getPostStartupScriptBehaviorValue();
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return Whether the disableTerminal field is set.
    */
   boolean hasDisableTerminal();
+
   /**
    *
    *
@@ -344,6 +356,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -356,6 +369,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

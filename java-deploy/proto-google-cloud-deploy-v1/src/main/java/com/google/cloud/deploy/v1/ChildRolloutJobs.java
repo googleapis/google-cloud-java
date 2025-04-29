@@ -33,6 +33,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ChildRolloutJobs)
     ChildRolloutJobsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChildRolloutJobs.newBuilder() to construct.
   private ChildRolloutJobs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Job> createRolloutJobs_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.deploy.v1.Job> getCreateRolloutJobsList() {
     return createRolloutJobs_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       getCreateRolloutJobsOrBuilderList() {
     return createRolloutJobs_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
   public int getCreateRolloutJobsCount() {
     return createRolloutJobs_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.deploy.v1.Job getCreateRolloutJobs(int index) {
     return createRolloutJobs_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Job> advanceRolloutJobs_;
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.deploy.v1.Job> getAdvanceRolloutJobsList() {
     return advanceRolloutJobs_;
   }
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       getAdvanceRolloutJobsOrBuilderList() {
     return advanceRolloutJobs_;
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
   public int getAdvanceRolloutJobsCount() {
     return advanceRolloutJobs_.size();
   }
+
   /**
    *
    *
@@ -210,6 +220,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.deploy.v1.Job getAdvanceRolloutJobs(int index) {
     return advanceRolloutJobs_.get(index);
   }
+
   /**
    *
    *
@@ -400,6 +411,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +728,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return createRolloutJobsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return createRolloutJobsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return createRolloutJobsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +909,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +932,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +954,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +976,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.deploy.v1.Job.Builder getCreateRolloutJobsBuilder(int index) {
       return getCreateRolloutJobsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -985,6 +1010,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return createRolloutJobsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1030,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(createRolloutJobs_);
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1046,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       return getCreateRolloutJobsFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.Job.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1034,6 +1062,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       return getCreateRolloutJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.Job.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1105,6 +1134,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return advanceRolloutJobsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1123,6 +1153,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return advanceRolloutJobsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1172,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return advanceRolloutJobsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1197,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1220,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1245,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1270,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1292,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1315,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1338,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1360,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1342,6 +1382,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1397,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.deploy.v1.Job.Builder getAdvanceRolloutJobsBuilder(int index) {
       return getAdvanceRolloutJobsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1374,6 +1416,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return advanceRolloutJobsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1436,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(advanceRolloutJobs_);
       }
     }
+
     /**
      *
      *
@@ -1408,6 +1452,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       return getAdvanceRolloutJobsFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.Job.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1423,6 +1468,7 @@ public final class ChildRolloutJobs extends com.google.protobuf.GeneratedMessage
       return getAdvanceRolloutJobsFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.Job.getDefaultInstance());
     }
+
     /**
      *
      *

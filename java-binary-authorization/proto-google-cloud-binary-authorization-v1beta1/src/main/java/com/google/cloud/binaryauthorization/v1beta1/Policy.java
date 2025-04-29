@@ -33,6 +33,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.Policy)
     PolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Policy.newBuilder() to construct.
   private Policy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,6 +133,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <code>GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLE = 1;</code>
      */
     public static final int ENABLE_VALUE = 1;
+
     /**
      *
      *
@@ -246,6 +249,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -270,6 +274,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -299,6 +304,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -348,6 +355,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GLOBAL_POLICY_EVALUATION_MODE_FIELD_NUMBER = 7;
   private int globalPolicyEvaluationMode_ = 0;
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public int getGlobalPolicyEvaluationModeValue() {
     return globalPolicyEvaluationMode_;
   }
+
   /**
    *
    *
@@ -401,6 +410,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern>
       admissionWhitelistPatterns_;
+
   /**
    *
    *
@@ -419,6 +429,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getAdmissionWhitelistPatternsList() {
     return admissionWhitelistPatterns_;
   }
+
   /**
    *
    *
@@ -438,6 +449,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getAdmissionWhitelistPatternsOrBuilderList() {
     return admissionWhitelistPatterns_;
   }
+
   /**
    *
    *
@@ -455,6 +467,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public int getAdmissionWhitelistPatternsCount() {
     return admissionWhitelistPatterns_.size();
   }
+
   /**
    *
    *
@@ -473,6 +486,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getAdmissionWhitelistPatterns(int index) {
     return admissionWhitelistPatterns_.get(index);
   }
+
   /**
    *
    *
@@ -529,6 +543,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public int getClusterAdmissionRulesCount() {
     return internalGetClusterAdmissionRules().getMap().size();
   }
+
   /**
    *
    *
@@ -553,6 +568,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetClusterAdmissionRules().getMap().containsKey(key);
   }
+
   /** Use {@link #getClusterAdmissionRulesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -560,6 +576,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getClusterAdmissionRules() {
     return getClusterAdmissionRulesMap();
   }
+
   /**
    *
    *
@@ -582,6 +599,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getClusterAdmissionRulesMap() {
     return internalGetClusterAdmissionRules().getMap();
   }
+
   /**
    *
    *
@@ -612,6 +630,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         map = internalGetClusterAdmissionRules().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -680,6 +699,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public int getKubernetesNamespaceAdmissionRulesCount() {
     return internalGetKubernetesNamespaceAdmissionRules().getMap().size();
   }
+
   /**
    *
    *
@@ -699,6 +719,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
   }
+
   /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -706,6 +727,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getKubernetesNamespaceAdmissionRules() {
     return getKubernetesNamespaceAdmissionRulesMap();
   }
+
   /**
    *
    *
@@ -723,6 +745,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getKubernetesNamespaceAdmissionRulesMap() {
     return internalGetKubernetesNamespaceAdmissionRules().getMap();
   }
+
   /**
    *
    *
@@ -748,6 +771,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         map = internalGetKubernetesNamespaceAdmissionRules().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -811,6 +835,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public int getKubernetesServiceAccountAdmissionRulesCount() {
     return internalGetKubernetesServiceAccountAdmissionRules().getMap().size();
   }
+
   /**
    *
    *
@@ -830,6 +855,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
   }
+
   /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -837,6 +863,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getKubernetesServiceAccountAdmissionRules() {
     return getKubernetesServiceAccountAdmissionRulesMap();
   }
+
   /**
    *
    *
@@ -854,6 +881,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getKubernetesServiceAccountAdmissionRulesMap() {
     return internalGetKubernetesServiceAccountAdmissionRules().getMap();
   }
+
   /**
    *
    *
@@ -879,6 +907,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -942,6 +971,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public int getIstioServiceIdentityAdmissionRulesCount() {
     return internalGetIstioServiceIdentityAdmissionRules().getMap().size();
   }
+
   /**
    *
    *
@@ -964,6 +994,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
   }
+
   /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -971,6 +1002,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getIstioServiceIdentityAdmissionRules() {
     return getIstioServiceIdentityAdmissionRulesMap();
   }
+
   /**
    *
    *
@@ -991,6 +1023,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       getIstioServiceIdentityAdmissionRulesMap() {
     return internalGetIstioServiceIdentityAdmissionRules().getMap();
   }
+
   /**
    *
    *
@@ -1019,6 +1052,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         map = internalGetIstioServiceIdentityAdmissionRules().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1050,6 +1084,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_ADMISSION_RULE_FIELD_NUMBER = 4;
   private com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultAdmissionRule_;
+
   /**
    *
    *
@@ -1068,6 +1103,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultAdmissionRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1088,6 +1124,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.getDefaultInstance()
         : defaultAdmissionRule_;
   }
+
   /**
    *
    *
@@ -1110,6 +1147,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1126,6 +1164,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1142,6 +1181,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1485,6 +1525,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1952,6 +1993,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1975,6 +2017,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1998,6 +2041,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2020,6 +2064,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2038,6 +2083,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2063,6 +2109,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2085,6 +2132,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2107,6 +2155,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2128,6 +2177,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2195,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2169,6 +2220,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int globalPolicyEvaluationMode_ = 0;
+
     /**
      *
      *
@@ -2189,6 +2241,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public int getGlobalPolicyEvaluationModeValue() {
       return globalPolicyEvaluationMode_;
     }
+
     /**
      *
      *
@@ -2212,6 +2265,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2239,6 +2293,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2266,6 +2321,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2385,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return admissionWhitelistPatternsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2349,6 +2406,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return admissionWhitelistPatternsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2370,6 +2428,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return admissionWhitelistPatternsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2397,6 +2456,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2423,6 +2483,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2450,6 +2511,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2477,6 +2539,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2502,6 +2565,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2528,6 +2592,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2619,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2577,6 +2643,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2667,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2617,6 +2685,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getAdmissionWhitelistPatternsBuilder(int index) {
       return getAdmissionWhitelistPatternsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2638,6 +2707,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return admissionWhitelistPatternsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2661,6 +2731,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(admissionWhitelistPatterns_);
       }
     }
+
     /**
      *
      *
@@ -2681,6 +2752,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2702,6 +2774,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2761,7 +2834,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ClusterAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ClusterAdmissionRulesConverter clusterAdmissionRulesConverter =
         new ClusterAdmissionRulesConverter();
@@ -2803,6 +2877,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public int getClusterAdmissionRulesCount() {
       return internalGetClusterAdmissionRules().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2827,6 +2902,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetClusterAdmissionRules().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getClusterAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2835,6 +2911,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getClusterAdmissionRules() {
       return getClusterAdmissionRulesMap();
     }
+
     /**
      *
      *
@@ -2858,6 +2935,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getClusterAdmissionRulesMap() {
       return internalGetClusterAdmissionRules().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2891,6 +2969,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           ? clusterAdmissionRulesConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -2928,6 +3007,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableClusterAdmissionRules().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2952,6 +3032,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableClusterAdmissionRules().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2960,6 +3041,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return internalGetMutableClusterAdmissionRules().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2989,6 +3071,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -3020,6 +3103,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -3075,7 +3159,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final KubernetesNamespaceAdmissionRulesConverter
         kubernetesNamespaceAdmissionRulesConverter =
@@ -3119,6 +3204,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public int getKubernetesNamespaceAdmissionRulesCount() {
       return internalGetKubernetesNamespaceAdmissionRules().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3138,6 +3224,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetKubernetesNamespaceAdmissionRules().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3146,6 +3233,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getKubernetesNamespaceAdmissionRules() {
       return getKubernetesNamespaceAdmissionRulesMap();
     }
+
     /**
      *
      *
@@ -3164,6 +3252,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getKubernetesNamespaceAdmissionRulesMap() {
       return internalGetKubernetesNamespaceAdmissionRules().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3192,6 +3281,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           ? kubernetesNamespaceAdmissionRulesConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -3224,6 +3314,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableKubernetesNamespaceAdmissionRules().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3243,6 +3334,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableKubernetesNamespaceAdmissionRules().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3251,6 +3343,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return internalGetMutableKubernetesNamespaceAdmissionRules().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3275,6 +3368,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -3301,6 +3395,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -3351,7 +3446,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return KubernetesServiceAccountAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final KubernetesServiceAccountAdmissionRulesConverter
         kubernetesServiceAccountAdmissionRulesConverter =
@@ -3396,6 +3492,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public int getKubernetesServiceAccountAdmissionRulesCount() {
       return internalGetKubernetesServiceAccountAdmissionRules().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3417,6 +3514,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           .ensureBuilderMap()
           .containsKey(key);
     }
+
     /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3425,6 +3523,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getKubernetesServiceAccountAdmissionRules() {
       return getKubernetesServiceAccountAdmissionRulesMap();
     }
+
     /**
      *
      *
@@ -3443,6 +3542,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getKubernetesServiceAccountAdmissionRulesMap() {
       return internalGetKubernetesServiceAccountAdmissionRules().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3471,6 +3571,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           ? kubernetesServiceAccountAdmissionRulesConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -3503,6 +3604,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableKubernetesServiceAccountAdmissionRules().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3522,6 +3624,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableKubernetesServiceAccountAdmissionRules().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3530,6 +3633,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return internalGetMutableKubernetesServiceAccountAdmissionRules().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3554,6 +3658,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3580,6 +3685,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3631,7 +3737,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return IstioServiceIdentityAdmissionRulesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final IstioServiceIdentityAdmissionRulesConverter
         istioServiceIdentityAdmissionRulesConverter =
@@ -3675,6 +3782,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public int getIstioServiceIdentityAdmissionRulesCount() {
       return internalGetIstioServiceIdentityAdmissionRules().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3697,6 +3805,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetIstioServiceIdentityAdmissionRules().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3705,6 +3814,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getIstioServiceIdentityAdmissionRules() {
       return getIstioServiceIdentityAdmissionRulesMap();
     }
+
     /**
      *
      *
@@ -3726,6 +3836,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         getIstioServiceIdentityAdmissionRulesMap() {
       return internalGetIstioServiceIdentityAdmissionRules().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3757,6 +3868,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           ? istioServiceIdentityAdmissionRulesConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -3792,6 +3904,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableIstioServiceIdentityAdmissionRules().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3814,6 +3927,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableIstioServiceIdentityAdmissionRules().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3822,6 +3936,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return internalGetMutableIstioServiceIdentityAdmissionRules().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3849,6 +3964,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *
@@ -3878,6 +3994,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *
@@ -3917,6 +4034,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.Builder,
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRuleOrBuilder>
         defaultAdmissionRuleBuilder_;
+
     /**
      *
      *
@@ -3934,6 +4052,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultAdmissionRule() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3957,6 +4076,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return defaultAdmissionRuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3983,6 +4103,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4006,6 +4127,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4039,6 +4161,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4061,6 +4184,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4079,6 +4203,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultAdmissionRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4101,6 +4226,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             : defaultAdmissionRule_;
       }
     }
+
     /**
      *
      *
@@ -4136,6 +4262,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -4152,6 +4279,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -4174,6 +4302,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4198,6 +4327,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4219,6 +4349,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4248,6 +4379,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4269,6 +4401,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4285,6 +4418,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4305,6 +4439,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

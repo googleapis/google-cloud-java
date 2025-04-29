@@ -34,6 +34,7 @@ public interface ListVoicesResponseOrBuilder
    * <code>repeated .google.cloud.texttospeech.v1beta1.Voice voices = 1;</code>
    */
   java.util.List<com.google.cloud.texttospeech.v1beta1.Voice> getVoicesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVoicesResponseOrBuilder
    * <code>repeated .google.cloud.texttospeech.v1beta1.Voice voices = 1;</code>
    */
   com.google.cloud.texttospeech.v1beta1.Voice getVoices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVoicesResponseOrBuilder
    * <code>repeated .google.cloud.texttospeech.v1beta1.Voice voices = 1;</code>
    */
   int getVoicesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListVoicesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.texttospeech.v1beta1.VoiceOrBuilder>
       getVoicesOrBuilderList();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface CalculatedMetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CalculatedMetricOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CalculatedMetricOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface CalculatedMetricOrBuilder
    * @return The calculatedMetricId.
    */
   java.lang.String getCalculatedMetricId();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface CalculatedMetricOrBuilder
    * @return The enum numeric value on the wire for metricUnit.
    */
   int getMetricUnitValue();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface CalculatedMetricOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.CalculatedMetric.RestrictedMetricType>
       getRestrictedMetricTypeList();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface CalculatedMetricOrBuilder
    * @return The count of restrictedMetricType.
    */
   int getRestrictedMetricTypeCount();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface CalculatedMetricOrBuilder
    */
   com.google.analytics.admin.v1alpha.CalculatedMetric.RestrictedMetricType getRestrictedMetricType(
       int index);
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface CalculatedMetricOrBuilder
    * @return A list containing the enum numeric values on the wire for restrictedMetricType.
    */
   java.util.List<java.lang.Integer> getRestrictedMetricTypeValueList();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface CalculatedMetricOrBuilder
    * @return The formula.
    */
   java.lang.String getFormula();
+
   /**
    *
    *

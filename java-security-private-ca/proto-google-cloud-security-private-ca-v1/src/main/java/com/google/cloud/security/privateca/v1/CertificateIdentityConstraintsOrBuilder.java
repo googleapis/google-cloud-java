@@ -39,6 +39,7 @@ public interface CertificateIdentityConstraintsOrBuilder
    * @return Whether the celExpression field is set.
    */
   boolean hasCelExpression();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CertificateIdentityConstraintsOrBuilder
    * @return The celExpression.
    */
   com.google.type.Expr getCelExpression();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CertificateIdentityConstraintsOrBuilder
    * @return Whether the allowSubjectPassthrough field is set.
    */
   boolean hasAllowSubjectPassthrough();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CertificateIdentityConstraintsOrBuilder
    * @return Whether the allowSubjectAltNamesPassthrough field is set.
    */
   boolean hasAllowSubjectAltNamesPassthrough();
+
   /**
    *
    *

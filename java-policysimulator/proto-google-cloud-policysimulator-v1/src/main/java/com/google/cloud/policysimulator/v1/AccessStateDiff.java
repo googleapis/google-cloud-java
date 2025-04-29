@@ -35,6 +35,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.policysimulator.v1.AccessStateDiff)
     AccessStateDiffOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessStateDiff.newBuilder() to construct.
   private AccessStateDiff(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,6 +180,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_CHANGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCESS_CHANGE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -191,6 +193,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
      * <code>NO_CHANGE = 1;</code>
      */
     public static final int NO_CHANGE_VALUE = 1;
+
     /**
      *
      *
@@ -202,6 +205,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
      * <code>UNKNOWN_CHANGE = 2;</code>
      */
     public static final int UNKNOWN_CHANGE_VALUE = 2;
+
     /**
      *
      *
@@ -213,6 +217,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_REVOKED = 3;</code>
      */
     public static final int ACCESS_REVOKED_VALUE = 3;
+
     /**
      *
      *
@@ -225,6 +230,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_GAINED = 4;</code>
      */
     public static final int ACCESS_GAINED_VALUE = 4;
+
     /**
      *
      *
@@ -242,6 +248,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_MAYBE_REVOKED = 5;</code>
      */
     public static final int ACCESS_MAYBE_REVOKED_VALUE = 5;
+
     /**
      *
      *
@@ -358,6 +365,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int BASELINE_FIELD_NUMBER = 1;
   private com.google.cloud.policysimulator.v1.ExplainedAccess baseline_;
+
   /**
    *
    *
@@ -377,6 +385,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
   public boolean hasBaseline() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -398,6 +407,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.policysimulator.v1.ExplainedAccess.getDefaultInstance()
         : baseline_;
   }
+
   /**
    *
    *
@@ -420,6 +430,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
 
   public static final int SIMULATED_FIELD_NUMBER = 2;
   private com.google.cloud.policysimulator.v1.ExplainedAccess simulated_;
+
   /**
    *
    *
@@ -438,6 +449,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
   public boolean hasSimulated() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -458,6 +470,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.policysimulator.v1.ExplainedAccess.getDefaultInstance()
         : simulated_;
   }
+
   /**
    *
    *
@@ -479,6 +492,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
 
   public static final int ACCESS_CHANGE_FIELD_NUMBER = 3;
   private int accessChange_ = 0;
+
   /**
    *
    *
@@ -496,6 +510,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
   public int getAccessChangeValue() {
     return accessChange_;
   }
+
   /**
    *
    *
@@ -712,6 +727,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -949,6 +965,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.policysimulator.v1.ExplainedAccess.Builder,
             com.google.cloud.policysimulator.v1.ExplainedAccessOrBuilder>
         baselineBuilder_;
+
     /**
      *
      *
@@ -967,6 +984,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
     public boolean hasBaseline() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -991,6 +1009,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
         return baselineBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1036,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1061,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1094,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1118,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1137,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getBaselineFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1136,6 +1160,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
             : baseline_;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1197,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.policysimulator.v1.ExplainedAccess.Builder,
             com.google.cloud.policysimulator.v1.ExplainedAccessOrBuilder>
         simulatedBuilder_;
+
     /**
      *
      *
@@ -1189,6 +1215,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
     public boolean hasSimulated() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1212,6 +1239,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
         return simulatedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1265,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1289,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1321,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1344,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1362,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSimulatedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1351,6 +1384,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
             : simulated_;
       }
     }
+
     /**
      *
      *
@@ -1381,6 +1415,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
     }
 
     private int accessChange_ = 0;
+
     /**
      *
      *
@@ -1398,6 +1433,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
     public int getAccessChangeValue() {
       return accessChange_;
     }
+
     /**
      *
      *
@@ -1418,6 +1454,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1477,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.policysimulator.v1.AccessStateDiff.AccessChangeType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1464,6 +1502,7 @@ public final class AccessStateDiff extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

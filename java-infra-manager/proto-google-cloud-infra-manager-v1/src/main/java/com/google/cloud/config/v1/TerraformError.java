@@ -33,6 +33,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.TerraformError)
     TerraformErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TerraformError.newBuilder() to construct.
   private TerraformError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceAddress_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_RESPONSE_CODE_FIELD_NUMBER = 2;
   private int httpResponseCode_ = 0;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorDescription_ = "";
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -426,6 +435,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +676,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object resourceAddress_ = "";
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int httpResponseCode_;
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     public int getHttpResponseCode() {
       return httpResponseCode_;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorDescription_ = "";
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
     public boolean hasError() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -977,6 +1002,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1073,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1093,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1108,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1094,6 +1125,7 @@ public final class TerraformError extends com.google.protobuf.GeneratedMessageV3
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *

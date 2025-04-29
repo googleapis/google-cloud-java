@@ -33,6 +33,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ThresholdConfig)
     ThresholdConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ThresholdConfig.newBuilder() to construct.
   private ThresholdConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     private ThresholdCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasValue() {
     return thresholdCase_ == 1;
   }
+
   /**
    *
    *
@@ -334,6 +338,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +567,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasValue() {
       return thresholdCase_ == 1;
     }
+
     /**
      *
      *
@@ -586,6 +592,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -612,6 +619,7 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

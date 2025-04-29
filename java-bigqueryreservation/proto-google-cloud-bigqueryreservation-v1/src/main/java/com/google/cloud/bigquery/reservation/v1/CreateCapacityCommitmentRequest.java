@@ -34,6 +34,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest)
     CreateCapacityCommitmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateCapacityCommitmentRequest.newBuilder() to construct.
   private CreateCapacityCommitmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
 
   public static final int CAPACITY_COMMITMENT_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.reservation.v1.CapacityCommitment capacityCommitment_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
   public boolean hasCapacityCommitment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
         : capacityCommitment_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
 
   public static final int ENFORCE_SINGLE_ADMIN_PROJECT_PER_ORG_FIELD_NUMBER = 4;
   private boolean enforceSingleAdminProjectPerOrg_ = false;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object capacityCommitmentId_ = "";
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -452,6 +461,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -708,6 +718,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -733,6 +744,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +816,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +849,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment.Builder,
             com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder>
         capacityCommitmentBuilder_;
+
     /**
      *
      *
@@ -849,6 +865,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     public boolean hasCapacityCommitment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
         return capacityCommitmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -894,6 +912,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +987,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return getCapacityCommitmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1002,6 +1025,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
             : capacityCommitment_;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1054,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     }
 
     private boolean enforceSingleAdminProjectPerOrg_;
+
     /**
      *
      *
@@ -1046,6 +1071,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     public boolean getEnforceSingleAdminProjectPerOrg() {
       return enforceSingleAdminProjectPerOrg_;
     }
+
     /**
      *
      *
@@ -1066,6 +1092,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1113,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object capacityCommitmentId_ = "";
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1167,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1193,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1215,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

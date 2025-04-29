@@ -40,6 +40,7 @@ public interface ReservationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -111,6 +112,7 @@ public interface ReservationOrBuilder
    * @return Whether the autoscale field is set.
    */
   boolean hasAutoscale();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface ReservationOrBuilder
    * @return The autoscale.
    */
   com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale getAutoscale();
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public interface ReservationOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
+
   /**
    *
    *
@@ -182,6 +186,7 @@ public interface ReservationOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
+
   /**
    *
    *
@@ -208,6 +213,7 @@ public interface ReservationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface ReservationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -266,6 +273,7 @@ public interface ReservationOrBuilder
    * @return The enum numeric value on the wire for edition.
    */
   int getEditionValue();
+
   /**
    *
    *
@@ -295,6 +303,7 @@ public interface ReservationOrBuilder
    * @return The primaryLocation.
    */
   java.lang.String getPrimaryLocation();
+
   /**
    *
    *
@@ -330,6 +339,7 @@ public interface ReservationOrBuilder
    * @return The secondaryLocation.
    */
   java.lang.String getSecondaryLocation();
+
   /**
    *
    *
@@ -365,6 +375,7 @@ public interface ReservationOrBuilder
    * @return The originalPrimaryLocation.
    */
   java.lang.String getOriginalPrimaryLocation();
+
   /**
    *
    *
@@ -403,6 +414,7 @@ public interface ReservationOrBuilder
    * @return Whether the replicationStatus field is set.
    */
   boolean hasReplicationStatus();
+
   /**
    *
    *
@@ -424,6 +436,7 @@ public interface ReservationOrBuilder
    * @return The replicationStatus.
    */
   com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus getReplicationStatus();
+
   /**
    *
    *

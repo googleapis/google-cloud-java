@@ -34,6 +34,7 @@ public final class ExportPredictionResultMetadataResponse
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportPredictionResultMetadataResponse)
     ExportPredictionResultMetadataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportPredictionResultMetadataResponse.newBuilder() to construct.
   private ExportPredictionResultMetadataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -222,6 +223,7 @@ public final class ExportPredictionResultMetadataResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

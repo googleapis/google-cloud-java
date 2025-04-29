@@ -38,6 +38,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the assessmentTaskDetails field is set.
    */
   boolean hasAssessmentTaskDetails();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface MigrationTaskOrBuilder
    * @return The assessmentTaskDetails.
    */
   com.google.cloud.bigquery.migration.v2alpha.AssessmentTaskDetails getAssessmentTaskDetails();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the translationTaskDetails field is set.
    */
   boolean hasTranslationTaskDetails();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface MigrationTaskOrBuilder
    * @return The translationTaskDetails.
    */
   com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails getTranslationTaskDetails();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface MigrationTaskOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface MigrationTaskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the details field is set.
    */
   boolean hasDetails();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface MigrationTaskOrBuilder
    * @return The details.
    */
   com.google.protobuf.Any getDetails();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface MigrationTaskOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the processingError field is set.
    */
   boolean hasProcessingError();
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public interface MigrationTaskOrBuilder
    * @return The processingError.
    */
   com.google.rpc.ErrorInfo getProcessingError();
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public interface MigrationTaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -317,6 +330,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface MigrationTaskOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
+
   /**
    *
    *
@@ -354,6 +369,7 @@ public interface MigrationTaskOrBuilder
    * @return Whether the orchestrationResult field is set.
    */
   boolean hasOrchestrationResult();
+
   /**
    *
    *
@@ -369,6 +385,7 @@ public interface MigrationTaskOrBuilder
    */
   com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult
       getOrchestrationResult();
+
   /**
    *
    *

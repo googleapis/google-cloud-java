@@ -36,6 +36,7 @@ public interface ImagePropertiesOrBuilder
    * @return Whether the dominantColors field is set.
    */
   boolean hasDominantColors();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImagePropertiesOrBuilder
    * @return The dominantColors.
    */
   com.google.cloud.vision.v1p2beta1.DominantColorsAnnotation getDominantColors();
+
   /**
    *
    *

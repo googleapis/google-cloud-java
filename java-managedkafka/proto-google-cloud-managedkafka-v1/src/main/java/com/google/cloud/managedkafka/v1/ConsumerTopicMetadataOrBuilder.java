@@ -37,6 +37,7 @@ public interface ConsumerTopicMetadataOrBuilder
    * </code>
    */
   int getPartitionsCount();
+
   /**
    *
    *
@@ -50,10 +51,12 @@ public interface ConsumerTopicMetadataOrBuilder
    * </code>
    */
   boolean containsPartitions(int key);
+
   /** Use {@link #getPartitionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.Integer, com.google.cloud.managedkafka.v1.ConsumerPartitionMetadata>
       getPartitions();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface ConsumerTopicMetadataOrBuilder
    */
   java.util.Map<java.lang.Integer, com.google.cloud.managedkafka.v1.ConsumerPartitionMetadata>
       getPartitionsMap();
+
   /**
    *
    *
@@ -85,6 +89,7 @@ public interface ConsumerTopicMetadataOrBuilder
       int key,
       /* nullable */
       com.google.cloud.managedkafka.v1.ConsumerPartitionMetadata defaultValue);
+
   /**
    *
    *

@@ -178,7 +178,8 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetClusterCertificateAuthority, expected %s or %s",
+                  "Unrecognized response type %s for method GetClusterCertificateAuthority,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CertificateAuthority.class.getName(),
                   Exception.class.getName())));
@@ -199,7 +200,8 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RescheduleClusterMaintenance, expected %s or %s",
+                  "Unrecognized response type %s for method RescheduleClusterMaintenance, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -221,7 +223,8 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListBackupCollections, expected %s or %s",
+                  "Unrecognized response type %s for method ListBackupCollections, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListBackupCollectionsResponse.class.getName(),
                   Exception.class.getName())));

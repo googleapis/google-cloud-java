@@ -33,6 +33,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SearchResultItem)
     SearchResultItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchResultItem.newBuilder() to construct.
   private SearchResultItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asset_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Partition.TemporalPartition> segments_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       getSegmentsList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       getSegmentsOrBuilderList() {
     return segments_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public int getSegmentsCount() {
     return segments_.size();
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.visionai.v1.Partition.TemporalPartition getSegments(int index) {
     return segments_.get(index);
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
 
   public static final int SEGMENT_FIELD_NUMBER = 5;
   private com.google.cloud.visionai.v1.Partition.TemporalPartition segment_;
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public boolean hasSegment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance()
         : segment_;
   }
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
 
   public static final int RELEVANCE_FIELD_NUMBER = 6;
   private double relevance_ = 0D;
+
   /**
    *
    *
@@ -293,6 +305,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Annotation> requestedAnnotations_;
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.visionai.v1.Annotation> getRequestedAnnotationsList() {
     return requestedAnnotations_;
   }
+
   /**
    *
    *
@@ -322,6 +336,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       getRequestedAnnotationsOrBuilderList() {
     return requestedAnnotations_;
   }
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public int getRequestedAnnotationsCount() {
     return requestedAnnotations_.size();
   }
+
   /**
    *
    *
@@ -350,6 +366,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.visionai.v1.Annotation getRequestedAnnotations(int index) {
     return requestedAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -371,6 +388,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.AnnotationMatchingResult>
       annotationMatchingResults_;
+
   /**
    *
    *
@@ -389,6 +407,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       getAnnotationMatchingResultsList() {
     return annotationMatchingResults_;
   }
+
   /**
    *
    *
@@ -407,6 +426,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       getAnnotationMatchingResultsOrBuilderList() {
     return annotationMatchingResults_;
   }
+
   /**
    *
    *
@@ -424,6 +444,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
   public int getAnnotationMatchingResultsCount() {
     return annotationMatchingResults_.size();
   }
+
   /**
    *
    *
@@ -442,6 +463,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       int index) {
     return annotationMatchingResults_.get(index);
   }
+
   /**
    *
    *
@@ -684,6 +706,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1087,6 +1110,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object asset_ = "";
+
     /**
      *
      *
@@ -1111,6 +1135,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1160,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1184,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1204,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1269,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return segmentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1290,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return segmentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1311,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return segmentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1339,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1365,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1392,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1420,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1445,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1471,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1497,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1521,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1545,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1563,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1544,6 +1585,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1566,6 +1608,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(segments_);
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1627,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1603,6 +1647,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1644,6 +1689,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
             com.google.cloud.visionai.v1.Partition.TemporalPartition.Builder,
             com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
         segmentBuilder_;
+
     /**
      *
      *
@@ -1658,6 +1704,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
     public boolean hasSegment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1678,6 +1725,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return segmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1700,6 +1748,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1769,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1798,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1818,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1833,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1799,6 +1852,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
             : segment_;
       }
     }
+
     /**
      *
      *
@@ -1826,6 +1880,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
     }
 
     private double relevance_;
+
     /**
      *
      *
@@ -1847,6 +1902,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
     public double getRelevance() {
       return relevance_;
     }
+
     /**
      *
      *
@@ -1872,6 +1928,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1930,6 +1987,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return requestedAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1947,6 +2005,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return requestedAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1964,6 +2023,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return requestedAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1988,6 +2048,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2070,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2032,6 +2094,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2119,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2141,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2163,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2119,6 +2185,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2139,6 +2206,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2227,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2242,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         int index) {
       return getRequestedAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2191,6 +2261,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return requestedAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2209,6 +2280,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(requestedAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -2223,6 +2295,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       return getRequestedAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2238,6 +2311,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       return getRequestedAnnotationsFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.Annotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2312,6 +2386,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return annotationMatchingResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2332,6 +2407,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return annotationMatchingResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2353,6 +2429,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return annotationMatchingResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2380,6 +2457,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2404,6 +2482,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2510,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2538,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2482,6 +2563,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2506,6 +2588,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2531,6 +2614,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2638,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2577,6 +2662,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2594,6 +2680,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         getAnnotationMatchingResultsBuilder(int index) {
       return getAnnotationMatchingResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2615,6 +2702,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return annotationMatchingResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2636,6 +2724,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(annotationMatchingResults_);
       }
     }
+
     /**
      *
      *
@@ -2654,6 +2743,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
       return getAnnotationMatchingResultsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.AnnotationMatchingResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2673,6 +2763,7 @@ public final class SearchResultItem extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.visionai.v1.AnnotationMatchingResult.getDefaultInstance());
     }
+
     /**
      *
      *

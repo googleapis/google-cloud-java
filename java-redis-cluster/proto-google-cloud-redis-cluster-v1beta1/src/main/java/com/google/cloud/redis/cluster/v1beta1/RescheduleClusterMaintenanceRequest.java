@@ -34,6 +34,7 @@ public final class RescheduleClusterMaintenanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest)
     RescheduleClusterMaintenanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RescheduleClusterMaintenanceRequest.newBuilder() to construct.
   private RescheduleClusterMaintenanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -121,6 +122,7 @@ public final class RescheduleClusterMaintenanceRequest
      * <code>RESCHEDULE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESCHEDULE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class RescheduleClusterMaintenanceRequest
      * <code>IMMEDIATE = 1;</code>
      */
     public static final int IMMEDIATE_VALUE = 1;
+
     /**
      *
      *
@@ -233,6 +236,7 @@ public final class RescheduleClusterMaintenanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -260,6 +264,7 @@ public final class RescheduleClusterMaintenanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +295,7 @@ public final class RescheduleClusterMaintenanceRequest
 
   public static final int RESCHEDULE_TYPE_FIELD_NUMBER = 2;
   private int rescheduleType_ = 0;
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class RescheduleClusterMaintenanceRequest
   public int getRescheduleTypeValue() {
     return rescheduleType_;
   }
+
   /**
    *
    *
@@ -337,6 +344,7 @@ public final class RescheduleClusterMaintenanceRequest
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp scheduleTime_;
+
   /**
    *
    *
@@ -355,6 +363,7 @@ public final class RescheduleClusterMaintenanceRequest
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -375,6 +384,7 @@ public final class RescheduleClusterMaintenanceRequest
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
+
   /**
    *
    *
@@ -590,6 +600,7 @@ public final class RescheduleClusterMaintenanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -828,6 +839,7 @@ public final class RescheduleClusterMaintenanceRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -854,6 +866,7 @@ public final class RescheduleClusterMaintenanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +893,7 @@ public final class RescheduleClusterMaintenanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -905,6 +919,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +941,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +970,7 @@ public final class RescheduleClusterMaintenanceRequest
     }
 
     private int rescheduleType_ = 0;
+
     /**
      *
      *
@@ -972,6 +989,7 @@ public final class RescheduleClusterMaintenanceRequest
     public int getRescheduleTypeValue() {
       return rescheduleType_;
     }
+
     /**
      *
      *
@@ -993,6 +1011,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1038,7 @@ public final class RescheduleClusterMaintenanceRequest
               .RescheduleType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1045,6 +1065,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1093,7 @@ public final class RescheduleClusterMaintenanceRequest
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
+
     /**
      *
      *
@@ -1089,6 +1111,7 @@ public final class RescheduleClusterMaintenanceRequest
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1112,6 +1135,7 @@ public final class RescheduleClusterMaintenanceRequest
         return scheduleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1161,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1184,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1215,7 @@ public final class RescheduleClusterMaintenanceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1238,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1256,7 @@ public final class RescheduleClusterMaintenanceRequest
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1249,6 +1278,7 @@ public final class RescheduleClusterMaintenanceRequest
             : scheduleTime_;
       }
     }
+
     /**
      *
      *

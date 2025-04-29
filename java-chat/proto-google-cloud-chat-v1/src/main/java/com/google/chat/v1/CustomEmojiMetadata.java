@@ -33,6 +33,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.chat.v1.CustomEmojiMetadata)
     CustomEmojiMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomEmojiMetadata.newBuilder() to construct.
   private CustomEmojiMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CUSTOM_EMOJI_FIELD_NUMBER = 1;
   private com.google.chat.v1.CustomEmoji customEmoji_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasCustomEmoji() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
         ? com.google.chat.v1.CustomEmoji.getDefaultInstance()
         : customEmoji_;
   }
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +483,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
             com.google.chat.v1.CustomEmoji.Builder,
             com.google.chat.v1.CustomEmojiOrBuilder>
         customEmojiBuilder_;
+
     /**
      *
      *
@@ -492,6 +498,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasCustomEmoji() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
         return customEmojiBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -534,6 +542,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +562,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -580,6 +590,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -599,6 +610,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +625,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCustomEmojiFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -631,6 +644,7 @@ public final class CustomEmojiMetadata extends com.google.protobuf.GeneratedMess
             : customEmoji_;
       }
     }
+
     /**
      *
      *

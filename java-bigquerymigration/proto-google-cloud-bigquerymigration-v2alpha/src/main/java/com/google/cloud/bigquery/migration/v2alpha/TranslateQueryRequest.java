@@ -33,6 +33,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest)
     TranslateQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TranslateQueryRequest.newBuilder() to construct.
   private TranslateQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,6 +110,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
      * <code>SQL_TRANSLATION_SOURCE_DIALECT_UNSPECIFIED = 0;</code>
      */
     public static final int SQL_TRANSLATION_SOURCE_DIALECT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -210,6 +212,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -236,6 +239,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -265,6 +269,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
 
   public static final int SOURCE_DIALECT_FIELD_NUMBER = 2;
   private int sourceDialect_ = 0;
+
   /**
    *
    *
@@ -282,6 +287,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
   public int getSourceDialectValue() {
     return sourceDialect_;
   }
+
   /**
    *
    *
@@ -313,6 +319,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -336,6 +343,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -545,6 +553,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -762,6 +771,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -787,6 +797,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -812,6 +823,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +848,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +869,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +897,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int sourceDialect_ = 0;
+
     /**
      *
      *
@@ -900,6 +915,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
     public int getSourceDialectValue() {
       return sourceDialect_;
     }
+
     /**
      *
      *
@@ -920,6 +936,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +963,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
               .SqlTranslationSourceDialect.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -972,6 +990,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1012,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -1015,6 +1035,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1098,7 @@ public final class TranslateQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

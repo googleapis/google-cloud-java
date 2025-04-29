@@ -39,6 +39,7 @@ public interface LoggingConfigOrBuilder
    */
   java.util.List<com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableAction>
       getLogActionsList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface LoggingConfigOrBuilder
    * @return The count of logActions.
    */
   int getLogActionsCount();
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface LoggingConfigOrBuilder
    * @return The logActions at the given index.
    */
   com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableAction getLogActions(int index);
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface LoggingConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for logActions.
    */
   java.util.List<java.lang.Integer> getLogActionsValueList();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface LoggingConfigOrBuilder
    */
   java.util.List<com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableActionState>
       getLogActionStatesList();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface LoggingConfigOrBuilder
    * @return The count of logActionStates.
    */
   int getLogActionStatesCount();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface LoggingConfigOrBuilder
    */
   com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableActionState getLogActionStates(
       int index);
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public interface LoggingConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for logActionStates.
    */
   java.util.List<java.lang.Integer> getLogActionStatesValueList();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateDataAccessLabelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateDataAccessLabelRequestOrBuilder
    * @return Whether the dataAccessLabel field is set.
    */
   boolean hasDataAccessLabel();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateDataAccessLabelRequestOrBuilder
    * @return The dataAccessLabel.
    */
   google.cloud.chronicle.v1.DataAccessLabel getDataAccessLabel();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface CreateDataAccessLabelRequestOrBuilder
    * @return The dataAccessLabelId.
    */
   java.lang.String getDataAccessLabelId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface DependencyErrorDetailOrBuilder
    * @return The enum numeric value on the wire for error.
    */
   int getErrorValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DependencyErrorDetailOrBuilder
    * @return Whether the errorTime field is set.
    */
   boolean hasErrorTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DependencyErrorDetailOrBuilder
    * @return The errorTime.
    */
   com.google.protobuf.Timestamp getErrorTime();
+
   /**
    *
    *

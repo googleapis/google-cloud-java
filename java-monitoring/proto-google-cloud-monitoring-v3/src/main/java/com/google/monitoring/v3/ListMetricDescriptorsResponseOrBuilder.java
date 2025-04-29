@@ -35,6 +35,7 @@ public interface ListMetricDescriptorsResponseOrBuilder
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
   java.util.List<com.google.api.MetricDescriptor> getMetricDescriptorsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListMetricDescriptorsResponseOrBuilder
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
   com.google.api.MetricDescriptor getMetricDescriptors(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListMetricDescriptorsResponseOrBuilder
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
   int getMetricDescriptorsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListMetricDescriptorsResponseOrBuilder
    */
   java.util.List<? extends com.google.api.MetricDescriptorOrBuilder>
       getMetricDescriptorsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListMetricDescriptorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

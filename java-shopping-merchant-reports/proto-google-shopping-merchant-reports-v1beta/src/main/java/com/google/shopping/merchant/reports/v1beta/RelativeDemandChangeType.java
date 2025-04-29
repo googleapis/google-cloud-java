@@ -34,6 +34,7 @@ public final class RelativeDemandChangeType extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.RelativeDemandChangeType)
     RelativeDemandChangeTypeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RelativeDemandChangeType.newBuilder() to construct.
   private RelativeDemandChangeType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class RelativeDemandChangeType extends com.google.protobuf.Generate
      * <code>RELATIVE_DEMAND_CHANGE_TYPE_ENUM_UNSPECIFIED = 0;</code>
      */
     public static final int RELATIVE_DEMAND_CHANGE_TYPE_ENUM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class RelativeDemandChangeType extends com.google.protobuf.Generate
      * <code>SINKER = 1;</code>
      */
     public static final int SINKER_VALUE = 1;
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class RelativeDemandChangeType extends com.google.protobuf.Generate
      * <code>FLAT = 2;</code>
      */
     public static final int FLAT_VALUE = 2;
+
     /**
      *
      *
@@ -399,6 +403,7 @@ public final class RelativeDemandChangeType extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

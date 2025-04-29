@@ -40,7 +40,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-/** @deprecated v3 GAPIC client of ResourceManager is now available */
+/**
+ * @deprecated v3 GAPIC client of ResourceManager is now available
+ */
 @Deprecated
 final class ResourceManagerImpl extends BaseService<ResourceManagerOptions>
     implements ResourceManager {

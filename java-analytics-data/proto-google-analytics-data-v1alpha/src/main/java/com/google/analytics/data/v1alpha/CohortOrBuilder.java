@@ -39,6 +39,7 @@ public interface CohortOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CohortOrBuilder
    * @return The dimension.
    */
   java.lang.String getDimension();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface CohortOrBuilder
    * @return Whether the dateRange field is set.
    */
   boolean hasDateRange();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface CohortOrBuilder
    * @return The dateRange.
    */
   com.google.analytics.data.v1alpha.DateRange getDateRange();
+
   /**
    *
    *

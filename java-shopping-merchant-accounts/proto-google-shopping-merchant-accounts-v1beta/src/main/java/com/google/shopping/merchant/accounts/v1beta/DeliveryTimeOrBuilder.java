@@ -39,6 +39,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the minTransitDays field is set.
    */
   boolean hasMinTransitDays();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the maxTransitDays field is set.
    */
   boolean hasMaxTransitDays();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the cutoffTime field is set.
    */
   boolean hasCutoffTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface DeliveryTimeOrBuilder
    * @return The cutoffTime.
    */
   com.google.shopping.merchant.accounts.v1beta.CutoffTime getCutoffTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the minHandlingDays field is set.
    */
   boolean hasMinHandlingDays();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the maxHandlingDays field is set.
    */
   boolean hasMaxHandlingDays();
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the transitTimeTable field is set.
    */
   boolean hasTransitTimeTable();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface DeliveryTimeOrBuilder
    * @return The transitTimeTable.
    */
   com.google.shopping.merchant.accounts.v1beta.TransitTable getTransitTimeTable();
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the handlingBusinessDayConfig field is set.
    */
   boolean hasHandlingBusinessDayConfig();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface DeliveryTimeOrBuilder
    * @return The handlingBusinessDayConfig.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig getHandlingBusinessDayConfig();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface DeliveryTimeOrBuilder
    * @return Whether the transitBusinessDayConfig field is set.
    */
   boolean hasTransitBusinessDayConfig();
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface DeliveryTimeOrBuilder
    * @return The transitBusinessDayConfig.
    */
   com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig getTransitBusinessDayConfig();
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public interface DeliveryTimeOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.WarehouseBasedDeliveryTime>
       getWarehouseBasedDeliveryTimesList();
+
   /**
    *
    *
@@ -354,6 +367,7 @@ public interface DeliveryTimeOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.WarehouseBasedDeliveryTime
       getWarehouseBasedDeliveryTimes(int index);
+
   /**
    *
    *
@@ -370,6 +384,7 @@ public interface DeliveryTimeOrBuilder
    * </code>
    */
   int getWarehouseBasedDeliveryTimesCount();
+
   /**
    *
    *
@@ -389,6 +404,7 @@ public interface DeliveryTimeOrBuilder
           ? extends
               com.google.shopping.merchant.accounts.v1beta.WarehouseBasedDeliveryTimeOrBuilder>
       getWarehouseBasedDeliveryTimesOrBuilderList();
+
   /**
    *
    *

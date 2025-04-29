@@ -33,6 +33,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.NetworkConnectionList)
     NetworkConnectionListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkConnectionList.newBuilder() to construct.
   private NetworkConnectionList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.NetworkConnection> entries_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.migrationcenter.v1.NetworkConnection> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
   public com.google.cloud.migrationcenter.v1.NetworkConnection getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +568,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +670,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +736,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +812,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -810,6 +830,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -827,6 +848,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -840,6 +862,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
       return getEntriesFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.NetworkConnection.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -855,6 +878,7 @@ public final class NetworkConnectionList extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.NetworkConnection.getDefaultInstance());
     }
+
     /**
      *
      *

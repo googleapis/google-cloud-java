@@ -37,6 +37,7 @@ public interface FeatureViewDirectWriteRequestOrBuilder
    * @return The featureView.
    */
   java.lang.String getFeatureView();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface FeatureViewDirectWriteRequestOrBuilder
   java.util.List<
           com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>
       getDataKeyAndFeatureValuesList();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface FeatureViewDirectWriteRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues
       getDataKeyAndFeatureValues(int index);
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface FeatureViewDirectWriteRequestOrBuilder
    * </code>
    */
   int getDataKeyAndFeatureValuesCount();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface FeatureViewDirectWriteRequestOrBuilder
               com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                   .DataKeyAndFeatureValuesOrBuilder>
       getDataKeyAndFeatureValuesOrBuilderList();
+
   /**
    *
    *

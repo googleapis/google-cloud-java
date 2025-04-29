@@ -38,6 +38,7 @@ public interface UpdateExampleStoreRequestOrBuilder
    * @return Whether the exampleStore field is set.
    */
   boolean hasExampleStore();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateExampleStoreRequestOrBuilder
    * @return The exampleStore.
    */
   com.google.cloud.aiplatform.v1beta1.ExampleStore getExampleStore();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateExampleStoreRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateExampleStoreRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

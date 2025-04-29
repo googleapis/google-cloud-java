@@ -34,6 +34,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.BuildApproval)
     BuildApprovalOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BuildApproval.newBuilder() to construct.
   private BuildApproval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -147,6 +149,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVED = 2;</code>
      */
     public static final int APPROVED_VALUE = 2;
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
      * <code>REJECTED = 3;</code>
      */
     public static final int REJECTED_VALUE = 3;
+
     /**
      *
      *
@@ -268,6 +273,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -285,6 +291,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -307,6 +314,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.ApprovalConfig config_;
+
   /**
    *
    *
@@ -324,6 +332,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -341,6 +350,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.ApprovalConfig getConfig() {
     return config_ == null ? com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance() : config_;
   }
+
   /**
    *
    *
@@ -359,6 +369,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESULT_FIELD_NUMBER = 3;
   private com.google.cloudbuild.v1.ApprovalResult result_;
+
   /**
    *
    *
@@ -376,6 +387,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -393,6 +405,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.ApprovalResult getResult() {
     return result_ == null ? com.google.cloudbuild.v1.ApprovalResult.getDefaultInstance() : result_;
   }
+
   /**
    *
    *
@@ -595,6 +608,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -825,6 +839,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -842,6 +857,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -862,6 +878,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
           com.google.cloudbuild.v1.BuildApproval.State.forNumber(state_);
       return result == null ? com.google.cloudbuild.v1.BuildApproval.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -904,6 +922,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.ApprovalConfig.Builder,
             com.google.cloudbuild.v1.ApprovalConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1036,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1105,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1099,6 +1126,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1161,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.ApprovalResult.Builder,
             com.google.cloudbuild.v1.ApprovalResultOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -1149,6 +1178,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResult() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1171,6 +1201,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1226,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1248,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1278,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1317,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1302,6 +1338,7 @@ public final class BuildApproval extends com.google.protobuf.GeneratedMessageV3
             : result_;
       }
     }
+
     /**
      *
      *

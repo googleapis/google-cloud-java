@@ -37,6 +37,7 @@ public interface GenerateDownloadUrlRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

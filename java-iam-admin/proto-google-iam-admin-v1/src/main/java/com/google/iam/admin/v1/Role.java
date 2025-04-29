@@ -33,6 +33,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.Role)
     RoleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Role.newBuilder() to construct.
   private Role(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,6 +154,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * <code>ALPHA = 0;</code>
      */
     public static final int ALPHA_VALUE = 0;
+
     /**
      *
      *
@@ -163,6 +165,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * <code>BETA = 1;</code>
      */
     public static final int BETA_VALUE = 1;
+
     /**
      *
      *
@@ -173,6 +176,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * <code>GA = 2;</code>
      */
     public static final int GA_VALUE = 2;
+
     /**
      *
      *
@@ -183,6 +187,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPRECATED = 4;</code>
      */
     public static final int DEPRECATED_VALUE = 4;
+
     /**
      *
      *
@@ -194,6 +199,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 5;</code>
      */
     public static final int DISABLED_VALUE = 5;
+
     /**
      *
      *
@@ -300,6 +306,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -329,6 +336,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -387,6 +396,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +426,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -439,6 +450,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -468,6 +480,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedPermissions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -482,6 +495,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIncludedPermissionsList() {
     return includedPermissions_;
   }
+
   /**
    *
    *
@@ -496,6 +510,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   public int getIncludedPermissionsCount() {
     return includedPermissions_.size();
   }
+
   /**
    *
    *
@@ -511,6 +526,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIncludedPermissions(int index) {
     return includedPermissions_.get(index);
   }
+
   /**
    *
    *
@@ -529,6 +545,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STAGE_FIELD_NUMBER = 8;
   private int stage_ = 0;
+
   /**
    *
    *
@@ -546,6 +563,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   public int getStageValue() {
     return stage_;
   }
+
   /**
    *
    *
@@ -568,6 +586,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ETAG_FIELD_NUMBER = 9;
   private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -586,6 +605,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETED_FIELD_NUMBER = 11;
   private boolean deleted_ = false;
+
   /**
    *
    *
@@ -821,6 +841,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1090,6 +1111,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1118,6 +1140,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1169,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1197,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1221,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1252,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -1249,6 +1276,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1300,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1323,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1342,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1368,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1359,6 +1391,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1381,6 +1414,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1436,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1419,6 +1454,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1487,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1466,6 +1503,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       includedPermissions_.makeImmutable();
       return includedPermissions_;
     }
+
     /**
      *
      *
@@ -1480,6 +1518,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public int getIncludedPermissionsCount() {
       return includedPermissions_.size();
     }
+
     /**
      *
      *
@@ -1495,6 +1534,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIncludedPermissions(int index) {
       return includedPermissions_.get(index);
     }
+
     /**
      *
      *
@@ -1510,6 +1550,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIncludedPermissionsBytes(int index) {
       return includedPermissions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1533,6 +1574,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1555,6 +1597,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1617,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1592,6 +1636,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1662,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int stage_ = 0;
+
     /**
      *
      *
@@ -1634,6 +1680,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public int getStageValue() {
       return stage_;
     }
+
     /**
      *
      *
@@ -1654,6 +1701,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +1721,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
           com.google.iam.admin.v1.Role.RoleLaunchStage.forNumber(stage_);
       return result == null ? com.google.iam.admin.v1.Role.RoleLaunchStage.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1696,6 +1745,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1717,6 +1767,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1732,6 +1783,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getEtag() {
       return etag_;
     }
+
     /**
      *
      *
@@ -1753,6 +1805,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1825,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean deleted_;
+
     /**
      *
      *
@@ -1788,6 +1842,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public boolean getDeleted() {
       return deleted_;
     }
+
     /**
      *
      *
@@ -1808,6 +1863,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

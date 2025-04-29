@@ -38,6 +38,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return Whether the regionSetLabelsRequestResource field is set.
    */
   boolean hasRegionSetLabelsRequestResource();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return The regionSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.RegionSetLabelsRequest getRegionSetLabelsRequestResource();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface SetLabelsForwardingRuleRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *

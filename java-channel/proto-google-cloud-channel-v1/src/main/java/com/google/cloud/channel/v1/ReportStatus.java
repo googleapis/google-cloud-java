@@ -34,6 +34,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ReportStatus)
     ReportStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportStatus.newBuilder() to construct.
   private ReportStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,6 +138,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -147,6 +149,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTED = 1;</code>
      */
     public static final int STARTED_VALUE = 1;
+
     /**
      *
      *
@@ -157,6 +160,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>WRITING = 2;</code>
      */
     public static final int WRITING_VALUE = 2;
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>AVAILABLE = 3;</code>
      */
     public static final int AVAILABLE_VALUE = 3;
+
     /**
      *
      *
@@ -268,6 +273,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -283,6 +289,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -303,6 +310,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -318,6 +326,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -333,6 +342,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -349,6 +359,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -364,6 +375,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +391,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -579,6 +592,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -808,6 +822,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -823,6 +838,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.channel.v1.ReportStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.channel.v1.ReportStatus.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1052,6 +1079,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1098,6 +1127,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1116,6 +1146,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1169,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1189,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1217,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1237,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1252,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1233,6 +1269,7 @@ public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

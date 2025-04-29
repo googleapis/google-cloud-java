@@ -36,6 +36,7 @@ public interface AddressComponentOrBuilder
    * @return Whether the componentName field is set.
    */
   boolean hasComponentName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AddressComponentOrBuilder
    * @return The componentName.
    */
   com.google.maps.addressvalidation.v1.ComponentName getComponentName();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface AddressComponentOrBuilder
    * @return The componentType.
    */
   java.lang.String getComponentType();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface AddressComponentOrBuilder
    * @return The enum numeric value on the wire for confirmationLevel.
    */
   int getConfirmationLevelValue();
+
   /**
    *
    *

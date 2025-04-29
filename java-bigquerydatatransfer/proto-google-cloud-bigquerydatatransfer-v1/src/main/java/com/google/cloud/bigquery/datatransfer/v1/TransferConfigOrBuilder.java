@@ -42,6 +42,7 @@ public interface TransferConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the destinationDatasetId field is set.
    */
   boolean hasDestinationDatasetId();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface TransferConfigOrBuilder
    * @return The destinationDatasetId.
    */
   java.lang.String getDestinationDatasetId();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface TransferConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface TransferConfigOrBuilder
    * @return The dataSourceId.
    */
   java.lang.String getDataSourceId();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the params field is set.
    */
   boolean hasParams();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface TransferConfigOrBuilder
    * @return The params.
    */
   com.google.protobuf.Struct getParams();
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public interface TransferConfigOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the scheduleOptions field is set.
    */
   boolean hasScheduleOptions();
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public interface TransferConfigOrBuilder
    * @return The scheduleOptions.
    */
   com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions getScheduleOptions();
+
   /**
    *
    *
@@ -294,6 +304,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the scheduleOptionsV2 field is set.
    */
   boolean hasScheduleOptionsV2();
+
   /**
    *
    *
@@ -308,6 +319,7 @@ public interface TransferConfigOrBuilder
    * @return The scheduleOptionsV2.
    */
   com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2 getScheduleOptionsV2();
+
   /**
    *
    *
@@ -367,6 +379,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public interface TransferConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -406,6 +420,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the nextRunTime field is set.
    */
   boolean hasNextRunTime();
+
   /**
    *
    *
@@ -420,6 +435,7 @@ public interface TransferConfigOrBuilder
    * @return The nextRunTime.
    */
   com.google.protobuf.Timestamp getNextRunTime();
+
   /**
    *
    *
@@ -447,6 +463,7 @@ public interface TransferConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -487,6 +504,7 @@ public interface TransferConfigOrBuilder
    * @return The datasetRegion.
    */
   java.lang.String getDatasetRegion();
+
   /**
    *
    *
@@ -516,6 +534,7 @@ public interface TransferConfigOrBuilder
    * @return The notificationPubsubTopic.
    */
   java.lang.String getNotificationPubsubTopic();
+
   /**
    *
    *
@@ -546,6 +565,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the emailPreferences field is set.
    */
   boolean hasEmailPreferences();
+
   /**
    *
    *
@@ -559,6 +579,7 @@ public interface TransferConfigOrBuilder
    * @return The emailPreferences.
    */
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences();
+
   /**
    *
    *
@@ -588,6 +609,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the ownerInfo field is set.
    */
   boolean hasOwnerInfo();
+
   /**
    *
    *
@@ -604,6 +626,7 @@ public interface TransferConfigOrBuilder
    * @return The ownerInfo.
    */
   com.google.cloud.bigquery.datatransfer.v1.UserInfo getOwnerInfo();
+
   /**
    *
    *
@@ -637,6 +660,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the encryptionConfiguration field is set.
    */
   boolean hasEncryptionConfiguration();
+
   /**
    *
    *
@@ -655,6 +679,7 @@ public interface TransferConfigOrBuilder
    * @return The encryptionConfiguration.
    */
   com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration getEncryptionConfiguration();
+
   /**
    *
    *
@@ -686,6 +711,7 @@ public interface TransferConfigOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -699,6 +725,7 @@ public interface TransferConfigOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

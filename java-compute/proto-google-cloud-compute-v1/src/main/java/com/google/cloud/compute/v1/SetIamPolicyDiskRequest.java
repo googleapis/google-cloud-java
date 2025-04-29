@@ -33,6 +33,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyDiskRequest)
     SetIamPolicyDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyDiskRequest.newBuilder() to construct.
   private SetIamPolicyDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
 
   public static final int ZONE_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 382082107;
   private com.google.cloud.compute.v1.ZoneSetPolicyRequest zoneSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
   public boolean hasZoneSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.ZoneSetPolicyRequest.getDefaultInstance()
         : zoneSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -470,6 +480,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -717,6 +728,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -739,6 +751,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +907,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -951,6 +973,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +996,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1036,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder>
         zoneSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1056,6 +1083,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
     public boolean hasZoneSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1078,6 +1106,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
         return zoneSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1103,6 +1132,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1155,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1187,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1209,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1227,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return getZoneSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1215,6 +1249,7 @@ public final class SetIamPolicyDiskRequest extends com.google.protobuf.Generated
             : zoneSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *

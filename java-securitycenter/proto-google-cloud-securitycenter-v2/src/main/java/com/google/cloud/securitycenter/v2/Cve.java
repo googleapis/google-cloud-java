@@ -36,6 +36,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.Cve)
     CveOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Cve.newBuilder() to construct.
   private Cve(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -147,6 +148,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_RATING_UNSPECIFIED = 0;</code>
      */
     public static final int RISK_RATING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -157,6 +159,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW = 1;</code>
      */
     public static final int LOW_VALUE = 1;
+
     /**
      *
      *
@@ -168,6 +171,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIUM = 2;</code>
      */
     public static final int MEDIUM_VALUE = 2;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH = 3;</code>
      */
     public static final int HIGH_VALUE = 3;
+
     /**
      *
      *
@@ -364,6 +369,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPLOITATION_ACTIVITY_UNSPECIFIED = 0;</code>
      */
     public static final int EXPLOITATION_ACTIVITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -374,6 +380,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>WIDE = 1;</code>
      */
     public static final int WIDE_VALUE = 1;
+
     /**
      *
      *
@@ -384,6 +391,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>CONFIRMED = 2;</code>
      */
     public static final int CONFIRMED_VALUE = 2;
+
     /**
      *
      *
@@ -394,6 +402,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>AVAILABLE = 3;</code>
      */
     public static final int AVAILABLE_VALUE = 3;
+
     /**
      *
      *
@@ -405,6 +414,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
      * <code>ANTICIPATED = 4;</code>
      */
     public static final int ANTICIPATED_VALUE = 4;
+
     /**
      *
      *
@@ -513,6 +523,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -536,6 +547,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -564,6 +576,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.Reference> references_;
+
   /**
    *
    *
@@ -578,6 +591,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.securitycenter.v2.Reference> getReferencesList() {
     return references_;
   }
+
   /**
    *
    *
@@ -593,6 +607,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       getReferencesOrBuilderList() {
     return references_;
   }
+
   /**
    *
    *
@@ -607,6 +622,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public int getReferencesCount() {
     return references_.size();
   }
+
   /**
    *
    *
@@ -621,6 +637,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.Reference getReferences(int index) {
     return references_.get(index);
   }
+
   /**
    *
    *
@@ -638,6 +655,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CVSSV3_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v2.Cvssv3 cvssv3_;
+
   /**
    *
    *
@@ -654,6 +672,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCvssv3() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -672,6 +691,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v2.Cvssv3.getDefaultInstance()
         : cvssv3_;
   }
+
   /**
    *
    *
@@ -691,6 +711,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPSTREAM_FIX_AVAILABLE_FIELD_NUMBER = 4;
   private boolean upstreamFixAvailable_ = false;
+
   /**
    *
    *
@@ -709,6 +730,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPACT_FIELD_NUMBER = 5;
   private int impact_ = 0;
+
   /**
    *
    *
@@ -724,6 +746,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public int getImpactValue() {
     return impact_;
   }
+
   /**
    *
    *
@@ -744,6 +767,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPLOITATION_ACTIVITY_FIELD_NUMBER = 6;
   private int exploitationActivity_ = 0;
+
   /**
    *
    *
@@ -760,6 +784,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public int getExploitationActivityValue() {
     return exploitationActivity_;
   }
+
   /**
    *
    *
@@ -784,6 +809,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OBSERVED_IN_THE_WILD_FIELD_NUMBER = 7;
   private boolean observedInTheWild_ = false;
+
   /**
    *
    *
@@ -802,6 +828,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ZERO_DAY_FIELD_NUMBER = 8;
   private boolean zeroDay_ = false;
+
   /**
    *
    *
@@ -821,6 +848,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPLOIT_RELEASE_DATE_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp exploitReleaseDate_;
+
   /**
    *
    *
@@ -836,6 +864,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExploitReleaseDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -853,6 +882,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : exploitReleaseDate_;
   }
+
   /**
    *
    *
@@ -871,6 +901,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIRST_EXPLOITATION_DATE_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp firstExploitationDate_;
+
   /**
    *
    *
@@ -886,6 +917,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFirstExploitationDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -903,6 +935,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : firstExploitationDate_;
   }
+
   /**
    *
    *
@@ -1184,6 +1217,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1571,6 +1605,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1593,6 +1628,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1651,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1636,6 +1673,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1691,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,6 +1749,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1727,6 +1767,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1744,6 +1785,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1767,6 +1809,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1831,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1811,6 +1855,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1879,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1855,6 +1901,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1923,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1897,6 +1945,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1917,6 +1966,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1987,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1950,6 +2001,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.Reference.Builder getReferencesBuilder(int index) {
       return getReferencesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1967,6 +2019,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return referencesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1985,6 +2038,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(references_);
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2053,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       return getReferencesFieldBuilder()
           .addBuilder(com.google.cloud.securitycenter.v2.Reference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2013,6 +2068,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       return getReferencesFieldBuilder()
           .addBuilder(index, com.google.cloud.securitycenter.v2.Reference.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2051,6 +2107,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.Cvssv3.Builder,
             com.google.cloud.securitycenter.v2.Cvssv3OrBuilder>
         cvssv3Builder_;
+
     /**
      *
      *
@@ -2066,6 +2123,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCvssv3() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2087,6 +2145,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return cvssv3Builder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2110,6 +2169,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2130,6 +2190,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2158,6 +2219,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2178,6 +2240,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2256,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCvssv3FieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2212,6 +2276,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             : cvssv3_;
       }
     }
+
     /**
      *
      *
@@ -2240,6 +2305,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean upstreamFixAvailable_;
+
     /**
      *
      *
@@ -2255,6 +2321,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public boolean getUpstreamFixAvailable() {
       return upstreamFixAvailable_;
     }
+
     /**
      *
      *
@@ -2274,6 +2341,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2293,6 +2361,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int impact_ = 0;
+
     /**
      *
      *
@@ -2308,6 +2377,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public int getImpactValue() {
       return impact_;
     }
+
     /**
      *
      *
@@ -2326,6 +2396,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2345,6 +2416,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v2.Cve.RiskRating.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2366,6 +2438,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2385,6 +2458,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exploitationActivity_ = 0;
+
     /**
      *
      *
@@ -2401,6 +2475,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public int getExploitationActivityValue() {
       return exploitationActivity_;
     }
+
     /**
      *
      *
@@ -2420,6 +2495,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2441,6 +2517,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v2.Cve.ExploitationActivity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2464,6 +2541,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2484,6 +2562,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean observedInTheWild_;
+
     /**
      *
      *
@@ -2499,6 +2578,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public boolean getObservedInTheWild() {
       return observedInTheWild_;
     }
+
     /**
      *
      *
@@ -2518,6 +2598,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2618,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean zeroDay_;
+
     /**
      *
      *
@@ -2553,6 +2635,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public boolean getZeroDay() {
       return zeroDay_;
     }
+
     /**
      *
      *
@@ -2573,6 +2656,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2598,6 +2682,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         exploitReleaseDateBuilder_;
+
     /**
      *
      *
@@ -2612,6 +2697,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExploitReleaseDate() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2632,6 +2718,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return exploitReleaseDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2654,6 +2741,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2761,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2700,6 +2789,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2719,6 +2809,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2824,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExploitReleaseDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2751,6 +2843,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             : exploitReleaseDate_;
       }
     }
+
     /**
      *
      *
@@ -2783,6 +2876,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         firstExploitationDateBuilder_;
+
     /**
      *
      *
@@ -2797,6 +2891,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFirstExploitationDate() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2817,6 +2912,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         return firstExploitationDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2839,6 +2935,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2858,6 +2955,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2885,6 +2983,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2904,6 +3003,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2918,6 +3018,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFirstExploitationDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2936,6 +3037,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             : firstExploitationDate_;
       }
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface BasicSliOrBuilder
    * @return A list containing the method.
    */
   java.util.List<java.lang.String> getMethodList();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface BasicSliOrBuilder
    * @return The count of method.
    */
   int getMethodCount();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface BasicSliOrBuilder
    * @return The method at the given index.
    */
   java.lang.String getMethod(int index);
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface BasicSliOrBuilder
    * @return A list containing the location.
    */
   java.util.List<java.lang.String> getLocationList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface BasicSliOrBuilder
    * @return The count of location.
    */
   int getLocationCount();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface BasicSliOrBuilder
    * @return The location at the given index.
    */
   java.lang.String getLocation(int index);
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface BasicSliOrBuilder
    * @return A list containing the version.
    */
   java.util.List<java.lang.String> getVersionList();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface BasicSliOrBuilder
    * @return The count of version.
    */
   int getVersionCount();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface BasicSliOrBuilder
    * @return The version at the given index.
    */
   java.lang.String getVersion(int index);
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public interface BasicSliOrBuilder
    * @return Whether the availability field is set.
    */
   boolean hasAvailability();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface BasicSliOrBuilder
    * @return The availability.
    */
   com.google.monitoring.v3.BasicSli.AvailabilityCriteria getAvailability();
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface BasicSliOrBuilder
    * @return Whether the latency field is set.
    */
   boolean hasLatency();
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public interface BasicSliOrBuilder
    * @return The latency.
    */
   com.google.monitoring.v3.BasicSli.LatencyCriteria getLatency();
+
   /**
    *
    *

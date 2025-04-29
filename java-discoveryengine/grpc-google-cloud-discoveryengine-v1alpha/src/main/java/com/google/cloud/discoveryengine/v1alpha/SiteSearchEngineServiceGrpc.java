@@ -758,6 +758,19 @@ public final class SiteSearchEngineServiceGrpc {
     return SiteSearchEngineServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SiteSearchEngineServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SiteSearchEngineServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SiteSearchEngineServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SiteSearchEngineServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SiteSearchEngineServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1288,6 +1301,220 @@ public final class SiteSearchEngineServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SiteSearchEngineService.
+   *
+   * <pre>
+   * Service for managing site search related resources.
+   * </pre>
+   */
+  public static final class SiteSearchEngineServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SiteSearchEngineServiceBlockingV2Stub> {
+    private SiteSearchEngineServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SiteSearchEngineServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SiteSearchEngineServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the
+     * [SiteSearchEngine][google.cloud.discoveryengine.v1alpha.SiteSearchEngine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.SiteSearchEngine getSiteSearchEngine(
+        com.google.cloud.discoveryengine.v1alpha.GetSiteSearchEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSiteSearchEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.CreateTargetSiteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite] in a
+     * batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateTargetSites(
+        com.google.cloud.discoveryengine.v1alpha.BatchCreateTargetSitesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.TargetSite getTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.GetTargetSiteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.UpdateTargetSiteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTargetSite(
+        com.google.cloud.discoveryengine.v1alpha.DeleteTargetSiteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTargetSiteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of
+     * [TargetSite][google.cloud.discoveryengine.v1alpha.TargetSite]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListTargetSitesResponse listTargetSites(
+        com.google.cloud.discoveryengine.v1alpha.ListTargetSitesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade from basic site search to advanced site search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableAdvancedSiteSearch(
+        com.google.cloud.discoveryengine.v1alpha.EnableAdvancedSiteSearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableAdvancedSiteSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Downgrade from advanced site search to basic site search.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableAdvancedSiteSearch(
+        com.google.cloud.discoveryengine.v1alpha.DisableAdvancedSiteSearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableAdvancedSiteSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request on-demand recrawl for a list of URIs.
+     * </pre>
+     */
+    public com.google.longrunning.Operation recrawlUris(
+        com.google.cloud.discoveryengine.v1alpha.RecrawlUrisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRecrawlUrisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verify target sites' ownership and validity.
+     * This API sends all the target sites under site search engine for
+     * verification.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchVerifyTargetSites(
+        com.google.cloud.discoveryengine.v1alpha.BatchVerifyTargetSitesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchVerifyTargetSitesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of target sites with its domain verification status.
+     * This method can only be called under data store with BASIC_SITE_SEARCH
+     * state at the moment.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusResponse
+        fetchDomainVerificationStatus(
+            com.google.cloud.discoveryengine.v1alpha.FetchDomainVerificationStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchDomainVerificationStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setUriPatternDocumentData(
+        com.google.cloud.discoveryengine.v1alpha.SetUriPatternDocumentDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetUriPatternDocumentDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the URI Pattern to Document data mapping for an Advanced Site Search
+     * DataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataResponse
+        getUriPatternDocumentData(
+            com.google.cloud.discoveryengine.v1alpha.GetUriPatternDocumentDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUriPatternDocumentDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SiteSearchEngineService.
    *
    * <pre>
    * Service for managing site search related resources.

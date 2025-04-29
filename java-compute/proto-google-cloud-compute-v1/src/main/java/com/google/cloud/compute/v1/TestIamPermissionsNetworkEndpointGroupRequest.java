@@ -34,6 +34,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsNetworkEndpointGroupRequest)
     TestIamPermissionsNetworkEndpointGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestIamPermissionsNetworkEndpointGroupRequest.newBuilder() to construct.
   private TestIamPermissionsNetworkEndpointGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -477,6 +487,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +747,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -780,6 +793,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +815,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -864,6 +881,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -907,6 +926,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -969,6 +991,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1040,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1117,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1128,6 +1157,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
             : testPermissionsRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1179,6 +1210,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1233,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1222,6 +1255,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1273,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

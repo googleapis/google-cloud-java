@@ -37,6 +37,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FunctionDeclaration)
     FunctionDeclarationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FunctionDeclaration.newBuilder() to construct.
   private FunctionDeclaration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
 
   public static final int PARAMETERS_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.Schema parameters_;
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.Schema.getDefaultInstance()
         : parameters_;
   }
+
   /**
    *
    *
@@ -276,6 +284,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
 
   public static final int RESPONSE_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.Schema response_;
+
   /**
    *
    *
@@ -295,6 +304,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
   public boolean hasResponse() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -316,6 +326,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.Schema.getDefaultInstance()
         : response_;
   }
+
   /**
    *
    *
@@ -533,6 +544,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -784,6 +796,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -809,6 +822,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -834,6 +848,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +873,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +894,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -928,6 +946,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +970,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1043,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.Schema.Builder,
             com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder>
         parametersBuilder_;
+
     /**
      *
      *
@@ -1050,6 +1073,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1085,6 +1109,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         return parametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1147,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1226,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1261,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1291,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1295,6 +1325,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
             : parameters_;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1373,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.Schema.Builder,
             com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder>
         responseBuilder_;
+
     /**
      *
      *
@@ -1360,6 +1392,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     public boolean hasResponse() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1384,6 +1417,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         return responseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1410,6 +1444,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1468,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1500,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1524,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1543,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResponseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1527,6 +1566,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
             : response_;
       }
     }
+
     /**
      *
      *

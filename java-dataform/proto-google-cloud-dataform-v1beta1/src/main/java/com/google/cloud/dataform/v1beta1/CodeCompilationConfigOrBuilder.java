@@ -36,6 +36,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The defaultDatabase.
    */
   java.lang.String getDefaultDatabase();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The defaultSchema.
    */
   java.lang.String getDefaultSchema();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The defaultLocation.
    */
   java.lang.String getDefaultLocation();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The assertionSchema.
    */
   java.lang.String getAssertionSchema();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface CodeCompilationConfigOrBuilder
    * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getVarsCount();
+
   /**
    *
    *
@@ -150,9 +155,11 @@ public interface CodeCompilationConfigOrBuilder
    * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsVars(java.lang.String key);
+
   /** Use {@link #getVarsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getVars();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface CodeCompilationConfigOrBuilder
    * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getVarsMap();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface CodeCompilationConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The databaseSuffix.
    */
   java.lang.String getDatabaseSuffix();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The schemaSuffix.
    */
   java.lang.String getSchemaSuffix();
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The tablePrefix.
    */
   java.lang.String getTablePrefix();
+
   /**
    *
    *
@@ -284,6 +296,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return Whether the defaultNotebookRuntimeOptions field is set.
    */
   boolean hasDefaultNotebookRuntimeOptions();
+
   /**
    *
    *
@@ -298,6 +311,7 @@ public interface CodeCompilationConfigOrBuilder
    * @return The defaultNotebookRuntimeOptions.
    */
   com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions getDefaultNotebookRuntimeOptions();
+
   /**
    *
    *

@@ -73,6 +73,7 @@ public enum RuleType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RULE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RULE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum RuleType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SINGLE_EVENT = 1;</code>
    */
   public static final int SINGLE_EVENT_VALUE = 1;
+
   /**
    *
    *

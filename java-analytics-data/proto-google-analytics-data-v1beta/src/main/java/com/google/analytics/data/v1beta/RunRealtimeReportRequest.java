@@ -33,6 +33,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.RunRealtimeReportRequest)
     RunRealtimeReportRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunRealtimeReportRequest.newBuilder() to construct.
   private RunRealtimeReportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Dimension> dimensions_;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public java.util.List<com.google.analytics.data.v1beta.Dimension> getDimensionsList() {
     return dimensions_;
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       getDimensionsOrBuilderList() {
     return dimensions_;
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public int getDimensionsCount() {
     return dimensions_.size();
   }
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public com.google.analytics.data.v1beta.Dimension getDimensions(int index) {
     return dimensions_.get(index);
   }
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Metric> metrics_;
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public java.util.List<com.google.analytics.data.v1beta.Metric> getMetricsList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       getMetricsOrBuilderList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public int getMetricsCount() {
     return metrics_.size();
   }
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public com.google.analytics.data.v1beta.Metric getMetrics(int index) {
     return metrics_.get(index);
   }
+
   /**
    *
    *
@@ -274,6 +287,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   public static final int DIMENSION_FILTER_FIELD_NUMBER = 4;
   private com.google.analytics.data.v1beta.FilterExpression dimensionFilter_;
+
   /**
    *
    *
@@ -289,6 +303,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public boolean hasDimensionFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -306,6 +321,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         ? com.google.analytics.data.v1beta.FilterExpression.getDefaultInstance()
         : dimensionFilter_;
   }
+
   /**
    *
    *
@@ -324,6 +340,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   public static final int METRIC_FILTER_FIELD_NUMBER = 5;
   private com.google.analytics.data.v1beta.FilterExpression metricFilter_;
+
   /**
    *
    *
@@ -340,6 +357,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public boolean hasMetricFilter() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -358,6 +376,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         ? com.google.analytics.data.v1beta.FilterExpression.getDefaultInstance()
         : metricFilter_;
   }
+
   /**
    *
    *
@@ -377,6 +396,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   public static final int LIMIT_FIELD_NUMBER = 6;
   private long limit_ = 0L;
+
   /**
    *
    *
@@ -420,6 +440,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
                   : result;
             }
           };
+
   /**
    *
    *
@@ -439,6 +460,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>(
         metricAggregations_, metricAggregations_converter_);
   }
+
   /**
    *
    *
@@ -455,6 +477,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public int getMetricAggregationsCount() {
     return metricAggregations_.size();
   }
+
   /**
    *
    *
@@ -472,6 +495,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index) {
     return metricAggregations_converter_.convert(metricAggregations_.get(index));
   }
+
   /**
    *
    *
@@ -488,6 +512,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public java.util.List<java.lang.Integer> getMetricAggregationsValueList() {
     return metricAggregations_;
   }
+
   /**
    *
    *
@@ -512,6 +537,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.OrderBy> orderBys_;
+
   /**
    *
    *
@@ -525,6 +551,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public java.util.List<com.google.analytics.data.v1beta.OrderBy> getOrderBysList() {
     return orderBys_;
   }
+
   /**
    *
    *
@@ -539,6 +566,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       getOrderBysOrBuilderList() {
     return orderBys_;
   }
+
   /**
    *
    *
@@ -552,6 +580,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public int getOrderBysCount() {
     return orderBys_.size();
   }
+
   /**
    *
    *
@@ -565,6 +594,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public com.google.analytics.data.v1beta.OrderBy getOrderBys(int index) {
     return orderBys_.get(index);
   }
+
   /**
    *
    *
@@ -581,6 +611,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   public static final int RETURN_PROPERTY_QUOTA_FIELD_NUMBER = 9;
   private boolean returnPropertyQuota_ = false;
+
   /**
    *
    *
@@ -603,6 +634,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.MinuteRange> minuteRanges_;
+
   /**
    *
    *
@@ -620,6 +652,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public java.util.List<com.google.analytics.data.v1beta.MinuteRange> getMinuteRangesList() {
     return minuteRanges_;
   }
+
   /**
    *
    *
@@ -638,6 +671,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       getMinuteRangesOrBuilderList() {
     return minuteRanges_;
   }
+
   /**
    *
    *
@@ -655,6 +689,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public int getMinuteRangesCount() {
     return minuteRanges_.size();
   }
+
   /**
    *
    *
@@ -672,6 +707,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   public com.google.analytics.data.v1beta.MinuteRange getMinuteRanges(int index) {
     return minuteRanges_.get(index);
   }
+
   /**
    *
    *
@@ -966,6 +1002,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1495,6 +1532,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object property_ = "";
+
     /**
      *
      *
@@ -1522,6 +1560,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1588,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1575,6 +1615,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1638,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1700,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return dimensionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1674,6 +1717,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return dimensionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1734,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return dimensionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1712,6 +1757,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1778,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1801,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1824,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1845,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1816,6 +1866,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1836,6 +1887,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1855,6 +1907,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1874,6 +1927,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1886,6 +1940,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public com.google.analytics.data.v1beta.Dimension.Builder getDimensionsBuilder(int index) {
       return getDimensionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1902,6 +1957,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return dimensionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1919,6 +1975,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(dimensions_);
       }
     }
+
     /**
      *
      *
@@ -1932,6 +1989,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getDimensionsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.Dimension.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1945,6 +2003,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getDimensionsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.Dimension.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2008,6 +2067,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return metricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2024,6 +2084,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return metricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2040,6 +2101,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return metricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2062,6 +2124,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2082,6 +2145,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2104,6 +2168,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2191,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2211,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2165,6 +2232,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2185,6 +2253,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2204,6 +2273,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2293,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2235,6 +2306,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public com.google.analytics.data.v1beta.Metric.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2251,6 +2323,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2268,6 +2341,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
+
     /**
      *
      *
@@ -2281,6 +2355,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getMetricsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.Metric.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2294,6 +2369,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getMetricsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.Metric.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2330,6 +2406,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             com.google.analytics.data.v1beta.FilterExpression.Builder,
             com.google.analytics.data.v1beta.FilterExpressionOrBuilder>
         dimensionFilterBuilder_;
+
     /**
      *
      *
@@ -2344,6 +2421,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public boolean hasDimensionFilter() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2364,6 +2442,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return dimensionFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2386,6 +2465,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2406,6 +2486,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2434,6 +2515,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2453,6 +2535,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +2550,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return getDimensionFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2486,6 +2570,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             : dimensionFilter_;
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2603,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             com.google.analytics.data.v1beta.FilterExpression.Builder,
             com.google.analytics.data.v1beta.FilterExpressionOrBuilder>
         metricFilterBuilder_;
+
     /**
      *
      *
@@ -2533,6 +2619,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public boolean hasMetricFilter() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2554,6 +2641,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return metricFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2577,6 +2665,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2598,6 +2687,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2717,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -2647,6 +2738,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2662,6 +2754,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return getMetricFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2681,6 +2774,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             : metricFilter_;
       }
     }
+
     /**
      *
      *
@@ -2709,6 +2803,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     }
 
     private long limit_;
+
     /**
      *
      *
@@ -2732,6 +2827,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public long getLimit() {
       return limit_;
     }
+
     /**
      *
      *
@@ -2759,6 +2855,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2794,6 +2891,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         bitField0_ |= 0x00000040;
       }
     }
+
     /**
      *
      *
@@ -2813,6 +2911,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
           java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>(
           metricAggregations_, metricAggregations_converter_);
     }
+
     /**
      *
      *
@@ -2829,6 +2928,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public int getMetricAggregationsCount() {
       return metricAggregations_.size();
     }
+
     /**
      *
      *
@@ -2846,6 +2946,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index) {
       return metricAggregations_converter_.convert(metricAggregations_.get(index));
     }
+
     /**
      *
      *
@@ -2871,6 +2972,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2894,6 +2996,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2917,6 +3020,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2936,6 +3040,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2952,6 +3057,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public java.util.List<java.lang.Integer> getMetricAggregationsValueList() {
       return java.util.Collections.unmodifiableList(metricAggregations_);
     }
+
     /**
      *
      *
@@ -2969,6 +3075,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public int getMetricAggregationsValue(int index) {
       return metricAggregations_.get(index);
     }
+
     /**
      *
      *
@@ -2990,6 +3097,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3010,6 +3118,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3065,6 +3174,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return orderBysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3081,6 +3191,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return orderBysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3097,6 +3208,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return orderBysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3119,6 +3231,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3139,6 +3252,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3161,6 +3275,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3183,6 +3298,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3202,6 +3318,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3339,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3242,6 +3360,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3261,6 +3380,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3280,6 +3400,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3292,6 +3413,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public com.google.analytics.data.v1beta.OrderBy.Builder getOrderBysBuilder(int index) {
       return getOrderBysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3308,6 +3430,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return orderBysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3325,6 +3448,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(orderBys_);
       }
     }
+
     /**
      *
      *
@@ -3338,6 +3462,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getOrderBysFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.OrderBy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3351,6 +3476,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getOrderBysFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.OrderBy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3383,6 +3509,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     }
 
     private boolean returnPropertyQuota_;
+
     /**
      *
      *
@@ -3400,6 +3527,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public boolean getReturnPropertyQuota() {
       return returnPropertyQuota_;
     }
+
     /**
      *
      *
@@ -3421,6 +3549,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3478,6 +3607,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return minuteRangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3498,6 +3628,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return minuteRangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3518,6 +3649,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return minuteRangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3544,6 +3676,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3568,6 +3701,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3594,6 +3728,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3620,6 +3755,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3644,6 +3780,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3668,6 +3805,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3692,6 +3830,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3715,6 +3854,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3738,6 +3878,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3754,6 +3895,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public com.google.analytics.data.v1beta.MinuteRange.Builder getMinuteRangesBuilder(int index) {
       return getMinuteRangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3775,6 +3917,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return minuteRangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3796,6 +3939,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(minuteRanges_);
       }
     }
+
     /**
      *
      *
@@ -3813,6 +3957,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getMinuteRangesFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.MinuteRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3830,6 +3975,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return getMinuteRangesFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.MinuteRange.getDefaultInstance());
     }
+
     /**
      *
      *

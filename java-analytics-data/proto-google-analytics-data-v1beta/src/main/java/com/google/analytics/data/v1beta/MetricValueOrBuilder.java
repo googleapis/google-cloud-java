@@ -36,6 +36,7 @@ public interface MetricValueOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MetricValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

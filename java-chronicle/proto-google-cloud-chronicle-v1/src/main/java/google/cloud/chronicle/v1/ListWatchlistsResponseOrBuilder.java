@@ -36,6 +36,7 @@ public interface ListWatchlistsResponseOrBuilder
    * </code>
    */
   java.util.List<google.cloud.chronicle.v1.Watchlist> getWatchlistsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListWatchlistsResponseOrBuilder
    * </code>
    */
   google.cloud.chronicle.v1.Watchlist getWatchlists(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListWatchlistsResponseOrBuilder
    * </code>
    */
   int getWatchlistsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListWatchlistsResponseOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.WatchlistOrBuilder>
       getWatchlistsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListWatchlistsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

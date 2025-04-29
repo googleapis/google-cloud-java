@@ -36,6 +36,7 @@ public interface TranslationConfigOrBuilder
    * @return The targetLanguage.
    */
   java.lang.String getTargetLanguage();
+
   /**
    *
    *

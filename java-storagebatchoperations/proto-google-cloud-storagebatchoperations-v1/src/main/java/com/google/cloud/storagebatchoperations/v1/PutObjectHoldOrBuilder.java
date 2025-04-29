@@ -39,6 +39,7 @@ public interface PutObjectHoldOrBuilder
    * @return The enum numeric value on the wire for temporaryHold.
    */
   int getTemporaryHoldValue();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface PutObjectHoldOrBuilder
    * @return The enum numeric value on the wire for eventBasedHold.
    */
   int getEventBasedHoldValue();
+
   /**
    *
    *

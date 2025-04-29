@@ -41,19 +41,21 @@ public final class MetadataProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n/google/maps/addressvalidation/v1/metad"
-          + "ata.proto\022 google.maps.addressvalidation"
-          + ".v1\"\177\n\017AddressMetadata\022\025\n\010business\030\002 \001(\010"
-          + "H\000\210\001\001\022\023\n\006po_box\030\003 \001(\010H\001\210\001\001\022\030\n\013residentia"
-          + "l\030\006 \001(\010H\002\210\001\001B\013\n\t_businessB\t\n\007_po_boxB\016\n\014"
-          + "_residentialB\212\002\n$com.google.maps.address"
-          + "validation.v1B\rMetadataProtoP\001ZXcloud.go"
-          + "ogle.com/go/maps/addressvalidation/apiv1"
-          + "/addressvalidationpb;addressvalidationpb"
-          + "\370\001\001\242\002\007GMPAVV1\252\002 Google.Maps.AddressValid"
-          + "ation.V1\312\002 Google\\Maps\\AddressValidation"
-          + "\\V1\352\002#Google::Maps::AddressValidation::V"
-          + "1b\006proto3"
+      "\n"
+          + "/google/maps/addressvalidation/v1/metadata.proto\022"
+          + " google.maps.addressvalidation.v1\"\177\n"
+          + "\017AddressMetadata\022\025\n"
+          + "\010business\030\002 \001(\010H\000\210\001\001\022\023\n"
+          + "\006po_box\030\003 \001(\010H\001\210\001\001\022\030\n"
+          + "\013residential\030\006 \001(\010H\002\210\001\001B\013\n"
+          + "\t_businessB\t\n"
+          + "\007_po_boxB\016\n"
+          + "\014_residentialB\212\002\n"
+          + "$com.google.maps.addressvalidation.v1B\r"
+          + "MetadataProtoP\001ZXcloud.google.com/go/maps/addressvalidation/apiv1"
+          + "/addressvalidationpb;addressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002"
+          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValidation"
+          + "\\V1\352\002#Google::Maps::AddressValidation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

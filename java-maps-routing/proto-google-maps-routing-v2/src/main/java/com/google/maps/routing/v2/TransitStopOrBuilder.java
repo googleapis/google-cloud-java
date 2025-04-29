@@ -36,6 +36,7 @@ public interface TransitStopOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TransitStopOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TransitStopOrBuilder
    * @return The location.
    */
   com.google.maps.routing.v2.Location getLocation();
+
   /**
    *
    *

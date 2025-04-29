@@ -35,6 +35,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CreateSitemapRequest)
     CreateSitemapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSitemapRequest.newBuilder() to construct.
   private CreateSitemapRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
 
   public static final int SITEMAP_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.Sitemap sitemap_;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
   public boolean hasSitemap() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.discoveryengine.v1beta.Sitemap.getDefaultInstance()
         : sitemap_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +585,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -605,6 +613,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +726,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.discoveryengine.v1beta.Sitemap.Builder,
             com.google.cloud.discoveryengine.v1beta.SitemapOrBuilder>
         sitemapBuilder_;
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
     public boolean hasSitemap() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
         return sitemapBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +849,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getSitemapFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class CreateSitemapRequest extends com.google.protobuf.GeneratedMes
             : sitemap_;
       }
     }
+
     /**
      *
      *

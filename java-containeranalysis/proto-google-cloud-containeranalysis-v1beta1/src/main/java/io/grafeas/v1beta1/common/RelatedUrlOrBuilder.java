@@ -36,6 +36,7 @@ public interface RelatedUrlOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RelatedUrlOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *

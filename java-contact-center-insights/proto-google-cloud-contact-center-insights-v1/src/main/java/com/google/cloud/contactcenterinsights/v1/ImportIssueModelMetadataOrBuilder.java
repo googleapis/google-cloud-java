@@ -36,6 +36,7 @@ public interface ImportIssueModelMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImportIssueModelMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ImportIssueModelMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ImportIssueModelMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ImportIssueModelMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ImportIssueModelMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest getRequest();
+
   /**
    *
    *

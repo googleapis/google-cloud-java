@@ -32,6 +32,7 @@ public interface DiskAsyncReplicationListOrBuilder
    * @return Whether the asyncReplicationDisk field is set.
    */
   boolean hasAsyncReplicationDisk();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;
@@ -40,6 +41,7 @@ public interface DiskAsyncReplicationListOrBuilder
    * @return The asyncReplicationDisk.
    */
   com.google.cloud.compute.v1.DiskAsyncReplication getAsyncReplicationDisk();
+
   /**
    * <code>
    * optional .google.cloud.compute.v1.DiskAsyncReplication async_replication_disk = 231794067;

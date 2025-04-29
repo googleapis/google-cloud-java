@@ -33,6 +33,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryTarget)
     DiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryTarget.newBuilder() to construct.
   private DiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     private TargetCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -123,6 +125,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BIG_QUERY_TARGET_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   public boolean hasBigQueryTarget() {
     return targetCase_ == 1;
   }
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.BigQueryDiscoveryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLOUD_SQL_TARGET_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   public boolean hasCloudSqlTarget() {
     return targetCase_ == 2;
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SECRETS_TARGET_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   public boolean hasSecretsTarget() {
     return targetCase_ == 3;
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLOUD_STORAGE_TARGET_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   public boolean hasCloudStorageTarget() {
     return targetCase_ == 4;
   }
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -343,6 +357,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int OTHER_CLOUD_TARGET_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -359,6 +374,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   public boolean hasOtherCloudTarget() {
     return targetCase_ == 5;
   }
+
   /**
    *
    *
@@ -378,6 +394,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -398,6 +415,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VERTEX_DATASET_TARGET_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -420,6 +438,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
   public boolean hasVertexDatasetTarget() {
     return targetCase_ == 7;
   }
+
   /**
    *
    *
@@ -445,6 +464,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -719,6 +739,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1024,6 +1045,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.BigQueryDiscoveryTarget.Builder,
             com.google.privacy.dlp.v2.BigQueryDiscoveryTargetOrBuilder>
         bigQueryTargetBuilder_;
+
     /**
      *
      *
@@ -1040,6 +1062,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public boolean hasBigQueryTarget() {
       return targetCase_ == 1;
     }
+
     /**
      *
      *
@@ -1066,6 +1089,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.BigQueryDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1113,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1169,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1196,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1210,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.BigQueryDiscoveryTarget.Builder getBigQueryTargetBuilder() {
       return getBigQueryTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1203,6 +1232,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.BigQueryDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1272,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder,
             com.google.privacy.dlp.v2.CloudSqlDiscoveryTargetOrBuilder>
         cloudSqlTargetBuilder_;
+
     /**
      *
      *
@@ -1258,6 +1289,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public boolean hasCloudSqlTarget() {
       return targetCase_ == 2;
     }
+
     /**
      *
      *
@@ -1284,6 +1316,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1340,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1362,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1396,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1387,6 +1423,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1437,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.Builder getCloudSqlTargetBuilder() {
       return getCloudSqlTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1421,6 +1459,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.CloudSqlDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1460,6 +1499,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder,
             com.google.privacy.dlp.v2.SecretsDiscoveryTargetOrBuilder>
         secretsTargetBuilder_;
+
     /**
      *
      *
@@ -1477,6 +1517,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public boolean hasSecretsTarget() {
       return targetCase_ == 3;
     }
+
     /**
      *
      *
@@ -1504,6 +1545,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1570,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1550,6 +1593,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1628,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1611,6 +1656,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1671,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.SecretsDiscoveryTarget.Builder getSecretsTargetBuilder() {
       return getSecretsTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1647,6 +1694,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.SecretsDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1687,6 +1735,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.Builder,
             com.google.privacy.dlp.v2.CloudStorageDiscoveryTargetOrBuilder>
         cloudStorageTargetBuilder_;
+
     /**
      *
      *
@@ -1703,6 +1752,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public boolean hasCloudStorageTarget() {
       return targetCase_ == 4;
     }
+
     /**
      *
      *
@@ -1729,6 +1779,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1753,6 +1804,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1826,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +1862,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1889,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1849,6 +1904,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         getCloudStorageTargetBuilder() {
       return getCloudStorageTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1871,6 +1927,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.CloudStorageDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1967,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.Builder,
             com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder>
         otherCloudTargetBuilder_;
+
     /**
      *
      *
@@ -1926,6 +1984,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public boolean hasOtherCloudTarget() {
       return targetCase_ == 5;
     }
+
     /**
      *
      *
@@ -1952,6 +2011,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1975,6 +2035,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1996,6 +2057,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2031,6 +2093,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2057,6 +2120,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2071,6 +2135,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         getOtherCloudTargetBuilder() {
       return getOtherCloudTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2093,6 +2158,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2132,6 +2198,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.Builder,
             com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder>
         vertexDatasetTargetBuilder_;
+
     /**
      *
      *
@@ -2154,6 +2221,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     public boolean hasVertexDatasetTarget() {
       return targetCase_ == 7;
     }
+
     /**
      *
      *
@@ -2186,6 +2254,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2216,6 +2285,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2243,6 +2313,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2284,6 +2355,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2316,6 +2388,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2336,6 +2409,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         getVertexDatasetTargetBuilder() {
       return getVertexDatasetTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2364,6 +2438,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *

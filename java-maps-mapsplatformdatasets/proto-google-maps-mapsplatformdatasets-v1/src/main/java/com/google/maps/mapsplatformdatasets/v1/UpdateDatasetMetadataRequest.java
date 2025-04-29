@@ -33,6 +33,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.maps.mapsplatformdatasets.v1.UpdateDatasetMetadataRequest)
     UpdateDatasetMetadataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDatasetMetadataRequest.newBuilder() to construct.
   private UpdateDatasetMetadataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int DATASET_FIELD_NUMBER = 1;
   private com.google.maps.mapsplatformdatasets.v1.Dataset dataset_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
   public boolean hasDataset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
         ? com.google.maps.mapsplatformdatasets.v1.Dataset.getDefaultInstance()
         : dataset_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -353,6 +360,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +590,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
             com.google.maps.mapsplatformdatasets.v1.Dataset.Builder,
             com.google.maps.mapsplatformdatasets.v1.DatasetOrBuilder>
         datasetBuilder_;
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
     public boolean hasDataset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
         return datasetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +754,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return getDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -760,6 +776,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
             : dataset_;
       }
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -857,6 +877,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +929,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -964,6 +989,7 @@ public final class UpdateDatasetMetadataRequest extends com.google.protobuf.Gene
             : updateMask_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public interface ListCustomFieldsResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.CustomField custom_fields = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.CustomField> getCustomFieldsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCustomFieldsResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.CustomField custom_fields = 1;</code>
    */
   com.google.ads.admanager.v1.CustomField getCustomFields(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCustomFieldsResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.CustomField custom_fields = 1;</code>
    */
   int getCustomFieldsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCustomFieldsResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.CustomFieldOrBuilder>
       getCustomFieldsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListCustomFieldsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

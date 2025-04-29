@@ -33,6 +33,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest)
     CreateDataExchangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDataExchangeRequest.newBuilder() to construct.
   private CreateDataExchangeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataExchangeId_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
 
   public static final int DATA_EXCHANGE_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.analyticshub.v1.DataExchange dataExchange_;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
   public boolean hasDataExchange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
         ? com.google.cloud.bigquery.analyticshub.v1.DataExchange.getDefaultInstance()
         : dataExchange_;
   }
+
   /**
    *
    *
@@ -418,6 +426,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +663,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -679,6 +689,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object dataExchangeId_ = "";
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
             com.google.cloud.bigquery.analyticshub.v1.DataExchange.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DataExchangeOrBuilder>
         dataExchangeBuilder_;
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
     public boolean hasDataExchange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
         return dataExchangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1034,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1073,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
       onChanged();
       return getDataExchangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
             : dataExchange_;
       }
     }
+
     /**
      *
      *

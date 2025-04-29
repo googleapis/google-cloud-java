@@ -36,6 +36,7 @@ public interface BatchTranslateDocumentMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -172,6 +173,7 @@ public interface BatchTranslateDocumentMetadataOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
+
   /**
    *
    *
@@ -184,6 +186,7 @@ public interface BatchTranslateDocumentMetadataOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
+
   /**
    *
    *

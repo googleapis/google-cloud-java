@@ -36,6 +36,7 @@ public interface SalesforceFieldOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SalesforceFieldOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
+
   /**
    *
    *

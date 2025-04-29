@@ -36,6 +36,7 @@ public interface ParameterMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ParameterMetadataOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ParameterMetadataOrBuilder
    * @return The helpText.
    */
   java.lang.String getHelpText();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface ParameterMetadataOrBuilder
    * @return A list containing the regexes.
    */
   java.util.List<java.lang.String> getRegexesList();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface ParameterMetadataOrBuilder
    * @return The count of regexes.
    */
   int getRegexesCount();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface ParameterMetadataOrBuilder
    * @return The regexes at the given index.
    */
   java.lang.String getRegexes(int index);
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface ParameterMetadataOrBuilder
    * @return The enum numeric value on the wire for paramType.
    */
   int getParamTypeValue();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface ParameterMetadataOrBuilder
    * <code>map&lt;string, string&gt; custom_metadata = 7;</code>
    */
   int getCustomMetadataCount();
+
   /**
    *
    *
@@ -210,9 +218,11 @@ public interface ParameterMetadataOrBuilder
    * <code>map&lt;string, string&gt; custom_metadata = 7;</code>
    */
   boolean containsCustomMetadata(java.lang.String key);
+
   /** Use {@link #getCustomMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getCustomMetadata();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface ParameterMetadataOrBuilder
    * <code>map&lt;string, string&gt; custom_metadata = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getCustomMetadataMap();
+
   /**
    *
    *
@@ -237,6 +248,7 @@ public interface ParameterMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

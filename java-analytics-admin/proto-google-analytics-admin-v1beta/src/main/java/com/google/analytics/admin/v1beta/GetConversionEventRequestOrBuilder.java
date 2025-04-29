@@ -40,6 +40,7 @@ public interface GetConversionEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

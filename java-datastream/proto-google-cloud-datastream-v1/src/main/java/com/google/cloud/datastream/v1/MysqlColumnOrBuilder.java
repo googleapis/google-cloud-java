@@ -36,6 +36,7 @@ public interface MysqlColumnOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface MysqlColumnOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface MysqlColumnOrBuilder
    * @return The collation.
    */
   java.lang.String getCollation();
+
   /**
    *
    *

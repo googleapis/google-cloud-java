@@ -122,6 +122,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPANY_SIZE_UNSPECIFIED = 0;</code>
    */
   public static final int COMPANY_SIZE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -132,6 +133,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MINI = 1;</code>
    */
   public static final int MINI_VALUE = 1;
+
   /**
    *
    *
@@ -142,6 +144,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SMALL = 2;</code>
    */
   public static final int SMALL_VALUE = 2;
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SMEDIUM = 3;</code>
    */
   public static final int SMEDIUM_VALUE = 3;
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDIUM = 4;</code>
    */
   public static final int MEDIUM_VALUE = 4;
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BIG = 5;</code>
    */
   public static final int BIG_VALUE = 5;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public enum CompanySize implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BIGGER = 6;</code>
    */
   public static final int BIGGER_VALUE = 6;
+
   /**
    *
    *

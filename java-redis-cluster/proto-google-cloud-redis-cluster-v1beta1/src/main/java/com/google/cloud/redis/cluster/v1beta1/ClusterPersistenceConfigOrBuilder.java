@@ -38,6 +38,7 @@ public interface ClusterPersistenceConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ClusterPersistenceConfigOrBuilder
    * @return Whether the rdbConfig field is set.
    */
   boolean hasRdbConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ClusterPersistenceConfigOrBuilder
    * @return The rdbConfig.
    */
   com.google.cloud.redis.cluster.v1beta1.ClusterPersistenceConfig.RDBConfig getRdbConfig();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface ClusterPersistenceConfigOrBuilder
    * @return Whether the aofConfig field is set.
    */
   boolean hasAofConfig();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ClusterPersistenceConfigOrBuilder
    * @return The aofConfig.
    */
   com.google.cloud.redis.cluster.v1beta1.ClusterPersistenceConfig.AOFConfig getAofConfig();
+
   /**
    *
    *

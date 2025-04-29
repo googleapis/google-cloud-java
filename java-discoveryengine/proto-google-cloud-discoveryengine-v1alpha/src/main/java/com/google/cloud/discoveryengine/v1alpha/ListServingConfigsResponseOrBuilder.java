@@ -34,6 +34,7 @@ public interface ListServingConfigsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.ServingConfig serving_configs = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.ServingConfig> getServingConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServingConfigsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.ServingConfig serving_configs = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.ServingConfig getServingConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServingConfigsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.ServingConfig serving_configs = 1;</code>
    */
   int getServingConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListServingConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.ServingConfigOrBuilder>
       getServingConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListServingConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.EncryptionConfig encryption_configs = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.EncryptionConfig> getEncryptionConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.EncryptionConfig encryption_configs = 1;</code>
    */
   com.google.cloud.dataplex.v1.EncryptionConfig getEncryptionConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.EncryptionConfig encryption_configs = 1;</code>
    */
   int getEncryptionConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EncryptionConfigOrBuilder>
       getEncryptionConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface ListEncryptionConfigsResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
+
   /**
    *
    *

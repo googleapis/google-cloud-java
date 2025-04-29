@@ -33,6 +33,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.GetDatasetSchemaRequest)
     GetDatasetSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetDatasetSchemaRequest.newBuilder() to construct.
   private GetDatasetSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
 
   public static final int VISIBLE_FIELDS_ONLY_FIELD_NUMBER = 2;
   private boolean visibleFieldsOnly_ = false;
+
   /**
    *
    *
@@ -309,6 +313,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -506,6 +511,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -532,6 +538,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +642,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
     }
 
     private boolean visibleFieldsOnly_;
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
     public boolean getVisibleFieldsOnly() {
       return visibleFieldsOnly_;
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class GetDatasetSchemaRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

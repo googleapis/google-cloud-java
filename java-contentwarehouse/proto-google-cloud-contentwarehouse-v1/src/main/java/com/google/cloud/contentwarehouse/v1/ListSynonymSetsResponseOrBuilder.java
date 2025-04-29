@@ -34,6 +34,7 @@ public interface ListSynonymSetsResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.SynonymSet synonym_sets = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.SynonymSet> getSynonymSetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSynonymSetsResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.SynonymSet synonym_sets = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.SynonymSet getSynonymSets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSynonymSetsResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.SynonymSet synonym_sets = 1;</code>
    */
   int getSynonymSetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSynonymSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.SynonymSetOrBuilder>
       getSynonymSetsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListSynonymSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

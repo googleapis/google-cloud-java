@@ -36,6 +36,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the includeObjects field is set.
    */
   boolean hasIncludeObjects();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The includeObjects.
    */
   com.google.cloud.datastream.v1.OracleRdbms getIncludeObjects();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the excludeObjects field is set.
    */
   boolean hasExcludeObjects();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The excludeObjects.
    */
   com.google.cloud.datastream.v1.OracleRdbms getExcludeObjects();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the dropLargeObjects field is set.
    */
   boolean hasDropLargeObjects();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The dropLargeObjects.
    */
   com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects getDropLargeObjects();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the streamLargeObjects field is set.
    */
   boolean hasStreamLargeObjects();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The streamLargeObjects.
    */
   com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects getStreamLargeObjects();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the logMiner field is set.
    */
   boolean hasLogMiner();
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The logMiner.
    */
   com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner getLogMiner();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface OracleSourceConfigOrBuilder
    * @return Whether the binaryLogParser field is set.
    */
   boolean hasBinaryLogParser();
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public interface OracleSourceConfigOrBuilder
    * @return The binaryLogParser.
    */
   com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser getBinaryLogParser();
+
   /**
    *
    *

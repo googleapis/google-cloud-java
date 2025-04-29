@@ -43,6 +43,7 @@ public interface ListEventThreatDetectionCustomModulesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface ListEventThreatDetectionCustomModulesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

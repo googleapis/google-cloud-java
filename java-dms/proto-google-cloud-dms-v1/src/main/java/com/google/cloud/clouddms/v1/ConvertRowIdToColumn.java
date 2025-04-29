@@ -43,6 +43,7 @@ public final class ConvertRowIdToColumn extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ConvertRowIdToColumn)
     ConvertRowIdToColumnOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConvertRowIdToColumn.newBuilder() to construct.
   private ConvertRowIdToColumn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class ConvertRowIdToColumn extends com.google.protobuf.GeneratedMes
 
   public static final int ONLY_IF_NO_PRIMARY_KEY_FIELD_NUMBER = 1;
   private boolean onlyIfNoPrimaryKey_ = false;
+
   /**
    *
    *
@@ -248,6 +250,7 @@ public final class ConvertRowIdToColumn extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -440,6 +443,7 @@ public final class ConvertRowIdToColumn extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean onlyIfNoPrimaryKey_;
+
     /**
      *
      *
@@ -455,6 +459,7 @@ public final class ConvertRowIdToColumn extends com.google.protobuf.GeneratedMes
     public boolean getOnlyIfNoPrimaryKey() {
       return onlyIfNoPrimaryKey_;
     }
+
     /**
      *
      *
@@ -474,6 +479,7 @@ public final class ConvertRowIdToColumn extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface BigQueryDestinationOrBuilder
    * @return The tableUri.
    */
   java.lang.String getTableUri();
+
   /**
    *
    *
@@ -59,7 +60,7 @@ public interface BigQueryDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. Whether or not to overwrite destination table. By default the
+   * Required. Whether or not to overwrite the destination table. By default the
    * table won't be overwritten and an error will be returned if the table
    * exists and contains data.
    * </pre>
@@ -71,11 +72,12 @@ public interface BigQueryDestinationOrBuilder
    * @return The enum numeric value on the wire for writeDisposition.
    */
   int getWriteDispositionValue();
+
   /**
    *
    *
    * <pre>
-   * Required. Whether or not to overwrite destination table. By default the
+   * Required. Whether or not to overwrite the destination table. By default the
    * table won't be overwritten and an error will be returned if the table
    * exists and contains data.
    * </pre>

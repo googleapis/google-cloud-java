@@ -66,6 +66,7 @@ public interface ResponseMetaDataOrBuilder
    * @return Whether the schemaRestrictionResponse field is set.
    */
   boolean hasSchemaRestrictionResponse();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ResponseMetaDataOrBuilder
    */
   com.google.analytics.data.v1alpha.ResponseMetaData.SchemaRestrictionResponse
       getSchemaRestrictionResponse();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface ResponseMetaDataOrBuilder
    * @return Whether the currencyCode field is set.
    */
   boolean hasCurrencyCode();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface ResponseMetaDataOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
+
   /**
    *
    *
@@ -178,6 +182,7 @@ public interface ResponseMetaDataOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public interface ResponseMetaDataOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface ResponseMetaDataOrBuilder
    * @return Whether the emptyReason field is set.
    */
   boolean hasEmptyReason();
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public interface ResponseMetaDataOrBuilder
    * @return The emptyReason.
    */
   java.lang.String getEmptyReason();
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public interface ResponseMetaDataOrBuilder
    * @return Whether the subjectToThresholding field is set.
    */
   boolean hasSubjectToThresholding();
+
   /**
    *
    *
@@ -302,6 +311,7 @@ public interface ResponseMetaDataOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> getSamplingMetadatasList();
+
   /**
    *
    *
@@ -319,6 +329,7 @@ public interface ResponseMetaDataOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
    */
   com.google.analytics.data.v1alpha.SamplingMetadata getSamplingMetadatas(int index);
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public interface ResponseMetaDataOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 9;</code>
    */
   int getSamplingMetadatasCount();
+
   /**
    *
    *
@@ -354,6 +366,7 @@ public interface ResponseMetaDataOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
       getSamplingMetadatasOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface RepositoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RepositoryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface RepositoryOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface RepositoryOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface RepositoryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface RepositoryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface RepositoryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface RepositoryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public interface RepositoryOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public interface RepositoryOrBuilder
    * @return Whether the uris field is set.
    */
   boolean hasUris();
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public interface RepositoryOrBuilder
    * @return The uris.
    */
   com.google.cloud.securesourcemanager.v1.Repository.URIs getUris();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface RepositoryOrBuilder
    * @return Whether the initialConfig field is set.
    */
   boolean hasInitialConfig();
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public interface RepositoryOrBuilder
    * @return The initialConfig.
    */
   com.google.cloud.securesourcemanager.v1.Repository.InitialConfig getInitialConfig();
+
   /**
    *
    *

@@ -281,6 +281,19 @@ public final class StorageBatchOperationsGrpc {
     return StorageBatchOperationsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static StorageBatchOperationsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<StorageBatchOperationsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<StorageBatchOperationsBlockingV2Stub>() {
+          @java.lang.Override
+          public StorageBatchOperationsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StorageBatchOperationsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return StorageBatchOperationsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -507,6 +520,95 @@ public final class StorageBatchOperationsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service StorageBatchOperations.
+   *
+   * <pre>
+   * Storage Batch Operations offers a managed experience to perform batch
+   * operations on millions of Cloud Storage objects in a serverless fashion. With
+   * this service, you can automate and simplify large scale API operations
+   * performed on Cloud Storage objects.
+   * </pre>
+   */
+  public static final class StorageBatchOperationsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<StorageBatchOperationsBlockingV2Stub> {
+    private StorageBatchOperationsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected StorageBatchOperationsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new StorageBatchOperationsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Jobs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.ListJobsResponse listJobs(
+        com.google.cloud.storagebatchoperations.v1.ListJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a batch job.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.Job getJob(
+        com.google.cloud.storagebatchoperations.v1.GetJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a batch job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createJob(
+        com.google.cloud.storagebatchoperations.v1.CreateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a batch job.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteJob(
+        com.google.cloud.storagebatchoperations.v1.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a batch job.
+     * </pre>
+     */
+    public com.google.cloud.storagebatchoperations.v1.CancelJobResponse cancelJob(
+        com.google.cloud.storagebatchoperations.v1.CancelJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelJobMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service StorageBatchOperations.
    *
    * <pre>
    * Storage Batch Operations offers a managed experience to perform batch

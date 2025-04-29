@@ -282,6 +282,19 @@ public final class ContainerAnalysisGrpc {
     return ContainerAnalysisStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ContainerAnalysisBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisBlockingV2Stub>() {
+          @java.lang.Override
+          public ContainerAnalysisBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContainerAnalysisBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ContainerAnalysisBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -575,6 +588,118 @@ public final class ContainerAnalysisGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ContainerAnalysis.
+   *
+   * <pre>
+   * Retrieves analysis results of Cloud components such as Docker container
+   * images. The Container Analysis API is an implementation of the
+   * [Grafeas](https://grafeas.io) API.
+   * Analysis results are stored as a series of occurrences. An `Occurrence`
+   * contains information about a specific analysis instance on a resource. An
+   * occurrence refers to a `Note`. A note contains details describing the
+   * analysis and is generally stored in a separate project, called a `Provider`.
+   * Multiple occurrences can refer to the same note.
+   * For example, an SSL vulnerability could affect multiple images. In this case,
+   * there would be one note for the vulnerability and an occurrence for each
+   * image with the vulnerability referring to that note.
+   * </pre>
+   */
+  public static final class ContainerAnalysisBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ContainerAnalysisBlockingV2Stub> {
+    private ContainerAnalysisBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ContainerAnalysisBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ContainerAnalysisBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified note or occurrence.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or an occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a note or an occurrence resource.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified note or
+     * occurrence. Requires list permission on the project (for example,
+     * `containeranalysis.notes.list`).
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a summary of the number and severity of occurrences.
+     * </pre>
+     */
+    public com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary
+        getVulnerabilityOccurrencesSummary(
+            com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an SBOM for the given resource.
+     * </pre>
+     */
+    public com.google.containeranalysis.v1.ExportSBOMResponse exportSBOM(
+        com.google.containeranalysis.v1.ExportSBOMRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportSBOMMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ContainerAnalysis.
    *
    * <pre>
    * Retrieves analysis results of Cloud components such as Docker container

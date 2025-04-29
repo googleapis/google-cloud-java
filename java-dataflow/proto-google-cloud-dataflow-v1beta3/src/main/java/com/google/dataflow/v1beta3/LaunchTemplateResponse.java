@@ -33,6 +33,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.LaunchTemplateResponse)
     LaunchTemplateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LaunchTemplateResponse.newBuilder() to construct.
   private LaunchTemplateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int JOB_FIELD_NUMBER = 1;
   private com.google.dataflow.v1beta3.Job job_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
   public com.google.dataflow.v1beta3.Job getJob() {
     return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
   }
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +483,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
             com.google.dataflow.v1beta3.Job.Builder,
             com.google.dataflow.v1beta3.JobOrBuilder>
         jobBuilder_;
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
     public boolean hasJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
         return jobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +593,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +614,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -635,6 +648,7 @@ public final class LaunchTemplateResponse extends com.google.protobuf.GeneratedM
         return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
       }
     }
+
     /**
      *
      *

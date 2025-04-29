@@ -35,6 +35,7 @@ public final class ImageSegmentationPredictionInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.instance.ImageSegmentationPredictionInstance)
     ImageSegmentationPredictionInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageSegmentationPredictionInstance.newBuilder() to construct.
   private ImageSegmentationPredictionInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class ImageSegmentationPredictionInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class ImageSegmentationPredictionInstance
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ImageSegmentationPredictionInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class ImageSegmentationPredictionInstance
       return s;
     }
   }
+
   /**
    *
    *
@@ -373,6 +378,7 @@ public final class ImageSegmentationPredictionInstance
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -601,6 +607,7 @@ public final class ImageSegmentationPredictionInstance
     private int bitField0_;
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -623,6 +630,7 @@ public final class ImageSegmentationPredictionInstance
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -645,6 +653,7 @@ public final class ImageSegmentationPredictionInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +675,7 @@ public final class ImageSegmentationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +693,7 @@ public final class ImageSegmentationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class ImageSegmentationPredictionInstance
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -732,6 +744,7 @@ public final class ImageSegmentationPredictionInstance
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class ImageSegmentationPredictionInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class ImageSegmentationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class ImageSegmentationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *

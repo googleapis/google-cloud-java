@@ -36,6 +36,7 @@ public interface NamespacedNameOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NamespacedNameOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

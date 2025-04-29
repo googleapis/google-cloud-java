@@ -73,6 +73,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INTEGRATED_SYSTEM_UNSPECIFIED = 0;</code>
    */
   public static final int INTEGRATED_SYSTEM_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>BIGQUERY = 1;</code>
    */
   public static final int BIGQUERY_VALUE = 1;
+
   /**
    *
    *
