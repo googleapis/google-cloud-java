@@ -33,6 +33,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ReferenceListScope)
     ReferenceListScopeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReferenceListScope.newBuilder() to construct.
   private ReferenceListScope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList scopeNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getScopeNamesList() {
     return scopeNames_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
   public int getScopeNamesCount() {
     return scopeNames_.size();
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
   public java.lang.String getScopeNames(int index) {
     return scopeNames_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +306,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -499,6 +505,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
       scopeNames_.makeImmutable();
       return scopeNames_;
     }
+
     /**
      *
      *
@@ -532,6 +540,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
     public int getScopeNamesCount() {
       return scopeNames_.size();
     }
+
     /**
      *
      *
@@ -549,6 +558,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
     public java.lang.String getScopeNames(int index) {
       return scopeNames_.get(index);
     }
+
     /**
      *
      *
@@ -566,6 +576,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getScopeNamesBytes(int index) {
       return scopeNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -591,6 +602,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +649,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +670,7 @@ public final class ReferenceListScope extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

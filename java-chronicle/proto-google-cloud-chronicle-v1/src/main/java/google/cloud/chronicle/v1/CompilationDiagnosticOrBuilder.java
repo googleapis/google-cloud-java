@@ -36,6 +36,7 @@ public interface CompilationDiagnosticOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CompilationDiagnosticOrBuilder
    * @return Whether the position field is set.
    */
   boolean hasPosition();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CompilationDiagnosticOrBuilder
    * @return The position.
    */
   google.cloud.chronicle.v1.CompilationPosition getPosition();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CompilationDiagnosticOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface CompilationDiagnosticOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *

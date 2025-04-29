@@ -33,6 +33,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ListRetrohuntsResponse)
     ListRetrohuntsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListRetrohuntsResponse.newBuilder() to construct.
   private ListRetrohuntsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<google.cloud.chronicle.v1.Retrohunt> retrohunts_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<google.cloud.chronicle.v1.Retrohunt> getRetrohuntsList() {
     return retrohunts_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       getRetrohuntsOrBuilderList() {
     return retrohunts_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
   public int getRetrohuntsCount() {
     return retrohunts_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
   public google.cloud.chronicle.v1.Retrohunt getRetrohunts(int index) {
     return retrohunts_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return retrohuntsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return retrohuntsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return retrohuntsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
     public google.cloud.chronicle.v1.Retrohunt.Builder getRetrohuntsBuilder(int index) {
       return getRetrohuntsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -877,6 +899,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return retrohuntsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -894,6 +917,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(retrohunts_);
       }
     }
+
     /**
      *
      *
@@ -907,6 +931,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       return getRetrohuntsFieldBuilder()
           .addBuilder(google.cloud.chronicle.v1.Retrohunt.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       return getRetrohuntsFieldBuilder()
           .addBuilder(index, google.cloud.chronicle.v1.Retrohunt.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -951,6 +977,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -974,6 +1001,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1025,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1048,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1067,7 @@ public final class ListRetrohuntsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

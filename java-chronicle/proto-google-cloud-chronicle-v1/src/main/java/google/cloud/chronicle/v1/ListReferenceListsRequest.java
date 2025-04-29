@@ -33,6 +33,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ListReferenceListsRequest)
     ListReferenceListsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListReferenceListsRequest.newBuilder() to construct.
   private ListReferenceListsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
 
   public static final int VIEW_FIELD_NUMBER = 4;
   private int view_ = 0;
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +663,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -680,6 +690,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +859,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -916,6 +936,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
           google.cloud.chronicle.v1.ReferenceListView.forNumber(view_);
       return result == null ? google.cloud.chronicle.v1.ReferenceListView.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class ListReferenceListsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

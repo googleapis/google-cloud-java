@@ -34,6 +34,7 @@ public interface ListRetrohuntsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Retrohunt retrohunts = 1;</code>
    */
   java.util.List<google.cloud.chronicle.v1.Retrohunt> getRetrohuntsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRetrohuntsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Retrohunt retrohunts = 1;</code>
    */
   google.cloud.chronicle.v1.Retrohunt getRetrohunts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRetrohuntsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Retrohunt retrohunts = 1;</code>
    */
   int getRetrohuntsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRetrohuntsResponseOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.RetrohuntOrBuilder>
       getRetrohuntsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListRetrohuntsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

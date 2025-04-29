@@ -93,6 +93,7 @@ public enum RuleView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RULE_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int RULE_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -107,6 +108,7 @@ public enum RuleView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public enum RuleView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FULL = 2;</code>
    */
   public static final int FULL_VALUE = 2;
+
   /**
    *
    *

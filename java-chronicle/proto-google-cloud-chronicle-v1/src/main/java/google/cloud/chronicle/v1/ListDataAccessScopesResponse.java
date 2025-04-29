@@ -33,6 +33,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ListDataAccessScopesResponse)
     ListDataAccessScopesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDataAccessScopesResponse.newBuilder() to construct.
   private ListDataAccessScopesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<google.cloud.chronicle.v1.DataAccessScope> dataAccessScopes_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
   public java.util.List<google.cloud.chronicle.v1.DataAccessScope> getDataAccessScopesList() {
     return dataAccessScopes_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       getDataAccessScopesOrBuilderList() {
     return dataAccessScopes_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
   public int getDataAccessScopesCount() {
     return dataAccessScopes_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
   public google.cloud.chronicle.v1.DataAccessScope getDataAccessScopes(int index) {
     return dataAccessScopes_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
 
   public static final int GLOBAL_DATA_ACCESS_SCOPE_GRANTED_FIELD_NUMBER = 3;
   private boolean globalDataAccessScopeGranted_ = false;
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
   public boolean hasGlobalDataAccessScopeGranted() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +182,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -411,6 +421,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -704,6 +715,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return dataAccessScopesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return dataAccessScopesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return dataAccessScopesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +942,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     public google.cloud.chronicle.v1.DataAccessScope.Builder getDataAccessScopesBuilder(int index) {
       return getDataAccessScopesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return dataAccessScopesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(dataAccessScopes_);
       }
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       return getDataAccessScopesFieldBuilder()
           .addBuilder(google.cloud.chronicle.v1.DataAccessScope.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -992,6 +1019,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       return getDataAccessScopesFieldBuilder()
           .addBuilder(index, google.cloud.chronicle.v1.DataAccessScope.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1027,6 +1055,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     }
 
     private boolean globalDataAccessScopeGranted_;
+
     /**
      *
      *
@@ -1042,6 +1071,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     public boolean hasGlobalDataAccessScopeGranted() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1057,6 +1087,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     public boolean getGlobalDataAccessScopeGranted() {
       return globalDataAccessScopeGranted_;
     }
+
     /**
      *
      *
@@ -1076,6 +1107,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1127,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1118,6 +1151,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1175,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1198,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1217,7 @@ public final class ListDataAccessScopesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

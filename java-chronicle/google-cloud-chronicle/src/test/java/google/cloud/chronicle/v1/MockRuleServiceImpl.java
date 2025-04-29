@@ -303,7 +303,8 @@ public class MockRuleServiceImpl extends RuleServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateRuleDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateRuleDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   RuleDeployment.class.getName(),
                   Exception.class.getName())));

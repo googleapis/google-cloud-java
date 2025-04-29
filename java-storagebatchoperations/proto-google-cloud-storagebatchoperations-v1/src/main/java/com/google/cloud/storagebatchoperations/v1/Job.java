@@ -386,10 +386,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the Job. job_id is unique
-   * within the project and location, that is either set by the customer or
+   * within the project, that is either set by the customer or
    * defined by the service. Format:
-   * projects/{project}/locations/{location}/jobs/{job_id} .
-   * For example: "projects/123456/locations/us-central1/jobs/job01".
+   * projects/{project}/locations/global/jobs/{job_id} .
+   * For example: "projects/123456/locations/global/jobs/job01".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -414,10 +414,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the Job. job_id is unique
-   * within the project and location, that is either set by the customer or
+   * within the project, that is either set by the customer or
    * defined by the service. Format:
-   * projects/{project}/locations/{location}/jobs/{job_id} .
-   * For example: "projects/123456/locations/us-central1/jobs/job01".
+   * projects/{project}/locations/global/jobs/{job_id} .
+   * For example: "projects/123456/locations/global/jobs/job01".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2073,10 +2073,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Job. job_id is unique
-     * within the project and location, that is either set by the customer or
+     * within the project, that is either set by the customer or
      * defined by the service. Format:
-     * projects/{project}/locations/{location}/jobs/{job_id} .
-     * For example: "projects/123456/locations/us-central1/jobs/job01".
+     * projects/{project}/locations/global/jobs/{job_id} .
+     * For example: "projects/123456/locations/global/jobs/job01".
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2100,10 +2100,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Job. job_id is unique
-     * within the project and location, that is either set by the customer or
+     * within the project, that is either set by the customer or
      * defined by the service. Format:
-     * projects/{project}/locations/{location}/jobs/{job_id} .
-     * For example: "projects/123456/locations/us-central1/jobs/job01".
+     * projects/{project}/locations/global/jobs/{job_id} .
+     * For example: "projects/123456/locations/global/jobs/job01".
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2127,10 +2127,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Job. job_id is unique
-     * within the project and location, that is either set by the customer or
+     * within the project, that is either set by the customer or
      * defined by the service. Format:
-     * projects/{project}/locations/{location}/jobs/{job_id} .
-     * For example: "projects/123456/locations/us-central1/jobs/job01".
+     * projects/{project}/locations/global/jobs/{job_id} .
+     * For example: "projects/123456/locations/global/jobs/job01".
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2153,10 +2153,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Job. job_id is unique
-     * within the project and location, that is either set by the customer or
+     * within the project, that is either set by the customer or
      * defined by the service. Format:
-     * projects/{project}/locations/{location}/jobs/{job_id} .
-     * For example: "projects/123456/locations/us-central1/jobs/job01".
+     * projects/{project}/locations/global/jobs/{job_id} .
+     * For example: "projects/123456/locations/global/jobs/job01".
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2175,10 +2175,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Job. job_id is unique
-     * within the project and location, that is either set by the customer or
+     * within the project, that is either set by the customer or
      * defined by the service. Format:
-     * projects/{project}/locations/{location}/jobs/{job_id} .
-     * For example: "projects/123456/locations/us-central1/jobs/job01".
+     * projects/{project}/locations/global/jobs/{job_id} .
+     * For example: "projects/123456/locations/global/jobs/job01".
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

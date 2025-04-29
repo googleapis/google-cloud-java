@@ -41,6 +41,7 @@ public interface GetWatchlistRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

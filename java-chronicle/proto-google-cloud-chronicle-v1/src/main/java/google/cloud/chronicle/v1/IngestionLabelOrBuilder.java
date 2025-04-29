@@ -36,6 +36,7 @@ public interface IngestionLabelOrBuilder
    * @return The ingestionLabelKey.
    */
   java.lang.String getIngestionLabelKey();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface IngestionLabelOrBuilder
    * @return The ingestionLabelValue.
    */
   java.lang.String getIngestionLabelValue();
+
   /**
    *
    *

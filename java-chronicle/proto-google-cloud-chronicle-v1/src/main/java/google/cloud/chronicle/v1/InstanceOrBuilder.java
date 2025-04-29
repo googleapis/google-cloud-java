@@ -28,24 +28,25 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of this instance.
+   * Identifier. The resource name of this instance.
    * Format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of this instance.
+   * Identifier. The resource name of this instance.
    * Format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

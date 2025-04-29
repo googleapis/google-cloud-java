@@ -566,6 +566,19 @@ public final class RuleServiceGrpc {
     return RuleServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RuleServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RuleServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RuleServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public RuleServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RuleServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RuleServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -998,6 +1011,185 @@ public final class RuleServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RuleService.
+   *
+   * <pre>
+   * RuleService provides interface for user-created rules.
+   * </pre>
+   */
+  public static final class RuleServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RuleServiceBlockingV2Stub> {
+    private RuleServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RuleServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RuleServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Rule.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Rule createRule(
+        google.cloud.chronicle.v1.CreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Rule.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Rule getRule(
+        google.cloud.chronicle.v1.GetRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rules.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListRulesResponse listRules(
+        google.cloud.chronicle.v1.ListRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Rule.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Rule updateRule(
+        google.cloud.chronicle.v1.UpdateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Rule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRule(
+        google.cloud.chronicle.v1.DeleteRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all revisions of the rule.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListRuleRevisionsResponse listRuleRevisions(
+        google.cloud.chronicle.v1.ListRuleRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRuleRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Retrohunt.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRetrohunt(
+        google.cloud.chronicle.v1.CreateRetrohuntRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRetrohuntMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Retrohunt.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Retrohunt getRetrohunt(
+        google.cloud.chronicle.v1.GetRetrohuntRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRetrohuntMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Retrohunts.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListRetrohuntsResponse listRetrohunts(
+        google.cloud.chronicle.v1.ListRetrohuntsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRetrohuntsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RuleDeployment.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.RuleDeployment getRuleDeployment(
+        google.cloud.chronicle.v1.GetRuleDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRuleDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RuleDeployments across all Rules.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListRuleDeploymentsResponse listRuleDeployments(
+        google.cloud.chronicle.v1.ListRuleDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRuleDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RuleDeployment.
+     * Failures are not necessarily atomic. If there is a request to update
+     * multiple fields, and any update to a single field fails, an error will be
+     * returned, but other fields may remain successfully updated.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.RuleDeployment updateRuleDeployment(
+        google.cloud.chronicle.v1.UpdateRuleDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRuleDeploymentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service RuleService.
    *
    * <pre>
    * RuleService provides interface for user-created rules.

@@ -40,6 +40,7 @@ public interface GetRetrohuntRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public interface ListReferenceListsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.ReferenceList reference_lists = 1;</code>
    */
   java.util.List<google.cloud.chronicle.v1.ReferenceList> getReferenceListsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListReferenceListsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.ReferenceList reference_lists = 1;</code>
    */
   google.cloud.chronicle.v1.ReferenceList getReferenceLists(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListReferenceListsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.ReferenceList reference_lists = 1;</code>
    */
   int getReferenceListsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListReferenceListsResponseOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.ReferenceListOrBuilder>
       getReferenceListsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListReferenceListsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

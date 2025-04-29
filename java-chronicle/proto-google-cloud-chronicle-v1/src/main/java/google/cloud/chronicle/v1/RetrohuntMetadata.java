@@ -33,6 +33,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.RetrohuntMetadata)
     RetrohuntMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RetrohuntMetadata.newBuilder() to construct.
   private RetrohuntMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object retrohunt_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int EXECUTION_INTERVAL_FIELD_NUMBER = 2;
   private com.google.type.Interval executionInterval_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasExecutionInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
         ? com.google.type.Interval.getDefaultInstance()
         : executionInterval_;
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int PROGRESS_PERCENTAGE_FIELD_NUMBER = 3;
   private float progressPercentage_ = 0F;
+
   /**
    *
    *
@@ -373,6 +380,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -602,6 +610,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object retrohunt_ = "";
+
     /**
      *
      *
@@ -626,6 +635,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         executionIntervalBuilder_;
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasExecutionInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
         return executionIntervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getExecutionIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
             : executionInterval_;
       }
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private float progressPercentage_;
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
     public float getProgressPercentage() {
       return progressPercentage_;
     }
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class RetrohuntMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

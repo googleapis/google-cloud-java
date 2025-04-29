@@ -33,6 +33,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ListWatchlistsResponse)
     ListWatchlistsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListWatchlistsResponse.newBuilder() to construct.
   private ListWatchlistsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<google.cloud.chronicle.v1.Watchlist> watchlists_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<google.cloud.chronicle.v1.Watchlist> getWatchlistsList() {
     return watchlists_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       getWatchlistsOrBuilderList() {
     return watchlists_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
   public int getWatchlistsCount() {
     return watchlists_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
   public google.cloud.chronicle.v1.Watchlist getWatchlists(int index) {
     return watchlists_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return watchlistsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return watchlistsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -682,6 +693,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return watchlistsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +859,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
     public google.cloud.chronicle.v1.Watchlist.Builder getWatchlistsBuilder(int index) {
       return getWatchlistsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return watchlistsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(watchlists_);
       }
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       return getWatchlistsFieldBuilder()
           .addBuilder(google.cloud.chronicle.v1.Watchlist.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -964,6 +989,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       return getWatchlistsFieldBuilder()
           .addBuilder(index, google.cloud.chronicle.v1.Watchlist.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -997,6 +1023,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1020,6 +1047,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1071,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1094,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1113,7 @@ public final class ListWatchlistsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

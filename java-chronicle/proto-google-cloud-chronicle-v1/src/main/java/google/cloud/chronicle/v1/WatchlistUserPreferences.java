@@ -33,6 +33,7 @@ public final class WatchlistUserPreferences extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.WatchlistUserPreferences)
     WatchlistUserPreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WatchlistUserPreferences.newBuilder() to construct.
   private WatchlistUserPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class WatchlistUserPreferences extends com.google.protobuf.Generate
 
   public static final int PINNED_FIELD_NUMBER = 1;
   private boolean pinned_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class WatchlistUserPreferences extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -420,6 +423,7 @@ public final class WatchlistUserPreferences extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean pinned_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class WatchlistUserPreferences extends com.google.protobuf.Generate
     public boolean getPinned() {
       return pinned_;
     }
+
     /**
      *
      *
@@ -454,6 +459,7 @@ public final class WatchlistUserPreferences extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

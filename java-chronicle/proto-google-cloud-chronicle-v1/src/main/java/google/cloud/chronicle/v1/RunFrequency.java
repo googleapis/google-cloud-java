@@ -83,6 +83,7 @@ public enum RunFrequency implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RUN_FREQUENCY_UNSPECIFIED = 0;</code>
    */
   public static final int RUN_FREQUENCY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public enum RunFrequency implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LIVE = 1;</code>
    */
   public static final int LIVE_VALUE = 1;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public enum RunFrequency implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HOURLY = 2;</code>
    */
   public static final int HOURLY_VALUE = 2;
+
   /**
    *
    *

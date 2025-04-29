@@ -34,6 +34,7 @@ public interface ListRuleRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Rule rules = 1;</code>
    */
   java.util.List<google.cloud.chronicle.v1.Rule> getRulesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRuleRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Rule rules = 1;</code>
    */
   google.cloud.chronicle.v1.Rule getRules(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRuleRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Rule rules = 1;</code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListRuleRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.Rule rules = 1;</code>
    */
   java.util.List<? extends google.cloud.chronicle.v1.RuleOrBuilder> getRulesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListRuleRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

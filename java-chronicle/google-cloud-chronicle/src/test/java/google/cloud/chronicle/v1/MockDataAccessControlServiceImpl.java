@@ -73,7 +73,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDataAccessLabel, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDataAccessLabel, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataAccessLabel.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDataAccessLabels, expected %s or %s",
+                  "Unrecognized response type %s for method ListDataAccessLabels, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDataAccessLabelsResponse.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDataAccessLabel, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDataAccessLabel, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataAccessLabel.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +161,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDataAccessLabel, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDataAccessLabel, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -179,7 +183,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDataAccessScope, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDataAccessScope, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataAccessScope.class.getName(),
                   Exception.class.getName())));
@@ -222,7 +227,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDataAccessScopes, expected %s or %s",
+                  "Unrecognized response type %s for method ListDataAccessScopes, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDataAccessScopesResponse.class.getName(),
                   Exception.class.getName())));
@@ -243,7 +249,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDataAccessScope, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDataAccessScope, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataAccessScope.class.getName(),
                   Exception.class.getName())));
@@ -264,7 +271,8 @@ public class MockDataAccessControlServiceImpl extends DataAccessControlServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDataAccessScope, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDataAccessScope, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
