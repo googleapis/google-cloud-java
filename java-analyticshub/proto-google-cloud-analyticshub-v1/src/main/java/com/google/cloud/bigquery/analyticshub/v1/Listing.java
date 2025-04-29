@@ -36,6 +36,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing)
     ListingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Listing.newBuilder() to construct.
   private Listing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -52,6 +53,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     categories_ = java.util.Collections.emptyList();
     requestAccess_ = "";
     discoveryType_ = 0;
+    resourceType_ = 0;
   }
 
   @java.lang.Override
@@ -119,6 +121,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -269,42 +272,61 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>CATEGORY_UNSPECIFIED = 0;</code> */
     public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
+
     /** <code>CATEGORY_OTHERS = 1;</code> */
     public static final int CATEGORY_OTHERS_VALUE = 1;
+
     /** <code>CATEGORY_ADVERTISING_AND_MARKETING = 2;</code> */
     public static final int CATEGORY_ADVERTISING_AND_MARKETING_VALUE = 2;
+
     /** <code>CATEGORY_COMMERCE = 3;</code> */
     public static final int CATEGORY_COMMERCE_VALUE = 3;
+
     /** <code>CATEGORY_CLIMATE_AND_ENVIRONMENT = 4;</code> */
     public static final int CATEGORY_CLIMATE_AND_ENVIRONMENT_VALUE = 4;
+
     /** <code>CATEGORY_DEMOGRAPHICS = 5;</code> */
     public static final int CATEGORY_DEMOGRAPHICS_VALUE = 5;
+
     /** <code>CATEGORY_ECONOMICS = 6;</code> */
     public static final int CATEGORY_ECONOMICS_VALUE = 6;
+
     /** <code>CATEGORY_EDUCATION = 7;</code> */
     public static final int CATEGORY_EDUCATION_VALUE = 7;
+
     /** <code>CATEGORY_ENERGY = 8;</code> */
     public static final int CATEGORY_ENERGY_VALUE = 8;
+
     /** <code>CATEGORY_FINANCIAL = 9;</code> */
     public static final int CATEGORY_FINANCIAL_VALUE = 9;
+
     /** <code>CATEGORY_GAMING = 10;</code> */
     public static final int CATEGORY_GAMING_VALUE = 10;
+
     /** <code>CATEGORY_GEOSPATIAL = 11;</code> */
     public static final int CATEGORY_GEOSPATIAL_VALUE = 11;
+
     /** <code>CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE = 12;</code> */
     public static final int CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE_VALUE = 12;
+
     /** <code>CATEGORY_MEDIA = 13;</code> */
     public static final int CATEGORY_MEDIA_VALUE = 13;
+
     /** <code>CATEGORY_PUBLIC_SECTOR = 14;</code> */
     public static final int CATEGORY_PUBLIC_SECTOR_VALUE = 14;
+
     /** <code>CATEGORY_RETAIL = 15;</code> */
     public static final int CATEGORY_RETAIL_VALUE = 15;
+
     /** <code>CATEGORY_SPORTS = 16;</code> */
     public static final int CATEGORY_SPORTS_VALUE = 16;
+
     /** <code>CATEGORY_SCIENCE_AND_RESEARCH = 17;</code> */
     public static final int CATEGORY_SCIENCE_AND_RESEARCH_VALUE = 17;
+
     /** <code>CATEGORY_TRANSPORTATION_AND_LOGISTICS = 18;</code> */
     public static final int CATEGORY_TRANSPORTATION_AND_LOGISTICS_VALUE = 18;
+
     /** <code>CATEGORY_TRAVEL_AND_TOURISM = 19;</code> */
     public static final int CATEGORY_TRAVEL_AND_TOURISM_VALUE = 19;
 
@@ -436,24 +458,29 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the dataset source for this listing.
+     * Optional. Resource name of the dataset source for this listing.
      * e.g. `projects/myproject/datasets/123`
      * </pre>
      *
-     * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
      * <pre>
-     * Resource name of the dataset source for this listing.
+     * Optional. Resource name of the dataset source for this listing.
      * e.g. `projects/myproject/datasets/123`
      * </pre>
      *
-     * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for dataset.
      */
@@ -463,9 +490,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -476,13 +502,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                 .SelectedResource>
         getSelectedResourcesList();
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -491,13 +517,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
         getSelectedResources(int index);
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -505,13 +531,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getSelectedResourcesCount();
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -523,13 +549,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                     .SelectedResourceOrBuilder>
         getSelectedResourcesOrBuilderList();
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -555,6 +581,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the restrictedExportPolicy field is set.
      */
     boolean hasRestrictedExportPolicy();
+
     /**
      *
      *
@@ -571,6 +598,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy
         getRestrictedExportPolicy();
+
     /**
      *
      *
@@ -587,6 +615,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .RestrictedExportPolicyOrBuilder
         getRestrictedExportPolicyOrBuilder();
   }
+
   /**
    *
    *
@@ -607,6 +636,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource)
       BigQueryDatasetSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryDatasetSource.newBuilder() to construct.
     private BigQueryDatasetSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -661,6 +691,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the table field is set.
        */
       boolean hasTable();
+
       /**
        *
        *
@@ -678,6 +709,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The table.
        */
       java.lang.String getTable();
+
       /**
        *
        *
@@ -700,11 +732,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               .ResourceCase
           getResourceCase();
     }
+
     /**
      *
      *
      * <pre>
-     * Resource in this dataset that are selectively shared.
+     * Resource in this dataset that is selectively shared.
      * </pre>
      *
      * Protobuf type {@code
@@ -715,6 +748,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
         SelectedResourceOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use SelectedResource.newBuilder() to construct.
       private SelectedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -761,6 +795,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         private ResourceCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -792,6 +827,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TABLE_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -811,6 +847,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTable() {
         return resourceCase_ == 1;
       }
+
       /**
        *
        *
@@ -843,6 +880,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1077,11 +1115,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
        * <pre>
-       * Resource in this dataset that are selectively shared.
+       * Resource in this dataset that is selectively shared.
        * </pre>
        *
        * Protobuf type {@code
@@ -1338,6 +1377,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasTable() {
           return resourceCase_ == 1;
         }
+
         /**
          *
          *
@@ -1371,6 +1411,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1404,6 +1445,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1430,6 +1472,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1454,6 +1497,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -1572,6 +1616,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the enabled field is set.
        */
       boolean hasEnabled();
+
       /**
        *
        *
@@ -1585,6 +1630,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The enabled.
        */
       com.google.protobuf.BoolValue getEnabled();
+
       /**
        *
        *
@@ -1612,6 +1658,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the restrictDirectTableAccess field is set.
        */
       boolean hasRestrictDirectTableAccess();
+
       /**
        *
        *
@@ -1627,6 +1674,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The restrictDirectTableAccess.
        */
       com.google.protobuf.BoolValue getRestrictDirectTableAccess();
+
       /**
        *
        *
@@ -1656,6 +1704,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the restrictQueryResult field is set.
        */
       boolean hasRestrictQueryResult();
+
       /**
        *
        *
@@ -1671,6 +1720,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        * @return The restrictQueryResult.
        */
       com.google.protobuf.BoolValue getRestrictQueryResult();
+
       /**
        *
        *
@@ -1685,6 +1735,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.BoolValueOrBuilder getRestrictQueryResultOrBuilder();
     }
+
     /**
      *
      *
@@ -1701,6 +1752,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicy)
         RestrictedExportPolicyOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use RestrictedExportPolicy.newBuilder() to construct.
       private RestrictedExportPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1734,6 +1786,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int ENABLED_FIELD_NUMBER = 1;
       private com.google.protobuf.BoolValue enabled_;
+
       /**
        *
        *
@@ -1750,6 +1803,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEnabled() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1766,6 +1820,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.BoolValue getEnabled() {
         return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
       }
+
       /**
        *
        *
@@ -1783,6 +1838,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
       public static final int RESTRICT_DIRECT_TABLE_ACCESS_FIELD_NUMBER = 2;
       private com.google.protobuf.BoolValue restrictDirectTableAccess_;
+
       /**
        *
        *
@@ -1801,6 +1857,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRestrictDirectTableAccess() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1821,6 +1878,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             ? com.google.protobuf.BoolValue.getDefaultInstance()
             : restrictDirectTableAccess_;
       }
+
       /**
        *
        *
@@ -1842,6 +1900,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
       public static final int RESTRICT_QUERY_RESULT_FIELD_NUMBER = 3;
       private com.google.protobuf.BoolValue restrictQueryResult_;
+
       /**
        *
        *
@@ -1860,6 +1919,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRestrictQueryResult() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1880,6 +1940,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             ? com.google.protobuf.BoolValue.getDefaultInstance()
             : restrictQueryResult_;
       }
+
       /**
        *
        *
@@ -2126,6 +2187,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2409,6 +2471,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>
             enabledBuilder_;
+
         /**
          *
          *
@@ -2424,6 +2487,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasEnabled() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2443,6 +2507,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return enabledBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2466,6 +2531,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2486,6 +2552,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2514,6 +2581,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2534,6 +2602,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2549,6 +2618,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getEnabledFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2566,6 +2636,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
           }
         }
+
         /**
          *
          *
@@ -2599,6 +2670,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>
             restrictDirectTableAccessBuilder_;
+
         /**
          *
          *
@@ -2616,6 +2688,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRestrictDirectTableAccess() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -2639,6 +2712,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return restrictDirectTableAccessBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2664,6 +2738,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2687,6 +2762,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2718,6 +2794,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2740,6 +2817,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2757,6 +2835,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getRestrictDirectTableAccessFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2778,6 +2857,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 : restrictDirectTableAccess_;
           }
         }
+
         /**
          *
          *
@@ -2813,6 +2893,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>
             restrictQueryResultBuilder_;
+
         /**
          *
          *
@@ -2830,6 +2911,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRestrictQueryResult() {
           return ((bitField0_ & 0x00000004) != 0);
         }
+
         /**
          *
          *
@@ -2853,6 +2935,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             return restrictQueryResultBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2878,6 +2961,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2901,6 +2985,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2931,6 +3016,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2953,6 +3039,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2970,6 +3057,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getRestrictQueryResultFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2991,6 +3079,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 : restrictQueryResult_;
           }
         }
+
         /**
          *
          *
@@ -3097,15 +3186,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
      * <pre>
-     * Resource name of the dataset source for this listing.
+     * Optional. Resource name of the dataset source for this listing.
      * e.g. `projects/myproject/datasets/123`
      * </pre>
      *
-     * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The dataset.
      */
@@ -3121,15 +3213,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Resource name of the dataset source for this listing.
+     * Optional. Resource name of the dataset source for this listing.
      * e.g. `projects/myproject/datasets/123`
      * </pre>
      *
-     * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for dataset.
      */
@@ -3153,13 +3248,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                 .SelectedResource>
         selectedResources_;
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -3173,13 +3268,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getSelectedResourcesList() {
       return selectedResources_;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -3194,13 +3289,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getSelectedResourcesOrBuilderList() {
       return selectedResources_;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -3211,13 +3306,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getSelectedResourcesCount() {
       return selectedResources_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -3229,13 +3324,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getSelectedResources(int index) {
       return selectedResources_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Resources in this dataset that are selectively shared.
-     * If this field is empty, then the entire dataset (all resources) are
-     * shared. This field is only valid for data clean room exchanges.
+     * Optional. Resource in this dataset that is selectively shared.
+     * This field is required for data clean room exchanges.
      * </pre>
      *
      * <code>
@@ -3253,6 +3348,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
             .RestrictedExportPolicy
         restrictedExportPolicy_;
+
     /**
      *
      *
@@ -3271,6 +3367,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRestrictedExportPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3294,6 +3391,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               .RestrictedExportPolicy.getDefaultInstance()
           : restrictedExportPolicy_;
     }
+
     /**
      *
      *
@@ -3507,6 +3605,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3810,15 +3909,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
        * <pre>
-       * Resource name of the dataset source for this listing.
+       * Optional. Resource name of the dataset source for this listing.
        * e.g. `projects/myproject/datasets/123`
        * </pre>
        *
-       * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The dataset.
        */
@@ -3833,15 +3935,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Resource name of the dataset source for this listing.
+       * Optional. Resource name of the dataset source for this listing.
        * e.g. `projects/myproject/datasets/123`
        * </pre>
        *
-       * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for dataset.
        */
@@ -3856,15 +3961,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Resource name of the dataset source for this listing.
+       * Optional. Resource name of the dataset source for this listing.
        * e.g. `projects/myproject/datasets/123`
        * </pre>
        *
-       * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The dataset to set.
        * @return This builder for chaining.
@@ -3878,15 +3986,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Resource name of the dataset source for this listing.
+       * Optional. Resource name of the dataset source for this listing.
        * e.g. `projects/myproject/datasets/123`
        * </pre>
        *
-       * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -3896,15 +4007,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Resource name of the dataset source for this listing.
+       * Optional. Resource name of the dataset source for this listing.
        * e.g. `projects/myproject/datasets/123`
        * </pre>
        *
-       * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>
+       * string dataset = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for dataset to set.
        * @return This builder for chaining.
@@ -3948,9 +4062,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -3967,13 +4080,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -3987,13 +4100,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4009,13 +4122,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4038,13 +4151,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4065,13 +4178,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4093,13 +4206,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4122,13 +4235,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4148,13 +4261,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4175,13 +4288,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4203,13 +4316,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4226,13 +4339,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4249,13 +4362,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4267,13 +4380,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           getSelectedResourcesBuilder(int index) {
         return getSelectedResourcesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4289,13 +4402,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return selectedResourcesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4313,13 +4426,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(selectedResources_);
         }
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4334,13 +4447,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                     .SelectedResource.getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4356,13 +4469,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                     .SelectedResource.getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
-       * Optional. Resources in this dataset that are selectively shared.
-       * If this field is empty, then the entire dataset (all resources) are
-       * shared. This field is only valid for data clean room exchanges.
+       * Optional. Resource in this dataset that is selectively shared.
+       * This field is required for data clean room exchanges.
        * </pre>
        *
        * <code>
@@ -4413,6 +4526,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
                   .RestrictedExportPolicyOrBuilder>
           restrictedExportPolicyBuilder_;
+
       /**
        *
        *
@@ -4430,6 +4544,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRestrictedExportPolicy() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -4456,6 +4571,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return restrictedExportPolicyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4484,6 +4600,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4509,6 +4626,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4544,6 +4662,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4566,6 +4685,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4585,6 +4705,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRestrictedExportPolicyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4609,6 +4730,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               : restrictedExportPolicy_;
         }
       }
+
       /**
        *
        *
@@ -4712,6 +4834,1093 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PubSubTopicSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the Pub/Sub topic source for this listing.
+     * e.g. projects/myproject/topics/topicId
+     * </pre>
+     *
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The topic.
+     */
+    java.lang.String getTopic();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the Pub/Sub topic source for this listing.
+     * e.g. projects/myproject/topics/topicId
+     * </pre>
+     *
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for topic.
+     */
+    com.google.protobuf.ByteString getTopicBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the dataAffinityRegions.
+     */
+    java.util.List<java.lang.String> getDataAffinityRegionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of dataAffinityRegions.
+     */
+    int getDataAffinityRegionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The dataAffinityRegions at the given index.
+     */
+    java.lang.String getDataAffinityRegions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the dataAffinityRegions at the given index.
+     */
+    com.google.protobuf.ByteString getDataAffinityRegionsBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource}
+   */
+  public static final class PubSubTopicSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource)
+      PubSubTopicSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use PubSubTopicSource.newBuilder() to construct.
+    private PubSubTopicSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PubSubTopicSource() {
+      topic_ = "";
+      dataAffinityRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PubSubTopicSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+          .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+          .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.class,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder.class);
+    }
+
+    public static final int TOPIC_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the Pub/Sub topic source for this listing.
+     * e.g. projects/myproject/topics/topicId
+     * </pre>
+     *
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The topic.
+     */
+    @java.lang.Override
+    public java.lang.String getTopic() {
+      java.lang.Object ref = topic_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        topic_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the Pub/Sub topic source for this listing.
+     * e.g. projects/myproject/topics/topicId
+     * </pre>
+     *
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for topic.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTopicBytes() {
+      java.lang.Object ref = topic_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        topic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_AFFINITY_REGIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList dataAffinityRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the dataAffinityRegions.
+     */
+    public com.google.protobuf.ProtocolStringList getDataAffinityRegionsList() {
+      return dataAffinityRegions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of dataAffinityRegions.
+     */
+    public int getDataAffinityRegionsCount() {
+      return dataAffinityRegions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The dataAffinityRegions at the given index.
+     */
+    public java.lang.String getDataAffinityRegions(int index) {
+      return dataAffinityRegions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region hint on where the data might be published. Data affinity
+     * regions are modifiable. See https://cloud.google.com/about/locations for
+     * full listing of possible Cloud regions.
+     * </pre>
+     *
+     * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the dataAffinityRegions at the given index.
+     */
+    public com.google.protobuf.ByteString getDataAffinityRegionsBytes(int index) {
+      return dataAffinityRegions_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
+      }
+      for (int i = 0; i < dataAffinityRegions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 2, dataAffinityRegions_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dataAffinityRegions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(dataAffinityRegions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDataAffinityRegionsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource other =
+          (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) obj;
+
+      if (!getTopic().equals(other.getTopic())) return false;
+      if (!getDataAffinityRegionsList().equals(other.getDataAffinityRegionsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+      hash = (53 * hash) + getTopic().hashCode();
+      if (getDataAffinityRegionsCount() > 0) {
+        hash = (37 * hash) + DATA_AFFINITY_REGIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDataAffinityRegionsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource)
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.class,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        topic_ = "";
+        dataAffinityRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource build() {
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource buildPartial() {
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource result =
+            new com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          dataAffinityRegions_.makeImmutable();
+          result.dataAffinityRegions_ = dataAffinityRegions_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource other) {
+        if (other
+            == com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+                .getDefaultInstance()) return this;
+        if (!other.getTopic().isEmpty()) {
+          topic_ = other.topic_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.dataAffinityRegions_.isEmpty()) {
+          if (dataAffinityRegions_.isEmpty()) {
+            dataAffinityRegions_ = other.dataAffinityRegions_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureDataAffinityRegionsIsMutable();
+            dataAffinityRegions_.addAll(other.dataAffinityRegions_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  topic_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDataAffinityRegionsIsMutable();
+                  dataAffinityRegions_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object topic_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Resource name of the Pub/Sub topic source for this listing.
+       * e.g. projects/myproject/topics/topicId
+       * </pre>
+       *
+       * <code>
+       * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The topic.
+       */
+      public java.lang.String getTopic() {
+        java.lang.Object ref = topic_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          topic_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Resource name of the Pub/Sub topic source for this listing.
+       * e.g. projects/myproject/topics/topicId
+       * </pre>
+       *
+       * <code>
+       * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for topic.
+       */
+      public com.google.protobuf.ByteString getTopicBytes() {
+        java.lang.Object ref = topic_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          topic_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Resource name of the Pub/Sub topic source for this listing.
+       * e.g. projects/myproject/topics/topicId
+       * </pre>
+       *
+       * <code>
+       * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The topic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopic(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        topic_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Resource name of the Pub/Sub topic source for this listing.
+       * e.g. projects/myproject/topics/topicId
+       * </pre>
+       *
+       * <code>
+       * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopic() {
+        topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Resource name of the Pub/Sub topic source for this listing.
+       * e.g. projects/myproject/topics/topicId
+       * </pre>
+       *
+       * <code>
+       * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopicBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        topic_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList dataAffinityRegions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureDataAffinityRegionsIsMutable() {
+        if (!dataAffinityRegions_.isModifiable()) {
+          dataAffinityRegions_ = new com.google.protobuf.LazyStringArrayList(dataAffinityRegions_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the dataAffinityRegions.
+       */
+      public com.google.protobuf.ProtocolStringList getDataAffinityRegionsList() {
+        dataAffinityRegions_.makeImmutable();
+        return dataAffinityRegions_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of dataAffinityRegions.
+       */
+      public int getDataAffinityRegionsCount() {
+        return dataAffinityRegions_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The dataAffinityRegions at the given index.
+       */
+      public java.lang.String getDataAffinityRegions(int index) {
+        return dataAffinityRegions_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the dataAffinityRegions at the given index.
+       */
+      public com.google.protobuf.ByteString getDataAffinityRegionsBytes(int index) {
+        return dataAffinityRegions_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The dataAffinityRegions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataAffinityRegions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataAffinityRegionsIsMutable();
+        dataAffinityRegions_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The dataAffinityRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDataAffinityRegions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataAffinityRegionsIsMutable();
+        dataAffinityRegions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The dataAffinityRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDataAffinityRegions(java.lang.Iterable<java.lang.String> values) {
+        ensureDataAffinityRegionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataAffinityRegions_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataAffinityRegions() {
+        dataAffinityRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Region hint on where the data might be published. Data affinity
+       * regions are modifiable. See https://cloud.google.com/about/locations for
+       * full listing of possible Cloud regions.
+       * </pre>
+       *
+       * <code>repeated string data_affinity_regions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the dataAffinityRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDataAffinityRegionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureDataAffinityRegionsIsMutable();
+        dataAffinityRegions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource)
+    private static final com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource();
+    }
+
+    public static com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PubSubTopicSource> PARSER =
+        new com.google.protobuf.AbstractParser<PubSubTopicSource>() {
+          @java.lang.Override
+          public PubSubTopicSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PubSubTopicSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PubSubTopicSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface RestrictedExportConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig)
@@ -4759,6 +5968,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getRestrictQueryResult();
   }
+
   /**
    *
    *
@@ -4774,6 +5984,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig)
       RestrictedExportConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RestrictedExportConfig.newBuilder() to construct.
     private RestrictedExportConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4805,6 +6016,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLED_FIELD_NUMBER = 3;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -4823,6 +6035,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESTRICT_DIRECT_TABLE_ACCESS_FIELD_NUMBER = 1;
     private boolean restrictDirectTableAccess_ = false;
+
     /**
      *
      *
@@ -4843,6 +6056,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RESTRICT_QUERY_RESULT_FIELD_NUMBER = 2;
     private boolean restrictQueryResult_ = false;
+
     /**
      *
      *
@@ -5047,6 +6261,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5270,6 +6485,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -5285,6 +6501,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -5304,6 +6521,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5323,6 +6541,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean restrictDirectTableAccess_;
+
       /**
        *
        *
@@ -5340,6 +6559,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean getRestrictDirectTableAccess() {
         return restrictDirectTableAccess_;
       }
+
       /**
        *
        *
@@ -5361,6 +6581,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5382,6 +6603,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean restrictQueryResult_;
+
       /**
        *
        *
@@ -5398,6 +6620,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       public boolean getRestrictQueryResult() {
         return restrictQueryResult_;
       }
+
       /**
        *
        *
@@ -5418,6 +6641,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5516,12 +6740,14 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIGQUERY_DATASET(6),
+    PUBSUB_TOPIC(16),
     SOURCE_NOT_SET(0);
     private final int value;
 
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5536,6 +6762,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 6:
           return BIGQUERY_DATASET;
+        case 16:
+          return PUBSUB_TOPIC;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -5553,15 +6781,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_DATASET_FIELD_NUMBER = 6;
+
   /**
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    *
    * @return Whether the bigqueryDataset field is set.
@@ -5570,15 +6799,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigqueryDataset() {
     return sourceCase_ == 6;
   }
+
   /**
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    *
    * @return The bigqueryDataset.
@@ -5592,15 +6822,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    */
   @java.lang.Override
@@ -5613,10 +6844,69 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         .getDefaultInstance();
   }
 
+  public static final int PUBSUB_TOPIC_FIELD_NUMBER = 16;
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   *
+   * @return Whether the pubsubTopic field is set.
+   */
+  @java.lang.Override
+  public boolean hasPubsubTopic() {
+    return sourceCase_ == 16;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   *
+   * @return The pubsubTopic.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource getPubsubTopic() {
+    if (sourceCase_ == 16) {
+      return (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_;
+    }
+    return com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder
+      getPubsubTopicOrBuilder() {
+    if (sourceCase_ == 16) {
+      return (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_;
+    }
+    return com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -5641,6 +6931,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5670,6 +6961,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -5696,6 +6988,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5727,6 +7020,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -5753,6 +7047,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5784,6 +7079,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryContact_ = "";
+
   /**
    *
    *
@@ -5808,6 +7104,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5837,6 +7134,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentation_ = "";
+
   /**
    *
    *
@@ -5860,6 +7158,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -5886,6 +7185,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
+
   /**
    *
    *
@@ -5903,6 +7203,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -5927,6 +7228,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ICON_FIELD_NUMBER = 8;
   private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -5949,6 +7251,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_PROVIDER_FIELD_NUMBER = 9;
   private com.google.cloud.bigquery.analyticshub.v1.DataProvider dataProvider_;
+
   /**
    *
    *
@@ -5966,6 +7269,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataProvider() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5985,6 +7289,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.analyticshub.v1.DataProvider.getDefaultInstance()
         : dataProvider_;
   }
+
   /**
    *
    *
@@ -6023,6 +7328,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -6043,6 +7349,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.bigquery.analyticshub.v1.Listing.Category>(
         categories_, categories_converter_);
   }
+
   /**
    *
    *
@@ -6060,6 +7367,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public int getCategoriesCount() {
     return categories_.size();
   }
+
   /**
    *
    *
@@ -6078,6 +7386,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.bigquery.analyticshub.v1.Listing.Category getCategories(int index) {
     return categories_converter_.convert(categories_.get(index));
   }
+
   /**
    *
    *
@@ -6095,6 +7404,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getCategoriesValueList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -6118,6 +7428,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PUBLISHER_FIELD_NUMBER = 11;
   private com.google.cloud.bigquery.analyticshub.v1.Publisher publisher_;
+
   /**
    *
    *
@@ -6136,6 +7447,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublisher() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -6156,6 +7468,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.analyticshub.v1.Publisher.getDefaultInstance()
         : publisher_;
   }
+
   /**
    *
    *
@@ -6179,6 +7492,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestAccess_ = "";
+
   /**
    *
    *
@@ -6204,6 +7518,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -6233,6 +7548,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public static final int RESTRICTED_EXPORT_CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig
       restrictedExportConfig_;
+
   /**
    *
    *
@@ -6251,6 +7567,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRestrictedExportConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -6273,6 +7590,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : restrictedExportConfig_;
   }
+
   /**
    *
    *
@@ -6296,6 +7614,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOVERY_TYPE_FIELD_NUMBER = 14;
   private int discoveryType_ = 0;
+
   /**
    *
    *
@@ -6313,6 +7632,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscoveryType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -6330,6 +7650,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public int getDiscoveryTypeValue() {
     return discoveryType_;
   }
+
   /**
    *
    *
@@ -6350,6 +7671,90 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
         : result;
+  }
+
+  public static final int RESOURCE_TYPE_FIELD_NUMBER = 15;
+  private int resourceType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceType.
+   */
+  @java.lang.Override
+  public int getResourceTypeValue() {
+    return resourceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceType.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType() {
+    com.google.cloud.bigquery.analyticshub.v1.SharedResourceType result =
+        com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.forNumber(resourceType_);
+    return result == null
+        ? com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER = 18;
+  private boolean logLinkedDatasetQueryUserEmail_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the Listing has an email sharing mandate enabled.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogLinkedDatasetQueryUserEmail() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the Listing has an email sharing mandate enabled.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  @java.lang.Override
+  public boolean getLogLinkedDatasetQueryUserEmail() {
+    return logLinkedDatasetQueryUserEmail_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -6415,6 +7820,19 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(14, discoveryType_);
     }
+    if (resourceType_
+        != com.google.cloud.bigquery.analyticshub.v1.SharedResourceType
+            .SHARED_RESOURCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(15, resourceType_);
+    }
+    if (sourceCase_ == 16) {
+      output.writeMessage(
+          16, (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(18, logLinkedDatasetQueryUserEmail_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6479,6 +7897,22 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, discoveryType_);
     }
+    if (resourceType_
+        != com.google.cloud.bigquery.analyticshub.v1.SharedResourceType
+            .SHARED_RESOURCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, resourceType_);
+    }
+    if (sourceCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              18, logLinkedDatasetQueryUserEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6520,10 +7954,20 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (hasDiscoveryType()) {
       if (discoveryType_ != other.discoveryType_) return false;
     }
+    if (resourceType_ != other.resourceType_) return false;
+    if (hasLogLinkedDatasetQueryUserEmail() != other.hasLogLinkedDatasetQueryUserEmail())
+      return false;
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      if (getLogLinkedDatasetQueryUserEmail() != other.getLogLinkedDatasetQueryUserEmail())
+        return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 6:
         if (!getBigqueryDataset().equals(other.getBigqueryDataset())) return false;
+        break;
+      case 16:
+        if (!getPubsubTopic().equals(other.getPubsubTopic())) return false;
         break;
       case 0:
       default:
@@ -6575,10 +8019,22 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DISCOVERY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + discoveryType_;
     }
+    hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + resourceType_;
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      hash = (37 * hash) + LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getLogLinkedDatasetQueryUserEmail());
+    }
     switch (sourceCase_) {
       case 6:
         hash = (37 * hash) + BIGQUERY_DATASET_FIELD_NUMBER;
         hash = (53 * hash) + getBigqueryDataset().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + PUBSUB_TOPIC_FIELD_NUMBER;
+        hash = (53 * hash) + getPubsubTopic().hashCode();
         break;
       case 0:
       default:
@@ -6683,6 +8139,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6739,6 +8196,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (bigqueryDatasetBuilder_ != null) {
         bigqueryDatasetBuilder_.clear();
       }
+      if (pubsubTopicBuilder_ != null) {
+        pubsubTopicBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       description_ = "";
@@ -6752,7 +8212,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         dataProviderBuilder_ = null;
       }
       categories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       publisher_ = null;
       if (publisherBuilder_ != null) {
         publisherBuilder_.dispose();
@@ -6765,6 +8225,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         restrictedExportConfigBuilder_ = null;
       }
       discoveryType_ = 0;
+      resourceType_ = 0;
+      logLinkedDatasetQueryUserEmail_ = false;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -6805,59 +8267,66 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.cloud.bigquery.analyticshub.v1.Listing result) {
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         categories_ = java.util.Collections.unmodifiableList(categories_);
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.categories_ = categories_;
     }
 
     private void buildPartial0(com.google.cloud.bigquery.analyticshub.v1.Listing result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.primaryContact_ = primaryContact_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.documentation_ = documentation_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.icon_ = icon_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.dataProvider_ =
             dataProviderBuilder_ == null ? dataProvider_ : dataProviderBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.publisher_ = publisherBuilder_ == null ? publisher_ : publisherBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.requestAccess_ = requestAccess_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.restrictedExportConfig_ =
             restrictedExportConfigBuilder_ == null
                 ? restrictedExportConfig_
                 : restrictedExportConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.discoveryType_ = discoveryType_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.logLinkedDatasetQueryUserEmail_ = logLinkedDatasetQueryUserEmail_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6867,6 +8336,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       result.source_ = this.source_;
       if (sourceCase_ == 6 && bigqueryDatasetBuilder_ != null) {
         result.source_ = bigqueryDatasetBuilder_.build();
+      }
+      if (sourceCase_ == 16 && pubsubTopicBuilder_ != null) {
+        result.source_ = pubsubTopicBuilder_.build();
       }
     }
 
@@ -6918,27 +8390,27 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getPrimaryContact().isEmpty()) {
         primaryContact_ = other.primaryContact_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDocumentation().isEmpty()) {
         documentation_ = other.documentation_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -6953,7 +8425,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (!other.categories_.isEmpty()) {
         if (categories_.isEmpty()) {
           categories_ = other.categories_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureCategoriesIsMutable();
           categories_.addAll(other.categories_);
@@ -6965,7 +8437,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRequestAccess().isEmpty()) {
         requestAccess_ = other.requestAccess_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasRestrictedExportConfig()) {
@@ -6974,10 +8446,21 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDiscoveryType()) {
         setDiscoveryType(other.getDiscoveryType());
       }
+      if (other.resourceType_ != 0) {
+        setResourceTypeValue(other.getResourceTypeValue());
+      }
+      if (other.hasLogLinkedDatasetQueryUserEmail()) {
+        setLogLinkedDatasetQueryUserEmail(other.getLogLinkedDatasetQueryUserEmail());
+      }
       switch (other.getSourceCase()) {
         case BIGQUERY_DATASET:
           {
             mergeBigqueryDataset(other.getBigqueryDataset());
+            break;
+          }
+        case PUBSUB_TOPIC:
+          {
+            mergePubsubTopic(other.getPubsubTopic());
             break;
           }
         case SOURCE_NOT_SET:
@@ -7014,31 +8497,31 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 primaryContact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 documentation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -7050,19 +8533,19 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 56:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 66:
               {
                 icon_ = input.readBytes();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getDataProviderFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 80:
@@ -7087,28 +8570,46 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 input.readMessage(getPublisherFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 requestAccess_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getRestrictedExportConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 112:
               {
                 discoveryType_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 112
+            case 120:
+              {
+                resourceType_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 120
+            case 130:
+              {
+                input.readMessage(getPubsubTopicFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 16;
+                break;
+              } // case 130
+            case 144:
+              {
+                logLinkedDatasetQueryUserEmail_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7147,15 +8648,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Builder,
             com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSourceOrBuilder>
         bigqueryDatasetBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      *
      * @return Whether the bigqueryDataset field is set.
@@ -7164,15 +8666,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigqueryDataset() {
       return sourceCase_ == 6;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      *
      * @return The bigqueryDataset.
@@ -7194,15 +8697,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     public Builder setBigqueryDataset(
@@ -7219,15 +8723,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     public Builder setBigqueryDataset(
@@ -7242,15 +8747,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     public Builder mergeBigqueryDataset(
@@ -7280,15 +8786,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     public Builder clearBigqueryDataset() {
@@ -7307,30 +8814,32 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Builder
         getBigqueryDatasetBuilder() {
       return getBigqueryDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     @java.lang.Override
@@ -7346,15 +8855,16 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Shared dataset i.e. BigQuery dataset source.
+     * Shared dataset i.e. BigQuery dataset source.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -7383,7 +8893,247 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return bigqueryDatasetBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource,
+            com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder>
+        pubsubTopicBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     *
+     * @return Whether the pubsubTopic field is set.
+     */
+    @java.lang.Override
+    public boolean hasPubsubTopic() {
+      return sourceCase_ == 16;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     *
+     * @return The pubsubTopic.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource getPubsubTopic() {
+      if (pubsubTopicBuilder_ == null) {
+        if (sourceCase_ == 16) {
+          return (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_;
+        }
+        return com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+            .getDefaultInstance();
+      } else {
+        if (sourceCase_ == 16) {
+          return pubsubTopicBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    public Builder setPubsubTopic(
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource value) {
+      if (pubsubTopicBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        pubsubTopicBuilder_.setMessage(value);
+      }
+      sourceCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    public Builder setPubsubTopic(
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder
+            builderForValue) {
+      if (pubsubTopicBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        pubsubTopicBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    public Builder mergePubsubTopic(
+        com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource value) {
+      if (pubsubTopicBuilder_ == null) {
+        if (sourceCase_ == 16
+            && source_
+                != com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.newBuilder(
+                      (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 16) {
+          pubsubTopicBuilder_.mergeFrom(value);
+        } else {
+          pubsubTopicBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    public Builder clearPubsubTopic() {
+      if (pubsubTopicBuilder_ == null) {
+        if (sourceCase_ == 16) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 16) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        pubsubTopicBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder
+        getPubsubTopicBuilder() {
+      return getPubsubTopicFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder
+        getPubsubTopicOrBuilder() {
+      if ((sourceCase_ == 16) && (pubsubTopicBuilder_ != null)) {
+        return pubsubTopicBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 16) {
+          return (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_;
+        }
+        return com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pub/Sub topic source.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource,
+            com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder>
+        getPubsubTopicFieldBuilder() {
+      if (pubsubTopicBuilder_ == null) {
+        if (!(sourceCase_ == 16)) {
+          source_ =
+              com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource
+                  .getDefaultInstance();
+        }
+        pubsubTopicBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder>(
+                (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 16;
+      onChanged();
+      return pubsubTopicBuilder_;
+    }
+
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7407,6 +9157,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7430,6 +9181,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7448,10 +9200,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7466,10 +9219,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7489,12 +9243,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -7520,6 +9275,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7545,6 +9301,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7565,10 +9322,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7585,10 +9343,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7610,12 +9369,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -7641,6 +9401,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7666,6 +9427,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7686,10 +9448,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7706,10 +9469,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7731,12 +9495,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private java.lang.Object primaryContact_ = "";
+
     /**
      *
      *
@@ -7760,6 +9525,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7783,6 +9549,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7801,10 +9568,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       primaryContact_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7819,10 +9587,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrimaryContact() {
       primaryContact_ = getDefaultInstance().getPrimaryContact();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7842,12 +9611,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       primaryContact_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private java.lang.Object documentation_ = "";
+
     /**
      *
      *
@@ -7870,6 +9640,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7892,6 +9663,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7909,10 +9681,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       documentation_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7926,10 +9699,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDocumentation() {
       documentation_ = getDefaultInstance().getDocumentation();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7948,12 +9722,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       documentation_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -7971,6 +9746,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -7987,10 +9763,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8012,6 +9789,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.analyticshub.v1.Listing.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8030,11 +9808,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8049,13 +9828,14 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -8075,6 +9855,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIcon() {
       return icon_;
     }
+
     /**
      *
      *
@@ -8096,10 +9877,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       icon_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8116,7 +9898,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIcon() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       icon_ = getDefaultInstance().getIcon();
       onChanged();
       return this;
@@ -8128,6 +9910,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.DataProvider.Builder,
             com.google.cloud.bigquery.analyticshub.v1.DataProviderOrBuilder>
         dataProviderBuilder_;
+
     /**
      *
      *
@@ -8142,8 +9925,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataProvider field is set.
      */
     public boolean hasDataProvider() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -8166,6 +9950,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return dataProviderBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8186,10 +9971,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataProviderBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8208,10 +9994,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataProviderBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8225,7 +10012,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDataProvider(com.google.cloud.bigquery.analyticshub.v1.DataProvider value) {
       if (dataProviderBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && dataProvider_ != null
             && dataProvider_
                 != com.google.cloud.bigquery.analyticshub.v1.DataProvider.getDefaultInstance()) {
@@ -8237,11 +10024,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         dataProviderBuilder_.mergeFrom(value);
       }
       if (dataProvider_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -8254,7 +10042,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataProvider() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       dataProvider_ = null;
       if (dataProviderBuilder_ != null) {
         dataProviderBuilder_.dispose();
@@ -8263,6 +10051,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8275,10 +10064,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.bigquery.analyticshub.v1.DataProvider.Builder getDataProviderBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDataProviderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8300,6 +10090,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             : dataProvider_;
       }
     }
+
     /**
      *
      *
@@ -8331,11 +10122,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> categories_ = java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         categories_ = new java.util.ArrayList<java.lang.Integer>(categories_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
+
     /**
      *
      *
@@ -8355,6 +10147,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.bigquery.analyticshub.v1.Listing.Category>(
           categories_, categories_converter_);
     }
+
     /**
      *
      *
@@ -8371,6 +10164,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getCategoriesCount() {
       return categories_.size();
     }
+
     /**
      *
      *
@@ -8388,6 +10182,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.analyticshub.v1.Listing.Category getCategories(int index) {
       return categories_converter_.convert(categories_.get(index));
     }
+
     /**
      *
      *
@@ -8413,6 +10208,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8436,6 +10232,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8460,6 +10257,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8475,10 +10273,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategories() {
       categories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8495,6 +10294,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getCategoriesValueList() {
       return java.util.Collections.unmodifiableList(categories_);
     }
+
     /**
      *
      *
@@ -8512,6 +10312,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getCategoriesValue(int index) {
       return categories_.get(index);
     }
+
     /**
      *
      *
@@ -8533,6 +10334,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8553,6 +10355,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8582,6 +10385,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Publisher.Builder,
             com.google.cloud.bigquery.analyticshub.v1.PublisherOrBuilder>
         publisherBuilder_;
+
     /**
      *
      *
@@ -8597,8 +10401,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the publisher field is set.
      */
     public boolean hasPublisher() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -8622,6 +10427,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return publisherBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8643,10 +10449,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         publisherBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8666,10 +10473,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         publisherBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8684,7 +10492,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePublisher(com.google.cloud.bigquery.analyticshub.v1.Publisher value) {
       if (publisherBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && publisher_ != null
             && publisher_
                 != com.google.cloud.bigquery.analyticshub.v1.Publisher.getDefaultInstance()) {
@@ -8696,11 +10504,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         publisherBuilder_.mergeFrom(value);
       }
       if (publisher_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -8714,7 +10523,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPublisher() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       publisher_ = null;
       if (publisherBuilder_ != null) {
         publisherBuilder_.dispose();
@@ -8723,6 +10532,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8736,10 +10546,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.bigquery.analyticshub.v1.Publisher.Builder getPublisherBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getPublisherFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8761,6 +10572,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             : publisher_;
       }
     }
+
     /**
      *
      *
@@ -8791,6 +10603,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object requestAccess_ = "";
+
     /**
      *
      *
@@ -8815,6 +10628,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8839,6 +10653,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8858,10 +10673,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       requestAccess_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8877,10 +10693,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequestAccess() {
       requestAccess_ = getDefaultInstance().getRequestAccess();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8901,7 +10718,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       requestAccess_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8913,6 +10730,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig.Builder,
             com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfigOrBuilder>
         restrictedExportConfigBuilder_;
+
     /**
      *
      *
@@ -8928,8 +10746,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the restrictedExportConfig field is set.
      */
     public boolean hasRestrictedExportConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -8955,6 +10774,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         return restrictedExportConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8977,10 +10797,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         restrictedExportConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9001,10 +10822,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         restrictedExportConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9020,7 +10842,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRestrictedExportConfig(
         com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig value) {
       if (restrictedExportConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && restrictedExportConfig_ != null
             && restrictedExportConfig_
                 != com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig
@@ -9033,11 +10855,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         restrictedExportConfigBuilder_.mergeFrom(value);
       }
       if (restrictedExportConfig_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -9051,7 +10874,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRestrictedExportConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       restrictedExportConfig_ = null;
       if (restrictedExportConfigBuilder_ != null) {
         restrictedExportConfigBuilder_.dispose();
@@ -9060,6 +10883,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9074,10 +10898,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig.Builder
         getRestrictedExportConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRestrictedExportConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9101,6 +10926,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             : restrictedExportConfig_;
       }
     }
+
     /**
      *
      *
@@ -9131,6 +10957,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int discoveryType_ = 0;
+
     /**
      *
      *
@@ -9146,8 +10973,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDiscoveryType() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -9165,6 +10993,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public int getDiscoveryTypeValue() {
       return discoveryType_;
     }
+
     /**
      *
      *
@@ -9181,10 +11010,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDiscoveryTypeValue(int value) {
       discoveryType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9206,6 +11036,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -9224,11 +11055,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       discoveryType_ = value.getNumber();
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9243,8 +11075,200 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiscoveryType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       discoveryType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int resourceType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceType.
+     */
+    @java.lang.Override
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceTypeValue(int value) {
+      resourceType_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resourceType.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType() {
+      com.google.cloud.bigquery.analyticshub.v1.SharedResourceType result =
+          com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.forNumber(resourceType_);
+      return result == null
+          ? com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceType(
+        com.google.cloud.bigquery.analyticshub.v1.SharedResourceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      resourceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceType() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      resourceType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean logLinkedDatasetQueryUserEmail_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the Listing has an email sharing mandate enabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogLinkedDatasetQueryUserEmail() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the Listing has an email sharing mandate enabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The logLinkedDatasetQueryUserEmail.
+     */
+    @java.lang.Override
+    public boolean getLogLinkedDatasetQueryUserEmail() {
+      return logLinkedDatasetQueryUserEmail_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the Listing has an email sharing mandate enabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The logLinkedDatasetQueryUserEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogLinkedDatasetQueryUserEmail(boolean value) {
+
+      logLinkedDatasetQueryUserEmail_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the Listing has an email sharing mandate enabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLogLinkedDatasetQueryUserEmail() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      logLinkedDatasetQueryUserEmail_ = false;
       onChanged();
       return this;
     }

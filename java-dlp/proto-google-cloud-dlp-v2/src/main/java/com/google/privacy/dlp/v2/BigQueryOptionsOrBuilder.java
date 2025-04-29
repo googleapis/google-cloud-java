@@ -36,6 +36,7 @@ public interface BigQueryOptionsOrBuilder
    * @return Whether the tableReference field is set.
    */
   boolean hasTableReference();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BigQueryOptionsOrBuilder
    * @return The tableReference.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTableReference();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> getIdentifyingFieldsList();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
   com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
   int getIdentifyingFieldsCount();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface BigQueryOptionsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getIdentifyingFieldsOrBuilderList();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface BigQueryOptionsOrBuilder
    * @return The enum numeric value on the wire for sampleMethod.
    */
   int getSampleMethodValue();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> getExcludedFieldsList();
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
   com.google.privacy.dlp.v2.FieldId getExcludedFields(int index);
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
   int getExcludedFieldsCount();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface BigQueryOptionsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getExcludedFieldsOrBuilderList();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> getIncludedFieldsList();
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
    */
   com.google.privacy.dlp.v2.FieldId getIncludedFields(int index);
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface BigQueryOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
    */
   int getIncludedFieldsCount();
+
   /**
    *
    *
@@ -319,6 +333,7 @@ public interface BigQueryOptionsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getIncludedFieldsOrBuilderList();
+
   /**
    *
    *

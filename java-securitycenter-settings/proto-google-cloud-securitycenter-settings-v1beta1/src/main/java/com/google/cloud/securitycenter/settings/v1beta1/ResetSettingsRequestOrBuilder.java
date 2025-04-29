@@ -45,6 +45,7 @@ public interface ResetSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ResetSettingsRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

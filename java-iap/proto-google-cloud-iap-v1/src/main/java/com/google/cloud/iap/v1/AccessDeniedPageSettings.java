@@ -36,6 +36,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AccessDeniedPageSettings)
     AccessDeniedPageSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessDeniedPageSettings.newBuilder() to construct.
   private AccessDeniedPageSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ACCESS_DENIED_PAGE_URI_FIELD_NUMBER = 1;
   private com.google.protobuf.StringValue accessDeniedPageUri_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
   public boolean hasAccessDeniedPageUri() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
         ? com.google.protobuf.StringValue.getDefaultInstance()
         : accessDeniedPageUri_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
 
   public static final int GENERATE_TROUBLESHOOTING_URI_FIELD_NUMBER = 2;
   private com.google.protobuf.BoolValue generateTroubleshootingUri_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
   public boolean hasGenerateTroubleshootingUri() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : generateTroubleshootingUri_;
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
 
   public static final int REMEDIATION_TOKEN_GENERATION_ENABLED_FIELD_NUMBER = 3;
   private com.google.protobuf.BoolValue remediationTokenGenerationEnabled_;
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
   public boolean hasRemediationTokenGenerationEnabled() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : remediationTokenGenerationEnabled_;
   }
+
   /**
    *
    *
@@ -420,6 +430,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -677,6 +688,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         accessDeniedPageUriBuilder_;
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
     public boolean hasAccessDeniedPageUri() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -711,6 +724,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
         return accessDeniedPageUriBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return getAccessDeniedPageUriFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
             : accessDeniedPageUri_;
       }
     }
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         generateTroubleshootingUriBuilder_;
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
     public boolean hasGenerateTroubleshootingUri() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
         return generateTroubleshootingUriBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -921,6 +944,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +966,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +995,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1016,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1032,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return getGenerateTroubleshootingUriFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1024,6 +1052,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
             : generateTroubleshootingUri_;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1086,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         remediationTokenGenerationEnabledBuilder_;
+
     /**
      *
      *
@@ -1072,6 +1102,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
     public boolean hasRemediationTokenGenerationEnabled() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1093,6 +1124,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
         return remediationTokenGenerationEnabledBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1148,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1170,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1200,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1221,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1237,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
       onChanged();
       return getRemediationTokenGenerationEnabledFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1220,6 +1257,7 @@ public final class AccessDeniedPageSettings extends com.google.protobuf.Generate
             : remediationTokenGenerationEnabled_;
       }
     }
+
     /**
      *
      *

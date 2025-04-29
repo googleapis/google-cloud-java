@@ -33,6 +33,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState)
     PolicyControllerStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicyControllerState.newBuilder() to construct.
   private PolicyControllerState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int VERSION_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion version_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : version_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState
       deploymentState_;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public boolean hasDeploymentState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : deploymentState_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
 
   public static final int MIGRATION_FIELD_NUMBER = 4;
   private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration migration_;
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   public boolean hasMigration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : migration_;
   }
+
   /**
    *
    *
@@ -426,6 +436,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +686,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion.Builder,
             com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             : version_;
       }
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState.Builder,
             com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentStateOrBuilder>
         deploymentStateBuilder_;
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public boolean hasDeploymentState() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -920,6 +942,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         return deploymentStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +992,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1025,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1047,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1065,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDeploymentStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1060,6 +1088,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             : deploymentState_;
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1123,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration.Builder,
             com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigrationOrBuilder>
         migrationBuilder_;
+
     /**
      *
      *
@@ -1109,6 +1139,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public boolean hasMigration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1132,6 +1163,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
         return migrationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1188,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1211,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1243,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1264,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1281,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       onChanged();
       return getMigrationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1266,6 +1303,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             : migration_;
       }
     }
+
     /**
      *
      *

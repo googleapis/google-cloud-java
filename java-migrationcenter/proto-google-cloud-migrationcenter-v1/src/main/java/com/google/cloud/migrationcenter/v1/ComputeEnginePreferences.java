@@ -33,6 +33,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ComputeEnginePreferences)
     ComputeEnginePreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeEnginePreferences.newBuilder() to construct.
   private ComputeEnginePreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int MACHINE_PREFERENCES_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.MachinePreferences machinePreferences_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
   public boolean hasMachinePreferences() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
         ? com.google.cloud.migrationcenter.v1.MachinePreferences.getDefaultInstance()
         : machinePreferences_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
 
   public static final int LICENSE_TYPE_FIELD_NUMBER = 3;
   private int licenseType_ = 0;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
   public int getLicenseTypeValue() {
     return licenseType_;
   }
+
   /**
    *
    *
@@ -330,6 +336,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +560,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
             com.google.cloud.migrationcenter.v1.MachinePreferences.Builder,
             com.google.cloud.migrationcenter.v1.MachinePreferencesOrBuilder>
         machinePreferencesBuilder_;
+
     /**
      *
      *
@@ -567,6 +575,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
     public boolean hasMachinePreferences() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
         return machinePreferencesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       onChanged();
       return getMachinePreferencesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
             : machinePreferences_;
       }
     }
+
     /**
      *
      *
@@ -739,6 +755,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
     }
 
     private int licenseType_ = 0;
+
     /**
      *
      *
@@ -756,6 +773,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
     public int getLicenseTypeValue() {
       return licenseType_;
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +814,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
           com.google.cloud.migrationcenter.v1.LicenseType.forNumber(licenseType_);
       return result == null ? com.google.cloud.migrationcenter.v1.LicenseType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class ComputeEnginePreferences extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

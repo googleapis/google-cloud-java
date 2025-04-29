@@ -28,26 +28,25 @@ public interface DataQualityDimensionOrBuilder
    *
    *
    * <pre>
-   * The dimension name a rule belongs to. Supported dimensions are
-   * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-   * "FRESHNESS", "VOLUME"]
+   * Optional. The dimension name a rule belongs to. Custom dimension name is
+   * supported with all uppercase letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * The dimension name a rule belongs to. Supported dimensions are
-   * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-   * "FRESHNESS", "VOLUME"]
+   * Optional. The dimension name a rule belongs to. Custom dimension name is
+   * supported with all uppercase letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */

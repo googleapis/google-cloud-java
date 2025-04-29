@@ -42,6 +42,7 @@ public interface ParameterMutationOrBuilder
    * @return The parameter.
    */
   java.lang.String getParameter();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ParameterMutationOrBuilder
    * @return The parameterValue.
    */
   java.lang.String getParameterValue();
+
   /**
    *
    *

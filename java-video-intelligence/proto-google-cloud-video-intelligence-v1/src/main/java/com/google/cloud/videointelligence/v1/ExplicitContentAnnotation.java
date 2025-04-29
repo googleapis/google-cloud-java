@@ -35,6 +35,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
     ExplicitContentAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExplicitContentAnnotation.newBuilder() to construct.
   private ExplicitContentAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> frames_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       getFramesList() {
     return frames_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       getFramesOrBuilderList() {
     return frames_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
   public int getFramesCount() {
     return frames_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
   public com.google.cloud.videointelligence.v1.ExplicitContentFrame getFrames(int index) {
     return frames_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return framesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return framesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return framesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +889,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         int index) {
       return getFramesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -899,6 +921,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -917,6 +940,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(frames_);
       }
     }
+
     /**
      *
      *
@@ -931,6 +955,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
           .addBuilder(
               com.google.cloud.videointelligence.v1.ExplicitContentFrame.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
               index,
               com.google.cloud.videointelligence.v1.ExplicitContentFrame.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -1001,6 +1028,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1051,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1073,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1091,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

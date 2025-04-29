@@ -38,6 +38,7 @@ public interface DataDiscoveryResultOrBuilder
    * @return Whether the bigqueryPublishing field is set.
    */
   boolean hasBigqueryPublishing();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DataDiscoveryResultOrBuilder
    * @return The bigqueryPublishing.
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing getBigqueryPublishing();
+
   /**
    *
    *
@@ -65,4 +67,48 @@ public interface DataDiscoveryResultOrBuilder
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishingOrBuilder
       getBigqueryPublishingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the scanStatistics field is set.
+   */
+  boolean hasScanStatistics();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The scanStatistics.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics getScanStatistics();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder
+      getScanStatisticsOrBuilder();
 }

@@ -33,6 +33,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ConversationLevelSentiment)
     ConversationLevelSentimentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConversationLevelSentiment.newBuilder() to construct.
   private ConversationLevelSentiment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int CHANNEL_TAG_FIELD_NUMBER = 1;
   private int channelTag_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
 
   public static final int SENTIMENT_DATA_FIELD_NUMBER = 2;
   private com.google.cloud.contactcenterinsights.v1.SentimentData sentimentData_;
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
   public boolean hasSentimentData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
         ? com.google.cloud.contactcenterinsights.v1.SentimentData.getDefaultInstance()
         : sentimentData_;
   }
+
   /**
    *
    *
@@ -306,6 +311,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -525,6 +531,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int channelTag_;
+
     /**
      *
      *
@@ -540,6 +547,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     public int getChannelTag() {
       return channelTag_;
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
             com.google.cloud.contactcenterinsights.v1.SentimentData.Builder,
             com.google.cloud.contactcenterinsights.v1.SentimentDataOrBuilder>
         sentimentDataBuilder_;
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
     public boolean hasSentimentData() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
         return sentimentDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +672,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +702,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +722,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +738,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
       onChanged();
       return getSentimentDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -741,6 +758,7 @@ public final class ConversationLevelSentiment extends com.google.protobuf.Genera
             : sentimentData_;
       }
     }
+
     /**
      *
      *

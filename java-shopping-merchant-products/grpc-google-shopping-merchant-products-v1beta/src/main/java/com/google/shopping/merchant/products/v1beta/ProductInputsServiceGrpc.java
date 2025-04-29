@@ -87,6 +87,55 @@ public final class ProductInputsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest,
+          com.google.shopping.merchant.products.v1beta.ProductInput>
+      getUpdateProductInputMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProductInput",
+      requestType = com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest.class,
+      responseType = com.google.shopping.merchant.products.v1beta.ProductInput.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest,
+          com.google.shopping.merchant.products.v1beta.ProductInput>
+      getUpdateProductInputMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest,
+            com.google.shopping.merchant.products.v1beta.ProductInput>
+        getUpdateProductInputMethod;
+    if ((getUpdateProductInputMethod = ProductInputsServiceGrpc.getUpdateProductInputMethod)
+        == null) {
+      synchronized (ProductInputsServiceGrpc.class) {
+        if ((getUpdateProductInputMethod = ProductInputsServiceGrpc.getUpdateProductInputMethod)
+            == null) {
+          ProductInputsServiceGrpc.getUpdateProductInputMethod =
+              getUpdateProductInputMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest,
+                          com.google.shopping.merchant.products.v1beta.ProductInput>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateProductInput"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.products.v1beta.ProductInput
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductInputsServiceMethodDescriptorSupplier("UpdateProductInput"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateProductInputMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest,
           com.google.protobuf.Empty>
       getDeleteProductInputMethod;
@@ -147,6 +196,19 @@ public final class ProductInputsServiceGrpc {
     return ProductInputsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProductInputsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProductInputsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductInputsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProductInputsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductInputsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProductInputsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -202,6 +264,23 @@ public final class ProductInputsServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getInsertProductInputMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing product input in your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    default void updateProductInput(
+        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.products.v1beta.ProductInput>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateProductInputMethod(), responseObserver);
     }
 
     /**
@@ -283,6 +362,25 @@ public final class ProductInputsServiceGrpc {
      *
      *
      * <pre>
+     * Updates the existing product input in your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public void updateProductInput(
+        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.products.v1beta.ProductInput>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateProductInputMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a product input from your Merchant Center account.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
@@ -300,6 +398,75 @@ public final class ProductInputsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProductInputsService.
+   *
+   * <pre>
+   * Service to use ProductInput resource.
+   * This service works for products with online channel only.
+   * </pre>
+   */
+  public static final class ProductInputsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProductInputsServiceBlockingV2Stub> {
+    private ProductInputsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProductInputsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProductInputsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads a product input to your Merchant Center account. If an input
+     * with the same contentLanguage, offerId, and dataSource already exists,
+     * this method replaces that entry.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductInput insertProductInput(
+        com.google.shopping.merchant.products.v1beta.InsertProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInsertProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing product input in your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductInput updateProductInput(
+        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a product input from your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteProductInput(
+        com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProductInputMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProductInputsService.
    *
    * <pre>
    * Service to use ProductInput resource.
@@ -334,6 +501,21 @@ public final class ProductInputsServiceGrpc {
         com.google.shopping.merchant.products.v1beta.InsertProductInputRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing product input in your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductInput updateProductInput(
+        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProductInputMethod(), getCallOptions(), request);
     }
 
     /**
@@ -396,6 +578,23 @@ public final class ProductInputsServiceGrpc {
      *
      *
      * <pre>
+     * Updates the existing product input in your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.products.v1beta.ProductInput>
+        updateProductInput(
+            com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateProductInputMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a product input from your Merchant Center account.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the processed product can be retrieved.
@@ -410,7 +609,8 @@ public final class ProductInputsServiceGrpc {
   }
 
   private static final int METHODID_INSERT_PRODUCT_INPUT = 0;
-  private static final int METHODID_DELETE_PRODUCT_INPUT = 1;
+  private static final int METHODID_UPDATE_PRODUCT_INPUT = 1;
+  private static final int METHODID_DELETE_PRODUCT_INPUT = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -432,6 +632,13 @@ public final class ProductInputsServiceGrpc {
         case METHODID_INSERT_PRODUCT_INPUT:
           serviceImpl.insertProductInput(
               (com.google.shopping.merchant.products.v1beta.InsertProductInputRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.shopping.merchant.products.v1beta.ProductInput>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_PRODUCT_INPUT:
+          serviceImpl.updateProductInput(
+              (com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.shopping.merchant.products.v1beta.ProductInput>)
                   responseObserver);
@@ -466,6 +673,13 @@ public final class ProductInputsServiceGrpc {
                     com.google.shopping.merchant.products.v1beta.InsertProductInputRequest,
                     com.google.shopping.merchant.products.v1beta.ProductInput>(
                     service, METHODID_INSERT_PRODUCT_INPUT)))
+        .addMethod(
+            getUpdateProductInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest,
+                    com.google.shopping.merchant.products.v1beta.ProductInput>(
+                    service, METHODID_UPDATE_PRODUCT_INPUT)))
         .addMethod(
             getDeleteProductInputMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -524,6 +738,7 @@ public final class ProductInputsServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ProductInputsServiceFileDescriptorSupplier())
                       .addMethod(getInsertProductInputMethod())
+                      .addMethod(getUpdateProductInputMethod())
                       .addMethod(getDeleteProductInputMethod())
                       .build();
         }

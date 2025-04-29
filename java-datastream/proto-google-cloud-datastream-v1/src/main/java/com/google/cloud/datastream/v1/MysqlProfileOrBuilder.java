@@ -36,6 +36,7 @@ public interface MysqlProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface MysqlProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface MysqlProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface MysqlProfileOrBuilder
    * @return Whether the sslConfig field is set.
    */
   boolean hasSslConfig();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface MysqlProfileOrBuilder
    * @return The sslConfig.
    */
   com.google.cloud.datastream.v1.MysqlSslConfig getSslConfig();
+
   /**
    *
    *
@@ -152,4 +157,34 @@ public interface MysqlProfileOrBuilder
    * <code>.google.cloud.datastream.v1.MysqlSslConfig ssl_config = 5;</code>
    */
   com.google.cloud.datastream.v1.MysqlSslConfigOrBuilder getSslConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the MySQL
+   * connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  java.lang.String getSecretManagerStoredPassword();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the MySQL
+   * connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes();
 }

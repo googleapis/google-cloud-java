@@ -189,6 +189,19 @@ public final class AutokeyGrpc {
     return AutokeyStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AutokeyBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AutokeyBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutokeyBlockingV2Stub>() {
+          @java.lang.Override
+          public AutokeyBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutokeyBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AutokeyBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -414,6 +427,87 @@ public final class AutokeyGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Autokey.
+   *
+   * <pre>
+   * Provides interfaces for using [Cloud KMS
+   * Autokey](https://cloud.google.com/kms/help/autokey) to provision new
+   * [CryptoKeys][google.cloud.kms.v1.CryptoKey], ready for Customer Managed
+   * Encryption Key (CMEK) use, on-demand. To support certain client tooling, this
+   * feature is modeled around a [KeyHandle][google.cloud.kms.v1.KeyHandle]
+   * resource: creating a [KeyHandle][google.cloud.kms.v1.KeyHandle] in a resource
+   * project and given location triggers Cloud KMS Autokey to provision a
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the configured key project and
+   * the same location.
+   * Prior to use in a given resource project,
+   * [UpdateAutokeyConfig][google.cloud.kms.v1.AutokeyAdmin.UpdateAutokeyConfig]
+   * should have been called on an ancestor folder, setting the key project where
+   * Cloud KMS Autokey should create new
+   * [CryptoKeys][google.cloud.kms.v1.CryptoKey]. See documentation for additional
+   * prerequisites. To check what key project, if any, is currently configured on
+   * a resource project's ancestor folder, see
+   * [ShowEffectiveAutokeyConfig][google.cloud.kms.v1.AutokeyAdmin.ShowEffectiveAutokeyConfig].
+   * </pre>
+   */
+  public static final class AutokeyBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AutokeyBlockingV2Stub> {
+    private AutokeyBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AutokeyBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AutokeyBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the
+     * provisioning of a new [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK
+     * use with the given resource type in the configured key project and the same
+     * location. [GetOperation][google.longrunning.Operations.GetOperation] should
+     * be used to resolve the resulting long-running operation and get the
+     * resulting [KeyHandle][google.cloud.kms.v1.KeyHandle] and
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createKeyHandle(
+        com.google.cloud.kms.v1.CreateKeyHandleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKeyHandleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [KeyHandle][google.cloud.kms.v1.KeyHandle].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.KeyHandle getKeyHandle(
+        com.google.cloud.kms.v1.GetKeyHandleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKeyHandleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [KeyHandles][google.cloud.kms.v1.KeyHandle].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ListKeyHandlesResponse listKeyHandles(
+        com.google.cloud.kms.v1.ListKeyHandlesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKeyHandlesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Autokey.
    *
    * <pre>
    * Provides interfaces for using [Cloud KMS

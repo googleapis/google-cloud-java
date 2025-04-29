@@ -39,6 +39,7 @@ public interface ListWorkflowConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ListWorkflowConfigsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

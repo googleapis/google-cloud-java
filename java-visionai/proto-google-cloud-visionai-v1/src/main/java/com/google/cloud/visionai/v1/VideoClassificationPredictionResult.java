@@ -34,6 +34,7 @@ public final class VideoClassificationPredictionResult
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.VideoClassificationPredictionResult)
     VideoClassificationPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoClassificationPredictionResult.newBuilder() to construct.
   private VideoClassificationPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,6 +83,7 @@ public final class VideoClassificationPredictionResult
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class VideoClassificationPredictionResult
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -134,6 +137,7 @@ public final class VideoClassificationPredictionResult
      */
     float getConfidence();
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class VideoClassificationPredictionResult
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.VideoClassificationPredictionResult.IdentifiedClassification)
       IdentifiedClassificationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IdentifiedClassification.newBuilder() to construct.
     private IdentifiedClassification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,6 +193,7 @@ public final class VideoClassificationPredictionResult
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class VideoClassificationPredictionResult
         return s;
       }
     }
+
     /**
      *
      *
@@ -239,6 +246,7 @@ public final class VideoClassificationPredictionResult
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -262,6 +270,7 @@ public final class VideoClassificationPredictionResult
         return s;
       }
     }
+
     /**
      *
      *
@@ -288,6 +297,7 @@ public final class VideoClassificationPredictionResult
 
     public static final int CONFIDENCE_FIELD_NUMBER = 3;
     private float confidence_ = 0F;
+
     /**
      *
      *
@@ -510,6 +520,7 @@ public final class VideoClassificationPredictionResult
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -753,6 +764,7 @@ public final class VideoClassificationPredictionResult
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -775,6 +787,7 @@ public final class VideoClassificationPredictionResult
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -797,6 +810,7 @@ public final class VideoClassificationPredictionResult
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -818,6 +832,7 @@ public final class VideoClassificationPredictionResult
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -835,6 +850,7 @@ public final class VideoClassificationPredictionResult
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -859,6 +875,7 @@ public final class VideoClassificationPredictionResult
       }
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -881,6 +898,7 @@ public final class VideoClassificationPredictionResult
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -903,6 +921,7 @@ public final class VideoClassificationPredictionResult
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -924,6 +943,7 @@ public final class VideoClassificationPredictionResult
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -941,6 +961,7 @@ public final class VideoClassificationPredictionResult
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -965,6 +986,7 @@ public final class VideoClassificationPredictionResult
       }
 
       private float confidence_;
+
       /**
        *
        *
@@ -981,6 +1003,7 @@ public final class VideoClassificationPredictionResult
       public float getConfidence() {
         return confidence_;
       }
+
       /**
        *
        *
@@ -1001,6 +1024,7 @@ public final class VideoClassificationPredictionResult
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1094,6 +1118,7 @@ public final class VideoClassificationPredictionResult
   private int bitField0_;
   public static final int SEGMENT_START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp segmentStartTime_;
+
   /**
    *
    *
@@ -1110,6 +1135,7 @@ public final class VideoClassificationPredictionResult
   public boolean hasSegmentStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1128,6 +1154,7 @@ public final class VideoClassificationPredictionResult
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : segmentStartTime_;
   }
+
   /**
    *
    *
@@ -1147,6 +1174,7 @@ public final class VideoClassificationPredictionResult
 
   public static final int SEGMENT_END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp segmentEndTime_;
+
   /**
    *
    *
@@ -1165,6 +1193,7 @@ public final class VideoClassificationPredictionResult
   public boolean hasSegmentEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1185,6 +1214,7 @@ public final class VideoClassificationPredictionResult
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : segmentEndTime_;
   }
+
   /**
    *
    *
@@ -1210,6 +1240,7 @@ public final class VideoClassificationPredictionResult
   private java.util.List<
           com.google.cloud.visionai.v1.VideoClassificationPredictionResult.IdentifiedClassification>
       classifications_;
+
   /**
    *
    *
@@ -1227,6 +1258,7 @@ public final class VideoClassificationPredictionResult
       getClassificationsList() {
     return classifications_;
   }
+
   /**
    *
    *
@@ -1246,6 +1278,7 @@ public final class VideoClassificationPredictionResult
       getClassificationsOrBuilderList() {
     return classifications_;
   }
+
   /**
    *
    *
@@ -1261,6 +1294,7 @@ public final class VideoClassificationPredictionResult
   public int getClassificationsCount() {
     return classifications_.size();
   }
+
   /**
    *
    *
@@ -1277,6 +1311,7 @@ public final class VideoClassificationPredictionResult
       getClassifications(int index) {
     return classifications_.get(index);
   }
+
   /**
    *
    *
@@ -1485,6 +1520,7 @@ public final class VideoClassificationPredictionResult
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1780,6 +1816,7 @@ public final class VideoClassificationPredictionResult
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         segmentStartTimeBuilder_;
+
     /**
      *
      *
@@ -1795,6 +1832,7 @@ public final class VideoClassificationPredictionResult
     public boolean hasSegmentStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1816,6 +1854,7 @@ public final class VideoClassificationPredictionResult
         return segmentStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1839,6 +1878,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1859,6 +1899,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1887,6 +1928,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1949,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1922,6 +1965,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return getSegmentStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1941,6 +1985,7 @@ public final class VideoClassificationPredictionResult
             : segmentStartTime_;
       }
     }
+
     /**
      *
      *
@@ -1974,6 +2019,7 @@ public final class VideoClassificationPredictionResult
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         segmentEndTimeBuilder_;
+
     /**
      *
      *
@@ -1991,6 +2037,7 @@ public final class VideoClassificationPredictionResult
     public boolean hasSegmentEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2014,6 +2061,7 @@ public final class VideoClassificationPredictionResult
         return segmentEndTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2039,6 +2087,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2110,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2141,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2164,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2130,6 +2182,7 @@ public final class VideoClassificationPredictionResult
       onChanged();
       return getSegmentEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2151,6 +2204,7 @@ public final class VideoClassificationPredictionResult
             : segmentEndTime_;
       }
     }
+
     /**
      *
      *
@@ -2225,6 +2279,7 @@ public final class VideoClassificationPredictionResult
         return classificationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2243,6 +2298,7 @@ public final class VideoClassificationPredictionResult
         return classificationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2262,6 +2318,7 @@ public final class VideoClassificationPredictionResult
         return classificationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2289,6 +2346,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2314,6 +2372,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2399,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2427,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2391,6 +2452,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2478,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2442,6 +2505,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2463,6 +2527,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2484,6 +2549,7 @@ public final class VideoClassificationPredictionResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -2500,6 +2566,7 @@ public final class VideoClassificationPredictionResult
         getClassificationsBuilder(int index) {
       return getClassificationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2520,6 +2587,7 @@ public final class VideoClassificationPredictionResult
         return classificationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2542,6 +2610,7 @@ public final class VideoClassificationPredictionResult
         return java.util.Collections.unmodifiableList(classifications_);
       }
     }
+
     /**
      *
      *
@@ -2561,6 +2630,7 @@ public final class VideoClassificationPredictionResult
               com.google.cloud.visionai.v1.VideoClassificationPredictionResult
                   .IdentifiedClassification.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2581,6 +2651,7 @@ public final class VideoClassificationPredictionResult
               com.google.cloud.visionai.v1.VideoClassificationPredictionResult
                   .IdentifiedClassification.getDefaultInstance());
     }
+
     /**
      *
      *

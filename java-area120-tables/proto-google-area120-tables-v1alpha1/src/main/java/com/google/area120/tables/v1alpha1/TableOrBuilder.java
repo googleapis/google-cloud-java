@@ -37,6 +37,7 @@ public interface TableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface TableOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface TableOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.ColumnDescription columns = 3;</code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.ColumnDescription> getColumnsList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TableOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.ColumnDescription columns = 3;</code>
    */
   com.google.area120.tables.v1alpha1.ColumnDescription getColumns(int index);
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface TableOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.ColumnDescription columns = 3;</code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface TableOrBuilder
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.ColumnDescriptionOrBuilder>
       getColumnsOrBuilderList();
+
   /**
    *
    *

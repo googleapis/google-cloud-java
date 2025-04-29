@@ -41,6 +41,7 @@ public interface UpdatePredictionResultRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdatePredictionResultRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface UpdatePredictionResultRequestOrBuilder
    * @return Whether the predictionResult field is set.
    */
   boolean hasPredictionResult();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdatePredictionResultRequestOrBuilder
    * @return The predictionResult.
    */
   com.google.cloud.financialservices.v1.PredictionResult getPredictionResult();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface UpdatePredictionResultRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

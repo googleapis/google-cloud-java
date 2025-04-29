@@ -37,6 +37,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the listing field is set.
    */
   boolean hasListing();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SubscriptionOrBuilder
    * @return The listing.
    */
   java.lang.String getListing();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the dataExchange field is set.
    */
   boolean hasDataExchange();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface SubscriptionOrBuilder
    * @return The dataExchange.
    */
   java.lang.String getDataExchange();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SubscriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface SubscriptionOrBuilder
    * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the lastModifyTime field is set.
    */
   boolean hasLastModifyTime();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface SubscriptionOrBuilder
    * @return The lastModifyTime.
    */
   com.google.protobuf.Timestamp getLastModifyTime();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface SubscriptionOrBuilder
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
+
   /**
    *
    *
@@ -251,6 +261,7 @@ public interface SubscriptionOrBuilder
    * @return The organizationDisplayName.
    */
   java.lang.String getOrganizationDisplayName();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface SubscriptionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   int getLinkedDatasetMapCount();
+
   /**
    *
    *
@@ -330,11 +343,13 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   boolean containsLinkedDatasetMap(java.lang.String key);
+
   /** Use {@link #getLinkedDatasetMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
       getLinkedDatasetMap();
+
   /**
    *
    *
@@ -355,6 +370,7 @@ public interface SubscriptionOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
       getLinkedDatasetMapMap();
+
   /**
    *
    *
@@ -378,6 +394,7 @@ public interface SubscriptionOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource defaultValue);
+
   /**
    *
    *
@@ -410,6 +427,7 @@ public interface SubscriptionOrBuilder
    * @return The subscriberContact.
    */
   java.lang.String getSubscriberContact();
+
   /**
    *
    *
@@ -422,6 +440,145 @@ public interface SubscriptionOrBuilder
    * @return The bytes for subscriberContact.
    */
   com.google.protobuf.ByteString getSubscriberContactBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
+      getLinkedResourcesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource getLinkedResources(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getLinkedResourcesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder>
+      getLinkedResourcesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder
+      getLinkedResourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceType.
+   */
+  int getResourceTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceType.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. By default, false.
+   * If true, the Subscriber agreed to the email sharing mandate
+   * that is enabled for DataExchange/Listing.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  boolean hasLogLinkedDatasetQueryUserEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. By default, false.
+   * If true, the Subscriber agreed to the email sharing mandate
+   * that is enabled for DataExchange/Listing.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  boolean getLogLinkedDatasetQueryUserEmail();
 
   com.google.cloud.bigquery.analyticshub.v1.Subscription.ResourceNameCase getResourceNameCase();
 }

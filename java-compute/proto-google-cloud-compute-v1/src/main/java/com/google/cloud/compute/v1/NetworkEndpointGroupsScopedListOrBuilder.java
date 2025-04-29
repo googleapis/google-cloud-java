@@ -36,6 +36,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.NetworkEndpointGroup> getNetworkEndpointGroupsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroup getNetworkEndpointGroups(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * </code>
    */
   int getNetworkEndpointGroupsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder>
       getNetworkEndpointGroupsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -111,6 +116,7 @@ public interface NetworkEndpointGroupsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

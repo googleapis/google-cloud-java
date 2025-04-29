@@ -33,6 +33,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersSuspendInstancesRequest)
     RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionInstanceGroupManagersSuspendInstancesRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersSuspendInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
   private int bitField0_;
   public static final int FORCE_SUSPEND_FIELD_NUMBER = 27637480;
   private boolean forceSuspend_ = false;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
   public boolean hasForceSuspend() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -352,6 +359,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +579,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     private int bitField0_;
 
     private boolean forceSuspend_;
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     public boolean hasForceSuspend() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -601,6 +611,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     public boolean getForceSuspend() {
       return forceSuspend_;
     }
+
     /**
      *
      *
@@ -620,6 +631,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -662,6 +675,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
+
     /**
      *
      *
@@ -676,6 +690,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
+
     /**
      *
      *
@@ -691,6 +706,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
+
     /**
      *
      *
@@ -706,6 +722,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
+
     /**
      *
      *
@@ -729,6 +746,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +769,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +789,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +808,7 @@ public final class RegionInstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

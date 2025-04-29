@@ -36,6 +36,7 @@ public interface SqlServerProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface SqlServerProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface SqlServerProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface SqlServerProfileOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -138,4 +142,36 @@ public interface SqlServerProfileOrBuilder
    * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * SQLServer connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  java.lang.String getSecretManagerStoredPassword();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * SQLServer connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes();
 }

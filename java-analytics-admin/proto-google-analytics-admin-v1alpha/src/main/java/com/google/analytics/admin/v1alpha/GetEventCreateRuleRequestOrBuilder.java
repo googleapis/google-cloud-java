@@ -39,6 +39,7 @@ public interface GetEventCreateRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

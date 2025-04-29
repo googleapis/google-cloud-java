@@ -36,6 +36,7 @@ public interface PanelInfoOrBuilder
    * @return The panelId.
    */
   java.lang.String getPanelId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PanelInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface PanelInfoOrBuilder
    * @return Whether the panelPosition field is set.
    */
   boolean hasPanelPosition();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface PanelInfoOrBuilder
    * @return Whether the totalPanels field is set.
    */
   boolean hasTotalPanels();
+
   /**
    *
    *
@@ -135,4 +139,70 @@ public interface PanelInfoOrBuilder
    * @return The totalPanels.
    */
   int getTotalPanels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.DocumentInfo> getDocumentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DocumentInfo getDocuments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDocumentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1.DocumentInfoOrBuilder>
+      getDocumentsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DocumentInfoOrBuilder getDocumentsOrBuilder(int index);
 }

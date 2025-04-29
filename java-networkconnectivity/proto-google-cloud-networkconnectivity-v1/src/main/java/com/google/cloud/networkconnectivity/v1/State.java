@@ -121,6 +121,18 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OBSOLETE = 10;</code>
    */
   OBSOLETE(10),
+  /**
+   *
+   *
+   * <pre>
+   * The resource is in an undefined state due to resource creation or deletion
+   * failure. You can try to delete the resource later or contact support for
+   * help.
+   * </pre>
+   *
+   * <code>FAILED = 11;</code>
+   */
+  FAILED(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -134,6 +146,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -144,6 +157,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATING = 1;</code>
    */
   public static final int CREATING_VALUE = 1;
+
   /**
    *
    *
@@ -154,6 +168,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTIVE = 2;</code>
    */
   public static final int ACTIVE_VALUE = 2;
+
   /**
    *
    *
@@ -164,6 +179,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETING = 3;</code>
    */
   public static final int DELETING_VALUE = 3;
+
   /**
    *
    *
@@ -174,6 +190,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCEPTING = 8;</code>
    */
   public static final int ACCEPTING_VALUE = 8;
+
   /**
    *
    *
@@ -184,6 +201,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REJECTING = 9;</code>
    */
   public static final int REJECTING_VALUE = 9;
+
   /**
    *
    *
@@ -194,6 +212,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATING = 6;</code>
    */
   public static final int UPDATING_VALUE = 6;
+
   /**
    *
    *
@@ -204,6 +223,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INACTIVE = 7;</code>
    */
   public static final int INACTIVE_VALUE = 7;
+
   /**
    *
    *
@@ -215,6 +235,19 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OBSOLETE = 10;</code>
    */
   public static final int OBSOLETE_VALUE = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource is in an undefined state due to resource creation or deletion
+   * failure. You can try to delete the resource later or contact support for
+   * help.
+   * </pre>
+   *
+   * <code>FAILED = 11;</code>
+   */
+  public static final int FAILED_VALUE = 11;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -258,6 +291,8 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
         return INACTIVE;
       case 10:
         return OBSOLETE;
+      case 11:
+        return FAILED;
       default:
         return null;
     }

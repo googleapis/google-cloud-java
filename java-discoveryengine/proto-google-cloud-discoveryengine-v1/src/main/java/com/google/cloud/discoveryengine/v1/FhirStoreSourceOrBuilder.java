@@ -40,6 +40,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The fhirStore.
    */
   java.lang.String getFhirStore();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface FhirStoreSourceOrBuilder
    * @return A list containing the resourceTypes.
    */
   java.util.List<java.lang.String> getResourceTypesList();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The count of resourceTypes.
    */
   int getResourceTypesCount();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface FhirStoreSourceOrBuilder
    * @return The resourceTypes at the given index.
    */
   java.lang.String getResourceTypes(int index);
+
   /**
    *
    *
@@ -148,4 +153,26 @@ public interface FhirStoreSourceOrBuilder
    * @return The bytes of the resourceTypes at the given index.
    */
   com.google.protobuf.ByteString getResourceTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to update the DataStore schema to the latest predefined
+   * schema.
+   *
+   * If true, the DataStore schema will be updated to include any FHIR fields
+   * or resource types that have been added since the last import and
+   * corresponding FHIR resources will be imported from the FHIR store.
+   *
+   * Note this field cannot be used in conjunction with `resource_types`. It
+   * should be used after initial import.
+   * </pre>
+   *
+   * <code>bool update_from_latest_predefined_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateFromLatestPredefinedSchema.
+   */
+  boolean getUpdateFromLatestPredefinedSchema();
 }

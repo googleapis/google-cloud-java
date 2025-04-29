@@ -33,6 +33,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChange)
     LineItemChangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LineItemChange.newBuilder() to construct.
   private LineItemChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object changeId_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANGE_TYPE_FIELD_NUMBER = 2;
   private int changeType_ = 0;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public int getChangeTypeValue() {
     return changeType_;
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OLD_LINE_ITEM_INFO_FIELD_NUMBER = 3;
   private com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo oldLineItemInfo_;
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOldLineItemInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo.getDefaultInstance()
         : oldLineItemInfo_;
   }
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEW_LINE_ITEM_INFO_FIELD_NUMBER = 4;
   private com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo newLineItemInfo_;
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNewLineItemInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +267,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo.getDefaultInstance()
         : newLineItemInfo_;
   }
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANGE_STATE_FIELD_NUMBER = 5;
   private int changeState_ = 0;
+
   /**
    *
    *
@@ -294,6 +306,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public int getChangeStateValue() {
     return changeState_;
   }
+
   /**
    *
    *
@@ -322,6 +335,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateReason_ = "";
+
   /**
    *
    *
@@ -348,6 +362,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -377,6 +392,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANGE_STATE_REASON_TYPE_FIELD_NUMBER = 10;
   private int changeStateReasonType_ = 0;
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public int getChangeStateReasonTypeValue() {
     return changeStateReasonType_;
   }
+
   /**
    *
    *
@@ -429,6 +446,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANGE_EFFECTIVE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp changeEffectiveTime_;
+
   /**
    *
    *
@@ -447,6 +465,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChangeEffectiveTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -467,6 +486,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : changeEffectiveTime_;
   }
+
   /**
    *
    *
@@ -488,6 +508,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -504,6 +525,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -520,6 +542,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -537,6 +560,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -554,6 +578,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -571,6 +596,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -872,6 +898,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1229,6 +1256,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object changeId_ = "";
+
     /**
      *
      *
@@ -1252,6 +1280,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1275,6 +1304,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1327,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1346,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1372,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int changeType_ = 0;
+
     /**
      *
      *
@@ -1357,6 +1390,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public int getChangeTypeValue() {
       return changeType_;
     }
+
     /**
      *
      *
@@ -1377,6 +1411,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1435,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChangeType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1424,6 +1460,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1487,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo.Builder,
             com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfoOrBuilder>
         oldLineItemInfoBuilder_;
+
     /**
      *
      *
@@ -1466,6 +1504,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOldLineItemInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1490,6 +1529,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return oldLineItemInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1555,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1538,6 +1579,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1612,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1634,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1608,6 +1652,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOldLineItemInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1630,6 +1675,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             : oldLineItemInfo_;
       }
     }
+
     /**
      *
      *
@@ -1664,6 +1710,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo.Builder,
             com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfoOrBuilder>
         newLineItemInfoBuilder_;
+
     /**
      *
      *
@@ -1680,6 +1727,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNewLineItemInfo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1704,6 +1752,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return newLineItemInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1778,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1802,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1835,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1857,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1822,6 +1875,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNewLineItemInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1844,6 +1898,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             : newLineItemInfo_;
       }
     }
+
     /**
      *
      *
@@ -1873,6 +1928,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int changeState_ = 0;
+
     /**
      *
      *
@@ -1890,6 +1946,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public int getChangeStateValue() {
       return changeState_;
     }
+
     /**
      *
      *
@@ -1910,6 +1967,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +1991,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChangeState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1957,6 +2016,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1978,6 +2038,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stateReason_ = "";
+
     /**
      *
      *
@@ -2003,6 +2064,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2028,6 +2090,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2052,6 +2115,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2072,6 +2136,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2164,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int changeStateReasonType_ = 0;
+
     /**
      *
      *
@@ -2120,6 +2186,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public int getChangeStateReasonTypeValue() {
       return changeStateReasonType_;
     }
+
     /**
      *
      *
@@ -2144,6 +2211,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2172,6 +2240,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2201,6 +2270,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2301,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         changeEffectiveTimeBuilder_;
+
     /**
      *
      *
@@ -2248,6 +2319,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChangeEffectiveTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2271,6 +2343,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return changeEffectiveTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2296,6 +2369,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2392,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2348,6 +2423,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2370,6 +2446,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2387,6 +2464,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getChangeEffectiveTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2408,6 +2486,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             : changeEffectiveTime_;
       }
     }
+
     /**
      *
      *
@@ -2443,6 +2522,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2459,6 +2539,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2481,6 +2562,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2505,6 +2587,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2526,6 +2609,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2555,6 +2639,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2576,6 +2661,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2592,6 +2678,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2612,6 +2699,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2646,6 +2734,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2663,6 +2752,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2686,6 +2776,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2711,6 +2802,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2825,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2763,6 +2856,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2785,6 +2879,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2802,6 +2897,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2823,6 +2919,7 @@ public final class LineItemChange extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

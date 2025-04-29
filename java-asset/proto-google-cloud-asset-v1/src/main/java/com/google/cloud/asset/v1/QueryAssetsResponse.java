@@ -33,6 +33,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.QueryAssetsResponse)
     QueryAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryAssetsResponse.newBuilder() to construct.
   private QueryAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobReference_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
 
   public static final int DONE_FIELD_NUMBER = 2;
   private boolean done_ = false;
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ERROR_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   public boolean hasError() {
     return responseCase_ == 3;
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     }
     return com.google.rpc.Status.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int QUERY_RESULT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   public boolean hasQueryResult() {
     return responseCase_ == 4;
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.asset.v1.QueryResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   public boolean hasOutputConfig() {
     return responseCase_ == 5;
   }
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.asset.v1.QueryAssetsOutputConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -572,6 +586,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -847,6 +862,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object jobReference_ = "";
+
     /**
      *
      *
@@ -869,6 +885,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -891,6 +908,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -912,6 +930,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private boolean done_;
+
     /**
      *
      *
@@ -975,6 +996,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public boolean getDone() {
       return done_;
     }
+
     /**
      *
      *
@@ -1001,6 +1023,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1044,6 +1068,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public boolean hasError() {
       return responseCase_ == 3;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1117,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1137,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1168,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1207,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.rpc.Status.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1197,6 +1228,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1263,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.asset.v1.QueryResult.Builder,
             com.google.cloud.asset.v1.QueryResultOrBuilder>
         queryResultBuilder_;
+
     /**
      *
      *
@@ -1246,6 +1279,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public boolean hasQueryResult() {
       return responseCase_ == 4;
     }
+
     /**
      *
      *
@@ -1271,6 +1305,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return com.google.cloud.asset.v1.QueryResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1293,6 +1328,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1348,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1381,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1407,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1420,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.asset.v1.QueryResult.Builder getQueryResultBuilder() {
       return getQueryResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1401,6 +1441,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return com.google.cloud.asset.v1.QueryResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1480,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.asset.v1.QueryAssetsOutputConfig.Builder,
             com.google.cloud.asset.v1.QueryAssetsOutputConfigOrBuilder>
         outputConfigBuilder_;
+
     /**
      *
      *
@@ -1456,6 +1498,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public boolean hasOutputConfig() {
       return responseCase_ == 5;
     }
+
     /**
      *
      *
@@ -1483,6 +1526,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return com.google.cloud.asset.v1.QueryAssetsOutputConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1507,6 +1551,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1574,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1564,6 +1610,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       responseCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1638,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1653,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.asset.v1.QueryAssetsOutputConfig.Builder getOutputConfigBuilder() {
       return getOutputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1627,6 +1676,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         return com.google.cloud.asset.v1.QueryAssetsOutputConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

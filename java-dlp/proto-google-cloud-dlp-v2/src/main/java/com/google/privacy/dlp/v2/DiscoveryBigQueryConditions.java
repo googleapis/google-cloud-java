@@ -37,6 +37,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryBigQueryConditions)
     DiscoveryBigQueryConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryBigQueryConditions.newBuilder() to construct.
   private DiscoveryBigQueryConditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
      * @return Whether the minAge field is set.
      */
     boolean hasMinAge();
+
     /**
      *
      *
@@ -110,6 +112,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
      * @return The minAge.
      */
     com.google.protobuf.Duration getMinAge();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
      */
     com.google.protobuf.DurationOrBuilder getMinAgeOrBuilder();
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryBigQueryConditions.OrConditions)
       OrConditionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OrConditions.newBuilder() to construct.
     private OrConditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -168,6 +173,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     private int bitField0_;
     public static final int MIN_ROW_COUNT_FIELD_NUMBER = 1;
     private int minRowCount_ = 0;
+
     /**
      *
      *
@@ -187,6 +193,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
 
     public static final int MIN_AGE_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration minAge_;
+
     /**
      *
      *
@@ -203,6 +210,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public boolean hasMinAge() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -219,6 +227,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public com.google.protobuf.Duration getMinAge() {
       return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
     }
+
     /**
      *
      *
@@ -410,6 +419,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -632,6 +642,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int minRowCount_;
+
       /**
        *
        *
@@ -648,6 +659,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       public int getMinRowCount() {
         return minRowCount_;
       }
+
       /**
        *
        *
@@ -668,6 +680,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -693,6 +706,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minAgeBuilder_;
+
       /**
        *
        *
@@ -708,6 +722,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       public boolean hasMinAge() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -727,6 +742,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
           return minAgeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -750,6 +766,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -770,6 +787,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -798,6 +816,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -818,6 +837,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -833,6 +853,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         onChanged();
         return getMinAgeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -850,6 +871,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
           return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
         }
       }
+
       /**
        *
        *
@@ -962,6 +984,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     private IncludedTypesCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -996,6 +1019,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
 
   public static final int CREATED_AFTER_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createdAfter_;
+
   /**
    *
    *
@@ -1012,6 +1036,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
   public boolean hasCreatedAfter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1030,6 +1055,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : createdAfter_;
   }
+
   /**
    *
    *
@@ -1048,6 +1074,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
   }
 
   public static final int TYPES_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1063,6 +1090,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
   public boolean hasTypes() {
     return includedTypesCase_ == 2;
   }
+
   /**
    *
    *
@@ -1081,6 +1109,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.BigQueryTableTypes.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1099,6 +1128,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
   }
 
   public static final int TYPE_COLLECTION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1113,6 +1143,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
   public boolean hasTypeCollection() {
     return includedTypesCase_ == 3;
   }
+
   /**
    *
    *
@@ -1130,6 +1161,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     }
     return 0;
   }
+
   /**
    *
    *
@@ -1155,6 +1187,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
 
   public static final int OR_CONDITIONS_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.OrConditions orConditions_;
+
   /**
    *
    *
@@ -1170,6 +1203,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
   public boolean hasOrConditions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1187,6 +1221,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         ? com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.OrConditions.getDefaultInstance()
         : orConditions_;
   }
+
   /**
    *
    *
@@ -1422,6 +1457,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1707,6 +1743,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createdAfterBuilder_;
+
     /**
      *
      *
@@ -1722,6 +1759,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public boolean hasCreatedAfter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1743,6 +1781,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         return createdAfterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1766,6 +1805,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1786,6 +1826,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1855,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1876,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1849,6 +1892,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return getCreatedAfterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1868,6 +1912,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
             : createdAfter_;
       }
     }
+
     /**
      *
      *
@@ -1900,6 +1945,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.BigQueryTableTypes.Builder,
             com.google.privacy.dlp.v2.BigQueryTableTypesOrBuilder>
         typesBuilder_;
+
     /**
      *
      *
@@ -1915,6 +1961,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public boolean hasTypes() {
       return includedTypesCase_ == 2;
     }
+
     /**
      *
      *
@@ -1940,6 +1987,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.BigQueryTableTypes.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1962,6 +2010,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       includedTypesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2030,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       includedTypesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2064,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       includedTypesCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2039,6 +2090,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2103,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.BigQueryTableTypes.Builder getTypesBuilder() {
       return getTypesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2071,6 +2124,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.BigQueryTableTypes.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2119,6 +2173,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public boolean hasTypeCollection() {
       return includedTypesCase_ == 3;
     }
+
     /**
      *
      *
@@ -2137,6 +2192,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2155,6 +2211,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2178,6 +2235,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       }
       return com.google.privacy.dlp.v2.BigQueryTableTypeCollection.BIG_QUERY_COLLECTION_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -2199,6 +2257,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2284,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.OrConditions.Builder,
             com.google.privacy.dlp.v2.DiscoveryBigQueryConditions.OrConditionsOrBuilder>
         orConditionsBuilder_;
+
     /**
      *
      *
@@ -2240,6 +2300,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
     public boolean hasOrConditions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2262,6 +2323,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
         return orConditionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2286,6 +2348,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2308,6 +2371,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2403,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2424,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2375,6 +2441,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
       onChanged();
       return getOrConditionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2396,6 +2463,7 @@ public final class DiscoveryBigQueryConditions extends com.google.protobuf.Gener
             : orConditions_;
       }
     }
+
     /**
      *
      *

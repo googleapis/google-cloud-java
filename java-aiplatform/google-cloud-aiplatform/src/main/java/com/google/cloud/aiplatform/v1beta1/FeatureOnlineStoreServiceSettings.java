@@ -121,6 +121,13 @@ public class FeatureOnlineStoreServiceSettings
         .searchNearestEntitiesSettings();
   }
 
+  /** Returns the object with the settings used for calls to featureViewDirectWrite. */
+  public StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings() {
+    return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
+        .featureViewDirectWriteSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -262,6 +269,13 @@ public class FeatureOnlineStoreServiceSettings
     public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings() {
       return getStubSettingsBuilder().searchNearestEntitiesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to featureViewDirectWrite. */
+    public StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings() {
+      return getStubSettingsBuilder().featureViewDirectWriteSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

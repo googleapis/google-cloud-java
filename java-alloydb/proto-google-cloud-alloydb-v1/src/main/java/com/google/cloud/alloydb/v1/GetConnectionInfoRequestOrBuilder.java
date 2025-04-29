@@ -39,6 +39,7 @@ public interface GetConnectionInfoRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface GetConnectionInfoRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface UpdateSpaceRequestOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateSpaceRequestOrBuilder
    * @return The space.
    */
   com.google.chat.v1.Space getSpace();
+
   /**
    *
    *
@@ -138,6 +140,7 @@ public interface UpdateSpaceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -211,6 +214,7 @@ public interface UpdateSpaceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface EndpointOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface EndpointOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface EndpointOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface EndpointOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.DeployedModel> getDeployedModelsList();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface EndpointOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.DeployedModel getDeployedModels(int index);
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface EndpointOrBuilder
    * </code>
    */
   int getDeployedModelsCount();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface EndpointOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DeployedModelOrBuilder>
       getDeployedModelsOrBuilderList();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 5;</code>
    */
   int getTrafficSplitCount();
+
   /**
    *
    *
@@ -224,9 +232,11 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 5;</code>
    */
   boolean containsTrafficSplit(java.lang.String key);
+
   /** Use {@link #getTrafficSplitMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplit();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplitMap();
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, int32&gt; traffic_split = 5;</code>
    */
   int getTrafficSplitOrDefault(java.lang.String key, int defaultValue);
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public interface EndpointOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -322,6 +335,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -338,9 +352,11 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -357,6 +373,7 @@ public interface EndpointOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -377,6 +394,7 @@ public interface EndpointOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -407,6 +425,7 @@ public interface EndpointOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public interface EndpointOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -445,6 +465,7 @@ public interface EndpointOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -458,6 +479,7 @@ public interface EndpointOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -484,6 +506,7 @@ public interface EndpointOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -498,6 +521,7 @@ public interface EndpointOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -540,6 +564,7 @@ public interface EndpointOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -609,6 +634,7 @@ public interface EndpointOrBuilder
    * @return Whether the privateServiceConnectConfig field is set.
    */
   boolean hasPrivateServiceConnectConfig();
+
   /**
    *
    *
@@ -627,6 +653,7 @@ public interface EndpointOrBuilder
    * @return The privateServiceConnectConfig.
    */
   com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig getPrivateServiceConnectConfig();
+
   /**
    *
    *
@@ -663,6 +690,7 @@ public interface EndpointOrBuilder
    * @return The modelDeploymentMonitoringJob.
    */
   java.lang.String getModelDeploymentMonitoringJob();
+
   /**
    *
    *
@@ -696,6 +724,7 @@ public interface EndpointOrBuilder
    * @return Whether the predictRequestResponseLoggingConfig field is set.
    */
   boolean hasPredictRequestResponseLoggingConfig();
+
   /**
    *
    *
@@ -711,6 +740,7 @@ public interface EndpointOrBuilder
    */
   com.google.cloud.aiplatform.v1.PredictRequestResponseLoggingConfig
       getPredictRequestResponseLoggingConfig();
+
   /**
    *
    *
@@ -759,6 +789,7 @@ public interface EndpointOrBuilder
    * @return The dedicatedEndpointDns.
    */
   java.lang.String getDedicatedEndpointDns();
+
   /**
    *
    *
@@ -787,6 +818,7 @@ public interface EndpointOrBuilder
    * @return Whether the clientConnectionConfig field is set.
    */
   boolean hasClientConnectionConfig();
+
   /**
    *
    *
@@ -799,6 +831,7 @@ public interface EndpointOrBuilder
    * @return The clientConnectionConfig.
    */
   com.google.cloud.aiplatform.v1.ClientConnectionConfig getClientConnectionConfig();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the bgpAlwaysCompareMed field is set.
    */
   boolean hasBgpAlwaysCompareMed();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the bgpBestPathSelectionMode field is set.
    */
   boolean hasBgpBestPathSelectionMode();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return The bgpBestPathSelectionMode.
    */
   java.lang.String getBgpBestPathSelectionMode();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the bgpInterRegionCost field is set.
    */
   boolean hasBgpInterRegionCost();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return The bgpInterRegionCost.
    */
   java.lang.String getBgpInterRegionCost();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the effectiveBgpAlwaysCompareMed field is set.
    */
   boolean hasEffectiveBgpAlwaysCompareMed();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the effectiveBgpInterRegionCost field is set.
    */
   boolean hasEffectiveBgpInterRegionCost();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return The effectiveBgpInterRegionCost.
    */
   java.lang.String getEffectiveBgpInterRegionCost();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return Whether the routingMode field is set.
    */
   boolean hasRoutingMode();
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public interface NetworkRoutingConfigOrBuilder
    * @return The routingMode.
    */
   java.lang.String getRoutingMode();
+
   /**
    *
    *

@@ -82,6 +82,7 @@ public interface PrivateClusterConfigOrBuilder
    * @return The masterIpv4CidrBlock.
    */
   java.lang.String getMasterIpv4CidrBlock();
+
   /**
    *
    *
@@ -119,6 +120,7 @@ public interface PrivateClusterConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPrivateEndpoint();
+
   /**
    *
    *
@@ -162,6 +164,7 @@ public interface PrivateClusterConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPublicEndpoint();
+
   /**
    *
    *
@@ -196,6 +199,7 @@ public interface PrivateClusterConfigOrBuilder
    * @return The peeringName.
    */
   java.lang.String getPeeringName();
+
   /**
    *
    *
@@ -230,6 +234,7 @@ public interface PrivateClusterConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasMasterGlobalAccessConfig();
+
   /**
    *
    *
@@ -251,6 +256,7 @@ public interface PrivateClusterConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1.PrivateClusterMasterGlobalAccessConfig getMasterGlobalAccessConfig();
+
   /**
    *
    *
@@ -290,6 +296,7 @@ public interface PrivateClusterConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPrivateEndpointSubnetwork();
+
   /**
    *
    *

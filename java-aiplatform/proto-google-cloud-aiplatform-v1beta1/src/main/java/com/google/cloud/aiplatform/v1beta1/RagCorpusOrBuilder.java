@@ -28,299 +28,6 @@ public interface RagCorpusOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the RagCorpus.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The resource name of the RagCorpus.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. The display name of the RagCorpus.
-   * The name can be up to 128 characters long and can consist of any UTF-8
-   * characters.
-   * </pre>
-   *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The displayName.
-   */
-  java.lang.String getDisplayName();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The display name of the RagCorpus.
-   * The name can be up to 128 characters long and can consist of any UTF-8
-   * characters.
-   * </pre>
-   *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for displayName.
-   */
-  com.google.protobuf.ByteString getDisplayNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The description of the RagCorpus.
-   * </pre>
-   *
-   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The description.
-   */
-  java.lang.String getDescription();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The description of the RagCorpus.
-   * </pre>
-   *
-   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for description.
-   */
-  com.google.protobuf.ByteString getDescriptionBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The embedding model config of the RagCorpus.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
-   * @return Whether the ragEmbeddingModelConfig field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasRagEmbeddingModelConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The embedding model config of the RagCorpus.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
-   * @return The ragEmbeddingModelConfig.
-   */
-  @java.lang.Deprecated
-  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The embedding model config of the RagCorpus.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   */
-  @java.lang.Deprecated
-  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
-      getRagEmbeddingModelConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The Vector DB config of the RagCorpus.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
-   * @return Whether the ragVectorDbConfig field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasRagVectorDbConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The Vector DB config of the RagCorpus.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
-   * @return The ragVectorDbConfig.
-   */
-  @java.lang.Deprecated
-  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The Vector DB config of the RagCorpus.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   */
-  @java.lang.Deprecated
-  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder getRagVectorDbConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Timestamp when this RagCorpus was created.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the createTime field is set.
-   */
-  boolean hasCreateTime();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Timestamp when this RagCorpus was created.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The createTime.
-   */
-  com.google.protobuf.Timestamp getCreateTime();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Timestamp when this RagCorpus was created.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Timestamp when this RagCorpus was last updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the updateTime field is set.
-   */
-  boolean hasUpdateTime();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Timestamp when this RagCorpus was last updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The updateTime.
-   */
-  com.google.protobuf.Timestamp getUpdateTime();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Timestamp when this RagCorpus was last updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. RagCorpus state.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the corpusStatus field is set.
-   */
-  boolean hasCorpusStatus();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. RagCorpus state.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The corpusStatus.
-   */
-  com.google.cloud.aiplatform.v1beta1.CorpusStatus getCorpusStatus();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. RagCorpus state.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder getCorpusStatusOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. Immutable. The config for the Vector DBs.
    * </pre>
    *
@@ -331,6 +38,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the vectorDbConfig field is set.
    */
   boolean hasVectorDbConfig();
+
   /**
    *
    *
@@ -345,6 +53,7 @@ public interface RagCorpusOrBuilder
    * @return The vectorDbConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getVectorDbConfig();
+
   /**
    *
    *
@@ -372,6 +81,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the vertexAiSearchConfig field is set.
    */
   boolean hasVertexAiSearchConfig();
+
   /**
    *
    *
@@ -386,6 +96,7 @@ public interface RagCorpusOrBuilder
    * @return The vertexAiSearchConfig.
    */
   com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig getVertexAiSearchConfig();
+
   /**
    *
    *
@@ -404,10 +115,316 @@ public interface RagCorpusOrBuilder
    *
    *
    * <pre>
-   * Output only. The number of RagFiles in the RagCorpus.
+   * Output only. The resource name of the RagCorpus.
    * </pre>
    *
-   * <code>int32 rag_files_count = 11;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the RagCorpus.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the RagCorpus.
+   * The name can be up to 128 characters long and can consist of any UTF-8
+   * characters.
+   * </pre>
+   *
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the RagCorpus.
+   * The name can be up to 128 characters long and can consist of any UTF-8
+   * characters.
+   * </pre>
+   *
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the RagCorpus.
+   * </pre>
+   *
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the RagCorpus.
+   * </pre>
+   *
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=284
+   * @return Whether the ragEmbeddingModelConfig field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasRagEmbeddingModelConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=284
+   * @return The ragEmbeddingModelConfig.
+   */
+  @java.lang.Deprecated
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Deprecated
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
+      getRagEmbeddingModelConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=291
+   * @return Whether the ragVectorDbConfig field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasRagVectorDbConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=291
+   * @return The ragVectorDbConfig.
+   */
+  @java.lang.Deprecated
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Vector DB config of the RagCorpus.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Deprecated
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder getRagVectorDbConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this RagCorpus was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this RagCorpus was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this RagCorpus was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this RagCorpus was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this RagCorpus was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this RagCorpus was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the corpusStatus field is set.
+   */
+  boolean hasCorpusStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The corpusStatus.
+   */
+  com.google.cloud.aiplatform.v1beta1.CorpusStatus getCorpusStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. RagCorpus state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CorpusStatus corpus_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder getCorpusStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of RagFiles in the RagCorpus.
+   * </pre>
+   *
+   * <code>int32 rag_files_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The ragFilesCount.
    */

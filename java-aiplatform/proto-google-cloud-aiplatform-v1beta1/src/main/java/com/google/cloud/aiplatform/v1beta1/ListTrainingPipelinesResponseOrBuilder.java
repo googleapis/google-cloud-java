@@ -34,6 +34,7 @@ public interface ListTrainingPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.TrainingPipeline training_pipelines = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> getTrainingPipelinesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTrainingPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.TrainingPipeline training_pipelines = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.TrainingPipeline getTrainingPipelines(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTrainingPipelinesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.TrainingPipeline training_pipelines = 1;</code>
    */
   int getTrainingPipelinesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTrainingPipelinesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrainingPipelineOrBuilder>
       getTrainingPipelinesOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListTrainingPipelinesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

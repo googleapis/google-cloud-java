@@ -33,6 +33,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ServiceAccountSpec)
     ServiceAccountSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceAccountSpec.newBuilder() to construct.
   private ServiceAccountSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
 
   public static final int ENABLE_CUSTOM_SERVICE_ACCOUNT_FIELD_NUMBER = 1;
   private boolean enableCustomServiceAccount_ = false;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +328,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -521,6 +526,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean enableCustomServiceAccount_;
+
     /**
      *
      *
@@ -540,6 +546,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
     public boolean getEnableCustomServiceAccount() {
       return enableCustomServiceAccount_;
     }
+
     /**
      *
      *
@@ -563,6 +570,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -618,6 +627,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

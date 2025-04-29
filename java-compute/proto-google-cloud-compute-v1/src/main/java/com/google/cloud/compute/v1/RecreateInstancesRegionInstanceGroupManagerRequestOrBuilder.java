@@ -37,6 +37,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the regionInstanceGroupManagersRecreateRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersRecreateRequestResource();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest
       getRegionInstanceGroupManagersRecreateRequestResource();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

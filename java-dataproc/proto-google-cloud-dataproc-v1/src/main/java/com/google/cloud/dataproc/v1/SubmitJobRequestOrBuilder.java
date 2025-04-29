@@ -37,6 +37,7 @@ public interface SubmitJobRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SubmitJobRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface SubmitJobRequestOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface SubmitJobRequestOrBuilder
    * @return The job.
    */
   com.google.cloud.dataproc.v1.Job getJob();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface SubmitJobRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The cloneUri.
    */
   java.lang.String getCloneUri();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface GitRepositoryLinkOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -210,9 +219,11 @@ public interface GitRepositoryLinkOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface GitRepositoryLinkOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -237,6 +249,7 @@ public interface GitRepositoryLinkOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -262,6 +275,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -302,6 +316,7 @@ public interface GitRepositoryLinkOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -313,9 +328,11 @@ public interface GitRepositoryLinkOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -327,6 +344,7 @@ public interface GitRepositoryLinkOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -342,6 +360,7 @@ public interface GitRepositoryLinkOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -369,6 +388,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -397,6 +417,7 @@ public interface GitRepositoryLinkOrBuilder
    * @return The webhookId.
    */
   java.lang.String getWebhookId();
+
   /**
    *
    *

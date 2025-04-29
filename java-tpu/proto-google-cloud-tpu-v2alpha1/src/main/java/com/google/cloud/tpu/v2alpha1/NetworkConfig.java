@@ -33,6 +33,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.NetworkConfig)
     NetworkConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkConfig.newBuilder() to construct.
   private NetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_EXTERNAL_IPS_FIELD_NUMBER = 3;
   private boolean enableExternalIps_ = false;
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAN_IP_FORWARD_FIELD_NUMBER = 4;
   private boolean canIpForward_ = false;
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUEUE_COUNT_FIELD_NUMBER = 6;
   private int queueCount_ = 0;
+
   /**
    *
    *
@@ -426,6 +434,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +672,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -686,6 +696,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +720,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +882,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableExternalIps_;
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableExternalIps() {
       return enableExternalIps_;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +971,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean canIpForward_;
+
     /**
      *
      *
@@ -966,6 +989,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getCanIpForward() {
       return canIpForward_;
     }
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int queueCount_;
+
     /**
      *
      *
@@ -1024,6 +1050,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public int getQueueCount() {
       return queueCount_;
     }
+
     /**
      *
      *
@@ -1044,6 +1071,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

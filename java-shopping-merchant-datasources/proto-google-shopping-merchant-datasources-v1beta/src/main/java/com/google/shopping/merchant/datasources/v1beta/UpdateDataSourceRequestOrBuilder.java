@@ -38,6 +38,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return Whether the dataSource field is set.
    */
   boolean hasDataSource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return The dataSource.
    */
   com.google.shopping.merchant.datasources.v1beta.DataSource getDataSource();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateDataSourceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

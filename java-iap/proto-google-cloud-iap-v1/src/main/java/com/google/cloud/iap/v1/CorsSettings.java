@@ -34,6 +34,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.CorsSettings)
     CorsSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CorsSettings.newBuilder() to construct.
   private CorsSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ALLOW_HTTP_OPTIONS_FIELD_NUMBER = 1;
   private com.google.protobuf.BoolValue allowHttpOptions_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllowHttpOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : allowHttpOptions_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         allowHttpOptionsBuilder_;
+
     /**
      *
      *
@@ -497,6 +503,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllowHttpOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -518,6 +525,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
         return allowHttpOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -561,6 +570,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -589,6 +599,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +620,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +636,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAllowHttpOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -643,6 +656,7 @@ public final class CorsSettings extends com.google.protobuf.GeneratedMessageV3
             : allowHttpOptions_;
       }
     }
+
     /**
      *
      *

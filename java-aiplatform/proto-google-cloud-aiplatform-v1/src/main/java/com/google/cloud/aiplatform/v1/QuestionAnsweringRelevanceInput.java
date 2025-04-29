@@ -33,6 +33,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringRelevanceInput)
     QuestionAnsweringRelevanceInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuestionAnsweringRelevanceInput.newBuilder() to construct.
   private QuestionAnsweringRelevanceInput(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceSpec metricSpec_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceSpec.getDefaultInstance()
         : metricSpec_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceInstance instance_;
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceInstance.getDefaultInstance()
         : instance_;
   }
+
   /**
    *
    *
@@ -356,6 +363,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +589,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceSpec.Builder,
             com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceSpecOrBuilder>
         metricSpecBuilder_;
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
         return metricSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
             : metricSpec_;
       }
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceInstance.Builder,
             com.google.cloud.aiplatform.v1.QuestionAnsweringRelevanceInstanceOrBuilder>
         instanceBuilder_;
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
         return instanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +952,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -967,6 +992,7 @@ public final class QuestionAnsweringRelevanceInput extends com.google.protobuf.G
             : instance_;
       }
     }
+
     /**
      *
      *

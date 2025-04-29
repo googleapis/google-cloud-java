@@ -35,6 +35,7 @@ public interface ExportTensorboardTimeSeriesDataResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TimeSeriesDataPoint> getTimeSeriesDataPointsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ExportTensorboardTimeSeriesDataResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.TimeSeriesDataPoint getTimeSeriesDataPoints(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ExportTensorboardTimeSeriesDataResponseOrBuilder
    * </code>
    */
   int getTimeSeriesDataPointsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ExportTensorboardTimeSeriesDataResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TimeSeriesDataPointOrBuilder>
       getTimeSeriesDataPointsOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface ExportTensorboardTimeSeriesDataResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

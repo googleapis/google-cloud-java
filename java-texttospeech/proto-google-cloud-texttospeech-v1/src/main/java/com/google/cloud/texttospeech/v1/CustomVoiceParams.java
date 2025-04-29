@@ -33,6 +33,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.CustomVoiceParams)
     CustomVoiceParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomVoiceParams.newBuilder() to construct.
   private CustomVoiceParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * <code>REPORTED_USAGE_UNSPECIFIED = 0;</code>
      */
     public static final int REPORTED_USAGE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -132,6 +134,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * <code>REALTIME = 1;</code>
      */
     public static final int REALTIME_VALUE = 1;
+
     /**
      *
      *
@@ -234,6 +237,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -259,6 +263,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +292,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
 
   public static final int REPORTED_USAGE_FIELD_NUMBER = 3;
   private int reportedUsage_ = 0;
+
   /**
    *
    *
@@ -299,7 +305,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
    * @return The enum numeric value on the wire for reportedUsage.
    */
   @java.lang.Override
@@ -307,6 +313,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
   public int getReportedUsageValue() {
     return reportedUsage_;
   }
+
   /**
    *
    *
@@ -319,7 +326,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
    * @return The reportedUsage.
    */
   @java.lang.Override
@@ -506,6 +513,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -703,6 +711,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -727,6 +736,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -751,6 +761,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -774,6 +785,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +805,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +832,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     }
 
     private int reportedUsage_ = 0;
+
     /**
      *
      *
@@ -831,7 +845,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
      * @return The enum numeric value on the wire for reportedUsage.
      */
     @java.lang.Override
@@ -839,6 +853,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     public int getReportedUsageValue() {
       return reportedUsage_;
     }
+
     /**
      *
      *
@@ -851,7 +866,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
      * @param value The enum numeric value on the wire for reportedUsage to set.
      * @return This builder for chaining.
      */
@@ -862,6 +877,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,7 +890,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
      * @return The reportedUsage.
      */
     @java.lang.Override
@@ -887,6 +903,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.texttospeech.v1.CustomVoiceParams.ReportedUsage.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -899,7 +916,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
      * @param value The reportedUsage to set.
      * @return This builder for chaining.
      */
@@ -914,6 +931,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,7 +944,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
+     *     google/cloud/texttospeech/v1/cloud_tts.proto;l=385
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

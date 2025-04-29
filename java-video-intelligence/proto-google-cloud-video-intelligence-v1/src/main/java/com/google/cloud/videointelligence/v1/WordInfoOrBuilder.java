@@ -39,6 +39,7 @@ public interface WordInfoOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface WordInfoOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Duration getStartTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface WordInfoOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface WordInfoOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Duration getEndTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface WordInfoOrBuilder
    * @return The word.
    */
   java.lang.String getWord();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Order orders = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.Order> getOrdersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Order orders = 1;</code>
    */
   com.google.ads.admanager.v1.Order getOrders(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Order orders = 1;</code>
    */
   int getOrdersCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListOrdersResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Order orders = 1;</code>
    */
   java.util.List<? extends com.google.ads.admanager.v1.OrderOrBuilder> getOrdersOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListOrdersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

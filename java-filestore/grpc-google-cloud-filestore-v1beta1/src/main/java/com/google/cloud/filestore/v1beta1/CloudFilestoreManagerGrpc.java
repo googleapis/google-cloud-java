@@ -1113,6 +1113,19 @@ public final class CloudFilestoreManagerGrpc {
     return CloudFilestoreManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudFilestoreManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudFilestoreManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudFilestoreManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudFilestoreManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudFilestoreManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudFilestoreManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1944,6 +1957,351 @@ public final class CloudFilestoreManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudFilestoreManager.
+   *
+   * <pre>
+   * Configures and manages Filestore resources.
+   * Filestore Manager v1beta1.
+   * The `file.googleapis.com` service implements the Filestore API and
+   * defines the following model for managing resources:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of instances and backups, named:
+   * `/instances/&#42;` and `/backups/&#42;` respectively.
+   * * As such, Filestore instances are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *   backups are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
+   * Note that location_id can represent a Google Cloud `zone` or `region`
+   * depending on the resource. for example: A zonal Filestore instance:
+   * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
+   * A regional Filestore instance:
+   * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
+   * </pre>
+   */
+  public static final class CloudFilestoreManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudFilestoreManagerBlockingV2Stub> {
+    private CloudFilestoreManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudFilestoreManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudFilestoreManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all instances in a project for either a specified location
+     * or for all locations.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.ListInstancesResponse listInstances(
+        com.google.cloud.filestore.v1beta1.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific instance.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.Instance getInstance(
+        com.google.cloud.filestore.v1beta1.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an instance.
+     * When creating from a backup, the capacity of the new instance needs to be
+     * equal to or larger than the capacity of the backup (and also equal to or
+     * larger than the minimum capacity of the tier).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.filestore.v1beta1.CreateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.filestore.v1beta1.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores an existing instance's file share from a backup.
+     * The capacity of the instance needs to be equal to or larger than the
+     * capacity of the backup (and also equal to or larger than the minimum
+     * capacity of the tier).
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreInstance(
+        com.google.cloud.filestore.v1beta1.RestoreInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revert an existing instance's file system to a specified snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation revertInstance(
+        com.google.cloud.filestore.v1beta1.RevertInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevertInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote the standby instance (replica).
+     * </pre>
+     */
+    public com.google.longrunning.Operation promoteReplica(
+        com.google.cloud.filestore.v1beta1.PromoteReplicaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPromoteReplicaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.filestore.v1beta1.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all snapshots in a project for either a specified location
+     * or for all locations.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.ListSnapshotsResponse listSnapshots(
+        com.google.cloud.filestore.v1beta1.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific snapshot.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.Snapshot getSnapshot(
+        com.google.cloud.filestore.v1beta1.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSnapshot(
+        com.google.cloud.filestore.v1beta1.CreateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSnapshot(
+        com.google.cloud.filestore.v1beta1.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSnapshot(
+        com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups in a project for either a specified location or for all
+     * locations.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.ListBackupsResponse listBackups(
+        com.google.cloud.filestore.v1beta1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.Backup getBackup(
+        com.google.cloud.filestore.v1beta1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.filestore.v1beta1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.filestore.v1beta1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.filestore.v1beta1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all shares for a specified instance.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.ListSharesResponse listShares(
+        com.google.cloud.filestore.v1beta1.ListSharesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSharesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific share.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1beta1.Share getShare(
+        com.google.cloud.filestore.v1beta1.GetShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a share.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createShare(
+        com.google.cloud.filestore.v1beta1.CreateShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a share.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteShare(
+        com.google.cloud.filestore.v1beta1.DeleteShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific share.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateShare(
+        com.google.cloud.filestore.v1beta1.UpdateShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateShareMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudFilestoreManager.
    *
    * <pre>
    * Configures and manages Filestore resources.

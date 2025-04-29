@@ -34,6 +34,7 @@ public interface SearchFilesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.SearchResult search_results = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.SearchResult> getSearchResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchFilesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.SearchResult search_results = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.SearchResult getSearchResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchFilesResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.SearchResult search_results = 1;</code>
    */
   int getSearchResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.SearchResultOrBuilder>
       getSearchResultsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface SearchFilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

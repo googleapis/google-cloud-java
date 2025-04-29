@@ -33,6 +33,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.UpdateTemplateRequest)
     UpdateTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTemplateRequest.newBuilder() to construct.
   private UpdateTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
 
   public static final int TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.modelarmor.v1.Template template_;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasTemplate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.modelarmor.v1.Template.getDefaultInstance()
         : template_;
   }
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -447,6 +456,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -703,6 +714,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +871,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.modelarmor.v1.Template.Builder,
             com.google.cloud.modelarmor.v1.TemplateOrBuilder>
         templateBuilder_;
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -952,6 +973,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
         return templateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1072,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
             : template_;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1148,6 +1177,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1184,6 +1214,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1282,7 @@ public final class UpdateTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

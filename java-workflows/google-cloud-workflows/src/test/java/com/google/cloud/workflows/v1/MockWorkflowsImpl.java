@@ -162,4 +162,27 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listWorkflowRevisions(
+      ListWorkflowRevisionsRequest request,
+      StreamObserver<ListWorkflowRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListWorkflowRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWorkflowRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkflowRevisions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListWorkflowRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

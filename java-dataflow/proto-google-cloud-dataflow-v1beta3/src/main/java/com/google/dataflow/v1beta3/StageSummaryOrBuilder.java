@@ -36,6 +36,7 @@ public interface StageSummaryOrBuilder
    * @return The stageId.
    */
   java.lang.String getStageId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StageSummaryOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface StageSummaryOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface StageSummaryOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface StageSummaryOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface StageSummaryOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface StageSummaryOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface StageSummaryOrBuilder
    * @return The progress.
    */
   com.google.dataflow.v1beta3.ProgressTimeseries getProgress();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface StageSummaryOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 6;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList();
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public interface StageSummaryOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 6;</code>
    */
   com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index);
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface StageSummaryOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 6;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public interface StageSummaryOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.MetricUpdateOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *

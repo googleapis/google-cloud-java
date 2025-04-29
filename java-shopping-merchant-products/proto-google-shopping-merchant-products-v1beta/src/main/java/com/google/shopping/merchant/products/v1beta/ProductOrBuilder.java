@@ -30,10 +30,10 @@ public interface ProductOrBuilder
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * `accounts/{account}/products/{product}` where the last
    * section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
-   * example for product name is "accounts/123/products/online~en~US~sku123"
+   * `channel~content_language~feed_label~offer_id`
+   * example for product name is `accounts/123/products/online~en~US~sku123`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,16 +41,17 @@ public interface ProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * `accounts/{account}/products/{product}` where the last
    * section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
-   * example for product name is "accounts/123/products/online~en~US~sku123"
+   * `channel~content_language~feed_label~offer_id`
+   * example for product name is `accounts/123/products/online~en~US~sku123`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -75,6 +76,7 @@ public interface ProductOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface ProductOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface ProductOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface ProductOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public interface ProductOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *
@@ -230,6 +236,7 @@ public interface ProductOrBuilder
    * @return Whether the versionNumber field is set.
    */
   boolean hasVersionNumber();
+
   /**
    *
    *
@@ -269,6 +276,7 @@ public interface ProductOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -283,6 +291,7 @@ public interface ProductOrBuilder
    * @return The attributes.
    */
   com.google.shopping.merchant.products.v1beta.Attributes getAttributes();
+
   /**
    *
    *
@@ -313,6 +322,7 @@ public interface ProductOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -330,6 +340,7 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -347,6 +358,7 @@ public interface ProductOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *
@@ -398,6 +411,7 @@ public interface ProductOrBuilder
    * @return Whether the productStatus field is set.
    */
   boolean hasProductStatus();
+
   /**
    *
    *
@@ -413,6 +427,7 @@ public interface ProductOrBuilder
    * @return The productStatus.
    */
   com.google.shopping.merchant.products.v1beta.ProductStatus getProductStatus();
+
   /**
    *
    *
@@ -426,4 +441,48 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.shopping.merchant.products.v1beta.ProductStatusOrBuilder getProductStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The automated discounts information for the product.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1beta.AutomatedDiscounts automated_discounts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the automatedDiscounts field is set.
+   */
+  boolean hasAutomatedDiscounts();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The automated discounts information for the product.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1beta.AutomatedDiscounts automated_discounts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The automatedDiscounts.
+   */
+  com.google.shopping.merchant.products.v1beta.AutomatedDiscounts getAutomatedDiscounts();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The automated discounts information for the product.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1beta.AutomatedDiscounts automated_discounts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1beta.AutomatedDiscountsOrBuilder
+      getAutomatedDiscountsOrBuilder();
 }

@@ -38,6 +38,7 @@ public interface CreateProcessRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateProcessRequestOrBuilder
    * @return The processId.
    */
   java.lang.String getProcessId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateProcessRequestOrBuilder
    * @return Whether the process field is set.
    */
   boolean hasProcess();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateProcessRequestOrBuilder
    * @return The process.
    */
   com.google.cloud.visionai.v1.Process getProcess();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface CreateProcessRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

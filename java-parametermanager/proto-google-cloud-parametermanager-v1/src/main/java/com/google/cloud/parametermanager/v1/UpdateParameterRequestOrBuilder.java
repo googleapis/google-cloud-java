@@ -42,6 +42,7 @@ public interface UpdateParameterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateParameterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface UpdateParameterRequestOrBuilder
    * @return Whether the parameter field is set.
    */
   boolean hasParameter();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateParameterRequestOrBuilder
    * @return The parameter.
    */
   com.google.cloud.parametermanager.v1.Parameter getParameter();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface UpdateParameterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

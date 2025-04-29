@@ -33,6 +33,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DeleteDocumentAction)
     DeleteDocumentActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDocumentAction.newBuilder() to construct.
   private DeleteDocumentAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_HARD_DELETE_FIELD_NUMBER = 1;
   private boolean enableHardDelete_ = false;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enableHardDelete_;
+
     /**
      *
      *
@@ -438,6 +442,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
     public boolean getEnableHardDelete() {
       return enableHardDelete_;
     }
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class DeleteDocumentAction extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

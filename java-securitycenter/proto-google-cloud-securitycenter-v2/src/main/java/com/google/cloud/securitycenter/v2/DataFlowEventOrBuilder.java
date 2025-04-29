@@ -36,6 +36,7 @@ public interface DataFlowEventOrBuilder
    * @return The eventId.
    */
   java.lang.String getEventId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DataFlowEventOrBuilder
    * @return The principalEmail.
    */
   java.lang.String getPrincipalEmail();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DataFlowEventOrBuilder
    * @return The enum numeric value on the wire for operation.
    */
   int getOperationValue();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface DataFlowEventOrBuilder
    * @return The violatedLocation.
    */
   java.lang.String getViolatedLocation();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface DataFlowEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface DataFlowEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *

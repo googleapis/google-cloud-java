@@ -33,6 +33,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.BusinessContext)
     BusinessContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BusinessContext.newBuilder() to construct.
   private BusinessContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int ENTRY_OVERVIEW_FIELD_NUMBER = 1;
   private com.google.cloud.datacatalog.v1.EntryOverview entryOverview_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
   public boolean hasEntryOverview() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.datacatalog.v1.EntryOverview.getDefaultInstance()
         : entryOverview_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONTACTS_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.Contacts contacts_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
   public boolean hasContacts() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.datacatalog.v1.Contacts.getDefaultInstance()
         : contacts_;
   }
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +571,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datacatalog.v1.EntryOverview.Builder,
             com.google.cloud.datacatalog.v1.EntryOverviewOrBuilder>
         entryOverviewBuilder_;
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     public boolean hasEntryOverview() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
         return entryOverviewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -619,6 +630,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +700,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEntryOverviewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -718,6 +734,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
             : entryOverview_;
       }
     }
+
     /**
      *
      *
@@ -750,6 +767,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datacatalog.v1.Contacts.Builder,
             com.google.cloud.datacatalog.v1.ContactsOrBuilder>
         contactsBuilder_;
+
     /**
      *
      *
@@ -764,6 +782,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
     public boolean hasContacts() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
         return contactsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -806,6 +826,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +846,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +874,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +894,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +909,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getContactsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -903,6 +928,7 @@ public final class BusinessContext extends com.google.protobuf.GeneratedMessageV
             : contacts_;
       }
     }
+
     /**
      *
      *

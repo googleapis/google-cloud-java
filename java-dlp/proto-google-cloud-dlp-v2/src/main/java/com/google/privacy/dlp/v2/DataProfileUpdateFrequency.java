@@ -83,6 +83,7 @@ public enum DataProfileUpdateFrequency implements com.google.protobuf.ProtocolMe
    * <code>UPDATE_FREQUENCY_UNSPECIFIED = 0;</code>
    */
   public static final int UPDATE_FREQUENCY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public enum DataProfileUpdateFrequency implements com.google.protobuf.ProtocolMe
    * <code>UPDATE_FREQUENCY_NEVER = 1;</code>
    */
   public static final int UPDATE_FREQUENCY_NEVER_VALUE = 1;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public enum DataProfileUpdateFrequency implements com.google.protobuf.ProtocolMe
    * <code>UPDATE_FREQUENCY_DAILY = 2;</code>
    */
   public static final int UPDATE_FREQUENCY_DAILY_VALUE = 2;
+
   /**
    *
    *

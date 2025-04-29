@@ -38,6 +38,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return Whether the bigtable field is set.
    */
   boolean hasBigtable();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The bigtable.
    */
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable getBigtable();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return Whether the optimized field is set.
    */
   boolean hasOptimized();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The optimized.
    */
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized getOptimized();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -262,6 +272,7 @@ public interface FeatureOnlineStoreOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -282,9 +293,11 @@ public interface FeatureOnlineStoreOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface FeatureOnlineStoreOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface FeatureOnlineStoreOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -364,6 +379,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -394,6 +410,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return Whether the dedicatedServingEndpoint field is set.
    */
   boolean hasDedicatedServingEndpoint();
+
   /**
    *
    *
@@ -410,6 +427,7 @@ public interface FeatureOnlineStoreOrBuilder
    */
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint
       getDedicatedServingEndpoint();
+
   /**
    *
    *
@@ -440,6 +458,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *

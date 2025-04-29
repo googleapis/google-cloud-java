@@ -43,6 +43,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    */
   java.util.List<com.google.cloud.backupdr.v1.BackupPlanAssociation>
       getBackupPlanAssociationsList();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.BackupPlanAssociation getBackupPlanAssociations(int index);
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    * </code>
    */
   int getBackupPlanAssociationsCount();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.BackupPlanAssociationOrBuilder>
       getBackupPlanAssociationsOrBuilderList();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface ListBackupPlanAssociationsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

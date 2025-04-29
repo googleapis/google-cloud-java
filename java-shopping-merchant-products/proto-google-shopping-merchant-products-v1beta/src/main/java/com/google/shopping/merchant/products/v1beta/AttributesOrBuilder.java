@@ -38,6 +38,7 @@ public interface AttributesOrBuilder
    * @return Whether the identifierExists field is set.
    */
   boolean hasIdentifierExists();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface AttributesOrBuilder
    * @return Whether the isBundle field is set.
    */
   boolean hasIsBundle();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AttributesOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AttributesOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AttributesOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface AttributesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface AttributesOrBuilder
    * @return Whether the link field is set.
    */
   boolean hasLink();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface AttributesOrBuilder
    * @return The link.
    */
   java.lang.String getLink();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface AttributesOrBuilder
    * @return Whether the mobileLink field is set.
    */
   boolean hasMobileLink();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface AttributesOrBuilder
    * @return The mobileLink.
    */
   java.lang.String getMobileLink();
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public interface AttributesOrBuilder
    * @return Whether the canonicalLink field is set.
    */
   boolean hasCanonicalLink();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface AttributesOrBuilder
    * @return The canonicalLink.
    */
   java.lang.String getCanonicalLink();
+
   /**
    *
    *
@@ -277,6 +289,7 @@ public interface AttributesOrBuilder
    * @return Whether the imageLink field is set.
    */
   boolean hasImageLink();
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public interface AttributesOrBuilder
    * @return The imageLink.
    */
   java.lang.String getImageLink();
+
   /**
    *
    *
@@ -314,6 +328,7 @@ public interface AttributesOrBuilder
    * @return A list containing the additionalImageLinks.
    */
   java.util.List<java.lang.String> getAdditionalImageLinksList();
+
   /**
    *
    *
@@ -326,6 +341,7 @@ public interface AttributesOrBuilder
    * @return The count of additionalImageLinks.
    */
   int getAdditionalImageLinksCount();
+
   /**
    *
    *
@@ -339,6 +355,7 @@ public interface AttributesOrBuilder
    * @return The additionalImageLinks at the given index.
    */
   java.lang.String getAdditionalImageLinks(int index);
+
   /**
    *
    *
@@ -370,6 +387,7 @@ public interface AttributesOrBuilder
    * @return Whether the expirationDate field is set.
    */
   boolean hasExpirationDate();
+
   /**
    *
    *
@@ -387,6 +405,7 @@ public interface AttributesOrBuilder
    * @return The expirationDate.
    */
   com.google.protobuf.Timestamp getExpirationDate();
+
   /**
    *
    *
@@ -418,6 +437,7 @@ public interface AttributesOrBuilder
    * @return Whether the disclosureDate field is set.
    */
   boolean hasDisclosureDate();
+
   /**
    *
    *
@@ -433,6 +453,7 @@ public interface AttributesOrBuilder
    * @return The disclosureDate.
    */
   com.google.protobuf.Timestamp getDisclosureDate();
+
   /**
    *
    *
@@ -459,6 +480,7 @@ public interface AttributesOrBuilder
    * @return Whether the adult field is set.
    */
   boolean hasAdult();
+
   /**
    *
    *
@@ -485,6 +507,7 @@ public interface AttributesOrBuilder
    * @return Whether the ageGroup field is set.
    */
   boolean hasAgeGroup();
+
   /**
    *
    *
@@ -498,6 +521,7 @@ public interface AttributesOrBuilder
    * @return The ageGroup.
    */
   java.lang.String getAgeGroup();
+
   /**
    *
    *
@@ -524,6 +548,7 @@ public interface AttributesOrBuilder
    * @return Whether the availability field is set.
    */
   boolean hasAvailability();
+
   /**
    *
    *
@@ -536,6 +561,7 @@ public interface AttributesOrBuilder
    * @return The availability.
    */
   java.lang.String getAvailability();
+
   /**
    *
    *
@@ -562,6 +588,7 @@ public interface AttributesOrBuilder
    * @return Whether the availabilityDate field is set.
    */
   boolean hasAvailabilityDate();
+
   /**
    *
    *
@@ -575,6 +602,7 @@ public interface AttributesOrBuilder
    * @return The availabilityDate.
    */
   com.google.protobuf.Timestamp getAvailabilityDate();
+
   /**
    *
    *
@@ -599,6 +627,7 @@ public interface AttributesOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
+
   /**
    *
    *
@@ -611,6 +640,7 @@ public interface AttributesOrBuilder
    * @return The brand.
    */
   java.lang.String getBrand();
+
   /**
    *
    *
@@ -636,6 +666,7 @@ public interface AttributesOrBuilder
    * @return Whether the color field is set.
    */
   boolean hasColor();
+
   /**
    *
    *
@@ -648,6 +679,7 @@ public interface AttributesOrBuilder
    * @return The color.
    */
   java.lang.String getColor();
+
   /**
    *
    *
@@ -673,6 +705,7 @@ public interface AttributesOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -685,6 +718,7 @@ public interface AttributesOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
+
   /**
    *
    *
@@ -710,6 +744,7 @@ public interface AttributesOrBuilder
    * @return Whether the gender field is set.
    */
   boolean hasGender();
+
   /**
    *
    *
@@ -722,6 +757,7 @@ public interface AttributesOrBuilder
    * @return The gender.
    */
   java.lang.String getGender();
+
   /**
    *
    *
@@ -751,6 +787,7 @@ public interface AttributesOrBuilder
    * @return Whether the googleProductCategory field is set.
    */
   boolean hasGoogleProductCategory();
+
   /**
    *
    *
@@ -767,6 +804,7 @@ public interface AttributesOrBuilder
    * @return The googleProductCategory.
    */
   java.lang.String getGoogleProductCategory();
+
   /**
    *
    *
@@ -799,6 +837,7 @@ public interface AttributesOrBuilder
    * @return A list containing the gtin.
    */
   java.util.List<java.lang.String> getGtinList();
+
   /**
    *
    *
@@ -814,6 +853,7 @@ public interface AttributesOrBuilder
    * @return The count of gtin.
    */
   int getGtinCount();
+
   /**
    *
    *
@@ -830,6 +870,7 @@ public interface AttributesOrBuilder
    * @return The gtin at the given index.
    */
   java.lang.String getGtin(int index);
+
   /**
    *
    *
@@ -859,6 +900,7 @@ public interface AttributesOrBuilder
    * @return Whether the itemGroupId field is set.
    */
   boolean hasItemGroupId();
+
   /**
    *
    *
@@ -871,6 +913,7 @@ public interface AttributesOrBuilder
    * @return The itemGroupId.
    */
   java.lang.String getItemGroupId();
+
   /**
    *
    *
@@ -896,6 +939,7 @@ public interface AttributesOrBuilder
    * @return Whether the material field is set.
    */
   boolean hasMaterial();
+
   /**
    *
    *
@@ -908,6 +952,7 @@ public interface AttributesOrBuilder
    * @return The material.
    */
   java.lang.String getMaterial();
+
   /**
    *
    *
@@ -935,6 +980,7 @@ public interface AttributesOrBuilder
    * @return Whether the mpn field is set.
    */
   boolean hasMpn();
+
   /**
    *
    *
@@ -949,6 +995,7 @@ public interface AttributesOrBuilder
    * @return The mpn.
    */
   java.lang.String getMpn();
+
   /**
    *
    *
@@ -976,6 +1023,7 @@ public interface AttributesOrBuilder
    * @return Whether the pattern field is set.
    */
   boolean hasPattern();
+
   /**
    *
    *
@@ -988,6 +1036,7 @@ public interface AttributesOrBuilder
    * @return The pattern.
    */
   java.lang.String getPattern();
+
   /**
    *
    *
@@ -1013,6 +1062,7 @@ public interface AttributesOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -1025,6 +1075,7 @@ public interface AttributesOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
+
   /**
    *
    *
@@ -1048,6 +1099,7 @@ public interface AttributesOrBuilder
    * @return Whether the installment field is set.
    */
   boolean hasInstallment();
+
   /**
    *
    *
@@ -1060,6 +1112,7 @@ public interface AttributesOrBuilder
    * @return The installment.
    */
   com.google.shopping.merchant.products.v1beta.Installment getInstallment();
+
   /**
    *
    *
@@ -1084,6 +1137,7 @@ public interface AttributesOrBuilder
    * @return Whether the subscriptionCost field is set.
    */
   boolean hasSubscriptionCost();
+
   /**
    *
    *
@@ -1097,6 +1151,7 @@ public interface AttributesOrBuilder
    * @return The subscriptionCost.
    */
   com.google.shopping.merchant.products.v1beta.SubscriptionCost getSubscriptionCost();
+
   /**
    *
    *
@@ -1122,6 +1177,7 @@ public interface AttributesOrBuilder
    * @return Whether the loyaltyPoints field is set.
    */
   boolean hasLoyaltyPoints();
+
   /**
    *
    *
@@ -1134,6 +1190,7 @@ public interface AttributesOrBuilder
    * @return The loyaltyPoints.
    */
   com.google.shopping.merchant.products.v1beta.LoyaltyPoints getLoyaltyPoints();
+
   /**
    *
    *
@@ -1159,6 +1216,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.LoyaltyProgram>
       getLoyaltyProgramsList();
+
   /**
    *
    *
@@ -1172,6 +1230,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   com.google.shopping.merchant.products.v1beta.LoyaltyProgram getLoyaltyPrograms(int index);
+
   /**
    *
    *
@@ -1185,6 +1244,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getLoyaltyProgramsCount();
+
   /**
    *
    *
@@ -1199,6 +1259,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.products.v1beta.LoyaltyProgramOrBuilder>
       getLoyaltyProgramsOrBuilderList();
+
   /**
    *
    *
@@ -1227,6 +1288,7 @@ public interface AttributesOrBuilder
    * @return A list containing the productTypes.
    */
   java.util.List<java.lang.String> getProductTypesList();
+
   /**
    *
    *
@@ -1240,6 +1302,7 @@ public interface AttributesOrBuilder
    * @return The count of productTypes.
    */
   int getProductTypesCount();
+
   /**
    *
    *
@@ -1254,6 +1317,7 @@ public interface AttributesOrBuilder
    * @return The productTypes at the given index.
    */
   java.lang.String getProductTypes(int index);
+
   /**
    *
    *
@@ -1281,6 +1345,7 @@ public interface AttributesOrBuilder
    * @return Whether the salePrice field is set.
    */
   boolean hasSalePrice();
+
   /**
    *
    *
@@ -1293,6 +1358,7 @@ public interface AttributesOrBuilder
    * @return The salePrice.
    */
   com.google.shopping.type.Price getSalePrice();
+
   /**
    *
    *
@@ -1317,6 +1383,7 @@ public interface AttributesOrBuilder
    * @return Whether the salePriceEffectiveDate field is set.
    */
   boolean hasSalePriceEffectiveDate();
+
   /**
    *
    *
@@ -1330,6 +1397,7 @@ public interface AttributesOrBuilder
    * @return The salePriceEffectiveDate.
    */
   com.google.type.Interval getSalePriceEffectiveDate();
+
   /**
    *
    *
@@ -1355,6 +1423,7 @@ public interface AttributesOrBuilder
    * @return Whether the sellOnGoogleQuantity field is set.
    */
   boolean hasSellOnGoogleQuantity();
+
   /**
    *
    *
@@ -1383,6 +1452,7 @@ public interface AttributesOrBuilder
    * @return Whether the productHeight field is set.
    */
   boolean hasProductHeight();
+
   /**
    *
    *
@@ -1397,6 +1467,7 @@ public interface AttributesOrBuilder
    * @return The productHeight.
    */
   com.google.shopping.merchant.products.v1beta.ProductDimension getProductHeight();
+
   /**
    *
    *
@@ -1424,6 +1495,7 @@ public interface AttributesOrBuilder
    * @return Whether the productLength field is set.
    */
   boolean hasProductLength();
+
   /**
    *
    *
@@ -1437,6 +1509,7 @@ public interface AttributesOrBuilder
    * @return The productLength.
    */
   com.google.shopping.merchant.products.v1beta.ProductDimension getProductLength();
+
   /**
    *
    *
@@ -1463,6 +1536,7 @@ public interface AttributesOrBuilder
    * @return Whether the productWidth field is set.
    */
   boolean hasProductWidth();
+
   /**
    *
    *
@@ -1476,6 +1550,7 @@ public interface AttributesOrBuilder
    * @return The productWidth.
    */
   com.google.shopping.merchant.products.v1beta.ProductDimension getProductWidth();
+
   /**
    *
    *
@@ -1501,6 +1576,7 @@ public interface AttributesOrBuilder
    * @return Whether the productWeight field is set.
    */
   boolean hasProductWeight();
+
   /**
    *
    *
@@ -1514,6 +1590,7 @@ public interface AttributesOrBuilder
    * @return The productWeight.
    */
   com.google.shopping.merchant.products.v1beta.ProductWeight getProductWeight();
+
   /**
    *
    *
@@ -1536,6 +1613,7 @@ public interface AttributesOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Shipping shipping = 39;</code>
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.Shipping> getShippingList();
+
   /**
    *
    *
@@ -1546,6 +1624,7 @@ public interface AttributesOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Shipping shipping = 39;</code>
    */
   com.google.shopping.merchant.products.v1beta.Shipping getShipping(int index);
+
   /**
    *
    *
@@ -1556,6 +1635,7 @@ public interface AttributesOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Shipping shipping = 39;</code>
    */
   int getShippingCount();
+
   /**
    *
    *
@@ -1567,6 +1647,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.products.v1beta.ShippingOrBuilder>
       getShippingOrBuilderList();
+
   /**
    *
    *
@@ -1591,6 +1672,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.FreeShippingThreshold>
       getFreeShippingThresholdList();
+
   /**
    *
    *
@@ -1604,6 +1686,7 @@ public interface AttributesOrBuilder
    */
   com.google.shopping.merchant.products.v1beta.FreeShippingThreshold getFreeShippingThreshold(
       int index);
+
   /**
    *
    *
@@ -1616,6 +1699,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getFreeShippingThresholdCount();
+
   /**
    *
    *
@@ -1630,6 +1714,7 @@ public interface AttributesOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.products.v1beta.FreeShippingThresholdOrBuilder>
       getFreeShippingThresholdOrBuilderList();
+
   /**
    *
    *
@@ -1656,6 +1741,7 @@ public interface AttributesOrBuilder
    * @return Whether the shippingWeight field is set.
    */
   boolean hasShippingWeight();
+
   /**
    *
    *
@@ -1668,6 +1754,7 @@ public interface AttributesOrBuilder
    * @return The shippingWeight.
    */
   com.google.shopping.merchant.products.v1beta.ShippingWeight getShippingWeight();
+
   /**
    *
    *
@@ -1691,6 +1778,7 @@ public interface AttributesOrBuilder
    * @return Whether the shippingLength field is set.
    */
   boolean hasShippingLength();
+
   /**
    *
    *
@@ -1703,6 +1791,7 @@ public interface AttributesOrBuilder
    * @return The shippingLength.
    */
   com.google.shopping.merchant.products.v1beta.ShippingDimension getShippingLength();
+
   /**
    *
    *
@@ -1727,6 +1816,7 @@ public interface AttributesOrBuilder
    * @return Whether the shippingWidth field is set.
    */
   boolean hasShippingWidth();
+
   /**
    *
    *
@@ -1739,6 +1829,7 @@ public interface AttributesOrBuilder
    * @return The shippingWidth.
    */
   com.google.shopping.merchant.products.v1beta.ShippingDimension getShippingWidth();
+
   /**
    *
    *
@@ -1763,6 +1854,7 @@ public interface AttributesOrBuilder
    * @return Whether the shippingHeight field is set.
    */
   boolean hasShippingHeight();
+
   /**
    *
    *
@@ -1775,6 +1867,7 @@ public interface AttributesOrBuilder
    * @return The shippingHeight.
    */
   com.google.shopping.merchant.products.v1beta.ShippingDimension getShippingHeight();
+
   /**
    *
    *
@@ -1799,6 +1892,7 @@ public interface AttributesOrBuilder
    * @return Whether the maxHandlingTime field is set.
    */
   boolean hasMaxHandlingTime();
+
   /**
    *
    *
@@ -1824,6 +1918,7 @@ public interface AttributesOrBuilder
    * @return Whether the minHandlingTime field is set.
    */
   boolean hasMinHandlingTime();
+
   /**
    *
    *
@@ -1850,6 +1945,7 @@ public interface AttributesOrBuilder
    * @return Whether the shippingLabel field is set.
    */
   boolean hasShippingLabel();
+
   /**
    *
    *
@@ -1863,6 +1959,7 @@ public interface AttributesOrBuilder
    * @return The shippingLabel.
    */
   java.lang.String getShippingLabel();
+
   /**
    *
    *
@@ -1890,6 +1987,7 @@ public interface AttributesOrBuilder
    * @return Whether the transitTimeLabel field is set.
    */
   boolean hasTransitTimeLabel();
+
   /**
    *
    *
@@ -1903,6 +2001,7 @@ public interface AttributesOrBuilder
    * @return The transitTimeLabel.
    */
   java.lang.String getTransitTimeLabel();
+
   /**
    *
    *
@@ -1932,6 +2031,7 @@ public interface AttributesOrBuilder
    * @return Whether the size field is set.
    */
   boolean hasSize();
+
   /**
    *
    *
@@ -1947,6 +2047,7 @@ public interface AttributesOrBuilder
    * @return The size.
    */
   java.lang.String getSize();
+
   /**
    *
    *
@@ -1975,6 +2076,7 @@ public interface AttributesOrBuilder
    * @return Whether the sizeSystem field is set.
    */
   boolean hasSizeSystem();
+
   /**
    *
    *
@@ -1987,6 +2089,7 @@ public interface AttributesOrBuilder
    * @return The sizeSystem.
    */
   java.lang.String getSizeSystem();
+
   /**
    *
    *
@@ -2014,6 +2117,7 @@ public interface AttributesOrBuilder
    * @return A list containing the sizeTypes.
    */
   java.util.List<java.lang.String> getSizeTypesList();
+
   /**
    *
    *
@@ -2028,6 +2132,7 @@ public interface AttributesOrBuilder
    * @return The count of sizeTypes.
    */
   int getSizeTypesCount();
+
   /**
    *
    *
@@ -2043,6 +2148,7 @@ public interface AttributesOrBuilder
    * @return The sizeTypes at the given index.
    */
   java.lang.String getSizeTypes(int index);
+
   /**
    *
    *
@@ -2069,6 +2175,7 @@ public interface AttributesOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Tax taxes = 51;</code>
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.Tax> getTaxesList();
+
   /**
    *
    *
@@ -2079,6 +2186,7 @@ public interface AttributesOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Tax taxes = 51;</code>
    */
   com.google.shopping.merchant.products.v1beta.Tax getTaxes(int index);
+
   /**
    *
    *
@@ -2089,6 +2197,7 @@ public interface AttributesOrBuilder
    * <code>repeated .google.shopping.merchant.products.v1beta.Tax taxes = 51;</code>
    */
   int getTaxesCount();
+
   /**
    *
    *
@@ -2100,6 +2209,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.products.v1beta.TaxOrBuilder>
       getTaxesOrBuilderList();
+
   /**
    *
    *
@@ -2123,6 +2233,7 @@ public interface AttributesOrBuilder
    * @return Whether the taxCategory field is set.
    */
   boolean hasTaxCategory();
+
   /**
    *
    *
@@ -2135,6 +2246,7 @@ public interface AttributesOrBuilder
    * @return The taxCategory.
    */
   java.lang.String getTaxCategory();
+
   /**
    *
    *
@@ -2160,6 +2272,7 @@ public interface AttributesOrBuilder
    * @return Whether the energyEfficiencyClass field is set.
    */
   boolean hasEnergyEfficiencyClass();
+
   /**
    *
    *
@@ -2172,6 +2285,7 @@ public interface AttributesOrBuilder
    * @return The energyEfficiencyClass.
    */
   java.lang.String getEnergyEfficiencyClass();
+
   /**
    *
    *
@@ -2197,6 +2311,7 @@ public interface AttributesOrBuilder
    * @return Whether the minEnergyEfficiencyClass field is set.
    */
   boolean hasMinEnergyEfficiencyClass();
+
   /**
    *
    *
@@ -2209,6 +2324,7 @@ public interface AttributesOrBuilder
    * @return The minEnergyEfficiencyClass.
    */
   java.lang.String getMinEnergyEfficiencyClass();
+
   /**
    *
    *
@@ -2234,6 +2350,7 @@ public interface AttributesOrBuilder
    * @return Whether the maxEnergyEfficiencyClass field is set.
    */
   boolean hasMaxEnergyEfficiencyClass();
+
   /**
    *
    *
@@ -2246,6 +2363,7 @@ public interface AttributesOrBuilder
    * @return The maxEnergyEfficiencyClass.
    */
   java.lang.String getMaxEnergyEfficiencyClass();
+
   /**
    *
    *
@@ -2272,6 +2390,7 @@ public interface AttributesOrBuilder
    * @return Whether the unitPricingMeasure field is set.
    */
   boolean hasUnitPricingMeasure();
+
   /**
    *
    *
@@ -2285,6 +2404,7 @@ public interface AttributesOrBuilder
    * @return The unitPricingMeasure.
    */
   com.google.shopping.merchant.products.v1beta.UnitPricingMeasure getUnitPricingMeasure();
+
   /**
    *
    *
@@ -2312,6 +2432,7 @@ public interface AttributesOrBuilder
    * @return Whether the unitPricingBaseMeasure field is set.
    */
   boolean hasUnitPricingBaseMeasure();
+
   /**
    *
    *
@@ -2326,6 +2447,7 @@ public interface AttributesOrBuilder
    * @return The unitPricingBaseMeasure.
    */
   com.google.shopping.merchant.products.v1beta.UnitPricingBaseMeasure getUnitPricingBaseMeasure();
+
   /**
    *
    *
@@ -2352,6 +2474,7 @@ public interface AttributesOrBuilder
    * @return Whether the multipack field is set.
    */
   boolean hasMultipack();
+
   /**
    *
    *
@@ -2378,6 +2501,7 @@ public interface AttributesOrBuilder
    * @return Whether the adsGrouping field is set.
    */
   boolean hasAdsGrouping();
+
   /**
    *
    *
@@ -2391,6 +2515,7 @@ public interface AttributesOrBuilder
    * @return The adsGrouping.
    */
   java.lang.String getAdsGrouping();
+
   /**
    *
    *
@@ -2417,6 +2542,7 @@ public interface AttributesOrBuilder
    * @return A list containing the adsLabels.
    */
   java.util.List<java.lang.String> getAdsLabelsList();
+
   /**
    *
    *
@@ -2429,6 +2555,7 @@ public interface AttributesOrBuilder
    * @return The count of adsLabels.
    */
   int getAdsLabelsCount();
+
   /**
    *
    *
@@ -2442,6 +2569,7 @@ public interface AttributesOrBuilder
    * @return The adsLabels at the given index.
    */
   java.lang.String getAdsLabels(int index);
+
   /**
    *
    *
@@ -2469,6 +2597,7 @@ public interface AttributesOrBuilder
    * @return Whether the adsRedirect field is set.
    */
   boolean hasAdsRedirect();
+
   /**
    *
    *
@@ -2482,6 +2611,7 @@ public interface AttributesOrBuilder
    * @return The adsRedirect.
    */
   java.lang.String getAdsRedirect();
+
   /**
    *
    *
@@ -2508,6 +2638,7 @@ public interface AttributesOrBuilder
    * @return Whether the costOfGoodsSold field is set.
    */
   boolean hasCostOfGoodsSold();
+
   /**
    *
    *
@@ -2520,6 +2651,7 @@ public interface AttributesOrBuilder
    * @return The costOfGoodsSold.
    */
   com.google.shopping.type.Price getCostOfGoodsSold();
+
   /**
    *
    *
@@ -2543,6 +2675,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.ProductDetail>
       getProductDetailsList();
+
   /**
    *
    *
@@ -2554,6 +2687,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   com.google.shopping.merchant.products.v1beta.ProductDetail getProductDetails(int index);
+
   /**
    *
    *
@@ -2565,6 +2699,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getProductDetailsCount();
+
   /**
    *
    *
@@ -2577,6 +2712,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.products.v1beta.ProductDetailOrBuilder>
       getProductDetailsOrBuilderList();
+
   /**
    *
    *
@@ -2602,6 +2738,7 @@ public interface AttributesOrBuilder
    * @return A list containing the productHighlights.
    */
   java.util.List<java.lang.String> getProductHighlightsList();
+
   /**
    *
    *
@@ -2614,6 +2751,7 @@ public interface AttributesOrBuilder
    * @return The count of productHighlights.
    */
   int getProductHighlightsCount();
+
   /**
    *
    *
@@ -2627,6 +2765,7 @@ public interface AttributesOrBuilder
    * @return The productHighlights at the given index.
    */
   java.lang.String getProductHighlights(int index);
+
   /**
    *
    *
@@ -2653,6 +2792,7 @@ public interface AttributesOrBuilder
    * @return Whether the displayAdsId field is set.
    */
   boolean hasDisplayAdsId();
+
   /**
    *
    *
@@ -2665,6 +2805,7 @@ public interface AttributesOrBuilder
    * @return The displayAdsId.
    */
   java.lang.String getDisplayAdsId();
+
   /**
    *
    *
@@ -2690,6 +2831,7 @@ public interface AttributesOrBuilder
    * @return A list containing the displayAdsSimilarIds.
    */
   java.util.List<java.lang.String> getDisplayAdsSimilarIdsList();
+
   /**
    *
    *
@@ -2702,6 +2844,7 @@ public interface AttributesOrBuilder
    * @return The count of displayAdsSimilarIds.
    */
   int getDisplayAdsSimilarIdsCount();
+
   /**
    *
    *
@@ -2715,6 +2858,7 @@ public interface AttributesOrBuilder
    * @return The displayAdsSimilarIds at the given index.
    */
   java.lang.String getDisplayAdsSimilarIds(int index);
+
   /**
    *
    *
@@ -2741,6 +2885,7 @@ public interface AttributesOrBuilder
    * @return Whether the displayAdsTitle field is set.
    */
   boolean hasDisplayAdsTitle();
+
   /**
    *
    *
@@ -2753,6 +2898,7 @@ public interface AttributesOrBuilder
    * @return The displayAdsTitle.
    */
   java.lang.String getDisplayAdsTitle();
+
   /**
    *
    *
@@ -2779,6 +2925,7 @@ public interface AttributesOrBuilder
    * @return Whether the displayAdsLink field is set.
    */
   boolean hasDisplayAdsLink();
+
   /**
    *
    *
@@ -2792,6 +2939,7 @@ public interface AttributesOrBuilder
    * @return The displayAdsLink.
    */
   java.lang.String getDisplayAdsLink();
+
   /**
    *
    *
@@ -2818,6 +2966,7 @@ public interface AttributesOrBuilder
    * @return Whether the displayAdsValue field is set.
    */
   boolean hasDisplayAdsValue();
+
   /**
    *
    *
@@ -2843,6 +2992,7 @@ public interface AttributesOrBuilder
    * @return A list containing the promotionIds.
    */
   java.util.List<java.lang.String> getPromotionIdsList();
+
   /**
    *
    *
@@ -2855,6 +3005,7 @@ public interface AttributesOrBuilder
    * @return The count of promotionIds.
    */
   int getPromotionIdsCount();
+
   /**
    *
    *
@@ -2868,6 +3019,7 @@ public interface AttributesOrBuilder
    * @return The promotionIds at the given index.
    */
   java.lang.String getPromotionIds(int index);
+
   /**
    *
    *
@@ -2894,6 +3046,7 @@ public interface AttributesOrBuilder
    * @return Whether the pickupMethod field is set.
    */
   boolean hasPickupMethod();
+
   /**
    *
    *
@@ -2906,6 +3059,7 @@ public interface AttributesOrBuilder
    * @return The pickupMethod.
    */
   java.lang.String getPickupMethod();
+
   /**
    *
    *
@@ -2931,6 +3085,7 @@ public interface AttributesOrBuilder
    * @return Whether the pickupSla field is set.
    */
   boolean hasPickupSla();
+
   /**
    *
    *
@@ -2943,6 +3098,7 @@ public interface AttributesOrBuilder
    * @return The pickupSla.
    */
   java.lang.String getPickupSla();
+
   /**
    *
    *
@@ -2968,6 +3124,7 @@ public interface AttributesOrBuilder
    * @return Whether the linkTemplate field is set.
    */
   boolean hasLinkTemplate();
+
   /**
    *
    *
@@ -2980,6 +3137,7 @@ public interface AttributesOrBuilder
    * @return The linkTemplate.
    */
   java.lang.String getLinkTemplate();
+
   /**
    *
    *
@@ -3006,6 +3164,7 @@ public interface AttributesOrBuilder
    * @return Whether the mobileLinkTemplate field is set.
    */
   boolean hasMobileLinkTemplate();
+
   /**
    *
    *
@@ -3019,6 +3178,7 @@ public interface AttributesOrBuilder
    * @return The mobileLinkTemplate.
    */
   java.lang.String getMobileLinkTemplate();
+
   /**
    *
    *
@@ -3045,6 +3205,7 @@ public interface AttributesOrBuilder
    * @return Whether the customLabel0 field is set.
    */
   boolean hasCustomLabel0();
+
   /**
    *
    *
@@ -3057,6 +3218,7 @@ public interface AttributesOrBuilder
    * @return The customLabel0.
    */
   java.lang.String getCustomLabel0();
+
   /**
    *
    *
@@ -3082,6 +3244,7 @@ public interface AttributesOrBuilder
    * @return Whether the customLabel1 field is set.
    */
   boolean hasCustomLabel1();
+
   /**
    *
    *
@@ -3094,6 +3257,7 @@ public interface AttributesOrBuilder
    * @return The customLabel1.
    */
   java.lang.String getCustomLabel1();
+
   /**
    *
    *
@@ -3119,6 +3283,7 @@ public interface AttributesOrBuilder
    * @return Whether the customLabel2 field is set.
    */
   boolean hasCustomLabel2();
+
   /**
    *
    *
@@ -3131,6 +3296,7 @@ public interface AttributesOrBuilder
    * @return The customLabel2.
    */
   java.lang.String getCustomLabel2();
+
   /**
    *
    *
@@ -3156,6 +3322,7 @@ public interface AttributesOrBuilder
    * @return Whether the customLabel3 field is set.
    */
   boolean hasCustomLabel3();
+
   /**
    *
    *
@@ -3168,6 +3335,7 @@ public interface AttributesOrBuilder
    * @return The customLabel3.
    */
   java.lang.String getCustomLabel3();
+
   /**
    *
    *
@@ -3193,6 +3361,7 @@ public interface AttributesOrBuilder
    * @return Whether the customLabel4 field is set.
    */
   boolean hasCustomLabel4();
+
   /**
    *
    *
@@ -3205,6 +3374,7 @@ public interface AttributesOrBuilder
    * @return The customLabel4.
    */
   java.lang.String getCustomLabel4();
+
   /**
    *
    *
@@ -3232,6 +3402,7 @@ public interface AttributesOrBuilder
    * @return A list containing the includedDestinations.
    */
   java.util.List<java.lang.String> getIncludedDestinationsList();
+
   /**
    *
    *
@@ -3246,6 +3417,7 @@ public interface AttributesOrBuilder
    * @return The count of includedDestinations.
    */
   int getIncludedDestinationsCount();
+
   /**
    *
    *
@@ -3261,6 +3433,7 @@ public interface AttributesOrBuilder
    * @return The includedDestinations at the given index.
    */
   java.lang.String getIncludedDestinations(int index);
+
   /**
    *
    *
@@ -3290,6 +3463,7 @@ public interface AttributesOrBuilder
    * @return A list containing the excludedDestinations.
    */
   java.util.List<java.lang.String> getExcludedDestinationsList();
+
   /**
    *
    *
@@ -3303,6 +3477,7 @@ public interface AttributesOrBuilder
    * @return The count of excludedDestinations.
    */
   int getExcludedDestinationsCount();
+
   /**
    *
    *
@@ -3317,6 +3492,7 @@ public interface AttributesOrBuilder
    * @return The excludedDestinations at the given index.
    */
   java.lang.String getExcludedDestinations(int index);
+
   /**
    *
    *
@@ -3347,6 +3523,7 @@ public interface AttributesOrBuilder
    * @return A list containing the shoppingAdsExcludedCountries.
    */
   java.util.List<java.lang.String> getShoppingAdsExcludedCountriesList();
+
   /**
    *
    *
@@ -3362,6 +3539,7 @@ public interface AttributesOrBuilder
    * @return The count of shoppingAdsExcludedCountries.
    */
   int getShoppingAdsExcludedCountriesCount();
+
   /**
    *
    *
@@ -3378,6 +3556,7 @@ public interface AttributesOrBuilder
    * @return The shoppingAdsExcludedCountries at the given index.
    */
   java.lang.String getShoppingAdsExcludedCountries(int index);
+
   /**
    *
    *
@@ -3409,6 +3588,7 @@ public interface AttributesOrBuilder
    * @return Whether the externalSellerId field is set.
    */
   boolean hasExternalSellerId();
+
   /**
    *
    *
@@ -3423,6 +3603,7 @@ public interface AttributesOrBuilder
    * @return The externalSellerId.
    */
   java.lang.String getExternalSellerId();
+
   /**
    *
    *
@@ -3451,6 +3632,7 @@ public interface AttributesOrBuilder
    * @return Whether the pause field is set.
    */
   boolean hasPause();
+
   /**
    *
    *
@@ -3464,6 +3646,7 @@ public interface AttributesOrBuilder
    * @return The pause.
    */
   java.lang.String getPause();
+
   /**
    *
    *
@@ -3493,6 +3676,7 @@ public interface AttributesOrBuilder
    * @return A list containing the lifestyleImageLinks.
    */
   java.util.List<java.lang.String> getLifestyleImageLinksList();
+
   /**
    *
    *
@@ -3508,6 +3692,7 @@ public interface AttributesOrBuilder
    * @return The count of lifestyleImageLinks.
    */
   int getLifestyleImageLinksCount();
+
   /**
    *
    *
@@ -3524,6 +3709,7 @@ public interface AttributesOrBuilder
    * @return The lifestyleImageLinks at the given index.
    */
   java.lang.String getLifestyleImageLinks(int index);
+
   /**
    *
    *
@@ -3554,6 +3740,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.CloudExportAdditionalProperties>
       getCloudExportAdditionalPropertiesList();
+
   /**
    *
    *
@@ -3567,6 +3754,7 @@ public interface AttributesOrBuilder
    */
   com.google.shopping.merchant.products.v1beta.CloudExportAdditionalProperties
       getCloudExportAdditionalProperties(int index);
+
   /**
    *
    *
@@ -3579,6 +3767,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getCloudExportAdditionalPropertiesCount();
+
   /**
    *
    *
@@ -3594,6 +3783,7 @@ public interface AttributesOrBuilder
           ? extends
               com.google.shopping.merchant.products.v1beta.CloudExportAdditionalPropertiesOrBuilder>
       getCloudExportAdditionalPropertiesOrBuilderList();
+
   /**
    *
    *
@@ -3622,6 +3812,7 @@ public interface AttributesOrBuilder
    * @return Whether the virtualModelLink field is set.
    */
   boolean hasVirtualModelLink();
+
   /**
    *
    *
@@ -3636,6 +3827,7 @@ public interface AttributesOrBuilder
    * @return The virtualModelLink.
    */
   java.lang.String getVirtualModelLink();
+
   /**
    *
    *
@@ -3667,6 +3859,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<com.google.shopping.merchant.products.v1beta.Certification>
       getCertificationsList();
+
   /**
    *
    *
@@ -3682,6 +3875,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   com.google.shopping.merchant.products.v1beta.Certification getCertifications(int index);
+
   /**
    *
    *
@@ -3697,6 +3891,7 @@ public interface AttributesOrBuilder
    * </code>
    */
   int getCertificationsCount();
+
   /**
    *
    *
@@ -3713,6 +3908,7 @@ public interface AttributesOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.products.v1beta.CertificationOrBuilder>
       getCertificationsOrBuilderList();
+
   /**
    *
    *
@@ -3744,6 +3940,7 @@ public interface AttributesOrBuilder
    * @return Whether the structuredTitle field is set.
    */
   boolean hasStructuredTitle();
+
   /**
    *
    *
@@ -3758,6 +3955,7 @@ public interface AttributesOrBuilder
    * @return The structuredTitle.
    */
   com.google.shopping.merchant.products.v1beta.ProductStructuredTitle getStructuredTitle();
+
   /**
    *
    *
@@ -3786,6 +3984,7 @@ public interface AttributesOrBuilder
    * @return Whether the structuredDescription field is set.
    */
   boolean hasStructuredDescription();
+
   /**
    *
    *
@@ -3801,6 +4000,7 @@ public interface AttributesOrBuilder
    */
   com.google.shopping.merchant.products.v1beta.ProductStructuredDescription
       getStructuredDescription();
+
   /**
    *
    *
@@ -3832,6 +4032,7 @@ public interface AttributesOrBuilder
    * @return Whether the autoPricingMinPrice field is set.
    */
   boolean hasAutoPricingMinPrice();
+
   /**
    *
    *
@@ -3849,6 +4050,7 @@ public interface AttributesOrBuilder
    * @return The autoPricingMinPrice.
    */
   com.google.shopping.type.Price getAutoPricingMinPrice();
+
   /**
    *
    *
@@ -3864,4 +4066,75 @@ public interface AttributesOrBuilder
    * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
    */
   com.google.shopping.type.PriceOrBuilder getAutoPricingMinPriceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+      getSustainabilityIncentivesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+      getSustainabilityIncentives(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  int getSustainabilityIncentivesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder>
+      getSustainabilityIncentivesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder
+      getSustainabilityIncentivesOrBuilder(int index);
 }

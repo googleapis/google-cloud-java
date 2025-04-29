@@ -36,6 +36,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SegmentEventFilter)
     SegmentEventFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SegmentEventFilter.newBuilder() to construct.
   private SegmentEventFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventName_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
   public boolean hasEventName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
   public static final int SEGMENT_PARAMETER_FILTER_EXPRESSION_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.SegmentParameterFilterExpression
       segmentParameterFilterExpression_;
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
   public boolean hasSegmentParameterFilterExpression() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
         ? com.google.analytics.data.v1alpha.SegmentParameterFilterExpression.getDefaultInstance()
         : segmentParameterFilterExpression_;
   }
+
   /**
    *
    *
@@ -389,6 +396,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -611,6 +619,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object eventName_ = "";
+
     /**
      *
      *
@@ -626,6 +635,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     public boolean hasEventName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
             com.google.analytics.data.v1alpha.SegmentParameterFilterExpression.Builder,
             com.google.analytics.data.v1alpha.SegmentParameterFilterExpressionOrBuilder>
         segmentParameterFilterExpressionBuilder_;
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     public boolean hasSegmentParameterFilterExpression() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
         return segmentParameterFilterExpressionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSegmentParameterFilterExpressionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -955,6 +977,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
             : segmentParameterFilterExpression_;
       }
     }
+
     /**
      *
      *

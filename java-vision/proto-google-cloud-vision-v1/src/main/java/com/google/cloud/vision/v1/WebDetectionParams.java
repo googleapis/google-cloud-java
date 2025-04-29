@@ -33,6 +33,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.WebDetectionParams)
     WebDetectionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WebDetectionParams.newBuilder() to construct.
   private WebDetectionParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
 
   public static final int INCLUDE_GEO_RESULTS_FIELD_NUMBER = 2;
   private boolean includeGeoResults_ = false;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean includeGeoResults_;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     public boolean getIncludeGeoResults() {
       return includeGeoResults_;
     }
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

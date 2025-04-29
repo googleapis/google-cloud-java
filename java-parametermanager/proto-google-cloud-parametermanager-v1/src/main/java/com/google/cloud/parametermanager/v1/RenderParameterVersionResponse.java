@@ -33,6 +33,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.parametermanager.v1.RenderParameterVersionResponse)
     RenderParameterVersionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RenderParameterVersionResponse.newBuilder() to construct.
   private RenderParameterVersionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parameterVersion_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
 
   public static final int PAYLOAD_FIELD_NUMBER = 2;
   private com.google.cloud.parametermanager.v1.ParameterVersionPayload payload_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
   public boolean hasPayload() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
         ? com.google.cloud.parametermanager.v1.ParameterVersionPayload.getDefaultInstance()
         : payload_;
   }
+
   /**
    *
    *
@@ -176,13 +182,14 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
 
   public static final int RENDERED_PAYLOAD_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString renderedPayload_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
    * <pre>
    * Output only. Server generated rendered version of the user provided payload
    * data (ParameterVersionPayload) which has substitutions of all (if any)
-   * references to a SecretManager SecretVersion resources. This substituion
+   * references to a SecretManager SecretVersion resources. This substitution
    * only works for a Parameter which is in JSON or YAML format.
    * </pre>
    *
@@ -379,6 +386,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -612,6 +620,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parameterVersion_ = "";
+
     /**
      *
      *
@@ -637,6 +646,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +718,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
             com.google.cloud.parametermanager.v1.ParameterVersionPayload.Builder,
             com.google.cloud.parametermanager.v1.ParameterVersionPayloadOrBuilder>
         payloadBuilder_;
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
     public boolean hasPayload() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
         return payloadBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
             : payload_;
       }
     }
+
     /**
      *
      *
@@ -924,13 +946,14 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
     }
 
     private com.google.protobuf.ByteString renderedPayload_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
      * <pre>
      * Output only. Server generated rendered version of the user provided payload
      * data (ParameterVersionPayload) which has substitutions of all (if any)
-     * references to a SecretManager SecretVersion resources. This substituion
+     * references to a SecretManager SecretVersion resources. This substitution
      * only works for a Parameter which is in JSON or YAML format.
      * </pre>
      *
@@ -942,13 +965,14 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getRenderedPayload() {
       return renderedPayload_;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. Server generated rendered version of the user provided payload
      * data (ParameterVersionPayload) which has substitutions of all (if any)
-     * references to a SecretManager SecretVersion resources. This substituion
+     * references to a SecretManager SecretVersion resources. This substitution
      * only works for a Parameter which is in JSON or YAML format.
      * </pre>
      *
@@ -966,13 +990,14 @@ public final class RenderParameterVersionResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. Server generated rendered version of the user provided payload
      * data (ParameterVersionPayload) which has substitutions of all (if any)
-     * references to a SecretManager SecretVersion resources. This substituion
+     * references to a SecretManager SecretVersion resources. This substitution
      * only works for a Parameter which is in JSON or YAML format.
      * </pre>
      *

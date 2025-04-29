@@ -33,6 +33,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.RelativeDemand)
     RelativeDemandOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RelativeDemand.newBuilder() to construct.
   private RelativeDemand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,6 +150,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * <code>RELATIVE_DEMAND_ENUM_UNSPECIFIED = 0;</code>
      */
     public static final int RELATIVE_DEMAND_ENUM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -160,6 +162,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * <code>VERY_LOW = 10;</code>
      */
     public static final int VERY_LOW_VALUE = 10;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW = 20;</code>
      */
     public static final int LOW_VALUE = 20;
+
     /**
      *
      *
@@ -182,6 +186,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIUM = 30;</code>
      */
     public static final int MEDIUM_VALUE = 30;
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH = 40;</code>
      */
     public static final int HIGH_VALUE = 40;
+
     /**
      *
      *
@@ -450,6 +456,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

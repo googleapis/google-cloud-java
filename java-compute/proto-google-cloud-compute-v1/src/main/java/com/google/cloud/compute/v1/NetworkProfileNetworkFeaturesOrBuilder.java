@@ -37,6 +37,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the addressPurposes.
    */
   java.util.List<java.lang.String> getAddressPurposesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of addressPurposes.
    */
   int getAddressPurposesCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The addressPurposes at the given index.
    */
   java.lang.String getAddressPurposes(int index);
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowAliasIpRanges field is set.
    */
   boolean hasAllowAliasIpRanges();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowAliasIpRanges.
    */
   java.lang.String getAllowAliasIpRanges();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowAutoModeSubnet field is set.
    */
   boolean hasAllowAutoModeSubnet();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowAutoModeSubnet.
    */
   java.lang.String getAllowAutoModeSubnet();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowClassDFirewalls field is set.
    */
   boolean hasAllowClassDFirewalls();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowClassDFirewalls.
    */
   java.lang.String getAllowClassDFirewalls();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowCloudNat field is set.
    */
   boolean hasAllowCloudNat();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowCloudNat.
    */
   java.lang.String getAllowCloudNat();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowCloudRouter field is set.
    */
   boolean hasAllowCloudRouter();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowCloudRouter.
    */
   java.lang.String getAllowCloudRouter();
+
   /**
    *
    *
@@ -283,6 +296,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies whether default NIC attachment is allowed.
+   * Check the AllowDefaultNicAttachment enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_default_nic_attachment = 53917486;</code>
+   *
+   * @return Whether the allowDefaultNicAttachment field is set.
+   */
+  boolean hasAllowDefaultNicAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether default NIC attachment is allowed.
+   * Check the AllowDefaultNicAttachment enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_default_nic_attachment = 53917486;</code>
+   *
+   * @return The allowDefaultNicAttachment.
+   */
+  java.lang.String getAllowDefaultNicAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether default NIC attachment is allowed.
+   * Check the AllowDefaultNicAttachment enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_default_nic_attachment = 53917486;</code>
+   *
+   * @return The bytes for allowDefaultNicAttachment.
+   */
+  com.google.protobuf.ByteString getAllowDefaultNicAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
@@ -292,6 +347,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowExternalIpAccess field is set.
    */
   boolean hasAllowExternalIpAccess();
+
   /**
    *
    *
@@ -305,6 +361,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowExternalIpAccess.
    */
   java.lang.String getAllowExternalIpAccess();
+
   /**
    *
    *
@@ -332,6 +389,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowInterconnect field is set.
    */
   boolean hasAllowInterconnect();
+
   /**
    *
    *
@@ -345,6 +403,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowInterconnect.
    */
   java.lang.String getAllowInterconnect();
+
   /**
    *
    *
@@ -363,6 +422,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies whether IP forwarding is allowed.
+   * Check the AllowIpForwarding enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_ip_forwarding = 500838047;</code>
+   *
+   * @return Whether the allowIpForwarding field is set.
+   */
+  boolean hasAllowIpForwarding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether IP forwarding is allowed.
+   * Check the AllowIpForwarding enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_ip_forwarding = 500838047;</code>
+   *
+   * @return The allowIpForwarding.
+   */
+  java.lang.String getAllowIpForwarding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether IP forwarding is allowed.
+   * Check the AllowIpForwarding enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_ip_forwarding = 500838047;</code>
+   *
+   * @return The bytes for allowIpForwarding.
+   */
+  com.google.protobuf.ByteString getAllowIpForwardingBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether cloud load balancing is allowed.
    * Check the AllowLoadBalancing enum for the list of possible values.
    * </pre>
@@ -372,6 +473,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowLoadBalancing field is set.
    */
   boolean hasAllowLoadBalancing();
+
   /**
    *
    *
@@ -385,6 +487,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowLoadBalancing.
    */
   java.lang.String getAllowLoadBalancing();
+
   /**
    *
    *
@@ -412,6 +515,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowMultiNicInSameNetwork field is set.
    */
   boolean hasAllowMultiNicInSameNetwork();
+
   /**
    *
    *
@@ -425,6 +529,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowMultiNicInSameNetwork.
    */
   java.lang.String getAllowMultiNicInSameNetwork();
+
   /**
    *
    *
@@ -443,6 +548,90 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies whether NCC is allowed.
+   * Check the AllowNcc enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_ncc = 372354904;</code>
+   *
+   * @return Whether the allowNcc field is set.
+   */
+  boolean hasAllowNcc();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether NCC is allowed.
+   * Check the AllowNcc enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_ncc = 372354904;</code>
+   *
+   * @return The allowNcc.
+   */
+  java.lang.String getAllowNcc();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether NCC is allowed.
+   * Check the AllowNcc enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_ncc = 372354904;</code>
+   *
+   * @return The bytes for allowNcc.
+   */
+  com.google.protobuf.ByteString getAllowNccBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether VM network migration is allowed.
+   * Check the AllowNetworkMigration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_network_migration = 239588231;</code>
+   *
+   * @return Whether the allowNetworkMigration field is set.
+   */
+  boolean hasAllowNetworkMigration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether VM network migration is allowed.
+   * Check the AllowNetworkMigration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_network_migration = 239588231;</code>
+   *
+   * @return The allowNetworkMigration.
+   */
+  java.lang.String getAllowNetworkMigration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether VM network migration is allowed.
+   * Check the AllowNetworkMigration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_network_migration = 239588231;</code>
+   *
+   * @return The bytes for allowNetworkMigration.
+   */
+  com.google.protobuf.ByteString getAllowNetworkMigrationBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether Packet Mirroring 1.0 is supported.
    * Check the AllowPacketMirroring enum for the list of possible values.
    * </pre>
@@ -452,6 +641,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowPacketMirroring field is set.
    */
   boolean hasAllowPacketMirroring();
+
   /**
    *
    *
@@ -465,6 +655,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowPacketMirroring.
    */
   java.lang.String getAllowPacketMirroring();
+
   /**
    *
    *
@@ -492,6 +683,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowPrivateGoogleAccess field is set.
    */
   boolean hasAllowPrivateGoogleAccess();
+
   /**
    *
    *
@@ -505,6 +697,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowPrivateGoogleAccess.
    */
   java.lang.String getAllowPrivateGoogleAccess();
+
   /**
    *
    *
@@ -532,6 +725,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowPsc field is set.
    */
   boolean hasAllowPsc();
+
   /**
    *
    *
@@ -545,6 +739,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowPsc.
    */
   java.lang.String getAllowPsc();
+
   /**
    *
    *
@@ -572,6 +767,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowSameNetworkUnicast field is set.
    */
   boolean hasAllowSameNetworkUnicast();
+
   /**
    *
    *
@@ -585,6 +781,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowSameNetworkUnicast.
    */
   java.lang.String getAllowSameNetworkUnicast();
+
   /**
    *
    *
@@ -612,6 +809,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowStaticRoutes field is set.
    */
   boolean hasAllowStaticRoutes();
+
   /**
    *
    *
@@ -625,6 +823,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowStaticRoutes.
    */
   java.lang.String getAllowStaticRoutes();
+
   /**
    *
    *
@@ -652,6 +851,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowSubInterfaces field is set.
    */
   boolean hasAllowSubInterfaces();
+
   /**
    *
    *
@@ -665,6 +865,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowSubInterfaces.
    */
   java.lang.String getAllowSubInterfaces();
+
   /**
    *
    *
@@ -692,6 +893,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowVpcPeering field is set.
    */
   boolean hasAllowVpcPeering();
+
   /**
    *
    *
@@ -705,6 +907,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowVpcPeering.
    */
   java.lang.String getAllowVpcPeering();
+
   /**
    *
    *
@@ -732,6 +935,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowVpn field is set.
    */
   boolean hasAllowVpn();
+
   /**
    *
    *
@@ -745,6 +949,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowVpn.
    */
   java.lang.String getAllowVpn();
+
   /**
    *
    *
@@ -772,6 +977,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the interfaceTypes.
    */
   java.util.List<java.lang.String> getInterfaceTypesList();
+
   /**
    *
    *
@@ -785,6 +991,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of interfaceTypes.
    */
   int getInterfaceTypesCount();
+
   /**
    *
    *
@@ -799,6 +1006,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The interfaceTypes at the given index.
    */
   java.lang.String getInterfaceTypes(int index);
+
   /**
    *
    *
@@ -827,6 +1035,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the subnetPurposes.
    */
   java.util.List<java.lang.String> getSubnetPurposesList();
+
   /**
    *
    *
@@ -840,6 +1049,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of subnetPurposes.
    */
   int getSubnetPurposesCount();
+
   /**
    *
    *
@@ -854,6 +1064,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The subnetPurposes at the given index.
    */
   java.lang.String getSubnetPurposes(int index);
+
   /**
    *
    *
@@ -882,6 +1093,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the subnetStackTypes.
    */
   java.util.List<java.lang.String> getSubnetStackTypesList();
+
   /**
    *
    *
@@ -895,6 +1107,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of subnetStackTypes.
    */
   int getSubnetStackTypesCount();
+
   /**
    *
    *
@@ -909,6 +1122,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The subnetStackTypes at the given index.
    */
   java.lang.String getSubnetStackTypes(int index);
+
   /**
    *
    *
@@ -928,6 +1142,122 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies which subnetwork purposes are supported.
+   * Check the SubnetworkPurposes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_purposes = 528240710;</code>
+   *
+   * @return A list containing the subnetworkPurposes.
+   */
+  java.util.List<java.lang.String> getSubnetworkPurposesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork purposes are supported.
+   * Check the SubnetworkPurposes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_purposes = 528240710;</code>
+   *
+   * @return The count of subnetworkPurposes.
+   */
+  int getSubnetworkPurposesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork purposes are supported.
+   * Check the SubnetworkPurposes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_purposes = 528240710;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The subnetworkPurposes at the given index.
+   */
+  java.lang.String getSubnetworkPurposes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork purposes are supported.
+   * Check the SubnetworkPurposes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_purposes = 528240710;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the subnetworkPurposes at the given index.
+   */
+  com.google.protobuf.ByteString getSubnetworkPurposesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork stack types are supported.
+   * Check the SubnetworkStackTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_stack_types = 436827441;</code>
+   *
+   * @return A list containing the subnetworkStackTypes.
+   */
+  java.util.List<java.lang.String> getSubnetworkStackTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork stack types are supported.
+   * Check the SubnetworkStackTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_stack_types = 436827441;</code>
+   *
+   * @return The count of subnetworkStackTypes.
+   */
+  int getSubnetworkStackTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork stack types are supported.
+   * Check the SubnetworkStackTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_stack_types = 436827441;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The subnetworkStackTypes at the given index.
+   */
+  java.lang.String getSubnetworkStackTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which subnetwork stack types are supported.
+   * Check the SubnetworkStackTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string subnetwork_stack_types = 436827441;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the subnetworkStackTypes at the given index.
+   */
+  com.google.protobuf.ByteString getSubnetworkStackTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies which type of unicast is supported.
    * Check the Unicast enum for the list of possible values.
    * </pre>
@@ -937,6 +1267,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the unicast field is set.
    */
   boolean hasUnicast();
+
   /**
    *
    *
@@ -950,6 +1281,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The unicast.
    */
   java.lang.String getUnicast();
+
   /**
    *
    *

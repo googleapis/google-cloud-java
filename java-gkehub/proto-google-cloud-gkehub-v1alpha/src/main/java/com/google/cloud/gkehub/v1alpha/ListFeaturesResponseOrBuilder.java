@@ -34,6 +34,7 @@ public interface ListFeaturesResponseOrBuilder
    * <code>repeated .google.cloud.gkehub.v1alpha.Feature resources = 1;</code>
    */
   java.util.List<com.google.cloud.gkehub.v1alpha.Feature> getResourcesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFeaturesResponseOrBuilder
    * <code>repeated .google.cloud.gkehub.v1alpha.Feature resources = 1;</code>
    */
   com.google.cloud.gkehub.v1alpha.Feature getResources(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFeaturesResponseOrBuilder
    * <code>repeated .google.cloud.gkehub.v1alpha.Feature resources = 1;</code>
    */
   int getResourcesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListFeaturesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.v1alpha.FeatureOrBuilder>
       getResourcesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListFeaturesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PointwiseMetricResult)
     PointwiseMetricResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PointwiseMetricResult.newBuilder() to construct.
   private PointwiseMetricResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -148,6 +153,65 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int CUSTOM_OUTPUT_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.CustomOutput customOutput_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec for custom output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customOutput field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomOutput() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec for custom output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customOutput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomOutput getCustomOutput() {
+    return customOutput_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CustomOutput.getDefaultInstance()
+        : customOutput_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec for custom output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomOutputOrBuilder getCustomOutputOrBuilder() {
+    return customOutput_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CustomOutput.getDefaultInstance()
+        : customOutput_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -168,6 +232,9 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(explanation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, explanation_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getCustomOutput());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -182,6 +249,9 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(explanation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, explanation_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustomOutput());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -205,6 +275,10 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
           != java.lang.Float.floatToIntBits(other.getScore())) return false;
     }
     if (!getExplanation().equals(other.getExplanation())) return false;
+    if (hasCustomOutput() != other.hasCustomOutput()) return false;
+    if (hasCustomOutput()) {
+      if (!getCustomOutput().equals(other.getCustomOutput())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -222,6 +296,10 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + EXPLANATION_FIELD_NUMBER;
     hash = (53 * hash) + getExplanation().hashCode();
+    if (hasCustomOutput()) {
+      hash = (37 * hash) + CUSTOM_OUTPUT_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomOutput().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +401,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -352,10 +431,19 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.PointwiseMetricResult.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCustomOutputFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -364,6 +452,11 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       score_ = 0F;
       explanation_ = "";
+      customOutput_ = null;
+      if (customOutputBuilder_ != null) {
+        customOutputBuilder_.dispose();
+        customOutputBuilder_ = null;
+      }
       return this;
     }
 
@@ -407,6 +500,11 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.explanation_ = explanation_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customOutput_ =
+            customOutputBuilder_ == null ? customOutput_ : customOutputBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -465,6 +563,9 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasCustomOutput()) {
+        mergeCustomOutput(other.getCustomOutput());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -503,6 +604,12 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getCustomOutputFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -523,6 +630,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -538,6 +646,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -553,6 +662,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -572,6 +682,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -591,6 +702,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object explanation_ = "";
+
     /**
      *
      *
@@ -613,6 +725,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -635,6 +748,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +770,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +788,7 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +810,220 @@ public final class PointwiseMetricResult extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.CustomOutput customOutput_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CustomOutput,
+            com.google.cloud.aiplatform.v1beta1.CustomOutput.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomOutputOrBuilder>
+        customOutputBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the customOutput field is set.
+     */
+    public boolean hasCustomOutput() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The customOutput.
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomOutput getCustomOutput() {
+      if (customOutputBuilder_ == null) {
+        return customOutput_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CustomOutput.getDefaultInstance()
+            : customOutput_;
+      } else {
+        return customOutputBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomOutput(com.google.cloud.aiplatform.v1beta1.CustomOutput value) {
+      if (customOutputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customOutput_ = value;
+      } else {
+        customOutputBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomOutput(
+        com.google.cloud.aiplatform.v1beta1.CustomOutput.Builder builderForValue) {
+      if (customOutputBuilder_ == null) {
+        customOutput_ = builderForValue.build();
+      } else {
+        customOutputBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCustomOutput(com.google.cloud.aiplatform.v1beta1.CustomOutput value) {
+      if (customOutputBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && customOutput_ != null
+            && customOutput_
+                != com.google.cloud.aiplatform.v1beta1.CustomOutput.getDefaultInstance()) {
+          getCustomOutputBuilder().mergeFrom(value);
+        } else {
+          customOutput_ = value;
+        }
+      } else {
+        customOutputBuilder_.mergeFrom(value);
+      }
+      if (customOutput_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustomOutput() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      customOutput_ = null;
+      if (customOutputBuilder_ != null) {
+        customOutputBuilder_.dispose();
+        customOutputBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomOutput.Builder getCustomOutputBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCustomOutputFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomOutputOrBuilder getCustomOutputOrBuilder() {
+      if (customOutputBuilder_ != null) {
+        return customOutputBuilder_.getMessageOrBuilder();
+      } else {
+        return customOutput_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CustomOutput.getDefaultInstance()
+            : customOutput_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec for custom output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CustomOutput,
+            com.google.cloud.aiplatform.v1beta1.CustomOutput.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomOutputOrBuilder>
+        getCustomOutputFieldBuilder() {
+      if (customOutputBuilder_ == null) {
+        customOutputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.CustomOutput,
+                com.google.cloud.aiplatform.v1beta1.CustomOutput.Builder,
+                com.google.cloud.aiplatform.v1beta1.CustomOutputOrBuilder>(
+                getCustomOutput(), getParentForChildren(), isClean());
+        customOutput_ = null;
+      }
+      return customOutputBuilder_;
     }
 
     @java.lang.Override

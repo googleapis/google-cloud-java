@@ -41,6 +41,7 @@ public interface ListBackupCollectionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ListBackupCollectionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

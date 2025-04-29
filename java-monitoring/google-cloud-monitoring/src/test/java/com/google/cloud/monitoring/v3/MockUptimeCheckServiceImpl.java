@@ -83,7 +83,8 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUptimeCheckConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method ListUptimeCheckConfigs, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUptimeCheckConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -104,7 +105,8 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetUptimeCheckConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetUptimeCheckConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UptimeCheckConfig.class.getName(),
                   Exception.class.getName())));
@@ -125,7 +127,8 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateUptimeCheckConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateUptimeCheckConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UptimeCheckConfig.class.getName(),
                   Exception.class.getName())));
@@ -146,7 +149,8 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateUptimeCheckConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateUptimeCheckConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UptimeCheckConfig.class.getName(),
                   Exception.class.getName())));
@@ -167,7 +171,8 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteUptimeCheckConfig, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteUptimeCheckConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

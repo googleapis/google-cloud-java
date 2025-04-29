@@ -38,6 +38,7 @@ public interface AudioConfigOrBuilder
    * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
+
   /**
    *
    *
@@ -57,10 +58,10 @@ public interface AudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+   * Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
    * the normal native speed supported by the specific voice. 2.0 is twice as
    * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
-   * speed. Any other values &lt; 0.25 or &gt; 4.0 will return an error.
+   * speed. Any other values &lt; 0.25 or &gt; 2.0 will return an error.
    * </pre>
    *
    * <code>
@@ -148,6 +149,7 @@ public interface AudioConfigOrBuilder
    * @return A list containing the effectsProfileId.
    */
   java.util.List<java.lang.String> getEffectsProfileIdList();
+
   /**
    *
    *
@@ -167,6 +169,7 @@ public interface AudioConfigOrBuilder
    * @return The count of effectsProfileId.
    */
   int getEffectsProfileIdCount();
+
   /**
    *
    *
@@ -187,6 +190,7 @@ public interface AudioConfigOrBuilder
    * @return The effectsProfileId at the given index.
    */
   java.lang.String getEffectsProfileId(int index);
+
   /**
    *
    *

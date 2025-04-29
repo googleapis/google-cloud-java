@@ -93,6 +93,7 @@ public enum NullPercentageLevel implements com.google.protobuf.ProtocolMessageEn
    * <code>NULL_PERCENTAGE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int NULL_PERCENTAGE_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public enum NullPercentageLevel implements com.google.protobuf.ProtocolMessageEn
    * <code>NULL_PERCENTAGE_VERY_LOW = 1;</code>
    */
   public static final int NULL_PERCENTAGE_VERY_LOW_VALUE = 1;
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public enum NullPercentageLevel implements com.google.protobuf.ProtocolMessageEn
    * <code>NULL_PERCENTAGE_LOW = 2;</code>
    */
   public static final int NULL_PERCENTAGE_LOW_VALUE = 2;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public enum NullPercentageLevel implements com.google.protobuf.ProtocolMessageEn
    * <code>NULL_PERCENTAGE_MEDIUM = 3;</code>
    */
   public static final int NULL_PERCENTAGE_MEDIUM_VALUE = 3;
+
   /**
    *
    *

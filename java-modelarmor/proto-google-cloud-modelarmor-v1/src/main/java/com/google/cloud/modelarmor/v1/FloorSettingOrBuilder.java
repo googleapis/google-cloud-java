@@ -36,6 +36,7 @@ public interface FloorSettingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface FloorSettingOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface FloorSettingOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface FloorSettingOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface FloorSettingOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface FloorSettingOrBuilder
    * @return Whether the filterConfig field is set.
    */
   boolean hasFilterConfig();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface FloorSettingOrBuilder
    * @return The filterConfig.
    */
   com.google.cloud.modelarmor.v1.FilterConfig getFilterConfig();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface FloorSettingOrBuilder
    * @return Whether the enableFloorSettingEnforcement field is set.
    */
   boolean hasEnableFloorSettingEnforcement();
+
   /**
    *
    *

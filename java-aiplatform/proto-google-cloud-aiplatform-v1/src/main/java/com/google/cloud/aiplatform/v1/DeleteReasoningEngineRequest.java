@@ -34,6 +34,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DeleteReasoningEngineRequest)
     DeleteReasoningEngineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteReasoningEngineRequest.newBuilder() to construct.
   private DeleteReasoningEngineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,27 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, child resources of this reasoning engine will
+   * also be deleted. Otherwise, the request will fail with FAILED_PRECONDITION
+   * error when the reasoning engine has undeleted child resources.
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +164,9 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +178,9 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +199,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
         (com.google.cloud.aiplatform.v1.DeleteReasoningEngineRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +213,8 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -283,6 +316,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -324,6 +358,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      force_ = false;
       return this;
     }
 
@@ -362,6 +397,9 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.force_ = force_;
       }
     }
 
@@ -416,6 +454,9 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -448,6 +489,12 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                force_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -468,6 +515,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -494,6 +542,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -520,6 +569,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -545,6 +595,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -566,6 +617,7 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -589,6 +641,68 @@ public final class DeleteReasoningEngineRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, child resources of this reasoning engine will
+     * also be deleted. Otherwise, the request will fail with FAILED_PRECONDITION
+     * error when the reasoning engine has undeleted child resources.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, child resources of this reasoning engine will
+     * also be deleted. Otherwise, the request will fail with FAILED_PRECONDITION
+     * error when the reasoning engine has undeleted child resources.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, child resources of this reasoning engine will
+     * also be deleted. Otherwise, the request will fail with FAILED_PRECONDITION
+     * error when the reasoning engine has undeleted child resources.
+     * </pre>
+     *
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      force_ = false;
       onChanged();
       return this;
     }

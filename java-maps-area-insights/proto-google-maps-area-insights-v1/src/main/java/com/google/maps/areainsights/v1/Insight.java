@@ -47,27 +47,36 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    *
    * When this insight is specified ComputeInsights returns the number of
    * places that match the specified filter criteria.
+   *
+   * Example request:
    * ```
-   * For example if the request is:
-   * ComputeInsightsRequest {
-   *   insights: INSIGHT_COUNT
-   *   filter {
-   *     location_filter {region: &lt;PlaceId of state of CA&gt;}
-   *     type_filter {included_types: "restaurant"}
-   *     operating_status: OPERATING_STATUS_OPERATIONAL
-   *     price_levels: PRICE_LEVEL_FREE
-   *     price_levels: PRICE_LEVEL_INEXPENSIVE
-   *     min_rating: 4.0
+   * {
+   *   "insights": ["INSIGHT_COUNT"],
+   *   "filter": {
+   *     "locationFilter": {
+   *       "region": {
+   *         "place": "places/ChIJPV4oX_65j4ARVW8IJ6IJUYs"
+   *       }
+   *     },
+   *     "typeFilter": {
+   *       "includedTypes": ["restaurant"]
+   *     },
+   *     "operatingStatus": ["OPERATING_STATUS_OPERATIONAL"],
+   *     "priceLevels": [
+   *       "PRICE_LEVEL_FREE",
+   *       "PRICE_LEVEL_INEXPENSIVE"
+   *     ],
+   *     "ratingFilter": {
+   *       "minRating": 4.0
+   *     }
    *   }
    * }
-   *
-   * The method will return the count of restaurants in California that are
-   * operational, with price level free or inexpensive and have an average
-   * rating of at least 4 starts.
+   * ```
    *
    * Example response:
-   * ComputeInsightsResponse {
-   *   count: &lt;number of places&gt;
+   * ```
+   * {
+   *   "count": 1234
    * }
    * ```
    * </pre>
@@ -81,31 +90,42 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    * <pre>
    * Return Places
    *
-   * When this insight is specified ComputeInsights returns Places
+   * When this insight is specified ComputeInsights returns places IDs
    * that match the specified filter criteria.
+   *
+   * Example request:
    * ```
-   * For example if the request is:
-   * ComputeInsightsRequest {
-   *   insights: INSIGHT_PLACES
-   *   filter {
-   *     location_filter {region: &lt;PlaceId of state of CA&gt;}
-   *     type_filter {included_types: "restaurant"}
-   *     operating_status: OPERATING_STATUS_OPERATIONAL
-   *     price_levels: PRICE_LEVEL_FREE
-   *     price_levels: PRICE_LEVEL_INEXPENSIVE
-   *     min_rating: 4.0
+   * {
+   *   "insights": ["INSIGHT_PLACES"],
+   *   "filter": {
+   *     "locationFilter": {
+   *       "region": {
+   *         "place": "places/ChIJPV4oX_65j4ARVW8IJ6IJUYs"
+   *       }
+   *     },
+   *     "typeFilter": {
+   *       "includedTypes": ["restaurant"]
+   *     },
+   *     "operatingStatus": ["OPERATING_STATUS_OPERATIONAL"],
+   *     "priceLevels": [
+   *       "PRICE_LEVEL_FREE",
+   *       "PRICE_LEVEL_INEXPENSIVE"
+   *     ],
+   *     "ratingFilter": {
+   *       "minRating": 4.0
+   *     }
    *   }
    * }
-   *
-   * The method will return list of places of restaurants in
-   * California that are operational, with price level free or inexpensive and
-   * have an average rating of at least 4 stars.
+   * ```
    *
    * Example response:
-   * ComputeInsightsResponse {
-   *   place_insights { place: "places/ABC" }
-   *   place_insights { place: "places/PQR" }
-   *   place_insights { place: "places/XYZ" }
+   * ```
+   * {
+   *   "placeInsights": [
+   *     {"place": "places/ABC"},
+   *     {"place": "places/PQR"},
+   *     {"place": "places/XYZ"}
+   *   ]
    * }
    * ```
    * </pre>
@@ -126,6 +146,7 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSIGHT_UNSPECIFIED = 0;</code>
    */
   public static final int INSIGHT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -134,27 +155,36 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    *
    * When this insight is specified ComputeInsights returns the number of
    * places that match the specified filter criteria.
+   *
+   * Example request:
    * ```
-   * For example if the request is:
-   * ComputeInsightsRequest {
-   *   insights: INSIGHT_COUNT
-   *   filter {
-   *     location_filter {region: &lt;PlaceId of state of CA&gt;}
-   *     type_filter {included_types: "restaurant"}
-   *     operating_status: OPERATING_STATUS_OPERATIONAL
-   *     price_levels: PRICE_LEVEL_FREE
-   *     price_levels: PRICE_LEVEL_INEXPENSIVE
-   *     min_rating: 4.0
+   * {
+   *   "insights": ["INSIGHT_COUNT"],
+   *   "filter": {
+   *     "locationFilter": {
+   *       "region": {
+   *         "place": "places/ChIJPV4oX_65j4ARVW8IJ6IJUYs"
+   *       }
+   *     },
+   *     "typeFilter": {
+   *       "includedTypes": ["restaurant"]
+   *     },
+   *     "operatingStatus": ["OPERATING_STATUS_OPERATIONAL"],
+   *     "priceLevels": [
+   *       "PRICE_LEVEL_FREE",
+   *       "PRICE_LEVEL_INEXPENSIVE"
+   *     ],
+   *     "ratingFilter": {
+   *       "minRating": 4.0
+   *     }
    *   }
    * }
-   *
-   * The method will return the count of restaurants in California that are
-   * operational, with price level free or inexpensive and have an average
-   * rating of at least 4 starts.
+   * ```
    *
    * Example response:
-   * ComputeInsightsResponse {
-   *   count: &lt;number of places&gt;
+   * ```
+   * {
+   *   "count": 1234
    * }
    * ```
    * </pre>
@@ -162,37 +192,49 @@ public enum Insight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSIGHT_COUNT = 1;</code>
    */
   public static final int INSIGHT_COUNT_VALUE = 1;
+
   /**
    *
    *
    * <pre>
    * Return Places
    *
-   * When this insight is specified ComputeInsights returns Places
+   * When this insight is specified ComputeInsights returns places IDs
    * that match the specified filter criteria.
+   *
+   * Example request:
    * ```
-   * For example if the request is:
-   * ComputeInsightsRequest {
-   *   insights: INSIGHT_PLACES
-   *   filter {
-   *     location_filter {region: &lt;PlaceId of state of CA&gt;}
-   *     type_filter {included_types: "restaurant"}
-   *     operating_status: OPERATING_STATUS_OPERATIONAL
-   *     price_levels: PRICE_LEVEL_FREE
-   *     price_levels: PRICE_LEVEL_INEXPENSIVE
-   *     min_rating: 4.0
+   * {
+   *   "insights": ["INSIGHT_PLACES"],
+   *   "filter": {
+   *     "locationFilter": {
+   *       "region": {
+   *         "place": "places/ChIJPV4oX_65j4ARVW8IJ6IJUYs"
+   *       }
+   *     },
+   *     "typeFilter": {
+   *       "includedTypes": ["restaurant"]
+   *     },
+   *     "operatingStatus": ["OPERATING_STATUS_OPERATIONAL"],
+   *     "priceLevels": [
+   *       "PRICE_LEVEL_FREE",
+   *       "PRICE_LEVEL_INEXPENSIVE"
+   *     ],
+   *     "ratingFilter": {
+   *       "minRating": 4.0
+   *     }
    *   }
    * }
-   *
-   * The method will return list of places of restaurants in
-   * California that are operational, with price level free or inexpensive and
-   * have an average rating of at least 4 stars.
+   * ```
    *
    * Example response:
-   * ComputeInsightsResponse {
-   *   place_insights { place: "places/ABC" }
-   *   place_insights { place: "places/PQR" }
-   *   place_insights { place: "places/XYZ" }
+   * ```
+   * {
+   *   "placeInsights": [
+   *     {"place": "places/ABC"},
+   *     {"place": "places/PQR"},
+   *     {"place": "places/XYZ"}
+   *   ]
    * }
    * ```
    * </pre>

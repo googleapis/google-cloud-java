@@ -28,9 +28,9 @@ public interface AttributePropagationSettingsOrBuilder
    *
    *
    * <pre>
-   * Raw string CEL expression. Must return a list of attributes. A maximum of
-   * 45 attributes can be selected. Expressions can select different attribute
-   * types from `attributes`: `attributes.saml_attributes`,
+   * Optional. Raw string CEL expression. Must return a list of attributes. A
+   * maximum of 45 attributes can be selected. Expressions can select different
+   * attribute types from `attributes`: `attributes.saml_attributes`,
    * `attributes.iap_attributes`. The following functions are supported:
    *
    *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -58,18 +58,19 @@ public interface AttributePropagationSettingsOrBuilder
    * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
    * </pre>
    *
-   * <code>optional string expression = 1;</code>
+   * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the expression field is set.
    */
   boolean hasExpression();
+
   /**
    *
    *
    * <pre>
-   * Raw string CEL expression. Must return a list of attributes. A maximum of
-   * 45 attributes can be selected. Expressions can select different attribute
-   * types from `attributes`: `attributes.saml_attributes`,
+   * Optional. Raw string CEL expression. Must return a list of attributes. A
+   * maximum of 45 attributes can be selected. Expressions can select different
+   * attribute types from `attributes`: `attributes.saml_attributes`,
    * `attributes.iap_attributes`. The following functions are supported:
    *
    *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -97,18 +98,19 @@ public interface AttributePropagationSettingsOrBuilder
    * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
    * </pre>
    *
-   * <code>optional string expression = 1;</code>
+   * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The expression.
    */
   java.lang.String getExpression();
+
   /**
    *
    *
    * <pre>
-   * Raw string CEL expression. Must return a list of attributes. A maximum of
-   * 45 attributes can be selected. Expressions can select different attribute
-   * types from `attributes`: `attributes.saml_attributes`,
+   * Optional. Raw string CEL expression. Must return a list of attributes. A
+   * maximum of 45 attributes can be selected. Expressions can select different
+   * attribute types from `attributes`: `attributes.saml_attributes`,
    * `attributes.iap_attributes`. The following functions are supported:
    *
    *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -136,7 +138,7 @@ public interface AttributePropagationSettingsOrBuilder
    * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
    * </pre>
    *
-   * <code>optional string expression = 1;</code>
+   * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for expression.
    */
@@ -146,46 +148,48 @@ public interface AttributePropagationSettingsOrBuilder
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the outputCredentials.
    */
   java.util.List<com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials>
       getOutputCredentialsList();
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of outputCredentials.
    */
   int getOutputCredentialsCount();
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -193,33 +197,35 @@ public interface AttributePropagationSettingsOrBuilder
    */
   com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials getOutputCredentials(
       int index);
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for outputCredentials.
    */
   java.util.List<java.lang.Integer> getOutputCredentialsValueList();
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -231,26 +237,27 @@ public interface AttributePropagationSettingsOrBuilder
    *
    *
    * <pre>
-   * Whether the provided attribute propagation settings should be evaluated on
-   * user requests. If set to true, attributes returned from the expression will
-   * be propagated in the set output credentials.
+   * Optional. Whether the provided attribute propagation settings should be
+   * evaluated on user requests. If set to true, attributes returned from the
+   * expression will be propagated in the set output credentials.
    * </pre>
    *
-   * <code>optional bool enable = 3;</code>
+   * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
+
   /**
    *
    *
    * <pre>
-   * Whether the provided attribute propagation settings should be evaluated on
-   * user requests. If set to true, attributes returned from the expression will
-   * be propagated in the set output credentials.
+   * Optional. Whether the provided attribute propagation settings should be
+   * evaluated on user requests. If set to true, attributes returned from the
+   * expression will be propagated in the set output credentials.
    * </pre>
    *
-   * <code>optional bool enable = 3;</code>
+   * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enable.
    */

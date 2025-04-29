@@ -33,6 +33,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig)
     SpeakerDiarizationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeakerDiarizationConfig.newBuilder() to construct.
   private SpeakerDiarizationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,13 +64,14 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
   public static final int ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER = 1;
   private boolean enableSpeakerDiarization_ = false;
+
   /**
    *
    *
    * <pre>
    * If 'true', enables speaker detection for each recognized word in
-   * the top alternative of the recognition result using a speaker_tag provided
-   * in the WordInfo.
+   * the top alternative of the recognition result using a speaker_label
+   * provided in the WordInfo.
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 1;</code>
@@ -83,6 +85,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
   public static final int MIN_SPEAKER_COUNT_FIELD_NUMBER = 2;
   private int minSpeakerCount_ = 0;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
   public static final int MAX_SPEAKER_COUNT_FIELD_NUMBER = 3;
   private int maxSpeakerCount_ = 0;
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
   public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
   private int speakerTag_ = 0;
+
   /**
    *
    *
@@ -134,7 +139,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.speaker_tag is deprecated.
-   *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=503
+   *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=507
    * @return The speakerTag.
    */
   @java.lang.Override
@@ -330,6 +335,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,13 +557,14 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean enableSpeakerDiarization_;
+
     /**
      *
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
@@ -568,13 +575,14 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public boolean getEnableSpeakerDiarization() {
       return enableSpeakerDiarization_;
     }
+
     /**
      *
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
@@ -589,13 +597,14 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
@@ -610,6 +619,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
 
     private int minSpeakerCount_;
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public int getMinSpeakerCount() {
       return minSpeakerCount_;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +681,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
 
     private int maxSpeakerCount_;
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public int getMaxSpeakerCount() {
       return maxSpeakerCount_;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
 
     private int speakerTag_;
+
     /**
      *
      *
@@ -739,7 +755,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.speaker_tag is deprecated.
-     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=503
+     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=507
      * @return The speakerTag.
      */
     @java.lang.Override
@@ -747,6 +763,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public int getSpeakerTag() {
       return speakerTag_;
     }
+
     /**
      *
      *
@@ -758,7 +775,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.speaker_tag is deprecated.
-     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=503
+     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=507
      * @param value The speakerTag to set.
      * @return This builder for chaining.
      */
@@ -770,6 +787,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,7 +799,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.speaker_tag is deprecated.
-     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=503
+     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=507
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

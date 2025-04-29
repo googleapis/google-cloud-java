@@ -38,6 +38,7 @@ public interface ImageNoteOrBuilder
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ImageNoteOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ImageNoteOrBuilder
    * @return The fingerprint.
    */
   io.grafeas.v1.Fingerprint getFingerprint();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DeleteMerchantReviewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

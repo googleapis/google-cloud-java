@@ -33,6 +33,7 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.ServiceReference)
     ServiceReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceReference.newBuilder() to construct.
   private ServiceReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,12 +68,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
    * <pre>
-   * Output only. The underlying resource URI (For example, URI of Forwarding
-   * Rule, URL Map, and Backend Service).
+   * Output only. The underlying resource URI. For example, URI of Forwarding
+   * Rule, URL Map, and Backend Service.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -91,12 +93,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. The underlying resource URI (For example, URI of Forwarding
-   * Rule, URL Map, and Backend Service).
+   * Output only. The underlying resource URI. For example, URI of Forwarding
+   * Rule, URL Map, and Backend Service.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -275,6 +278,7 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -458,12 +462,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
      * <pre>
-     * Output only. The underlying resource URI (For example, URI of Forwarding
-     * Rule, URL Map, and Backend Service).
+     * Output only. The underlying resource URI. For example, URI of Forwarding
+     * Rule, URL Map, and Backend Service.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -481,12 +486,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The underlying resource URI (For example, URI of Forwarding
-     * Rule, URL Map, and Backend Service).
+     * Output only. The underlying resource URI. For example, URI of Forwarding
+     * Rule, URL Map, and Backend Service.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -504,12 +510,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The underlying resource URI (For example, URI of Forwarding
-     * Rule, URL Map, and Backend Service).
+     * Output only. The underlying resource URI. For example, URI of Forwarding
+     * Rule, URL Map, and Backend Service.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -526,12 +533,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The underlying resource URI (For example, URI of Forwarding
-     * Rule, URL Map, and Backend Service).
+     * Output only. The underlying resource URI. For example, URI of Forwarding
+     * Rule, URL Map, and Backend Service.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -544,12 +552,13 @@ public final class ServiceReference extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The underlying resource URI (For example, URI of Forwarding
-     * Rule, URL Map, and Backend Service).
+     * Output only. The underlying resource URI. For example, URI of Forwarding
+     * Rule, URL Map, and Backend Service.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

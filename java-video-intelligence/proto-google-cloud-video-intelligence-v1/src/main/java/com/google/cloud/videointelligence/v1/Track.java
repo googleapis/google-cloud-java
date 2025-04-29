@@ -33,6 +33,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.Track)
     TrackOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Track.newBuilder() to construct.
   private Track(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.VideoSegment segment_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSegment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance()
         : segment_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.TimestampedObject>
       timestampedObjects_;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       getTimestampedObjectsList() {
     return timestampedObjects_;
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       getTimestampedObjectsOrBuilderList() {
     return timestampedObjects_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   public int getTimestampedObjectsCount() {
     return timestampedObjects_.size();
   }
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1.TimestampedObject getTimestampedObjects(int index) {
     return timestampedObjects_.get(index);
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.DetectedAttribute> attributes_;
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       getAttributesList() {
     return attributes_;
   }
+
   /**
    *
    *
@@ -230,6 +241,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       getAttributesOrBuilderList() {
     return attributes_;
   }
+
   /**
    *
    *
@@ -245,6 +257,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return attributes_.size();
   }
+
   /**
    *
    *
@@ -260,6 +273,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.videointelligence.v1.DetectedAttribute getAttributes(int index) {
     return attributes_.get(index);
   }
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -492,6 +507,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -827,6 +843,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.VideoSegment.Builder,
             com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
         segmentBuilder_;
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSegment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return segmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +952,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1006,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             : segment_;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1069,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return timestampedObjectsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1087,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return timestampedObjectsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1106,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return timestampedObjectsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1204,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1226,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1249,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1272,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1293,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1314,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1329,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         getTimestampedObjectsBuilder(int index) {
       return getTimestampedObjectsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1310,6 +1348,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return timestampedObjectsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1329,6 +1368,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(timestampedObjects_);
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1384,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       return getTimestampedObjectsFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.TimestampedObject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1360,6 +1401,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.TimestampedObject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1432,6 +1474,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1450,6 +1493,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1468,6 +1512,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1538,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1516,6 +1562,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1587,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1613,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1587,6 +1636,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1660,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1633,6 +1684,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1706,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1728,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1690,6 +1744,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAttributesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1709,6 +1764,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1785,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(attributes_);
       }
     }
+
     /**
      *
      *
@@ -1744,6 +1801,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       return getAttributesFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.DetectedAttribute.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1761,6 +1819,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.DetectedAttribute.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1795,6 +1854,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -1810,6 +1870,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -1829,6 +1890,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

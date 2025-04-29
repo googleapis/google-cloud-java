@@ -82,6 +82,7 @@ public enum DocumentCreatorDefaultRole implements com.google.protobuf.ProtocolMe
    * <code>DOCUMENT_CREATOR_DEFAULT_ROLE_UNSPECIFIED = 0;</code>
    */
   public static final int DOCUMENT_CREATOR_DEFAULT_ROLE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum DocumentCreatorDefaultRole implements com.google.protobuf.ProtocolMe
    * <code>DOCUMENT_ADMIN = 1;</code>
    */
   public static final int DOCUMENT_ADMIN_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum DocumentCreatorDefaultRole implements com.google.protobuf.ProtocolMe
    * <code>DOCUMENT_EDITOR = 2;</code>
    */
   public static final int DOCUMENT_EDITOR_VALUE = 2;
+
   /**
    *
    *

@@ -42,6 +42,8 @@ public class AsyncSignalZoneStateLRO {
           SignalZoneStateRequest.newBuilder()
               .setName(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
               .setRequestId("requestId693933066")
+              .setStep("step3540684")
+              .setDetails("details1557721666")
               .build();
       OperationFuture<Zone, OperationMetadata> future =
           gDCHardwareManagementClient.signalZoneStateOperationCallable().futureCall(request);

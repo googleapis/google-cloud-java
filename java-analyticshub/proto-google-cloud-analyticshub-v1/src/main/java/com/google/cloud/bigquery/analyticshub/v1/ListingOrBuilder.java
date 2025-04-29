@@ -28,43 +28,86 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    *
    * @return Whether the bigqueryDataset field is set.
    */
   boolean hasBigqueryDataset();
+
   /**
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    *
    * @return The bigqueryDataset.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource getBigqueryDataset();
+
   /**
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSourceOrBuilder
       getBigqueryDatasetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   *
+   * @return Whether the pubsubTopic field is set.
+   */
+  boolean hasPubsubTopic();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   *
+   * @return The pubsubTopic.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource getPubsubTopic();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder
+      getPubsubTopicOrBuilder();
 
   /**
    *
@@ -79,6 +122,7 @@ public interface ListingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -108,6 +152,7 @@ public interface ListingOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -139,6 +184,7 @@ public interface ListingOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -168,6 +214,7 @@ public interface ListingOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
+
   /**
    *
    *
@@ -194,6 +241,7 @@ public interface ListingOrBuilder
    * @return The documentation.
    */
   java.lang.String getDocumentation();
+
   /**
    *
    *
@@ -221,6 +269,7 @@ public interface ListingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -267,6 +316,7 @@ public interface ListingOrBuilder
    * @return Whether the dataProvider field is set.
    */
   boolean hasDataProvider();
+
   /**
    *
    *
@@ -281,6 +331,7 @@ public interface ListingOrBuilder
    * @return The dataProvider.
    */
   com.google.cloud.bigquery.analyticshub.v1.DataProvider getDataProvider();
+
   /**
    *
    *
@@ -308,6 +359,7 @@ public interface ListingOrBuilder
    * @return A list containing the categories.
    */
   java.util.List<com.google.cloud.bigquery.analyticshub.v1.Listing.Category> getCategoriesList();
+
   /**
    *
    *
@@ -322,6 +374,7 @@ public interface ListingOrBuilder
    * @return The count of categories.
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -337,6 +390,7 @@ public interface ListingOrBuilder
    * @return The categories at the given index.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.Category getCategories(int index);
+
   /**
    *
    *
@@ -351,6 +405,7 @@ public interface ListingOrBuilder
    * @return A list containing the enum numeric values on the wire for categories.
    */
   java.util.List<java.lang.Integer> getCategoriesValueList();
+
   /**
    *
    *
@@ -382,6 +437,7 @@ public interface ListingOrBuilder
    * @return Whether the publisher field is set.
    */
   boolean hasPublisher();
+
   /**
    *
    *
@@ -397,6 +453,7 @@ public interface ListingOrBuilder
    * @return The publisher.
    */
   com.google.cloud.bigquery.analyticshub.v1.Publisher getPublisher();
+
   /**
    *
    *
@@ -425,6 +482,7 @@ public interface ListingOrBuilder
    * @return The requestAccess.
    */
   java.lang.String getRequestAccess();
+
   /**
    *
    *
@@ -455,6 +513,7 @@ public interface ListingOrBuilder
    * @return Whether the restrictedExportConfig field is set.
    */
   boolean hasRestrictedExportConfig();
+
   /**
    *
    *
@@ -471,6 +530,7 @@ public interface ListingOrBuilder
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig
       getRestrictedExportConfig();
+
   /**
    *
    *
@@ -500,6 +560,7 @@ public interface ListingOrBuilder
    * @return Whether the discoveryType field is set.
    */
   boolean hasDiscoveryType();
+
   /**
    *
    *
@@ -514,6 +575,7 @@ public interface ListingOrBuilder
    * @return The enum numeric value on the wire for discoveryType.
    */
   int getDiscoveryTypeValue();
+
   /**
    *
    *
@@ -528,6 +590,68 @@ public interface ListingOrBuilder
    * @return The discoveryType.
    */
   com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceType.
+   */
+  int getResourceTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceType.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the Listing has an email sharing mandate enabled.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  boolean hasLogLinkedDatasetQueryUserEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the Listing has an email sharing mandate enabled.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  boolean getLogLinkedDatasetQueryUserEmail();
 
   com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
 }

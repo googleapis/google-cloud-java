@@ -34,6 +34,7 @@ public interface ListCalculatedMetricsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.CalculatedMetric calculated_metrics = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.CalculatedMetric> getCalculatedMetricsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCalculatedMetricsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.CalculatedMetric calculated_metrics = 1;</code>
    */
   com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetrics(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCalculatedMetricsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.CalculatedMetric calculated_metrics = 1;</code>
    */
   int getCalculatedMetricsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCalculatedMetricsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.CalculatedMetricOrBuilder>
       getCalculatedMetricsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListCalculatedMetricsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

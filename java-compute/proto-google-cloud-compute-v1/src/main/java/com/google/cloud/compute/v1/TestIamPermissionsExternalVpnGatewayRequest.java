@@ -34,6 +34,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsExternalVpnGatewayRequest)
     TestIamPermissionsExternalVpnGatewayRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TestIamPermissionsExternalVpnGatewayRequest.newBuilder() to construct.
   private TestIamPermissionsExternalVpnGatewayRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -679,6 +689,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -722,6 +734,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +777,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +982,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1036,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1054,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1049,6 +1076,7 @@ public final class TestIamPermissionsExternalVpnGatewayRequest
             : testPermissionsRequestResource_;
       }
     }
+
     /**
      *
      *

@@ -82,6 +82,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLOUD_PROVIDER_UNSPECIFIED = 0;</code>
    */
   public static final int CLOUD_PROVIDER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GOOGLE_CLOUD_PLATFORM = 1;</code>
    */
   public static final int GOOGLE_CLOUD_PLATFORM_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AMAZON_WEB_SERVICES = 2;</code>
    */
   public static final int AMAZON_WEB_SERVICES_VALUE = 2;
+
   /**
    *
    *

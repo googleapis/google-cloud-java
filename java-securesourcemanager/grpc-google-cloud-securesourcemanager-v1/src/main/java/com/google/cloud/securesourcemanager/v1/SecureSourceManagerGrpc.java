@@ -797,6 +797,19 @@ public final class SecureSourceManagerGrpc {
     return SecureSourceManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SecureSourceManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SecureSourceManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecureSourceManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public SecureSourceManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecureSourceManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SecureSourceManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1412,6 +1425,251 @@ public final class SecureSourceManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SecureSourceManager.
+   *
+   * <pre>
+   * Secure Source Manager API
+   * Access Secure Source Manager instances, resources, and repositories.
+   * This API is split across two servers: the Control Plane and the Data Plane.
+   * Data Plane endpoints are hosted directly by your Secure Source Manager
+   * instance, so you must connect to your instance's API hostname to access
+   * them. The API hostname looks like the following:
+   *    https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
+   * For example,
+   *    https://my-instance-702770452863-api.us-central1.sourcemanager.dev
+   * Data Plane endpoints are denoted with **Host: Data Plane**.
+   * All other endpoints are found in the normal Cloud API location, namely,
+   * `securcesourcemanager.googleapis.com`.
+   * </pre>
+   */
+  public static final class SecureSourceManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SecureSourceManagerBlockingV2Stub> {
+    private SecureSourceManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SecureSourceManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SecureSourceManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Instances in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListInstancesResponse listInstances(
+        com.google.cloud.securesourcemanager.v1.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single instance.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance getInstance(
+        com.google.cloud.securesourcemanager.v1.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new instance in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.securesourcemanager.v1.CreateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.securesourcemanager.v1.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Repositories in a given project and location.
+     * **Host: Data Plane**
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse listRepositories(
+        com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata of a repository.
+     * **Host: Data Plane**
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.Repository getRepository(
+        com.google.cloud.securesourcemanager.v1.GetRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new repository in a given project and location.
+     * **Host: Data Plane**
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRepository(
+        com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Repository.
+     * **Host: Data Plane**
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRepository(
+        com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get IAM policy for a repository.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicyRepo(
+        com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyRepoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set IAM policy on a repository.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicyRepo(
+        com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyRepoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Test IAM permissions on a repository.
+     * IAM permission checks are not required on this method.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissionsRepo(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsRepoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateBranchRule creates a branch rule in a given repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBranchRule(
+        com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBranchRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListBranchRules lists branch rules in a given repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse listBranchRules(
+        com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBranchRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GetBranchRule gets a branch rule.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.BranchRule getBranchRule(
+        com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBranchRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * UpdateBranchRule updates a branch rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBranchRule(
+        com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBranchRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DeleteBranchRule deletes a branch rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBranchRule(
+        com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBranchRuleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SecureSourceManager.
    *
    * <pre>
    * Secure Source Manager API

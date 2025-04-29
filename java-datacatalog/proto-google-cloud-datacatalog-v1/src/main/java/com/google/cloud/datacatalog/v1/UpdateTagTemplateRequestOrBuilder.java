@@ -38,6 +38,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    * @return Whether the tagTemplate field is set.
    */
   boolean hasTagTemplate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    * @return The tagTemplate.
    */
   com.google.cloud.datacatalog.v1.TagTemplate getTagTemplate();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface ImageSourceOrBuilder
    * @return The gcsImageUri.
    */
   java.lang.String getGcsImageUri();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ImageSourceOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
+
   /**
    *
    *

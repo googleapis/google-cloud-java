@@ -36,6 +36,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * @return The backendBucket.
    */
   java.lang.String getBackendBucket();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * @return The keyName.
    */
   java.lang.String getKeyName();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

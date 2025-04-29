@@ -36,6 +36,7 @@ public interface FreeFormSuggestionOrBuilder
    * @return The response.
    */
   java.lang.String getResponse();
+
   /**
    *
    *

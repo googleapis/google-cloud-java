@@ -38,6 +38,7 @@ public interface AnalyzerDefinitionOrBuilder
    * @return The analyzer.
    */
   java.lang.String getAnalyzer();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface AnalyzerDefinitionOrBuilder
    * @return The operator.
    */
   java.lang.String getOperator();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AnalyzerDefinitionOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnalyzerDefinition.StreamInput inputs = 3;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.AnalyzerDefinition.StreamInput> getInputsList();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface AnalyzerDefinitionOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnalyzerDefinition.StreamInput inputs = 3;</code>
    */
   com.google.cloud.visionai.v1.AnalyzerDefinition.StreamInput getInputs(int index);
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface AnalyzerDefinitionOrBuilder
    * <code>repeated .google.cloud.visionai.v1.AnalyzerDefinition.StreamInput inputs = 3;</code>
    */
   int getInputsCount();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface AnalyzerDefinitionOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnalyzerDefinition.StreamInputOrBuilder>
       getInputsOrBuilderList();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface AnalyzerDefinitionOrBuilder
    * <code>map&lt;string, .google.cloud.visionai.v1.AttributeValue&gt; attrs = 4;</code>
    */
   int getAttrsCount();
+
   /**
    *
    *
@@ -163,9 +170,11 @@ public interface AnalyzerDefinitionOrBuilder
    * <code>map&lt;string, .google.cloud.visionai.v1.AttributeValue&gt; attrs = 4;</code>
    */
   boolean containsAttrs(java.lang.String key);
+
   /** Use {@link #getAttrsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.visionai.v1.AttributeValue> getAttrs();
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface AnalyzerDefinitionOrBuilder
    * <code>map&lt;string, .google.cloud.visionai.v1.AttributeValue&gt; attrs = 4;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.visionai.v1.AttributeValue> getAttrsMap();
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public interface AnalyzerDefinitionOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.visionai.v1.AttributeValue defaultValue);
+
   /**
    *
    *
@@ -225,6 +236,7 @@ public interface AnalyzerDefinitionOrBuilder
    * @return Whether the debugOptions field is set.
    */
   boolean hasDebugOptions();
+
   /**
    *
    *
@@ -237,6 +249,7 @@ public interface AnalyzerDefinitionOrBuilder
    * @return The debugOptions.
    */
   com.google.cloud.visionai.v1.AnalyzerDefinition.DebugOptions getDebugOptions();
+
   /**
    *
    *
@@ -260,6 +273,7 @@ public interface AnalyzerDefinitionOrBuilder
    * @return Whether the operatorOption field is set.
    */
   boolean hasOperatorOption();
+
   /**
    *
    *
@@ -272,6 +286,7 @@ public interface AnalyzerDefinitionOrBuilder
    * @return The operatorOption.
    */
   com.google.cloud.visionai.v1.AnalyzerDefinition.OperatorOption getOperatorOption();
+
   /**
    *
    *

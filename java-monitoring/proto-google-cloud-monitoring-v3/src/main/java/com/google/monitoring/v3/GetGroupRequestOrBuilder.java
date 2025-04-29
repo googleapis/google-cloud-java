@@ -40,6 +40,7 @@ public interface GetGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

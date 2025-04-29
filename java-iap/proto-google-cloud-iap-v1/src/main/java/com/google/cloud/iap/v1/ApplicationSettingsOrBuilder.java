@@ -28,34 +28,42 @@ public interface ApplicationSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure IAP's behavior for a service mesh.
+   * Optional. Settings to configure IAP's behavior for a service mesh.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the csmSettings field is set.
    */
   boolean hasCsmSettings();
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's behavior for a service mesh.
+   * Optional. Settings to configure IAP's behavior for a service mesh.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The csmSettings.
    */
   com.google.cloud.iap.v1.CsmSettings getCsmSettings();
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's behavior for a service mesh.
+   * Optional. Settings to configure IAP's behavior for a service mesh.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.CsmSettingsOrBuilder getCsmSettingsOrBuilder();
 
@@ -63,34 +71,42 @@ public interface ApplicationSettingsOrBuilder
    *
    *
    * <pre>
-   * Customization for Access Denied page.
+   * Optional. Customization for Access Denied page.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the accessDeniedPageSettings field is set.
    */
   boolean hasAccessDeniedPageSettings();
+
   /**
    *
    *
    * <pre>
-   * Customization for Access Denied page.
+   * Optional. Customization for Access Denied page.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The accessDeniedPageSettings.
    */
   com.google.cloud.iap.v1.AccessDeniedPageSettings getAccessDeniedPageSettings();
+
   /**
    *
    *
    * <pre>
-   * Customization for Access Denied page.
+   * Optional. Customization for Access Denied page.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.AccessDeniedPageSettingsOrBuilder getAccessDeniedPageSettingsOrBuilder();
 
@@ -107,6 +123,7 @@ public interface ApplicationSettingsOrBuilder
    * @return Whether the cookieDomain field is set.
    */
   boolean hasCookieDomain();
+
   /**
    *
    *
@@ -120,6 +137,7 @@ public interface ApplicationSettingsOrBuilder
    * @return The cookieDomain.
    */
   com.google.protobuf.StringValue getCookieDomain();
+
   /**
    *
    *
@@ -136,36 +154,41 @@ public interface ApplicationSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure attribute propagation.
+   * Optional. Settings to configure attribute propagation.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+   * <code>
+   * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the attributePropagationSettings field is set.
    */
   boolean hasAttributePropagationSettings();
+
   /**
    *
    *
    * <pre>
-   * Settings to configure attribute propagation.
+   * Optional. Settings to configure attribute propagation.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+   * <code>
+   * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The attributePropagationSettings.
    */
   com.google.cloud.iap.v1.AttributePropagationSettings getAttributePropagationSettings();
+
   /**
    *
    *
    * <pre>
-   * Settings to configure attribute propagation.
+   * Optional. Settings to configure attribute propagation.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+   * <code>
+   * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.iap.v1.AttributePropagationSettingsOrBuilder

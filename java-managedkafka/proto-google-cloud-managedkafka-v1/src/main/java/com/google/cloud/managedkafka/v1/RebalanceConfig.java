@@ -33,6 +33,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.RebalanceConfig)
     RebalanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RebalanceConfig.newBuilder() to construct.
   private RebalanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>NO_REBALANCE = 1;</code>
      */
     public static final int NO_REBALANCE_VALUE = 1;
+
     /**
      *
      *
@@ -224,6 +227,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -242,6 +246,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -426,6 +431,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -608,6 +614,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -626,6 +633,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -647,6 +655,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +678,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.managedkafka.v1.RebalanceConfig.Mode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class RebalanceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

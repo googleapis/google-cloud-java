@@ -95,6 +95,19 @@ public final class HealthCheckServiceGrpc {
     return HealthCheckServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static HealthCheckServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<HealthCheckServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<HealthCheckServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public HealthCheckServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new HealthCheckServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return HealthCheckServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -206,6 +219,41 @@ public final class HealthCheckServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service HealthCheckService.
+   *
+   * <pre>
+   * HealthCheckService provides an interface for Vertex AI Vision Cluster Health
+   * Check.
+   * </pre>
+   */
+  public static final class HealthCheckServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<HealthCheckServiceBlockingV2Stub> {
+    private HealthCheckServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected HealthCheckServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new HealthCheckServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * HealthCheck method checks the health status of the cluster.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.HealthCheckResponse healthCheck(
+        com.google.cloud.visionai.v1.HealthCheckRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getHealthCheckMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service HealthCheckService.
    *
    * <pre>
    * HealthCheckService provides an interface for Vertex AI Vision Cluster Health

@@ -77,7 +77,9 @@ public class HttpJsonContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Bet
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/occurrences/*}:setIamPolicy")
+                          "/v1beta1/{resource=projects/*/occurrences/*}:setIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/notes/*}:setIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/occurrences/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -117,7 +119,9 @@ public class HttpJsonContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Bet
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/occurrences/*}:getIamPolicy")
+                          "/v1beta1/{resource=projects/*/occurrences/*}:getIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/notes/*}:getIamPolicy",
+                          "/v1beta1/{resource=projects/*/locations/*/occurrences/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -157,7 +161,9 @@ public class HttpJsonContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Bet
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/occurrences/*}:testIamPermissions")
+                          "/v1beta1/{resource=projects/*/occurrences/*}:testIamPermissions",
+                          "/v1beta1/{resource=projects/*/locations/*/notes/*}:testIamPermissions",
+                          "/v1beta1/{resource=projects/*/locations/*/occurrences/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -196,6 +202,8 @@ public class HttpJsonContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Bet
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1beta1/{name=projects/*/locations/*/resources/**}:generatePackagesSummary")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -234,6 +242,8 @@ public class HttpJsonContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Bet
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1beta1/{name=projects/*/locations/*/resources/**}:exportSBOM")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

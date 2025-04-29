@@ -33,6 +33,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.FetchReadTokenResponse)
     FetchReadTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchReadTokenResponse.newBuilder() to construct.
   private FetchReadTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object token_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
 
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expirationTime_;
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
   public boolean hasExpirationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expirationTime_;
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gitUsername_ = "";
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -404,6 +412,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -633,6 +642,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object token_ = "";
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expirationTimeBuilder_;
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
     public boolean hasExpirationTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
         return expirationTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -897,6 +919,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
             : expirationTime_;
       }
     }
+
     /**
      *
      *
@@ -924,6 +947,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object gitUsername_ = "";
+
     /**
      *
      *
@@ -948,6 +972,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -972,6 +997,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1021,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

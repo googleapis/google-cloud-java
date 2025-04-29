@@ -370,6 +370,19 @@ public final class VehicleServiceGrpc {
     return VehicleServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VehicleServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VehicleServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VehicleServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VehicleServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VehicleServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VehicleServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -740,6 +753,158 @@ public final class VehicleServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VehicleService.
+   *
+   * <pre>
+   * Vehicle management service.
+   * </pre>
+   */
+  public static final class VehicleServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VehicleServiceBlockingV2Stub> {
+    private VehicleServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VehicleServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VehicleServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
+     * All other fields are optional and used if provided.
+     * </pre>
+     */
+    public com.google.maps.fleetengine.v1.Vehicle createVehicle(
+        com.google.maps.fleetengine.v1.CreateVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVehicleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a vehicle from the Fleet Engine.
+     * </pre>
+     */
+    public com.google.maps.fleetengine.v1.Vehicle getVehicle(
+        com.google.maps.fleetengine.v1.GetVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVehicleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Vehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the Vehicle has active Trips.
+     * assigned to it.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteVehicle(
+        com.google.maps.fleetengine.v1.DeleteVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVehicleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes updated vehicle data to the Fleet Engine.
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * The vehicle `name` also cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
+     * currently on the vehicle, and no other waypoints.
+     * </pre>
+     */
+    public com.google.maps.fleetengine.v1.Vehicle updateVehicle(
+        com.google.maps.fleetengine.v1.UpdateVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVehicleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates a vehicle's attributes.
+     * Only the attributes mentioned in the request will be updated, other
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
+     * where the whole `attributes` field will be replaced by the one in
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
+     * </pre>
+     */
+    public com.google.maps.fleetengine.v1.UpdateVehicleAttributesResponse updateVehicleAttributes(
+        com.google.maps.fleetengine.v1.UpdateVehicleAttributesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVehicleAttributesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a paginated list of vehicles associated with
+     * a provider that match the request options.
+     * </pre>
+     */
+    public com.google.maps.fleetengine.v1.ListVehiclesResponse listVehicles(
+        com.google.maps.fleetengine.v1.ListVehiclesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVehiclesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of vehicles that match the request options.
+     * </pre>
+     */
+    public com.google.maps.fleetengine.v1.SearchVehiclesResponse searchVehicles(
+        com.google.maps.fleetengine.v1.SearchVehiclesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchVehiclesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VehicleService.
    *
    * <pre>
    * Vehicle management service.

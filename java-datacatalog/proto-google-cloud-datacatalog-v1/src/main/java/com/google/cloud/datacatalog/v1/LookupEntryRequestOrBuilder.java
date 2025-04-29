@@ -43,6 +43,7 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the linkedResource field is set.
    */
   boolean hasLinkedResource();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
+
   /**
    *
    *
@@ -97,7 +99,7 @@ public interface LookupEntryRequestOrBuilder
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
    *
    * Identifiers (`*_ID`) should comply with the
-   * [Lexical structure in Standard SQL]
+   * [Lexical structure in GoogleSQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
@@ -106,6 +108,7 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the sqlResource field is set.
    */
   boolean hasSqlResource();
+
   /**
    *
    *
@@ -121,7 +124,7 @@ public interface LookupEntryRequestOrBuilder
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
    *
    * Identifiers (`*_ID`) should comply with the
-   * [Lexical structure in Standard SQL]
+   * [Lexical structure in GoogleSQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
@@ -130,6 +133,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The sqlResource.
    */
   java.lang.String getSqlResource();
+
   /**
    *
    *
@@ -145,7 +149,7 @@ public interface LookupEntryRequestOrBuilder
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
    *
    * Identifiers (`*_ID`) should comply with the
-   * [Lexical structure in Standard SQL]
+   * [Lexical structure in GoogleSQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
@@ -183,6 +187,7 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the fullyQualifiedName field is set.
    */
   boolean hasFullyQualifiedName();
+
   /**
    *
    *
@@ -211,6 +216,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The fullyQualifiedName.
    */
   java.lang.String getFullyQualifiedName();
+
   /**
    *
    *
@@ -254,6 +260,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -283,6 +290,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

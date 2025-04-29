@@ -51,6 +51,7 @@ public interface AttackExposureOrBuilder
    * @return Whether the latestCalculationTime field is set.
    */
   boolean hasLatestCalculationTime();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AttackExposureOrBuilder
    * @return The latestCalculationTime.
    */
   com.google.protobuf.Timestamp getLatestCalculationTime();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface AttackExposureOrBuilder
    * @return The attackExposureResult.
    */
   java.lang.String getAttackExposureResult();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface AttackExposureOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

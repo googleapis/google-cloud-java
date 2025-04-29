@@ -34,6 +34,7 @@ public interface ListPublicBlueprintsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1.PublicBlueprint public_blueprints = 1;</code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1.PublicBlueprint> getPublicBlueprintsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPublicBlueprintsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1.PublicBlueprint public_blueprints = 1;</code>
    */
   com.google.cloud.telcoautomation.v1.PublicBlueprint getPublicBlueprints(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPublicBlueprintsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1.PublicBlueprint public_blueprints = 1;</code>
    */
   int getPublicBlueprintsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPublicBlueprintsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1.PublicBlueprintOrBuilder>
       getPublicBlueprintsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListPublicBlueprintsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

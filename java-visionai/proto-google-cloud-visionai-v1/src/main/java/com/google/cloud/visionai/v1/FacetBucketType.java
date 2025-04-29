@@ -92,6 +92,7 @@ public enum FacetBucketType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FACET_BUCKET_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int FACET_BUCKET_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum FacetBucketType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FACET_BUCKET_TYPE_VALUE = 1;</code>
    */
   public static final int FACET_BUCKET_TYPE_VALUE_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum FacetBucketType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FACET_BUCKET_TYPE_DATETIME = 2;</code>
    */
   public static final int FACET_BUCKET_TYPE_DATETIME_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum FacetBucketType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FACET_BUCKET_TYPE_FIXED_RANGE = 3;</code>
    */
   public static final int FACET_BUCKET_TYPE_FIXED_RANGE_VALUE = 3;
+
   /**
    *
    *

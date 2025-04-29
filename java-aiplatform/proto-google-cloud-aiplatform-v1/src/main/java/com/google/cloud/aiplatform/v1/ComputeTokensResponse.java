@@ -33,6 +33,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ComputeTokensResponse)
     ComputeTokensResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeTokensResponse.newBuilder() to construct.
   private ComputeTokensResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.TokensInfo> tokensInfo_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.aiplatform.v1.TokensInfo> getTokensInfoList() {
     return tokensInfo_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       getTokensInfoOrBuilderList() {
     return tokensInfo_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
   public int getTokensInfoCount() {
     return tokensInfo_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.aiplatform.v1.TokensInfo getTokensInfo(int index) {
     return tokensInfo_.get(index);
   }
+
   /**
    *
    *
@@ -305,6 +311,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +576,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
         return tokensInfoBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
         return tokensInfoBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -605,6 +614,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
         return tokensInfoBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +840,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1.TokensInfo.Builder getTokensInfoBuilder(int index) {
       return getTokensInfoFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -839,6 +859,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
         return tokensInfoBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -858,6 +879,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(tokensInfo_);
       }
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       return getTokensInfoFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.TokensInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -888,6 +911,7 @@ public final class ComputeTokensResponse extends com.google.protobuf.GeneratedMe
       return getTokensInfoFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.TokensInfo.getDefaultInstance());
     }
+
     /**
      *
      *

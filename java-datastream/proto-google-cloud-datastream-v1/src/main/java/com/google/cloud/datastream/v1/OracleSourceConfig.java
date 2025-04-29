@@ -33,6 +33,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig)
     OracleSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OracleSourceConfig.newBuilder() to construct.
   private OracleSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects)
       DropLargeObjectsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DropLargeObjects.newBuilder() to construct.
     private DropLargeObjects(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -260,6 +263,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -498,6 +502,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -512,6 +517,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
       StreamLargeObjectsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StreamLargeObjects.newBuilder() to construct.
     private StreamLargeObjects(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -693,6 +699,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -932,6 +939,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -946,6 +954,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
       LogMinerOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LogMiner.newBuilder() to construct.
     private LogMiner(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1126,6 +1135,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1373,6 +1383,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the oracleAsmLogFileAccess field is set.
      */
     boolean hasOracleAsmLogFileAccess();
+
     /**
      *
      *
@@ -1388,6 +1399,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
         getOracleAsmLogFileAccess();
+
     /**
      *
      *
@@ -1417,6 +1429,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the logFileDirectories field is set.
      */
     boolean hasLogFileDirectories();
+
     /**
      *
      *
@@ -1432,6 +1445,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
         getLogFileDirectories();
+
     /**
      *
      *
@@ -1449,6 +1463,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileAccessCase
         getLogFileAccessCase();
   }
+
   /**
    *
    *
@@ -1463,6 +1478,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
       BinaryLogParserOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BinaryLogParser.newBuilder() to construct.
     private BinaryLogParser(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1495,6 +1511,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -1510,6 +1527,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
         OracleAsmLogFileAccessOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use OracleAsmLogFileAccess.newBuilder() to construct.
       private OracleAsmLogFileAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1719,6 +1737,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1993,6 +2012,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
        * @return The onlineLogDirectory.
        */
       java.lang.String getOnlineLogDirectory();
+
       /**
        *
        *
@@ -2018,6 +2038,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
        * @return The archivedLogDirectory.
        */
       java.lang.String getArchivedLogDirectory();
+
       /**
        *
        *
@@ -2031,6 +2052,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
        */
       com.google.protobuf.ByteString getArchivedLogDirectoryBytes();
     }
+
     /**
      *
      *
@@ -2046,6 +2068,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
         LogFileDirectoriesOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use LogFileDirectories.newBuilder() to construct.
       private LogFileDirectories(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2083,6 +2106,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object onlineLogDirectory_ = "";
+
       /**
        *
        *
@@ -2106,6 +2130,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
+
       /**
        *
        *
@@ -2134,6 +2159,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object archivedLogDirectory_ = "";
+
       /**
        *
        *
@@ -2157,6 +2183,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
+
       /**
        *
        *
@@ -2376,6 +2403,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2601,6 +2629,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object onlineLogDirectory_ = "";
+
         /**
          *
          *
@@ -2623,6 +2652,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2645,6 +2675,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2666,6 +2697,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2683,6 +2715,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2707,6 +2740,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         }
 
         private java.lang.Object archivedLogDirectory_ = "";
+
         /**
          *
          *
@@ -2729,6 +2763,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2751,6 +2786,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2772,6 +2808,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2789,6 +2826,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2900,6 +2938,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       private LogFileAccessCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2933,6 +2972,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int ORACLE_ASM_LOG_FILE_ACCESS_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -2950,6 +2990,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasOracleAsmLogFileAccess() {
       return logFileAccessCase_ == 1;
     }
+
     /**
      *
      *
@@ -2974,6 +3015,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
           .OracleAsmLogFileAccess.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2999,6 +3041,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int LOG_FILE_DIRECTORIES_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -3016,6 +3059,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasLogFileDirectories() {
       return logFileAccessCase_ == 2;
     }
+
     /**
      *
      *
@@ -3040,6 +3084,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3269,6 +3314,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3520,6 +3566,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
                   .OracleAsmLogFileAccessOrBuilder>
           oracleAsmLogFileAccessBuilder_;
+
       /**
        *
        *
@@ -3537,6 +3584,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasOracleAsmLogFileAccess() {
         return logFileAccessCase_ == 1;
       }
+
       /**
        *
        *
@@ -3570,6 +3618,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               .OracleAsmLogFileAccess.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3596,6 +3645,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         logFileAccessCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3620,6 +3670,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         logFileAccessCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3661,6 +3712,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         logFileAccessCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3688,6 +3740,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -3704,6 +3757,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           getOracleAsmLogFileAccessBuilder() {
         return getOracleAsmLogFileAccessFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3731,6 +3785,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               .OracleAsmLogFileAccess.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3783,6 +3838,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
                   .LogFileDirectoriesOrBuilder>
           logFileDirectoriesBuilder_;
+
       /**
        *
        *
@@ -3800,6 +3856,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasLogFileDirectories() {
         return logFileAccessCase_ == 2;
       }
+
       /**
        *
        *
@@ -3832,6 +3889,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               .LogFileDirectories.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3858,6 +3916,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         logFileAccessCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3882,6 +3941,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         logFileAccessCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3923,6 +3983,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         logFileAccessCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3950,6 +4011,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -3966,6 +4028,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           getLogFileDirectoriesBuilder() {
         return getLogFileDirectoriesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3993,6 +4056,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               .LogFileDirectories.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4122,6 +4186,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     private LargeObjectsHandlingCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4171,6 +4236,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     private CdcMethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4205,6 +4271,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.OracleRdbms includeObjects_;
+
   /**
    *
    *
@@ -4220,6 +4287,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasIncludeObjects() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4237,6 +4305,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.datastream.v1.OracleRdbms.getDefaultInstance()
         : includeObjects_;
   }
+
   /**
    *
    *
@@ -4255,6 +4324,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.OracleRdbms excludeObjects_;
+
   /**
    *
    *
@@ -4270,6 +4340,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasExcludeObjects() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4287,6 +4358,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.datastream.v1.OracleRdbms.getDefaultInstance()
         : excludeObjects_;
   }
+
   /**
    *
    *
@@ -4305,6 +4377,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER = 3;
   private int maxConcurrentCdcTasks_ = 0;
+
   /**
    *
    *
@@ -4324,6 +4397,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 4;
   private int maxConcurrentBackfillTasks_ = 0;
+
   /**
    *
    *
@@ -4342,6 +4416,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DROP_LARGE_OBJECTS_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -4358,6 +4433,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasDropLargeObjects() {
     return largeObjectsHandlingCase_ == 100;
   }
+
   /**
    *
    *
@@ -4378,6 +4454,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4399,6 +4476,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int STREAM_LARGE_OBJECTS_FIELD_NUMBER = 102;
+
   /**
    *
    *
@@ -4416,6 +4494,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasStreamLargeObjects() {
     return largeObjectsHandlingCase_ == 102;
   }
+
   /**
    *
    *
@@ -4439,6 +4518,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4462,6 +4542,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOG_MINER_FIELD_NUMBER = 103;
+
   /**
    *
    *
@@ -4477,6 +4558,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasLogMiner() {
     return cdcMethodCase_ == 103;
   }
+
   /**
    *
    *
@@ -4495,6 +4577,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4514,6 +4597,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BINARY_LOG_PARSER_FIELD_NUMBER = 104;
+
   /**
    *
    *
@@ -4530,6 +4614,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasBinaryLogParser() {
     return cdcMethodCase_ == 104;
   }
+
   /**
    *
    *
@@ -4549,6 +4634,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4855,6 +4941,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5227,6 +5314,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.OracleRdbms.Builder,
             com.google.cloud.datastream.v1.OracleRdbmsOrBuilder>
         includeObjectsBuilder_;
+
     /**
      *
      *
@@ -5241,6 +5329,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasIncludeObjects() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5261,6 +5350,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         return includeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5283,6 +5373,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5303,6 +5394,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5330,6 +5422,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5349,6 +5442,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5363,6 +5457,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5381,6 +5476,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             : includeObjects_;
       }
     }
+
     /**
      *
      *
@@ -5413,6 +5509,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.OracleRdbms.Builder,
             com.google.cloud.datastream.v1.OracleRdbmsOrBuilder>
         excludeObjectsBuilder_;
+
     /**
      *
      *
@@ -5427,6 +5524,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasExcludeObjects() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5447,6 +5545,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         return excludeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5469,6 +5568,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5489,6 +5589,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5516,6 +5617,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5535,6 +5637,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5549,6 +5652,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5567,6 +5671,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             : excludeObjects_;
       }
     }
+
     /**
      *
      *
@@ -5594,6 +5699,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int maxConcurrentCdcTasks_;
+
     /**
      *
      *
@@ -5610,6 +5716,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public int getMaxConcurrentCdcTasks() {
       return maxConcurrentCdcTasks_;
     }
+
     /**
      *
      *
@@ -5630,6 +5737,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5650,6 +5758,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int maxConcurrentBackfillTasks_;
+
     /**
      *
      *
@@ -5666,6 +5775,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public int getMaxConcurrentBackfillTasks() {
       return maxConcurrentBackfillTasks_;
     }
+
     /**
      *
      *
@@ -5686,6 +5796,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5710,6 +5821,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects.Builder,
             com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjectsOrBuilder>
         dropLargeObjectsBuilder_;
+
     /**
      *
      *
@@ -5727,6 +5839,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasDropLargeObjects() {
       return largeObjectsHandlingCase_ == 100;
     }
+
     /**
      *
      *
@@ -5758,6 +5871,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5783,6 +5897,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -5806,6 +5921,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -5844,6 +5960,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -5871,6 +5988,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -5886,6 +6004,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         getDropLargeObjectsBuilder() {
       return getDropLargeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5911,6 +6030,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5954,6 +6074,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects.Builder,
             com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjectsOrBuilder>
         streamLargeObjectsBuilder_;
+
     /**
      *
      *
@@ -5971,6 +6092,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasStreamLargeObjects() {
       return largeObjectsHandlingCase_ == 102;
     }
+
     /**
      *
      *
@@ -6002,6 +6124,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6027,6 +6150,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -6050,6 +6174,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -6088,6 +6213,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -6115,6 +6241,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6130,6 +6257,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         getStreamLargeObjectsBuilder() {
       return getStreamLargeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6155,6 +6283,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6198,6 +6327,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder,
             com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder>
         logMinerBuilder_;
+
     /**
      *
      *
@@ -6213,6 +6343,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasLogMiner() {
       return cdcMethodCase_ == 103;
     }
+
     /**
      *
      *
@@ -6238,6 +6369,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6260,6 +6392,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       cdcMethodCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -6280,6 +6413,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       cdcMethodCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -6314,6 +6448,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       cdcMethodCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -6339,6 +6474,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6351,6 +6487,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder getLogMinerBuilder() {
       return getLogMinerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6372,6 +6509,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6411,6 +6549,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder,
             com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder>
         binaryLogParserBuilder_;
+
     /**
      *
      *
@@ -6427,6 +6566,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasBinaryLogParser() {
       return cdcMethodCase_ == 104;
     }
+
     /**
      *
      *
@@ -6455,6 +6595,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6479,6 +6620,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       cdcMethodCase_ = 104;
       return this;
     }
+
     /**
      *
      *
@@ -6500,6 +6642,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       cdcMethodCase_ = 104;
       return this;
     }
+
     /**
      *
      *
@@ -6537,6 +6680,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       cdcMethodCase_ = 104;
       return this;
     }
+
     /**
      *
      *
@@ -6563,6 +6707,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -6577,6 +6722,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         getBinaryLogParserBuilder() {
       return getBinaryLogParserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6600,6 +6746,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.DataExchange)
     DataExchangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataExchange.newBuilder() to construct.
   private DataExchange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryContact_ = "";
+
   /**
    *
    *
@@ -269,6 +277,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -298,6 +307,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentation_ = "";
+
   /**
    *
    *
@@ -321,6 +331,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -347,6 +358,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LISTING_COUNT_FIELD_NUMBER = 6;
   private int listingCount_ = 0;
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ICON_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -388,6 +401,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   public static final int SHARING_ENVIRONMENT_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
       sharingEnvironmentConfig_;
+
   /**
    *
    *
@@ -405,6 +419,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSharingEnvironmentConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -425,6 +440,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.getDefaultInstance()
         : sharingEnvironmentConfig_;
   }
+
   /**
    *
    *
@@ -446,6 +462,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOVERY_TYPE_FIELD_NUMBER = 9;
   private int discoveryType_ = 0;
+
   /**
    *
    *
@@ -465,6 +482,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscoveryType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -484,6 +502,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   public int getDiscoveryTypeValue() {
     return discoveryType_;
   }
+
   /**
    *
    *
@@ -506,6 +525,49 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
         : result;
+  }
+
+  public static final int LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER = 10;
+  private boolean logLinkedDatasetQueryUserEmail_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the DataExchange has an email sharing mandate enabled.
+   * Publishers can view the logged email of the subscriber.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogLinkedDatasetQueryUserEmail() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the DataExchange has an email sharing mandate enabled.
+   * Publishers can view the logged email of the subscriber.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  @java.lang.Override
+  public boolean getLogLinkedDatasetQueryUserEmail() {
+    return logLinkedDatasetQueryUserEmail_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -549,6 +611,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(9, discoveryType_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(10, logLinkedDatasetQueryUserEmail_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -587,6 +652,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, discoveryType_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              10, logLinkedDatasetQueryUserEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -617,6 +687,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (hasDiscoveryType() != other.hasDiscoveryType()) return false;
     if (hasDiscoveryType()) {
       if (discoveryType_ != other.discoveryType_) return false;
+    }
+    if (hasLogLinkedDatasetQueryUserEmail() != other.hasLogLinkedDatasetQueryUserEmail())
+      return false;
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      if (getLogLinkedDatasetQueryUserEmail() != other.getLogLinkedDatasetQueryUserEmail())
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -650,6 +726,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (hasDiscoveryType()) {
       hash = (37 * hash) + DISCOVERY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + discoveryType_;
+    }
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      hash = (37 * hash) + LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getLogLinkedDatasetQueryUserEmail());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -752,6 +834,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -815,6 +898,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         sharingEnvironmentConfigBuilder_ = null;
       }
       discoveryType_ = 0;
+      logLinkedDatasetQueryUserEmail_ = false;
       return this;
     }
 
@@ -883,6 +967,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.discoveryType_ = discoveryType_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.logLinkedDatasetQueryUserEmail_ = logLinkedDatasetQueryUserEmail_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -970,6 +1058,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDiscoveryType()) {
         setDiscoveryType(other.getDiscoveryType());
       }
+      if (other.hasLogLinkedDatasetQueryUserEmail()) {
+        setLogLinkedDatasetQueryUserEmail(other.getLogLinkedDatasetQueryUserEmail());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1051,6 +1142,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
+            case 80:
+              {
+                logLinkedDatasetQueryUserEmail_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1071,6 +1168,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1094,6 +1192,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1216,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1239,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1258,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1284,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1207,6 +1310,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1232,6 +1336,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1361,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1382,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1410,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1329,6 +1437,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1464,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1380,6 +1490,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1401,6 +1512,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1429,6 +1541,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object primaryContact_ = "";
+
     /**
      *
      *
@@ -1452,6 +1565,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1589,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1612,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1631,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1657,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object documentation_ = "";
+
     /**
      *
      *
@@ -1562,6 +1680,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1703,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1605,6 +1725,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1622,6 +1743,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1768,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int listingCount_;
+
     /**
      *
      *
@@ -1661,6 +1784,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public int getListingCount() {
       return listingCount_;
     }
+
     /**
      *
      *
@@ -1680,6 +1804,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1824,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1718,6 +1844,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIcon() {
       return icon_;
     }
+
     /**
      *
      *
@@ -1743,6 +1870,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1900,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.Builder,
             com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder>
         sharingEnvironmentConfigBuilder_;
+
     /**
      *
      *
@@ -1788,6 +1917,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSharingEnvironmentConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1812,6 +1942,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         return sharingEnvironmentConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1837,6 +1968,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1992,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1892,6 +2025,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1913,6 +2047,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1930,6 +2065,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSharingEnvironmentConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1952,6 +2088,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
             : sharingEnvironmentConfig_;
       }
     }
+
     /**
      *
      *
@@ -1981,6 +2118,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int discoveryType_ = 0;
+
     /**
      *
      *
@@ -2000,6 +2138,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiscoveryType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2019,6 +2158,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public int getDiscoveryTypeValue() {
       return discoveryType_;
     }
+
     /**
      *
      *
@@ -2041,6 +2181,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2064,6 +2205,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.analyticshub.v1.DiscoveryType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2089,6 +2231,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2250,94 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDiscoveryType() {
       bitField0_ = (bitField0_ & ~0x00000100);
       discoveryType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean logLinkedDatasetQueryUserEmail_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogLinkedDatasetQueryUserEmail() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The logLinkedDatasetQueryUserEmail.
+     */
+    @java.lang.Override
+    public boolean getLogLinkedDatasetQueryUserEmail() {
+      return logLinkedDatasetQueryUserEmail_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The logLinkedDatasetQueryUserEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogLinkedDatasetQueryUserEmail(boolean value) {
+
+      logLinkedDatasetQueryUserEmail_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLogLinkedDatasetQueryUserEmail() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      logLinkedDatasetQueryUserEmail_ = false;
       onChanged();
       return this;
     }

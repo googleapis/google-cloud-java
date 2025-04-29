@@ -38,6 +38,7 @@ public interface RecommenderConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RecommenderConfigOrBuilder
    * @return Whether the recommenderGenerationConfig field is set.
    */
   boolean hasRecommenderGenerationConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RecommenderConfigOrBuilder
    * @return The recommenderGenerationConfig.
    */
   com.google.cloud.recommender.v1beta1.RecommenderGenerationConfig getRecommenderGenerationConfig();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface RecommenderConfigOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface RecommenderConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface RecommenderConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface RecommenderConfigOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface RecommenderConfigOrBuilder
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -227,9 +235,11 @@ public interface RecommenderConfigOrBuilder
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public interface RecommenderConfigOrBuilder
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface RecommenderConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public interface RecommenderConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

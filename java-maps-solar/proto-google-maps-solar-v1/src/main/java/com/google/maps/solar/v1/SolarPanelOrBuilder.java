@@ -36,6 +36,7 @@ public interface SolarPanelOrBuilder
    * @return Whether the center field is set.
    */
   boolean hasCenter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SolarPanelOrBuilder
    * @return The center.
    */
   com.google.type.LatLng getCenter();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SolarPanelOrBuilder
    * @return The enum numeric value on the wire for orientation.
    */
   int getOrientationValue();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface SolarPanelOrBuilder
    * @return Whether the segmentIndex field is set.
    */
   boolean hasSegmentIndex();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy)
     NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.newBuilder() to construct.
   private NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -114,12 +115,16 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /** <code>HIERARCHY = 69902869;</code> */
     public static final int HIERARCHY_VALUE = 69902869;
+
     /** <code>NETWORK = 413984270;</code> */
     public static final int NETWORK_VALUE = 413984270;
+
     /** <code>SYSTEM = 313484847;</code> */
     public static final int SYSTEM_VALUE = 313484847;
+
     /** <code>UNSPECIFIED = 526786327;</code> */
     public static final int UNSPECIFIED_VALUE = 526786327;
 
@@ -218,6 +223,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -233,6 +239,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public boolean hasDisplayName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -256,6 +263,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +292,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -299,6 +308,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -350,6 +361,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> packetMirroringRules_;
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       getPacketMirroringRulesList() {
     return packetMirroringRules_;
   }
+
   /**
    *
    *
@@ -380,6 +393,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       getPacketMirroringRulesOrBuilderList() {
     return packetMirroringRules_;
   }
+
   /**
    *
    *
@@ -394,6 +408,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public int getPacketMirroringRulesCount() {
     return packetMirroringRules_.size();
   }
+
   /**
    *
    *
@@ -408,6 +423,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index) {
     return packetMirroringRules_.get(index);
   }
+
   /**
    *
    *
@@ -426,6 +442,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -441,6 +458,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -461,6 +479,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> rules_;
+
   /**
    *
    *
@@ -474,6 +493,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getRulesList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -488,6 +508,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       getRulesOrBuilderList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -501,6 +522,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public int getRulesCount() {
     return rules_.size();
   }
+
   /**
    *
    *
@@ -514,6 +536,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public com.google.cloud.compute.v1.FirewallPolicyRule getRules(int index) {
     return rules_.get(index);
   }
+
   /**
    *
    *
@@ -532,6 +555,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shortName_ = "";
+
   /**
    *
    *
@@ -547,6 +571,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public boolean hasShortName() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -570,6 +595,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -598,6 +624,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -614,6 +641,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
   public boolean hasType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -638,6 +666,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -930,6 +959,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1320,6 +1350,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1334,6 +1365,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1356,6 +1388,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1378,6 +1411,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1433,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1416,6 +1451,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1476,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1454,6 +1491,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1476,6 +1514,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1498,6 +1537,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1519,6 +1559,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1577,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1638,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return packetMirroringRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1614,6 +1657,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return packetMirroringRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1632,6 +1676,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return packetMirroringRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1657,6 +1702,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1679,6 +1725,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1750,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1776,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1799,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1822,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1845,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1815,6 +1867,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1836,6 +1889,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1905,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         int index) {
       return getPacketMirroringRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1870,6 +1925,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return packetMirroringRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1889,6 +1945,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return java.util.Collections.unmodifiableList(packetMirroringRules_);
       }
     }
+
     /**
      *
      *
@@ -1904,6 +1961,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return getPacketMirroringRulesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1920,6 +1978,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return getPacketMirroringRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1957,6 +2016,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
 
     private int priority_;
+
     /**
      *
      *
@@ -1972,6 +2032,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1987,6 +2048,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public int getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -2006,6 +2068,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2119,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return rulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2072,6 +2136,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return rulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2088,6 +2153,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return rulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2110,6 +2176,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2130,6 +2197,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2152,6 +2220,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2174,6 +2243,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2194,6 +2264,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2214,6 +2285,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2234,6 +2306,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2326,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2272,6 +2346,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       }
       return this;
     }
+
     /**
      *
      *
@@ -2284,6 +2359,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public com.google.cloud.compute.v1.FirewallPolicyRule.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2300,6 +2376,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2317,6 +2394,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return java.util.Collections.unmodifiableList(rules_);
       }
     }
+
     /**
      *
      *
@@ -2330,6 +2408,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return getRulesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2343,6 +2422,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       return getRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2375,6 +2455,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
 
     private java.lang.Object shortName_ = "";
+
     /**
      *
      *
@@ -2389,6 +2470,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public boolean hasShortName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2411,6 +2493,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2433,6 +2516,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2454,6 +2538,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2471,6 +2556,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2495,6 +2581,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -2510,6 +2597,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public boolean hasType() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2533,6 +2621,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2556,6 +2645,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2668,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2596,6 +2687,7 @@ public final class NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *

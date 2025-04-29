@@ -36,6 +36,7 @@ public interface RetrievalOrBuilder
    * @return Whether the vertexAiSearch field is set.
    */
   boolean hasVertexAiSearch();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RetrievalOrBuilder
    * @return The vertexAiSearch.
    */
   com.google.cloud.vertexai.api.VertexAISearch getVertexAiSearch();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RetrievalOrBuilder
    * @return Whether the vertexRagStore field is set.
    */
   boolean hasVertexRagStore();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RetrievalOrBuilder
    * @return The vertexRagStore.
    */
   com.google.cloud.vertexai.api.VertexRagStore getVertexRagStore();
+
   /**
    *
    *

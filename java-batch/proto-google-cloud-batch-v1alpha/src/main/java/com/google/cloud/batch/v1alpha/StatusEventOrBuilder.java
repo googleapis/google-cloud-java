@@ -36,6 +36,7 @@ public interface StatusEventOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StatusEventOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface StatusEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface StatusEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface StatusEventOrBuilder
    * @return Whether the taskExecution field is set.
    */
   boolean hasTaskExecution();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface StatusEventOrBuilder
    * @return The taskExecution.
    */
   com.google.cloud.batch.v1alpha.TaskExecution getTaskExecution();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface StatusEventOrBuilder
    * @return The enum numeric value on the wire for taskState.
    */
   int getTaskStateValue();
+
   /**
    *
    *

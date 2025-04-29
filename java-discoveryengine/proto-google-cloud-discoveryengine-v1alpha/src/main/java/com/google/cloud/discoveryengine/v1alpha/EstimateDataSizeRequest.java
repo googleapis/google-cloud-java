@@ -35,6 +35,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest)
     EstimateDataSizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EstimateDataSizeRequest.newBuilder() to construct.
   private EstimateDataSizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
                 .EstimatorUriPattern>
         getEstimatorUriPatternsList();
+
     /**
      *
      *
@@ -101,6 +103,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
             .EstimatorUriPattern
         getEstimatorUriPatterns(int index);
+
     /**
      *
      *
@@ -114,6 +117,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
      * </code>
      */
     int getEstimatorUriPatternsCount();
+
     /**
      *
      *
@@ -131,6 +135,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
                 com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
                     .EstimatorUriPatternOrBuilder>
         getEstimatorUriPatternsOrBuilderList();
+
     /**
      *
      *
@@ -147,6 +152,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             .EstimatorUriPatternOrBuilder
         getEstimatorUriPatternsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource)
       WebsiteDataSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WebsiteDataSource.newBuilder() to construct.
     private WebsiteDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -212,6 +219,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
        * @return The providedUriPattern.
        */
       java.lang.String getProvidedUriPattern();
+
       /**
        *
        *
@@ -253,6 +261,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
        */
       boolean getExclusive();
     }
+
     /**
      *
      *
@@ -268,6 +277,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource.EstimatorUriPattern)
         EstimatorUriPatternOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use EstimatorUriPattern.newBuilder() to construct.
       private EstimatorUriPattern(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -304,6 +314,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object providedUriPattern_ = "";
+
       /**
        *
        *
@@ -327,6 +338,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return s;
         }
       }
+
       /**
        *
        *
@@ -353,6 +365,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
 
       public static final int EXACT_MATCH_FIELD_NUMBER = 2;
       private boolean exactMatch_ = false;
+
       /**
        *
        *
@@ -371,6 +384,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
 
       public static final int EXCLUSIVE_FIELD_NUMBER = 3;
       private boolean exclusive_ = false;
+
       /**
        *
        *
@@ -597,6 +611,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -840,6 +855,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object providedUriPattern_ = "";
+
         /**
          *
          *
@@ -862,6 +878,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -884,6 +901,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -905,6 +923,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -922,6 +941,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -946,6 +966,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
 
         private boolean exactMatch_;
+
         /**
          *
          *
@@ -961,6 +982,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         public boolean getExactMatch() {
           return exactMatch_;
         }
+
         /**
          *
          *
@@ -980,6 +1002,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -999,6 +1022,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
 
         private boolean exclusive_;
+
         /**
          *
          *
@@ -1016,6 +1040,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         public boolean getExclusive() {
           return exclusive_;
         }
+
         /**
          *
          *
@@ -1037,6 +1062,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1136,6 +1162,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
                 .EstimatorUriPattern>
         estimatorUriPatterns_;
+
     /**
      *
      *
@@ -1155,6 +1182,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         getEstimatorUriPatternsList() {
       return estimatorUriPatterns_;
     }
+
     /**
      *
      *
@@ -1175,6 +1203,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         getEstimatorUriPatternsOrBuilderList() {
       return estimatorUriPatterns_;
     }
+
     /**
      *
      *
@@ -1191,6 +1220,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     public int getEstimatorUriPatternsCount() {
       return estimatorUriPatterns_.size();
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         getEstimatorUriPatterns(int index) {
       return estimatorUriPatterns_.get(index);
     }
+
     /**
      *
      *
@@ -1402,6 +1433,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1706,6 +1738,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return estimatorUriPatternsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1725,6 +1758,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return estimatorUriPatternsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1746,6 +1780,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return estimatorUriPatternsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1775,6 +1810,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1801,6 +1837,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1829,6 +1866,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1858,6 +1896,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1883,6 +1922,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1909,6 +1949,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1936,6 +1977,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1958,6 +2000,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1980,6 +2023,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1997,6 +2041,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           getEstimatorUriPatternsBuilder(int index) {
         return getEstimatorUriPatternsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2018,6 +2063,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return estimatorUriPatternsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2041,6 +2087,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(estimatorUriPatterns_);
         }
       }
+
       /**
        *
        *
@@ -2061,6 +2108,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
                 com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
                     .EstimatorUriPattern.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2082,6 +2130,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
                 com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
                     .EstimatorUriPattern.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2213,6 +2262,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
      * @return Whether the gcsSource field is set.
      */
     boolean hasGcsSource();
+
     /**
      *
      *
@@ -2225,6 +2275,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
      * @return The gcsSource.
      */
     com.google.cloud.discoveryengine.v1alpha.GcsSource getGcsSource();
+
     /**
      *
      *
@@ -2248,6 +2299,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
      * @return Whether the bigquerySource field is set.
      */
     boolean hasBigquerySource();
+
     /**
      *
      *
@@ -2260,6 +2312,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
      * @return The bigquerySource.
      */
     com.google.cloud.discoveryengine.v1alpha.BigQuerySource getBigquerySource();
+
     /**
      *
      *
@@ -2274,6 +2327,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.FileDataSource.SourceCase
         getSourceCase();
   }
+
   /**
    *
    *
@@ -2289,6 +2343,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.FileDataSource)
       FileDataSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FileDataSource.newBuilder() to construct.
     private FileDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2335,6 +2390,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       private SourceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2368,6 +2424,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     }
 
     public static final int GCS_SOURCE_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -2383,6 +2440,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -2401,6 +2459,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       }
       return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2419,6 +2478,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     }
 
     public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -2434,6 +2494,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     public boolean hasBigquerySource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -2452,6 +2513,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       }
       return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2669,6 +2731,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2926,6 +2989,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
               com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder,
               com.google.cloud.discoveryengine.v1alpha.GcsSourceOrBuilder>
           gcsSourceBuilder_;
+
       /**
        *
        *
@@ -2941,6 +3005,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       public boolean hasGcsSource() {
         return sourceCase_ == 1;
       }
+
       /**
        *
        *
@@ -2966,6 +3031,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2988,6 +3054,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         sourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3008,6 +3075,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         sourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3041,6 +3109,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         sourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3066,6 +3135,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -3078,6 +3148,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       public com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder getGcsSourceBuilder() {
         return getGcsSourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3098,6 +3169,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3136,6 +3208,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
               com.google.cloud.discoveryengine.v1alpha.BigQuerySource.Builder,
               com.google.cloud.discoveryengine.v1alpha.BigQuerySourceOrBuilder>
           bigquerySourceBuilder_;
+
       /**
        *
        *
@@ -3151,6 +3224,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       public boolean hasBigquerySource() {
         return sourceCase_ == 2;
       }
+
       /**
        *
        *
@@ -3176,6 +3250,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3199,6 +3274,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         sourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3219,6 +3295,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         sourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3253,6 +3330,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         sourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -3278,6 +3356,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -3291,6 +3370,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           getBigquerySourceBuilder() {
         return getBigquerySourceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3312,6 +3392,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
           return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3431,6 +3512,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     private DataSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3464,6 +3546,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
   }
 
   public static final int WEBSITE_DATA_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -3481,6 +3564,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
   public boolean hasWebsiteDataSource() {
     return dataSourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -3504,6 +3588,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     return com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.WebsiteDataSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3527,6 +3612,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
   }
 
   public static final int FILE_DATA_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -3544,6 +3630,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
   public boolean hasFileDataSource() {
     return dataSourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -3567,6 +3654,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     return com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest.FileDataSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3593,6 +3681,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -3619,6 +3708,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -3855,6 +3945,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4115,6 +4206,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest
                 .WebsiteDataSourceOrBuilder>
         websiteDataSourceBuilder_;
+
     /**
      *
      *
@@ -4132,6 +4224,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     public boolean hasWebsiteDataSource() {
       return dataSourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -4164,6 +4257,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4189,6 +4283,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4212,6 +4307,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4252,6 +4348,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4279,6 +4376,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4295,6 +4393,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         getWebsiteDataSourceBuilder() {
       return getWebsiteDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4322,6 +4421,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4370,6 +4470,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest
                 .FileDataSourceOrBuilder>
         fileDataSourceBuilder_;
+
     /**
      *
      *
@@ -4387,6 +4488,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     public boolean hasFileDataSource() {
       return dataSourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -4418,6 +4520,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4443,6 +4546,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4466,6 +4570,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4506,6 +4611,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4533,6 +4639,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4548,6 +4655,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         getFileDataSourceBuilder() {
       return getFileDataSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4573,6 +4681,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4615,6 +4724,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -4640,6 +4750,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4665,6 +4776,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4689,6 +4801,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4709,6 +4822,7 @@ public final class EstimateDataSizeRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

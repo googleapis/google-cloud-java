@@ -43,6 +43,7 @@ public interface ListFunctionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface ListFunctionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface ListFunctionsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -142,7 +145,7 @@ public interface ListFunctionsRequestOrBuilder
    *
    * <pre>
    * The sorting order of the resources returned. Value should be a comma
-   * separated list of fields. The default sorting oder is ascending.
+   * separated list of fields. The default sorting order is ascending.
    * See https://google.aip.dev/132#ordering.
    * </pre>
    *
@@ -151,12 +154,13 @@ public interface ListFunctionsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
    * <pre>
    * The sorting order of the resources returned. Value should be a comma
-   * separated list of fields. The default sorting oder is ascending.
+   * separated list of fields. The default sorting order is ascending.
    * See https://google.aip.dev/132#ordering.
    * </pre>
    *

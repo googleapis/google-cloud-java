@@ -32,6 +32,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig)
     SecurityPolicyDdosProtectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyDdosProtectionConfig.newBuilder() to construct.
   private SecurityPolicyDdosProtectionConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -101,10 +102,13 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
      * <code>UNDEFINED_DDOS_PROTECTION = 0;</code>
      */
     public static final int UNDEFINED_DDOS_PROTECTION_VALUE = 0;
+
     /** <code>ADVANCED = 63789090;</code> */
     public static final int ADVANCED_VALUE = 63789090;
+
     /** <code>ADVANCED_PREVIEW = 40905867;</code> */
     public static final int ADVANCED_PREVIEW_VALUE = 40905867;
+
     /** <code>STANDARD = 484642493;</code> */
     public static final int STANDARD_VALUE = 484642493;
 
@@ -200,6 +204,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ddosProtection_ = "";
+
   /**
    *
    *
@@ -216,6 +221,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
   public boolean hasDdosProtection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -240,6 +246,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -430,6 +437,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -619,6 +627,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object ddosProtection_ = "";
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     public boolean hasDdosProtection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

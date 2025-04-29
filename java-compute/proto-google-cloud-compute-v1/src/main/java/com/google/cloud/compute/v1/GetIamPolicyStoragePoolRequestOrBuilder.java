@@ -36,6 +36,7 @@ public interface GetIamPolicyStoragePoolRequestOrBuilder
    * @return Whether the optionsRequestedPolicyVersion field is set.
    */
   boolean hasOptionsRequestedPolicyVersion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetIamPolicyStoragePoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetIamPolicyStoragePoolRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface GetIamPolicyStoragePoolRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

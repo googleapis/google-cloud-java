@@ -39,6 +39,7 @@ public interface RunAssetDiscoveryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

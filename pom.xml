@@ -57,6 +57,7 @@
     <module>java-certificate-manager</module>
     <module>java-channel</module>
     <module>java-chat</module>
+    <module>java-chronicle</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
@@ -79,9 +80,9 @@
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
     <module>java-datastream</module>
-    <module>java-debugger-client</module>
     <module>java-deploy</module>
     <module>java-developerconnect</module>
+    <module>java-devicestreaming</module>
     <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>
     <module>java-discoveryengine</module>
@@ -114,10 +115,13 @@
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
+    <module>java-java-shopping-merchant-issue-resolution</module>
+    <module>java-java-shopping-merchant-order-tracking</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
     <module>java-life-sciences</module>
+    <module>java-lustre</module>
     <module>java-managed-identities</module>
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
@@ -191,6 +195,7 @@
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-lfp</module>
     <module>java-shopping-merchant-notifications</module>
+    <module>java-shopping-merchant-product-studio</module>
     <module>java-shopping-merchant-products</module>
     <module>java-shopping-merchant-promotions</module>
     <module>java-shopping-merchant-quota</module>
@@ -198,6 +203,7 @@
     <module>java-shopping-merchant-reviews</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
+    <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>
     <module>java-talent</module>
     <module>java-tasks</module>

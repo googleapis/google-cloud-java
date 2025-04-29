@@ -34,6 +34,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest)
     DeletePublicDelegatedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeletePublicDelegatedPrefixeRequest.newBuilder() to construct.
   private DeletePublicDelegatedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class DeletePublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class DeletePublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicDelegatedPrefix_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class DeletePublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class DeletePublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class DeletePublicDelegatedPrefixeRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -492,6 +502,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -728,6 +739,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -752,6 +764,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -776,6 +789,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object publicDelegatedPrefix_ = "";
+
     /**
      *
      *
@@ -867,6 +884,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -979,6 +1001,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1026,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1070,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1097,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1085,6 +1112,7 @@ public final class DeletePublicDelegatedPrefixeRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1158,7 @@ public final class DeletePublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1180,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1198,7 @@ public final class DeletePublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

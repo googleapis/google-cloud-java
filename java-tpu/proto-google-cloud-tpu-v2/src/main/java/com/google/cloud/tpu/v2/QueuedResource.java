@@ -34,6 +34,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource)
     QueuedResourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueuedResource.newBuilder() to construct.
   private QueuedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec> getNodeSpecList();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec getNodeSpec(int index);
+
     /**
      *
      *
@@ -106,6 +109,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getNodeSpecCount();
+
     /**
      *
      *
@@ -119,6 +123,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpecOrBuilder>
         getNodeSpecOrBuilderList();
+
     /**
      *
      *
@@ -132,6 +137,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpecOrBuilder getNodeSpecOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource.Tpu)
       TpuOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Tpu.newBuilder() to construct.
     private Tpu(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -195,6 +202,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return The parent.
        */
       java.lang.String getParent();
+
       /**
        *
        *
@@ -225,6 +233,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the nodeId field is set.
        */
       boolean hasNodeId();
+
       /**
        *
        *
@@ -240,6 +249,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return The nodeId.
        */
       java.lang.String getNodeId();
+
       /**
        *
        *
@@ -270,6 +280,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the multisliceParams field is set.
        */
       boolean hasMultisliceParams();
+
       /**
        *
        *
@@ -284,6 +295,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return The multisliceParams.
        */
       com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.MultisliceParams getMultisliceParams();
+
       /**
        *
        *
@@ -310,6 +322,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the node field is set.
        */
       boolean hasNode();
+
       /**
        *
        *
@@ -322,6 +335,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        * @return The node.
        */
       com.google.cloud.tpu.v2.Node getNode();
+
       /**
        *
        *
@@ -335,6 +349,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
       com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.NameStrategyCase getNameStrategyCase();
     }
+
     /**
      *
      *
@@ -351,6 +366,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec)
         NodeSpecOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use NodeSpec.newBuilder() to construct.
       private NodeSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -417,6 +433,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          * @return The nodeIdPrefix.
          */
         java.lang.String getNodeIdPrefix();
+
         /**
          *
          *
@@ -434,6 +451,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getNodeIdPrefixBytes();
       }
+
       /**
        *
        *
@@ -450,6 +468,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.MultisliceParams)
           MultisliceParamsOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use MultisliceParams.newBuilder() to construct.
         private MultisliceParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -483,6 +502,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
         public static final int NODE_COUNT_FIELD_NUMBER = 1;
         private int nodeCount_ = 0;
+
         /**
          *
          *
@@ -505,6 +525,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object nodeIdPrefix_ = "";
+
         /**
          *
          *
@@ -532,6 +553,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
+
         /**
          *
          *
@@ -742,6 +764,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -955,6 +978,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private int nodeCount_;
+
           /**
            *
            *
@@ -972,6 +996,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           public int getNodeCount() {
             return nodeCount_;
           }
+
           /**
            *
            *
@@ -993,6 +1018,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1014,6 +1040,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           }
 
           private java.lang.Object nodeIdPrefix_ = "";
+
           /**
            *
            *
@@ -1040,6 +1067,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -1066,6 +1094,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -1091,6 +1120,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1112,6 +1142,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1225,6 +1256,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         private NameStrategyCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -1261,6 +1293,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -1286,6 +1319,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1313,6 +1347,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int NODE_ID_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -1330,6 +1365,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNodeId() {
         return nameStrategyCase_ == 2;
       }
+
       /**
        *
        *
@@ -1360,6 +1396,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1392,6 +1429,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int MULTISLICE_PARAMS_FIELD_NUMBER = 3;
+
       /**
        *
        *
@@ -1409,6 +1447,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMultisliceParams() {
         return nameStrategyCase_ == 3;
       }
+
       /**
        *
        *
@@ -1432,6 +1471,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.MultisliceParams
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -1456,6 +1496,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
       public static final int NODE_FIELD_NUMBER = 4;
       private com.google.cloud.tpu.v2.Node node_;
+
       /**
        *
        *
@@ -1471,6 +1512,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasNode() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1486,6 +1528,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.tpu.v2.Node getNode() {
         return node_ == null ? com.google.cloud.tpu.v2.Node.getDefaultInstance() : node_;
       }
+
       /**
        *
        *
@@ -1716,6 +1759,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1995,6 +2039,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object parent_ = "";
+
         /**
          *
          *
@@ -2019,6 +2064,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2043,6 +2089,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2066,6 +2113,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2085,6 +2133,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2128,6 +2177,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         public boolean hasNodeId() {
           return nameStrategyCase_ == 2;
         }
+
         /**
          *
          *
@@ -2159,6 +2209,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2190,6 +2241,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2214,6 +2266,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2236,6 +2289,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2267,6 +2321,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.MultisliceParams.Builder,
                 com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.MultisliceParamsOrBuilder>
             multisliceParamsBuilder_;
+
         /**
          *
          *
@@ -2284,6 +2339,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         public boolean hasMultisliceParams() {
           return nameStrategyCase_ == 3;
         }
+
         /**
          *
          *
@@ -2315,6 +2371,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2340,6 +2397,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           nameStrategyCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -2363,6 +2421,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           nameStrategyCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -2401,6 +2460,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           nameStrategyCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -2428,6 +2488,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2443,6 +2504,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             getMultisliceParamsBuilder() {
           return getMultisliceParamsFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2468,6 +2530,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2512,6 +2575,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.tpu.v2.Node.Builder,
                 com.google.cloud.tpu.v2.NodeOrBuilder>
             nodeBuilder_;
+
         /**
          *
          *
@@ -2527,6 +2591,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         public boolean hasNode() {
           return ((bitField0_ & 0x00000008) != 0);
         }
+
         /**
          *
          *
@@ -2546,6 +2611,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return nodeBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2569,6 +2635,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2589,6 +2656,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2617,6 +2685,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2637,6 +2706,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2652,6 +2722,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getNodeFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2669,6 +2740,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             return node_ == null ? com.google.cloud.tpu.v2.Node.getDefaultInstance() : node_;
           }
         }
+
         /**
          *
          *
@@ -2764,6 +2836,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec> nodeSpec_;
+
     /**
      *
      *
@@ -2779,6 +2852,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec> getNodeSpecList() {
       return nodeSpec_;
     }
+
     /**
      *
      *
@@ -2795,6 +2869,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         getNodeSpecOrBuilderList() {
       return nodeSpec_;
     }
+
     /**
      *
      *
@@ -2810,6 +2885,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public int getNodeSpecCount() {
       return nodeSpec_.size();
     }
+
     /**
      *
      *
@@ -2825,6 +2901,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec getNodeSpec(int index) {
       return nodeSpec_.get(index);
     }
+
     /**
      *
      *
@@ -3004,6 +3081,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3271,6 +3349,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return nodeSpecBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3289,6 +3368,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return nodeSpecBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3307,6 +3387,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return nodeSpecBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3332,6 +3413,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3354,6 +3436,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3378,6 +3461,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3403,6 +3487,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3425,6 +3510,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3447,6 +3533,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3470,6 +3557,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3491,6 +3579,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3512,6 +3601,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3527,6 +3617,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getNodeSpecFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3546,6 +3637,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return nodeSpecBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3565,6 +3657,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(nodeSpec_);
         }
       }
+
       /**
        *
        *
@@ -3580,6 +3673,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return getNodeSpecFieldBuilder()
             .addBuilder(com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3597,6 +3691,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 index, com.google.cloud.tpu.v2.QueuedResource.Tpu.NodeSpec.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3698,6 +3793,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2.QueuedResource.Spot)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3712,6 +3808,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource.Spot)
       SpotOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Spot.newBuilder() to construct.
     private Spot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3891,6 +3988,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4135,6 +4233,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the minDuration field is set.
      */
     boolean hasMinDuration();
+
     /**
      *
      *
@@ -4150,6 +4249,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return The minDuration.
      */
     com.google.protobuf.Duration getMinDuration();
+
     /**
      *
      *
@@ -4164,6 +4264,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getMinDurationOrBuilder();
   }
+
   /**
    *
    *
@@ -4178,6 +4279,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource.Guaranteed)
       GuaranteedOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Guaranteed.newBuilder() to construct.
     private Guaranteed(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4209,6 +4311,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MIN_DURATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration minDuration_;
+
     /**
      *
      *
@@ -4227,6 +4330,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4247,6 +4351,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : minDuration_;
     }
+
     /**
      *
      *
@@ -4431,6 +4536,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4638,6 +4744,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           minDurationBuilder_;
+
       /**
        *
        *
@@ -4655,6 +4762,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinDuration() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4678,6 +4786,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return minDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4703,6 +4812,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4725,6 +4835,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4755,6 +4866,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4777,6 +4889,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4794,6 +4907,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMinDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4815,6 +4929,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               : minDuration_;
         }
       }
+
       /**
        *
        *
@@ -4929,6 +5044,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the validUntilDuration field is set.
      */
     boolean hasValidUntilDuration();
+
     /**
      *
      *
@@ -4945,6 +5061,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return The validUntilDuration.
      */
     com.google.protobuf.Duration getValidUntilDuration();
+
     /**
      *
      *
@@ -4976,6 +5093,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the validUntilTime field is set.
      */
     boolean hasValidUntilTime();
+
     /**
      *
      *
@@ -4992,6 +5110,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return The validUntilTime.
      */
     com.google.protobuf.Timestamp getValidUntilTime();
+
     /**
      *
      *
@@ -5021,6 +5140,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the validAfterDuration field is set.
      */
     boolean hasValidAfterDuration();
+
     /**
      *
      *
@@ -5035,6 +5155,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return The validAfterDuration.
      */
     com.google.protobuf.Duration getValidAfterDuration();
+
     /**
      *
      *
@@ -5062,6 +5183,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the validAfterTime field is set.
      */
     boolean hasValidAfterTime();
+
     /**
      *
      *
@@ -5076,6 +5198,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return The validAfterTime.
      */
     com.google.protobuf.Timestamp getValidAfterTime();
+
     /**
      *
      *
@@ -5103,6 +5226,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the validInterval field is set.
      */
     boolean hasValidInterval();
+
     /**
      *
      *
@@ -5117,6 +5241,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return The validInterval.
      */
     com.google.type.Interval getValidInterval();
+
     /**
      *
      *
@@ -5133,6 +5258,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tpu.v2.QueuedResource.QueueingPolicy.StartTimingConstraintsCase
         getStartTimingConstraintsCase();
   }
+
   /**
    *
    *
@@ -5147,6 +5273,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.QueuedResource.QueueingPolicy)
       QueueingPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QueueingPolicy.newBuilder() to construct.
     private QueueingPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5195,6 +5322,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       private StartTimingConstraintsCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5234,6 +5362,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALID_UNTIL_DURATION_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -5253,6 +5382,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidUntilDuration() {
       return startTimingConstraintsCase_ == 1;
     }
+
     /**
      *
      *
@@ -5275,6 +5405,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Duration.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5297,6 +5428,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALID_UNTIL_TIME_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -5316,6 +5448,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidUntilTime() {
       return startTimingConstraintsCase_ == 2;
     }
+
     /**
      *
      *
@@ -5338,6 +5471,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Timestamp.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5360,6 +5494,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALID_AFTER_DURATION_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -5377,6 +5512,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidAfterDuration() {
       return startTimingConstraintsCase_ == 3;
     }
+
     /**
      *
      *
@@ -5397,6 +5533,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Duration.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5417,6 +5554,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALID_AFTER_TIME_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -5434,6 +5572,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidAfterTime() {
       return startTimingConstraintsCase_ == 4;
     }
+
     /**
      *
      *
@@ -5454,6 +5593,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Timestamp.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5474,6 +5614,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALID_INTERVAL_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -5491,6 +5632,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidInterval() {
       return startTimingConstraintsCase_ == 5;
     }
+
     /**
      *
      *
@@ -5511,6 +5653,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.type.Interval.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5767,6 +5910,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6061,6 +6205,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           validUntilDurationBuilder_;
+
       /**
        *
        *
@@ -6080,6 +6225,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValidUntilDuration() {
         return startTimingConstraintsCase_ == 1;
       }
+
       /**
        *
        *
@@ -6109,6 +6255,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6135,6 +6282,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6158,6 +6306,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6194,6 +6343,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6223,6 +6373,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6239,6 +6390,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Duration.Builder getValidUntilDurationBuilder() {
         return getValidUntilDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6263,6 +6415,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6305,6 +6458,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           validUntilTimeBuilder_;
+
       /**
        *
        *
@@ -6324,6 +6478,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValidUntilTime() {
         return startTimingConstraintsCase_ == 2;
       }
+
       /**
        *
        *
@@ -6353,6 +6508,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6379,6 +6535,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6402,6 +6559,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6438,6 +6596,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6467,6 +6626,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6483,6 +6643,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Timestamp.Builder getValidUntilTimeBuilder() {
         return getValidUntilTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6507,6 +6668,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6549,6 +6711,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           validAfterDurationBuilder_;
+
       /**
        *
        *
@@ -6566,6 +6729,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValidAfterDuration() {
         return startTimingConstraintsCase_ == 3;
       }
+
       /**
        *
        *
@@ -6593,6 +6757,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6617,6 +6782,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6638,6 +6804,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6672,6 +6839,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -6699,6 +6867,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6713,6 +6882,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Duration.Builder getValidAfterDurationBuilder() {
         return getValidAfterDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6735,6 +6905,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6775,6 +6946,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           validAfterTimeBuilder_;
+
       /**
        *
        *
@@ -6792,6 +6964,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValidAfterTime() {
         return startTimingConstraintsCase_ == 4;
       }
+
       /**
        *
        *
@@ -6819,6 +6992,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6843,6 +7017,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -6864,6 +7039,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -6898,6 +7074,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -6925,6 +7102,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6939,6 +7117,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Timestamp.Builder getValidAfterTimeBuilder() {
         return getValidAfterTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6961,6 +7140,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Timestamp.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7001,6 +7181,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               com.google.type.Interval.Builder,
               com.google.type.IntervalOrBuilder>
           validIntervalBuilder_;
+
       /**
        *
        *
@@ -7018,6 +7199,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValidInterval() {
         return startTimingConstraintsCase_ == 5;
       }
+
       /**
        *
        *
@@ -7045,6 +7227,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.type.Interval.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7069,6 +7252,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -7090,6 +7274,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -7124,6 +7309,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         startTimingConstraintsCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -7151,6 +7337,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7165,6 +7352,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       public com.google.type.Interval.Builder getValidIntervalBuilder() {
         return getValidIntervalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7187,6 +7375,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return com.google.type.Interval.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7303,6 +7492,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     private ResourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -7350,6 +7540,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     private TierCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -7386,6 +7577,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -7411,6 +7603,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7439,6 +7632,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -7455,6 +7649,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -7471,6 +7666,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -7487,6 +7683,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TPU_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -7504,6 +7701,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTpu() {
     return resourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -7524,6 +7722,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tpu.v2.QueuedResource.Tpu.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -7544,6 +7743,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPOT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -7561,6 +7761,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpot() {
     return tierCase_ == 3;
   }
+
   /**
    *
    *
@@ -7581,6 +7782,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tpu.v2.QueuedResource.Spot.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -7601,6 +7803,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GUARANTEED_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -7618,6 +7821,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGuaranteed() {
     return tierCase_ == 4;
   }
+
   /**
    *
    *
@@ -7638,6 +7842,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tpu.v2.QueuedResource.Guaranteed.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -7659,6 +7864,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUEUEING_POLICY_FIELD_NUMBER = 5;
   private com.google.cloud.tpu.v2.QueuedResource.QueueingPolicy queueingPolicy_;
+
   /**
    *
    *
@@ -7676,6 +7882,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueueingPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -7695,6 +7902,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tpu.v2.QueuedResource.QueueingPolicy.getDefaultInstance()
         : queueingPolicy_;
   }
+
   /**
    *
    *
@@ -7716,6 +7924,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private com.google.cloud.tpu.v2.QueuedResourceState state_;
+
   /**
    *
    *
@@ -7733,6 +7942,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -7752,6 +7962,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.tpu.v2.QueuedResourceState.getDefaultInstance()
         : state_;
   }
+
   /**
    *
    *
@@ -7774,6 +7985,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservationName_ = "";
+
   /**
    *
    *
@@ -7799,6 +8011,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -8097,6 +8310,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8467,6 +8681,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -8491,6 +8706,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8515,6 +8731,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8538,6 +8755,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8557,6 +8775,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8588,6 +8807,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -8604,6 +8824,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -8626,6 +8847,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8650,6 +8872,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8671,6 +8894,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8700,6 +8924,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8721,6 +8946,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8737,6 +8963,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8757,6 +8984,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -8790,6 +9018,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2.QueuedResource.Tpu.Builder,
             com.google.cloud.tpu.v2.QueuedResource.TpuOrBuilder>
         tpuBuilder_;
+
     /**
      *
      *
@@ -8807,6 +9036,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTpu() {
       return resourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -8834,6 +9064,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Tpu.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8858,6 +9089,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -8879,6 +9111,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -8913,6 +9146,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       resourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -8940,6 +9174,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8954,6 +9189,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2.QueuedResource.Tpu.Builder getTpuBuilder() {
       return getTpuFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8976,6 +9212,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Tpu.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9016,6 +9253,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2.QueuedResource.Spot.Builder,
             com.google.cloud.tpu.v2.QueuedResource.SpotOrBuilder>
         spotBuilder_;
+
     /**
      *
      *
@@ -9033,6 +9271,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpot() {
       return tierCase_ == 3;
     }
+
     /**
      *
      *
@@ -9060,6 +9299,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Spot.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9084,6 +9324,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       tierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9105,6 +9346,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       tierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9139,6 +9381,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       tierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9166,6 +9409,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9180,6 +9424,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2.QueuedResource.Spot.Builder getSpotBuilder() {
       return getSpotFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9202,6 +9447,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Spot.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9242,6 +9488,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2.QueuedResource.Guaranteed.Builder,
             com.google.cloud.tpu.v2.QueuedResource.GuaranteedOrBuilder>
         guaranteedBuilder_;
+
     /**
      *
      *
@@ -9259,6 +9506,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGuaranteed() {
       return tierCase_ == 4;
     }
+
     /**
      *
      *
@@ -9286,6 +9534,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Guaranteed.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9310,6 +9559,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       tierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -9332,6 +9582,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       tierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -9366,6 +9617,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       tierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -9393,6 +9645,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9407,6 +9660,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2.QueuedResource.Guaranteed.Builder getGuaranteedBuilder() {
       return getGuaranteedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9429,6 +9683,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2.QueuedResource.Guaranteed.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9470,6 +9725,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2.QueuedResource.QueueingPolicy.Builder,
             com.google.cloud.tpu.v2.QueuedResource.QueueingPolicyOrBuilder>
         queueingPolicyBuilder_;
+
     /**
      *
      *
@@ -9486,6 +9742,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueueingPolicy() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -9508,6 +9765,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return queueingPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9532,6 +9790,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9554,6 +9813,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9585,6 +9845,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9606,6 +9867,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9623,6 +9885,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQueueingPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9644,6 +9907,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             : queueingPolicy_;
       }
     }
+
     /**
      *
      *
@@ -9678,6 +9942,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2.QueuedResourceState.Builder,
             com.google.cloud.tpu.v2.QueuedResourceStateOrBuilder>
         stateBuilder_;
+
     /**
      *
      *
@@ -9694,6 +9959,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasState() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -9716,6 +9982,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return stateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9740,6 +10007,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9761,6 +10029,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9790,6 +10059,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9811,6 +10081,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9827,6 +10098,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9847,6 +10119,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             : state_;
       }
     }
+
     /**
      *
      *
@@ -9876,6 +10149,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object reservationName_ = "";
+
     /**
      *
      *
@@ -9900,6 +10174,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9924,6 +10199,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9947,6 +10223,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9966,6 +10243,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

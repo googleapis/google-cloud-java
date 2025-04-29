@@ -433,6 +433,19 @@ public final class TagKeysGrpc {
     return TagKeysStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TagKeysBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TagKeysBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TagKeysBlockingV2Stub>() {
+          @java.lang.Override
+          public TagKeysBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TagKeysBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TagKeysBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -815,6 +828,160 @@ public final class TagKeysGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TagKeys.
+   *
+   * <pre>
+   * Allow users to create and manage tag keys.
+   * </pre>
+   */
+  public static final class TagKeysBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TagKeysBlockingV2Stub> {
+    private TagKeysBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TagKeysBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TagKeysBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all TagKeys for a parent resource.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.ListTagKeysResponse listTagKeys(
+        com.google.cloud.resourcemanager.v3.ListTagKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTagKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a TagKey. This method will return `PERMISSION_DENIED` if the
+     * key does not exist or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.TagKey getTagKey(
+        com.google.cloud.resourcemanager.v3.GetTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTagKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a TagKey by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the key does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.TagKey getNamespacedTagKey(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNamespacedTagKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TagKey. If another request with the same parameters is
+     * sent while the original request is in process, the second request
+     * will receive an error. A maximum of 1000 TagKeys can exist under a parent
+     * at any given time.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTagKey(
+        com.google.cloud.resourcemanager.v3.CreateTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the attributes of the TagKey resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTagKey(
+        com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TagKey. The TagKey cannot be deleted if it has any child
+     * TagValues.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTagKey(
+        com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a TagKey. The returned policy may be
+     * empty if no such policy or resource exists. The `resource` field should
+     * be the TagKey's resource name. For example, "tagKeys/1234".
+     * The caller must have
+     * `cloudresourcemanager.googleapis.com/tagKeys.getIamPolicy` permission on
+     * the specified TagKey.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a TagKey, replacing any existing
+     * policy. The `resource` field should be the TagKey's resource name.
+     * For example, "tagKeys/1234".
+     * The caller must have `resourcemanager.tagKeys.setIamPolicy` permission
+     * on the identified tagValue.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified TagKey.
+     * The `resource` field should be the TagKey's resource name.
+     * For example, "tagKeys/1234".
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TagKeys.
    *
    * <pre>
    * Allow users to create and manage tag keys.

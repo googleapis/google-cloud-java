@@ -34,6 +34,7 @@ public interface MessageBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MessageDeletedEventData messages = 1;</code>
    */
   java.util.List<com.google.chat.v1.MessageDeletedEventData> getMessagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface MessageBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MessageDeletedEventData messages = 1;</code>
    */
   com.google.chat.v1.MessageDeletedEventData getMessages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface MessageBatchDeletedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MessageDeletedEventData messages = 1;</code>
    */
   int getMessagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface MessageBatchDeletedEventDataOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.MessageDeletedEventDataOrBuilder>
       getMessagesOrBuilderList();
+
   /**
    *
    *

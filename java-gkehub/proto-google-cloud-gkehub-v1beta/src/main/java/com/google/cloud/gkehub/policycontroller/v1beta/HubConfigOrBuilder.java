@@ -41,6 +41,7 @@ public interface HubConfigOrBuilder
    * @return The enum numeric value on the wire for installSpec.
    */
   int getInstallSpecValue();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface HubConfigOrBuilder
    * @return Whether the auditIntervalSeconds field is set.
    */
   boolean hasAuditIntervalSeconds();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface HubConfigOrBuilder
    * @return A list containing the exemptableNamespaces.
    */
   java.util.List<java.lang.String> getExemptableNamespacesList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface HubConfigOrBuilder
    * @return The count of exemptableNamespaces.
    */
   int getExemptableNamespacesCount();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface HubConfigOrBuilder
    * @return The exemptableNamespaces at the given index.
    */
   java.lang.String getExemptableNamespaces(int index);
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public interface HubConfigOrBuilder
    * @return Whether the monitoring field is set.
    */
   boolean hasMonitoring();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface HubConfigOrBuilder
    * @return The monitoring.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.MonitoringConfig getMonitoring();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface HubConfigOrBuilder
    * @return Whether the policyContent field is set.
    */
   boolean hasPolicyContent();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface HubConfigOrBuilder
    * @return The policyContent.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentSpec getPolicyContent();
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public interface HubConfigOrBuilder
    * @return Whether the constraintViolationLimit field is set.
    */
   boolean hasConstraintViolationLimit();
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public interface HubConfigOrBuilder
    * </code>
    */
   int getDeploymentConfigsCount();
+
   /**
    *
    *
@@ -315,12 +326,14 @@ public interface HubConfigOrBuilder
    * </code>
    */
   boolean containsDeploymentConfigs(java.lang.String key);
+
   /** Use {@link #getDeploymentConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig>
       getDeploymentConfigs();
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public interface HubConfigOrBuilder
           java.lang.String,
           com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig>
       getDeploymentConfigsMap();
+
   /**
    *
    *
@@ -356,6 +370,7 @@ public interface HubConfigOrBuilder
           /* nullable */
           com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig
               defaultValue);
+
   /**
    *
    *

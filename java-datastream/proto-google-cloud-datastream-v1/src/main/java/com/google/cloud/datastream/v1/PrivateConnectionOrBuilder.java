@@ -38,6 +38,7 @@ public interface PrivateConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PrivateConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PrivateConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PrivateConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface PrivateConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface PrivateConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface PrivateConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface PrivateConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface PrivateConnectionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface PrivateConnectionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface PrivateConnectionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public interface PrivateConnectionOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -269,6 +282,7 @@ public interface PrivateConnectionOrBuilder
    * @return The error.
    */
   com.google.cloud.datastream.v1.Error getError();
+
   /**
    *
    *
@@ -286,6 +300,58 @@ public interface PrivateConnectionOrBuilder
    *
    *
    * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
    * VPC Peering Config.
    * </pre>
    *
@@ -294,6 +360,7 @@ public interface PrivateConnectionOrBuilder
    * @return Whether the vpcPeeringConfig field is set.
    */
   boolean hasVpcPeeringConfig();
+
   /**
    *
    *
@@ -306,6 +373,7 @@ public interface PrivateConnectionOrBuilder
    * @return The vpcPeeringConfig.
    */
   com.google.cloud.datastream.v1.VpcPeeringConfig getVpcPeeringConfig();
+
   /**
    *
    *

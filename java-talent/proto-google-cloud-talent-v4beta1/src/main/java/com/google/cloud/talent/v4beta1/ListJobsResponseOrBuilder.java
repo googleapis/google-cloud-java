@@ -37,6 +37,7 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
   com.google.cloud.talent.v4beta1.Job getJobs(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
   int getJobsCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface ListJobsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder> getJobsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface ListJobsResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ListJobsResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
+
   /**
    *
    *

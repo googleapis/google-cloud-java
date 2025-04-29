@@ -40,6 +40,7 @@ public interface ListDataSchemasRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface ListDataSchemasRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

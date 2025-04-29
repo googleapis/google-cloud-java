@@ -30,12 +30,14 @@ public interface InterconnectsGetDiagnosticsResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code>
    *
    * @return The result.
    */
   com.google.cloud.compute.v1.InterconnectDiagnostics getResult();
+
   /** <code>optional .google.cloud.compute.v1.InterconnectDiagnostics result = 139315229;</code> */
   com.google.cloud.compute.v1.InterconnectDiagnosticsOrBuilder getResultOrBuilder();
 }

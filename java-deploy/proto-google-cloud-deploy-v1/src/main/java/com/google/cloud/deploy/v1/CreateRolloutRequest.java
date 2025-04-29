@@ -33,6 +33,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CreateRolloutRequest)
     CreateRolloutRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateRolloutRequest.newBuilder() to construct.
   private CreateRolloutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutId_ = "";
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ROLLOUT_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.Rollout rollout_;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   public boolean hasRollout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.deploy.v1.Rollout getRollout() {
     return rollout_ == null ? com.google.cloud.deploy.v1.Rollout.getDefaultInstance() : rollout_;
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -343,6 +355,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
     return overrideDeployPolicy_;
   }
+
   /**
    *
    *
@@ -360,6 +373,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   public int getOverrideDeployPolicyCount() {
     return overrideDeployPolicy_.size();
   }
+
   /**
    *
    *
@@ -378,6 +392,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getOverrideDeployPolicy(int index) {
     return overrideDeployPolicy_.get(index);
   }
+
   /**
    *
    *
@@ -401,6 +416,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startingPhaseId_ = "";
+
   /**
    *
    *
@@ -425,6 +441,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -676,6 +693,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -969,6 +987,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -995,6 +1014,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1041,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1067,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1089,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1118,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object rolloutId_ = "";
+
     /**
      *
      *
@@ -1117,6 +1141,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1164,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1186,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1204,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1234,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.deploy.v1.Rollout.Builder,
             com.google.cloud.deploy.v1.RolloutOrBuilder>
         rolloutBuilder_;
+
     /**
      *
      *
@@ -1221,6 +1250,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     public boolean hasRollout() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1242,6 +1272,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return rolloutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1265,6 +1296,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1317,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1346,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1367,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1383,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRolloutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1367,6 +1403,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
             : rollout_;
       }
     }
+
     /**
      *
      *
@@ -1395,6 +1432,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1429,6 +1467,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1502,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1536,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1525,6 +1566,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1561,6 +1603,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1577,6 +1620,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1597,6 +1641,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1670,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1643,6 +1689,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       overrideDeployPolicy_.makeImmutable();
       return overrideDeployPolicy_;
     }
+
     /**
      *
      *
@@ -1660,6 +1707,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     public int getOverrideDeployPolicyCount() {
       return overrideDeployPolicy_.size();
     }
+
     /**
      *
      *
@@ -1678,6 +1726,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getOverrideDeployPolicy(int index) {
       return overrideDeployPolicy_.get(index);
     }
+
     /**
      *
      *
@@ -1696,6 +1745,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
       return overrideDeployPolicy_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1722,6 +1772,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1798,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1769,6 +1821,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1843,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1872,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object startingPhaseId_ = "";
+
     /**
      *
      *
@@ -1841,6 +1896,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1864,6 +1920,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1886,6 +1943,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1904,6 +1962,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface AddressOrBuilder
    * @return Whether the address field is set.
    */
   boolean hasAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AddressOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface AddressOrBuilder
    * @return Whether the addressType field is set.
    */
   boolean hasAddressType();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface AddressOrBuilder
    * @return The addressType.
    */
   java.lang.String getAddressType();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface AddressOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface AddressOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface AddressOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface AddressOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface AddressOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public interface AddressOrBuilder
    * @return Whether the ipVersion field is set.
    */
   boolean hasIpVersion();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface AddressOrBuilder
    * @return The ipVersion.
    */
   java.lang.String getIpVersion();
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public interface AddressOrBuilder
    * @return Whether the ipv6EndpointType field is set.
    */
   boolean hasIpv6EndpointType();
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public interface AddressOrBuilder
    * @return The ipv6EndpointType.
    */
   java.lang.String getIpv6EndpointType();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface AddressOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface AddressOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -329,6 +344,7 @@ public interface AddressOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -341,6 +357,7 @@ public interface AddressOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -364,6 +381,7 @@ public interface AddressOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -374,9 +392,11 @@ public interface AddressOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -387,6 +407,7 @@ public interface AddressOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -401,6 +422,7 @@ public interface AddressOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -424,6 +446,7 @@ public interface AddressOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -436,6 +459,7 @@ public interface AddressOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -461,6 +485,7 @@ public interface AddressOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -473,6 +498,7 @@ public interface AddressOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -499,6 +525,7 @@ public interface AddressOrBuilder
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
+
   /**
    *
    *
@@ -512,6 +539,7 @@ public interface AddressOrBuilder
    * @return The networkTier.
    */
   java.lang.String getNetworkTier();
+
   /**
    *
    *
@@ -538,6 +566,7 @@ public interface AddressOrBuilder
    * @return Whether the prefixLength field is set.
    */
   boolean hasPrefixLength();
+
   /**
    *
    *
@@ -564,6 +593,7 @@ public interface AddressOrBuilder
    * @return Whether the purpose field is set.
    */
   boolean hasPurpose();
+
   /**
    *
    *
@@ -577,6 +607,7 @@ public interface AddressOrBuilder
    * @return The purpose.
    */
   java.lang.String getPurpose();
+
   /**
    *
    *
@@ -603,6 +634,7 @@ public interface AddressOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -615,6 +647,7 @@ public interface AddressOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -640,6 +673,7 @@ public interface AddressOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -652,6 +686,7 @@ public interface AddressOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -678,6 +713,7 @@ public interface AddressOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -691,6 +727,7 @@ public interface AddressOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -717,6 +754,7 @@ public interface AddressOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -729,6 +767,7 @@ public interface AddressOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -754,6 +793,7 @@ public interface AddressOrBuilder
    * @return A list containing the users.
    */
   java.util.List<java.lang.String> getUsersList();
+
   /**
    *
    *
@@ -766,6 +806,7 @@ public interface AddressOrBuilder
    * @return The count of users.
    */
   int getUsersCount();
+
   /**
    *
    *
@@ -779,6 +820,7 @@ public interface AddressOrBuilder
    * @return The users at the given index.
    */
   java.lang.String getUsers(int index);
+
   /**
    *
    *

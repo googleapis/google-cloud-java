@@ -40,6 +40,7 @@ public interface SearchBlueprintRevisionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SearchBlueprintRevisionsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public interface SearchBlueprintRevisionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

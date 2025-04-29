@@ -34,6 +34,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.FetchInventoryResponse)
     FetchInventoryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchInventoryResponse.newBuilder() to construct.
   private FetchInventoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     private SourceVmsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int VMWARE_VMS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
   public boolean hasVmwareVms() {
     return sourceVmsCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.vmmigration.v1.VmwareVmsDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int AWS_VMS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
   public boolean hasAwsVms() {
     return sourceVmsCase_ == 3;
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -470,6 +481,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -735,6 +747,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.vmmigration.v1.VmwareVmsDetails.Builder,
             com.google.cloud.vmmigration.v1.VmwareVmsDetailsOrBuilder>
         vmwareVmsBuilder_;
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public boolean hasVmwareVms() {
       return sourceVmsCase_ == 1;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.vmmigration.v1.VmwareVmsDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       sourceVmsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       sourceVmsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +867,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       sourceVmsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.vmmigration.v1.VmwareVmsDetails.Builder getVmwareVmsBuilder() {
       return getVmwareVmsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.vmmigration.v1.VmwareVmsDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -945,6 +966,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder,
             com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder>
         awsVmsBuilder_;
+
     /**
      *
      *
@@ -960,6 +982,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public boolean hasAwsVms() {
       return sourceVmsCase_ == 3;
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1031,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       sourceVmsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       sourceVmsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       sourceVmsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1111,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1124,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder getAwsVmsBuilder() {
       return getAwsVmsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
         return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1185,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1172,6 +1203,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1253,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1276,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1307,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1330,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1348,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1332,6 +1370,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             : updateTime_;
       }
     }
+
     /**
      *
      *

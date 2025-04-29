@@ -33,6 +33,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SubmitBuildResponse)
     SubmitBuildResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubmitBuildResponse.newBuilder() to construct.
   private SubmitBuildResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int BUILD_OPERATION_FIELD_NUMBER = 1;
   private com.google.longrunning.Operation buildOperation_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
   public boolean hasBuildOperation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
         ? com.google.longrunning.Operation.getDefaultInstance()
         : buildOperation_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseImageUri_ = "";
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseImageWarning_ = "";
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
             com.google.longrunning.Operation.Builder,
             com.google.longrunning.OperationOrBuilder>
         buildOperationBuilder_;
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
     public boolean hasBuildOperation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
         return buildOperationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBuildOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
             : buildOperation_;
       }
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object baseImageUri_ = "";
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object baseImageWarning_ = "";
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -969,6 +994,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1016,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1034,7 @@ public final class SubmitBuildResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

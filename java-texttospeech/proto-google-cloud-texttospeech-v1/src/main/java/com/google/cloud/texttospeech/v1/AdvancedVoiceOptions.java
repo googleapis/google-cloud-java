@@ -33,6 +33,7 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.AdvancedVoiceOptions)
     AdvancedVoiceOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvancedVoiceOptions.newBuilder() to construct.
   private AdvancedVoiceOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,12 +65,13 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int LOW_LATENCY_JOURNEY_SYNTHESIS_FIELD_NUMBER = 1;
   private boolean lowLatencyJourneySynthesis_ = false;
+
   /**
    *
    *
    * <pre>
-   * Only for Journey voices. If false, the synthesis will be context aware
-   * and have higher latency.
+   * Only for Journey voices. If false, the synthesis is context aware
+   * and has a higher latency.
    * </pre>
    *
    * <code>optional bool low_latency_journey_synthesis = 1;</code>
@@ -80,12 +82,13 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
   public boolean hasLowLatencyJourneySynthesis() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Only for Journey voices. If false, the synthesis will be context aware
-   * and have higher latency.
+   * Only for Journey voices. If false, the synthesis is context aware
+   * and has a higher latency.
    * </pre>
    *
    * <code>optional bool low_latency_journey_synthesis = 1;</code>
@@ -263,6 +266,7 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -448,12 +452,13 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean lowLatencyJourneySynthesis_;
+
     /**
      *
      *
      * <pre>
-     * Only for Journey voices. If false, the synthesis will be context aware
-     * and have higher latency.
+     * Only for Journey voices. If false, the synthesis is context aware
+     * and has a higher latency.
      * </pre>
      *
      * <code>optional bool low_latency_journey_synthesis = 1;</code>
@@ -464,12 +469,13 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     public boolean hasLowLatencyJourneySynthesis() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Only for Journey voices. If false, the synthesis will be context aware
-     * and have higher latency.
+     * Only for Journey voices. If false, the synthesis is context aware
+     * and has a higher latency.
      * </pre>
      *
      * <code>optional bool low_latency_journey_synthesis = 1;</code>
@@ -480,12 +486,13 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     public boolean getLowLatencyJourneySynthesis() {
       return lowLatencyJourneySynthesis_;
     }
+
     /**
      *
      *
      * <pre>
-     * Only for Journey voices. If false, the synthesis will be context aware
-     * and have higher latency.
+     * Only for Journey voices. If false, the synthesis is context aware
+     * and has a higher latency.
      * </pre>
      *
      * <code>optional bool low_latency_journey_synthesis = 1;</code>
@@ -500,12 +507,13 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Only for Journey voices. If false, the synthesis will be context aware
-     * and have higher latency.
+     * Only for Journey voices. If false, the synthesis is context aware
+     * and has a higher latency.
      * </pre>
      *
      * <code>optional bool low_latency_journey_synthesis = 1;</code>

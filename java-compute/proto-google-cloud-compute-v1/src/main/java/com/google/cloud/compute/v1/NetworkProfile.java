@@ -33,6 +33,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkProfile)
     NetworkProfileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkProfile.newBuilder() to construct.
   private NetworkProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FEATURES_FIELD_NUMBER = 246211645;
   private com.google.cloud.compute.v1.NetworkProfileNetworkFeatures features_;
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFeatures() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDefaultInstance()
         : features_;
   }
+
   /**
    *
    *
@@ -257,6 +267,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -330,6 +344,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +371,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_FIELD_NUMBER = 290430901;
   private com.google.cloud.compute.v1.NetworkProfileLocation location_;
+
   /**
    *
    *
@@ -371,6 +387,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -388,6 +405,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.NetworkProfileLocation.getDefaultInstance()
         : location_;
   }
+
   /**
    *
    *
@@ -408,6 +426,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -423,6 +442,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -446,6 +466,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -474,6 +495,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -489,6 +511,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -512,6 +535,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -540,6 +564,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
+
   /**
    *
    *
@@ -555,6 +580,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -578,6 +604,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -606,6 +633,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    * <code>optional string zone = 3744684;</code>
    *
@@ -615,6 +643,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasZone() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    * <code>optional string zone = 3744684;</code>
    *
@@ -632,6 +661,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    * <code>optional string zone = 3744684;</code>
    *
@@ -941,6 +971,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1283,6 +1314,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1297,6 +1329,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1319,6 +1352,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1375,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1362,6 +1397,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1415,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1440,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1417,6 +1455,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1439,6 +1478,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1461,6 +1501,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1523,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1541,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1571,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.Builder,
             com.google.cloud.compute.v1.NetworkProfileNetworkFeaturesOrBuilder>
         featuresBuilder_;
+
     /**
      *
      *
@@ -1543,6 +1587,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFeatures() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1564,6 +1609,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return featuresBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1587,6 +1633,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1608,6 +1655,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1685,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1657,6 +1706,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1722,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1692,6 +1743,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             : features_;
       }
     }
+
     /**
      *
      *
@@ -1720,6 +1772,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1735,6 +1788,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1750,6 +1804,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -1769,6 +1824,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1788,6 +1844,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1802,6 +1859,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1824,6 +1882,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1846,6 +1905,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1867,6 +1927,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1945,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1913,6 +1975,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.NetworkProfileLocation.Builder,
             com.google.cloud.compute.v1.NetworkProfileLocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -1927,6 +1990,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1947,6 +2011,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1969,6 +2034,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1989,6 +2055,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2017,6 +2084,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2036,6 +2104,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2119,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2068,6 +2138,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             : location_;
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2166,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2109,6 +2181,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2131,6 +2204,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2153,6 +2227,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2174,6 +2249,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2191,6 +2267,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2215,6 +2292,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2229,6 +2307,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2251,6 +2330,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2273,6 +2353,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2294,6 +2375,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2311,6 +2393,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2418,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLinkWithId_ = "";
+
     /**
      *
      *
@@ -2349,6 +2433,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2371,6 +2456,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2393,6 +2479,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2414,6 +2501,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2519,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2455,6 +2544,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      * <code>optional string zone = 3744684;</code>
      *
@@ -2463,6 +2553,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasZone() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      * <code>optional string zone = 3744684;</code>
      *
@@ -2479,6 +2570,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string zone = 3744684;</code>
      *
@@ -2495,6 +2587,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string zone = 3744684;</code>
      *
@@ -2510,6 +2603,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string zone = 3744684;</code>
      *
@@ -2521,6 +2615,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string zone = 3744684;</code>
      *

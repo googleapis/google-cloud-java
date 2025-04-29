@@ -36,6 +36,7 @@ public interface EkmMetadataOrBuilder
    * @return The enum numeric value on the wire for ekmSolution.
    */
   int getEkmSolutionValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface EkmMetadataOrBuilder
    * @return The ekmEndpointUri.
    */
   java.lang.String getEkmEndpointUri();
+
   /**
    *
    *

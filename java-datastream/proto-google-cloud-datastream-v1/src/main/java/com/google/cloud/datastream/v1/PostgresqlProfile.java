@@ -33,6 +33,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlProfile)
     PostgresqlProfileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PostgresqlProfile.newBuilder() to construct.
   private PostgresqlProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -43,6 +44,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     username_ = "";
     password_ = "";
     database_ = "";
+    secretManagerStoredPassword_ = "";
   }
 
   @java.lang.Override
@@ -71,6 +73,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -291,8 +302,68 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretManagerStoredPassword_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * PostgreSQL connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  @java.lang.Override
+  public java.lang.String getSecretManagerStoredPassword() {
+    java.lang.Object ref = secretManagerStoredPassword_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secretManagerStoredPassword_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * PostgreSQL connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes() {
+    java.lang.Object ref = secretManagerStoredPassword_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secretManagerStoredPassword_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SSL_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.datastream.v1.PostgresqlSslConfig sslConfig_;
+
   /**
    *
    *
@@ -313,6 +384,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasSslConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -335,6 +407,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datastream.v1.PostgresqlSslConfig.getDefaultInstance()
         : sslConfig_;
   }
+
   /**
    *
    *
@@ -385,6 +458,9 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, database_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretManagerStoredPassword_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, secretManagerStoredPassword_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getSslConfig());
     }
@@ -412,6 +488,10 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, database_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretManagerStoredPassword_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(6, secretManagerStoredPassword_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSslConfig());
     }
@@ -436,6 +516,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     if (!getUsername().equals(other.getUsername())) return false;
     if (!getPassword().equals(other.getPassword())) return false;
     if (!getDatabase().equals(other.getDatabase())) return false;
+    if (!getSecretManagerStoredPassword().equals(other.getSecretManagerStoredPassword()))
+      return false;
     if (hasSslConfig() != other.hasSslConfig()) return false;
     if (hasSslConfig()) {
       if (!getSslConfig().equals(other.getSslConfig())) return false;
@@ -461,6 +543,8 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getPassword().hashCode();
     hash = (37 * hash) + DATABASE_FIELD_NUMBER;
     hash = (53 * hash) + getDatabase().hashCode();
+    hash = (37 * hash) + SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getSecretManagerStoredPassword().hashCode();
     if (hasSslConfig()) {
       hash = (37 * hash) + SSL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSslConfig().hashCode();
@@ -565,6 +649,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -618,6 +703,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       username_ = "";
       password_ = "";
       database_ = "";
+      secretManagerStoredPassword_ = "";
       sslConfig_ = null;
       if (sslConfigBuilder_ != null) {
         sslConfigBuilder_.dispose();
@@ -674,8 +760,11 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.database_ = database_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.secretManagerStoredPassword_ = secretManagerStoredPassword_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -751,6 +840,11 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getSecretManagerStoredPassword().isEmpty()) {
+        secretManagerStoredPassword_ = other.secretManagerStoredPassword_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (other.hasSslConfig()) {
         mergeSslConfig(other.getSslConfig());
       }
@@ -810,10 +904,16 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                secretManagerStoredPassword_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             case 58:
               {
                 input.readMessage(getSslConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -836,6 +936,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -858,6 +959,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +982,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +1004,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +1022,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +1047,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private int port_;
+
     /**
      *
      *
@@ -957,6 +1063,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -976,6 +1083,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1103,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object username_ = "";
+
     /**
      *
      *
@@ -1017,6 +1126,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1149,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1171,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1189,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1214,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object password_ = "";
+
     /**
      *
      *
@@ -1124,6 +1238,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1262,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1169,6 +1285,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1304,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1330,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -1234,6 +1353,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1376,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1277,6 +1398,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1416,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,12 +1440,139 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private java.lang.Object secretManagerStoredPassword_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the
+     * PostgreSQL connection password. Mutually exclusive with the `password`
+     * field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secretManagerStoredPassword.
+     */
+    public java.lang.String getSecretManagerStoredPassword() {
+      java.lang.Object ref = secretManagerStoredPassword_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretManagerStoredPassword_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the
+     * PostgreSQL connection password. Mutually exclusive with the `password`
+     * field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for secretManagerStoredPassword.
+     */
+    public com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes() {
+      java.lang.Object ref = secretManagerStoredPassword_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secretManagerStoredPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the
+     * PostgreSQL connection password. Mutually exclusive with the `password`
+     * field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The secretManagerStoredPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretManagerStoredPassword(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      secretManagerStoredPassword_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the
+     * PostgreSQL connection password. Mutually exclusive with the `password`
+     * field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecretManagerStoredPassword() {
+      secretManagerStoredPassword_ = getDefaultInstance().getSecretManagerStoredPassword();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the
+     * PostgreSQL connection password. Mutually exclusive with the `password`
+     * field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for secretManagerStoredPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretManagerStoredPasswordBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      secretManagerStoredPassword_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.datastream.v1.PostgresqlSslConfig sslConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.PostgresqlSslConfig,
             com.google.cloud.datastream.v1.PostgresqlSslConfig.Builder,
             com.google.cloud.datastream.v1.PostgresqlSslConfigOrBuilder>
         sslConfigBuilder_;
+
     /**
      *
      *
@@ -1340,8 +1590,9 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * @return Whether the sslConfig field is set.
      */
     public boolean hasSslConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1367,6 +1618,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         return sslConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1390,10 +1642,11 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       } else {
         sslConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1415,10 +1668,11 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       } else {
         sslConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1435,7 +1689,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeSslConfig(com.google.cloud.datastream.v1.PostgresqlSslConfig value) {
       if (sslConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && sslConfig_ != null
             && sslConfig_
                 != com.google.cloud.datastream.v1.PostgresqlSslConfig.getDefaultInstance()) {
@@ -1447,11 +1701,12 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
         sslConfigBuilder_.mergeFrom(value);
       }
       if (sslConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -1467,7 +1722,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearSslConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       sslConfig_ = null;
       if (sslConfigBuilder_ != null) {
         sslConfigBuilder_.dispose();
@@ -1476,6 +1731,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,10 +1747,11 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.datastream.v1.PostgresqlSslConfig.Builder getSslConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSslConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1518,6 +1775,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
             : sslConfig_;
       }
     }
+
     /**
      *
      *

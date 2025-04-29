@@ -34,6 +34,7 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Repository repositories = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.Repository> getRepositoriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Repository repositories = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.Repository getRepositories(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Repository repositories = 1;</code>
    */
   int getRepositoriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRepositoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.RepositoryOrBuilder>
       getRepositoriesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListRepositoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

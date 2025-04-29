@@ -37,6 +37,7 @@ public interface GetInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachment.
    */
   java.lang.String getInterconnectAttachment();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GetInterconnectAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GetInterconnectAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

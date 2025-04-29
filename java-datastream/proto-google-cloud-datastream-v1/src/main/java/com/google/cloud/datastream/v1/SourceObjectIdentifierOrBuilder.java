@@ -38,6 +38,7 @@ public interface SourceObjectIdentifierOrBuilder
    * @return Whether the oracleIdentifier field is set.
    */
   boolean hasOracleIdentifier();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SourceObjectIdentifierOrBuilder
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier
       getOracleIdentifier();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SourceObjectIdentifierOrBuilder
    * @return Whether the mysqlIdentifier field is set.
    */
   boolean hasMysqlIdentifier();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface SourceObjectIdentifierOrBuilder
    * @return The mysqlIdentifier.
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier getMysqlIdentifier();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface SourceObjectIdentifierOrBuilder
    * @return Whether the postgresqlIdentifier field is set.
    */
   boolean hasPostgresqlIdentifier();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface SourceObjectIdentifierOrBuilder
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
       getPostgresqlIdentifier();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface SourceObjectIdentifierOrBuilder
    * @return Whether the sqlServerIdentifier field is set.
    */
   boolean hasSqlServerIdentifier();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface SourceObjectIdentifierOrBuilder
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
       getSqlServerIdentifier();
+
   /**
    *
    *
@@ -194,6 +202,51 @@ public interface SourceObjectIdentifierOrBuilder
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifierOrBuilder
       getSqlServerIdentifierOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+   * </code>
+   *
+   * @return Whether the salesforceIdentifier field is set.
+   */
+  boolean hasSalesforceIdentifier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+   * </code>
+   *
+   * @return The salesforceIdentifier.
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+      getSalesforceIdentifier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifierOrBuilder
+      getSalesforceIdentifierOrBuilder();
 
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
       getSourceIdentifierCase();

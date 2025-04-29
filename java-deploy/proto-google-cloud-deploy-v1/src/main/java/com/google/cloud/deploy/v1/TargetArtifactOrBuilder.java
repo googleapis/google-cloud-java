@@ -38,6 +38,7 @@ public interface TargetArtifactOrBuilder
    * @return Whether the artifactUri field is set.
    */
   boolean hasArtifactUri();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TargetArtifactOrBuilder
    * @return The artifactUri.
    */
   java.lang.String getArtifactUri();
+
   /**
    *
    *
@@ -71,8 +73,8 @@ public interface TargetArtifactOrBuilder
    *
    *
    * <pre>
-   * Output only. File path of the resolved Skaffold configuration relative to
-   * the URI.
+   * Output only. File path of the resolved Skaffold configuration for the
+   * stable phase, relative to the URI.
    * </pre>
    *
    * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -80,12 +82,13 @@ public interface TargetArtifactOrBuilder
    * @return The skaffoldConfigPath.
    */
   java.lang.String getSkaffoldConfigPath();
+
   /**
    *
    *
    * <pre>
-   * Output only. File path of the resolved Skaffold configuration relative to
-   * the URI.
+   * Output only. File path of the resolved Skaffold configuration for the
+   * stable phase, relative to the URI.
    * </pre>
    *
    * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -98,7 +101,8 @@ public interface TargetArtifactOrBuilder
    *
    *
    * <pre>
-   * Output only. File path of the rendered manifest relative to the URI.
+   * Output only. File path of the rendered manifest relative to the URI for the
+   * stable phase.
    * </pre>
    *
    * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -106,11 +110,13 @@ public interface TargetArtifactOrBuilder
    * @return The manifestPath.
    */
   java.lang.String getManifestPath();
+
   /**
    *
    *
    * <pre>
-   * Output only. File path of the rendered manifest relative to the URI.
+   * Output only. File path of the rendered manifest relative to the URI for the
+   * stable phase.
    * </pre>
    *
    * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -131,6 +137,7 @@ public interface TargetArtifactOrBuilder
    * </code>
    */
   int getPhaseArtifactsCount();
+
   /**
    *
    *
@@ -143,10 +150,12 @@ public interface TargetArtifactOrBuilder
    * </code>
    */
   boolean containsPhaseArtifacts(java.lang.String key);
+
   /** Use {@link #getPhaseArtifactsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
       getPhaseArtifacts();
+
   /**
    *
    *
@@ -160,6 +169,7 @@ public interface TargetArtifactOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
       getPhaseArtifactsMap();
+
   /**
    *
    *
@@ -176,6 +186,7 @@ public interface TargetArtifactOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact defaultValue);
+
   /**
    *
    *

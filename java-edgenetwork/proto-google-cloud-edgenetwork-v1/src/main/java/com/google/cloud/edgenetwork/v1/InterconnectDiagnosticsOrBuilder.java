@@ -36,6 +36,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return The macAddress.
    */
   java.lang.String getMacAddress();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.LinkLayerAddress link_layer_addresses = 2;</code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.LinkLayerAddress> getLinkLayerAddressesList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.LinkLayerAddress link_layer_addresses = 2;</code>
    */
   com.google.cloud.edgenetwork.v1.LinkLayerAddress getLinkLayerAddresses(int index);
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * <code>repeated .google.cloud.edgenetwork.v1.LinkLayerAddress link_layer_addresses = 2;</code>
    */
   int getLinkLayerAddressesCount();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface InterconnectDiagnosticsOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.LinkLayerAddressOrBuilder>
       getLinkLayerAddressesOrBuilderList();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus> getLinksList();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatus getLinks(int index);
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   int getLinksCount();
+
   /**
    *
    *
@@ -157,6 +165,7 @@ public interface InterconnectDiagnosticsOrBuilder
   java.util.List<
           ? extends com.google.cloud.edgenetwork.v1.InterconnectDiagnostics.LinkStatusOrBuilder>
       getLinksOrBuilderList();
+
   /**
    *
    *

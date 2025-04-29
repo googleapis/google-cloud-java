@@ -33,6 +33,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest)
     TargetTcpProxiesSetProxyHeaderRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetTcpProxiesSetProxyHeaderRequest.newBuilder() to construct.
   private TargetTcpProxiesSetProxyHeaderRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -101,8 +102,10 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
      * <code>UNDEFINED_PROXY_HEADER = 0;</code>
      */
     public static final int UNDEFINED_PROXY_HEADER_VALUE = 0;
+
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
+
     /** <code>PROXY_V1 = 334352940;</code> */
     public static final int PROXY_V1_VALUE = 334352940;
 
@@ -196,6 +199,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object proxyHeader_ = "";
+
   /**
    *
    *
@@ -212,6 +216,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
   public boolean hasProxyHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -236,6 +241,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -427,6 +433,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -618,6 +625,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
     private int bitField0_;
 
     private java.lang.Object proxyHeader_ = "";
+
     /**
      *
      *
@@ -633,6 +641,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
     public boolean hasProxyHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -656,6 +665,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -679,6 +689,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

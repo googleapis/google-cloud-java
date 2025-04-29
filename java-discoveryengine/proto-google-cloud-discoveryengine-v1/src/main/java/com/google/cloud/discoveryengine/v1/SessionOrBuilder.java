@@ -37,6 +37,7 @@ public interface SessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -55,6 +56,38 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
+   * Optional. The display name of the session.
+   *
+   * This field is used to identify the session in the UI.
+   * By default, the display name is the first turn query text in the session.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the session.
+   *
+   * This field is used to identify the session in the UI.
+   * By default, the display name is the first turn query text in the session.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The state of the session.
    * </pre>
    *
@@ -63,6 +96,7 @@ public interface SessionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -88,6 +122,7 @@ public interface SessionOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
+
   /**
    *
    *
@@ -111,6 +146,7 @@ public interface SessionOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.Session.Turn turns = 4;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.Session.Turn> getTurnsList();
+
   /**
    *
    *
@@ -121,6 +157,7 @@ public interface SessionOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.Session.Turn turns = 4;</code>
    */
   com.google.cloud.discoveryengine.v1.Session.Turn getTurns(int index);
+
   /**
    *
    *
@@ -131,6 +168,7 @@ public interface SessionOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.Session.Turn turns = 4;</code>
    */
   int getTurnsCount();
+
   /**
    *
    *
@@ -142,6 +180,7 @@ public interface SessionOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.Session.TurnOrBuilder>
       getTurnsOrBuilderList();
+
   /**
    *
    *
@@ -166,6 +205,7 @@ public interface SessionOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -179,6 +219,7 @@ public interface SessionOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -204,6 +245,7 @@ public interface SessionOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -217,6 +259,7 @@ public interface SessionOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -228,4 +271,18 @@ public interface SessionOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the session is pinned, pinned session will be displayed
+   * on the top of the session list.
+   * </pre>
+   *
+   * <code>bool is_pinned = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isPinned.
+   */
+  boolean getIsPinned();
 }

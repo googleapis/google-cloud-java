@@ -1645,7 +1645,7 @@ message NetworkingConfig {
     PRIVATE_SERVICE_CONNECT = 2;
   }
 
-  // Optional. Indicates the user requested specifc connection type between
+  // Optional. Indicates the user requested specific connection type between
   // Tenant and Customer projects. You cannot set networking connection type in
   // public IP environment.
   ConnectionType connection_type = 1 [(google.api.field_behavior) = OPTIONAL];
@@ -1884,8 +1884,8 @@ message MasterAuthorizedNetworksConfig {
     string cidr_block = 2;
   }
 
-  // Whether or not master authorized networks feature is enabled.
-  bool enabled = 1;
+  // Optional. Whether or not master authorized networks feature is enabled.
+  bool enabled = 1 [(google.api.field_behavior) = OPTIONAL];
 
   // Up to 50 external networks that could access Kubernetes master through
   // HTTPS.

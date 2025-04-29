@@ -666,6 +666,19 @@ public final class OsConfigZonalServiceGrpc {
     return OsConfigZonalServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static OsConfigZonalServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<OsConfigZonalServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OsConfigZonalServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public OsConfigZonalServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OsConfigZonalServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return OsConfigZonalServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1178,6 +1191,212 @@ public final class OsConfigZonalServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service OsConfigZonalService.
+   *
+   * <pre>
+   * Zonal OS Config API
+   * The OS Config service is the server-side component that allows users to
+   * manage package installations and patch jobs for Compute Engine VM instances.
+   * </pre>
+   */
+  public static final class OsConfigZonalServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<OsConfigZonalServiceBlockingV2Stub> {
+    private OsConfigZonalServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected OsConfigZonalServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new OsConfigZonalServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an OS policy assignment.
+     * This method also creates the first revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an existing OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an existing OS policy assignment.
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.OSPolicyAssignment getOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignments under the parent resource.
+     * For each OS policy assignment, the latest revision is returned.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse listOSPolicyAssignments(
+        com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse
+        listOSPolicyAssignmentRevisions(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the OS policy assignment.
+     * This method creates a new revision of the OS policy assignment.
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOSPolicyAssignment(
+        com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOSPolicyAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.OSPolicyAssignmentReport getOSPolicyAssignmentReport(
+        com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOSPolicyAssignmentReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse
+        listOSPolicyAssignmentReports(
+            com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSPolicyAssignmentReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get inventory data for the specified VM instance. If the VM has no
+     * associated inventory, the message `NOT_FOUND` is returned.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.Inventory getInventory(
+        com.google.cloud.osconfig.v1.GetInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List inventory data for all VM instances in the specified zone.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListInventoriesResponse listInventories(
+        com.google.cloud.osconfig.v1.ListInventoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInventoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the vulnerability report for the specified VM instance. Only VMs with
+     * inventory data have vulnerability reports associated with them.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.VulnerabilityReport getVulnerabilityReport(
+        com.google.cloud.osconfig.v1.GetVulnerabilityReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVulnerabilityReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List vulnerability reports for all VM instances in the specified zone.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1.ListVulnerabilityReportsResponse listVulnerabilityReports(
+        com.google.cloud.osconfig.v1.ListVulnerabilityReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVulnerabilityReportsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service OsConfigZonalService.
    *
    * <pre>
    * Zonal OS Config API

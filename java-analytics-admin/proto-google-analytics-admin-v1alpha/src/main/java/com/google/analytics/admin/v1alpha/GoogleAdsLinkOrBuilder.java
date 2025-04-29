@@ -39,6 +39,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return The customerId.
    */
   java.lang.String getCustomerId();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return Whether the adsPersonalizationEnabled field is set.
    */
   boolean hasAdsPersonalizationEnabled();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return The adsPersonalizationEnabled.
    */
   com.google.protobuf.BoolValue getAdsPersonalizationEnabled();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface GoogleAdsLinkOrBuilder
    * @return The creatorEmailAddress.
    */
   java.lang.String getCreatorEmailAddress();
+
   /**
    *
    *

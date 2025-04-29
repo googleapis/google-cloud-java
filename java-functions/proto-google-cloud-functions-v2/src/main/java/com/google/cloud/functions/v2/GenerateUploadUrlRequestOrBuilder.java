@@ -39,6 +39,7 @@ public interface GenerateUploadUrlRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -59,7 +60,7 @@ public interface GenerateUploadUrlRequestOrBuilder
    *
    *
    * <pre>
-   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function source code objects in intermediate Cloud Storage
    * buckets. When you generate an upload url and upload your source code, it
    * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -81,11 +82,12 @@ public interface GenerateUploadUrlRequestOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
    * <pre>
-   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function source code objects in intermediate Cloud Storage
    * buckets. When you generate an upload url and upload your source code, it
    * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -123,6 +125,7 @@ public interface GenerateUploadUrlRequestOrBuilder
    * @return The enum numeric value on the wire for environment.
    */
   int getEnvironmentValue();
+
   /**
    *
    *

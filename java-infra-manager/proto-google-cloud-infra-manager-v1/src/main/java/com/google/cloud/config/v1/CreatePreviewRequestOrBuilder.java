@@ -39,6 +39,7 @@ public interface CreatePreviewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreatePreviewRequestOrBuilder
    * @return The previewId.
    */
   java.lang.String getPreviewId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreatePreviewRequestOrBuilder
    * @return Whether the preview field is set.
    */
   boolean hasPreview();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreatePreviewRequestOrBuilder
    * @return The preview.
    */
   com.google.cloud.config.v1.Preview getPreview();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface CreatePreviewRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

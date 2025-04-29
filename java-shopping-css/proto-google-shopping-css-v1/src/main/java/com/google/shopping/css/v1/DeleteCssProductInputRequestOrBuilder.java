@@ -29,7 +29,10 @@ public interface DeleteCssProductInputRequestOrBuilder
    *
    * <pre>
    * Required. The name of the CSS product input resource to delete.
-   * Format: accounts/{account}/cssProductInputs/{css_product_input}
+   * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>
@@ -39,12 +42,16 @@ public interface DeleteCssProductInputRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Required. The name of the CSS product input resource to delete.
-   * Format: accounts/{account}/cssProductInputs/{css_product_input}
+   * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>
@@ -70,6 +77,7 @@ public interface DeleteCssProductInputRequestOrBuilder
    * @return Whether the supplementalFeedId field is set.
    */
   boolean hasSupplementalFeedId();
+
   /**
    *
    *

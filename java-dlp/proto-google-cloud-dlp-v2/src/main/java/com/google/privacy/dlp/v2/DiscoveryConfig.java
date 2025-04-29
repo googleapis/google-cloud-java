@@ -39,6 +39,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryConfig)
     DiscoveryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryConfig.newBuilder() to construct.
   private DiscoveryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -139,6 +141,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
+
     /**
      *
      *
@@ -250,6 +253,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the location field is set.
      */
     boolean hasLocation();
+
     /**
      *
      *
@@ -262,6 +266,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * @return The location.
      */
     com.google.privacy.dlp.v2.DiscoveryStartingLocation getLocation();
+
     /**
      *
      *
@@ -287,6 +292,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * @return The projectId.
      */
     java.lang.String getProjectId();
+
     /**
      *
      *
@@ -302,6 +308,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getProjectIdBytes();
   }
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryConfig.OrgConfig)
       OrgConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OrgConfig.newBuilder() to construct.
     private OrgConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -349,6 +357,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int LOCATION_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.DiscoveryStartingLocation location_;
+
     /**
      *
      *
@@ -364,6 +373,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -381,6 +391,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.privacy.dlp.v2.DiscoveryStartingLocation.getDefaultInstance()
           : location_;
     }
+
     /**
      *
      *
@@ -401,6 +412,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -426,6 +438,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -627,6 +640,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -848,6 +862,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
               com.google.privacy.dlp.v2.DiscoveryStartingLocation.Builder,
               com.google.privacy.dlp.v2.DiscoveryStartingLocationOrBuilder>
           locationBuilder_;
+
       /**
        *
        *
@@ -862,6 +877,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       public boolean hasLocation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -882,6 +898,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
           return locationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -904,6 +921,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -924,6 +942,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -952,6 +971,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -971,6 +991,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -985,6 +1006,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getLocationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1003,6 +1025,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
               : location_;
         }
       }
+
       /**
        *
        *
@@ -1030,6 +1053,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object projectId_ = "";
+
       /**
        *
        *
@@ -1054,6 +1078,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1078,6 +1103,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1101,6 +1127,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1120,6 +1147,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1214,6 +1242,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1239,6 +1268,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1269,6 +1299,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1292,6 +1323,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1318,6 +1350,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int ORG_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryConfig.OrgConfig orgConfig_;
+
   /**
    *
    *
@@ -1333,6 +1366,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasOrgConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1350,6 +1384,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.privacy.dlp.v2.DiscoveryConfig.OrgConfig.getDefaultInstance()
         : orgConfig_;
   }
+
   /**
    *
    *
@@ -1368,6 +1403,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int OTHER_CLOUD_STARTING_LOCATION_FIELD_NUMBER = 12;
   private com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation otherCloudStartingLocation_;
+
   /**
    *
    *
@@ -1385,6 +1421,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasOtherCloudStartingLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1405,6 +1442,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.getDefaultInstance()
         : otherCloudStartingLocation_;
   }
+
   /**
    *
    *
@@ -1429,6 +1467,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList inspectTemplates_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1458,6 +1497,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getInspectTemplatesList() {
     return inspectTemplates_;
   }
+
   /**
    *
    *
@@ -1487,6 +1527,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public int getInspectTemplatesCount() {
     return inspectTemplates_.size();
   }
+
   /**
    *
    *
@@ -1517,6 +1558,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getInspectTemplates(int index) {
     return inspectTemplates_.get(index);
   }
+
   /**
    *
    *
@@ -1552,6 +1594,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DataProfileAction> actions_;
+
   /**
    *
    *
@@ -1565,6 +1608,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.DataProfileAction> getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -1579,6 +1623,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       getActionsOrBuilderList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -1592,6 +1637,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -1605,6 +1651,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.DataProfileAction getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -1623,6 +1670,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DiscoveryTarget> targets_;
+
   /**
    *
    *
@@ -1636,6 +1684,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.DiscoveryTarget> getTargetsList() {
     return targets_;
   }
+
   /**
    *
    *
@@ -1650,6 +1699,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       getTargetsOrBuilderList() {
     return targets_;
   }
+
   /**
    *
    *
@@ -1663,6 +1713,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public int getTargetsCount() {
     return targets_.size();
   }
+
   /**
    *
    *
@@ -1676,6 +1727,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.DiscoveryTarget getTargets(int index) {
     return targets_.get(index);
   }
+
   /**
    *
    *
@@ -1694,6 +1746,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
+
   /**
    *
    *
@@ -1712,6 +1765,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -1731,6 +1785,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -1749,6 +1804,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -1767,6 +1823,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -1788,6 +1845,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1804,6 +1862,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1820,6 +1879,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1837,6 +1897,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1853,6 +1914,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1869,6 +1931,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1886,6 +1949,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int LAST_RUN_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp lastRunTime_;
+
   /**
    *
    *
@@ -1903,6 +1967,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasLastRunTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1920,6 +1985,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getLastRunTime() {
     return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
   }
+
   /**
    *
    *
@@ -1938,6 +2004,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATUS_FIELD_NUMBER = 10;
   private int status_ = 0;
+
   /**
    *
    *
@@ -1955,6 +2022,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -1977,6 +2045,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROCESSING_LOCATION_FIELD_NUMBER = 13;
   private com.google.privacy.dlp.v2.ProcessingLocation processingLocation_;
+
   /**
    *
    *
@@ -1996,6 +2065,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasProcessingLocation() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -2017,6 +2087,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.privacy.dlp.v2.ProcessingLocation.getDefaultInstance()
         : processingLocation_;
   }
+
   /**
    *
    *
@@ -2352,6 +2423,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2898,6 +2970,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2922,6 +2995,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2946,6 +3020,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2969,6 +3044,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2988,6 +3064,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3014,6 +3091,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3036,6 +3114,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3058,6 +3137,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3079,6 +3159,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3096,6 +3177,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3125,6 +3207,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.DiscoveryConfig.OrgConfig.Builder,
             com.google.privacy.dlp.v2.DiscoveryConfig.OrgConfigOrBuilder>
         orgConfigBuilder_;
+
     /**
      *
      *
@@ -3139,6 +3222,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasOrgConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3159,6 +3243,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return orgConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3181,6 +3266,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3201,6 +3287,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3229,6 +3316,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3248,6 +3336,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3262,6 +3351,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getOrgConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3280,6 +3370,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             : orgConfig_;
       }
     }
+
     /**
      *
      *
@@ -3313,6 +3404,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.Builder,
             com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocationOrBuilder>
         otherCloudStartingLocationBuilder_;
+
     /**
      *
      *
@@ -3329,6 +3421,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasOtherCloudStartingLocation() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3352,6 +3445,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return otherCloudStartingLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3377,6 +3471,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3399,6 +3494,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3431,6 +3527,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3452,6 +3549,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3469,6 +3567,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getOtherCloudStartingLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3490,6 +3589,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             : otherCloudStartingLocation_;
       }
     }
+
     /**
      *
      *
@@ -3527,6 +3627,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -3557,6 +3658,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       inspectTemplates_.makeImmutable();
       return inspectTemplates_;
     }
+
     /**
      *
      *
@@ -3586,6 +3688,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public int getInspectTemplatesCount() {
       return inspectTemplates_.size();
     }
+
     /**
      *
      *
@@ -3616,6 +3719,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getInspectTemplates(int index) {
       return inspectTemplates_.get(index);
     }
+
     /**
      *
      *
@@ -3646,6 +3750,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getInspectTemplatesBytes(int index) {
       return inspectTemplates_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3684,6 +3789,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3721,6 +3827,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3755,6 +3862,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3788,6 +3896,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3859,6 +3968,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return actionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3875,6 +3985,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return actionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3891,6 +4002,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return actionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3913,6 +4025,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3933,6 +4046,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3955,6 +4069,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3977,6 +4092,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3996,6 +4112,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4016,6 +4133,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4036,6 +4154,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4055,6 +4174,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4074,6 +4194,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4086,6 +4207,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.DataProfileAction.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4102,6 +4224,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4119,6 +4242,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
+
     /**
      *
      *
@@ -4132,6 +4256,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return getActionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.DataProfileAction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4145,6 +4270,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return getActionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.DataProfileAction.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4208,6 +4334,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return targetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4224,6 +4351,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return targetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4240,6 +4368,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return targetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4262,6 +4391,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4282,6 +4412,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4304,6 +4435,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4326,6 +4458,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4345,6 +4478,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4365,6 +4499,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4385,6 +4520,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4404,6 +4540,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4423,6 +4560,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4435,6 +4573,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.DiscoveryTarget.Builder getTargetsBuilder(int index) {
       return getTargetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4451,6 +4590,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return targetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4468,6 +4608,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(targets_);
       }
     }
+
     /**
      *
      *
@@ -4481,6 +4622,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return getTargetsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.DiscoveryTarget.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4494,6 +4636,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return getTargetsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.DiscoveryTarget.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4562,6 +4705,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4583,6 +4727,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4604,6 +4749,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4631,6 +4777,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4655,6 +4802,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4682,6 +4830,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4709,6 +4858,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4733,6 +4883,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4757,6 +4908,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4782,6 +4934,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4806,6 +4959,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4830,6 +4984,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4847,6 +5002,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4868,6 +5024,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4890,6 +5047,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -4908,6 +5066,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return getErrorsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4926,6 +5085,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4967,6 +5127,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4983,6 +5144,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -5005,6 +5167,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5029,6 +5192,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5050,6 +5214,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5079,6 +5244,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5100,6 +5266,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5116,6 +5283,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5136,6 +5304,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -5170,6 +5339,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -5186,6 +5356,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -5208,6 +5379,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5232,6 +5404,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5253,6 +5426,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5282,6 +5456,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5303,6 +5478,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5319,6 +5495,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5339,6 +5516,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -5373,6 +5551,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastRunTimeBuilder_;
+
     /**
      *
      *
@@ -5389,6 +5568,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasLastRunTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5411,6 +5591,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return lastRunTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5435,6 +5616,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5456,6 +5638,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5485,6 +5668,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5506,6 +5690,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5522,6 +5707,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLastRunTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5542,6 +5728,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             : lastRunTime_;
       }
     }
+
     /**
      *
      *
@@ -5571,6 +5758,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -5588,6 +5776,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -5608,6 +5797,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5629,6 +5819,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.privacy.dlp.v2.DiscoveryConfig.Status.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5652,6 +5843,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5678,6 +5870,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.ProcessingLocation.Builder,
             com.google.privacy.dlp.v2.ProcessingLocationOrBuilder>
         processingLocationBuilder_;
+
     /**
      *
      *
@@ -5696,6 +5889,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasProcessingLocation() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -5720,6 +5914,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         return processingLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5746,6 +5941,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5770,6 +5966,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5802,6 +5999,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5825,6 +6023,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5843,6 +6042,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getProcessingLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5865,6 +6065,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
             : processingLocation_;
       }
     }
+
     /**
      *
      *

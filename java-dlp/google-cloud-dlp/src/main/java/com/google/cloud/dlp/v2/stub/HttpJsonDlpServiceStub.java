@@ -314,7 +314,10 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
-                      .setAdditionalPaths("/v2/{parent=locations/*}/infoTypes")
+                      .setAdditionalPaths(
+                          "/v2/{parent=locations/*}/infoTypes",
+                          "/v2/{parent=projects/*/locations/*}/infoTypes",
+                          "/v2/{parent=organizations/*/locations/*}/infoTypes")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

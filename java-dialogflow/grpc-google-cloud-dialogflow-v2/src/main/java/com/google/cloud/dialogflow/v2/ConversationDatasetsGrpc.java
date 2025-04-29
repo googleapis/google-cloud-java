@@ -311,6 +311,19 @@ public final class ConversationDatasetsGrpc {
     return ConversationDatasetsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationDatasetsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationDatasetsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationDatasetsBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationDatasetsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationDatasetsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationDatasetsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -595,6 +608,118 @@ public final class ConversationDatasetsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConversationDatasets.
+   *
+   * <pre>
+   * Conversation datasets.
+   * Conversation datasets contain raw conversation files and their
+   * customizable metadata that can be used for model training.
+   * </pre>
+   */
+  public static final class ConversationDatasetsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationDatasetsBlockingV2Stub> {
+    private ConversationDatasetsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationDatasetsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationDatasetsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new conversation dataset.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
+     * - `response`:
+     * [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConversationDataset(
+        com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversationDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified conversation dataset.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ConversationDataset getConversationDataset(
+        com.google.cloud.dialogflow.v2.GetConversationDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversationDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all conversation datasets in the specified
+     * project and location.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListConversationDatasetsResponse listConversationDatasets(
+        com.google.cloud.dialogflow.v2.ListConversationDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversationDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified conversation dataset.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConversationDataset(
+        com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversationDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Import data into the specified conversation dataset. Note that it
+     * is not allowed to import data to a conversation dataset that
+     * already has data in it.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
+     * - `response`:
+     * [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation importConversationData(
+        com.google.cloud.dialogflow.v2.ImportConversationDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportConversationDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ConversationDatasets.
    *
    * <pre>
    * Conversation datasets.

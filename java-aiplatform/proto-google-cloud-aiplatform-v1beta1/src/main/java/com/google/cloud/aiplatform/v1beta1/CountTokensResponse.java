@@ -34,6 +34,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CountTokensResponse)
     CountTokensResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CountTokensResponse.newBuilder() to construct.
   private CountTokensResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_TOKENS_FIELD_NUMBER = 1;
   private int totalTokens_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_BILLABLE_CHARACTERS_FIELD_NUMBER = 2;
   private int totalBillableCharacters_ = 0;
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ModalityTokenCount>
       promptTokensDetails_;
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       getPromptTokensDetailsList() {
     return promptTokensDetails_;
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       getPromptTokensDetailsOrBuilderList() {
     return promptTokensDetails_;
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
   public int getPromptTokensDetailsCount() {
     return promptTokensDetails_.size();
   }
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.aiplatform.v1beta1.ModalityTokenCount getPromptTokensDetails(int index) {
     return promptTokensDetails_.get(index);
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -624,6 +633,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int totalTokens_;
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     public int getTotalTokens() {
       return totalTokens_;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     }
 
     private int totalBillableCharacters_;
+
     /**
      *
      *
@@ -693,6 +706,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     public int getTotalBillableCharacters() {
       return totalBillableCharacters_;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
         return promptTokensDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
         return promptTokensDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
         return promptTokensDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +994,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1038,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1054,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
         getPromptTokensDetailsBuilder(int index) {
       return getPromptTokensDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1046,6 +1074,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
         return promptTokensDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1094,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(promptTokensDetails_);
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1111,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       return getPromptTokensDetailsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.ModalityTokenCount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1098,6 +1129,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.ModalityTokenCount.getDefaultInstance());
     }
+
     /**
      *
      *

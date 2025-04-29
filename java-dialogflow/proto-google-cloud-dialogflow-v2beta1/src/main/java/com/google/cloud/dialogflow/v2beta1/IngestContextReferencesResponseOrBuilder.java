@@ -36,6 +36,7 @@ public interface IngestContextReferencesResponseOrBuilder
    * </code>
    */
   int getIngestedContextReferencesCount();
+
   /**
    *
    *
@@ -48,10 +49,12 @@ public interface IngestContextReferencesResponseOrBuilder
    * </code>
    */
   boolean containsIngestedContextReferences(java.lang.String key);
+
   /** Use {@link #getIngestedContextReferencesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
       getIngestedContextReferences();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface IngestContextReferencesResponseOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
       getIngestedContextReferencesMap();
+
   /**
    *
    *
@@ -82,6 +86,7 @@ public interface IngestContextReferencesResponseOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference defaultValue);
+
   /**
    *
    *

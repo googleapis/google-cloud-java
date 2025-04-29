@@ -34,6 +34,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.CloudFunction)
     CloudFunctionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudFunction.newBuilder() to construct.
   private CloudFunction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -156,6 +157,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED = 0;</code>
      */
     public static final int VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -166,6 +168,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_RANGES_ONLY = 1;</code>
      */
     public static final int PRIVATE_RANGES_ONLY_VALUE = 1;
+
     /**
      *
      *
@@ -331,6 +334,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>INGRESS_SETTINGS_UNSPECIFIED = 0;</code>
      */
     public static final int INGRESS_SETTINGS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -341,6 +345,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>ALLOW_ALL = 1;</code>
      */
     public static final int ALLOW_ALL_VALUE = 1;
+
     /**
      *
      *
@@ -351,6 +356,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>ALLOW_INTERNAL_ONLY = 2;</code>
      */
     public static final int ALLOW_INTERNAL_ONLY_VALUE = 2;
+
     /**
      *
      *
@@ -507,6 +513,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>DOCKER_REGISTRY_UNSPECIFIED = 0;</code>
      */
     public static final int DOCKER_REGISTRY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -518,6 +525,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTAINER_REGISTRY = 1;</code>
      */
     public static final int CONTAINER_REGISTRY_VALUE = 1;
+
     /**
      *
      *
@@ -620,6 +628,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -635,6 +644,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy)
       AutomaticUpdatePolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AutomaticUpdatePolicy.newBuilder() to construct.
     private AutomaticUpdatePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -816,6 +826,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1069,6 +1080,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * @return The runtimeVersion.
      */
     java.lang.String getRuntimeVersion();
+
     /**
      *
      *
@@ -1083,6 +1095,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRuntimeVersionBytes();
   }
+
   /**
    *
    *
@@ -1097,6 +1110,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy)
       OnDeployUpdatePolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OnDeployUpdatePolicy.newBuilder() to construct.
     private OnDeployUpdatePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1131,6 +1145,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object runtimeVersion_ = "";
+
     /**
      *
      *
@@ -1155,6 +1170,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1358,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1536,6 +1553,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object runtimeVersion_ = "";
+
       /**
        *
        *
@@ -1559,6 +1577,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1582,6 +1601,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1604,6 +1624,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1622,6 +1643,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1732,6 +1754,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     private SourceCodeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1783,6 +1806,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     private TriggerCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1832,6 +1856,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     private RuntimeUpdatePolicyCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1868,6 +1893,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1892,6 +1918,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1921,6 +1948,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1944,6 +1972,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1969,6 +1998,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_ARCHIVE_URL_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1984,6 +2014,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceArchiveUrl() {
     return sourceCodeCase_ == 3;
   }
+
   /**
    *
    *
@@ -2012,6 +2043,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2042,6 +2074,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_REPOSITORY_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -2059,6 +2092,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceRepository() {
     return sourceCodeCase_ == 4;
   }
+
   /**
    *
    *
@@ -2079,6 +2113,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.functions.v1.SourceRepository.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2099,6 +2134,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_UPLOAD_URL_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -2118,6 +2154,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceUploadUrl() {
     return sourceCodeCase_ == 16;
   }
+
   /**
    *
    *
@@ -2150,6 +2187,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2184,6 +2222,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTPS_TRIGGER_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -2199,6 +2238,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpsTrigger() {
     return triggerCase_ == 5;
   }
+
   /**
    *
    *
@@ -2217,6 +2257,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.functions.v1.HttpsTrigger.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2235,6 +2276,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_TRIGGER_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -2250,6 +2292,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventTrigger() {
     return triggerCase_ == 6;
   }
+
   /**
    *
    *
@@ -2268,6 +2311,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.functions.v1.EventTrigger.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2287,6 +2331,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 7;
   private int status_ = 0;
+
   /**
    *
    *
@@ -2304,6 +2349,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -2328,6 +2374,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entryPoint_ = "";
+
   /**
    *
    *
@@ -2353,6 +2400,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2383,6 +2431,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object runtime_ = "";
+
   /**
    *
    *
@@ -2410,6 +2459,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2440,6 +2490,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_FIELD_NUMBER = 9;
   private com.google.protobuf.Duration timeout_;
+
   /**
    *
    *
@@ -2457,6 +2508,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2474,6 +2526,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
+
   /**
    *
    *
@@ -2492,6 +2545,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABLE_MEMORY_MB_FIELD_NUMBER = 10;
   private int availableMemoryMb_ = 0;
+
   /**
    *
    *
@@ -2513,6 +2567,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
@@ -2537,6 +2592,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2564,6 +2620,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -2580,6 +2637,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2596,6 +2654,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -2613,6 +2672,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_ID_FIELD_NUMBER = 14;
   private long versionId_ = 0L;
+
   /**
    *
    *
@@ -2656,6 +2716,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -2672,12 +2733,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -2691,6 +2754,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -2711,6 +2775,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2760,6 +2825,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getEnvironmentVariablesCount() {
     return internalGetEnvironmentVariables().getMap().size();
   }
+
   /**
    *
    *
@@ -2776,12 +2842,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetEnvironmentVariables().getMap().containsKey(key);
   }
+
   /** Use {@link #getEnvironmentVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
     return getEnvironmentVariablesMap();
   }
+
   /**
    *
    *
@@ -2795,6 +2863,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
     return internalGetEnvironmentVariables().getMap();
   }
+
   /**
    *
    *
@@ -2816,6 +2885,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         internalGetEnvironmentVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2867,6 +2937,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getBuildEnvironmentVariablesCount() {
     return internalGetBuildEnvironmentVariables().getMap().size();
   }
+
   /**
    *
    *
@@ -2883,12 +2954,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetBuildEnvironmentVariables().getMap().containsKey(key);
   }
+
   /** Use {@link #getBuildEnvironmentVariablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariables() {
     return getBuildEnvironmentVariablesMap();
   }
+
   /**
    *
    *
@@ -2902,6 +2975,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariablesMap() {
     return internalGetBuildEnvironmentVariables().getMap();
   }
+
   /**
    *
    *
@@ -2923,6 +2997,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         internalGetBuildEnvironmentVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2949,6 +3024,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -2975,6 +3051,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3004,6 +3081,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 20;
   private int maxInstances_ = 0;
+
   /**
    *
    *
@@ -3033,6 +3111,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 32;
   private int minInstances_ = 0;
+
   /**
    *
    *
@@ -3054,6 +3133,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vpcConnector_ = "";
+
   /**
    *
    *
@@ -3086,6 +3166,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3121,6 +3202,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VPC_CONNECTOR_EGRESS_SETTINGS_FIELD_NUMBER = 23;
   private int vpcConnectorEgressSettings_ = 0;
+
   /**
    *
    *
@@ -3139,6 +3221,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getVpcConnectorEgressSettingsValue() {
     return vpcConnectorEgressSettings_;
   }
+
   /**
    *
    *
@@ -3166,6 +3249,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INGRESS_SETTINGS_FIELD_NUMBER = 24;
   private int ingressSettings_ = 0;
+
   /**
    *
    *
@@ -3182,6 +3266,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getIngressSettingsValue() {
     return ingressSettings_;
   }
+
   /**
    *
    *
@@ -3207,6 +3292,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
+
   /**
    *
    *
@@ -3258,6 +3344,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3314,6 +3401,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object buildWorkerPool_ = "";
+
   /**
    *
    *
@@ -3348,6 +3436,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3387,6 +3476,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object buildId_ = "";
+
   /**
    *
    *
@@ -3411,6 +3501,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3440,6 +3531,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object buildName_ = "";
+
   /**
    *
    *
@@ -3464,6 +3556,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3493,6 +3586,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v1.SecretEnvVar> secretEnvironmentVariables_;
+
   /**
    *
    *
@@ -3508,6 +3602,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       getSecretEnvironmentVariablesList() {
     return secretEnvironmentVariables_;
   }
+
   /**
    *
    *
@@ -3523,6 +3618,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       getSecretEnvironmentVariablesOrBuilderList() {
     return secretEnvironmentVariables_;
   }
+
   /**
    *
    *
@@ -3537,6 +3633,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getSecretEnvironmentVariablesCount() {
     return secretEnvironmentVariables_.size();
   }
+
   /**
    *
    *
@@ -3551,6 +3648,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.functions.v1.SecretEnvVar getSecretEnvironmentVariables(int index) {
     return secretEnvironmentVariables_.get(index);
   }
+
   /**
    *
    *
@@ -3571,6 +3669,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v1.SecretVolume> secretVolumes_;
+
   /**
    *
    *
@@ -3584,6 +3683,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.functions.v1.SecretVolume> getSecretVolumesList() {
     return secretVolumes_;
   }
+
   /**
    *
    *
@@ -3598,6 +3698,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       getSecretVolumesOrBuilderList() {
     return secretVolumes_;
   }
+
   /**
    *
    *
@@ -3611,6 +3712,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public int getSecretVolumesCount() {
     return secretVolumes_.size();
   }
+
   /**
    *
    *
@@ -3624,6 +3726,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.functions.v1.SecretVolume getSecretVolumes(int index) {
     return secretVolumes_.get(index);
   }
+
   /**
    *
    *
@@ -3642,6 +3745,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceToken_ = "";
+
   /**
    *
    *
@@ -3666,6 +3770,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3695,6 +3800,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dockerRepository_ = "";
+
   /**
    *
    *
@@ -3730,6 +3836,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3768,41 +3875,61 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOCKER_REGISTRY_FIELD_NUMBER = 35;
   private int dockerRegistry_ = 0;
+
   /**
    *
    *
    * <pre>
    * Docker Registry to use for this deployment.
+   * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   * <code>
+   * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+   *     google/cloud/functions/v1/functions.proto;l=486
    * @return The enum numeric value on the wire for dockerRegistry.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getDockerRegistryValue() {
     return dockerRegistry_;
   }
+
   /**
    *
    *
    * <pre>
    * Docker Registry to use for this deployment.
+   * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   * <code>
+   * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+   *     google/cloud/functions/v1/functions.proto;l=486
    * @return The dockerRegistry.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry() {
     com.google.cloud.functions.v1.CloudFunction.DockerRegistry result =
         com.google.cloud.functions.v1.CloudFunction.DockerRegistry.forNumber(dockerRegistry_);
@@ -3812,6 +3939,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTOMATIC_UPDATE_POLICY_FIELD_NUMBER = 40;
+
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -3823,6 +3951,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomaticUpdatePolicy() {
     return runtimeUpdatePolicyCase_ == 40;
   }
+
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -3839,6 +3968,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy.getDefaultInstance();
   }
+
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -3855,6 +3985,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ON_DEPLOY_UPDATE_POLICY_FIELD_NUMBER = 41;
+
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -3866,6 +3997,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOnDeployUpdatePolicy() {
     return runtimeUpdatePolicyCase_ == 41;
   }
+
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -3882,6 +4014,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy.getDefaultInstance();
   }
+
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -3901,6 +4034,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object buildServiceAccount_ = "";
+
   /**
    *
    *
@@ -3926,6 +4060,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -4568,6 +4703,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5512,6 +5648,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     private int bitField1_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -5535,6 +5672,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5558,6 +5696,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5580,6 +5719,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5598,6 +5738,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5623,6 +5764,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -5645,6 +5787,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5667,6 +5810,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5688,6 +5832,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5705,6 +5850,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5744,6 +5890,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceArchiveUrl() {
       return sourceCodeCase_ == 3;
     }
+
     /**
      *
      *
@@ -5773,6 +5920,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5802,6 +5950,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5824,6 +5973,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5844,6 +5994,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5873,6 +6024,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.SourceRepository.Builder,
             com.google.cloud.functions.v1.SourceRepositoryOrBuilder>
         sourceRepositoryBuilder_;
+
     /**
      *
      *
@@ -5890,6 +6042,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceRepository() {
       return sourceCodeCase_ == 4;
     }
+
     /**
      *
      *
@@ -5917,6 +6070,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.SourceRepository.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5941,6 +6095,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       sourceCodeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5963,6 +6118,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       sourceCodeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5997,6 +6153,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       sourceCodeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6024,6 +6181,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6038,6 +6196,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.SourceRepository.Builder getSourceRepositoryBuilder() {
       return getSourceRepositoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6060,6 +6219,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.SourceRepository.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6115,6 +6275,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceUploadUrl() {
       return sourceCodeCase_ == 16;
     }
+
     /**
      *
      *
@@ -6148,6 +6309,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6181,6 +6343,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6207,6 +6370,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6231,6 +6395,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6264,6 +6429,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.HttpsTrigger.Builder,
             com.google.cloud.functions.v1.HttpsTriggerOrBuilder>
         httpsTriggerBuilder_;
+
     /**
      *
      *
@@ -6279,6 +6445,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpsTrigger() {
       return triggerCase_ == 5;
     }
+
     /**
      *
      *
@@ -6304,6 +6471,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.HttpsTrigger.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6326,6 +6494,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       triggerCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6346,6 +6515,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       triggerCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6378,6 +6548,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       triggerCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6403,6 +6574,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6415,6 +6587,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.HttpsTrigger.Builder getHttpsTriggerBuilder() {
       return getHttpsTriggerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6435,6 +6608,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.HttpsTrigger.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6473,6 +6647,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.EventTrigger.Builder,
             com.google.cloud.functions.v1.EventTriggerOrBuilder>
         eventTriggerBuilder_;
+
     /**
      *
      *
@@ -6488,6 +6663,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTrigger() {
       return triggerCase_ == 6;
     }
+
     /**
      *
      *
@@ -6513,6 +6689,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.EventTrigger.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6535,6 +6712,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       triggerCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -6555,6 +6733,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       triggerCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -6587,6 +6766,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       triggerCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -6612,6 +6792,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6624,6 +6805,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.EventTrigger.Builder getEventTriggerBuilder() {
       return getEventTriggerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6644,6 +6826,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.functions.v1.EventTrigger.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6678,6 +6861,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -6695,6 +6879,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -6715,6 +6900,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6736,6 +6922,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.functions.v1.CloudFunctionStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -6759,6 +6946,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6780,6 +6968,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object entryPoint_ = "";
+
     /**
      *
      *
@@ -6804,6 +6993,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6828,6 +7018,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6851,6 +7042,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6870,6 +7062,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6896,6 +7089,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object runtime_ = "";
+
     /**
      *
      *
@@ -6922,6 +7116,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6948,6 +7143,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6973,6 +7169,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6994,6 +7191,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7027,6 +7225,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
+
     /**
      *
      *
@@ -7043,6 +7242,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -7063,6 +7263,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return timeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7087,6 +7288,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7108,6 +7310,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7137,6 +7340,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7158,6 +7362,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7174,6 +7379,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7192,6 +7398,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
+
     /**
      *
      *
@@ -7221,6 +7428,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availableMemoryMb_;
+
     /**
      *
      *
@@ -7237,6 +7445,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableMemoryMb() {
       return availableMemoryMb_;
     }
+
     /**
      *
      *
@@ -7257,6 +7466,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7277,6 +7487,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
@@ -7300,6 +7511,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7323,6 +7535,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7345,6 +7558,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7363,6 +7577,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7393,6 +7608,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -7409,6 +7625,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -7431,6 +7648,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7455,6 +7673,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7476,6 +7695,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7505,6 +7725,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7526,6 +7747,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7542,6 +7764,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7562,6 +7785,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -7591,6 +7815,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long versionId_;
+
     /**
      *
      *
@@ -7607,6 +7832,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public long getVersionId() {
       return versionId_;
     }
+
     /**
      *
      *
@@ -7627,6 +7853,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7671,6 +7898,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -7687,12 +7915,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -7706,6 +7936,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -7726,6 +7957,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -7752,6 +7984,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -7768,12 +8001,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00008000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -7794,6 +8029,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00008000;
       return this;
     }
+
     /**
      *
      *
@@ -7838,6 +8074,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getEnvironmentVariablesCount() {
       return internalGetEnvironmentVariables().getMap().size();
     }
+
     /**
      *
      *
@@ -7854,12 +8091,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetEnvironmentVariables().getMap().containsKey(key);
     }
+
     /** Use {@link #getEnvironmentVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables() {
       return getEnvironmentVariablesMap();
     }
+
     /**
      *
      *
@@ -7873,6 +8112,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap() {
       return internalGetEnvironmentVariables().getMap();
     }
+
     /**
      *
      *
@@ -7894,6 +8134,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           internalGetEnvironmentVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -7921,6 +8162,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvironmentVariables().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -7937,12 +8179,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvironmentVariables().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironmentVariables() {
       bitField0_ |= 0x00010000;
       return internalGetMutableEnvironmentVariables().getMutableMap();
     }
+
     /**
      *
      *
@@ -7963,6 +8207,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00010000;
       return this;
     }
+
     /**
      *
      *
@@ -8009,6 +8254,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getBuildEnvironmentVariablesCount() {
       return internalGetBuildEnvironmentVariables().getMap().size();
     }
+
     /**
      *
      *
@@ -8025,12 +8271,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetBuildEnvironmentVariables().getMap().containsKey(key);
     }
+
     /** Use {@link #getBuildEnvironmentVariablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariables() {
       return getBuildEnvironmentVariablesMap();
     }
+
     /**
      *
      *
@@ -8044,6 +8292,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariablesMap() {
       return internalGetBuildEnvironmentVariables().getMap();
     }
+
     /**
      *
      *
@@ -8065,6 +8314,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           internalGetBuildEnvironmentVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -8092,6 +8342,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableBuildEnvironmentVariables().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -8108,12 +8359,14 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableBuildEnvironmentVariables().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableBuildEnvironmentVariables() {
       bitField0_ |= 0x00020000;
       return internalGetMutableBuildEnvironmentVariables().getMutableMap();
     }
+
     /**
      *
      *
@@ -8134,6 +8387,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00020000;
       return this;
     }
+
     /**
      *
      *
@@ -8151,6 +8405,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -8176,6 +8431,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8201,6 +8457,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8225,6 +8482,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8245,6 +8503,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8272,6 +8531,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxInstances_;
+
     /**
      *
      *
@@ -8298,6 +8558,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getMaxInstances() {
       return maxInstances_;
     }
+
     /**
      *
      *
@@ -8328,6 +8589,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8358,6 +8620,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minInstances_;
+
     /**
      *
      *
@@ -8374,6 +8637,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getMinInstances() {
       return minInstances_;
     }
+
     /**
      *
      *
@@ -8394,6 +8658,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8414,6 +8679,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vpcConnector_ = "";
+
     /**
      *
      *
@@ -8445,6 +8711,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8476,6 +8743,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8506,6 +8774,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8532,6 +8801,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8565,6 +8835,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vpcConnectorEgressSettings_ = 0;
+
     /**
      *
      *
@@ -8583,6 +8854,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getVpcConnectorEgressSettingsValue() {
       return vpcConnectorEgressSettings_;
     }
+
     /**
      *
      *
@@ -8604,6 +8876,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8628,6 +8901,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.functions.v1.CloudFunction.VpcConnectorEgressSettings.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8653,6 +8927,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8675,6 +8950,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int ingressSettings_ = 0;
+
     /**
      *
      *
@@ -8691,6 +8967,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public int getIngressSettingsValue() {
       return ingressSettings_;
     }
+
     /**
      *
      *
@@ -8710,6 +8987,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8730,6 +9008,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.functions.v1.CloudFunction.IngressSettings.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8753,6 +9032,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8773,6 +9053,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -8823,6 +9104,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8873,6 +9155,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8922,6 +9205,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8967,6 +9251,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9019,6 +9304,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object buildWorkerPool_ = "";
+
     /**
      *
      *
@@ -9052,6 +9338,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9085,6 +9372,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9117,6 +9405,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9145,6 +9434,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9180,6 +9470,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object buildId_ = "";
+
     /**
      *
      *
@@ -9203,6 +9494,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9226,6 +9518,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9248,6 +9541,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9266,6 +9560,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9291,6 +9586,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object buildName_ = "";
+
     /**
      *
      *
@@ -9314,6 +9610,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9337,6 +9634,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9359,6 +9657,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9377,6 +9676,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9437,6 +9737,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretEnvironmentVariablesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9454,6 +9755,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretEnvironmentVariablesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9471,6 +9773,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretEnvironmentVariablesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9495,6 +9798,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9516,6 +9820,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9539,6 +9844,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9563,6 +9869,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9584,6 +9891,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9605,6 +9913,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9626,6 +9935,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9646,6 +9956,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9666,6 +9977,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9680,6 +9992,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSecretEnvironmentVariablesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -9698,6 +10011,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretEnvironmentVariablesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -9716,6 +10030,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
       }
     }
+
     /**
      *
      *
@@ -9731,6 +10046,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return getSecretEnvironmentVariablesFieldBuilder()
           .addBuilder(com.google.cloud.functions.v1.SecretEnvVar.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9746,6 +10062,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return getSecretEnvironmentVariablesFieldBuilder()
           .addBuilder(index, com.google.cloud.functions.v1.SecretEnvVar.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -9814,6 +10131,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretVolumesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9830,6 +10148,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretVolumesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9846,6 +10165,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretVolumesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9868,6 +10188,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9888,6 +10209,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9910,6 +10232,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9932,6 +10255,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9952,6 +10276,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9972,6 +10297,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9992,6 +10318,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10011,6 +10338,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10030,6 +10358,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10042,6 +10371,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.SecretVolume.Builder getSecretVolumesBuilder(int index) {
       return getSecretVolumesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10059,6 +10389,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return secretVolumesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10076,6 +10407,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(secretVolumes_);
       }
     }
+
     /**
      *
      *
@@ -10089,6 +10421,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return getSecretVolumesFieldBuilder()
           .addBuilder(com.google.cloud.functions.v1.SecretVolume.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10102,6 +10435,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return getSecretVolumesFieldBuilder()
           .addBuilder(index, com.google.cloud.functions.v1.SecretVolume.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10137,6 +10471,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceToken_ = "";
+
     /**
      *
      *
@@ -10160,6 +10495,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10183,6 +10519,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10205,6 +10542,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10223,6 +10561,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10248,6 +10587,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dockerRepository_ = "";
+
     /**
      *
      *
@@ -10282,6 +10622,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10316,6 +10657,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10349,6 +10691,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10378,6 +10721,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10414,63 +10758,93 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dockerRegistry_ = 0;
+
     /**
      *
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @return The enum numeric value on the wire for dockerRegistry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getDockerRegistryValue() {
       return dockerRegistry_;
     }
+
     /**
      *
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @param value The enum numeric value on the wire for dockerRegistry to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDockerRegistryValue(int value) {
       dockerRegistry_ = value;
       bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @return The dockerRegistry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry() {
       com.google.cloud.functions.v1.CloudFunction.DockerRegistry result =
           com.google.cloud.functions.v1.CloudFunction.DockerRegistry.forNumber(dockerRegistry_);
@@ -10478,22 +10852,32 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.functions.v1.CloudFunction.DockerRegistry.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @param value The dockerRegistry to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDockerRegistry(
         com.google.cloud.functions.v1.CloudFunction.DockerRegistry value) {
       if (value == null) {
@@ -10504,21 +10888,31 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDockerRegistry() {
       bitField1_ = (bitField1_ & ~0x00000001);
       dockerRegistry_ = 0;
@@ -10531,6 +10925,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy.Builder,
             com.google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicyOrBuilder>
         automaticUpdatePolicyBuilder_;
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10542,6 +10937,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomaticUpdatePolicy() {
       return runtimeUpdatePolicyCase_ == 40;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10567,6 +10963,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10586,6 +10983,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 40;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10602,6 +11000,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 40;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10634,6 +11033,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 40;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10655,6 +11055,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10664,6 +11065,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         getAutomaticUpdatePolicyBuilder() {
       return getAutomaticUpdatePolicyFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10683,6 +11085,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -10720,6 +11123,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy.Builder,
             com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicyOrBuilder>
         onDeployUpdatePolicyBuilder_;
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10731,6 +11135,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnDeployUpdatePolicy() {
       return runtimeUpdatePolicyCase_ == 41;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10756,6 +11161,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10775,6 +11181,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 41;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10791,6 +11198,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 41;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10823,6 +11231,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       runtimeUpdatePolicyCase_ = 41;
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10844,6 +11253,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10853,6 +11263,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         getOnDeployUpdatePolicyBuilder() {
       return getOnDeployUpdatePolicyFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10872,6 +11283,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      * <code>
      * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -10904,6 +11316,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object buildServiceAccount_ = "";
+
     /**
      *
      *
@@ -10928,6 +11341,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10952,6 +11366,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10975,6 +11390,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10994,6 +11410,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

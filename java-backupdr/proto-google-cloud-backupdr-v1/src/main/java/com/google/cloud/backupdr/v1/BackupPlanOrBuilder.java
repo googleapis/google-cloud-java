@@ -40,6 +40,7 @@ public interface BackupPlanOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface BackupPlanOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface BackupPlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -114,9 +117,11 @@ public interface BackupPlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface BackupPlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface BackupPlanOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface BackupPlanOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public interface BackupPlanOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface BackupPlanOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface BackupPlanOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.BackupRule> getBackupRulesList();
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public interface BackupPlanOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.BackupRule getBackupRules(int index);
+
   /**
    *
    *
@@ -270,6 +283,7 @@ public interface BackupPlanOrBuilder
    * </code>
    */
   int getBackupRulesCount();
+
   /**
    *
    *
@@ -284,6 +298,7 @@ public interface BackupPlanOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.BackupRuleOrBuilder>
       getBackupRulesOrBuilderList();
+
   /**
    *
    *
@@ -312,6 +327,7 @@ public interface BackupPlanOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -341,6 +357,7 @@ public interface BackupPlanOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
+
   /**
    *
    *
@@ -370,6 +387,7 @@ public interface BackupPlanOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -401,6 +419,7 @@ public interface BackupPlanOrBuilder
    * @return The backupVault.
    */
   java.lang.String getBackupVault();
+
   /**
    *
    *
@@ -433,6 +452,7 @@ public interface BackupPlanOrBuilder
    * @return The backupVaultServiceAccount.
    */
   java.lang.String getBackupVaultServiceAccount();
+
   /**
    *
    *

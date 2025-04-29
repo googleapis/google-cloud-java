@@ -144,6 +144,19 @@ public final class SearchTuningServiceGrpc {
     return SearchTuningServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SearchTuningServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SearchTuningServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SearchTuningServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SearchTuningServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SearchTuningServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SearchTuningServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -282,6 +295,53 @@ public final class SearchTuningServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SearchTuningService.
+   *
+   * <pre>
+   * Service for search tuning.
+   * </pre>
+   */
+  public static final class SearchTuningServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SearchTuningServiceBlockingV2Stub> {
+    private SearchTuningServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SearchTuningServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SearchTuningServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trains a custom model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation trainCustomModel(
+        com.google.cloud.discoveryengine.v1.TrainCustomModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTrainCustomModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of all the custom models.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListCustomModelsResponse listCustomModels(
+        com.google.cloud.discoveryengine.v1.ListCustomModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomModelsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SearchTuningService.
    *
    * <pre>
    * Service for search tuning.

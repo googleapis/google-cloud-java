@@ -39,6 +39,7 @@ public interface CreateTagKeyRequestOrBuilder
    * @return Whether the tagKey field is set.
    */
   boolean hasTagKey();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CreateTagKeyRequestOrBuilder
    * @return The tagKey.
    */
   com.google.cloud.resourcemanager.v3.TagKey getTagKey();
+
   /**
    *
    *

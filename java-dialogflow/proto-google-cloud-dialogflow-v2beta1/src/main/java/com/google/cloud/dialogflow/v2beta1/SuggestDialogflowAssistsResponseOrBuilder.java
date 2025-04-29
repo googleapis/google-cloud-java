@@ -38,6 +38,7 @@ public interface SuggestDialogflowAssistsResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer>
       getDialogflowAssistAnswersList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface SuggestDialogflowAssistsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer getDialogflowAssistAnswers(int index);
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface SuggestDialogflowAssistsResponseOrBuilder
    * </code>
    */
   int getDialogflowAssistAnswersCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface SuggestDialogflowAssistsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder>
       getDialogflowAssistAnswersOrBuilderList();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface SuggestDialogflowAssistsResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The ipProtocol.
    */
   java.lang.String getIpProtocol();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface ExternalAccessRuleOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange>
       getSourceIpRangesList();
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public interface ExternalAccessRuleOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange getSourceIpRanges(int index);
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface ExternalAccessRuleOrBuilder
    * </code>
    */
   int getSourceIpRangesCount();
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public interface ExternalAccessRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRangeOrBuilder>
       getSourceIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -331,6 +343,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return A list containing the sourcePorts.
    */
   java.util.List<java.lang.String> getSourcePortsList();
+
   /**
    *
    *
@@ -347,6 +360,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The count of sourcePorts.
    */
   int getSourcePortsCount();
+
   /**
    *
    *
@@ -364,6 +378,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The sourcePorts at the given index.
    */
   java.lang.String getSourcePorts(int index);
+
   /**
    *
    *
@@ -401,6 +416,7 @@ public interface ExternalAccessRuleOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange>
       getDestinationIpRangesList();
+
   /**
    *
    *
@@ -419,6 +435,7 @@ public interface ExternalAccessRuleOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange getDestinationIpRanges(int index);
+
   /**
    *
    *
@@ -437,6 +454,7 @@ public interface ExternalAccessRuleOrBuilder
    * </code>
    */
   int getDestinationIpRangesCount();
+
   /**
    *
    *
@@ -456,6 +474,7 @@ public interface ExternalAccessRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRangeOrBuilder>
       getDestinationIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -492,6 +511,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return A list containing the destinationPorts.
    */
   java.util.List<java.lang.String> getDestinationPortsList();
+
   /**
    *
    *
@@ -508,6 +528,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The count of destinationPorts.
    */
   int getDestinationPortsCount();
+
   /**
    *
    *
@@ -525,6 +546,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The destinationPorts at the given index.
    */
   java.lang.String getDestinationPorts(int index);
+
   /**
    *
    *
@@ -557,6 +579,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -584,6 +607,7 @@ public interface ExternalAccessRuleOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

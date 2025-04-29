@@ -41,6 +41,7 @@ public interface CheckRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CheckRequestOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface CheckRequestOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CheckRequestOrBuilder
    * @return The attributes.
    */
   com.google.rpc.context.AttributeContext getAttributes();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface CheckRequestOrBuilder
    * <code>repeated .google.api.servicecontrol.v2.ResourceInfo resources = 4;</code>
    */
   java.util.List<com.google.api.servicecontrol.v2.ResourceInfo> getResourcesList();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface CheckRequestOrBuilder
    * <code>repeated .google.api.servicecontrol.v2.ResourceInfo resources = 4;</code>
    */
   com.google.api.servicecontrol.v2.ResourceInfo getResources(int index);
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface CheckRequestOrBuilder
    * <code>repeated .google.api.servicecontrol.v2.ResourceInfo resources = 4;</code>
    */
   int getResourcesCount();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface CheckRequestOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v2.ResourceInfoOrBuilder>
       getResourcesOrBuilderList();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface CheckRequestOrBuilder
    * @return The flags.
    */
   java.lang.String getFlags();
+
   /**
    *
    *

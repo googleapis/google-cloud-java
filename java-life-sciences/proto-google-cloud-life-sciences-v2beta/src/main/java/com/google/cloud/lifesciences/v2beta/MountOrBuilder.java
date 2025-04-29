@@ -36,6 +36,7 @@ public interface MountOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface MountOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

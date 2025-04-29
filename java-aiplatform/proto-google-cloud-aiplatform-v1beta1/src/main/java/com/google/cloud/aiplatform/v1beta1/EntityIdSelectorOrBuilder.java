@@ -36,6 +36,7 @@ public interface EntityIdSelectorOrBuilder
    * @return Whether the csvSource field is set.
    */
   boolean hasCsvSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EntityIdSelectorOrBuilder
    * @return The csvSource.
    */
   com.google.cloud.aiplatform.v1beta1.CsvSource getCsvSource();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface EntityIdSelectorOrBuilder
    * @return The entityIdField.
    */
   java.lang.String getEntityIdField();
+
   /**
    *
    *

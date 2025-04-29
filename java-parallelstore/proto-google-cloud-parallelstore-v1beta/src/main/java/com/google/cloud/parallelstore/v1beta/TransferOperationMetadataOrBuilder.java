@@ -38,6 +38,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the sourceParallelstore field is set.
    */
   boolean hasSourceParallelstore();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return The sourceParallelstore.
    */
   com.google.cloud.parallelstore.v1beta.SourceParallelstore getSourceParallelstore();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the sourceGcsBucket field is set.
    */
   boolean hasSourceGcsBucket();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return The sourceGcsBucket.
    */
   com.google.cloud.parallelstore.v1beta.SourceGcsBucket getSourceGcsBucket();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the destinationGcsBucket field is set.
    */
   boolean hasDestinationGcsBucket();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return The destinationGcsBucket.
    */
   com.google.cloud.parallelstore.v1beta.DestinationGcsBucket getDestinationGcsBucket();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the destinationParallelstore field is set.
    */
   boolean hasDestinationParallelstore();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return The destinationParallelstore.
    */
   com.google.cloud.parallelstore.v1beta.DestinationParallelstore getDestinationParallelstore();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return Whether the counters field is set.
    */
   boolean hasCounters();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return The counters.
    */
   com.google.cloud.parallelstore.v1beta.TransferCounters getCounters();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface TransferOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for transferType.
    */
   int getTransferTypeValue();
+
   /**
    *
    *
@@ -260,6 +271,78 @@ public interface TransferOperationMetadataOrBuilder
    * @return The transferType.
    */
   com.google.cloud.parallelstore.v1beta.TransferType getTransferType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorSummary> getErrorSummaryList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1beta.TransferErrorSummary getErrorSummary(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getErrorSummaryCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder>
+      getErrorSummaryOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder getErrorSummaryOrBuilder(
+      int index);
 
   com.google.cloud.parallelstore.v1beta.TransferOperationMetadata.SourceCase getSourceCase();
 

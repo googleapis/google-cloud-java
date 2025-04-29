@@ -86,6 +86,7 @@ public enum ParameterFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PARAMETER_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int PARAMETER_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public enum ParameterFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNFORMATTED = 1;</code>
    */
   public static final int UNFORMATTED_VALUE = 1;
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public enum ParameterFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>YAML = 2;</code>
    */
   public static final int YAML_VALUE = 2;
+
   /**
    *
    *

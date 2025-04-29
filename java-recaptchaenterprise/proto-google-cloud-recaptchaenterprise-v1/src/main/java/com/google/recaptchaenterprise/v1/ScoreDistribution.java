@@ -33,6 +33,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ScoreDistribution)
     ScoreDistributionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScoreDistribution.newBuilder() to construct.
   private ScoreDistribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,6 +102,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
   public int getScoreBucketsCount() {
     return internalGetScoreBuckets().getMap().size();
   }
+
   /**
    *
    *
@@ -117,12 +119,14 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
 
     return internalGetScoreBuckets().getMap().containsKey(key);
   }
+
   /** Use {@link #getScoreBucketsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.Integer, java.lang.Long> getScoreBuckets() {
     return getScoreBucketsMap();
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.Integer, java.lang.Long> getScoreBucketsMap() {
     return internalGetScoreBuckets().getMap();
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetScoreBuckets().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -343,6 +349,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +587,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     public int getScoreBucketsCount() {
       return internalGetScoreBuckets().getMap().size();
     }
+
     /**
      *
      *
@@ -596,12 +604,14 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
 
       return internalGetScoreBuckets().getMap().containsKey(key);
     }
+
     /** Use {@link #getScoreBucketsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Long> getScoreBuckets() {
       return getScoreBucketsMap();
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.Integer, java.lang.Long> getScoreBucketsMap() {
       return internalGetScoreBuckets().getMap();
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetScoreBuckets().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
       internalGetMutableScoreBuckets().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -676,12 +689,14 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
       internalGetMutableScoreBuckets().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Long> getMutableScoreBuckets() {
       bitField0_ |= 0x00000001;
       return internalGetMutableScoreBuckets().getMutableMap();
     }
+
     /**
      *
      *
@@ -699,6 +714,7 @@ public final class ScoreDistribution extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

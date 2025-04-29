@@ -36,6 +36,7 @@ public interface VolumeConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface VolumeConfigOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface VolumeConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface VolumeConfigOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface VolumeConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeConfig.LunRange lun_ranges = 7;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.VolumeConfig.LunRange> getLunRangesList();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface VolumeConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeConfig.LunRange lun_ranges = 7;</code>
    */
   com.google.cloud.baremetalsolution.v2.VolumeConfig.LunRange getLunRanges(int index);
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface VolumeConfigOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.VolumeConfig.LunRange lun_ranges = 7;</code>
    */
   int getLunRangesCount();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface VolumeConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VolumeConfig.LunRangeOrBuilder>
       getLunRangesOrBuilderList();
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public interface VolumeConfigOrBuilder
    * @return A list containing the machineIds.
    */
   java.util.List<java.lang.String> getMachineIdsList();
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public interface VolumeConfigOrBuilder
    * @return The count of machineIds.
    */
   int getMachineIdsCount();
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public interface VolumeConfigOrBuilder
    * @return The machineIds at the given index.
    */
   java.lang.String getMachineIds(int index);
+
   /**
    *
    *
@@ -271,6 +282,7 @@ public interface VolumeConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.VolumeConfig.NfsExport> getNfsExportsList();
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public interface VolumeConfigOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.VolumeConfig.NfsExport getNfsExports(int index);
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface VolumeConfigOrBuilder
    * </code>
    */
   int getNfsExportsCount();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface VolumeConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VolumeConfig.NfsExportOrBuilder>
       getNfsExportsOrBuilderList();
+
   /**
    *
    *
@@ -331,6 +346,7 @@ public interface VolumeConfigOrBuilder
    * @return The userNote.
    */
   java.lang.String getUserNote();
+
   /**
    *
    *
@@ -358,6 +374,7 @@ public interface VolumeConfigOrBuilder
    * @return The gcpService.
    */
   java.lang.String getGcpService();
+
   /**
    *
    *
@@ -385,6 +402,7 @@ public interface VolumeConfigOrBuilder
    * @return The enum numeric value on the wire for performanceTier.
    */
   int getPerformanceTierValue();
+
   /**
    *
    *

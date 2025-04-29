@@ -33,6 +33,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceConfig)
     SourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SourceConfig.newBuilder() to construct.
   private SourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,12 +77,14 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     MYSQL_SOURCE_CONFIG(101),
     POSTGRESQL_SOURCE_CONFIG(102),
     SQL_SERVER_SOURCE_CONFIG(103),
+    SALESFORCE_SOURCE_CONFIG(104),
     SOURCESTREAMCONFIG_NOT_SET(0);
     private final int value;
 
     private SourceStreamConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -102,6 +105,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           return POSTGRESQL_SOURCE_CONFIG;
         case 103:
           return SQL_SERVER_SOURCE_CONFIG;
+        case 104:
+          return SALESFORCE_SOURCE_CONFIG;
         case 0:
           return SOURCESTREAMCONFIG_NOT_SET;
         default:
@@ -122,11 +127,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceConnectionProfile_ = "";
+
   /**
    *
    *
    * <pre>
-   * Required. Source connection profile resoource.
+   * Required. Source connection profile resource.
    * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
    * </pre>
    *
@@ -148,11 +154,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Required. Source connection profile resoource.
+   * Required. Source connection profile resource.
    * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
    * </pre>
    *
@@ -176,6 +183,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORACLE_SOURCE_CONFIG_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOracleSourceConfig() {
     return sourceStreamConfigCase_ == 100;
   }
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1.OracleSourceConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MYSQL_SOURCE_CONFIG_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -243,6 +254,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMysqlSourceConfig() {
     return sourceStreamConfigCase_ == 101;
   }
+
   /**
    *
    *
@@ -261,6 +273,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1.MysqlSourceConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POSTGRESQL_SOURCE_CONFIG_FIELD_NUMBER = 102;
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostgresqlSourceConfig() {
     return sourceStreamConfigCase_ == 102;
   }
+
   /**
    *
    *
@@ -312,6 +327,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -331,6 +347,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SQL_SERVER_SOURCE_CONFIG_FIELD_NUMBER = 103;
+
   /**
    *
    *
@@ -346,6 +363,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSqlServerSourceConfig() {
     return sourceStreamConfigCase_ == 103;
   }
+
   /**
    *
    *
@@ -364,6 +382,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -380,6 +399,61 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_;
     }
     return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+  }
+
+  public static final int SALESFORCE_SOURCE_CONFIG_FIELD_NUMBER = 104;
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;</code>
+   *
+   * @return Whether the salesforceSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesforceSourceConfig() {
+    return sourceStreamConfigCase_ == 104;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;</code>
+   *
+   * @return The salesforceSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceSourceConfig getSalesforceSourceConfig() {
+    if (sourceStreamConfigCase_ == 104) {
+      return (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder
+      getSalesforceSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 104) {
+      return (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -415,6 +489,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           103, (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_);
     }
+    if (sourceStreamConfigCase_ == 104) {
+      output.writeMessage(
+          104, (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -447,6 +525,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               103, (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_);
     }
+    if (sourceStreamConfigCase_ == 104) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              104, (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -477,6 +560,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         break;
       case 103:
         if (!getSqlServerSourceConfig().equals(other.getSqlServerSourceConfig())) return false;
+        break;
+      case 104:
+        if (!getSalesforceSourceConfig().equals(other.getSalesforceSourceConfig())) return false;
         break;
       case 0:
       default:
@@ -510,6 +596,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       case 103:
         hash = (37 * hash) + SQL_SERVER_SOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSqlServerSourceConfig().hashCode();
+        break;
+      case 104:
+        hash = (37 * hash) + SALESFORCE_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSalesforceSourceConfig().hashCode();
         break;
       case 0:
       default:
@@ -614,6 +704,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +756,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (sqlServerSourceConfigBuilder_ != null) {
         sqlServerSourceConfigBuilder_.clear();
+      }
+      if (salesforceSourceConfigBuilder_ != null) {
+        salesforceSourceConfigBuilder_.clear();
       }
       sourceStreamConfigCase_ = 0;
       sourceStreamConfig_ = null;
@@ -724,6 +818,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceStreamConfigCase_ == 103 && sqlServerSourceConfigBuilder_ != null) {
         result.sourceStreamConfig_ = sqlServerSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 104 && salesforceSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = salesforceSourceConfigBuilder_.build();
       }
     }
 
@@ -798,6 +895,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             mergeSqlServerSourceConfig(other.getSqlServerSourceConfig());
             break;
           }
+        case SALESFORCE_SOURCE_CONFIG:
+          {
+            mergeSalesforceSourceConfig(other.getSalesforceSourceConfig());
+            break;
+          }
         case SOURCESTREAMCONFIG_NOT_SET:
           {
             break;
@@ -863,6 +965,13 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
                 sourceStreamConfigCase_ = 103;
                 break;
               } // case 826
+            case 834:
+              {
+                input.readMessage(
+                    getSalesforceSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                sourceStreamConfigCase_ = 104;
+                break;
+              } // case 834
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -897,11 +1006,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sourceConnectionProfile_ = "";
+
     /**
      *
      *
      * <pre>
-     * Required. Source connection profile resoource.
+     * Required. Source connection profile resource.
      * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
      * </pre>
      *
@@ -922,11 +1032,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Source connection profile resoource.
+     * Required. Source connection profile resource.
      * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
      * </pre>
      *
@@ -947,11 +1058,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Source connection profile resoource.
+     * Required. Source connection profile resource.
      * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
      * </pre>
      *
@@ -971,11 +1083,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Source connection profile resoource.
+     * Required. Source connection profile resource.
      * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
      * </pre>
      *
@@ -991,11 +1104,12 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Source connection profile resoource.
+     * Required. Source connection profile resource.
      * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
      * </pre>
      *
@@ -1022,6 +1136,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.OracleSourceConfig.Builder,
             com.google.cloud.datastream.v1.OracleSourceConfigOrBuilder>
         oracleSourceConfigBuilder_;
+
     /**
      *
      *
@@ -1037,6 +1152,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOracleSourceConfig() {
       return sourceStreamConfigCase_ == 100;
     }
+
     /**
      *
      *
@@ -1062,6 +1178,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.OracleSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1201,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1222,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1257,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1283,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1297,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         getOracleSourceConfigBuilder() {
       return getOracleSourceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1197,6 +1319,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.OracleSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1359,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.MysqlSourceConfig.Builder,
             com.google.cloud.datastream.v1.MysqlSourceConfigOrBuilder>
         mysqlSourceConfigBuilder_;
+
     /**
      *
      *
@@ -1251,6 +1375,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMysqlSourceConfig() {
       return sourceStreamConfigCase_ == 101;
     }
+
     /**
      *
      *
@@ -1276,6 +1401,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.MysqlSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1424,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1445,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1479,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1505,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1518,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.MysqlSourceConfig.Builder getMysqlSourceConfigBuilder() {
       return getMysqlSourceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1409,6 +1540,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.MysqlSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1580,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder,
             com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder>
         postgresqlSourceConfigBuilder_;
+
     /**
      *
      *
@@ -1464,6 +1597,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostgresqlSourceConfig() {
       return sourceStreamConfigCase_ == 102;
     }
+
     /**
      *
      *
@@ -1490,6 +1624,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1514,6 +1649,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1671,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1707,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1734,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1749,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         getPostgresqlSourceConfigBuilder() {
       return getPostgresqlSourceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1632,6 +1772,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1672,6 +1813,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.SqlServerSourceConfig.Builder,
             com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder>
         sqlServerSourceConfigBuilder_;
+
     /**
      *
      *
@@ -1688,6 +1830,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSqlServerSourceConfig() {
       return sourceStreamConfigCase_ == 103;
     }
+
     /**
      *
      *
@@ -1714,6 +1857,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1738,6 +1882,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1904,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1940,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -1820,6 +1967,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1982,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         getSqlServerSourceConfigBuilder() {
       return getSqlServerSourceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1856,6 +2005,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1889,6 +2039,239 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 103;
       onChanged();
       return sqlServerSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SalesforceSourceConfig,
+            com.google.cloud.datastream.v1.SalesforceSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder>
+        salesforceSourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     *
+     * @return Whether the salesforceSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceSourceConfig() {
+      return sourceStreamConfigCase_ == 104;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     *
+     * @return The salesforceSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceSourceConfig getSalesforceSourceConfig() {
+      if (salesforceSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 104) {
+          return (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 104) {
+          return salesforceSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    public Builder setSalesforceSourceConfig(
+        com.google.cloud.datastream.v1.SalesforceSourceConfig value) {
+      if (salesforceSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        salesforceSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 104;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    public Builder setSalesforceSourceConfig(
+        com.google.cloud.datastream.v1.SalesforceSourceConfig.Builder builderForValue) {
+      if (salesforceSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        salesforceSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 104;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    public Builder mergeSalesforceSourceConfig(
+        com.google.cloud.datastream.v1.SalesforceSourceConfig value) {
+      if (salesforceSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 104
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SalesforceSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 104) {
+          salesforceSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          salesforceSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 104;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    public Builder clearSalesforceSourceConfig() {
+      if (salesforceSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 104) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 104) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        salesforceSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SalesforceSourceConfig.Builder
+        getSalesforceSourceConfigBuilder() {
+      return getSalesforceSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder
+        getSalesforceSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 104) && (salesforceSourceConfigBuilder_ != null)) {
+        return salesforceSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 104) {
+          return (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SalesforceSourceConfig,
+            com.google.cloud.datastream.v1.SalesforceSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder>
+        getSalesforceSourceConfigFieldBuilder() {
+      if (salesforceSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 104)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
+        }
+        salesforceSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SalesforceSourceConfig,
+                com.google.cloud.datastream.v1.SalesforceSourceConfig.Builder,
+                com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 104;
+      onChanged();
+      return salesforceSourceConfigBuilder_;
     }
 
     @java.lang.Override

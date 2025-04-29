@@ -36,6 +36,7 @@ public interface FileValidationReportOrBuilder
    * @return The fileName.
    */
   java.lang.String getFileName();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface FileValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportRowError row_errors = 2;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ImportRowError> getRowErrorsList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface FileValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportRowError row_errors = 2;</code>
    */
   com.google.cloud.migrationcenter.v1.ImportRowError getRowErrors(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface FileValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportRowError row_errors = 2;</code>
    */
   int getRowErrorsCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface FileValidationReportOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ImportRowErrorOrBuilder>
       getRowErrorsOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface FileValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError file_errors = 4;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ImportError> getFileErrorsList();
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface FileValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError file_errors = 4;</code>
    */
   com.google.cloud.migrationcenter.v1.ImportError getFileErrors(int index);
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface FileValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError file_errors = 4;</code>
    */
   int getFileErrorsCount();
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface FileValidationReportOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ImportErrorOrBuilder>
       getFileErrorsOrBuilderList();
+
   /**
    *
    *

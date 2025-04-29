@@ -38,6 +38,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * @return Whether the targetSslProxiesSetProxyHeaderRequestResource field is set.
    */
   boolean hasTargetSslProxiesSetProxyHeaderRequestResource();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    */
   com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest
       getTargetSslProxiesSetProxyHeaderRequestResource();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * @return The targetSslProxy.
    */
   java.lang.String getTargetSslProxy();
+
   /**
    *
    *

@@ -2685,6 +2685,19 @@ public final class AnalyticsAdminServiceGrpc {
     return AnalyticsAdminServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AnalyticsAdminServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AnalyticsAdminServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AnalyticsAdminServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AnalyticsAdminServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -4576,6 +4589,793 @@ public final class AnalyticsAdminServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AnalyticsAdminService.
+   *
+   * <pre>
+   * Service Interface for the Google Analytics Admin API.
+   * </pre>
+   */
+  public static final class AnalyticsAdminServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AnalyticsAdminServiceBlockingV2Stub> {
+    private AnalyticsAdminServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AnalyticsAdminServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AnalyticsAdminServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Account.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.Account getAccount(
+        com.google.analytics.admin.v1beta.GetAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all accounts accessible by the caller.
+     * Note that these accounts might not currently have GA properties.
+     * Soft-deleted (ie: "trashed") accounts are excluded by default.
+     * Returns an empty list if no relevant accounts are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListAccountsResponse listAccounts(
+        com.google.analytics.admin.v1beta.ListAccountsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccountsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Account as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted accounts.
+     * However, they can be restored using the Trash Can UI.
+     * If the accounts are not restored before the expiration time, the account
+     * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
+     * AccessBindings) will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAccount(
+        com.google.analytics.admin.v1beta.DeleteAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an account.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.Account updateAccount(
+        com.google.analytics.admin.v1beta.UpdateAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Requests a ticket for creating an account.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ProvisionAccountTicketResponse provisionAccountTicket(
+        com.google.analytics.admin.v1beta.ProvisionAccountTicketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvisionAccountTicketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListAccountSummariesResponse listAccountSummaries(
+        com.google.analytics.admin.v1beta.ListAccountSummariesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccountSummariesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single GA Property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.Property getProperty(
+        com.google.analytics.admin.v1beta.GetPropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child Properties under the specified parent Account.
+     * Properties will be excluded if the caller does not have access.
+     * Soft-deleted (ie: "trashed") properties are excluded by default.
+     * Returns an empty list if no relevant properties are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListPropertiesResponse listProperties(
+        com.google.analytics.admin.v1beta.ListPropertiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPropertiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.Property createProperty(
+        com.google.analytics.admin.v1beta.CreatePropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Property as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted properties.
+     * However, they can be restored using the Trash Can UI.
+     * If the properties are not restored before the expiration time, the Property
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
+     * will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.Property deleteProperty(
+        com.google.analytics.admin.v1beta.DeletePropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.Property updateProperty(
+        com.google.analytics.admin.v1beta.UpdatePropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a FirebaseLink.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.FirebaseLink createFirebaseLink(
+        com.google.analytics.admin.v1beta.CreateFirebaseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFirebaseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a FirebaseLink on a property
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFirebaseLink(
+        com.google.analytics.admin.v1beta.DeleteFirebaseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFirebaseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists FirebaseLinks on a property.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListFirebaseLinksResponse listFirebaseLinks(
+        com.google.analytics.admin.v1beta.ListFirebaseLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFirebaseLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a GoogleAdsLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.GoogleAdsLink createGoogleAdsLink(
+        com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGoogleAdsLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a GoogleAdsLink on a property
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.GoogleAdsLink updateGoogleAdsLink(
+        com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleAdsLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a GoogleAdsLink on a property
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteGoogleAdsLink(
+        com.google.analytics.admin.v1beta.DeleteGoogleAdsLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGoogleAdsLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists GoogleAdsLinks on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListGoogleAdsLinksResponse listGoogleAdsLinks(
+        com.google.analytics.admin.v1beta.ListGoogleAdsLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGoogleAdsLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get data sharing settings on an account.
+     * Data sharing settings are singletons.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.DataSharingSettings getDataSharingSettings(
+        com.google.analytics.admin.v1beta.GetDataSharingSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataSharingSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.MeasurementProtocolSecret getMeasurementProtocolSecret(
+        com.google.analytics.admin.v1beta.GetMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child MeasurementProtocolSecrets under the specified parent
+     * Property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse
+        listMeasurementProtocolSecrets(
+            com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMeasurementProtocolSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.MeasurementProtocolSecret
+        createMeasurementProtocolSecret(
+            com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMeasurementProtocolSecret(
+        com.google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.MeasurementProtocolSecret
+        updateMeasurementProtocolSecret(
+            com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the terms of user data collection for the specified property.
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or through this API) before MeasurementProtocolSecret resources may be
+     * created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.AcknowledgeUserDataCollectionResponse
+        acknowledgeUserDataCollection(
+            com.google.analytics.admin.v1beta.AcknowledgeUserDataCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcknowledgeUserDataCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches through all changes to an account or its children given the
+     * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse
+        searchChangeHistoryEvents(
+            com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchChangeHistoryEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
+     * Creates a conversion event with the specified attributes.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1beta.ConversionEvent createConversionEvent(
+        com.google.analytics.admin.v1beta.CreateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1beta.ConversionEvent updateConversionEvent(
+        com.google.analytics.admin.v1beta.UpdateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
+     * Retrieve a single conversion event.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1beta.ConversionEvent getConversionEvent(
+        com.google.analytics.admin.v1beta.GetConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
+     * Deletes a conversion event in a property.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteConversionEvent(
+        com.google.analytics.admin.v1beta.DeleteConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
+     * Returns a list of conversion events in the specified parent property.
+     * Returns an empty list if no conversion events are found.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1beta.ListConversionEventsResponse listConversionEvents(
+        com.google.analytics.admin.v1beta.ListConversionEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.KeyEvent createKeyEvent(
+        com.google.analytics.admin.v1beta.CreateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.KeyEvent updateKeyEvent(
+        com.google.analytics.admin.v1beta.UpdateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.KeyEvent getKeyEvent(
+        com.google.analytics.admin.v1beta.GetKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteKeyEvent(
+        com.google.analytics.admin.v1beta.DeleteKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListKeyEventsResponse listKeyEvents(
+        com.google.analytics.admin.v1beta.ListKeyEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKeyEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomDimension.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.CustomDimension createCustomDimension(
+        com.google.analytics.admin.v1beta.CreateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.CustomDimension updateCustomDimension(
+        com.google.analytics.admin.v1beta.UpdateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomDimensions on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListCustomDimensionsResponse listCustomDimensions(
+        com.google.analytics.admin.v1beta.ListCustomDimensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomDimensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveCustomDimension(
+        com.google.analytics.admin.v1beta.ArchiveCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomDimension.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.CustomDimension getCustomDimension(
+        com.google.analytics.admin.v1beta.GetCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.CustomMetric createCustomMetric(
+        com.google.analytics.admin.v1beta.CreateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.CustomMetric updateCustomMetric(
+        com.google.analytics.admin.v1beta.UpdateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomMetrics on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListCustomMetricsResponse listCustomMetrics(
+        com.google.analytics.admin.v1beta.ListCustomMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveCustomMetric(
+        com.google.analytics.admin.v1beta.ArchiveCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.CustomMetric getCustomMetric(
+        com.google.analytics.admin.v1beta.GetCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.DataRetentionSettings getDataRetentionSettings(
+        com.google.analytics.admin.v1beta.GetDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataRetentionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.DataRetentionSettings updateDataRetentionSettings(
+        com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataRetentionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataStream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.DataStream createDataStream(
+        com.google.analytics.admin.v1beta.CreateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataStream on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataStream(
+        com.google.analytics.admin.v1beta.DeleteDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataStream on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.DataStream updateDataStream(
+        com.google.analytics.admin.v1beta.UpdateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataStreams on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ListDataStreamsResponse listDataStreams(
+        com.google.analytics.admin.v1beta.ListDataStreamsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataStream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.DataStream getDataStream(
+        com.google.analytics.admin.v1beta.GetDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of data access records. The report provides
+     * records of each time a user reads Google Analytics reporting data. Access
+     * records are retained for up to 2 years.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
+     * data from Google Analytics through a linkage. These records don't include
+     * property configuration changes like adding a stream or changing a
+     * property's time zone. For configuration change history, see
+     * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.RunAccessReportResponse runAccessReport(
+        com.google.analytics.admin.v1beta.RunAccessReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunAccessReportMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
    * Service Interface for the Google Analytics Admin API.

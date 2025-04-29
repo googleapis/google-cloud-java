@@ -33,6 +33,7 @@ public final class BindDeviceToGatewayResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.BindDeviceToGatewayResponse)
     BindDeviceToGatewayResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BindDeviceToGatewayResponse.newBuilder() to construct.
   private BindDeviceToGatewayResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class BindDeviceToGatewayResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

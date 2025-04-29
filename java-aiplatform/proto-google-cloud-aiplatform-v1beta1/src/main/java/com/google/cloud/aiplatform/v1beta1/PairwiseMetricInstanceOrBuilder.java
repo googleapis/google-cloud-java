@@ -38,6 +38,7 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return Whether the jsonInstance field is set.
    */
   boolean hasJsonInstance();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return The jsonInstance.
    */
   java.lang.String getJsonInstance();
+
   /**
    *
    *
@@ -66,6 +68,49 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return The bytes for jsonInstance.
    */
   com.google.protobuf.ByteString getJsonInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+   *
+   * @return Whether the contentMapInstance field is set.
+   */
+  boolean hasContentMapInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+   *
+   * @return The contentMapInstance.
+   */
+  com.google.cloud.aiplatform.v1beta1.ContentMap getContentMapInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ContentMapOrBuilder getContentMapInstanceOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.PairwiseMetricInstance.InstanceCase getInstanceCase();
 }

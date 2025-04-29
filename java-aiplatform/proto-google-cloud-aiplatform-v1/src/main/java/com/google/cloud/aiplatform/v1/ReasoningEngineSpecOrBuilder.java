@@ -28,42 +28,97 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
-   * Required. User provided package spec of the ReasoningEngine.
+   * Optional. User provided package spec of the ReasoningEngine.
+   * Ignored when users directly specify a deployment image through
+   * `deployment_spec.first_party_image_override`, but keeping the
+   * field_behavior to avoid introducing breaking changes.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the packageSpec field is set.
    */
   boolean hasPackageSpec();
+
   /**
    *
    *
    * <pre>
-   * Required. User provided package spec of the ReasoningEngine.
+   * Optional. User provided package spec of the ReasoningEngine.
+   * Ignored when users directly specify a deployment image through
+   * `deployment_spec.first_party_image_override`, but keeping the
+   * field_behavior to avoid introducing breaking changes.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The packageSpec.
    */
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec getPackageSpec();
+
   /**
    *
    *
    * <pre>
-   * Required. User provided package spec of the ReasoningEngine.
+   * Optional. User provided package spec of the ReasoningEngine.
+   * Ignored when users directly specify a deployment image through
+   * `deployment_spec.first_party_image_override`, but keeping the
+   * field_behavior to avoid introducing breaking changes.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpecOrBuilder getPackageSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deploymentSpec field is set.
+   */
+  boolean hasDeploymentSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentSpec.
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec getDeploymentSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder
+      getDeploymentSpecOrBuilder();
 
   /**
    *
@@ -78,6 +133,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Struct> getClassMethodsList();
+
   /**
    *
    *
@@ -91,6 +147,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   com.google.protobuf.Struct getClassMethods(int index);
+
   /**
    *
    *
@@ -104,6 +161,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   int getClassMethodsCount();
+
   /**
    *
    *
@@ -117,6 +175,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.StructOrBuilder> getClassMethodsOrBuilderList();
+
   /**
    *
    *
@@ -130,4 +189,32 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   com.google.protobuf.StructOrBuilder getClassMethodsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The OSS agent framework used to develop the agent.
+   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * </pre>
+   *
+   * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The agentFramework.
+   */
+  java.lang.String getAgentFramework();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The OSS agent framework used to develop the agent.
+   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * </pre>
+   *
+   * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for agentFramework.
+   */
+  com.google.protobuf.ByteString getAgentFrameworkBytes();
 }

@@ -55,6 +55,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return A list containing the instanceNames.
    */
   java.util.List<java.lang.String> getInstanceNamesList();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The count of instanceNames.
    */
   int getInstanceNamesCount();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The instanceNames at the given index.
    */
   java.lang.String getInstanceNames(int index);
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface InstanceGroupConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.InstanceReference> getInstanceReferencesList();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface InstanceGroupConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.InstanceReference getInstanceReferences(int index);
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface InstanceGroupConfigOrBuilder
    * </code>
    */
   int getInstanceReferencesCount();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface InstanceGroupConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
       getInstanceReferencesOrBuilderList();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The machineTypeUri.
    */
   java.lang.String getMachineTypeUri();
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return Whether the diskConfig field is set.
    */
   boolean hasDiskConfig();
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The diskConfig.
    */
   com.google.cloud.dataproc.v1.DiskConfig getDiskConfig();
+
   /**
    *
    *
@@ -342,6 +353,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The enum numeric value on the wire for preemptibility.
    */
   int getPreemptibilityValue();
+
   /**
    *
    *
@@ -379,6 +391,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return Whether the managedGroupConfig field is set.
    */
   boolean hasManagedGroupConfig();
+
   /**
    *
    *
@@ -395,6 +408,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The managedGroupConfig.
    */
   com.google.cloud.dataproc.v1.ManagedGroupConfig getManagedGroupConfig();
+
   /**
    *
    *
@@ -423,6 +437,7 @@ public interface InstanceGroupConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.AcceleratorConfig> getAcceleratorsList();
+
   /**
    *
    *
@@ -436,6 +451,7 @@ public interface InstanceGroupConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.AcceleratorConfig getAccelerators(int index);
+
   /**
    *
    *
@@ -449,6 +465,7 @@ public interface InstanceGroupConfigOrBuilder
    * </code>
    */
   int getAcceleratorsCount();
+
   /**
    *
    *
@@ -463,6 +480,7 @@ public interface InstanceGroupConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
+
   /**
    *
    *
@@ -491,6 +509,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
+
   /**
    *
    *
@@ -547,6 +566,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return Whether the instanceFlexibilityPolicy field is set.
    */
   boolean hasInstanceFlexibilityPolicy();
+
   /**
    *
    *
@@ -562,6 +582,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The instanceFlexibilityPolicy.
    */
   com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy getInstanceFlexibilityPolicy();
+
   /**
    *
    *
@@ -592,6 +613,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return Whether the startupConfig field is set.
    */
   boolean hasStartupConfig();
+
   /**
    *
    *
@@ -607,6 +629,7 @@ public interface InstanceGroupConfigOrBuilder
    * @return The startupConfig.
    */
   com.google.cloud.dataproc.v1.StartupConfig getStartupConfig();
+
   /**
    *
    *

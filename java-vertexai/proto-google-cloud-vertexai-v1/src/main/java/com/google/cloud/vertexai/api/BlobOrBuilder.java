@@ -36,6 +36,7 @@ public interface BlobOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

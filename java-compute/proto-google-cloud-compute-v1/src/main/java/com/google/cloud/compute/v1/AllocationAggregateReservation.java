@@ -33,6 +33,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationAggregateReservation)
     AllocationAggregateReservationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllocationAggregateReservation.newBuilder() to construct.
   private AllocationAggregateReservation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -114,18 +115,25 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      * <code>UNDEFINED_VM_FAMILY = 0;</code>
      */
     public static final int UNDEFINED_VM_FAMILY_VALUE = 0;
+
     /** <code>VM_FAMILY_CLOUD_TPU_DEVICE_CT3 = 42845948;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_DEVICE_CT3_VALUE = 42845948;
+
     /** <code>VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L = 108020067;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L_VALUE = 108020067;
+
     /** <code>VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP = 18705267;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP_VALUE = 18705267;
+
     /** <code>VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E = 398926997;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E_VALUE = 398926997;
+
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P = 517384376;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P_VALUE = 517384376;
+
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P = 517384407;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P_VALUE = 517384407;
+
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P = 517384438;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P_VALUE = 517384438;
 
@@ -279,6 +287,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      * <code>UNDEFINED_WORKLOAD_TYPE = 0;</code>
      */
     public static final int UNDEFINED_WORKLOAD_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -289,6 +298,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      * <code>BATCH = 62971674;</code>
      */
     public static final int BATCH_VALUE = 62971674;
+
     /**
      *
      *
@@ -299,6 +309,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      * <code>SERVING = 17781740;</code>
      */
     public static final int SERVING_VALUE = 17781740;
+
     /** <code>UNSPECIFIED = 526786327;</code> */
     public static final int UNSPECIFIED_VALUE = 526786327;
 
@@ -396,6 +407,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
   private java.util.List<
           com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo>
       inUseResources_;
+
   /**
    *
    *
@@ -413,6 +425,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       getInUseResourcesList() {
     return inUseResources_;
   }
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       getInUseResourcesOrBuilderList() {
     return inUseResources_;
   }
+
   /**
    *
    *
@@ -447,6 +461,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
   public int getInUseResourcesCount() {
     return inUseResources_.size();
   }
+
   /**
    *
    *
@@ -463,6 +478,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       getInUseResources(int index) {
     return inUseResources_.get(index);
   }
+
   /**
    *
    *
@@ -486,6 +502,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
   private java.util.List<
           com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo>
       reservedResources_;
+
   /**
    *
    *
@@ -503,6 +520,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       getReservedResourcesList() {
     return reservedResources_;
   }
+
   /**
    *
    *
@@ -522,6 +540,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       getReservedResourcesOrBuilderList() {
     return reservedResources_;
   }
+
   /**
    *
    *
@@ -537,6 +556,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
   public int getReservedResourcesCount() {
     return reservedResources_.size();
   }
+
   /**
    *
    *
@@ -553,6 +573,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       getReservedResources(int index) {
     return reservedResources_.get(index);
   }
+
   /**
    *
    *
@@ -574,6 +595,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmFamily_ = "";
+
   /**
    *
    *
@@ -590,6 +612,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
   public boolean hasVmFamily() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -614,6 +637,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -643,6 +667,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workloadType_ = "";
+
   /**
    *
    *
@@ -659,6 +684,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
   public boolean hasWorkloadType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -683,6 +709,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -913,6 +940,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1276,6 +1304,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return inUseResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1323,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return inUseResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1313,6 +1343,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return inUseResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1339,6 +1370,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1395,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1421,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1448,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1472,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1497,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1523,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1507,6 +1545,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1567,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1583,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         getInUseResourcesBuilder(int index) {
       return getInUseResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1562,6 +1603,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return inUseResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1626,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(inUseResources_);
       }
     }
+
     /**
      *
      *
@@ -1602,6 +1645,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
               com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1621,6 +1665,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
               com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1700,6 +1745,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return reservedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1718,6 +1764,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return reservedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1737,6 +1784,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return reservedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1763,6 +1811,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1787,6 +1836,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1812,6 +1862,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1838,6 +1889,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1861,6 +1913,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1938,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1964,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1931,6 +1986,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +2008,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2024,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         getReservedResourcesBuilder(int index) {
       return getReservedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1986,6 +2044,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return reservedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2008,6 +2067,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(reservedResources_);
       }
     }
+
     /**
      *
      *
@@ -2026,6 +2086,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
               com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2045,6 +2106,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
               com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfo
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2085,6 +2147,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     }
 
     private java.lang.Object vmFamily_ = "";
+
     /**
      *
      *
@@ -2100,6 +2163,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     public boolean hasVmFamily() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2123,6 +2187,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2146,6 +2211,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2168,6 +2234,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2186,6 +2253,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2279,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     }
 
     private java.lang.Object workloadType_ = "";
+
     /**
      *
      *
@@ -2226,6 +2295,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     public boolean hasWorkloadType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2249,6 +2319,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2272,6 +2343,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2294,6 +2366,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2312,6 +2385,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

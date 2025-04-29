@@ -39,6 +39,7 @@ public interface ComputeInsightsRequestOrBuilder
    * @return A list containing the insights.
    */
   java.util.List<com.google.maps.areainsights.v1.Insight> getInsightsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ComputeInsightsRequestOrBuilder
    * @return The count of insights.
    */
   int getInsightsCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface ComputeInsightsRequestOrBuilder
    * @return The insights at the given index.
    */
   com.google.maps.areainsights.v1.Insight getInsights(int index);
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ComputeInsightsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for insights.
    */
   java.util.List<java.lang.Integer> getInsightsValueList();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ComputeInsightsRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface ComputeInsightsRequestOrBuilder
    * @return The filter.
    */
   com.google.maps.areainsights.v1.Filter getFilter();
+
   /**
    *
    *

@@ -163,6 +163,7 @@ public class SnapshotsClientTest {
             .setDiskSizeGb(-757478089)
             .setDownloadBytes(971924980)
             .setEnableConfidentialCompute(true)
+            .setGuestFlush(true)
             .addAllGuestOsFeatures(new ArrayList<GuestOsFeature>())
             .setId(3355)
             .setKind("kind3292052")

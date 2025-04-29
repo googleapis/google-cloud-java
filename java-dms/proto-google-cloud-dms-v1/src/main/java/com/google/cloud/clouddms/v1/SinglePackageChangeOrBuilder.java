@@ -36,6 +36,7 @@ public interface SinglePackageChangeOrBuilder
    * @return The packageDescription.
    */
   java.lang.String getPackageDescription();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SinglePackageChangeOrBuilder
    * @return The packageBody.
    */
   java.lang.String getPackageBody();
+
   /**
    *
    *

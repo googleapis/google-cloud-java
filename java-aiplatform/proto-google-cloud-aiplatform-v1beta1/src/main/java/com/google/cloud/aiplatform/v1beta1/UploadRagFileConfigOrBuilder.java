@@ -36,11 +36,12 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=481
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=520
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Deprecated
   boolean hasRagFileChunkingConfig();
+
   /**
    *
    *
@@ -53,11 +54,12 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=481
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=520
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UploadRagFileConfigOrBuilder
    * @return Whether the ragFileTransformationConfig field is set.
    */
   boolean hasRagFileTransformationConfig();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UploadRagFileConfigOrBuilder
    * @return The ragFileTransformationConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig getRagFileTransformationConfig();
+
   /**
    *
    *

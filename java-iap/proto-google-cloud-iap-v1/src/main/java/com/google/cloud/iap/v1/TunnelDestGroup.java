@@ -33,6 +33,7 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.TunnelDestGroup)
     TunnelDestGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TunnelDestGroup.newBuilder() to construct.
   private TunnelDestGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,18 +70,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
-   * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-   * within the project and contain only lower case letters (a-z) and dashes
-   * (-).
+   * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+   * project and contain only lower case letters (a-z) and dashes (-).
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -96,18 +95,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-   * within the project and contain only lower case letters (a-z) and dashes
-   * (-).
+   * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+   * project and contain only lower case letters (a-z) and dashes (-).
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -129,42 +126,51 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList cidrs_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the cidrs.
    */
   public com.google.protobuf.ProtocolStringList getCidrsList() {
     return cidrs_;
   }
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of cidrs.
    */
   public int getCidrsCount() {
     return cidrs_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The cidrs at the given index.
@@ -172,14 +178,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getCidrs(int index) {
     return cidrs_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the cidrs at the given index.
@@ -193,42 +202,51 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList fqdns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the fqdns.
    */
   public com.google.protobuf.ProtocolStringList getFqdnsList() {
     return fqdns_;
   }
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of fqdns.
    */
   public int getFqdnsCount() {
     return fqdns_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The fqdns at the given index.
@@ -236,14 +254,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getFqdns(int index) {
     return fqdns_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the fqdns at the given index.
@@ -442,6 +463,7 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,18 +691,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
-     * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-     * within the project and contain only lower case letters (a-z) and dashes
-     * (-).
+     * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+     * project and contain only lower case letters (a-z) and dashes (-).
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -695,18 +715,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-     * within the project and contain only lower case letters (a-z) and dashes
-     * (-).
+     * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+     * project and contain only lower case letters (a-z) and dashes (-).
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -721,18 +739,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-     * within the project and contain only lower case letters (a-z) and dashes
-     * (-).
+     * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+     * project and contain only lower case letters (a-z) and dashes (-).
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -746,18 +762,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-     * within the project and contain only lower case letters (a-z) and dashes
-     * (-).
+     * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+     * project and contain only lower case letters (a-z) and dashes (-).
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -767,18 +781,16 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-     * within the project and contain only lower case letters (a-z) and dashes
-     * (-).
+     * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+     * project and contain only lower case letters (a-z) and dashes (-).
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -803,14 +815,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the cidrs.
      */
@@ -818,28 +833,34 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       cidrs_.makeImmutable();
       return cidrs_;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of cidrs.
      */
     public int getCidrsCount() {
       return cidrs_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The cidrs at the given index.
@@ -847,14 +868,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getCidrs(int index) {
       return cidrs_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the cidrs at the given index.
@@ -862,14 +886,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getCidrsBytes(int index) {
       return cidrs_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The cidrs to set.
@@ -885,14 +912,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The cidrs to add.
      * @return This builder for chaining.
@@ -907,14 +937,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The cidrs to add.
      * @return This builder for chaining.
@@ -926,14 +959,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -944,14 +980,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of CIDRs that this group applies to.
+     * Optional. Unordered list. List of CIDRs that this group applies to.
      * </pre>
      *
-     * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the cidrs to add.
      * @return This builder for chaining.
@@ -977,14 +1016,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the fqdns.
      */
@@ -992,28 +1034,34 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       fqdns_.makeImmutable();
       return fqdns_;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of fqdns.
      */
     public int getFqdnsCount() {
       return fqdns_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The fqdns at the given index.
@@ -1021,14 +1069,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getFqdns(int index) {
       return fqdns_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the fqdns at the given index.
@@ -1036,14 +1087,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getFqdnsBytes(int index) {
       return fqdns_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The fqdns to set.
@@ -1059,14 +1113,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The fqdns to add.
      * @return This builder for chaining.
@@ -1081,14 +1138,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The fqdns to add.
      * @return This builder for chaining.
@@ -1100,14 +1160,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1118,14 +1181,17 @@ public final class TunnelDestGroup extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Unordered list. List of FQDNs that this group applies to.
+     * Optional. Unordered list. List of FQDNs that this group applies to.
      * </pre>
      *
-     * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+     * <code>
+     * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the fqdns to add.
      * @return This builder for chaining.

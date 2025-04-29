@@ -34,6 +34,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeOrgPoliciesResponse)
     AnalyzeOrgPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeOrgPoliciesResponse.newBuilder() to construct.
   private AnalyzeOrgPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +77,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * <pre>
      * The consolidated organization policy for the analyzed resource. The
      * consolidated organization policy is computed by merging and evaluating
-     * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+     * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
      * The evaluation will respect the organization policy [hierarchy
      * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
      * </pre>
@@ -86,13 +87,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return Whether the consolidatedPolicy field is set.
      */
     boolean hasConsolidatedPolicy();
+
     /**
      *
      *
      * <pre>
      * The consolidated organization policy for the analyzed resource. The
      * consolidated organization policy is computed by merging and evaluating
-     * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+     * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
      * The evaluation will respect the organization policy [hierarchy
      * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
      * </pre>
@@ -102,13 +104,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return The consolidatedPolicy.
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicy getConsolidatedPolicy();
+
     /**
      *
      *
      * <pre>
      * The consolidated organization policy for the analyzed resource. The
      * consolidated organization policy is computed by merging and evaluating
-     * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+     * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
      * The evaluation will respect the organization policy [hierarchy
      * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
      * </pre>
@@ -122,7 +125,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -132,12 +135,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 2;</code>
      */
     java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy> getPolicyBundleList();
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -147,12 +151,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 2;</code>
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicy getPolicyBundle(int index);
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -162,12 +167,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 2;</code>
      */
     int getPolicyBundleCount();
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -178,12 +184,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      */
     java.util.List<? extends com.google.cloud.asset.v1.AnalyzerOrgPolicyOrBuilder>
         getPolicyBundleOrBuilderList();
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -208,6 +215,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return The project.
      */
     java.lang.String getProject();
+
     /**
      *
      *
@@ -237,6 +245,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return A list containing the folders.
      */
     java.util.List<java.lang.String> getFoldersList();
+
     /**
      *
      *
@@ -251,6 +260,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return The count of folders.
      */
     int getFoldersCount();
+
     /**
      *
      *
@@ -266,6 +276,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return The folders at the given index.
      */
     java.lang.String getFolders(int index);
+
     /**
      *
      *
@@ -296,6 +307,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * @return The organization.
      */
     java.lang.String getOrganization();
+
     /**
      *
      *
@@ -311,6 +323,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      */
     com.google.protobuf.ByteString getOrganizationBytes();
   }
+
   /**
    *
    *
@@ -325,6 +338,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult)
       OrgPolicyResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OrgPolicyResult.newBuilder() to construct.
     private OrgPolicyResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -361,13 +375,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     private int bitField0_;
     public static final int CONSOLIDATED_POLICY_FIELD_NUMBER = 1;
     private com.google.cloud.asset.v1.AnalyzerOrgPolicy consolidatedPolicy_;
+
     /**
      *
      *
      * <pre>
      * The consolidated organization policy for the analyzed resource. The
      * consolidated organization policy is computed by merging and evaluating
-     * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+     * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
      * The evaluation will respect the organization policy [hierarchy
      * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
      * </pre>
@@ -380,13 +395,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public boolean hasConsolidatedPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
      * The consolidated organization policy for the analyzed resource. The
      * consolidated organization policy is computed by merging and evaluating
-     * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+     * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
      * The evaluation will respect the organization policy [hierarchy
      * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
      * </pre>
@@ -401,13 +417,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           ? com.google.cloud.asset.v1.AnalyzerOrgPolicy.getDefaultInstance()
           : consolidatedPolicy_;
     }
+
     /**
      *
      *
      * <pre>
      * The consolidated organization policy for the analyzed resource. The
      * consolidated organization policy is computed by merging and evaluating
-     * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+     * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
      * The evaluation will respect the organization policy [hierarchy
      * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
      * </pre>
@@ -425,12 +442,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy> policyBundle_;
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -443,12 +461,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public java.util.List<com.google.cloud.asset.v1.AnalyzerOrgPolicy> getPolicyBundleList() {
       return policyBundle_;
     }
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -462,12 +481,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         getPolicyBundleOrBuilderList() {
       return policyBundle_;
     }
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -480,12 +500,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public int getPolicyBundleCount() {
       return policyBundle_.size();
     }
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -498,12 +519,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public com.google.cloud.asset.v1.AnalyzerOrgPolicy getPolicyBundle(int index) {
       return policyBundle_.get(index);
     }
+
     /**
      *
      *
      * <pre>
      * The ordered list of all organization policies from the
-     * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+     * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
      * to the scope specified in the request.
      *
      * If the constraint is defined with default policy, it will also appear in
@@ -522,6 +544,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -547,6 +570,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -578,6 +602,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList folders_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -594,6 +619,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public com.google.protobuf.ProtocolStringList getFoldersList() {
       return folders_;
     }
+
     /**
      *
      *
@@ -610,6 +636,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public int getFoldersCount() {
       return folders_.size();
     }
+
     /**
      *
      *
@@ -627,6 +654,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public java.lang.String getFolders(int index) {
       return folders_.get(index);
     }
+
     /**
      *
      *
@@ -649,6 +677,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object organization_ = "";
+
     /**
      *
      *
@@ -674,6 +703,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -913,6 +943,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1245,13 +1276,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
               com.google.cloud.asset.v1.AnalyzerOrgPolicy.Builder,
               com.google.cloud.asset.v1.AnalyzerOrgPolicyOrBuilder>
           consolidatedPolicyBuilder_;
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1263,13 +1295,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       public boolean hasConsolidatedPolicy() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1287,13 +1320,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return consolidatedPolicyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1313,13 +1347,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1337,13 +1372,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1369,13 +1405,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1392,13 +1429,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1410,13 +1448,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return getConsolidatedPolicyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1432,13 +1471,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
               : consolidatedPolicy_;
         }
       }
+
       /**
        *
        *
        * <pre>
        * The consolidated organization policy for the analyzed resource. The
        * consolidated organization policy is computed by merging and evaluating
-       * [AnalyzeOrgPoliciesResponse.policy_bundle][].
+       * [policy_bundle][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult.policy_bundle].
        * The evaluation will respect the organization policy [hierarchy
        * rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
        * </pre>
@@ -1484,7 +1524,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1500,12 +1540,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return policyBundleBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1521,12 +1562,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return policyBundleBuilder_.getCount();
         }
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1542,12 +1584,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return policyBundleBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1569,12 +1612,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1594,12 +1638,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1621,12 +1666,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1648,12 +1694,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1673,12 +1720,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1698,12 +1746,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1723,12 +1772,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1747,12 +1797,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1771,12 +1822,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1788,12 +1840,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       public com.google.cloud.asset.v1.AnalyzerOrgPolicy.Builder getPolicyBundleBuilder(int index) {
         return getPolicyBundleFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1810,12 +1863,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return policyBundleBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1832,12 +1886,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return java.util.Collections.unmodifiableList(policyBundle_);
         }
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1850,12 +1905,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return getPolicyBundleFieldBuilder()
             .addBuilder(com.google.cloud.asset.v1.AnalyzerOrgPolicy.getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1868,12 +1924,13 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return getPolicyBundleFieldBuilder()
             .addBuilder(index, com.google.cloud.asset.v1.AnalyzerOrgPolicy.getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
        * The ordered list of all organization policies from the
-       * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
+       * [consolidated_policy.attached_resource][google.cloud.asset.v1.AnalyzerOrgPolicy.attached_resource].
        * to the scope specified in the request.
        *
        * If the constraint is defined with default policy, it will also appear in
@@ -1908,6 +1965,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
 
       private java.lang.Object project_ = "";
+
       /**
        *
        *
@@ -1932,6 +1990,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1956,6 +2015,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1979,6 +2039,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1998,6 +2059,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2032,6 +2094,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         }
         bitField0_ |= 0x00000008;
       }
+
       /**
        *
        *
@@ -2049,6 +2112,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         folders_.makeImmutable();
         return folders_;
       }
+
       /**
        *
        *
@@ -2065,6 +2129,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       public int getFoldersCount() {
         return folders_.size();
       }
+
       /**
        *
        *
@@ -2082,6 +2147,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       public java.lang.String getFolders(int index) {
         return folders_.get(index);
       }
+
       /**
        *
        *
@@ -2099,6 +2165,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       public com.google.protobuf.ByteString getFoldersBytes(int index) {
         return folders_.getByteString(index);
       }
+
       /**
        *
        *
@@ -2124,6 +2191,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2148,6 +2216,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2169,6 +2238,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2189,6 +2259,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2216,6 +2287,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
 
       private java.lang.Object organization_ = "";
+
       /**
        *
        *
@@ -2240,6 +2312,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2264,6 +2337,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2287,6 +2361,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2306,6 +2381,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2404,6 +2480,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult>
       orgPolicyResults_;
+
   /**
    *
    *
@@ -2423,6 +2500,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       getOrgPolicyResultsList() {
     return orgPolicyResults_;
   }
+
   /**
    *
    *
@@ -2443,6 +2521,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       getOrgPolicyResultsOrBuilderList() {
     return orgPolicyResults_;
   }
+
   /**
    *
    *
@@ -2461,6 +2540,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
   public int getOrgPolicyResultsCount() {
     return orgPolicyResults_.size();
   }
+
   /**
    *
    *
@@ -2480,6 +2560,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       int index) {
     return orgPolicyResults_.get(index);
   }
+
   /**
    *
    *
@@ -2502,6 +2583,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
 
   public static final int CONSTRAINT_FIELD_NUMBER = 2;
   private com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint constraint_;
+
   /**
    *
    *
@@ -2517,6 +2599,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
   public boolean hasConstraint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2534,6 +2617,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         ? com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.getDefaultInstance()
         : constraint_;
   }
+
   /**
    *
    *
@@ -2554,6 +2638,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -2578,6 +2663,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -2787,6 +2873,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3105,6 +3192,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return orgPolicyResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3126,6 +3214,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return orgPolicyResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3148,6 +3237,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return orgPolicyResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3176,6 +3266,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3203,6 +3294,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3231,6 +3323,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3259,6 +3352,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3285,6 +3379,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3312,6 +3407,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3435,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3363,6 +3460,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3387,6 +3485,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3405,6 +3504,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         getOrgPolicyResultsBuilder(int index) {
       return getOrgPolicyResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3427,6 +3527,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return orgPolicyResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3450,6 +3551,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(orgPolicyResults_);
       }
     }
+
     /**
      *
      *
@@ -3471,6 +3573,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
               com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3493,6 +3596,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
               com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.OrgPolicyResult
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3539,6 +3643,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Builder,
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraintOrBuilder>
         constraintBuilder_;
+
     /**
      *
      *
@@ -3553,6 +3658,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     public boolean hasConstraint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3573,6 +3679,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return constraintBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3595,6 +3702,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3615,6 +3723,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3643,6 +3752,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -3662,6 +3772,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3787,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return getConstraintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3694,6 +3806,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
             : constraint_;
       }
     }
+
     /**
      *
      *
@@ -3721,6 +3834,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -3744,6 +3858,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3767,6 +3882,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3789,6 +3905,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3807,6 +3924,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

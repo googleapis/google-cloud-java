@@ -38,6 +38,7 @@ public interface LoadBalancerInfoOrBuilder
    * @return The enum numeric value on the wire for loadBalancerType.
    */
   int getLoadBalancerTypeValue();
+
   /**
    *
    *
@@ -65,11 +66,12 @@ public interface LoadBalancerInfoOrBuilder
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
-   *     See google/cloud/networkmanagement/v1/trace.proto;l=725
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=781
    * @return The healthCheckUri.
    */
   @java.lang.Deprecated
   java.lang.String getHealthCheckUri();
+
   /**
    *
    *
@@ -82,7 +84,7 @@ public interface LoadBalancerInfoOrBuilder
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
-   *     See google/cloud/networkmanagement/v1/trace.proto;l=725
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=781
    * @return The bytes for healthCheckUri.
    */
   @java.lang.Deprecated
@@ -98,6 +100,7 @@ public interface LoadBalancerInfoOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.LoadBalancerBackend backends = 3;</code>
    */
   java.util.List<com.google.cloud.networkmanagement.v1.LoadBalancerBackend> getBackendsList();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface LoadBalancerInfoOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.LoadBalancerBackend backends = 3;</code>
    */
   com.google.cloud.networkmanagement.v1.LoadBalancerBackend getBackends(int index);
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface LoadBalancerInfoOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.LoadBalancerBackend backends = 3;</code>
    */
   int getBackendsCount();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface LoadBalancerInfoOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkmanagement.v1.LoadBalancerBackendOrBuilder>
       getBackendsOrBuilderList();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface LoadBalancerInfoOrBuilder
    * @return The enum numeric value on the wire for backendType.
    */
   int getBackendTypeValue();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface LoadBalancerInfoOrBuilder
    * @return The backendUri.
    */
   java.lang.String getBackendUri();
+
   /**
    *
    *

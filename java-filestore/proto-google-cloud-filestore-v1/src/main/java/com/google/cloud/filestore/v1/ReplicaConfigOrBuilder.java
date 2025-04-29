@@ -38,6 +38,7 @@ public interface ReplicaConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ReplicaConfigOrBuilder
    * @return A list containing the stateReasons.
    */
   java.util.List<com.google.cloud.filestore.v1.ReplicaConfig.StateReason> getStateReasonsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ReplicaConfigOrBuilder
    * @return The count of stateReasons.
    */
   int getStateReasonsCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface ReplicaConfigOrBuilder
    * @return The stateReasons at the given index.
    */
   com.google.cloud.filestore.v1.ReplicaConfig.StateReason getStateReasons(int index);
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface ReplicaConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for stateReasons.
    */
   java.util.List<java.lang.Integer> getStateReasonsValueList();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface ReplicaConfigOrBuilder
    * @return The peerInstance.
    */
   java.lang.String getPeerInstance();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface ReplicaConfigOrBuilder
    * @return Whether the lastActiveSyncTime field is set.
    */
   boolean hasLastActiveSyncTime();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface ReplicaConfigOrBuilder
    * @return The lastActiveSyncTime.
    */
   com.google.protobuf.Timestamp getLastActiveSyncTime();
+
   /**
    *
    *

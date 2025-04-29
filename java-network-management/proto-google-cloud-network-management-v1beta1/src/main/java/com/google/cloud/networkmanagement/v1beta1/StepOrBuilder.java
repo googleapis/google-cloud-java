@@ -36,6 +36,7 @@ public interface StepOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StepOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface StepOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface StepOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface StepOrBuilder
    * @return The instance.
    */
   com.google.cloud.networkmanagement.v1beta1.InstanceInfo getInstance();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface StepOrBuilder
    * @return Whether the firewall field is set.
    */
   boolean hasFirewall();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface StepOrBuilder
    * @return The firewall.
    */
   com.google.cloud.networkmanagement.v1beta1.FirewallInfo getFirewall();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface StepOrBuilder
    * @return Whether the route field is set.
    */
   boolean hasRoute();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface StepOrBuilder
    * @return The route.
    */
   com.google.cloud.networkmanagement.v1beta1.RouteInfo getRoute();
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public interface StepOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public interface StepOrBuilder
    * @return The endpoint.
    */
   com.google.cloud.networkmanagement.v1beta1.EndpointInfo getEndpoint();
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public interface StepOrBuilder
    * @return Whether the googleService field is set.
    */
   boolean hasGoogleService();
+
   /**
    *
    *
@@ -285,6 +297,7 @@ public interface StepOrBuilder
    * @return The googleService.
    */
   com.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo getGoogleService();
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public interface StepOrBuilder
    * @return Whether the forwardingRule field is set.
    */
   boolean hasForwardingRule();
+
   /**
    *
    *
@@ -320,6 +334,7 @@ public interface StepOrBuilder
    * @return The forwardingRule.
    */
   com.google.cloud.networkmanagement.v1beta1.ForwardingRuleInfo getForwardingRule();
+
   /**
    *
    *
@@ -344,6 +359,7 @@ public interface StepOrBuilder
    * @return Whether the vpnGateway field is set.
    */
   boolean hasVpnGateway();
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public interface StepOrBuilder
    * @return The vpnGateway.
    */
   com.google.cloud.networkmanagement.v1beta1.VpnGatewayInfo getVpnGateway();
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public interface StepOrBuilder
    * @return Whether the vpnTunnel field is set.
    */
   boolean hasVpnTunnel();
+
   /**
    *
    *
@@ -391,6 +409,7 @@ public interface StepOrBuilder
    * @return The vpnTunnel.
    */
   com.google.cloud.networkmanagement.v1beta1.VpnTunnelInfo getVpnTunnel();
+
   /**
    *
    *
@@ -414,6 +433,7 @@ public interface StepOrBuilder
    * @return Whether the vpcConnector field is set.
    */
   boolean hasVpcConnector();
+
   /**
    *
    *
@@ -426,6 +446,7 @@ public interface StepOrBuilder
    * @return The vpcConnector.
    */
   com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo getVpcConnector();
+
   /**
    *
    *
@@ -441,6 +462,96 @@ public interface StepOrBuilder
    *
    *
    * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   *
+   * @return Whether the directVpcEgressConnection field is set.
+   */
+  boolean hasDirectVpcEgressConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   *
+   * @return The directVpcEgressConnection.
+   */
+  com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+      getDirectVpcEgressConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfoOrBuilder
+      getDirectVpcEgressConnectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   *
+   * @return Whether the serverlessExternalConnection field is set.
+   */
+  boolean hasServerlessExternalConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   *
+   * @return The serverlessExternalConnection.
+   */
+  com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+      getServerlessExternalConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfoOrBuilder
+      getServerlessExternalConnectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display information of the final state "deliver" and reason.
    * </pre>
    *
@@ -449,6 +560,7 @@ public interface StepOrBuilder
    * @return Whether the deliver field is set.
    */
   boolean hasDeliver();
+
   /**
    *
    *
@@ -461,6 +573,7 @@ public interface StepOrBuilder
    * @return The deliver.
    */
   com.google.cloud.networkmanagement.v1beta1.DeliverInfo getDeliver();
+
   /**
    *
    *
@@ -484,6 +597,7 @@ public interface StepOrBuilder
    * @return Whether the forward field is set.
    */
   boolean hasForward();
+
   /**
    *
    *
@@ -496,6 +610,7 @@ public interface StepOrBuilder
    * @return The forward.
    */
   com.google.cloud.networkmanagement.v1beta1.ForwardInfo getForward();
+
   /**
    *
    *
@@ -519,6 +634,7 @@ public interface StepOrBuilder
    * @return Whether the abort field is set.
    */
   boolean hasAbort();
+
   /**
    *
    *
@@ -531,6 +647,7 @@ public interface StepOrBuilder
    * @return The abort.
    */
   com.google.cloud.networkmanagement.v1beta1.AbortInfo getAbort();
+
   /**
    *
    *
@@ -554,6 +671,7 @@ public interface StepOrBuilder
    * @return Whether the drop field is set.
    */
   boolean hasDrop();
+
   /**
    *
    *
@@ -566,6 +684,7 @@ public interface StepOrBuilder
    * @return The drop.
    */
   com.google.cloud.networkmanagement.v1beta1.DropInfo getDrop();
+
   /**
    *
    *
@@ -590,11 +709,12 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
   boolean hasLoadBalancer();
+
   /**
    *
    *
@@ -608,11 +728,12 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
   com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo getLoadBalancer();
+
   /**
    *
    *
@@ -640,6 +761,7 @@ public interface StepOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -652,6 +774,7 @@ public interface StepOrBuilder
    * @return The network.
    */
   com.google.cloud.networkmanagement.v1beta1.NetworkInfo getNetwork();
+
   /**
    *
    *
@@ -675,6 +798,7 @@ public interface StepOrBuilder
    * @return Whether the gkeMaster field is set.
    */
   boolean hasGkeMaster();
+
   /**
    *
    *
@@ -687,6 +811,7 @@ public interface StepOrBuilder
    * @return The gkeMaster.
    */
   com.google.cloud.networkmanagement.v1beta1.GKEMasterInfo getGkeMaster();
+
   /**
    *
    *
@@ -711,6 +836,7 @@ public interface StepOrBuilder
    * @return Whether the cloudSqlInstance field is set.
    */
   boolean hasCloudSqlInstance();
+
   /**
    *
    *
@@ -724,6 +850,7 @@ public interface StepOrBuilder
    * @return The cloudSqlInstance.
    */
   com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfo getCloudSqlInstance();
+
   /**
    *
    *
@@ -749,6 +876,7 @@ public interface StepOrBuilder
    * @return Whether the redisInstance field is set.
    */
   boolean hasRedisInstance();
+
   /**
    *
    *
@@ -761,6 +889,7 @@ public interface StepOrBuilder
    * @return The redisInstance.
    */
   com.google.cloud.networkmanagement.v1beta1.RedisInstanceInfo getRedisInstance();
+
   /**
    *
    *
@@ -784,6 +913,7 @@ public interface StepOrBuilder
    * @return Whether the redisCluster field is set.
    */
   boolean hasRedisCluster();
+
   /**
    *
    *
@@ -796,6 +926,7 @@ public interface StepOrBuilder
    * @return The redisCluster.
    */
   com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo getRedisCluster();
+
   /**
    *
    *
@@ -819,6 +950,7 @@ public interface StepOrBuilder
    * @return Whether the cloudFunction field is set.
    */
   boolean hasCloudFunction();
+
   /**
    *
    *
@@ -831,6 +963,7 @@ public interface StepOrBuilder
    * @return The cloudFunction.
    */
   com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo getCloudFunction();
+
   /**
    *
    *
@@ -855,6 +988,7 @@ public interface StepOrBuilder
    * @return Whether the appEngineVersion field is set.
    */
   boolean hasAppEngineVersion();
+
   /**
    *
    *
@@ -868,6 +1002,7 @@ public interface StepOrBuilder
    * @return The appEngineVersion.
    */
   com.google.cloud.networkmanagement.v1beta1.AppEngineVersionInfo getAppEngineVersion();
+
   /**
    *
    *
@@ -894,6 +1029,7 @@ public interface StepOrBuilder
    * @return Whether the cloudRunRevision field is set.
    */
   boolean hasCloudRunRevision();
+
   /**
    *
    *
@@ -907,6 +1043,7 @@ public interface StepOrBuilder
    * @return The cloudRunRevision.
    */
   com.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo getCloudRunRevision();
+
   /**
    *
    *
@@ -932,6 +1069,7 @@ public interface StepOrBuilder
    * @return Whether the nat field is set.
    */
   boolean hasNat();
+
   /**
    *
    *
@@ -944,6 +1082,7 @@ public interface StepOrBuilder
    * @return The nat.
    */
   com.google.cloud.networkmanagement.v1beta1.NatInfo getNat();
+
   /**
    *
    *
@@ -967,6 +1106,7 @@ public interface StepOrBuilder
    * @return Whether the proxyConnection field is set.
    */
   boolean hasProxyConnection();
+
   /**
    *
    *
@@ -979,6 +1119,7 @@ public interface StepOrBuilder
    * @return The proxyConnection.
    */
   com.google.cloud.networkmanagement.v1beta1.ProxyConnectionInfo getProxyConnection();
+
   /**
    *
    *
@@ -1005,6 +1146,7 @@ public interface StepOrBuilder
    * @return Whether the loadBalancerBackendInfo field is set.
    */
   boolean hasLoadBalancerBackendInfo();
+
   /**
    *
    *
@@ -1019,6 +1161,7 @@ public interface StepOrBuilder
    * @return The loadBalancerBackendInfo.
    */
   com.google.cloud.networkmanagement.v1beta1.LoadBalancerBackendInfo getLoadBalancerBackendInfo();
+
   /**
    *
    *
@@ -1045,6 +1188,7 @@ public interface StepOrBuilder
    * @return Whether the storageBucket field is set.
    */
   boolean hasStorageBucket();
+
   /**
    *
    *
@@ -1057,6 +1201,7 @@ public interface StepOrBuilder
    * @return The storageBucket.
    */
   com.google.cloud.networkmanagement.v1beta1.StorageBucketInfo getStorageBucket();
+
   /**
    *
    *
@@ -1081,6 +1226,7 @@ public interface StepOrBuilder
    * @return Whether the serverlessNeg field is set.
    */
   boolean hasServerlessNeg();
+
   /**
    *
    *
@@ -1094,6 +1240,7 @@ public interface StepOrBuilder
    * @return The serverlessNeg.
    */
   com.google.cloud.networkmanagement.v1beta1.ServerlessNegInfo getServerlessNeg();
+
   /**
    *
    *

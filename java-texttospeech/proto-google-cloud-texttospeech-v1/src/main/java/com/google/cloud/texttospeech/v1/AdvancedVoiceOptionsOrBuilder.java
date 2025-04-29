@@ -28,8 +28,8 @@ public interface AdvancedVoiceOptionsOrBuilder
    *
    *
    * <pre>
-   * Only for Journey voices. If false, the synthesis will be context aware
-   * and have higher latency.
+   * Only for Journey voices. If false, the synthesis is context aware
+   * and has a higher latency.
    * </pre>
    *
    * <code>optional bool low_latency_journey_synthesis = 1;</code>
@@ -37,12 +37,13 @@ public interface AdvancedVoiceOptionsOrBuilder
    * @return Whether the lowLatencyJourneySynthesis field is set.
    */
   boolean hasLowLatencyJourneySynthesis();
+
   /**
    *
    *
    * <pre>
-   * Only for Journey voices. If false, the synthesis will be context aware
-   * and have higher latency.
+   * Only for Journey voices. If false, the synthesis is context aware
+   * and has a higher latency.
    * </pre>
    *
    * <code>optional bool low_latency_journey_synthesis = 1;</code>

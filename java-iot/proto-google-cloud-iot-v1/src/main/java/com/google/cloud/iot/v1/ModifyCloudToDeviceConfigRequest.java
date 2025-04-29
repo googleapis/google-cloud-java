@@ -33,6 +33,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest)
     ModifyCloudToDeviceConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModifyCloudToDeviceConfigRequest.newBuilder() to construct.
   private ModifyCloudToDeviceConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
 
   public static final int VERSION_TO_UPDATE_FIELD_NUMBER = 2;
   private long versionToUpdate_ = 0L;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
 
   public static final int BINARY_DATA_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -342,6 +347,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +558,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -578,6 +585,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -604,6 +612,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -629,6 +638,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     }
 
     private long versionToUpdate_;
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     public long getVersionToUpdate() {
       return versionToUpdate_;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     }
 
     private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

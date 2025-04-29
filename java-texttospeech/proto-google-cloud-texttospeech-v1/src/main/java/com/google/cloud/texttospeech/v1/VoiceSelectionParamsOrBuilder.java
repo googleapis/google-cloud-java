@@ -46,6 +46,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The enum numeric value on the wire for ssmlGender.
    */
   int getSsmlGenderValue();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return Whether the customVoice field is set.
    */
   boolean hasCustomVoice();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The customVoice.
    */
   com.google.cloud.texttospeech.v1.CustomVoiceParams getCustomVoice();
+
   /**
    *
    *
@@ -177,8 +182,8 @@ public interface VoiceSelectionParamsOrBuilder
    *
    * <pre>
    * Optional. The configuration for a voice clone. If
-   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
-   * voice clone matching the specified configuration.
+   * [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+   * clone matching the specified configuration.
    * </pre>
    *
    * <code>
@@ -188,13 +193,14 @@ public interface VoiceSelectionParamsOrBuilder
    * @return Whether the voiceClone field is set.
    */
   boolean hasVoiceClone();
+
   /**
    *
    *
    * <pre>
    * Optional. The configuration for a voice clone. If
-   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
-   * voice clone matching the specified configuration.
+   * [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+   * clone matching the specified configuration.
    * </pre>
    *
    * <code>
@@ -204,13 +210,14 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The voiceClone.
    */
   com.google.cloud.texttospeech.v1.VoiceCloneParams getVoiceClone();
+
   /**
    *
    *
    * <pre>
    * Optional. The configuration for a voice clone. If
-   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
-   * voice clone matching the specified configuration.
+   * [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+   * clone matching the specified configuration.
    * </pre>
    *
    * <code>

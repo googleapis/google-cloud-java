@@ -34,6 +34,7 @@ public final class RefreshRuntimeTokenInternalResponse
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse)
     RefreshRuntimeTokenInternalResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RefreshRuntimeTokenInternalResponse.newBuilder() to construct.
   private RefreshRuntimeTokenInternalResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class RefreshRuntimeTokenInternalResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class RefreshRuntimeTokenInternalResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class RefreshRuntimeTokenInternalResponse
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class RefreshRuntimeTokenInternalResponse
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class RefreshRuntimeTokenInternalResponse
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -341,6 +347,7 @@ public final class RefreshRuntimeTokenInternalResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class RefreshRuntimeTokenInternalResponse
     private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class RefreshRuntimeTokenInternalResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class RefreshRuntimeTokenInternalResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class RefreshRuntimeTokenInternalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class RefreshRuntimeTokenInternalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class RefreshRuntimeTokenInternalResponse
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class RefreshRuntimeTokenInternalResponse
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -708,6 +722,7 @@ public final class RefreshRuntimeTokenInternalResponse
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class RefreshRuntimeTokenInternalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class RefreshRuntimeTokenInternalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +799,7 @@ public final class RefreshRuntimeTokenInternalResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class RefreshRuntimeTokenInternalResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +838,7 @@ public final class RefreshRuntimeTokenInternalResponse
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -839,6 +859,7 @@ public final class RefreshRuntimeTokenInternalResponse
             : expireTime_;
       }
     }
+
     /**
      *
      *

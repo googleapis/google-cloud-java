@@ -33,6 +33,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.CreateJobRequest)
     CreateJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateJobRequest.newBuilder() to construct.
   private CreateJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int JOB_FIELD_NUMBER = 2;
   private com.google.dataflow.v1beta3.Job job_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
   public com.google.dataflow.v1beta3.Job getJob() {
     return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private int view_ = 0;
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object replaceJobId_ = "";
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -505,6 +517,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -760,6 +773,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +819,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +859,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
             com.google.dataflow.v1beta3.Job.Builder,
             com.google.dataflow.v1beta3.JobOrBuilder>
         jobBuilder_;
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return jobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -925,6 +946,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +966,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1020,6 +1046,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return job_ == null ? com.google.dataflow.v1beta3.Job.getDefaultInstance() : job_;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -1062,6 +1090,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -1080,6 +1109,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
           com.google.dataflow.v1beta3.JobView.forNumber(view_);
       return result == null ? com.google.dataflow.v1beta3.JobView.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1118,6 +1149,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1169,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object replaceJobId_ = "";
+
     /**
      *
      *
@@ -1159,6 +1192,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1215,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1237,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1255,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1280,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1267,6 +1305,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1291,6 +1330,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1314,6 +1354,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1374,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

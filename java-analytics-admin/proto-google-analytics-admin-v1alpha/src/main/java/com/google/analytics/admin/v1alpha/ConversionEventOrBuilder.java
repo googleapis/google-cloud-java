@@ -37,6 +37,7 @@ public interface ConversionEventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ConversionEventOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ConversionEventOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ConversionEventOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface ConversionEventOrBuilder
    * @return The enum numeric value on the wire for countingMethod.
    */
   int getCountingMethodValue();
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public interface ConversionEventOrBuilder
    * @return Whether the defaultConversionValue field is set.
    */
   boolean hasDefaultConversionValue();
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public interface ConversionEventOrBuilder
    */
   com.google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue
       getDefaultConversionValue();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface AzureClusterErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

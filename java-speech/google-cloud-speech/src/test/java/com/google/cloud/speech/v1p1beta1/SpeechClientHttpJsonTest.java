@@ -84,6 +84,7 @@ public class SpeechClientHttpJsonTest {
             .setTotalBilledTime(Duration.newBuilder().build())
             .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
             .setRequestId(37109963)
+            .setUsingLegacyModels(true)
             .build();
     mockService.addResponse(expectedResponse);
 

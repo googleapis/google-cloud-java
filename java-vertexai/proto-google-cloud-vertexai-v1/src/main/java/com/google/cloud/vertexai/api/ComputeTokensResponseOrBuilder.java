@@ -36,6 +36,7 @@ public interface ComputeTokensResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.TokensInfo tokens_info = 1;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.TokensInfo> getTokensInfoList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ComputeTokensResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.TokensInfo tokens_info = 1;</code>
    */
   com.google.cloud.vertexai.api.TokensInfo getTokensInfo(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ComputeTokensResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.TokensInfo tokens_info = 1;</code>
    */
   int getTokensInfoCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ComputeTokensResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.TokensInfoOrBuilder>
       getTokensInfoOrBuilderList();
+
   /**
    *
    *

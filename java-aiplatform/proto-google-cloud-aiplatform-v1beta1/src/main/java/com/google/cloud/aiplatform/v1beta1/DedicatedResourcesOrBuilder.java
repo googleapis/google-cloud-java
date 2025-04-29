@@ -39,6 +39,7 @@ public interface DedicatedResourcesOrBuilder
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface DedicatedResourcesOrBuilder
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1beta1.MachineSpec getMachineSpec();
+
   /**
    *
    *
@@ -168,6 +170,7 @@ public interface DedicatedResourcesOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec>
       getAutoscalingMetricSpecsList();
+
   /**
    *
    *
@@ -202,6 +205,7 @@ public interface DedicatedResourcesOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec getAutoscalingMetricSpecs(int index);
+
   /**
    *
    *
@@ -236,6 +240,7 @@ public interface DedicatedResourcesOrBuilder
    * </code>
    */
   int getAutoscalingMetricSpecsCount();
+
   /**
    *
    *
@@ -271,6 +276,7 @@ public interface DedicatedResourcesOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpecOrBuilder>
       getAutoscalingMetricSpecsOrBuilderList();
+
   /**
    *
    *

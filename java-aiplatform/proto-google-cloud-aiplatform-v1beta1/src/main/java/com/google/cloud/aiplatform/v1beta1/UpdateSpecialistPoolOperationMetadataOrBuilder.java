@@ -40,6 +40,7 @@ public interface UpdateSpecialistPoolOperationMetadataOrBuilder
    * @return The specialistPool.
    */
   java.lang.String getSpecialistPool();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface UpdateSpecialistPoolOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateSpecialistPoolOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *

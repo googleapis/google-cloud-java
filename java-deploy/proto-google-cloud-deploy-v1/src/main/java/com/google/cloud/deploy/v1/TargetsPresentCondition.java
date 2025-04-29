@@ -34,6 +34,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TargetsPresentCondition)
     TargetsPresentConditionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetsPresentCondition.newBuilder() to construct.
   private TargetsPresentCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private boolean status_ = false;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList missingTargets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getMissingTargetsList() {
     return missingTargets_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   public int getMissingTargetsCount() {
     return missingTargets_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   public java.lang.String getMissingTargets(int index) {
     return missingTargets_.get(index);
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -386,6 +395,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -620,6 +630,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean status_;
+
     /**
      *
      *
@@ -635,6 +646,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public boolean getStatus() {
       return status_;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +694,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       missingTargets_.makeImmutable();
       return missingTargets_;
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public int getMissingTargetsCount() {
       return missingTargets_.size();
     }
+
     /**
      *
      *
@@ -728,6 +744,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public java.lang.String getMissingTargets(int index) {
       return missingTargets_.get(index);
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getMissingTargetsBytes(int index) {
       return missingTargets_.getByteString(index);
     }
+
     /**
      *
      *
@@ -768,6 +786,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +810,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +831,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +851,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +883,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -875,6 +898,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -895,6 +919,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -917,6 +942,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +962,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +990,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1010,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1025,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1014,6 +1044,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
             : updateTime_;
       }
     }
+
     /**
      *
      *

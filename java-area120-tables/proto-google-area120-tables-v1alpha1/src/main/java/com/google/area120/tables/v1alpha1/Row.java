@@ -33,6 +33,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.Row)
     RowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Row.newBuilder() to construct.
   private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return internalGetValues().getMap().size();
   }
+
   /**
    *
    *
@@ -177,12 +181,14 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetValues().getMap().containsKey(key);
   }
+
   /** Use {@link #getValuesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getValues() {
     return getValuesMap();
   }
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap() {
     return internalGetValues().getMap();
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetValues().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -418,6 +426,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +650,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,7 +786,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ValuesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ValuesConverter valuesConverter = new ValuesConverter();
 
@@ -812,6 +827,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return internalGetValues().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -830,12 +846,14 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetValues().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getValuesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getValues() {
       return getValuesMap();
     }
+
     /**
      *
      *
@@ -851,6 +869,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap() {
       return internalGetValues().getImmutableMap();
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableValues().ensureBuilderMap();
       return map.containsKey(key) ? valuesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableValues().clear();
       return this;
     }
+
     /**
      *
      *
@@ -921,12 +942,14 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableValues().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableValues() {
       bitField0_ |= 0x00000002;
       return internalGetMutableValues().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -949,6 +972,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +994,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

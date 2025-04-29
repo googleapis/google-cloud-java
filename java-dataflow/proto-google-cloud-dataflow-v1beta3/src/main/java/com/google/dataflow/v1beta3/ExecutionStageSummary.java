@@ -35,6 +35,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ExecutionStageSummary)
     ExecutionStageSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExecutionStageSummary.newBuilder() to construct.
   private ExecutionStageSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,6 +90,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The userName.
      */
     java.lang.String getUserName();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -140,6 +143,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The originalTransformOrCollection.
      */
     java.lang.String getOriginalTransformOrCollection();
+
     /**
      *
      *
@@ -167,6 +171,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      */
     long getSizeBytes();
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ExecutionStageSummary.StageSource)
       StageSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StageSource.newBuilder() to construct.
     private StageSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -217,6 +223,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object userName_ = "";
+
     /**
      *
      *
@@ -240,6 +247,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -268,6 +276,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -291,6 +300,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -319,6 +329,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object originalTransformOrCollection_ = "";
+
     /**
      *
      *
@@ -343,6 +354,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -370,6 +382,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     public static final int SIZE_BYTES_FIELD_NUMBER = 4;
     private long sizeBytes_ = 0L;
+
     /**
      *
      *
@@ -578,6 +591,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -812,6 +826,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object userName_ = "";
+
       /**
        *
        *
@@ -834,6 +849,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -856,6 +872,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -877,6 +894,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -894,6 +912,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -918,6 +937,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -940,6 +960,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -962,6 +983,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -983,6 +1005,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1000,6 +1023,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1024,6 +1048,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object originalTransformOrCollection_ = "";
+
       /**
        *
        *
@@ -1047,6 +1072,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1070,6 +1096,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1092,6 +1119,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1110,6 +1138,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1135,6 +1164,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private long sizeBytes_;
+
       /**
        *
        *
@@ -1150,6 +1180,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       public long getSizeBytes() {
         return sizeBytes_;
       }
+
       /**
        *
        *
@@ -1169,6 +1200,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1271,6 +1303,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The userName.
      */
     java.lang.String getUserName();
+
     /**
      *
      *
@@ -1296,6 +1329,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -1322,6 +1356,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The originalTransform.
      */
     java.lang.String getOriginalTransform();
+
     /**
      *
      *
@@ -1336,6 +1371,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getOriginalTransformBytes();
   }
+
   /**
    *
    *
@@ -1350,6 +1386,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform)
       ComponentTransformOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ComponentTransform.newBuilder() to construct.
     private ComponentTransform(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1386,6 +1423,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object userName_ = "";
+
     /**
      *
      *
@@ -1409,6 +1447,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -1437,6 +1476,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1460,6 +1500,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1529,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object originalTransform_ = "";
+
     /**
      *
      *
@@ -1512,6 +1554,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -1717,6 +1760,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1942,6 +1986,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object userName_ = "";
+
       /**
        *
        *
@@ -1964,6 +2009,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1986,6 +2032,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2007,6 +2054,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2024,6 +2072,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2048,6 +2097,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -2070,6 +2120,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2092,6 +2143,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2113,6 +2165,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2130,6 +2183,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2154,6 +2208,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object originalTransform_ = "";
+
       /**
        *
        *
@@ -2177,6 +2232,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2200,6 +2256,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2222,6 +2279,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2240,6 +2298,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2348,6 +2407,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The userName.
      */
     java.lang.String getUserName();
+
     /**
      *
      *
@@ -2373,6 +2433,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -2399,6 +2460,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return The originalTransformOrCollection.
      */
     java.lang.String getOriginalTransformOrCollection();
+
     /**
      *
      *
@@ -2413,6 +2475,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getOriginalTransformOrCollectionBytes();
   }
+
   /**
    *
    *
@@ -2428,6 +2491,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource)
       ComponentSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ComponentSource.newBuilder() to construct.
     private ComponentSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2464,6 +2528,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object userName_ = "";
+
     /**
      *
      *
@@ -2487,6 +2552,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -2515,6 +2581,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2538,6 +2605,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -2566,6 +2634,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object originalTransformOrCollection_ = "";
+
     /**
      *
      *
@@ -2590,6 +2659,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -2799,6 +2869,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3024,6 +3095,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object userName_ = "";
+
       /**
        *
        *
@@ -3046,6 +3118,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3068,6 +3141,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3089,6 +3163,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3106,6 +3181,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3130,6 +3206,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -3152,6 +3229,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3174,6 +3252,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3195,6 +3274,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3212,6 +3292,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3236,6 +3317,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object originalTransformOrCollection_ = "";
+
       /**
        *
        *
@@ -3259,6 +3341,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3282,6 +3365,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3304,6 +3388,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3322,6 +3407,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3417,6 +3503,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3440,6 +3527,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -3468,6 +3556,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -3491,6 +3580,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -3517,6 +3607,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
 
   public static final int KIND_FIELD_NUMBER = 3;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -3532,6 +3623,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -3555,6 +3647,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>
       inputSource_;
+
   /**
    *
    *
@@ -3570,6 +3663,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getInputSourceList() {
     return inputSource_;
   }
+
   /**
    *
    *
@@ -3586,6 +3680,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getInputSourceOrBuilderList() {
     return inputSource_;
   }
+
   /**
    *
    *
@@ -3600,6 +3695,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public int getInputSourceCount() {
     return inputSource_.size();
   }
+
   /**
    *
    *
@@ -3614,6 +3710,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource getInputSource(int index) {
     return inputSource_.get(index);
   }
+
   /**
    *
    *
@@ -3635,6 +3732,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource>
       outputSource_;
+
   /**
    *
    *
@@ -3650,6 +3748,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getOutputSourceList() {
     return outputSource_;
   }
+
   /**
    *
    *
@@ -3666,6 +3765,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getOutputSourceOrBuilderList() {
     return outputSource_;
   }
+
   /**
    *
    *
@@ -3680,6 +3780,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public int getOutputSourceCount() {
     return outputSource_.size();
   }
+
   /**
    *
    *
@@ -3694,6 +3795,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource getOutputSource(int index) {
     return outputSource_.get(index);
   }
+
   /**
    *
    *
@@ -3715,6 +3817,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList prerequisiteStage_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3729,6 +3832,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getPrerequisiteStageList() {
     return prerequisiteStage_;
   }
+
   /**
    *
    *
@@ -3743,6 +3847,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public int getPrerequisiteStageCount() {
     return prerequisiteStage_.size();
   }
+
   /**
    *
    *
@@ -3758,6 +3863,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public java.lang.String getPrerequisiteStage(int index) {
     return prerequisiteStage_.get(index);
   }
+
   /**
    *
    *
@@ -3779,6 +3885,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform>
       componentTransform_;
+
   /**
    *
    *
@@ -3795,6 +3902,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getComponentTransformList() {
     return componentTransform_;
   }
+
   /**
    *
    *
@@ -3812,6 +3920,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getComponentTransformOrBuilderList() {
     return componentTransform_;
   }
+
   /**
    *
    *
@@ -3827,6 +3936,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public int getComponentTransformCount() {
     return componentTransform_.size();
   }
+
   /**
    *
    *
@@ -3843,6 +3953,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       int index) {
     return componentTransform_.get(index);
   }
+
   /**
    *
    *
@@ -3865,6 +3976,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource>
       componentSource_;
+
   /**
    *
    *
@@ -3881,6 +3993,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getComponentSourceList() {
     return componentSource_;
   }
+
   /**
    *
    *
@@ -3898,6 +4011,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       getComponentSourceOrBuilderList() {
     return componentSource_;
   }
+
   /**
    *
    *
@@ -3913,6 +4027,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public int getComponentSourceCount() {
     return componentSource_.size();
   }
+
   /**
    *
    *
@@ -3929,6 +4044,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       int index) {
     return componentSource_.get(index);
   }
+
   /**
    *
    *
@@ -4184,6 +4300,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4654,6 +4771,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4676,6 +4794,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4698,6 +4817,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4719,6 +4839,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4736,6 +4857,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4760,6 +4882,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -4782,6 +4905,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4804,6 +4928,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4825,6 +4950,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4842,6 +4968,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4866,6 +4993,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     }
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -4881,6 +5009,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -4899,6 +5028,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4916,6 +5046,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           com.google.dataflow.v1beta3.KindType.forNumber(kind_);
       return result == null ? com.google.dataflow.v1beta3.KindType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4937,6 +5068,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4991,6 +5123,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return inputSourceBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5008,6 +5141,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return inputSourceBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5025,6 +5159,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return inputSourceBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5049,6 +5184,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5071,6 +5207,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5095,6 +5232,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5119,6 +5257,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5140,6 +5279,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5162,6 +5302,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5184,6 +5325,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5204,6 +5346,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5224,6 +5367,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5238,6 +5382,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         getInputSourceBuilder(int index) {
       return getInputSourceFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5256,6 +5401,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return inputSourceBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5275,6 +5421,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(inputSource_);
       }
     }
+
     /**
      *
      *
@@ -5291,6 +5438,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5308,6 +5456,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               index,
               com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5376,6 +5525,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return outputSourceBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5393,6 +5543,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return outputSourceBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5411,6 +5562,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return outputSourceBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5435,6 +5587,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5457,6 +5610,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5481,6 +5635,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5505,6 +5660,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5526,6 +5682,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5548,6 +5705,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5570,6 +5728,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5590,6 +5749,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5610,6 +5770,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -5624,6 +5785,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         getOutputSourceBuilder(int index) {
       return getOutputSourceFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5642,6 +5804,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return outputSourceBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5661,6 +5824,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(outputSource_);
       }
     }
+
     /**
      *
      *
@@ -5677,6 +5841,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5694,6 +5859,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               index,
               com.google.dataflow.v1beta3.ExecutionStageSummary.StageSource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5735,6 +5901,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -5750,6 +5917,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       prerequisiteStage_.makeImmutable();
       return prerequisiteStage_;
     }
+
     /**
      *
      *
@@ -5764,6 +5932,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public int getPrerequisiteStageCount() {
       return prerequisiteStage_.size();
     }
+
     /**
      *
      *
@@ -5779,6 +5948,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public java.lang.String getPrerequisiteStage(int index) {
       return prerequisiteStage_.get(index);
     }
+
     /**
      *
      *
@@ -5794,6 +5964,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getPrerequisiteStageBytes(int index) {
       return prerequisiteStage_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5817,6 +5988,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5839,6 +6011,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5858,6 +6031,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5876,6 +6050,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5938,6 +6113,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentTransformBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5956,6 +6132,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentTransformBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5975,6 +6152,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentTransformBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6000,6 +6178,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6024,6 +6203,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6049,6 +6229,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6074,6 +6255,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6097,6 +6279,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6121,6 +6304,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6145,6 +6329,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6166,6 +6351,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6187,6 +6373,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6202,6 +6389,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         getComponentTransformBuilder(int index) {
       return getComponentTransformFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6221,6 +6409,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentTransformBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6241,6 +6430,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(componentTransform_);
       }
     }
+
     /**
      *
      *
@@ -6259,6 +6449,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6278,6 +6469,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6353,6 +6545,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentSourceBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6371,6 +6564,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentSourceBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6390,6 +6584,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentSourceBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6415,6 +6610,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6438,6 +6634,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6463,6 +6660,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6488,6 +6686,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6510,6 +6709,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6533,6 +6733,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6557,6 +6758,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6578,6 +6780,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6599,6 +6802,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -6614,6 +6818,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         getComponentSourceBuilder(int index) {
       return getComponentSourceFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6633,6 +6838,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return componentSourceBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6653,6 +6859,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(componentSource_);
       }
     }
+
     /**
      *
      *
@@ -6671,6 +6878,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6690,6 +6898,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
               com.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource
                   .getDefaultInstance());
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface ListDataPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ListDataPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface ListDataPoliciesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface TaxonomyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface TaxonomyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface TaxonomyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface TaxonomyOrBuilder
    * @return Whether the taxonomyTimestamps field is set.
    */
   boolean hasTaxonomyTimestamps();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface TaxonomyOrBuilder
    * @return The taxonomyTimestamps.
    */
   com.google.cloud.datacatalog.v1.SystemTimestamps getTaxonomyTimestamps();
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public interface TaxonomyOrBuilder
    * @return A list containing the activatedPolicyTypes.
    */
   java.util.List<com.google.cloud.datacatalog.v1.Taxonomy.PolicyType> getActivatedPolicyTypesList();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface TaxonomyOrBuilder
    * @return The count of activatedPolicyTypes.
    */
   int getActivatedPolicyTypesCount();
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public interface TaxonomyOrBuilder
    * @return The activatedPolicyTypes at the given index.
    */
   com.google.cloud.datacatalog.v1.Taxonomy.PolicyType getActivatedPolicyTypes(int index);
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public interface TaxonomyOrBuilder
    * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
    */
   java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList();
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public interface TaxonomyOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public interface TaxonomyOrBuilder
    * @return The service.
    */
   com.google.cloud.datacatalog.v1.Taxonomy.Service getService();
+
   /**
    *
    *

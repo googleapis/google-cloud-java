@@ -38,6 +38,7 @@ public interface GenerateSuggestionsResponseOrBuilder
   java.util.List<
           com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.GeneratorSuggestionAnswer>
       getGeneratorSuggestionAnswersList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface GenerateSuggestionsResponseOrBuilder
    */
   com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.GeneratorSuggestionAnswer
       getGeneratorSuggestionAnswers(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface GenerateSuggestionsResponseOrBuilder
    * </code>
    */
   int getGeneratorSuggestionAnswersCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface GenerateSuggestionsResponseOrBuilder
               com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse
                   .GeneratorSuggestionAnswerOrBuilder>
       getGeneratorSuggestionAnswersOrBuilderList();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface GenerateSuggestionsResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface JobOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface JobOrBuilder
    * @return The skipMessage.
    */
   java.lang.String getSkipMessage();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface JobOrBuilder
    * @return The jobRun.
    */
   java.lang.String getJobRun();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface JobOrBuilder
    * @return Whether the deployJob field is set.
    */
   boolean hasDeployJob();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface JobOrBuilder
    * @return The deployJob.
    */
   com.google.cloud.deploy.v1.DeployJob getDeployJob();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface JobOrBuilder
    * @return Whether the verifyJob field is set.
    */
   boolean hasVerifyJob();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface JobOrBuilder
    * @return The verifyJob.
    */
   com.google.cloud.deploy.v1.VerifyJob getVerifyJob();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface JobOrBuilder
    * @return Whether the predeployJob field is set.
    */
   boolean hasPredeployJob();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface JobOrBuilder
    * @return The predeployJob.
    */
   com.google.cloud.deploy.v1.PredeployJob getPredeployJob();
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface JobOrBuilder
    * @return Whether the postdeployJob field is set.
    */
   boolean hasPostdeployJob();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface JobOrBuilder
    * @return The postdeployJob.
    */
   com.google.cloud.deploy.v1.PostdeployJob getPostdeployJob();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface JobOrBuilder
    * @return Whether the createChildRolloutJob field is set.
    */
   boolean hasCreateChildRolloutJob();
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public interface JobOrBuilder
    * @return The createChildRolloutJob.
    */
   com.google.cloud.deploy.v1.CreateChildRolloutJob getCreateChildRolloutJob();
+
   /**
    *
    *
@@ -353,6 +367,7 @@ public interface JobOrBuilder
    * @return Whether the advanceChildRolloutJob field is set.
    */
   boolean hasAdvanceChildRolloutJob();
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public interface JobOrBuilder
    * @return The advanceChildRolloutJob.
    */
   com.google.cloud.deploy.v1.AdvanceChildRolloutJob getAdvanceChildRolloutJob();
+
   /**
    *
    *

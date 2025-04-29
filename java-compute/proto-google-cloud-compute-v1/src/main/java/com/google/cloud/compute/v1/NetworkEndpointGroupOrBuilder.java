@@ -34,6 +34,7 @@ public interface NetworkEndpointGroupOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -44,9 +45,11 @@ public interface NetworkEndpointGroupOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -57,6 +60,7 @@ public interface NetworkEndpointGroupOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -71,6 +75,7 @@ public interface NetworkEndpointGroupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -95,6 +100,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the appEngine field is set.
    */
   boolean hasAppEngine();
+
   /**
    *
    *
@@ -108,6 +114,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The appEngine.
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine getAppEngine();
+
   /**
    *
    *
@@ -134,6 +141,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the cloudFunction field is set.
    */
   boolean hasCloudFunction();
+
   /**
    *
    *
@@ -148,6 +156,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The cloudFunction.
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction getCloudFunction();
+
   /**
    *
    *
@@ -175,6 +184,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the cloudRun field is set.
    */
   boolean hasCloudRun();
+
   /**
    *
    *
@@ -188,6 +198,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The cloudRun.
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun getCloudRun();
+
   /**
    *
    *
@@ -212,6 +223,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -224,6 +236,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -249,6 +262,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the defaultPort field is set.
    */
   boolean hasDefaultPort();
+
   /**
    *
    *
@@ -274,6 +288,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -286,6 +301,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -311,6 +327,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -336,6 +353,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -348,6 +366,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -373,6 +392,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -385,6 +405,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -410,6 +431,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -422,6 +444,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -448,6 +471,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the networkEndpointType field is set.
    */
   boolean hasNetworkEndpointType();
+
   /**
    *
    *
@@ -461,6 +485,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The networkEndpointType.
    */
   java.lang.String getNetworkEndpointType();
+
   /**
    *
    *
@@ -487,6 +512,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the pscData field is set.
    */
   boolean hasPscData();
+
   /**
    *
    *
@@ -499,6 +525,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The pscData.
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupPscData getPscData();
+
   /**
    *
    *
@@ -522,6 +549,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the pscTargetService field is set.
    */
   boolean hasPscTargetService();
+
   /**
    *
    *
@@ -534,6 +562,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The pscTargetService.
    */
   java.lang.String getPscTargetService();
+
   /**
    *
    *
@@ -559,6 +588,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -571,6 +601,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -596,6 +627,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -608,6 +640,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -633,6 +666,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the size field is set.
    */
   boolean hasSize();
+
   /**
    *
    *
@@ -658,6 +692,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -670,6 +705,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -695,6 +731,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -707,6 +744,7 @@ public interface NetworkEndpointGroupOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

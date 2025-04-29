@@ -36,6 +36,7 @@ public interface TrajectoryOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ToolCall> getToolCallsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TrajectoryOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ToolCall getToolCalls(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface TrajectoryOrBuilder
    * </code>
    */
   int getToolCallsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface TrajectoryOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolCallOrBuilder>
       getToolCallsOrBuilderList();
+
   /**
    *
    *

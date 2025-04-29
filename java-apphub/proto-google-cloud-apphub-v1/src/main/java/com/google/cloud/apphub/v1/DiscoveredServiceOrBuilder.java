@@ -29,7 +29,7 @@ public interface DiscoveredServiceOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the discovered service. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+   * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -37,12 +37,13 @@ public interface DiscoveredServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Identifier. The resource name of the discovered service. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+   * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -66,6 +67,7 @@ public interface DiscoveredServiceOrBuilder
    * @return Whether the serviceReference field is set.
    */
   boolean hasServiceReference();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DiscoveredServiceOrBuilder
    * @return The serviceReference.
    */
   com.google.cloud.apphub.v1.ServiceReference getServiceReference();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface DiscoveredServiceOrBuilder
    * @return Whether the serviceProperties field is set.
    */
   boolean hasServiceProperties();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface DiscoveredServiceOrBuilder
    * @return The serviceProperties.
    */
   com.google.cloud.apphub.v1.ServiceProperties getServiceProperties();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface CloudStoragePathOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

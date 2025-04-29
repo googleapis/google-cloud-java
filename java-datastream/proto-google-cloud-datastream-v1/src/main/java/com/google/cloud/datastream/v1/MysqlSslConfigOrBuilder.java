@@ -28,26 +28,31 @@ public interface MysqlSslConfigOrBuilder
    *
    *
    * <pre>
-   * Input only. PEM-encoded private key associated with the Client Certificate.
-   * If this field is used then the 'client_certificate' and the
+   * Optional. Input only. PEM-encoded private key associated with the Client
+   * Certificate. If this field is used then the 'client_certificate' and the
    * 'ca_certificate' fields are mandatory.
    * </pre>
    *
-   * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The clientKey.
    */
   java.lang.String getClientKey();
+
   /**
    *
    *
    * <pre>
-   * Input only. PEM-encoded private key associated with the Client Certificate.
-   * If this field is used then the 'client_certificate' and the
+   * Optional. Input only. PEM-encoded private key associated with the Client
+   * Certificate. If this field is used then the 'client_certificate' and the
    * 'ca_certificate' fields are mandatory.
    * </pre>
    *
-   * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for clientKey.
    */
@@ -70,26 +75,33 @@ public interface MysqlSslConfigOrBuilder
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server. If this field is used
-   * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+   * Optional. Input only. PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server. If this field
+   * is used then the 'client_key' and the 'ca_certificate' fields are
+   * mandatory.
    * </pre>
    *
-   * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The clientCertificate.
    */
   java.lang.String getClientCertificate();
+
   /**
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server. If this field is used
-   * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+   * Optional. Input only. PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server. If this field
+   * is used then the 'client_key' and the 'ca_certificate' fields are
+   * mandatory.
    * </pre>
    *
-   * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for clientCertificate.
    */
@@ -121,6 +133,7 @@ public interface MysqlSslConfigOrBuilder
    * @return The caCertificate.
    */
   java.lang.String getCaCertificate();
+
   /**
    *
    *

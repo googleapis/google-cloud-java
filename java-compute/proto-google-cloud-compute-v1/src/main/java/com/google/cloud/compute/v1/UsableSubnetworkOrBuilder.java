@@ -36,6 +36,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the externalIpv6Prefix field is set.
    */
   boolean hasExternalIpv6Prefix();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The externalIpv6Prefix.
    */
   java.lang.String getExternalIpv6Prefix();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the internalIpv6Prefix field is set.
    */
   boolean hasInternalIpv6Prefix();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The internalIpv6Prefix.
    */
   java.lang.String getInternalIpv6Prefix();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the ipv6AccessType field is set.
    */
   boolean hasIpv6AccessType();
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The ipv6AccessType.
    */
   java.lang.String getIpv6AccessType();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -216,7 +226,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PEER_MIGRATION, PRIVATE_SERVICE_CONNECT or PRIVATE_NAT. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to PEER_MIGRATION is used for subnet migration from one peered VPC to another. A subnet with purpose set to PRIVATE_NAT is used for Private NAT IP address by Private NAT Gateway. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
+   *
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -225,11 +235,12 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the purpose field is set.
    */
   boolean hasPurpose();
+
   /**
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PEER_MIGRATION, PRIVATE_SERVICE_CONNECT or PRIVATE_NAT. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to PEER_MIGRATION is used for subnet migration from one peered VPC to another. A subnet with purpose set to PRIVATE_NAT is used for Private NAT IP address by Private NAT Gateway. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
+   *
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -238,11 +249,12 @@ public interface UsableSubnetworkOrBuilder
    * @return The purpose.
    */
   java.lang.String getPurpose();
+
   /**
    *
    *
    * <pre>
-   * The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PEER_MIGRATION, PRIVATE_SERVICE_CONNECT or PRIVATE_NAT. PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. A subnet with purpose set to PEER_MIGRATION is used for subnet migration from one peered VPC to another. A subnet with purpose set to PRIVATE_NAT is used for Private NAT IP address by Private NAT Gateway. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
+   *
    * Check the Purpose enum for the list of possible values.
    * </pre>
    *
@@ -265,6 +277,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the role field is set.
    */
   boolean hasRole();
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface UsableSubnetworkOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange>
       getSecondaryIpRangesList();
+
   /**
    *
    *
@@ -317,6 +332,7 @@ public interface UsableSubnetworkOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange getSecondaryIpRanges(int index);
+
   /**
    *
    *
@@ -329,6 +345,7 @@ public interface UsableSubnetworkOrBuilder
    * </code>
    */
   int getSecondaryIpRangesCount();
+
   /**
    *
    *
@@ -342,6 +359,7 @@ public interface UsableSubnetworkOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.UsableSubnetworkSecondaryRangeOrBuilder>
       getSecondaryIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -369,6 +387,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
+
   /**
    *
    *
@@ -382,6 +401,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The stackType.
    */
   java.lang.String getStackType();
+
   /**
    *
    *
@@ -408,6 +428,7 @@ public interface UsableSubnetworkOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -420,6 +441,7 @@ public interface UsableSubnetworkOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *

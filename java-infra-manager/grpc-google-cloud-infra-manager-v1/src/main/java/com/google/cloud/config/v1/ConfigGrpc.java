@@ -1050,6 +1050,19 @@ public final class ConfigGrpc {
     return ConfigStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConfigBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConfigBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfigBlockingV2Stub>() {
+          @java.lang.Override
+          public ConfigBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfigBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConfigBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1837,6 +1850,331 @@ public final class ConfigGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Config.
+   *
+   * <pre>
+   * Infrastructure Manager is a managed service that automates the deployment and
+   * management of Google Cloud infrastructure resources.
+   * </pre>
+   */
+  public static final class ConfigBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConfigBlockingV2Stub> {
+    private ConfigBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConfigBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConfigBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Deployment][google.cloud.config.v1.Deployment]s in a given project
+     * and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentsResponse listDeployments(
+        com.google.cloud.config.v1.ListDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Deployment getDeployment(
+        com.google.cloud.config.v1.GetDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeployment(
+        com.google.cloud.config.v1.CreateDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeployment(
+        com.google.cloud.config.v1.UpdateDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Deployment][google.cloud.config.v1.Deployment].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeployment(
+        com.google.cloud.config.v1.DeleteDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Revision][google.cloud.config.v1.Revision]s of a deployment.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListRevisionsResponse listRevisions(
+        com.google.cloud.config.v1.ListRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Revision][google.cloud.config.v1.Revision].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Revision getRevision(
+        com.google.cloud.config.v1.GetRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Resource][google.cloud.config.v1.Resource] deployed
+     * by Infra Manager.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Resource getResource(
+        com.google.cloud.config.v1.GetResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourcesResponse listResources(
+        com.google.cloud.config.v1.ListResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports Terraform state file from a given deployment.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Statefile exportDeploymentStatefile(
+        com.google.cloud.config.v1.ExportDeploymentStatefileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDeploymentStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports Terraform state file from a given revision.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Statefile exportRevisionStatefile(
+        com.google.cloud.config.v1.ExportRevisionStatefileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportRevisionStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Terraform state file in a given deployment. The state file does not
+     * take effect until the Deployment has been unlocked.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Statefile importStatefile(
+        com.google.cloud.config.v1.ImportStatefileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes Terraform state file in a given deployment.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteStatefile(
+        com.google.cloud.config.v1.DeleteStatefileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStatefileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locks a deployment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation lockDeployment(
+        com.google.cloud.config.v1.LockDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLockDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unlocks a locked deployment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation unlockDeployment(
+        com.google.cloud.config.v1.UnlockDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnlockDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the lock info on a locked deployment.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.LockInfo exportLockInfo(
+        com.google.cloud.config.v1.ExportLockInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportLockInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPreview(
+        com.google.cloud.config.v1.CreatePreviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.Preview getPreview(
+        com.google.cloud.config.v1.GetPreviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListPreviewsResponse listPreviews(
+        com.google.cloud.config.v1.ListPreviewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPreviewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Preview][google.cloud.config.v1.Preview].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePreview(
+        com.google.cloud.config.v1.DeletePreviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePreviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Export [Preview][google.cloud.config.v1.Preview] results.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ExportPreviewResultResponse exportPreviewResult(
+        com.google.cloud.config.v1.ExportPreviewResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportPreviewResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a
+     * given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListTerraformVersionsResponse listTerraformVersions(
+        com.google.cloud.config.v1.ListTerraformVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTerraformVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.TerraformVersion getTerraformVersion(
+        com.google.cloud.config.v1.GetTerraformVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Config.
    *
    * <pre>
    * Infrastructure Manager is a managed service that automates the deployment and

@@ -33,6 +33,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Zone)
     ZoneOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Zone.newBuilder() to construct.
   private Zone(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The Zone is running factory turnup checks.
+     * </pre>
+     *
+     * <code>CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED = 8;</code>
+     */
+    CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED(8),
+    /**
+     *
+     *
+     * <pre>
      * The Zone is ready for site turnup.
      * </pre>
      *
@@ -185,6 +196,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -195,6 +207,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_INFO_NEEDED = 1;</code>
      */
     public static final int ADDITIONAL_INFO_NEEDED_VALUE = 1;
+
     /**
      *
      *
@@ -205,6 +218,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>PREPARING = 2;</code>
      */
     public static final int PREPARING_VALUE = 2;
+
     /**
      *
      *
@@ -215,6 +229,18 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>READY_FOR_CUSTOMER_FACTORY_TURNUP_CHECKS = 5;</code>
      */
     public static final int READY_FOR_CUSTOMER_FACTORY_TURNUP_CHECKS_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * The Zone is running factory turnup checks.
+     * </pre>
+     *
+     * <code>CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED = 8;</code>
+     */
+    public static final int CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED_VALUE = 8;
+
     /**
      *
      *
@@ -225,6 +251,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>READY_FOR_SITE_TURNUP = 6;</code>
      */
     public static final int READY_FOR_SITE_TURNUP_VALUE = 6;
+
     /**
      *
      *
@@ -235,6 +262,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOMER_FACTORY_TURNUP_CHECKS_FAILED = 7;</code>
      */
     public static final int CUSTOMER_FACTORY_TURNUP_CHECKS_FAILED_VALUE = 7;
+
     /**
      *
      *
@@ -245,6 +273,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 3;</code>
      */
     public static final int ACTIVE_VALUE = 3;
+
     /**
      *
      *
@@ -288,6 +317,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           return PREPARING;
         case 5:
           return READY_FOR_CUSTOMER_FACTORY_TURNUP_CHECKS;
+        case 8:
+          return CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED;
         case 6:
           return READY_FOR_SITE_TURNUP;
         case 7:
@@ -414,6 +445,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONING_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int PROVISIONING_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -424,6 +456,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONING_REQUIRED = 1;</code>
      */
     public static final int PROVISIONING_REQUIRED_VALUE = 1;
+
     /**
      *
      *
@@ -434,6 +467,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONING_IN_PROGRESS = 2;</code>
      */
     public static final int PROVISIONING_IN_PROGRESS_VALUE = 2;
+
     /**
      *
      *
@@ -540,6 +574,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -564,6 +599,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -591,6 +627,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -607,6 +644,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -623,6 +661,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -640,6 +679,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -656,6 +696,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -672,6 +713,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -713,6 +755,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -731,12 +774,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -752,6 +797,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -774,6 +820,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -801,6 +848,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -824,6 +872,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -850,6 +899,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -867,6 +917,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -893,6 +944,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Contact> contacts_;
+
   /**
    *
    *
@@ -908,6 +960,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Contact> getContactsList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -924,6 +977,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       getContactsOrBuilderList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -939,6 +993,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public int getContactsCount() {
     return contacts_.size();
   }
+
   /**
    *
    *
@@ -954,6 +1009,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gdchardwaremanagement.v1alpha.Contact getContacts(int index) {
     return contacts_.get(index);
   }
+
   /**
    *
    *
@@ -975,6 +1031,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ciqUri_ = "";
+
   /**
    *
    *
@@ -999,6 +1056,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1026,6 +1084,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.gdchardwaremanagement.v1alpha.ZoneNetworkConfig networkConfig_;
+
   /**
    *
    *
@@ -1043,6 +1102,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetworkConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1062,6 +1122,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gdchardwaremanagement.v1alpha.ZoneNetworkConfig.getDefaultInstance()
         : networkConfig_;
   }
+
   /**
    *
    *
@@ -1085,6 +1146,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object globallyUniqueId_ = "";
+
   /**
    *
    *
@@ -1108,6 +1170,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1137,6 +1200,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig>
       subscriptionConfigs_;
+
   /**
    *
    *
@@ -1153,6 +1217,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       getSubscriptionConfigsList() {
     return subscriptionConfigs_;
   }
+
   /**
    *
    *
@@ -1170,6 +1235,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       getSubscriptionConfigsOrBuilderList() {
     return subscriptionConfigs_;
   }
+
   /**
    *
    *
@@ -1185,6 +1251,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public int getSubscriptionConfigsCount() {
     return subscriptionConfigs_.size();
   }
+
   /**
    *
    *
@@ -1201,6 +1268,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return subscriptionConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -1220,6 +1288,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROVISIONING_STATE_FIELD_NUMBER = 14;
   private int provisioningState_ = 0;
+
   /**
    *
    *
@@ -1237,6 +1306,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public int getProvisioningStateValue() {
     return provisioningState_;
   }
+
   /**
    *
    *
@@ -1557,6 +1627,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2042,6 +2113,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2065,6 +2137,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2088,6 +2161,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2110,6 +2184,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2128,6 +2203,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2158,6 +2234,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2174,6 +2251,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2196,6 +2274,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2220,6 +2299,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2241,6 +2321,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2270,6 +2351,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2291,6 +2373,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2307,6 +2390,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2327,6 +2411,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2361,6 +2446,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2377,6 +2463,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2399,6 +2486,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2423,6 +2511,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2444,6 +2533,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2473,6 +2563,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2494,6 +2585,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2510,6 +2602,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2530,6 +2623,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2583,6 +2677,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2601,12 +2696,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2622,6 +2719,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2644,6 +2742,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2672,6 +2771,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2690,12 +2790,14 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2718,6 +2820,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2736,6 +2839,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2758,6 +2862,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2780,6 +2885,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2801,6 +2907,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2818,6 +2925,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2842,6 +2950,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2859,6 +2968,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2879,6 +2989,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2900,6 +3011,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.Zone.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2923,6 +3035,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2980,6 +3093,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return contactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2998,6 +3112,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return contactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3016,6 +3131,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return contactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3041,6 +3157,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3063,6 +3180,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3087,6 +3205,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3112,6 +3231,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3134,6 +3254,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3277,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3301,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3200,6 +3323,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3221,6 +3345,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3236,6 +3361,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getContactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3255,6 +3381,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return contactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3274,6 +3401,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(contacts_);
       }
     }
+
     /**
      *
      *
@@ -3289,6 +3417,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return getContactsFieldBuilder()
           .addBuilder(com.google.cloud.gdchardwaremanagement.v1alpha.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3306,6 +3435,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.gdchardwaremanagement.v1alpha.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3340,6 +3470,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ciqUri_ = "";
+
     /**
      *
      *
@@ -3363,6 +3494,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3386,6 +3518,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3408,6 +3541,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3426,6 +3560,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3456,6 +3591,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gdchardwaremanagement.v1alpha.ZoneNetworkConfig.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.ZoneNetworkConfigOrBuilder>
         networkConfigBuilder_;
+
     /**
      *
      *
@@ -3472,6 +3608,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetworkConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3494,6 +3631,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return networkConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3519,6 +3657,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3541,6 +3680,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3573,6 +3713,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3594,6 +3735,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3611,6 +3753,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3632,6 +3775,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             : networkConfig_;
       }
     }
+
     /**
      *
      *
@@ -3661,6 +3805,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object globallyUniqueId_ = "";
+
     /**
      *
      *
@@ -3683,6 +3828,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3705,6 +3851,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3726,6 +3873,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3743,6 +3891,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3804,6 +3953,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return subscriptionConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3822,6 +3972,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return subscriptionConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3841,6 +3992,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return subscriptionConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3866,6 +4018,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3889,6 +4042,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3914,6 +4068,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3939,6 +4094,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3961,6 +4117,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3984,6 +4141,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4008,6 +4166,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4029,6 +4188,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4050,6 +4210,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4065,6 +4226,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         getSubscriptionConfigsBuilder(int index) {
       return getSubscriptionConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4084,6 +4246,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return subscriptionConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4104,6 +4267,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(subscriptionConfigs_);
       }
     }
+
     /**
      *
      *
@@ -4122,6 +4286,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4141,6 +4306,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4178,6 +4344,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int provisioningState_ = 0;
+
     /**
      *
      *
@@ -4195,6 +4362,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public int getProvisioningStateValue() {
       return provisioningState_;
     }
+
     /**
      *
      *
@@ -4215,6 +4383,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4238,6 +4407,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4262,6 +4432,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder
    * @return A list containing the actionTokenSiteKeys.
    */
   java.util.List<java.lang.String> getActionTokenSiteKeysList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder
    * @return The count of actionTokenSiteKeys.
    */
   int getActionTokenSiteKeysCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder
    * @return The actionTokenSiteKeys at the given index.
    */
   java.lang.String getActionTokenSiteKeys(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder
    * @return A list containing the sessionTokenSiteKeys.
    */
   java.util.List<java.lang.String> getSessionTokenSiteKeysList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder
    * @return The count of sessionTokenSiteKeys.
    */
   int getSessionTokenSiteKeysCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsRecaptchaOptionsOrBuilder
    * @return The sessionTokenSiteKeys at the given index.
    */
   java.lang.String getSessionTokenSiteKeys(int index);
+
   /**
    *
    *

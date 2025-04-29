@@ -36,6 +36,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkProfileOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface NetworkProfileOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the features field is set.
    */
   boolean hasFeatures();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface NetworkProfileOrBuilder
    * @return The features.
    */
   com.google.cloud.compute.v1.NetworkProfileNetworkFeatures getFeatures();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface NetworkProfileOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface NetworkProfileOrBuilder
    * @return The location.
    */
   com.google.cloud.compute.v1.NetworkProfileLocation getLocation();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public interface NetworkProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public interface NetworkProfileOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -319,6 +334,7 @@ public interface NetworkProfileOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -331,6 +347,7 @@ public interface NetworkProfileOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -350,12 +367,14 @@ public interface NetworkProfileOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    * <code>optional string zone = 3744684;</code>
    *

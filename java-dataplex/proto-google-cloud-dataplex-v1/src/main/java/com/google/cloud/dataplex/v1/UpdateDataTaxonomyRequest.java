@@ -34,6 +34,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.UpdateDataTaxonomyRequest)
     UpdateDataTaxonomyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateDataTaxonomyRequest.newBuilder() to construct.
   private UpdateDataTaxonomyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
 
   public static final int DATA_TAXONOMY_FIELD_NUMBER = 2;
   private com.google.cloud.dataplex.v1.DataTaxonomy dataTaxonomy_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
   public boolean hasDataTaxonomy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
         ? com.google.cloud.dataplex.v1.DataTaxonomy.getDefaultInstance()
         : dataTaxonomy_;
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -375,6 +383,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -611,6 +620,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +703,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -805,6 +823,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
             com.google.cloud.dataplex.v1.DataTaxonomy.Builder,
             com.google.cloud.dataplex.v1.DataTaxonomyOrBuilder>
         dataTaxonomyBuilder_;
+
     /**
      *
      *
@@ -821,6 +840,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
     public boolean hasDataTaxonomy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
         return dataTaxonomyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -867,6 +888,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +941,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +963,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +980,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return getDataTaxonomyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
             : dataTaxonomy_;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1031,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1040,6 +1069,7 @@ public final class UpdateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.LogsPanel)
     LogsPanelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogsPanel.newBuilder() to construct.
   private LogsPanel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getResourceNamesList() {
     return resourceNames_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
   public int getResourceNamesCount() {
     return resourceNames_.size();
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getResourceNames(int index) {
     return resourceNames_.get(index);
   }
+
   /**
    *
    *
@@ -364,6 +371,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -569,6 +577,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +675,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       resourceNames_.makeImmutable();
       return resourceNames_;
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     public int getResourceNamesCount() {
       return resourceNames_.size();
     }
+
     /**
      *
      *
@@ -745,6 +761,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getResourceNames(int index) {
       return resourceNames_.get(index);
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
       return resourceNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -785,6 +803,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +848,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +868,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,8 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
@@ -62,6 +64,8 @@ import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
 import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
@@ -192,6 +196,26 @@ public abstract class HubServiceStub implements BackgroundResource {
 
   public UnaryCallable<AcceptHubSpokeRequest, Operation> acceptHubSpokeCallable() {
     throw new UnsupportedOperationException("Not implemented: acceptHubSpokeCallable()");
+  }
+
+  public OperationCallable<AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: acceptSpokeUpdateOperationCallable()");
+  }
+
+  public UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: acceptSpokeUpdateCallable()");
+  }
+
+  public OperationCallable<RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rejectSpokeUpdateOperationCallable()");
+  }
+
+  public UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: rejectSpokeUpdateCallable()");
   }
 
   public OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>

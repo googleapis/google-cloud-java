@@ -49,6 +49,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportProcessorVersionRequest)
     ImportProcessorVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportProcessorVersionRequest.newBuilder() to construct.
   private ImportProcessorVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      * @return The processorVersion.
      */
     java.lang.String getProcessorVersion();
+
     /**
      *
      *
@@ -124,6 +126,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      * @return The serviceEndpoint.
      */
     java.lang.String getServiceEndpoint();
+
     /**
      *
      *
@@ -138,6 +141,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getServiceEndpointBytes();
   }
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource)
       ExternalProcessorVersionSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExternalProcessorVersionSource.newBuilder() to construct.
     private ExternalProcessorVersionSource(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -192,6 +197,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object processorVersion_ = "";
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         return s;
       }
     }
+
     /**
      *
      *
@@ -245,6 +252,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceEndpoint_ = "";
+
     /**
      *
      *
@@ -269,6 +277,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         return s;
       }
     }
+
     /**
      *
      *
@@ -491,6 +500,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -723,6 +733,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       private int bitField0_;
 
       private java.lang.Object processorVersion_ = "";
+
       /**
        *
        *
@@ -746,6 +757,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -769,6 +781,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -791,6 +804,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -809,6 +823,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -834,6 +849,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       }
 
       private java.lang.Object serviceEndpoint_ = "";
+
       /**
        *
        *
@@ -857,6 +873,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -880,6 +897,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -902,6 +920,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -920,6 +939,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1033,6 +1053,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1066,6 +1087,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int PROCESSOR_VERSION_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1083,6 +1105,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
   public boolean hasProcessorVersionSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -1113,6 +1136,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -1145,6 +1169,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int EXTERNAL_PROCESSOR_VERSION_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1163,6 +1188,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
   public boolean hasExternalProcessorVersionSource() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -1189,6 +1215,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     return com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest
         .ExternalProcessorVersionSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1218,6 +1245,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -1245,6 +1273,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -1479,6 +1508,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1763,6 +1793,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     public boolean hasProcessorVersionSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1794,6 +1825,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1825,6 +1857,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1849,6 +1882,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1905,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1905,6 +1940,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
             com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest
                 .ExternalProcessorVersionSourceOrBuilder>
         externalProcessorVersionSourceBuilder_;
+
     /**
      *
      *
@@ -1923,6 +1959,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     public boolean hasExternalProcessorVersionSource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1957,6 +1994,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
             .ExternalProcessorVersionSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1985,6 +2023,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2010,6 +2049,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2053,6 +2093,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2081,6 +2122,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2140,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         getExternalProcessorVersionSourceBuilder() {
       return getExternalProcessorVersionSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2126,6 +2169,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
             .ExternalProcessorVersionSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2173,6 +2217,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -2199,6 +2244,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2225,6 +2271,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2250,6 +2297,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2271,6 +2319,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

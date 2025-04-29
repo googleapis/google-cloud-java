@@ -35,6 +35,7 @@ public final class BatchRecognizeTranscriptionMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata)
     BatchRecognizeTranscriptionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchRecognizeTranscriptionMetadata.newBuilder() to construct.
   private BatchRecognizeTranscriptionMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class BatchRecognizeTranscriptionMetadata
   private int bitField0_;
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
   private int progressPercent_ = 0;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class BatchRecognizeTranscriptionMetadata
 
   public static final int ERROR_FIELD_NUMBER = 2;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class BatchRecognizeTranscriptionMetadata
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class BatchRecognizeTranscriptionMetadata
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class BatchRecognizeTranscriptionMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class BatchRecognizeTranscriptionMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +372,7 @@ public final class BatchRecognizeTranscriptionMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -595,6 +603,7 @@ public final class BatchRecognizeTranscriptionMetadata
     private int bitField0_;
 
     private int progressPercent_;
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class BatchRecognizeTranscriptionMetadata
     public int getProgressPercent() {
       return progressPercent_;
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class BatchRecognizeTranscriptionMetadata
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class BatchRecognizeTranscriptionMetadata
     public boolean hasError() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class BatchRecognizeTranscriptionMetadata
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +739,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class BatchRecognizeTranscriptionMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +787,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +802,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -800,6 +819,7 @@ public final class BatchRecognizeTranscriptionMetadata
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -824,6 +844,7 @@ public final class BatchRecognizeTranscriptionMetadata
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -846,6 +867,7 @@ public final class BatchRecognizeTranscriptionMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +890,7 @@ public final class BatchRecognizeTranscriptionMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class BatchRecognizeTranscriptionMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface AwsServicesAuthenticationOrBuilder
    * @return The roleArn.
    */
   java.lang.String getRoleArn();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AwsServicesAuthenticationOrBuilder
    * @return The roleSessionName.
    */
   java.lang.String getRoleSessionName();
+
   /**
    *
    *

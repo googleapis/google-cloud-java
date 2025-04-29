@@ -38,6 +38,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.Hub)
     HubOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Hub.newBuilder() to construct.
   private Hub(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -285,12 +295,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -328,6 +341,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -355,14 +369,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
    * <pre>
-   * An optional description of the hub.
+   * Optional. An optional description of the hub.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -378,14 +393,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * An optional description of the hub.
+   * Optional. An optional description of the hub.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -406,6 +422,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uniqueId_ = "";
+
   /**
    *
    *
@@ -431,6 +448,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -459,6 +477,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
+
   /**
    *
    *
@@ -476,6 +495,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -500,6 +520,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> routingVpcs_;
+
   /**
    *
    *
@@ -516,6 +537,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> getRoutingVpcsList() {
     return routingVpcs_;
   }
+
   /**
    *
    *
@@ -533,6 +555,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       getRoutingVpcsOrBuilderList() {
     return routingVpcs_;
   }
+
   /**
    *
    *
@@ -549,6 +572,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public int getRoutingVpcsCount() {
     return routingVpcs_.size();
   }
+
   /**
    *
    *
@@ -565,6 +589,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.networkconnectivity.v1.RoutingVPC getRoutingVpcs(int index) {
     return routingVpcs_.get(index);
   }
+
   /**
    *
    *
@@ -588,6 +613,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList routeTables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -607,6 +633,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRouteTablesList() {
     return routeTables_;
   }
+
   /**
    *
    *
@@ -626,6 +653,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public int getRouteTablesCount() {
     return routeTables_.size();
   }
+
   /**
    *
    *
@@ -646,6 +674,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRouteTables(int index) {
     return routeTables_.get(index);
   }
+
   /**
    *
    *
@@ -669,6 +698,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPOKE_SUMMARY_FIELD_NUMBER = 12;
   private com.google.cloud.networkconnectivity.v1.SpokeSummary spokeSummary_;
+
   /**
    *
    *
@@ -690,6 +720,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpokeSummary() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -713,6 +744,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.SpokeSummary.getDefaultInstance()
         : spokeSummary_;
   }
+
   /**
    *
    *
@@ -737,6 +769,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_MODE_FIELD_NUMBER = 13;
   private int policyMode_ = 0;
+
   /**
    *
    *
@@ -756,6 +789,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public int getPolicyModeValue() {
     return policyMode_;
   }
+
   /**
    *
    *
@@ -782,6 +816,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRESET_TOPOLOGY_FIELD_NUMBER = 14;
   private int presetTopology_ = 0;
+
   /**
    *
    *
@@ -803,6 +838,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public int getPresetTopologyValue() {
     return presetTopology_;
   }
+
   /**
    *
    *
@@ -831,14 +867,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPORT_PSC_FIELD_NUMBER = 15;
   private boolean exportPsc_ = false;
+
   /**
    *
    *
    * <pre>
-   * Optional. Whether Private Service Connect transitivity is enabled for the
-   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-   * the hub are made accessible to other VPC spokes attached to the hub.
-   * The default value is false.
+   * Optional. Whether Private Service Connect connection propagation is enabled
+   * for the hub. If true, Private Service Connect endpoints in VPC spokes
+   * attached to the hub are made accessible to other VPC spokes attached to the
+   * hub. The default value is false.
    * </pre>
    *
    * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -849,14 +886,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExportPsc() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Optional. Whether Private Service Connect transitivity is enabled for the
-   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-   * the hub are made accessible to other VPC spokes attached to the hub.
-   * The default value is false.
+   * Optional. Whether Private Service Connect connection propagation is enabled
+   * for the hub. If true, Private Service Connect endpoints in VPC spokes
+   * attached to the hub are made accessible to other VPC spokes attached to the
+   * hub. The default value is false.
    * </pre>
    *
    * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1178,6 +1216,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1642,6 +1681,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1666,6 +1706,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1731,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1713,6 +1755,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1775,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1763,6 +1807,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1779,6 +1824,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1801,6 +1847,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1825,6 +1872,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1894,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1924,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +1946,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1912,6 +1963,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1932,6 +1984,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1966,6 +2019,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1982,6 +2036,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2004,6 +2059,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2028,6 +2084,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2106,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2078,6 +2136,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2158,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2115,6 +2175,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2135,6 +2196,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2188,6 +2250,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2206,12 +2269,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2227,6 +2292,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2249,6 +2315,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2277,6 +2344,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2295,12 +2363,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2323,6 +2393,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2341,14 +2412,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -2363,14 +2435,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -2385,14 +2458,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2406,14 +2480,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2423,14 +2498,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2447,6 +2523,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uniqueId_ = "";
+
     /**
      *
      *
@@ -2471,6 +2548,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2495,6 +2573,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2597,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2617,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2563,6 +2644,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2580,6 +2662,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2600,6 +2683,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2619,6 +2703,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.networkconnectivity.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.networkconnectivity.v1.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2642,6 +2727,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2699,6 +2785,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return routingVpcsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2718,6 +2805,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return routingVpcsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2737,6 +2825,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return routingVpcsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2763,6 +2852,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2786,6 +2876,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2811,6 +2902,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2837,6 +2929,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2860,6 +2953,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2883,6 +2977,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2906,6 +3001,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2928,6 +3024,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2950,6 +3047,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2966,6 +3064,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRoutingVpcsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2986,6 +3085,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return routingVpcsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3006,6 +3106,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(routingVpcs_);
       }
     }
+
     /**
      *
      *
@@ -3022,6 +3123,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       return getRoutingVpcsFieldBuilder()
           .addBuilder(com.google.cloud.networkconnectivity.v1.RoutingVPC.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3040,6 +3142,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.networkconnectivity.v1.RoutingVPC.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3083,6 +3186,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -3103,6 +3207,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       routeTables_.makeImmutable();
       return routeTables_;
     }
+
     /**
      *
      *
@@ -3122,6 +3227,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public int getRouteTablesCount() {
       return routeTables_.size();
     }
+
     /**
      *
      *
@@ -3142,6 +3248,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRouteTables(int index) {
       return routeTables_.get(index);
     }
+
     /**
      *
      *
@@ -3162,6 +3269,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRouteTablesBytes(int index) {
       return routeTables_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3190,6 +3298,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3217,6 +3326,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3241,6 +3351,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3264,6 +3375,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3299,6 +3411,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.SpokeSummary.Builder,
             com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder>
         spokeSummaryBuilder_;
+
     /**
      *
      *
@@ -3319,6 +3432,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpokeSummary() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3345,6 +3459,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         return spokeSummaryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3373,6 +3488,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3399,6 +3515,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3433,6 +3550,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3458,6 +3576,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3478,6 +3597,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpokeSummaryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3503,6 +3623,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
             : spokeSummary_;
       }
     }
+
     /**
      *
      *
@@ -3536,6 +3657,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int policyMode_ = 0;
+
     /**
      *
      *
@@ -3555,6 +3677,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public int getPolicyModeValue() {
       return policyMode_;
     }
+
     /**
      *
      *
@@ -3577,6 +3700,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3600,6 +3724,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkconnectivity.v1.PolicyMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3625,6 +3750,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3648,6 +3774,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int presetTopology_ = 0;
+
     /**
      *
      *
@@ -3669,6 +3796,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public int getPresetTopologyValue() {
       return presetTopology_;
     }
+
     /**
      *
      *
@@ -3693,6 +3821,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3718,6 +3847,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkconnectivity.v1.PresetTopology.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3745,6 +3875,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3770,14 +3901,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean exportPsc_;
+
     /**
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3788,14 +3920,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExportPsc() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3806,14 +3939,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public boolean getExportPsc() {
       return exportPsc_;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3828,14 +3962,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>

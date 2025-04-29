@@ -30,7 +30,10 @@ public interface CssProductInputOrBuilder
    * <pre>
    * The name of the CSS Product input.
    * Format:
-   * `accounts/{account}/cssProductInputs/{css_product_input}`
+   * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -38,13 +41,17 @@ public interface CssProductInputOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * The name of the CSS Product input.
    * Format:
-   * `accounts/{account}/cssProductInputs/{css_product_input}`
+   * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -68,6 +75,7 @@ public interface CssProductInputOrBuilder
    * @return The finalName.
    */
   java.lang.String getFinalName();
+
   /**
    *
    *
@@ -100,6 +108,7 @@ public interface CssProductInputOrBuilder
    * @return The rawProvidedId.
    */
   java.lang.String getRawProvidedId();
+
   /**
    *
    *
@@ -131,6 +140,7 @@ public interface CssProductInputOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -162,6 +172,7 @@ public interface CssProductInputOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -206,11 +217,12 @@ public interface CssProductInputOrBuilder
    * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
    * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
-   *     google/shopping/css/v1/css_product_inputs.proto;l=139
+   *     google/shopping/css/v1/css_product_inputs.proto;l=142
    * @return Whether the freshnessTime field is set.
    */
   @java.lang.Deprecated
   boolean hasFreshnessTime();
+
   /**
    *
    *
@@ -238,11 +250,12 @@ public interface CssProductInputOrBuilder
    * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
    * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
-   *     google/shopping/css/v1/css_product_inputs.proto;l=139
+   *     google/shopping/css/v1/css_product_inputs.proto;l=142
    * @return The freshnessTime.
    */
   @java.lang.Deprecated
   com.google.protobuf.Timestamp getFreshnessTime();
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public interface CssProductInputOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -296,6 +310,7 @@ public interface CssProductInputOrBuilder
    * @return The attributes.
    */
   com.google.shopping.css.v1.Attributes getAttributes();
+
   /**
    *
    *
@@ -322,6 +337,7 @@ public interface CssProductInputOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 8;</code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public interface CssProductInputOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 8;</code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -352,6 +369,7 @@ public interface CssProductInputOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 8;</code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -368,6 +386,7 @@ public interface CssProductInputOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *

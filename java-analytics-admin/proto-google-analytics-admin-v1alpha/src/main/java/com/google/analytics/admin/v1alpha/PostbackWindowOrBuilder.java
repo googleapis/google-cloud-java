@@ -38,6 +38,7 @@ public interface PostbackWindowOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConversionValues conversion_values = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.ConversionValues> getConversionValuesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PostbackWindowOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConversionValues conversion_values = 1;</code>
    */
   com.google.analytics.admin.v1alpha.ConversionValues getConversionValues(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface PostbackWindowOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.ConversionValues conversion_values = 1;</code>
    */
   int getConversionValuesCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface PostbackWindowOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ConversionValuesOrBuilder>
       getConversionValuesOrBuilderList();
+
   /**
    *
    *

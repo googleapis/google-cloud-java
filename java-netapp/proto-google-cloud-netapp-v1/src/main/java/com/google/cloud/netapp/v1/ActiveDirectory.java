@@ -33,6 +33,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.ActiveDirectory)
     ActiveDirectoryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ActiveDirectory.newBuilder() to construct.
   private ActiveDirectory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -193,6 +194,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -203,6 +205,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -213,6 +216,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -223,6 +227,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -233,6 +238,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>IN_USE = 4;</code>
      */
     public static final int IN_USE_VALUE = 4;
+
     /**
      *
      *
@@ -243,6 +249,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>DELETING = 5;</code>
      */
     public static final int DELETING_VALUE = 5;
+
     /**
      *
      *
@@ -253,6 +260,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
+
     /**
      *
      *
@@ -362,6 +370,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -387,6 +396,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -415,6 +425,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -431,6 +442,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -447,6 +459,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -464,6 +477,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -481,6 +495,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -505,6 +520,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
+
   /**
    *
    *
@@ -528,6 +544,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -556,6 +573,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object site_ = "";
+
   /**
    *
    *
@@ -580,6 +598,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -609,6 +628,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dns_ = "";
+
   /**
    *
    *
@@ -633,6 +653,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -662,6 +683,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object netBiosPrefix_ = "";
+
   /**
    *
    *
@@ -685,6 +707,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -713,6 +736,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object organizationalUnit_ = "";
+
   /**
    *
    *
@@ -737,6 +761,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -764,6 +789,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   public static final int AES_ENCRYPTION_FIELD_NUMBER = 9;
   private boolean aesEncryption_ = false;
+
   /**
    *
    *
@@ -784,6 +810,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
+
   /**
    *
    *
@@ -807,6 +834,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -835,6 +863,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
+
   /**
    *
    *
@@ -858,6 +887,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -887,6 +917,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList backupOperators_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -902,6 +933,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getBackupOperatorsList() {
     return backupOperators_;
   }
+
   /**
    *
    *
@@ -917,6 +949,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public int getBackupOperatorsCount() {
     return backupOperators_.size();
   }
+
   /**
    *
    *
@@ -933,6 +966,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getBackupOperators(int index) {
     return backupOperators_.get(index);
   }
+
   /**
    *
    *
@@ -955,6 +989,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList administrators_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -969,6 +1004,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getAdministratorsList() {
     return administrators_;
   }
+
   /**
    *
    *
@@ -983,6 +1019,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public int getAdministratorsCount() {
     return administrators_.size();
   }
+
   /**
    *
    *
@@ -998,6 +1035,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getAdministrators(int index) {
     return administrators_.get(index);
   }
+
   /**
    *
    *
@@ -1019,6 +1057,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList securityOperators_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1033,6 +1072,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSecurityOperatorsList() {
     return securityOperators_;
   }
+
   /**
    *
    *
@@ -1047,6 +1087,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public int getSecurityOperatorsCount() {
     return securityOperators_.size();
   }
+
   /**
    *
    *
@@ -1062,6 +1103,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSecurityOperators(int index) {
     return securityOperators_.get(index);
   }
+
   /**
    *
    *
@@ -1082,6 +1124,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kdcHostname_ = "";
+
   /**
    *
    *
@@ -1106,6 +1149,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1135,6 +1179,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kdcIp_ = "";
+
   /**
    *
    *
@@ -1158,6 +1203,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1184,6 +1230,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   public static final int NFS_USERS_WITH_LDAP_FIELD_NUMBER = 16;
   private boolean nfsUsersWithLdap_ = false;
+
   /**
    *
    *
@@ -1205,6 +1252,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1228,6 +1276,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1254,6 +1303,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   public static final int LDAP_SIGNING_FIELD_NUMBER = 18;
   private boolean ldapSigning_ = false;
+
   /**
    *
    *
@@ -1272,6 +1322,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENCRYPT_DC_CONNECTIONS_FIELD_NUMBER = 19;
   private boolean encryptDcConnections_ = false;
+
   /**
    *
    *
@@ -1315,6 +1366,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1331,12 +1383,14 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1350,6 +1404,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1370,6 +1425,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1395,6 +1451,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDetails_ = "";
+
   /**
    *
    *
@@ -1418,6 +1475,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1824,6 +1882,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2373,6 +2432,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2397,6 +2457,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2421,6 +2482,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2444,6 +2506,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2463,6 +2526,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2494,6 +2558,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2510,6 +2575,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2532,6 +2598,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2556,6 +2623,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2577,6 +2645,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2606,6 +2675,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2697,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2643,6 +2714,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2663,6 +2735,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2692,6 +2765,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2709,6 +2783,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2729,6 +2804,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2750,6 +2826,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.netapp.v1.ActiveDirectory.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2773,6 +2850,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2794,6 +2872,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object domain_ = "";
+
     /**
      *
      *
@@ -2816,6 +2895,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2838,6 +2918,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2859,6 +2940,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2876,6 +2958,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2900,6 +2983,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object site_ = "";
+
     /**
      *
      *
@@ -2923,6 +3007,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2946,6 +3031,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2968,6 +3054,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2986,6 +3073,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3011,6 +3099,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object dns_ = "";
+
     /**
      *
      *
@@ -3034,6 +3123,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3057,6 +3147,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3079,6 +3170,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3097,6 +3189,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3122,6 +3215,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object netBiosPrefix_ = "";
+
     /**
      *
      *
@@ -3144,6 +3238,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3166,6 +3261,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3187,6 +3283,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3204,6 +3301,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3228,6 +3326,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object organizationalUnit_ = "";
+
     /**
      *
      *
@@ -3251,6 +3350,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3274,6 +3374,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3296,6 +3397,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3314,6 +3416,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3442,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean aesEncryption_;
+
     /**
      *
      *
@@ -3354,6 +3458,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public boolean getAesEncryption() {
       return aesEncryption_;
     }
+
     /**
      *
      *
@@ -3373,6 +3478,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3392,6 +3498,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object username_ = "";
+
     /**
      *
      *
@@ -3414,6 +3521,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3436,6 +3544,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3457,6 +3566,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3474,6 +3584,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3498,6 +3609,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object password_ = "";
+
     /**
      *
      *
@@ -3520,6 +3632,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3542,6 +3655,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3563,6 +3677,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3580,6 +3695,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3612,6 +3728,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -3628,6 +3745,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       backupOperators_.makeImmutable();
       return backupOperators_;
     }
+
     /**
      *
      *
@@ -3643,6 +3761,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public int getBackupOperatorsCount() {
       return backupOperators_.size();
     }
+
     /**
      *
      *
@@ -3659,6 +3778,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getBackupOperators(int index) {
       return backupOperators_.get(index);
     }
+
     /**
      *
      *
@@ -3675,6 +3795,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getBackupOperatorsBytes(int index) {
       return backupOperators_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3699,6 +3820,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3722,6 +3844,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3742,6 +3865,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3761,6 +3885,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3795,6 +3920,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00001000;
     }
+
     /**
      *
      *
@@ -3810,6 +3936,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       administrators_.makeImmutable();
       return administrators_;
     }
+
     /**
      *
      *
@@ -3824,6 +3951,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public int getAdministratorsCount() {
       return administrators_.size();
     }
+
     /**
      *
      *
@@ -3839,6 +3967,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getAdministrators(int index) {
       return administrators_.get(index);
     }
+
     /**
      *
      *
@@ -3854,6 +3983,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getAdministratorsBytes(int index) {
       return administrators_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3877,6 +4007,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3899,6 +4030,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3918,6 +4050,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3936,6 +4069,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3969,6 +4103,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00002000;
     }
+
     /**
      *
      *
@@ -3985,6 +4120,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       securityOperators_.makeImmutable();
       return securityOperators_;
     }
+
     /**
      *
      *
@@ -4000,6 +4136,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public int getSecurityOperatorsCount() {
       return securityOperators_.size();
     }
+
     /**
      *
      *
@@ -4016,6 +4153,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSecurityOperators(int index) {
       return securityOperators_.get(index);
     }
+
     /**
      *
      *
@@ -4032,6 +4170,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSecurityOperatorsBytes(int index) {
       return securityOperators_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4056,6 +4195,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4079,6 +4219,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4099,6 +4240,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4118,6 +4260,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4144,6 +4287,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object kdcHostname_ = "";
+
     /**
      *
      *
@@ -4167,6 +4311,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4190,6 +4335,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4212,6 +4358,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4230,6 +4377,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4255,6 +4403,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object kdcIp_ = "";
+
     /**
      *
      *
@@ -4277,6 +4426,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4299,6 +4449,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4320,6 +4471,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4337,6 +4489,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4361,6 +4514,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean nfsUsersWithLdap_;
+
     /**
      *
      *
@@ -4377,6 +4531,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public boolean getNfsUsersWithLdap() {
       return nfsUsersWithLdap_;
     }
+
     /**
      *
      *
@@ -4397,6 +4552,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4417,6 +4573,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -4439,6 +4596,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4461,6 +4619,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4482,6 +4641,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4499,6 +4659,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4523,6 +4684,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean ldapSigning_;
+
     /**
      *
      *
@@ -4538,6 +4700,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public boolean getLdapSigning() {
       return ldapSigning_;
     }
+
     /**
      *
      *
@@ -4557,6 +4720,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4576,6 +4740,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean encryptDcConnections_;
+
     /**
      *
      *
@@ -4592,6 +4757,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public boolean getEncryptDcConnections() {
       return encryptDcConnections_;
     }
+
     /**
      *
      *
@@ -4612,6 +4778,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4656,6 +4823,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -4672,12 +4840,14 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -4691,6 +4861,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -4711,6 +4882,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4737,6 +4909,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4753,12 +4926,14 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00100000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -4779,6 +4954,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00100000;
       return this;
     }
+
     /**
      *
      *
@@ -4795,6 +4971,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object stateDetails_ = "";
+
     /**
      *
      *
@@ -4817,6 +4994,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4839,6 +5017,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4860,6 +5039,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4877,6 +5057,7 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

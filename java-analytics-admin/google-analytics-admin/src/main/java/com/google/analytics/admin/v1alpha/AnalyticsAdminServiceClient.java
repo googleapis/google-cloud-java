@@ -2819,6 +2819,120 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> CreateReportingDataAnnotation</td>
+ *      <td><p> Creates a Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createReportingDataAnnotation(CreateReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createReportingDataAnnotation(PropertyName parent, ReportingDataAnnotation reportingDataAnnotation)
+ *           <li><p> createReportingDataAnnotation(String parent, ReportingDataAnnotation reportingDataAnnotation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReportingDataAnnotation</td>
+ *      <td><p> Lookup a single Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReportingDataAnnotation(GetReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReportingDataAnnotation(ReportingDataAnnotationName name)
+ *           <li><p> getReportingDataAnnotation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReportingDataAnnotations</td>
+ *      <td><p> List all Reporting Data Annotations on a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReportingDataAnnotations(ListReportingDataAnnotationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listReportingDataAnnotations(PropertyName parent)
+ *           <li><p> listReportingDataAnnotations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReportingDataAnnotationsPagedCallable()
+ *           <li><p> listReportingDataAnnotationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateReportingDataAnnotation</td>
+ *      <td><p> Updates a Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReportingDataAnnotation(UpdateReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateReportingDataAnnotation(ReportingDataAnnotation reportingDataAnnotation, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteReportingDataAnnotation</td>
+ *      <td><p> Deletes a Reporting Data Annotation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteReportingDataAnnotation(DeleteReportingDataAnnotationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteReportingDataAnnotation(ReportingDataAnnotationName name)
+ *           <li><p> deleteReportingDataAnnotation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteReportingDataAnnotationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SubmitUserDeletion</td>
+ *      <td><p> Submits a request for user deletion for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> submitUserDeletion(SubmitUserDeletionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> submitUserDeletion(PropertyName name)
+ *           <li><p> submitUserDeletion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> submitUserDeletionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -21264,6 +21378,808 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.deleteSubpropertyEventFilterCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   ReportingDataAnnotation reportingDataAnnotation =
+   *       ReportingDataAnnotation.newBuilder().build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.createReportingDataAnnotation(
+   *           parent, reportingDataAnnotation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to create a Reporting Data Annotation. Format:
+   *     properties/property_id Example: properties/123
+   * @param reportingDataAnnotation Required. The Reporting Data Annotation to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation createReportingDataAnnotation(
+      PropertyName parent, ReportingDataAnnotation reportingDataAnnotation) {
+    CreateReportingDataAnnotationRequest request =
+        CreateReportingDataAnnotationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setReportingDataAnnotation(reportingDataAnnotation)
+            .build();
+    return createReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   ReportingDataAnnotation reportingDataAnnotation =
+   *       ReportingDataAnnotation.newBuilder().build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.createReportingDataAnnotation(
+   *           parent, reportingDataAnnotation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to create a Reporting Data Annotation. Format:
+   *     properties/property_id Example: properties/123
+   * @param reportingDataAnnotation Required. The Reporting Data Annotation to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation createReportingDataAnnotation(
+      String parent, ReportingDataAnnotation reportingDataAnnotation) {
+    CreateReportingDataAnnotationRequest request =
+        CreateReportingDataAnnotationRequest.newBuilder()
+            .setParent(parent)
+            .setReportingDataAnnotation(reportingDataAnnotation)
+            .build();
+    return createReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateReportingDataAnnotationRequest request =
+   *       CreateReportingDataAnnotationRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.createReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation createReportingDataAnnotation(
+      CreateReportingDataAnnotationRequest request) {
+    return createReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateReportingDataAnnotationRequest request =
+   *       CreateReportingDataAnnotationRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient.createReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingDataAnnotation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable() {
+    return stub.createReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingDataAnnotationName name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.getReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to lookup. Format:
+   *     properties/property_id/reportingDataAnnotations/reportingDataAnnotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation getReportingDataAnnotation(
+      ReportingDataAnnotationName name) {
+    GetReportingDataAnnotationRequest request =
+        GetReportingDataAnnotationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]").toString();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.getReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to lookup. Format:
+   *     properties/property_id/reportingDataAnnotations/reportingDataAnnotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation getReportingDataAnnotation(String name) {
+    GetReportingDataAnnotationRequest request =
+        GetReportingDataAnnotationRequest.newBuilder().setName(name).build();
+    return getReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingDataAnnotationRequest request =
+   *       GetReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.getReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation getReportingDataAnnotation(
+      GetReportingDataAnnotationRequest request) {
+    return getReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup a single Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingDataAnnotationRequest request =
+   *       GetReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient.getReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingDataAnnotation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable() {
+    return stub.getReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (ReportingDataAnnotation element :
+   *       analyticsAdminServiceClient.listReportingDataAnnotations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportingDataAnnotationsPagedResponse listReportingDataAnnotations(
+      PropertyName parent) {
+    ListReportingDataAnnotationsRequest request =
+        ListReportingDataAnnotationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listReportingDataAnnotations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (ReportingDataAnnotation element :
+   *       analyticsAdminServiceClient.listReportingDataAnnotations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportingDataAnnotationsPagedResponse listReportingDataAnnotations(
+      String parent) {
+    ListReportingDataAnnotationsRequest request =
+        ListReportingDataAnnotationsRequest.newBuilder().setParent(parent).build();
+    return listReportingDataAnnotations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListReportingDataAnnotationsRequest request =
+   *       ListReportingDataAnnotationsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ReportingDataAnnotation element :
+   *       analyticsAdminServiceClient.listReportingDataAnnotations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReportingDataAnnotationsPagedResponse listReportingDataAnnotations(
+      ListReportingDataAnnotationsRequest request) {
+    return listReportingDataAnnotationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListReportingDataAnnotationsRequest request =
+   *       ListReportingDataAnnotationsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient
+   *           .listReportingDataAnnotationsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (ReportingDataAnnotation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable() {
+    return stub.listReportingDataAnnotationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Reporting Data Annotations on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListReportingDataAnnotationsRequest request =
+   *       ListReportingDataAnnotationsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListReportingDataAnnotationsResponse response =
+   *         analyticsAdminServiceClient.listReportingDataAnnotationsCallable().call(request);
+   *     for (ReportingDataAnnotation element : response.getReportingDataAnnotationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable() {
+    return stub.listReportingDataAnnotationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingDataAnnotation reportingDataAnnotation =
+   *       ReportingDataAnnotation.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.updateReportingDataAnnotation(
+   *           reportingDataAnnotation, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param reportingDataAnnotation Required. The Reporting Data Annotation to update.
+   * @param updateMask Optional. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation updateReportingDataAnnotation(
+      ReportingDataAnnotation reportingDataAnnotation, FieldMask updateMask) {
+    UpdateReportingDataAnnotationRequest request =
+        UpdateReportingDataAnnotationRequest.newBuilder()
+            .setReportingDataAnnotation(reportingDataAnnotation)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingDataAnnotationRequest request =
+   *       UpdateReportingDataAnnotationRequest.newBuilder()
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ReportingDataAnnotation response =
+   *       analyticsAdminServiceClient.updateReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingDataAnnotation updateReportingDataAnnotation(
+      UpdateReportingDataAnnotationRequest request) {
+    return updateReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingDataAnnotationRequest request =
+   *       UpdateReportingDataAnnotationRequest.newBuilder()
+   *           .setReportingDataAnnotation(ReportingDataAnnotation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReportingDataAnnotation> future =
+   *       analyticsAdminServiceClient.updateReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingDataAnnotation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable() {
+    return stub.updateReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingDataAnnotationName name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+   *   analyticsAdminServiceClient.deleteReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to delete. Format:
+   *     properties/property_id/reportingDataAnnotations/reporting_data_annotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReportingDataAnnotation(ReportingDataAnnotationName name) {
+    DeleteReportingDataAnnotationRequest request =
+        DeleteReportingDataAnnotationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]").toString();
+   *   analyticsAdminServiceClient.deleteReportingDataAnnotation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Reporting Data Annotation to delete. Format:
+   *     properties/property_id/reportingDataAnnotations/reporting_data_annotation Example:
+   *     properties/123/reportingDataAnnotations/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReportingDataAnnotation(String name) {
+    DeleteReportingDataAnnotationRequest request =
+        DeleteReportingDataAnnotationRequest.newBuilder().setName(name).build();
+    deleteReportingDataAnnotation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteReportingDataAnnotationRequest request =
+   *       DeleteReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteReportingDataAnnotation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReportingDataAnnotation(DeleteReportingDataAnnotationRequest request) {
+    deleteReportingDataAnnotationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Reporting Data Annotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteReportingDataAnnotationRequest request =
+   *       DeleteReportingDataAnnotationRequest.newBuilder()
+   *           .setName(
+   *               ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteReportingDataAnnotationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable() {
+    return stub.deleteReportingDataAnnotationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName name = PropertyName.of("[PROPERTY]");
+   *   SubmitUserDeletionResponse response = analyticsAdminServiceClient.submitUserDeletion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the property to submit user deletion for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitUserDeletionResponse submitUserDeletion(PropertyName name) {
+    SubmitUserDeletionRequest request =
+        SubmitUserDeletionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return submitUserDeletion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = PropertyName.of("[PROPERTY]").toString();
+   *   SubmitUserDeletionResponse response = analyticsAdminServiceClient.submitUserDeletion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the property to submit user deletion for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitUserDeletionResponse submitUserDeletion(String name) {
+    SubmitUserDeletionRequest request =
+        SubmitUserDeletionRequest.newBuilder().setName(name).build();
+    return submitUserDeletion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubmitUserDeletionRequest request =
+   *       SubmitUserDeletionRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   SubmitUserDeletionResponse response = analyticsAdminServiceClient.submitUserDeletion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitUserDeletionResponse submitUserDeletion(SubmitUserDeletionRequest request) {
+    return submitUserDeletionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a request for user deletion for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubmitUserDeletionRequest request =
+   *       SubmitUserDeletionRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<SubmitUserDeletionResponse> future =
+   *       analyticsAdminServiceClient.submitUserDeletionCallable().futureCall(request);
+   *   // Do something.
+   *   SubmitUserDeletionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable() {
+    return stub.submitUserDeletionCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -23582,6 +24498,103 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListSubpropertyEventFiltersFixedSizeCollection createCollection(
         List<ListSubpropertyEventFiltersPage> pages, int collectionSize) {
       return new ListSubpropertyEventFiltersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListReportingDataAnnotationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation,
+          ListReportingDataAnnotationsPage,
+          ListReportingDataAnnotationsFixedSizeCollection> {
+
+    public static ApiFuture<ListReportingDataAnnotationsPagedResponse> createAsync(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ApiFuture<ListReportingDataAnnotationsResponse> futureResponse) {
+      ApiFuture<ListReportingDataAnnotationsPage> futurePage =
+          ListReportingDataAnnotationsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListReportingDataAnnotationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListReportingDataAnnotationsPagedResponse(ListReportingDataAnnotationsPage page) {
+      super(page, ListReportingDataAnnotationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListReportingDataAnnotationsPage
+      extends AbstractPage<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation,
+          ListReportingDataAnnotationsPage> {
+
+    private ListReportingDataAnnotationsPage(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ListReportingDataAnnotationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListReportingDataAnnotationsPage createEmptyPage() {
+      return new ListReportingDataAnnotationsPage(null, null);
+    }
+
+    @Override
+    protected ListReportingDataAnnotationsPage createPage(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ListReportingDataAnnotationsResponse response) {
+      return new ListReportingDataAnnotationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReportingDataAnnotationsPage> createPageAsync(
+        PageContext<
+                ListReportingDataAnnotationsRequest,
+                ListReportingDataAnnotationsResponse,
+                ReportingDataAnnotation>
+            context,
+        ApiFuture<ListReportingDataAnnotationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListReportingDataAnnotationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation,
+          ListReportingDataAnnotationsPage,
+          ListReportingDataAnnotationsFixedSizeCollection> {
+
+    private ListReportingDataAnnotationsFixedSizeCollection(
+        List<ListReportingDataAnnotationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReportingDataAnnotationsFixedSizeCollection createEmptyCollection() {
+      return new ListReportingDataAnnotationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReportingDataAnnotationsFixedSizeCollection createCollection(
+        List<ListReportingDataAnnotationsPage> pages, int collectionSize) {
+      return new ListReportingDataAnnotationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

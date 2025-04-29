@@ -37,6 +37,7 @@ public interface LogEntryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface LogEntryOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface LogEntryOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface LogEntryOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface LogEntryOrBuilder
    * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface LogEntryOrBuilder
    * @return The httpRequest.
    */
   com.google.api.servicecontrol.v1.HttpRequest getHttpRequest();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface LogEntryOrBuilder
    * @return The trace.
    */
   java.lang.String getTrace();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface LogEntryOrBuilder
    * @return The insertId.
    */
   java.lang.String getInsertId();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface LogEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -234,9 +243,11 @@ public interface LogEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -248,6 +259,7 @@ public interface LogEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface LogEntryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public interface LogEntryOrBuilder
    * @return Whether the protoPayload field is set.
    */
   boolean hasProtoPayload();
+
   /**
    *
    *
@@ -303,6 +317,7 @@ public interface LogEntryOrBuilder
    * @return The protoPayload.
    */
   com.google.protobuf.Any getProtoPayload();
+
   /**
    *
    *
@@ -328,6 +343,7 @@ public interface LogEntryOrBuilder
    * @return Whether the textPayload field is set.
    */
   boolean hasTextPayload();
+
   /**
    *
    *
@@ -340,6 +356,7 @@ public interface LogEntryOrBuilder
    * @return The textPayload.
    */
   java.lang.String getTextPayload();
+
   /**
    *
    *
@@ -366,6 +383,7 @@ public interface LogEntryOrBuilder
    * @return Whether the structPayload field is set.
    */
   boolean hasStructPayload();
+
   /**
    *
    *
@@ -379,6 +397,7 @@ public interface LogEntryOrBuilder
    * @return The structPayload.
    */
   com.google.protobuf.Struct getStructPayload();
+
   /**
    *
    *
@@ -404,6 +423,7 @@ public interface LogEntryOrBuilder
    * @return Whether the operation field is set.
    */
   boolean hasOperation();
+
   /**
    *
    *
@@ -417,6 +437,7 @@ public interface LogEntryOrBuilder
    * @return The operation.
    */
   com.google.api.servicecontrol.v1.LogEntryOperation getOperation();
+
   /**
    *
    *
@@ -442,6 +463,7 @@ public interface LogEntryOrBuilder
    * @return Whether the sourceLocation field is set.
    */
   boolean hasSourceLocation();
+
   /**
    *
    *
@@ -455,6 +477,7 @@ public interface LogEntryOrBuilder
    * @return The sourceLocation.
    */
   com.google.api.servicecontrol.v1.LogEntrySourceLocation getSourceLocation();
+
   /**
    *
    *

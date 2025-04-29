@@ -38,6 +38,7 @@ public interface OtherCloudDiscoveryStartingLocationOrBuilder
    * @return Whether the awsLocation field is set.
    */
   boolean hasAwsLocation();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface OtherCloudDiscoveryStartingLocationOrBuilder
    */
   com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation.AwsDiscoveryStartingLocation
       getAwsLocation();
+
   /**
    *
    *

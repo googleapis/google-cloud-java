@@ -39,6 +39,7 @@ public interface GetParameterVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface GetParameterVersionRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
+
   /**
    *
    *

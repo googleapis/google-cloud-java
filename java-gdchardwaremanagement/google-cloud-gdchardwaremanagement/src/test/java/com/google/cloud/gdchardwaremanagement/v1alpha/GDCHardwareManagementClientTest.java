@@ -209,6 +209,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     mockGDCHardwareManagement.addResponse(expectedResponse);
 
@@ -260,6 +262,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     mockGDCHardwareManagement.addResponse(expectedResponse);
 
@@ -311,6 +315,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -376,6 +382,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -441,6 +449,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -587,6 +597,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -646,6 +658,8 @@ public class GDCHardwareManagementClientTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2758,6 +2772,7 @@ public class GDCHardwareManagementClientTest {
             .setRevisionId("revisionId-1507445162")
             .setIsActive(true)
             .setVcpuCount(936475650)
+            .addAllHardwareCountRanges(new ArrayList<Sku.Range>())
             .build();
     mockGDCHardwareManagement.addResponse(expectedResponse);
 
@@ -2805,6 +2820,7 @@ public class GDCHardwareManagementClientTest {
             .setRevisionId("revisionId-1507445162")
             .setIsActive(true)
             .setVcpuCount(936475650)
+            .addAllHardwareCountRanges(new ArrayList<Sku.Range>())
             .build();
     mockGDCHardwareManagement.addResponse(expectedResponse);
 

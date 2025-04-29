@@ -28,53 +28,57 @@ public interface ListSecretVersionsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
-   * create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+   * sorted in reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   java.util.List<com.google.cloud.secretmanager.v1beta1.SecretVersion> getVersionsList();
+
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
-   * create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+   * sorted in reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   com.google.cloud.secretmanager.v1beta1.SecretVersion getVersions(int index);
+
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
-   * create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+   * sorted in reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   int getVersionsCount();
+
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
-   * create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+   * sorted in reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   java.util.List<? extends com.google.cloud.secretmanager.v1beta1.SecretVersionOrBuilder>
       getVersionsOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] sorted in reverse by
-   * create_time (newest first).
+   * The list of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+   * sorted in reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
@@ -86,7 +90,8 @@ public interface ListSecretVersionsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
+   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -94,12 +99,14 @@ public interface ListSecretVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token] to retrieve the next page.
+   * [ListSecretVersionsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretVersionsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -112,7 +119,8 @@ public interface ListSecretVersionsResponseOrBuilder
    *
    *
    * <pre>
-   * The total number of [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+   * The total number of
+   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

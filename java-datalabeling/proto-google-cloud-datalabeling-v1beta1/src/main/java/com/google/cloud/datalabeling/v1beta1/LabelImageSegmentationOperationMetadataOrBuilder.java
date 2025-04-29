@@ -36,6 +36,7 @@ public interface LabelImageSegmentationOperationMetadataOrBuilder
    * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LabelImageSegmentationOperationMetadataOrBuilder
    * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.MysqlSslConfig)
     MysqlSslConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MysqlSslConfig.newBuilder() to construct.
   private MysqlSslConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,16 +70,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientKey_ = "";
+
   /**
    *
    *
    * <pre>
-   * Input only. PEM-encoded private key associated with the Client Certificate.
-   * If this field is used then the 'client_certificate' and the
+   * Optional. Input only. PEM-encoded private key associated with the Client
+   * Certificate. If this field is used then the 'client_certificate' and the
    * 'ca_certificate' fields are mandatory.
    * </pre>
    *
-   * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The clientKey.
    */
@@ -94,16 +98,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Input only. PEM-encoded private key associated with the Client Certificate.
-   * If this field is used then the 'client_certificate' and the
+   * Optional. Input only. PEM-encoded private key associated with the Client
+   * Certificate. If this field is used then the 'client_certificate' and the
    * 'ca_certificate' fields are mandatory.
    * </pre>
    *
-   * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for clientKey.
    */
@@ -122,6 +129,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_KEY_SET_FIELD_NUMBER = 2;
   private boolean clientKeySet_ = false;
+
   /**
    *
    *
@@ -142,16 +150,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientCertificate_ = "";
+
   /**
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server. If this field is used
-   * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+   * Optional. Input only. PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server. If this field
+   * is used then the 'client_key' and the 'ca_certificate' fields are
+   * mandatory.
    * </pre>
    *
-   * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The clientCertificate.
    */
@@ -167,16 +179,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server. If this field is used
-   * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+   * Optional. Input only. PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server. If this field
+   * is used then the 'client_key' and the 'ca_certificate' fields are
+   * mandatory.
    * </pre>
    *
-   * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for clientCertificate.
    */
@@ -195,6 +211,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_CERTIFICATE_SET_FIELD_NUMBER = 4;
   private boolean clientCertificateSet_ = false;
+
   /**
    *
    *
@@ -215,6 +232,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object caCertificate_ = "";
+
   /**
    *
    *
@@ -239,6 +257,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -266,6 +285,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CA_CERTIFICATE_SET_FIELD_NUMBER = 6;
   private boolean caCertificateSet_ = false;
+
   /**
    *
    *
@@ -486,6 +506,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -738,16 +759,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object clientKey_ = "";
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clientKey.
      */
@@ -762,16 +786,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for clientKey.
      */
@@ -786,16 +813,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The clientKey to set.
      * @return This builder for chaining.
@@ -809,16 +839,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -828,16 +861,19 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for clientKey to set.
      * @return This builder for chaining.
@@ -854,6 +890,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clientKeySet_;
+
     /**
      *
      *
@@ -869,6 +906,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getClientKeySet() {
       return clientKeySet_;
     }
+
     /**
      *
      *
@@ -888,6 +926,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,16 +946,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientCertificate_ = "";
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clientCertificate.
      */
@@ -931,16 +974,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for clientCertificate.
      */
@@ -955,16 +1002,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The clientCertificate to set.
      * @return This builder for chaining.
@@ -978,16 +1029,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -997,16 +1052,20 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for clientCertificate to set.
      * @return This builder for chaining.
@@ -1023,6 +1082,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clientCertificateSet_;
+
     /**
      *
      *
@@ -1038,6 +1098,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getClientCertificateSet() {
       return clientCertificateSet_;
     }
+
     /**
      *
      *
@@ -1057,6 +1118,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1138,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object caCertificate_ = "";
+
     /**
      *
      *
@@ -1099,6 +1162,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1186,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1209,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1228,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1254,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean caCertificateSet_;
+
     /**
      *
      *
@@ -1202,6 +1270,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getCaCertificateSet() {
       return caCertificateSet_;
     }
+
     /**
      *
      *
@@ -1221,6 +1290,7 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

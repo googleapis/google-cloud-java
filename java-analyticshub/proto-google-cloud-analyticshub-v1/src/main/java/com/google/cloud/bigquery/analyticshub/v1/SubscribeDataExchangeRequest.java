@@ -33,6 +33,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest)
     SubscribeDataExchangeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubscribeDataExchangeRequest.newBuilder() to construct.
   private SubscribeDataExchangeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,10 +67,12 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
             com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destination_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,10 +186,71 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int DESTINATION_DATASET_FIELD_NUMBER = 5;
+  private com.google.cloud.bigquery.analyticshub.v1.DestinationDataset destinationDataset_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the destinationDataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationDataset() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The destinationDataset.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.DestinationDataset getDestinationDataset() {
+    return destinationDataset_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance()
+        : destinationDataset_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder
+      getDestinationDatasetOrBuilder() {
+    return destinationDataset_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance()
+        : destinationDataset_;
+  }
+
   public static final int SUBSCRIPTION_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscription_ = "";
+
   /**
    *
    *
@@ -208,6 +275,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +305,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscriberContact_ = "";
+
   /**
    *
    *
@@ -260,6 +329,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -310,6 +380,9 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subscription_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getDestinationDataset());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -331,6 +404,9 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subscription_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDestinationDataset());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -349,6 +425,10 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
     if (!getName().equals(other.getName())) return false;
     if (!getDestination().equals(other.getDestination())) return false;
+    if (hasDestinationDataset() != other.hasDestinationDataset()) return false;
+    if (hasDestinationDataset()) {
+      if (!getDestinationDataset().equals(other.getDestinationDataset())) return false;
+    }
     if (!getSubscription().equals(other.getSubscription())) return false;
     if (!getSubscriberContact().equals(other.getSubscriberContact())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -366,6 +446,10 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
     hash = (53 * hash) + getDestination().hashCode();
+    if (hasDestinationDataset()) {
+      hash = (37 * hash) + DESTINATION_DATASET_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationDataset().hashCode();
+    }
     hash = (37 * hash) + SUBSCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getSubscription().hashCode();
     hash = (37 * hash) + SUBSCRIBER_CONTACT_FIELD_NUMBER;
@@ -472,6 +556,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -502,10 +587,19 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
 
     // Construct using
     // com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDestinationDatasetFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -514,6 +608,11 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       bitField0_ = 0;
       name_ = "";
       destination_ = "";
+      destinationDataset_ = null;
+      if (destinationDatasetBuilder_ != null) {
+        destinationDatasetBuilder_.dispose();
+        destinationDatasetBuilder_ = null;
+      }
       subscription_ = "";
       subscriberContact_ = "";
       return this;
@@ -562,12 +661,21 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.destination_ = destination_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.subscription_ = subscription_;
+        result.destinationDataset_ =
+            destinationDatasetBuilder_ == null
+                ? destinationDataset_
+                : destinationDatasetBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.subscription_ = subscription_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.subscriberContact_ = subscriberContact_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -629,14 +737,17 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasDestinationDataset()) {
+        mergeDestinationDataset(other.getDestinationDataset());
+      }
       if (!other.getSubscription().isEmpty()) {
         subscription_ = other.subscription_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getSubscriberContact().isEmpty()) {
         subscriberContact_ = other.subscriberContact_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -680,15 +791,22 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
             case 26:
               {
                 subscriberContact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 subscription_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getDestinationDatasetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -709,6 +827,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -734,6 +853,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +879,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -783,6 +904,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +925,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +953,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object destination_ = "";
+
     /**
      *
      *
@@ -855,6 +979,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +1005,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +1030,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +1051,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,7 +1078,227 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private com.google.cloud.bigquery.analyticshub.v1.DestinationDataset destinationDataset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.DestinationDataset,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder>
+        destinationDatasetBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the destinationDataset field is set.
+     */
+    public boolean hasDestinationDataset() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The destinationDataset.
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.DestinationDataset getDestinationDataset() {
+      if (destinationDatasetBuilder_ == null) {
+        return destinationDataset_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance()
+            : destinationDataset_;
+      } else {
+        return destinationDatasetBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDestinationDataset(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationDataset value) {
+      if (destinationDatasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destinationDataset_ = value;
+      } else {
+        destinationDatasetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDestinationDataset(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder builderForValue) {
+      if (destinationDatasetBuilder_ == null) {
+        destinationDataset_ = builderForValue.build();
+      } else {
+        destinationDatasetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDestinationDataset(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationDataset value) {
+      if (destinationDatasetBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && destinationDataset_ != null
+            && destinationDataset_
+                != com.google.cloud.bigquery.analyticshub.v1.DestinationDataset
+                    .getDefaultInstance()) {
+          getDestinationDatasetBuilder().mergeFrom(value);
+        } else {
+          destinationDataset_ = value;
+        }
+      } else {
+        destinationDatasetBuilder_.mergeFrom(value);
+      }
+      if (destinationDataset_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDestinationDataset() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      destinationDataset_ = null;
+      if (destinationDatasetBuilder_ != null) {
+        destinationDatasetBuilder_.dispose();
+        destinationDatasetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder
+        getDestinationDatasetBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDestinationDatasetFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder
+        getDestinationDatasetOrBuilder() {
+      if (destinationDatasetBuilder_ != null) {
+        return destinationDatasetBuilder_.getMessageOrBuilder();
+      } else {
+        return destinationDataset_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance()
+            : destinationDataset_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. BigQuery destination dataset to create for the subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.DestinationDataset,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder>
+        getDestinationDatasetFieldBuilder() {
+      if (destinationDatasetBuilder_ == null) {
+        destinationDatasetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.DestinationDataset,
+                com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder>(
+                getDestinationDataset(), getParentForChildren(), isClean());
+        destinationDataset_ = null;
+      }
+      return destinationDatasetBuilder_;
+    }
+
     private java.lang.Object subscription_ = "";
+
     /**
      *
      *
@@ -974,6 +1322,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1346,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,10 +1365,11 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       subscription_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,10 +1384,11 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
      */
     public Builder clearSubscription() {
       subscription_ = getDefaultInstance().getSubscription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,12 +1408,13 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       subscription_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object subscriberContact_ = "";
+
     /**
      *
      *
@@ -1084,6 +1437,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1460,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1123,10 +1478,11 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       subscriberContact_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,10 +1496,11 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
      */
     public Builder clearSubscriberContact() {
       subscriberContact_ = getDefaultInstance().getSubscriberContact();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,7 +1519,7 @@ public final class SubscribeDataExchangeRequest extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       subscriberContact_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

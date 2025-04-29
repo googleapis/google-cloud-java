@@ -34,6 +34,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest)
     SetEdgeSecurityPolicyBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetEdgeSecurityPolicyBackendServiceRequest.newBuilder() to construct.
   private SetEdgeSecurityPolicyBackendServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backendService_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
 
   public static final int SECURITY_POLICY_REFERENCE_RESOURCE_FIELD_NUMBER = 204135024;
   private com.google.cloud.compute.v1.SecurityPolicyReference securityPolicyReferenceResource_;
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
   public boolean hasSecurityPolicyReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         ? com.google.cloud.compute.v1.SecurityPolicyReference.getDefaultInstance()
         : securityPolicyReferenceResource_;
   }
+
   /**
    *
    *
@@ -499,6 +510,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -756,6 +768,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     private int bitField0_;
 
     private java.lang.Object backendService_ = "";
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +836,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +854,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +973,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1101,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
             com.google.cloud.compute.v1.SecurityPolicyReference.Builder,
             com.google.cloud.compute.v1.SecurityPolicyReferenceOrBuilder>
         securityPolicyReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
     public boolean hasSecurityPolicyReferenceResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
         return securityPolicyReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1198,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1253,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1275,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1293,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
       onChanged();
       return getSecurityPolicyReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1279,6 +1315,7 @@ public final class SetEdgeSecurityPolicyBackendServiceRequest
             : securityPolicyReferenceResource_;
       }
     }
+
     /**
      *
      *

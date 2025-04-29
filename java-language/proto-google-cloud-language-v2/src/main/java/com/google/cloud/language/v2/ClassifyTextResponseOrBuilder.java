@@ -34,6 +34,7 @@ public interface ClassifyTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.ClassificationCategory categories = 1;</code>
    */
   java.util.List<com.google.cloud.language.v2.ClassificationCategory> getCategoriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ClassifyTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.ClassificationCategory categories = 1;</code>
    */
   com.google.cloud.language.v2.ClassificationCategory getCategories(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ClassifyTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.ClassificationCategory categories = 1;</code>
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ClassifyTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v2.ClassificationCategoryOrBuilder>
       getCategoriesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ClassifyTextResponseOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

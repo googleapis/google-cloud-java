@@ -36,6 +36,7 @@ public interface InstanceGroupManagerStatusVersionTargetOrBuilder
    * @return Whether the isReached field is set.
    */
   boolean hasIsReached();
+
   /**
    *
    *

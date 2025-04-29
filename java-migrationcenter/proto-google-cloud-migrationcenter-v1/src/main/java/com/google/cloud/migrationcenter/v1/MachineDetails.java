@@ -33,6 +33,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MachineDetails)
     MachineDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MachineDetails.newBuilder() to construct.
   private MachineDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -160,6 +161,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>POWER_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int POWER_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -172,6 +174,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -182,6 +185,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -192,6 +196,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSPENDING = 3;</code>
      */
     public static final int SUSPENDING_VALUE = 3;
+
     /**
      *
      *
@@ -202,6 +207,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSPENDED = 4;</code>
      */
     public static final int SUSPENDED_VALUE = 4;
+
     /**
      *
      *
@@ -212,6 +218,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 5;</code>
      */
     public static final int DELETING_VALUE = 5;
+
     /**
      *
      *
@@ -321,6 +328,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uuid_ = "";
+
   /**
    *
    *
@@ -344,6 +352,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineName_ = "";
+
   /**
    *
    *
@@ -395,6 +405,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -421,6 +432,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -436,6 +448,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -451,6 +464,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -467,6 +481,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CORE_COUNT_FIELD_NUMBER = 4;
   private int coreCount_ = 0;
+
   /**
    *
    *
@@ -485,6 +500,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEMORY_MB_FIELD_NUMBER = 5;
   private int memoryMb_ = 0;
+
   /**
    *
    *
@@ -503,6 +519,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POWER_STATE_FIELD_NUMBER = 6;
   private int powerState_ = 0;
+
   /**
    *
    *
@@ -518,6 +535,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public int getPowerStateValue() {
     return powerState_;
   }
+
   /**
    *
    *
@@ -540,6 +558,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ARCHITECTURE_FIELD_NUMBER = 7;
   private com.google.cloud.migrationcenter.v1.MachineArchitectureDetails architecture_;
+
   /**
    *
    *
@@ -555,6 +574,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArchitecture() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -572,6 +592,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.MachineArchitectureDetails.getDefaultInstance()
         : architecture_;
   }
+
   /**
    *
    *
@@ -591,6 +612,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GUEST_OS_FIELD_NUMBER = 8;
   private com.google.cloud.migrationcenter.v1.GuestOsDetails guestOs_;
+
   /**
    *
    *
@@ -606,6 +628,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGuestOs() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -623,6 +646,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.GuestOsDetails.getDefaultInstance()
         : guestOs_;
   }
+
   /**
    *
    *
@@ -641,6 +665,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_FIELD_NUMBER = 9;
   private com.google.cloud.migrationcenter.v1.MachineNetworkDetails network_;
+
   /**
    *
    *
@@ -656,6 +681,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -673,6 +699,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.MachineNetworkDetails.getDefaultInstance()
         : network_;
   }
+
   /**
    *
    *
@@ -691,6 +718,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISKS_FIELD_NUMBER = 10;
   private com.google.cloud.migrationcenter.v1.MachineDiskDetails disks_;
+
   /**
    *
    *
@@ -706,6 +734,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisks() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -723,6 +752,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.MachineDiskDetails.getDefaultInstance()
         : disks_;
   }
+
   /**
    *
    *
@@ -741,6 +771,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PLATFORM_FIELD_NUMBER = 11;
   private com.google.cloud.migrationcenter.v1.PlatformDetails platform_;
+
   /**
    *
    *
@@ -756,6 +787,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPlatform() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -773,6 +805,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.PlatformDetails.getDefaultInstance()
         : platform_;
   }
+
   /**
    *
    *
@@ -1072,6 +1105,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1435,6 +1469,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object uuid_ = "";
+
     /**
      *
      *
@@ -1457,6 +1492,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1479,6 +1515,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1537,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1555,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1580,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object machineName_ = "";
+
     /**
      *
      *
@@ -1563,6 +1603,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1626,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1648,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1623,6 +1666,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1696,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1666,6 +1711,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1686,6 +1732,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1708,6 +1755,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1775,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1803,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1823,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1787,6 +1838,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1805,6 +1857,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1832,6 +1885,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int coreCount_;
+
     /**
      *
      *
@@ -1847,6 +1901,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public int getCoreCount() {
       return coreCount_;
     }
+
     /**
      *
      *
@@ -1866,6 +1921,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1941,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int memoryMb_;
+
     /**
      *
      *
@@ -1900,6 +1957,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public int getMemoryMb() {
       return memoryMb_;
     }
+
     /**
      *
      *
@@ -1919,6 +1977,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1938,6 +1997,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int powerState_ = 0;
+
     /**
      *
      *
@@ -1953,6 +2013,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public int getPowerStateValue() {
       return powerState_;
     }
+
     /**
      *
      *
@@ -1971,6 +2032,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1990,6 +2052,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.MachineDetails.PowerState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2012,6 +2075,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2036,6 +2100,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.MachineArchitectureDetails.Builder,
             com.google.cloud.migrationcenter.v1.MachineArchitectureDetailsOrBuilder>
         architectureBuilder_;
+
     /**
      *
      *
@@ -2050,6 +2115,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArchitecture() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2070,6 +2136,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return architectureBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2093,6 +2160,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2181,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2143,6 +2212,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2162,6 +2232,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2177,6 +2248,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getArchitectureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2196,6 +2268,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             : architecture_;
       }
     }
+
     /**
      *
      *
@@ -2228,6 +2301,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.GuestOsDetails.Builder,
             com.google.cloud.migrationcenter.v1.GuestOsDetailsOrBuilder>
         guestOsBuilder_;
+
     /**
      *
      *
@@ -2242,6 +2316,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGuestOs() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2262,6 +2337,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return guestOsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2284,6 +2360,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2304,6 +2381,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2332,6 +2410,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2430,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2445,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGuestOsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2383,6 +2464,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             : guestOs_;
       }
     }
+
     /**
      *
      *
@@ -2415,6 +2497,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.MachineNetworkDetails.Builder,
             com.google.cloud.migrationcenter.v1.MachineNetworkDetailsOrBuilder>
         networkBuilder_;
+
     /**
      *
      *
@@ -2429,6 +2512,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2449,6 +2533,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return networkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2471,6 +2556,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2491,6 +2577,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2519,6 +2606,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2538,6 +2626,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2552,6 +2641,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2571,6 +2661,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             : network_;
       }
     }
+
     /**
      *
      *
@@ -2603,6 +2694,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.MachineDiskDetails.Builder,
             com.google.cloud.migrationcenter.v1.MachineDiskDetailsOrBuilder>
         disksBuilder_;
+
     /**
      *
      *
@@ -2617,6 +2709,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisks() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2637,6 +2730,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return disksBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2659,6 +2753,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2679,6 +2774,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2707,6 +2803,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2726,6 +2823,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2740,6 +2838,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDisksFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2758,6 +2857,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             : disks_;
       }
     }
+
     /**
      *
      *
@@ -2790,6 +2890,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.PlatformDetails.Builder,
             com.google.cloud.migrationcenter.v1.PlatformDetailsOrBuilder>
         platformBuilder_;
+
     /**
      *
      *
@@ -2804,6 +2905,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlatform() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2824,6 +2926,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
         return platformBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2846,6 +2949,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2866,6 +2970,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2894,6 +2999,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2913,6 +3019,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2927,6 +3034,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPlatformFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2945,6 +3053,7 @@ public final class MachineDetails extends com.google.protobuf.GeneratedMessageV3
             : platform_;
       }
     }
+
     /**
      *
      *

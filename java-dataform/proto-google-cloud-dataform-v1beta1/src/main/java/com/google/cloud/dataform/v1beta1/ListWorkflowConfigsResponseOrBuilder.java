@@ -34,6 +34,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.WorkflowConfig workflow_configs = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.WorkflowConfig> getWorkflowConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.WorkflowConfig workflow_configs = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.WorkflowConfig getWorkflowConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.WorkflowConfig workflow_configs = 1;</code>
    */
   int getWorkflowConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.WorkflowConfigOrBuilder>
       getWorkflowConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -140,6 +147,7 @@ public interface ListWorkflowConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

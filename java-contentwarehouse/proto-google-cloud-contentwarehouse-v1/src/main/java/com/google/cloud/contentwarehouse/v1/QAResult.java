@@ -33,6 +33,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.QAResult)
     QAResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QAResult.newBuilder() to construct.
   private QAResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,6 +95,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
      */
     int getEndIndex();
   }
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.QAResult.Highlight)
       HighlightOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Highlight.newBuilder() to construct.
     private Highlight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -139,6 +142,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
 
     public static final int START_INDEX_FIELD_NUMBER = 1;
     private int startIndex_ = 0;
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_INDEX_FIELD_NUMBER = 2;
     private int endIndex_ = 0;
+
     /**
      *
      *
@@ -343,6 +348,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -542,6 +548,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int startIndex_;
+
       /**
        *
        *
@@ -557,6 +564,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       public int getStartIndex() {
         return startIndex_;
       }
+
       /**
        *
        *
@@ -576,6 +584,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -595,6 +604,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int endIndex_;
+
       /**
        *
        *
@@ -610,6 +620,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       public int getEndIndex() {
         return endIndex_;
       }
+
       /**
        *
        *
@@ -629,6 +640,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -715,6 +727,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.QAResult.Highlight> highlights_;
+
   /**
    *
    *
@@ -729,6 +742,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       getHighlightsList() {
     return highlights_;
   }
+
   /**
    *
    *
@@ -743,6 +757,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       getHighlightsOrBuilderList() {
     return highlights_;
   }
+
   /**
    *
    *
@@ -756,6 +771,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
   public int getHighlightsCount() {
     return highlights_.size();
   }
+
   /**
    *
    *
@@ -769,6 +785,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.QAResult.Highlight getHighlights(int index) {
     return highlights_.get(index);
   }
+
   /**
    *
    *
@@ -786,6 +803,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 2;
   private float confidenceScore_ = 0F;
+
   /**
    *
    *
@@ -975,6 +993,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1251,6 +1270,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         return highlightsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1267,6 +1287,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         return highlightsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1304,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         return highlightsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1328,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1350,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1373,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1397,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1418,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1440,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1462,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1482,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1502,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1516,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getHighlightsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1502,6 +1534,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         return highlightsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1520,6 +1553,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(highlights_);
       }
     }
+
     /**
      *
      *
@@ -1533,6 +1567,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       return getHighlightsFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.QAResult.Highlight.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1548,6 +1583,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.QAResult.Highlight.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1580,6 +1616,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidenceScore_;
+
     /**
      *
      *
@@ -1597,6 +1634,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
     public float getConfidenceScore() {
       return confidenceScore_;
     }
+
     /**
      *
      *
@@ -1618,6 +1656,7 @@ public final class QAResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

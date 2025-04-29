@@ -36,6 +36,7 @@ public interface PricePhaseOrBuilder
    * @return The enum numeric value on the wire for periodType.
    */
   int getPeriodTypeValue();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface PricePhaseOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface PricePhaseOrBuilder
    * @return The price.
    */
   com.google.cloud.channel.v1.Price getPrice();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface PricePhaseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PriceTier price_tiers = 5;</code>
    */
   java.util.List<com.google.cloud.channel.v1.PriceTier> getPriceTiersList();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface PricePhaseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PriceTier price_tiers = 5;</code>
    */
   com.google.cloud.channel.v1.PriceTier getPriceTiers(int index);
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface PricePhaseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PriceTier price_tiers = 5;</code>
    */
   int getPriceTiersCount();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface PricePhaseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.PriceTierOrBuilder>
       getPriceTiersOrBuilderList();
+
   /**
    *
    *

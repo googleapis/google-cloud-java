@@ -37,6 +37,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return Whether the advancedParser field is set.
    */
   boolean hasAdvancedParser();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return The advancedParser.
    */
   com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser getAdvancedParser();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return Whether the layoutParser field is set.
    */
   boolean hasLayoutParser();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return The layoutParser.
    */
   com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser getLayoutParser();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return Whether the llmParser field is set.
    */
   boolean hasLlmParser();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return The llmParser.
    */
   com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser getLlmParser();
+
   /**
    *
    *
@@ -148,7 +154,7 @@ public interface RagFileParsingConfigOrBuilder
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=475
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Deprecated

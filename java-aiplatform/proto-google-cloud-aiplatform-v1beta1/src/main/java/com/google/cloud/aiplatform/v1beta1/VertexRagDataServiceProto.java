@@ -85,6 +85,10 @@ public final class VertexRagDataServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CreateRagCorpusOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GetRagEngineConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GetRagEngineConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusRequest_fieldAccessorTable;
@@ -96,6 +100,14 @@ public final class VertexRagDataServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -105,142 +117,163 @@ public final class VertexRagDataServiceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n=google/cloud/aiplatform/v1beta1/vertex"
-          + "_rag_data_service.proto\022\037google.cloud.ai"
+      "\n"
+          + "=google/cloud/aiplatform/v1beta1/vertex_rag_data_service.proto\022\037google.cloud.ai"
           + "platform.v1beta1\032\034google/api/annotations"
           + ".proto\032\027google/api/client.proto\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\032/google/cloud/aiplatform/v1b"
-          + "eta1/operation.proto\0325google/cloud/aipla"
+          + "ource.proto\032/google/cloud/aiplatform/v1beta1/operation.proto\0325google/cloud/aipla"
           + "tform/v1beta1/vertex_rag_data.proto\032#goo"
           + "gle/longrunning/operations.proto\032\033google"
-          + "/protobuf/empty.proto\032\027google/rpc/status"
-          + ".proto\"\230\001\n\026CreateRagCorpusRequest\0229\n\006par"
-          + "ent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis."
-          + "com/Location\022C\n\nrag_corpus\030\002 \001(\0132*.googl"
-          + "e.cloud.aiplatform.v1beta1.RagCorpusB\003\340A"
-          + "\002\"P\n\023GetRagCorpusRequest\0229\n\004name\030\001 \001(\tB+"
-          + "\340A\002\372A%\n#aiplatform.googleapis.com/RagCor"
-          + "pus\"\203\001\n\025ListRagCorporaRequest\0229\n\006parent\030"
-          + "\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com/"
-          + "Location\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage"
-          + "_token\030\003 \001(\tB\003\340A\001\"r\n\026ListRagCorporaRespo"
-          + "nse\022?\n\013rag_corpora\030\001 \003(\0132*.google.cloud."
-          + "aiplatform.v1beta1.RagCorpus\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\"g\n\026DeleteRagCorpusRequest\022"
-          + "9\n\004name\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.google"
-          + "apis.com/RagCorpus\022\022\n\005force\030\002 \001(\010B\003\340A\001\"\357"
-          + "\001\n\024UploadRagFileRequest\022;\n\006parent\030\001 \001(\tB"
-          + "+\340A\002\372A%\n#aiplatform.googleapis.com/RagCo"
-          + "rpus\022?\n\010rag_file\030\002 \001(\0132(.google.cloud.ai"
-          + "platform.v1beta1.RagFileB\003\340A\002\022Y\n\026upload_"
-          + "rag_file_config\030\005 \001(\01324.google.cloud.aip"
-          + "latform.v1beta1.UploadRagFileConfigB\003\340A\002"
-          + "\"\204\001\n\025UploadRagFileResponse\022<\n\010rag_file\030\001"
-          + " \001(\0132(.google.cloud.aiplatform.v1beta1.R"
-          + "agFileH\000\022#\n\005error\030\004 \001(\0132\022.google.rpc.Sta"
-          + "tusH\000B\010\n\006result\"\261\001\n\025ImportRagFilesReques"
-          + "t\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.go"
-          + "ogleapis.com/RagCorpus\022[\n\027import_rag_fil"
-          + "es_config\030\002 \001(\01325.google.cloud.aiplatfor"
-          + "m.v1beta1.ImportRagFilesConfigB\003\340A\002\"\343\001\n\026"
-          + "ImportRagFilesResponse\022#\n\031partial_failur"
-          + "es_gcs_path\030\004 \001(\tH\000\022)\n\037partial_failures_"
-          + "bigquery_table\030\005 \001(\tH\000\022 \n\030imported_rag_f"
-          + "iles_count\030\001 \001(\003\022\036\n\026failed_rag_files_cou"
-          + "nt\030\002 \001(\003\022\037\n\027skipped_rag_files_count\030\003 \001("
-          + "\003B\026\n\024partial_failure_sink\"L\n\021GetRagFileR"
-          + "equest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform"
-          + ".googleapis.com/RagFile\"\203\001\n\023ListRagFiles"
-          + "Request\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#aiplatf"
-          + "orm.googleapis.com/RagCorpus\022\026\n\tpage_siz"
-          + "e\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"l\n"
-          + "\024ListRagFilesResponse\022;\n\trag_files\030\001 \003(\013"
-          + "2(.google.cloud.aiplatform.v1beta1.RagFi"
-          + "le\022\027\n\017next_page_token\030\002 \001(\t\"O\n\024DeleteRag"
-          + "FileRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aipla"
-          + "tform.googleapis.com/RagFile\"w\n CreateRa"
-          + "gCorpusOperationMetadata\022S\n\020generic_meta"
-          + "data\030\001 \001(\01329.google.cloud.aiplatform.v1b"
-          + "eta1.GenericOperationMetadata\"]\n\026UpdateR"
-          + "agCorpusRequest\022C\n\nrag_corpus\030\001 \001(\0132*.go"
-          + "ogle.cloud.aiplatform.v1beta1.RagCorpusB"
-          + "\003\340A\002\"w\n UpdateRagCorpusOperationMetadata"
-          + "\022S\n\020generic_metadata\030\001 \001(\01329.google.clou"
-          + "d.aiplatform.v1beta1.GenericOperationMet"
-          + "adata\"\207\002\n\037ImportRagFilesOperationMetadat"
-          + "a\022S\n\020generic_metadata\030\001 \001(\01329.google.clo"
-          + "ud.aiplatform.v1beta1.GenericOperationMe"
-          + "tadata\022\025\n\rrag_corpus_id\030\002 \001(\003\022[\n\027import_"
-          + "rag_files_config\030\003 \001(\01325.google.cloud.ai"
-          + "platform.v1beta1.ImportRagFilesConfigB\003\340"
-          + "A\003\022\033\n\023progress_percentage\030\004 \001(\0052\315\022\n\024Vert"
-          + "exRagDataService\022\367\001\n\017CreateRagCorpus\0227.g"
-          + "oogle.cloud.aiplatform.v1beta1.CreateRag"
-          + "CorpusRequest\032\035.google.longrunning.Opera"
-          + "tion\"\213\001\312A-\n\tRagCorpus\022 CreateRagCorpusOp"
-          + "erationMetadata\332A\021parent,rag_corpus\202\323\344\223\002"
-          + "A\"3/v1beta1/{parent=projects/*/locations"
-          + "/*}/ragCorpora:\nrag_corpus\022\373\001\n\017UpdateRag"
-          + "Corpus\0227.google.cloud.aiplatform.v1beta1"
-          + ".UpdateRagCorpusRequest\032\035.google.longrun"
-          + "ning.Operation\"\217\001\312A-\n\tRagCorpus\022 UpdateR"
-          + "agCorpusOperationMetadata\332A\nrag_corpus\202\323"
-          + "\344\223\002L2>/v1beta1/{rag_corpus.name=projects"
-          + "/*/locations/*/ragCorpora/*}:\nrag_corpus"
-          + "\022\264\001\n\014GetRagCorpus\0224.google.cloud.aiplatf"
-          + "orm.v1beta1.GetRagCorpusRequest\032*.google"
-          + ".cloud.aiplatform.v1beta1.RagCorpus\"B\332A\004"
-          + "name\202\323\344\223\0025\0223/v1beta1/{name=projects/*/lo"
-          + "cations/*/ragCorpora/*}\022\307\001\n\016ListRagCorpo"
-          + "ra\0226.google.cloud.aiplatform.v1beta1.Lis"
-          + "tRagCorporaRequest\0327.google.cloud.aiplat"
-          + "form.v1beta1.ListRagCorporaResponse\"D\332A\006"
-          + "parent\202\323\344\223\0025\0223/v1beta1/{parent=projects/"
-          + "*/locations/*}/ragCorpora\022\340\001\n\017DeleteRagC"
-          + "orpus\0227.google.cloud.aiplatform.v1beta1."
-          + "DeleteRagCorpusRequest\032\035.google.longrunn"
-          + "ing.Operation\"u\312A0\n\025google.protobuf.Empt"
-          + "y\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\0025*"
-          + "3/v1beta1/{name=projects/*/locations/*/r"
-          + "agCorpora/*}\022\371\001\n\rUploadRagFile\0225.google."
-          + "cloud.aiplatform.v1beta1.UploadRagFileRe"
-          + "quest\0326.google.cloud.aiplatform.v1beta1."
-          + "UploadRagFileResponse\"y\332A&parent,rag_fil"
-          + "e,upload_rag_file_config\202\323\344\223\002J\"E/v1beta1"
-          + "/{parent=projects/*/locations/*/ragCorpo"
-          + "ra/*}/ragFiles:upload:\001*\022\227\002\n\016ImportRagFi"
-          + "les\0226.google.cloud.aiplatform.v1beta1.Im"
-          + "portRagFilesRequest\032\035.google.longrunning"
-          + ".Operation\"\255\001\312A9\n\026ImportRagFilesResponse"
-          + "\022\037ImportRagFilesOperationMetadata\332A\036pare"
-          + "nt,import_rag_files_config\202\323\344\223\002J\"E/v1bet"
-          + "a1/{parent=projects/*/locations/*/ragCor"
-          + "pora/*}/ragFiles:import:\001*\022\271\001\n\nGetRagFil"
-          + "e\0222.google.cloud.aiplatform.v1beta1.GetR"
-          + "agFileRequest\032(.google.cloud.aiplatform."
-          + "v1beta1.RagFile\"M\332A\004name\202\323\344\223\002@\022>/v1beta1"
-          + "/{name=projects/*/locations/*/ragCorpora"
-          + "/*/ragFiles/*}\022\314\001\n\014ListRagFiles\0224.google"
-          + ".cloud.aiplatform.v1beta1.ListRagFilesRe"
-          + "quest\0325.google.cloud.aiplatform.v1beta1."
-          + "ListRagFilesResponse\"O\332A\006parent\202\323\344\223\002@\022>/"
-          + "v1beta1/{parent=projects/*/locations/*/r"
-          + "agCorpora/*}/ragFiles\022\350\001\n\rDeleteRagFile\022"
-          + "5.google.cloud.aiplatform.v1beta1.Delete"
-          + "RagFileRequest\032\035.google.longrunning.Oper"
-          + "ation\"\200\001\312A0\n\025google.protobuf.Empty\022\027Dele"
-          + "teOperationMetadata\332A\004name\202\323\344\223\002@*>/v1bet"
-          + "a1/{name=projects/*/locations/*/ragCorpo"
-          + "ra/*/ragFiles/*}\032M\312A\031aiplatform.googleap"
-          + "is.com\322A.https://www.googleapis.com/auth"
-          + "/cloud-platformB\360\001\n#com.google.cloud.aip"
-          + "latform.v1beta1B\031VertexRagDataServicePro"
-          + "toP\001ZCcloud.google.com/go/aiplatform/api"
-          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
-          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::A"
-          + "IPlatform::V1beta1b\006proto3"
+          + "/protobuf/empty.proto\032\027google/rpc/status.proto\"\230\001\n"
+          + "\026CreateRagCorpusRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022C\n\n"
+          + "rag_corpus\030\002 \001(\0132*.googl"
+          + "e.cloud.aiplatform.v1beta1.RagCorpusB\003\340A\002\"P\n"
+          + "\023GetRagCorpusRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#aiplatform.googleapis.com/RagCorpus\"\203\001\n"
+          + "\025ListRagCorporaRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"r\n"
+          + "\026ListRagCorporaResponse\022?\n"
+          + "\013rag_corpora\030\001"
+          + " \003(\0132*.google.cloud.aiplatform.v1beta1.RagCorpus\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"g\n"
+          + "\026DeleteRagCorpusRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#aiplatform.googleapis.com/RagCorpus\022\022\n"
+          + "\005force\030\002 \001(\010B\003\340A\001\"\357\001\n"
+          + "\024UploadRagFileRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#aiplatform.googleapis.com/RagCorpus\022?\n"
+          + "\010rag_file\030\002"
+          + " \001(\0132(.google.cloud.aiplatform.v1beta1.RagFileB\003\340A\002\022Y\n"
+          + "\026upload_rag_file_config\030\005 \001(\01324.google.cloud.aip"
+          + "latform.v1beta1.UploadRagFileConfigB\003\340A\002\"\204\001\n"
+          + "\025UploadRagFileResponse\022<\n"
+          + "\010rag_file\030\001 \001(\0132(.google.cloud.aiplatform.v1beta1.RagFileH\000\022#\n"
+          + "\005error\030\004 \001(\0132\022.google.rpc.StatusH\000B\010\n"
+          + "\006result\"\261\001\n"
+          + "\025ImportRagFilesRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#aiplatform.googleapis.com/RagCorpus\022[\n"
+          + "\027import_rag_files_config\030\002"
+          + " \001(\01325.google.cloud.aiplatform.v1beta1.ImportRagFilesConfigB\003\340A\002\"\343\001\n"
+          + "\026ImportRagFilesResponse\022#\n"
+          + "\031partial_failures_gcs_path\030\004 \001(\tH\000\022)\n"
+          + "\037partial_failures_bigquery_table\030\005 \001(\tH\000\022 \n"
+          + "\030imported_rag_files_count\030\001 \001(\003\022\036\n"
+          + "\026failed_rag_files_count\030\002 \001(\003\022\037\n"
+          + "\027skipped_rag_files_count\030\003 \001(\003B\026\n"
+          + "\024partial_failure_sink\"L\n"
+          + "\021GetRagFileRequest\0227\n"
+          + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!aiplatform.googleapis.com/RagFile\"\203\001\n"
+          + "\023ListRagFilesRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#aiplatform.googleapis.com/RagCorpus\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"l\n"
+          + "\024ListRagFilesResponse\022;\n"
+          + "\trag_files\030\001 \003(\0132(.google.cloud.aiplatform.v1beta1.RagFile\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"O\n"
+          + "\024DeleteRagFileRequest\0227\n"
+          + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!aiplatform.googleapis.com/RagFile\"w\n"
+          + " CreateRagCorpusOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001"
+          + " \001(\01329.google.cloud.aiplatform.v1beta1.GenericOperationMetadata\"\\\n"
+          + "\031GetRagEngineConfigRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")aiplatform.googleapis.com/RagEngineConfig\"]\n"
+          + "\026UpdateRagCorpusRequest\022C\n\n"
+          + "rag_corpus\030\001"
+          + " \001(\0132*.google.cloud.aiplatform.v1beta1.RagCorpusB\003\340A\002\"w\n"
+          + " UpdateRagCorpusOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001 \001(\013"
+          + "29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata\"\207\002\n"
+          + "\037ImportRagFilesOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001 \001("
+          + "\01329.google.cloud.aiplatform.v1beta1.GenericOperationMetadata\022\025\n\r"
+          + "rag_corpus_id\030\002 \001(\003\022[\n"
+          + "\027import_rag_files_config\030\003 \001(\01325.g"
+          + "oogle.cloud.aiplatform.v1beta1.ImportRagFilesConfigB\003\340A\003\022\033\n"
+          + "\023progress_percentage\030\004 \001(\005\"p\n"
+          + "\034UpdateRagEngineConfigRequest\022P\n"
+          + "\021rag_engine_config\030\001 \001(\01320.google.cloud."
+          + "aiplatform.v1beta1.RagEngineConfigB\003\340A\002\"}\n"
+          + "&UpdateRagEngineConfigOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001 \001(\01329.google.clo"
+          + "ud.aiplatform.v1beta1.GenericOperationMetadata2\307\026\n"
+          + "\024VertexRagDataService\022\367\001\n"
+          + "\017CreateRagCorpus\0227.google.cloud.aiplatform.v1"
+          + "beta1.CreateRagCorpusRequest\032\035.google.longrunning.Operation\"\213\001\312A-\n"
+          + "\tRagCorpus\022 CreateRagCorpusOperationMetadata\332A\021parent,"
+          + "rag_corpus\202\323\344\223\002A\"3/v1beta1/{parent=projects/*/locations/*}/ragCorpora:\n"
+          + "rag_corpus\022\373\001\n"
+          + "\017UpdateRagCorpus\0227.google.cloud.aip"
+          + "latform.v1beta1.UpdateRagCorpusRequest\032\035.google.longrunning.Operation\"\217\001\312A-\n"
+          + "\tRagCorpus\022 UpdateRagCorpusOperationMetadata\332A\n"
+          + "rag_corpus\202\323\344\223\002L2>/v1beta1/{rag_corpu"
+          + "s.name=projects/*/locations/*/ragCorpora/*}:\n"
+          + "rag_corpus\022\264\001\n"
+          + "\014GetRagCorpus\0224.google.cloud.aiplatform.v1beta1.GetRagCorpusR"
+          + "equest\032*.google.cloud.aiplatform.v1beta1"
+          + ".RagCorpus\"B\332A\004name\202\323\344\223\0025\0223/v1beta1/{nam"
+          + "e=projects/*/locations/*/ragCorpora/*}\022\307\001\n"
+          + "\016ListRagCorpora\0226.google.cloud.aiplatf"
+          + "orm.v1beta1.ListRagCorporaRequest\0327.google.cloud.aiplatform.v1beta1.ListRagCorpo"
+          + "raResponse\"D\332A\006parent\202\323\344\223\0025\0223/v1beta1/{p"
+          + "arent=projects/*/locations/*}/ragCorpora\022\340\001\n"
+          + "\017DeleteRagCorpus\0227.google.cloud.aipl"
+          + "atform.v1beta1.DeleteRagCorpusRequest\032\035.google.longrunning.Operation\"u\312A0\n"
+          + "\025google.protobuf.Empty\022\027DeleteOperationMetadat"
+          + "a\332A\004name\202\323\344\223\0025*3/v1beta1/{name=projects/*/locations/*/ragCorpora/*}\022\371\001\n\r"
+          + "UploadRagFile\0225.google.cloud.aiplatform.v1beta1."
+          + "UploadRagFileRequest\0326.google.cloud.aipl"
+          + "atform.v1beta1.UploadRagFileResponse\"y\332A"
+          + "&parent,rag_file,upload_rag_file_config\202"
+          + "\323\344\223\002J\"E/v1beta1/{parent=projects/*/locat"
+          + "ions/*/ragCorpora/*}/ragFiles:upload:\001*\022\227\002\n"
+          + "\016ImportRagFiles\0226.google.cloud.aiplat"
+          + "form.v1beta1.ImportRagFilesRequest\032\035.google.longrunning.Operation\"\255\001\312A9\n"
+          + "\026ImportRagFilesResponse\022\037ImportRagFilesOperation"
+          + "Metadata\332A\036parent,import_rag_files_confi"
+          + "g\202\323\344\223\002J\"E/v1beta1/{parent=projects/*/loc"
+          + "ations/*/ragCorpora/*}/ragFiles:import:\001*\022\271\001\n\n"
+          + "GetRagFile\0222.google.cloud.aiplatform.v1beta1.GetRagFileRequest\032(.google.cl"
+          + "oud.aiplatform.v1beta1.RagFile\"M\332A\004name\202"
+          + "\323\344\223\002@\022>/v1beta1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*}\022\314\001\n"
+          + "\014ListRagFiles\0224.google.cloud.aiplatform.v1beta1"
+          + ".ListRagFilesRequest\0325.google.cloud.aipl"
+          + "atform.v1beta1.ListRagFilesResponse\"O\332A\006"
+          + "parent\202\323\344\223\002@\022>/v1beta1/{parent=projects/*/locations/*/ragCorpora/*}/ragFiles\022\350\001\n"
+          + "\r"
+          + "DeleteRagFile\0225.google.cloud.aiplatform"
+          + ".v1beta1.DeleteRagFileRequest\032\035.google.longrunning.Operation\"\200\001\312A0\n"
+          + "\025google.protobuf.Empty\022\027DeleteOperationMetadata\332A\004nam"
+          + "e\202\323\344\223\002@*>/v1beta1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*}\022\253\002\n"
+          + "\025UpdateRagEngineConfig\022=.google.cloud.aiplatf"
+          + "orm.v1beta1.UpdateRagEngineConfigRequest\032\035.google.longrunning.Operation\"\263\001\312A9\n"
+          + "\017RagEngineConfig\022&UpdateRagEngineConfigOpe"
+          + "rationMetadata\332A\021rag_engine_config\202\323\344\223\002]"
+          + "2H/v1beta1/{rag_engine_config.name=proje"
+          + "cts/*/locations/*/ragEngineConfig}:\021rag_engine_config\022\311\001\n"
+          + "\022GetRagEngineConfig\022:.google.cloud.aiplatform.v1beta1.GetRagEng"
+          + "ineConfigRequest\0320.google.cloud.aiplatfo"
+          + "rm.v1beta1.RagEngineConfig\"E\332A\004name\202\323\344\223\002"
+          + "8\0226/v1beta1/{name=projects/*/locations/*"
+          + "/ragEngineConfig}\032M\312A\031aiplatform.googlea"
+          + "pis.com\322A.https://www.googleapis.com/auth/cloud-platformB\360\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\031VertexRagDataServicePr"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -373,8 +406,16 @@ public final class VertexRagDataServiceProto {
             new java.lang.String[] {
               "GenericMetadata",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_GetRagEngineConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1beta1_GetRagEngineConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GetRagEngineConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusRequest_descriptor,
@@ -382,7 +423,7 @@ public final class VertexRagDataServiceProto {
               "RagCorpus",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateRagCorpusOperationMetadata_descriptor,
@@ -390,12 +431,28 @@ public final class VertexRagDataServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ImportRagFilesOperationMetadata_descriptor,
             new java.lang.String[] {
               "GenericMetadata", "RagCorpusId", "ImportRagFilesConfig", "ProgressPercentage",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigRequest_descriptor,
+            new java.lang.String[] {
+              "RagEngineConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdateRagEngineConfigOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -38,6 +38,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * @return The enum numeric value on the wire for clusterRole.
    */
   int getClusterRoleValue();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * @return Whether the primaryCluster field is set.
    */
   boolean hasPrimaryCluster();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    */
   com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
       getPrimaryCluster();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    */
   java.util.List<com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster>
       getSecondaryClustersList();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    */
   com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
       getSecondaryClusters(int index);
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * </code>
    */
   int getSecondaryClustersCount();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface CrossClusterReplicationConfigOrBuilder
               com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
                   .RemoteClusterOrBuilder>
       getSecondaryClustersOrBuilderList();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * @return Whether the membership field is set.
    */
   boolean hasMembership();
+
   /**
    *
    *
@@ -267,6 +277,7 @@ public interface CrossClusterReplicationConfigOrBuilder
    * @return The membership.
    */
   com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Membership getMembership();
+
   /**
    *
    *

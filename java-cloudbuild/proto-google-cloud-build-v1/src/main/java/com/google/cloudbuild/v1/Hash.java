@@ -33,6 +33,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Hash)
     HashOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Hash.newBuilder() to construct.
   private Hash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>NONE = 0;</code>
      */
     public static final int NONE_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>SHA256 = 1;</code>
      */
     public static final int SHA256_VALUE = 1;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>MD5 = 2;</code>
      */
     public static final int MD5_VALUE = 2;
+
     /**
      *
      *
@@ -166,6 +170,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      * <code>GO_MODULE_H1 = 3;</code>
      */
     public static final int GO_MODULE_H1_VALUE = 3;
+
     /**
      *
      *
@@ -266,6 +271,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -281,6 +287,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -301,6 +308,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -483,6 +491,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +684,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -690,6 +700,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -708,6 +719,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
           com.google.cloudbuild.v1.Hash.HashType.forNumber(type_);
       return result == null ? com.google.cloudbuild.v1.Hash.HashType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface DestinationParallelstoreOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

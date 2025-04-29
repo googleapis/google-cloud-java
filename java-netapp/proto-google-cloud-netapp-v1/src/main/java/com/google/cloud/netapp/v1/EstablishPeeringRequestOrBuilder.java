@@ -39,6 +39,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return The peerClusterName.
    */
   java.lang.String getPeerClusterName();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return The peerSvmName.
    */
   java.lang.String getPeerSvmName();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return A list containing the peerIpAddresses.
    */
   java.util.List<java.lang.String> getPeerIpAddressesList();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return The count of peerIpAddresses.
    */
   int getPeerIpAddressesCount();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return The peerIpAddresses at the given index.
    */
   java.lang.String getPeerIpAddresses(int index);
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface EstablishPeeringRequestOrBuilder
    * @return The peerVolumeName.
    */
   java.lang.String getPeerVolumeName();
+
   /**
    *
    *

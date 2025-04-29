@@ -34,6 +34,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.ActionStatus)
     ActionStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ActionStatus.newBuilder() to construct.
   private ActionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_CODE_FIELD_NUMBER = 1;
   private int statusCode_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStatusCodeValue() {
     return statusCode_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userFacingMessage_ = "";
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -317,6 +322,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -512,6 +518,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int statusCode_ = 0;
+
     /**
      *
      *
@@ -527,6 +534,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStatusCodeValue() {
       return statusCode_;
     }
+
     /**
      *
      *
@@ -545,6 +553,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -561,6 +570,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
       com.google.rpc.Code result = com.google.rpc.Code.forNumber(statusCode_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +612,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userFacingMessage_ = "";
+
     /**
      *
      *
@@ -624,6 +636,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +660,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -669,6 +683,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +702,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

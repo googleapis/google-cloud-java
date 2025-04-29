@@ -37,6 +37,7 @@ public interface DeployedIndexAuthConfigOrBuilder
    * @return Whether the authProvider field is set.
    */
   boolean hasAuthProvider();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DeployedIndexAuthConfigOrBuilder
    * @return The authProvider.
    */
   com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider getAuthProvider();
+
   /**
    *
    *

@@ -96,6 +96,19 @@ public final class FileUploadsServiceGrpc {
     return FileUploadsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FileUploadsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FileUploadsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FileUploadsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public FileUploadsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FileUploadsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FileUploadsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -206,6 +219,41 @@ public final class FileUploadsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FileUploadsService.
+   *
+   * <pre>
+   * Service to manage data source file uploads.
+   * </pre>
+   */
+  public static final class FileUploadsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FileUploadsServiceBlockingV2Stub> {
+    private FileUploadsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FileUploadsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FileUploadsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest data source file upload. Only the `latest` alias is
+     * accepted for a file upload.
+     * </pre>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.FileUpload getFileUpload(
+        com.google.shopping.merchant.datasources.v1beta.GetFileUploadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFileUploadMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service FileUploadsService.
    *
    * <pre>
    * Service to manage data source file uploads.

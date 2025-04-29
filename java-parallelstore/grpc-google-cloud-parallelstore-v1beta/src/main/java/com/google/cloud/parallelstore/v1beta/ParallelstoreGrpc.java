@@ -376,6 +376,19 @@ public final class ParallelstoreGrpc {
     return ParallelstoreStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ParallelstoreBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ParallelstoreBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ParallelstoreBlockingV2Stub>() {
+          @java.lang.Override
+          public ParallelstoreBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ParallelstoreBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ParallelstoreBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -692,6 +705,128 @@ public final class ParallelstoreGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Parallelstore.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * Configures and manages parallelstore resources.
+   * Parallelstore service.
+   * The `parallelstore.googleapis.com` service implements the parallelstore API
+   * and defines the following resource model for managing instances:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of instances named `/instances/&#42;`.
+   * * Parallelstore instances are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   * Note that location_id must be a Google Cloud `zone`; for example:
+   * * `projects/12345/locations/us-central1-c/instances/my-parallelstore-share`
+   * </pre>
+   */
+  public static final class ParallelstoreBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ParallelstoreBlockingV2Stub> {
+    private ParallelstoreBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ParallelstoreBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ParallelstoreBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all instances in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parallelstore.v1beta.ListInstancesResponse listInstances(
+        com.google.cloud.parallelstore.v1beta.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single instance.
+     * </pre>
+     */
+    public com.google.cloud.parallelstore.v1beta.Instance getInstance(
+        com.google.cloud.parallelstore.v1beta.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Parallelstore instance in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.parallelstore.v1beta.CreateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.parallelstore.v1beta.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Cloud Storage to Parallelstore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.parallelstore.v1beta.ImportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies data from Parallelstore to Cloud Storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.parallelstore.v1beta.ExportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Parallelstore.
    *
    * <pre>
    * Service describing handlers for resources

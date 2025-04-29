@@ -32,6 +32,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceManagedByIgmError)
     InstanceManagedByIgmErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceManagedByIgmError.newBuilder() to construct.
   private InstanceManagedByIgmError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 96784904;
   private com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             .getDefaultInstance()
         : error_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   public static final int INSTANCE_ACTION_DETAILS_FIELD_NUMBER = 292224547;
   private com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
       instanceActionDetails_;
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   public boolean hasInstanceActionDetails() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             .getDefaultInstance()
         : instanceActionDetails_;
   }
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object timestamp_ = "";
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -444,6 +454,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -685,6 +696,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError.Builder,
             com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +842,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             : error_;
       }
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder,
             com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder>
         instanceActionDetailsBuilder_;
+
     /**
      *
      *
@@ -915,6 +936,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     public boolean hasInstanceActionDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         return instanceActionDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1044,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1084,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return getInstanceActionDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1079,6 +1107,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             : instanceActionDetails_;
       }
     }
+
     /**
      *
      *
@@ -1109,6 +1138,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     }
 
     private java.lang.Object timestamp_ = "";
+
     /**
      *
      *
@@ -1123,6 +1153,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1145,6 +1176,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1199,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1221,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1239,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

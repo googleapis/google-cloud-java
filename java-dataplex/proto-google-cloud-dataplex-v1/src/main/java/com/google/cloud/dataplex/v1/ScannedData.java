@@ -33,6 +33,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ScannedData)
     ScannedDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScannedData.newBuilder() to construct.
   private ScannedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      * @return The field.
      */
     java.lang.String getField();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      * @return The start.
      */
     java.lang.String getStart();
+
     /**
      *
      *
@@ -130,6 +133,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      * @return The end.
      */
     java.lang.String getEnd();
+
     /**
      *
      *
@@ -143,6 +147,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEndBytes();
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ScannedData.IncrementalField)
       IncrementalFieldOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IncrementalField.newBuilder() to construct.
     private IncrementalField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -193,6 +199,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object field_ = "";
+
     /**
      *
      *
@@ -217,6 +224,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -246,6 +254,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object start_ = "";
+
     /**
      *
      *
@@ -269,6 +278,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -297,6 +307,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object end_ = "";
+
     /**
      *
      *
@@ -320,6 +331,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -523,6 +535,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -740,6 +753,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object field_ = "";
+
       /**
        *
        *
@@ -763,6 +777,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -786,6 +801,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -808,6 +824,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -826,6 +843,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -851,6 +869,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object start_ = "";
+
       /**
        *
        *
@@ -873,6 +892,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -895,6 +915,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -916,6 +937,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -933,6 +955,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -957,6 +980,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object end_ = "";
+
       /**
        *
        *
@@ -979,6 +1003,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1001,6 +1026,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1022,6 +1048,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1039,6 +1066,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1142,6 +1170,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     private DataRangeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1173,6 +1202,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCREMENTAL_FIELD_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1188,6 +1218,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIncrementalField() {
     return dataRangeCase_ == 1;
   }
+
   /**
    *
    *
@@ -1206,6 +1237,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.ScannedData.IncrementalField.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1398,6 +1430,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1616,6 +1649,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.ScannedData.IncrementalField.Builder,
             com.google.cloud.dataplex.v1.ScannedData.IncrementalFieldOrBuilder>
         incrementalFieldBuilder_;
+
     /**
      *
      *
@@ -1631,6 +1665,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIncrementalField() {
       return dataRangeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1656,6 +1691,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.ScannedData.IncrementalField.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1679,6 +1715,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       dataRangeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1736,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       dataRangeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1733,6 +1771,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       dataRangeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1797,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1811,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         getIncrementalFieldBuilder() {
       return getIncrementalFieldFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1792,6 +1833,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.ScannedData.IncrementalField.getDefaultInstance();
       }
     }
+
     /**
      *
      *

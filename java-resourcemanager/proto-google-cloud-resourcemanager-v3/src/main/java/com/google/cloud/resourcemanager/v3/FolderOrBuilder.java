@@ -37,6 +37,7 @@ public interface FolderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface FolderOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface FolderOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface FolderOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface FolderOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface FolderOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public interface FolderOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface FolderOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public interface FolderOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface FolderOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface FolderOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

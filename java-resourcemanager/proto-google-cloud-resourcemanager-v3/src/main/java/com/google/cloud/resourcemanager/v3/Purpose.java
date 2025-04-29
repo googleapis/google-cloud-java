@@ -77,6 +77,7 @@ public enum Purpose implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PURPOSE_UNSPECIFIED = 0;</code>
    */
   public static final int PURPOSE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

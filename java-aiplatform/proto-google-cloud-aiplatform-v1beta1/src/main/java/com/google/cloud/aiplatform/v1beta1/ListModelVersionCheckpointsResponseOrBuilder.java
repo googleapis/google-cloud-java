@@ -34,6 +34,7 @@ public interface ListModelVersionCheckpointsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint checkpoints = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint> getCheckpointsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListModelVersionCheckpointsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint checkpoints = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint getCheckpoints(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListModelVersionCheckpointsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint checkpoints = 1;</code>
    */
   int getCheckpointsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListModelVersionCheckpointsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelVersionCheckpointOrBuilder>
       getCheckpointsOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListModelVersionCheckpointsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

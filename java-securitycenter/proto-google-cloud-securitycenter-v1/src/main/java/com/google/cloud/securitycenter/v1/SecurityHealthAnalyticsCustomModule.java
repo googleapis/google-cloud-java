@@ -38,6 +38,7 @@ public final class SecurityHealthAnalyticsCustomModule
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule)
     SecurityHealthAnalyticsCustomModuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityHealthAnalyticsCustomModule.newBuilder() to construct.
   private SecurityHealthAnalyticsCustomModule(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -139,6 +140,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -149,6 +151,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -159,6 +162,7 @@ public final class SecurityHealthAnalyticsCustomModule
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
+
     /**
      *
      *
@@ -266,6 +270,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -298,6 +303,7 @@ public final class SecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -335,6 +341,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -362,6 +369,7 @@ public final class SecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -392,6 +400,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   public static final int ENABLEMENT_STATE_FIELD_NUMBER = 4;
   private int enablementState_ = 0;
+
   /**
    *
    *
@@ -409,6 +418,7 @@ public final class SecurityHealthAnalyticsCustomModule
   public int getEnablementStateValue() {
     return enablementState_;
   }
+
   /**
    *
    *
@@ -436,6 +446,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -452,6 +463,7 @@ public final class SecurityHealthAnalyticsCustomModule
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -468,6 +480,7 @@ public final class SecurityHealthAnalyticsCustomModule
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -487,6 +500,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastEditor_ = "";
+
   /**
    *
    *
@@ -510,6 +524,7 @@ public final class SecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -538,6 +553,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ancestorModule_ = "";
+
   /**
    *
    *
@@ -566,6 +582,7 @@ public final class SecurityHealthAnalyticsCustomModule
       return s;
     }
   }
+
   /**
    *
    *
@@ -597,6 +614,7 @@ public final class SecurityHealthAnalyticsCustomModule
 
   public static final int CUSTOM_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.securitycenter.v1.CustomConfig customConfig_;
+
   /**
    *
    *
@@ -612,6 +630,7 @@ public final class SecurityHealthAnalyticsCustomModule
   public boolean hasCustomConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -629,6 +648,7 @@ public final class SecurityHealthAnalyticsCustomModule
         ? com.google.cloud.securitycenter.v1.CustomConfig.getDefaultInstance()
         : customConfig_;
   }
+
   /**
    *
    *
@@ -876,6 +896,7 @@ public final class SecurityHealthAnalyticsCustomModule
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1179,6 +1200,7 @@ public final class SecurityHealthAnalyticsCustomModule
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1210,6 +1232,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1241,6 +1264,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1295,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1322,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1356,7 @@ public final class SecurityHealthAnalyticsCustomModule
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1356,6 +1383,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1382,6 +1410,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1407,6 +1436,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1458,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1487,7 @@ public final class SecurityHealthAnalyticsCustomModule
     }
 
     private int enablementState_ = 0;
+
     /**
      *
      *
@@ -1473,6 +1505,7 @@ public final class SecurityHealthAnalyticsCustomModule
     public int getEnablementStateValue() {
       return enablementState_;
     }
+
     /**
      *
      *
@@ -1493,6 +1526,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1552,7 @@ public final class SecurityHealthAnalyticsCustomModule
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1543,6 +1578,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1605,7 @@ public final class SecurityHealthAnalyticsCustomModule
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1585,6 +1622,7 @@ public final class SecurityHealthAnalyticsCustomModule
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1607,6 +1645,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1631,6 +1670,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1692,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1722,7 @@ public final class SecurityHealthAnalyticsCustomModule
       }
       return this;
     }
+
     /**
      *
      *
@@ -1702,6 +1744,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1718,6 +1761,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1738,6 +1782,7 @@ public final class SecurityHealthAnalyticsCustomModule
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1767,6 +1812,7 @@ public final class SecurityHealthAnalyticsCustomModule
     }
 
     private java.lang.Object lastEditor_ = "";
+
     /**
      *
      *
@@ -1789,6 +1835,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1811,6 +1858,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1832,6 +1880,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1849,6 +1898,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1873,6 +1923,7 @@ public final class SecurityHealthAnalyticsCustomModule
     }
 
     private java.lang.Object ancestorModule_ = "";
+
     /**
      *
      *
@@ -1900,6 +1951,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1927,6 +1979,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1953,6 +2006,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1975,6 +2029,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2064,7 @@ public final class SecurityHealthAnalyticsCustomModule
             com.google.cloud.securitycenter.v1.CustomConfig.Builder,
             com.google.cloud.securitycenter.v1.CustomConfigOrBuilder>
         customConfigBuilder_;
+
     /**
      *
      *
@@ -2023,6 +2079,7 @@ public final class SecurityHealthAnalyticsCustomModule
     public boolean hasCustomConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2043,6 +2100,7 @@ public final class SecurityHealthAnalyticsCustomModule
         return customConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2123,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2085,6 +2144,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2173,7 @@ public final class SecurityHealthAnalyticsCustomModule
       }
       return this;
     }
+
     /**
      *
      *
@@ -2132,6 +2193,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2146,6 +2208,7 @@ public final class SecurityHealthAnalyticsCustomModule
       onChanged();
       return getCustomConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2164,6 +2227,7 @@ public final class SecurityHealthAnalyticsCustomModule
             : customConfig_;
       }
     }
+
     /**
      *
      *

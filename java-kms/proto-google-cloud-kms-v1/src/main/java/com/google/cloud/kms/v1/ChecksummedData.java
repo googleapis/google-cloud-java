@@ -33,6 +33,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ChecksummedData)
     ChecksummedDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChecksummedData.newBuilder() to construct.
   private ChecksummedData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
 
   public static final int CRC32C_CHECKSUM_FIELD_NUMBER = 2;
   private com.google.protobuf.Int64Value crc32CChecksum_;
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
   public boolean hasCrc32CChecksum() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : crc32CChecksum_;
   }
+
   /**
    *
    *
@@ -343,6 +348,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -554,6 +560,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -569,6 +576,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         crc32CChecksumBuilder_;
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
     public boolean hasCrc32CChecksum() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
         return crc32CChecksumBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +795,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCrc32CChecksumFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class ChecksummedData extends com.google.protobuf.GeneratedMessageV
             : crc32CChecksum_;
       }
     }
+
     /**
      *
      *

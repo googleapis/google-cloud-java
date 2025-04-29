@@ -35,6 +35,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.BillingAccount)
     BillingAccountOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BillingAccount.newBuilder() to construct.
   private BillingAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OPEN_FIELD_NUMBER = 2;
   private boolean open_ = false;
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object masterBillingAccount_ = "";
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -267,6 +275,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -297,6 +306,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -332,6 +342,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
+
   /**
    *
    *
@@ -363,6 +374,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -599,6 +611,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -857,6 +870,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -884,6 +898,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +926,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -937,6 +953,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +976,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1006,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean open_;
+
     /**
      *
      *
@@ -1006,6 +1025,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     public boolean getOpen() {
       return open_;
     }
+
     /**
      *
      *
@@ -1028,6 +1048,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1071,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1073,6 +1095,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1119,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1142,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1161,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1187,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object masterBillingAccount_ = "";
+
     /**
      *
      *
@@ -1187,6 +1214,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1213,6 +1241,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1238,6 +1267,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1289,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1318,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1316,6 +1348,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1345,6 +1378,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1373,6 +1407,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1432,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1464,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object currencyCode_ = "";
+
     /**
      *
      *
@@ -1458,6 +1495,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1526,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1517,6 +1556,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1542,6 +1582,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
