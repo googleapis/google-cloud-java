@@ -33,6 +33,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.PolicyRule)
     PolicyRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicyRule.newBuilder() to construct.
   private PolicyRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     private RuleCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLLOUT_RESTRICTION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRolloutRestriction() {
     return ruleCase_ == 2;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.RolloutRestriction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -336,6 +341,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -554,6 +560,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.RolloutRestriction.Builder,
             com.google.cloud.deploy.v1.RolloutRestrictionOrBuilder>
         rolloutRestrictionBuilder_;
+
     /**
      *
      *
@@ -571,6 +578,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRolloutRestriction() {
       return ruleCase_ == 2;
     }
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RolloutRestriction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -622,6 +631,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +717,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +732,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.RolloutRestriction.Builder getRolloutRestrictionBuilder() {
       return getRolloutRestrictionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RolloutRestriction.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.AsymmetricSignResponse)
     AsymmetricSignResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AsymmetricSignResponse.newBuilder() to construct.
   private AsymmetricSignResponse(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int SIGNATURE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   public static final int SIGNATURE_CRC32C_FIELD_NUMBER = 2;
   private com.google.protobuf.Int64Value signatureCrc32C_;
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   public boolean hasSignatureCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : signatureCrc32C_;
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   public static final int VERIFIED_DIGEST_CRC32C_FIELD_NUMBER = 3;
   private boolean verifiedDigestCrc32C_ = false;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 5;
   private boolean verifiedDataCrc32C_ = false;
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 6;
   private int protectionLevel_ = 0;
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
+
   /**
    *
    *
@@ -536,6 +547,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -802,6 +814,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -817,6 +830,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
+
     /**
      *
      *
@@ -838,6 +852,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +877,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         signatureCrc32CBuilder_;
+
     /**
      *
      *
@@ -888,6 +904,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public boolean hasSignatureCrc32C() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -920,6 +937,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         return signatureCrc32CBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1004,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1044,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1076,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1103,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getSignatureCrc32CFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1111,6 +1134,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
             : signatureCrc32C_;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1174,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
 
     private boolean verifiedDigestCrc32C_;
+
     /**
      *
      *
@@ -1178,6 +1203,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public boolean getVerifiedDigestCrc32C() {
       return verifiedDigestCrc32C_;
     }
+
     /**
      *
      *
@@ -1210,6 +1236,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1269,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1266,6 +1294,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1319,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1313,6 +1343,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1363,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1390,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
 
     private boolean verifiedDataCrc32C_;
+
     /**
      *
      *
@@ -1386,6 +1419,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public boolean getVerifiedDataCrc32C() {
       return verifiedDataCrc32C_;
     }
+
     /**
      *
      *
@@ -1418,6 +1452,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1485,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     }
 
     private int protectionLevel_ = 0;
+
     /**
      *
      *
@@ -1466,6 +1502,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
+
     /**
      *
      *
@@ -1485,6 +1522,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1541,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1525,6 +1564,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

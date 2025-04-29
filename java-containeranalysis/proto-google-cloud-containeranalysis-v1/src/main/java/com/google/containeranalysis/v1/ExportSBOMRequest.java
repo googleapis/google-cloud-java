@@ -34,6 +34,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.devtools.containeranalysis.v1.ExportSBOMRequest)
     ExportSBOMRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportSBOMRequest.newBuilder() to construct.
   private ExportSBOMRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       extends
       // @@protoc_insertion_point(interface_extends:google.devtools.containeranalysis.v1.ExportSBOMRequest.CloudStorageLocation)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.devtools.containeranalysis.v1.ExportSBOMRequest.CloudStorageLocation)
       CloudStorageLocationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudStorageLocation.newBuilder() to construct.
     private CloudStorageLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -266,6 +269,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -522,6 +526,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
     private TargetCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -556,6 +561,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -580,6 +586,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -606,6 +613,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CLOUD_STORAGE_LOCATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -624,6 +632,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasCloudStorageLocation() {
     return targetCase_ == 2;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
     return com.google.containeranalysis.v1.ExportSBOMRequest.CloudStorageLocation
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -853,6 +863,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1084,6 +1095,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1107,6 +1119,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1143,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1152,6 +1166,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1185,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1215,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
             com.google.containeranalysis.v1.ExportSBOMRequest.CloudStorageLocation.Builder,
             com.google.containeranalysis.v1.ExportSBOMRequest.CloudStorageLocationOrBuilder>
         cloudStorageLocationBuilder_;
+
     /**
      *
      *
@@ -1217,6 +1234,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasCloudStorageLocation() {
       return targetCase_ == 2;
     }
+
     /**
      *
      *
@@ -1248,6 +1266,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1274,6 +1293,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1318,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1358,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1387,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1404,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
         getCloudStorageLocationBuilder() {
       return getCloudStorageLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1406,6 +1430,7 @@ public final class ExportSBOMRequest extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

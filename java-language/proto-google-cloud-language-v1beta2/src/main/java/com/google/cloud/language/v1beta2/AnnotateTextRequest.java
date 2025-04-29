@@ -34,6 +34,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnnotateTextRequest)
     AnnotateTextRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotateTextRequest.newBuilder() to construct.
   private AnnotateTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -165,6 +166,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the classificationModelOptions field is set.
      */
     boolean hasClassificationModelOptions();
+
     /**
      *
      *
@@ -180,6 +182,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return The classificationModelOptions.
      */
     com.google.cloud.language.v1beta2.ClassificationModelOptions getClassificationModelOptions();
+
     /**
      *
      *
@@ -195,6 +198,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder
         getClassificationModelOptionsOrBuilder();
   }
+
   /**
    *
    *
@@ -211,6 +215,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnnotateTextRequest.Features)
       FeaturesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Features.newBuilder() to construct.
     private Features(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -242,6 +247,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
     public static final int EXTRACT_SYNTAX_FIELD_NUMBER = 1;
     private boolean extractSyntax_ = false;
+
     /**
      *
      *
@@ -260,6 +266,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     public static final int EXTRACT_ENTITIES_FIELD_NUMBER = 2;
     private boolean extractEntities_ = false;
+
     /**
      *
      *
@@ -278,6 +285,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     public static final int EXTRACT_DOCUMENT_SENTIMENT_FIELD_NUMBER = 3;
     private boolean extractDocumentSentiment_ = false;
+
     /**
      *
      *
@@ -296,6 +304,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     public static final int EXTRACT_ENTITY_SENTIMENT_FIELD_NUMBER = 4;
     private boolean extractEntitySentiment_ = false;
+
     /**
      *
      *
@@ -314,6 +323,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     public static final int CLASSIFY_TEXT_FIELD_NUMBER = 6;
     private boolean classifyText_ = false;
+
     /**
      *
      *
@@ -335,6 +345,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     public static final int MODERATE_TEXT_FIELD_NUMBER = 11;
     private boolean moderateText_ = false;
+
     /**
      *
      *
@@ -354,6 +365,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public static final int CLASSIFICATION_MODEL_OPTIONS_FIELD_NUMBER = 10;
     private com.google.cloud.language.v1beta2.ClassificationModelOptions
         classificationModelOptions_;
+
     /**
      *
      *
@@ -372,6 +384,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public boolean hasClassificationModelOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -393,6 +406,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.language.v1beta2.ClassificationModelOptions.getDefaultInstance()
           : classificationModelOptions_;
     }
+
     /**
      *
      *
@@ -636,6 +650,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -925,6 +940,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private boolean extractSyntax_;
+
       /**
        *
        *
@@ -940,6 +956,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean getExtractSyntax() {
         return extractSyntax_;
       }
+
       /**
        *
        *
@@ -959,6 +976,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -978,6 +996,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
 
       private boolean extractEntities_;
+
       /**
        *
        *
@@ -993,6 +1012,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean getExtractEntities() {
         return extractEntities_;
       }
+
       /**
        *
        *
@@ -1012,6 +1032,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1031,6 +1052,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
 
       private boolean extractDocumentSentiment_;
+
       /**
        *
        *
@@ -1046,6 +1068,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean getExtractDocumentSentiment() {
         return extractDocumentSentiment_;
       }
+
       /**
        *
        *
@@ -1065,6 +1088,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1084,6 +1108,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
 
       private boolean extractEntitySentiment_;
+
       /**
        *
        *
@@ -1099,6 +1124,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean getExtractEntitySentiment() {
         return extractEntitySentiment_;
       }
+
       /**
        *
        *
@@ -1118,6 +1144,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1137,6 +1164,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
 
       private boolean classifyText_;
+
       /**
        *
        *
@@ -1155,6 +1183,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean getClassifyText() {
         return classifyText_;
       }
+
       /**
        *
        *
@@ -1177,6 +1206,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1199,6 +1229,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
 
       private boolean moderateText_;
+
       /**
        *
        *
@@ -1214,6 +1245,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean getModerateText() {
         return moderateText_;
       }
+
       /**
        *
        *
@@ -1233,6 +1265,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1258,6 +1291,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
               com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder,
               com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder>
           classificationModelOptionsBuilder_;
+
       /**
        *
        *
@@ -1275,6 +1309,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public boolean hasClassificationModelOptions() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -1299,6 +1334,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           return classificationModelOptionsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1325,6 +1361,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1348,6 +1385,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1381,6 +1419,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -1403,6 +1442,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1421,6 +1461,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         onChanged();
         return getClassificationModelOptionsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1443,6 +1484,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
               : classificationModelOptions_;
         }
       }
+
       /**
        *
        *
@@ -1542,6 +1584,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1beta2.Document document_;
+
   /**
    *
    *
@@ -1559,6 +1602,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1578,6 +1622,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
         : document_;
   }
+
   /**
    *
    *
@@ -1598,6 +1643,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
   public static final int FEATURES_FIELD_NUMBER = 2;
   private com.google.cloud.language.v1beta2.AnnotateTextRequest.Features features_;
+
   /**
    *
    *
@@ -1615,6 +1661,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
   public boolean hasFeatures() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1634,6 +1681,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance()
         : features_;
   }
+
   /**
    *
    *
@@ -1655,6 +1703,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 3;
   private int encodingType_ = 0;
+
   /**
    *
    *
@@ -1670,6 +1719,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
   public int getEncodingTypeValue() {
     return encodingType_;
   }
+
   /**
    *
    *
@@ -1876,6 +1926,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2112,6 +2163,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.language.v1beta2.Document.Builder,
             com.google.cloud.language.v1beta2.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -2128,6 +2180,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2150,6 +2203,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2174,6 +2228,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2195,6 +2250,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2280,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2245,6 +2302,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2319,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2281,6 +2340,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             : document_;
       }
     }
+
     /**
      *
      *
@@ -2315,6 +2375,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder,
             com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder>
         featuresBuilder_;
+
     /**
      *
      *
@@ -2331,6 +2392,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public boolean hasFeatures() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2353,6 +2415,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         return featuresBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2378,6 +2441,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2400,6 +2464,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2432,6 +2497,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2453,6 +2519,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2470,6 +2537,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2491,6 +2559,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             : features_;
       }
     }
+
     /**
      *
      *
@@ -2520,6 +2589,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int encodingType_ = 0;
+
     /**
      *
      *
@@ -2535,6 +2605,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public int getEncodingTypeValue() {
       return encodingType_;
     }
+
     /**
      *
      *
@@ -2553,6 +2624,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2570,6 +2642,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           com.google.cloud.language.v1beta2.EncodingType.forNumber(encodingType_);
       return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2591,6 +2664,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

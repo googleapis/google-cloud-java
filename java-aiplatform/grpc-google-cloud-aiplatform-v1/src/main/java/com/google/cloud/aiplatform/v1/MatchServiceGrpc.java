@@ -145,6 +145,19 @@ public final class MatchServiceGrpc {
     return MatchServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MatchServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MatchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MatchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public MatchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MatchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MatchServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -289,6 +302,54 @@ public final class MatchServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MatchService.
+   *
+   * <pre>
+   * MatchService is a Google managed service for efficient vector similarity
+   * search at scale.
+   * </pre>
+   */
+  public static final class MatchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MatchServiceBlockingV2Stub> {
+    private MatchServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MatchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MatchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the nearest neighbors of each vector within the request.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.FindNeighborsResponse findNeighbors(
+        com.google.cloud.aiplatform.v1.FindNeighborsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindNeighborsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads the datapoints/vectors of the given IDs.
+     * A maximum of 1000 datapoints can be retrieved in a batch.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ReadIndexDatapointsResponse readIndexDatapoints(
+        com.google.cloud.aiplatform.v1.ReadIndexDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadIndexDatapointsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MatchService.
    *
    * <pre>
    * MatchService is a Google managed service for efficient vector similarity

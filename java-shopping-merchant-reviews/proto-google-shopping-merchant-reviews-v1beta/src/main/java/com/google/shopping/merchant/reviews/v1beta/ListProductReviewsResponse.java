@@ -33,6 +33,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ListProductReviewsResponse)
     ListProductReviewsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListProductReviewsResponse.newBuilder() to construct.
   private ListProductReviewsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.reviews.v1beta.ProductReview> productReviews_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       getProductReviewsList() {
     return productReviews_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       getProductReviewsOrBuilderList() {
     return productReviews_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
   public int getProductReviewsCount() {
     return productReviews_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
   public com.google.shopping.merchant.reviews.v1beta.ProductReview getProductReviews(int index) {
     return productReviews_.get(index);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return productReviewsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return productReviewsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return productReviewsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +925,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         getProductReviewsBuilder(int index) {
       return getProductReviewsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -922,6 +944,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return productReviewsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -941,6 +964,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(productReviews_);
       }
     }
+
     /**
      *
      *
@@ -957,6 +981,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
           .addBuilder(
               com.google.shopping.merchant.reviews.v1beta.ProductReview.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -974,6 +999,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
               index,
               com.google.shopping.merchant.reviews.v1beta.ProductReview.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1010,6 +1036,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1107,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class ListProductReviewsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

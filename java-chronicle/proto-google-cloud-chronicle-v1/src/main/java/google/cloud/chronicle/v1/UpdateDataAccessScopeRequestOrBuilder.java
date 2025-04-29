@@ -42,6 +42,7 @@ public interface UpdateDataAccessScopeRequestOrBuilder
    * @return Whether the dataAccessScope field is set.
    */
   boolean hasDataAccessScope();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateDataAccessScopeRequestOrBuilder
    * @return The dataAccessScope.
    */
   google.cloud.chronicle.v1.DataAccessScope getDataAccessScope();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface UpdateDataAccessScopeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface UpdateDataAccessScopeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

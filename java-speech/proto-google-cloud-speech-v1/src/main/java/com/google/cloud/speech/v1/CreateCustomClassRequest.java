@@ -33,6 +33,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.CreateCustomClassRequest)
     CreateCustomClassRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateCustomClassRequest.newBuilder() to construct.
   private CreateCustomClassRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customClassId_ = "";
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
 
   public static final int CUSTOM_CLASS_FIELD_NUMBER = 3;
   private com.google.cloud.speech.v1.CustomClass customClass_;
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
   public boolean hasCustomClass() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
         ? com.google.cloud.speech.v1.CustomClass.getDefaultInstance()
         : customClass_;
   }
+
   /**
    *
    *
@@ -435,6 +443,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +673,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +741,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +774,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +839,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object customClassId_ = "";
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -877,6 +893,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +941,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +975,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
             com.google.cloud.speech.v1.CustomClass.Builder,
             com.google.cloud.speech.v1.CustomClassOrBuilder>
         customClassBuilder_;
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
     public boolean hasCustomClass() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -994,6 +1015,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
         return customClassBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1040,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1062,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1092,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1114,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1131,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
       onChanged();
       return getCustomClassFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1125,6 +1152,7 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
             : customClass_;
       }
     }
+
     /**
      *
      *

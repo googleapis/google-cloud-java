@@ -34,6 +34,7 @@ public final class PodCIDROverprovisionConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.PodCIDROverprovisionConfig)
     PodCIDROverprovisionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PodCIDROverprovisionConfig.newBuilder() to construct.
   private PodCIDROverprovisionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class PodCIDROverprovisionConfig extends com.google.protobuf.Genera
 
   public static final int DISABLE_FIELD_NUMBER = 1;
   private boolean disable_ = false;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class PodCIDROverprovisionConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -424,6 +427,7 @@ public final class PodCIDROverprovisionConfig extends com.google.protobuf.Genera
     private int bitField0_;
 
     private boolean disable_;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class PodCIDROverprovisionConfig extends com.google.protobuf.Genera
     public boolean getDisable() {
       return disable_;
     }
+
     /**
      *
      *
@@ -460,6 +465,7 @@ public final class PodCIDROverprovisionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

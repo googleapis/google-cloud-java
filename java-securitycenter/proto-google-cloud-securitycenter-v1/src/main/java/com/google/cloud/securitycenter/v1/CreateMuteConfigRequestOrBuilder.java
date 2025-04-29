@@ -40,6 +40,7 @@ public interface CreateMuteConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateMuteConfigRequestOrBuilder
    * @return Whether the muteConfig field is set.
    */
   boolean hasMuteConfig();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateMuteConfigRequestOrBuilder
    * @return The muteConfig.
    */
   com.google.cloud.securitycenter.v1.MuteConfig getMuteConfig();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface CreateMuteConfigRequestOrBuilder
    * @return The muteConfigId.
    */
   java.lang.String getMuteConfigId();
+
   /**
    *
    *

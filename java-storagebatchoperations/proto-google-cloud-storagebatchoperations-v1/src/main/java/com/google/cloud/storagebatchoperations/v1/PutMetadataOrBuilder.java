@@ -39,6 +39,7 @@ public interface PutMetadataOrBuilder
    * @return Whether the contentDisposition field is set.
    */
   boolean hasContentDisposition();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface PutMetadataOrBuilder
    * @return The contentDisposition.
    */
   java.lang.String getContentDisposition();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface PutMetadataOrBuilder
    * @return Whether the contentEncoding field is set.
    */
   boolean hasContentEncoding();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface PutMetadataOrBuilder
    * @return The contentEncoding.
    */
   java.lang.String getContentEncoding();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface PutMetadataOrBuilder
    * @return Whether the contentLanguage field is set.
    */
   boolean hasContentLanguage();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface PutMetadataOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public interface PutMetadataOrBuilder
    * @return Whether the contentType field is set.
    */
   boolean hasContentType();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface PutMetadataOrBuilder
    * @return The contentType.
    */
   java.lang.String getContentType();
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public interface PutMetadataOrBuilder
    * @return Whether the cacheControl field is set.
    */
   boolean hasCacheControl();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface PutMetadataOrBuilder
    * @return The cacheControl.
    */
   java.lang.String getCacheControl();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface PutMetadataOrBuilder
    * @return Whether the customTime field is set.
    */
   boolean hasCustomTime();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface PutMetadataOrBuilder
    * @return The customTime.
    */
   java.lang.String getCustomTime();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface PutMetadataOrBuilder
    * </code>
    */
   int getCustomMetadataCount();
+
   /**
    *
    *
@@ -336,9 +349,11 @@ public interface PutMetadataOrBuilder
    * </code>
    */
   boolean containsCustomMetadata(java.lang.String key);
+
   /** Use {@link #getCustomMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getCustomMetadata();
+
   /**
    *
    *
@@ -354,6 +369,7 @@ public interface PutMetadataOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getCustomMetadataMap();
+
   /**
    *
    *
@@ -373,6 +389,7 @@ public interface PutMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface TaskRetryPolicyOrBuilder
    * @return Whether the minimumBackoff field is set.
    */
   boolean hasMinimumBackoff();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TaskRetryPolicyOrBuilder
    * @return The minimumBackoff.
    */
   com.google.protobuf.Duration getMinimumBackoff();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface TaskRetryPolicyOrBuilder
    * @return Whether the maximumBackoff field is set.
    */
   boolean hasMaximumBackoff();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface TaskRetryPolicyOrBuilder
    * @return The maximumBackoff.
    */
   com.google.protobuf.Duration getMaximumBackoff();
+
   /**
    *
    *

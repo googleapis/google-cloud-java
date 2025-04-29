@@ -37,6 +37,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * @return Whether the timeSeriesDescriptor field is set.
    */
   boolean hasTimeSeriesDescriptor();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * @return The timeSeriesDescriptor.
    */
   com.google.monitoring.v3.TimeSeriesDescriptor getTimeSeriesDescriptor();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
   java.util.List<com.google.monitoring.v3.TimeSeriesData> getTimeSeriesDataList();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
   com.google.monitoring.v3.TimeSeriesData getTimeSeriesData(int index);
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
   int getTimeSeriesDataCount();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.TimeSeriesDataOrBuilder>
       getTimeSeriesDataOrBuilderList();
+
   /**
    *
    *
@@ -126,6 +132,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
   com.google.rpc.Status getPartialErrors(int index);
+
   /**
    *
    *
@@ -177,6 +186,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
   int getPartialErrorsCount();
+
   /**
    *
    *
@@ -189,6 +199,7 @@ public interface QueryTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1beta1.SearchDomainsResponse)
     SearchDomainsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchDomainsResponse.newBuilder() to construct.
   private SearchDomainsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.domains.v1beta1.RegisterParameters> registerParameters_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       getRegisterParametersList() {
     return registerParameters_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       getRegisterParametersOrBuilderList() {
     return registerParameters_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
   public int getRegisterParametersCount() {
     return registerParameters_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.domains.v1beta1.RegisterParameters getRegisterParameters(int index) {
     return registerParameters_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -565,6 +572,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
         return registerParametersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
         return registerParametersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
         return registerParametersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +771,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +792,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +828,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getRegisterParametersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -827,6 +847,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
         return registerParametersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -845,6 +866,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(registerParameters_);
       }
     }
+
     /**
      *
      *
@@ -860,6 +882,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       return getRegisterParametersFieldBuilder()
           .addBuilder(com.google.cloud.domains.v1beta1.RegisterParameters.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -876,6 +899,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.domains.v1beta1.RegisterParameters.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.OperationDetails)
     OperationDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationDetails.newBuilder() to construct.
   private OperationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     private OperationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int HTTP_OPERATION_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasHttpOperation() {
     return operationCase_ == 4;
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.apihub.v1.HttpOperation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int DOCUMENTATION_FIELD_NUMBER = 2;
   private com.google.cloud.apihub.v1.Documentation documentation_;
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasDocumentation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.apihub.v1.Documentation.getDefaultInstance()
         : documentation_;
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int DEPRECATED_FIELD_NUMBER = 3;
   private boolean deprecated_ = false;
+
   /**
    *
    *
@@ -500,6 +511,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -775,6 +787,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
             com.google.cloud.apihub.v1.HttpOperation.Builder,
             com.google.cloud.apihub.v1.HttpOperationOrBuilder>
         httpOperationBuilder_;
+
     /**
      *
      *
@@ -790,6 +803,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasHttpOperation() {
       return operationCase_ == 4;
     }
+
     /**
      *
      *
@@ -815,6 +829,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.apihub.v1.HttpOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       operationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +873,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       operationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       operationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +932,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.apihub.v1.HttpOperation.Builder getHttpOperationBuilder() {
       return getHttpOperationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -946,6 +966,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.apihub.v1.HttpOperation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1051,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1075,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1095,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
             com.google.cloud.apihub.v1.Documentation.Builder,
             com.google.cloud.apihub.v1.DocumentationOrBuilder>
         documentationBuilder_;
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasDocumentation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1141,6 +1169,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         return documentationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1166,6 +1195,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1219,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1273,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1291,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDocumentationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
             : documentation_;
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1344,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean deprecated_;
+
     /**
      *
      *
@@ -1325,6 +1361,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     public boolean getDeprecated() {
       return deprecated_;
     }
+
     /**
      *
      *
@@ -1345,6 +1382,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

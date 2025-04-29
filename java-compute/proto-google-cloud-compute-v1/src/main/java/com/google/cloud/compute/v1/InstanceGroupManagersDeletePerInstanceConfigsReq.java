@@ -34,6 +34,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq)
     InstanceGroupManagersDeletePerInstanceConfigsReqOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder() to construct.
   private InstanceGroupManagersDeletePerInstanceConfigsReq(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -304,6 +309,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -514,6 +520,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -543,6 +551,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -573,6 +583,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -596,6 +607,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +650,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +669,7 @@ public final class InstanceGroupManagersDeletePerInstanceConfigsReq
       onChanged();
       return this;
     }
+
     /**
      *
      *

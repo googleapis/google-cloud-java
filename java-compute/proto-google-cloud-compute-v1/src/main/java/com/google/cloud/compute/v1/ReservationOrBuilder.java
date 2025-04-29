@@ -38,6 +38,7 @@ public interface ReservationOrBuilder
    * @return Whether the aggregateReservation field is set.
    */
   boolean hasAggregateReservation();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ReservationOrBuilder
    * @return The aggregateReservation.
    */
   com.google.cloud.compute.v1.AllocationAggregateReservation getAggregateReservation();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ReservationOrBuilder
    * @return Whether the commitment field is set.
    */
   boolean hasCommitment();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ReservationOrBuilder
    * @return The commitment.
    */
   java.lang.String getCommitment();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ReservationOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface ReservationOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -144,6 +150,48 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Specifies the deployment strategy for this reservation.
+   * Check the DeploymentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string deployment_type = 396722292;</code>
+   *
+   * @return Whether the deploymentType field is set.
+   */
+  boolean hasDeploymentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the deployment strategy for this reservation.
+   * Check the DeploymentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string deployment_type = 396722292;</code>
+   *
+   * @return The deploymentType.
+   */
+  java.lang.String getDeploymentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the deployment strategy for this reservation.
+   * Check the DeploymentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string deployment_type = 396722292;</code>
+   *
+   * @return The bytes for deploymentType.
+   */
+  com.google.protobuf.ByteString getDeploymentTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
@@ -152,6 +200,7 @@ public interface ReservationOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -164,6 +213,7 @@ public interface ReservationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -189,6 +239,7 @@ public interface ReservationOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -214,6 +265,7 @@ public interface ReservationOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -226,6 +278,7 @@ public interface ReservationOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -243,6 +296,60 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @return A list containing the linkedCommitments.
+   */
+  java.util.List<java.lang.String> getLinkedCommitmentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @return The count of linkedCommitments.
+   */
+  int getLinkedCommitmentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The linkedCommitments at the given index.
+   */
+  java.lang.String getLinkedCommitments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the linkedCommitments at the given index.
+   */
+  com.google.protobuf.ByteString getLinkedCommitmentsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
@@ -251,6 +358,7 @@ public interface ReservationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -263,6 +371,7 @@ public interface ReservationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -290,6 +399,7 @@ public interface ReservationOrBuilder
    * @return Whether the reservationSharingPolicy field is set.
    */
   boolean hasReservationSharingPolicy();
+
   /**
    *
    *
@@ -304,6 +414,7 @@ public interface ReservationOrBuilder
    * @return The reservationSharingPolicy.
    */
   com.google.cloud.compute.v1.AllocationReservationSharingPolicy getReservationSharingPolicy();
+
   /**
    *
    *
@@ -328,6 +439,7 @@ public interface ReservationOrBuilder
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -338,9 +450,11 @@ public interface ReservationOrBuilder
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
    */
   boolean containsResourcePolicies(java.lang.String key);
+
   /** Use {@link #getResourcePoliciesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourcePolicies();
+
   /**
    *
    *
@@ -351,6 +465,7 @@ public interface ReservationOrBuilder
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourcePoliciesMap();
+
   /**
    *
    *
@@ -365,6 +480,7 @@ public interface ReservationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -389,6 +505,7 @@ public interface ReservationOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
+
   /**
    *
    *
@@ -402,6 +519,7 @@ public interface ReservationOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.AllocationResourceStatus getResourceStatus();
+
   /**
    *
    *
@@ -426,6 +544,7 @@ public interface ReservationOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -451,6 +570,7 @@ public interface ReservationOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -463,6 +583,7 @@ public interface ReservationOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -488,6 +609,7 @@ public interface ReservationOrBuilder
    * @return Whether the shareSettings field is set.
    */
   boolean hasShareSettings();
+
   /**
    *
    *
@@ -500,6 +622,7 @@ public interface ReservationOrBuilder
    * @return The shareSettings.
    */
   com.google.cloud.compute.v1.ShareSettings getShareSettings();
+
   /**
    *
    *
@@ -525,6 +648,7 @@ public interface ReservationOrBuilder
    * @return Whether the specificReservation field is set.
    */
   boolean hasSpecificReservation();
+
   /**
    *
    *
@@ -539,6 +663,7 @@ public interface ReservationOrBuilder
    * @return The specificReservation.
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUReservation getSpecificReservation();
+
   /**
    *
    *
@@ -565,6 +690,7 @@ public interface ReservationOrBuilder
    * @return Whether the specificReservationRequired field is set.
    */
   boolean hasSpecificReservationRequired();
+
   /**
    *
    *
@@ -591,6 +717,7 @@ public interface ReservationOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -604,6 +731,7 @@ public interface ReservationOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -630,6 +758,7 @@ public interface ReservationOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -642,6 +771,7 @@ public interface ReservationOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

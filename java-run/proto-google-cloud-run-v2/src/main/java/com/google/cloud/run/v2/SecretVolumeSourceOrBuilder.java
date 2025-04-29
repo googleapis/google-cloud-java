@@ -39,6 +39,7 @@ public interface SecretVolumeSourceOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SecretVolumeSourceOrBuilder
    * <code>repeated .google.cloud.run.v2.VersionToPath items = 2;</code>
    */
   java.util.List<com.google.cloud.run.v2.VersionToPath> getItemsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SecretVolumeSourceOrBuilder
    * <code>repeated .google.cloud.run.v2.VersionToPath items = 2;</code>
    */
   com.google.cloud.run.v2.VersionToPath getItems(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface SecretVolumeSourceOrBuilder
    * <code>repeated .google.cloud.run.v2.VersionToPath items = 2;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface SecretVolumeSourceOrBuilder
    * <code>repeated .google.cloud.run.v2.VersionToPath items = 2;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VersionToPathOrBuilder> getItemsOrBuilderList();
+
   /**
    *
    *

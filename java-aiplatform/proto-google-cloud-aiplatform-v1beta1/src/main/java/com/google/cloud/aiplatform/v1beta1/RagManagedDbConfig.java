@@ -33,6 +33,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig)
     RagManagedDbConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagManagedDbConfig.newBuilder() to construct.
   private RagManagedDbConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise)
       EnterpriseOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Enterprise.newBuilder() to construct.
     private Enterprise(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -264,6 +267,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -506,6 +510,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -525,6 +530,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic)
       BasicOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Basic.newBuilder() to construct.
     private Basic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -705,6 +711,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -957,6 +964,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     private TierCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -990,6 +998,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ENTERPRISE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1006,6 +1015,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasEnterprise() {
     return tierCase_ == 1;
   }
+
   /**
    *
    *
@@ -1025,6 +1035,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1045,6 +1056,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BASIC_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1060,6 +1072,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasBasic() {
     return tierCase_ == 2;
   }
+
   /**
    *
    *
@@ -1078,6 +1091,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1286,6 +1300,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1521,6 +1536,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise.Builder,
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.EnterpriseOrBuilder>
         enterpriseBuilder_;
+
     /**
      *
      *
@@ -1537,6 +1553,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasEnterprise() {
       return tierCase_ == 1;
     }
+
     /**
      *
      *
@@ -1565,6 +1582,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1589,6 +1607,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1629,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1666,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1693,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1708,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
         getEnterpriseBuilder() {
       return getEnterpriseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1709,6 +1732,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1750,6 +1774,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic.Builder,
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.BasicOrBuilder>
         basicBuilder_;
+
     /**
      *
      *
@@ -1765,6 +1790,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasBasic() {
       return tierCase_ == 2;
     }
+
     /**
      *
      *
@@ -1790,6 +1816,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1812,6 +1839,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1832,6 +1860,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1895,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1921,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1903,6 +1934,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic.Builder getBasicBuilder() {
       return getBasicFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1924,6 +1956,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic.getDefaultInstance();
       }
     }
+
     /**
      *
      *

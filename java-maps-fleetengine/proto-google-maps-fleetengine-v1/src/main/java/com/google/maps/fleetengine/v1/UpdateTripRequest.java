@@ -33,6 +33,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.UpdateTripRequest)
     UpdateTripRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTripRequest.newBuilder() to construct.
   private UpdateTripRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.RequestHeader header_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.maps.fleetengine.v1.RequestHeader.getDefaultInstance()
         : header_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int TRIP_FIELD_NUMBER = 4;
   private com.google.maps.fleetengine.v1.Trip trip_;
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTrip() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -283,6 +291,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
   public com.google.maps.fleetengine.v1.Trip getTrip() {
     return trip_ == null ? com.google.maps.fleetengine.v1.Trip.getDefaultInstance() : trip_;
   }
+
   /**
    *
    *
@@ -339,6 +348,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 5;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -356,6 +366,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -373,6 +384,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -590,6 +602,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -846,6 +859,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.fleetengine.v1.RequestHeader.Builder,
             com.google.maps.fleetengine.v1.RequestHeaderOrBuilder>
         headerBuilder_;
+
     /**
      *
      *
@@ -860,6 +874,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -880,6 +895,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         return headerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -902,6 +918,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +938,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +966,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1001,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -999,6 +1020,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
             : header_;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1048,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1051,6 +1074,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1076,6 +1100,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1125,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1146,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1179,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
             com.google.maps.fleetengine.v1.Trip.Builder,
             com.google.maps.fleetengine.v1.TripOrBuilder>
         tripBuilder_;
+
     /**
      *
      *
@@ -1206,6 +1234,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTrip() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1264,6 +1293,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         return tripBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1356,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1416,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1452,6 +1484,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1544,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1599,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTripFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1621,6 +1656,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         return trip_ == null ? com.google.maps.fleetengine.v1.Trip.getDefaultInstance() : trip_;
       }
     }
+
     /**
      *
      *
@@ -1693,6 +1729,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1709,6 +1746,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1731,6 +1769,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1755,6 +1794,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1816,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1846,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1826,6 +1868,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1885,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1862,6 +1906,7 @@ public final class UpdateTripRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
+
     /**
      *
      *

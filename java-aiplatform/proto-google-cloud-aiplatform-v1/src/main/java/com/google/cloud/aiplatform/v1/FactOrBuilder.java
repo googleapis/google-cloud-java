@@ -36,6 +36,7 @@ public interface FactOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FactOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FactOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface FactOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface FactOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface FactOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface FactOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface FactOrBuilder
    * @return The summary.
    */
   java.lang.String getSummary();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface FactOrBuilder
    */
   @java.lang.Deprecated
   boolean hasVectorDistance();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface FactOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface FactOrBuilder
    * @return Whether the chunk field is set.
    */
   boolean hasChunk();
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public interface FactOrBuilder
    * @return The chunk.
    */
   com.google.cloud.aiplatform.v1.RagChunk getChunk();
+
   /**
    *
    *

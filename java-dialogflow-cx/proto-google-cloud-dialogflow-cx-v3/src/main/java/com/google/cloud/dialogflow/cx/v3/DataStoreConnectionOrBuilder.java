@@ -36,6 +36,7 @@ public interface DataStoreConnectionOrBuilder
    * @return The enum numeric value on the wire for dataStoreType.
    */
   int getDataStoreTypeValue();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface DataStoreConnectionOrBuilder
    * @return The dataStore.
    */
   java.lang.String getDataStore();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface DataStoreConnectionOrBuilder
    * @return The enum numeric value on the wire for documentProcessingMode.
    */
   int getDocumentProcessingModeValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryRegexes)
     BigQueryRegexesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryRegexes.newBuilder() to construct.
   private BigQueryRegexes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.BigQueryRegex> patterns_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.BigQueryRegex> getPatternsList() {
     return patterns_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       getPatternsOrBuilderList() {
     return patterns_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
   public int getPatternsCount() {
     return patterns_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.BigQueryRegex getPatterns(int index) {
     return patterns_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
         return patternsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
         return patternsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
         return patternsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +675,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +764,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +806,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +820,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.BigQueryRegex.Builder getPatternsBuilder(int index) {
       return getPatternsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
         return patternsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -836,6 +857,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(patterns_);
       }
     }
+
     /**
      *
      *
@@ -850,6 +872,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       return getPatternsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.BigQueryRegex.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -864,6 +887,7 @@ public final class BigQueryRegexes extends com.google.protobuf.GeneratedMessageV
       return getPatternsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.BigQueryRegex.getDefaultInstance());
     }
+
     /**
      *
      *

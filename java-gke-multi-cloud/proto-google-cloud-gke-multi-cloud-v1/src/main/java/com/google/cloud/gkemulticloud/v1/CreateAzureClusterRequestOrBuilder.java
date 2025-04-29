@@ -45,6 +45,7 @@ public interface CreateAzureClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface CreateAzureClusterRequestOrBuilder
    * @return Whether the azureCluster field is set.
    */
   boolean hasAzureCluster();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface CreateAzureClusterRequestOrBuilder
    * @return The azureCluster.
    */
   com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface CreateAzureClusterRequestOrBuilder
    * @return The azureClusterId.
    */
   java.lang.String getAzureClusterId();
+
   /**
    *
    *

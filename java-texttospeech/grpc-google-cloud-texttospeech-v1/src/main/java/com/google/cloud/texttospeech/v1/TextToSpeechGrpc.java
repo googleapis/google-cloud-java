@@ -190,6 +190,19 @@ public final class TextToSpeechGrpc {
     return TextToSpeechStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TextToSpeechBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TextToSpeechBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TextToSpeechBlockingV2Stub>() {
+          @java.lang.Override
+          public TextToSpeechBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TextToSpeechBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TextToSpeechBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -362,6 +375,70 @@ public final class TextToSpeechGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TextToSpeech.
+   *
+   * <pre>
+   * Service that implements Google Cloud Text-to-Speech API.
+   * </pre>
+   */
+  public static final class TextToSpeechBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TextToSpeechBlockingV2Stub> {
+    private TextToSpeechBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TextToSpeechBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TextToSpeechBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Voice supported for synthesis.
+     * </pre>
+     */
+    public com.google.cloud.texttospeech.v1.ListVoicesResponse listVoices(
+        com.google.cloud.texttospeech.v1.ListVoicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVoicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Synthesizes speech synchronously: receive results after all text input
+     * has been processed.
+     * </pre>
+     */
+    public com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse synthesizeSpeech(
+        com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSynthesizeSpeechMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech synthesis: receives audio while
+     * sending text.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+            com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+        streamingSynthesize() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingSynthesizeMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TextToSpeech.
    *
    * <pre>
    * Service that implements Google Cloud Text-to-Speech API.

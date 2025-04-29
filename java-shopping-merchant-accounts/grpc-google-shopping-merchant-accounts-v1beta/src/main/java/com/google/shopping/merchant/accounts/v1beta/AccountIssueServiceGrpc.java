@@ -97,6 +97,19 @@ public final class AccountIssueServiceGrpc {
     return AccountIssueServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AccountIssueServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AccountIssueServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccountIssueServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AccountIssueServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccountIssueServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AccountIssueServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -207,6 +220,40 @@ public final class AccountIssueServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AccountIssueService.
+   *
+   * <pre>
+   * Service to support `AccountIssueService` API.
+   * </pre>
+   */
+  public static final class AccountIssueServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AccountIssueServiceBlockingV2Stub> {
+    private AccountIssueServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AccountIssueServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AccountIssueServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all account issues of a Merchant Center account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesResponse listAccountIssues(
+        com.google.shopping.merchant.accounts.v1beta.ListAccountIssuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccountIssuesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AccountIssueService.
    *
    * <pre>
    * Service to support `AccountIssueService` API.

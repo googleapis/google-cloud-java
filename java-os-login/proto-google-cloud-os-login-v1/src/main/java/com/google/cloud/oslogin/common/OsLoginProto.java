@@ -27,6 +27,7 @@ public final class OsLoginProto {
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public final class OsLoginProto {
      * <code>OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATING_SYSTEM_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class OsLoginProto {
      * <code>LINUX = 1;</code>
      */
     public static final int LINUX_VALUE = 1;
+
     /**
      *
      *
@@ -219,6 +222,7 @@ public final class OsLoginProto {
      * @return The username.
      */
     java.lang.String getUsername();
+
     /**
      *
      *
@@ -270,6 +274,7 @@ public final class OsLoginProto {
      * @return The homeDirectory.
      */
     java.lang.String getHomeDirectory();
+
     /**
      *
      *
@@ -295,6 +300,7 @@ public final class OsLoginProto {
      * @return The shell.
      */
     java.lang.String getShell();
+
     /**
      *
      *
@@ -320,6 +326,7 @@ public final class OsLoginProto {
      * @return The gecos.
      */
     java.lang.String getGecos();
+
     /**
      *
      *
@@ -346,6 +353,7 @@ public final class OsLoginProto {
      * @return The systemId.
      */
     java.lang.String getSystemId();
+
     /**
      *
      *
@@ -372,6 +380,7 @@ public final class OsLoginProto {
      * @return The accountId.
      */
     java.lang.String getAccountId();
+
     /**
      *
      *
@@ -397,6 +406,7 @@ public final class OsLoginProto {
      * @return The enum numeric value on the wire for operatingSystemType.
      */
     int getOperatingSystemTypeValue();
+
     /**
      *
      *
@@ -422,6 +432,7 @@ public final class OsLoginProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -435,6 +446,7 @@ public final class OsLoginProto {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -449,6 +461,7 @@ public final class OsLoginProto {
       // @@protoc_insertion_point(message_implements:google.cloud.oslogin.common.PosixAccount)
       PosixAccountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PosixAccount.newBuilder() to construct.
     private PosixAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -488,6 +501,7 @@ public final class OsLoginProto {
 
     public static final int PRIMARY_FIELD_NUMBER = 1;
     private boolean primary_ = false;
+
     /**
      *
      *
@@ -508,6 +522,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
+
     /**
      *
      *
@@ -531,6 +546,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -557,6 +573,7 @@ public final class OsLoginProto {
 
     public static final int UID_FIELD_NUMBER = 3;
     private long uid_ = 0L;
+
     /**
      *
      *
@@ -575,6 +592,7 @@ public final class OsLoginProto {
 
     public static final int GID_FIELD_NUMBER = 4;
     private long gid_ = 0L;
+
     /**
      *
      *
@@ -595,6 +613,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object homeDirectory_ = "";
+
     /**
      *
      *
@@ -618,6 +637,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -646,6 +666,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object shell_ = "";
+
     /**
      *
      *
@@ -669,6 +690,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -697,6 +719,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gecos_ = "";
+
     /**
      *
      *
@@ -720,6 +743,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -748,6 +772,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object systemId_ = "";
+
     /**
      *
      *
@@ -772,6 +797,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -801,6 +827,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object accountId_ = "";
+
     /**
      *
      *
@@ -824,6 +851,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -850,6 +878,7 @@ public final class OsLoginProto {
 
     public static final int OPERATING_SYSTEM_TYPE_FIELD_NUMBER = 10;
     private int operatingSystemType_ = 0;
+
     /**
      *
      *
@@ -865,6 +894,7 @@ public final class OsLoginProto {
     public int getOperatingSystemTypeValue() {
       return operatingSystemType_;
     }
+
     /**
      *
      *
@@ -891,6 +921,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -914,6 +945,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class OsLoginProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1524,6 +1557,7 @@ public final class OsLoginProto {
       private int bitField0_;
 
       private boolean primary_;
+
       /**
        *
        *
@@ -1539,6 +1573,7 @@ public final class OsLoginProto {
       public boolean getPrimary() {
         return primary_;
       }
+
       /**
        *
        *
@@ -1558,6 +1593,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1577,6 +1613,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object username_ = "";
+
       /**
        *
        *
@@ -1599,6 +1636,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1621,6 +1659,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1642,6 +1681,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1659,6 +1699,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1683,6 +1724,7 @@ public final class OsLoginProto {
       }
 
       private long uid_;
+
       /**
        *
        *
@@ -1698,6 +1740,7 @@ public final class OsLoginProto {
       public long getUid() {
         return uid_;
       }
+
       /**
        *
        *
@@ -1717,6 +1760,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1736,6 +1780,7 @@ public final class OsLoginProto {
       }
 
       private long gid_;
+
       /**
        *
        *
@@ -1751,6 +1796,7 @@ public final class OsLoginProto {
       public long getGid() {
         return gid_;
       }
+
       /**
        *
        *
@@ -1770,6 +1816,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1789,6 +1836,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object homeDirectory_ = "";
+
       /**
        *
        *
@@ -1811,6 +1859,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1833,6 +1882,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1854,6 +1904,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1871,6 +1922,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1895,6 +1947,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object shell_ = "";
+
       /**
        *
        *
@@ -1917,6 +1970,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1939,6 +1993,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1960,6 +2015,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1977,6 +2033,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2001,6 +2058,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object gecos_ = "";
+
       /**
        *
        *
@@ -2023,6 +2081,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2045,6 +2104,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2066,6 +2126,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2083,6 +2144,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2107,6 +2169,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object systemId_ = "";
+
       /**
        *
        *
@@ -2130,6 +2193,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2153,6 +2217,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2175,6 +2240,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2193,6 +2259,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2218,6 +2285,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object accountId_ = "";
+
       /**
        *
        *
@@ -2240,6 +2308,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2262,6 +2331,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2283,6 +2353,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2300,6 +2371,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2324,6 +2396,7 @@ public final class OsLoginProto {
       }
 
       private int operatingSystemType_ = 0;
+
       /**
        *
        *
@@ -2339,6 +2412,7 @@ public final class OsLoginProto {
       public int getOperatingSystemTypeValue() {
         return operatingSystemType_;
       }
+
       /**
        *
        *
@@ -2357,6 +2431,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2378,6 +2453,7 @@ public final class OsLoginProto {
             ? com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2400,6 +2476,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2419,6 +2496,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -2441,6 +2519,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2463,6 +2542,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2484,6 +2564,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2501,6 +2582,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2606,6 +2688,7 @@ public final class OsLoginProto {
      * @return The key.
      */
     java.lang.String getKey();
+
     /**
      *
      *
@@ -2645,6 +2728,7 @@ public final class OsLoginProto {
      * @return The fingerprint.
      */
     java.lang.String getFingerprint();
+
     /**
      *
      *
@@ -2670,6 +2754,7 @@ public final class OsLoginProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -2683,6 +2768,7 @@ public final class OsLoginProto {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
+
   /**
    *
    *
@@ -2697,6 +2783,7 @@ public final class OsLoginProto {
       // @@protoc_insertion_point(message_implements:google.cloud.oslogin.common.SshPublicKey)
       SshPublicKeyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SshPublicKey.newBuilder() to construct.
     private SshPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2733,6 +2820,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -2757,6 +2845,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -2784,6 +2873,7 @@ public final class OsLoginProto {
 
     public static final int EXPIRATION_TIME_USEC_FIELD_NUMBER = 2;
     private long expirationTimeUsec_ = 0L;
+
     /**
      *
      *
@@ -2804,6 +2894,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fingerprint_ = "";
+
     /**
      *
      *
@@ -2827,6 +2918,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -2855,6 +2947,7 @@ public final class OsLoginProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2878,6 +2971,7 @@ public final class OsLoginProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -3090,6 +3184,7 @@ public final class OsLoginProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3320,6 +3415,7 @@ public final class OsLoginProto {
       private int bitField0_;
 
       private java.lang.Object key_ = "";
+
       /**
        *
        *
@@ -3343,6 +3439,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3366,6 +3463,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3388,6 +3486,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3406,6 +3505,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3431,6 +3531,7 @@ public final class OsLoginProto {
       }
 
       private long expirationTimeUsec_;
+
       /**
        *
        *
@@ -3446,6 +3547,7 @@ public final class OsLoginProto {
       public long getExpirationTimeUsec() {
         return expirationTimeUsec_;
       }
+
       /**
        *
        *
@@ -3465,6 +3567,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3484,6 +3587,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object fingerprint_ = "";
+
       /**
        *
        *
@@ -3506,6 +3610,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3528,6 +3633,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3549,6 +3655,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3566,6 +3673,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3590,6 +3698,7 @@ public final class OsLoginProto {
       }
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -3612,6 +3721,7 @@ public final class OsLoginProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3634,6 +3744,7 @@ public final class OsLoginProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3655,6 +3766,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3672,6 +3784,7 @@ public final class OsLoginProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3776,32 +3889,39 @@ public final class OsLoginProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/cloud/oslogin/common/common.pro"
+      "\n"
+          + "(google/cloud/oslogin/common/common.pro"
           + "to\022\033google.cloud.oslogin.common\032\037google/"
-          + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\"\334\002\n\014PosixAccount\022\017\n\007primary\030"
-          + "\001 \001(\010\022\020\n\010username\030\002 \001(\t\022\013\n\003uid\030\003 \001(\003\022\013\n\003"
-          + "gid\030\004 \001(\003\022\026\n\016home_directory\030\005 \001(\t\022\r\n\005she"
-          + "ll\030\006 \001(\t\022\r\n\005gecos\030\007 \001(\t\022\021\n\tsystem_id\030\010 \001"
-          + "(\t\022\027\n\naccount_id\030\t \001(\tB\003\340A\003\022O\n\025operating"
-          + "_system_type\030\n \001(\01620.google.cloud.oslogi"
-          + "n.common.OperatingSystemType\022\021\n\004name\030\013 \001"
-          + "(\tB\003\340A\003:I\352AF\n#oslogin.googleapis.com/Pos"
-          + "ixAccount\022\037users/{user}/projects/{projec"
-          + "t}\"\272\001\n\014SshPublicKey\022\013\n\003key\030\001 \001(\t\022\034\n\024expi"
-          + "ration_time_usec\030\002 \001(\003\022\030\n\013fingerprint\030\003 "
-          + "\001(\tB\003\340A\003\022\021\n\004name\030\004 \001(\tB\003\340A\003:R\352AO\n#oslogi"
-          + "n.googleapis.com/SshPublicKey\022(users/{us"
-          + "er}/sshPublicKeys/{fingerprint}*T\n\023Opera"
-          + "tingSystemType\022%\n!OPERATING_SYSTEM_TYPE_"
-          + "UNSPECIFIED\020\000\022\t\n\005LINUX\020\001\022\013\n\007WINDOWS\020\002B\360\001"
-          + "\n\037com.google.cloud.oslogin.commonB\014OsLog"
-          + "inProtoZ4cloud.google.com/go/oslogin/com"
+          + "api/field_behavior.proto\032\031google/api/resource.proto\"\334\002\n"
+          + "\014PosixAccount\022\017\n"
+          + "\007primary\030\001 \001(\010\022\020\n"
+          + "\010username\030\002 \001(\t\022\013\n"
+          + "\003uid\030\003 \001(\003\022\013\n"
+          + "\003gid\030\004 \001(\003\022\026\n"
+          + "\016home_directory\030\005 \001(\t\022\r\n"
+          + "\005shell\030\006 \001(\t\022\r\n"
+          + "\005gecos\030\007 \001(\t\022\021\n"
+          + "\tsystem_id\030\010 \001(\t\022\027\n\n"
+          + "account_id\030\t \001(\tB\003\340A\003\022O\n"
+          + "\025operating_system_type\030\n"
+          + " \001(\01620.google.cloud.oslogin.common.OperatingSystemType\022\021\n"
+          + "\004name\030\013 \001(\tB\003\340A\003:I\352AF\n"
+          + "#oslogin.googleapis.com/Pos"
+          + "ixAccount\022\037users/{user}/projects/{project}\"\272\001\n"
+          + "\014SshPublicKey\022\013\n"
+          + "\003key\030\001 \001(\t\022\034\n"
+          + "\024expiration_time_usec\030\002 \001(\003\022\030\n"
+          + "\013fingerprint\030\003 \001(\tB\003\340A\003\022\021\n"
+          + "\004name\030\004 \001(\tB\003\340A\003:R\352AO\n"
+          + "#oslogin.googleapis.com/SshPublicKey\022(users/{user}/sshPublicKeys/{fingerprint}*T\n"
+          + "\023OperatingSystemType\022%\n"
+          + "!OPERATING_SYSTEM_TYPE_UNSPECIFIED\020\000\022\t\n"
+          + "\005LINUX\020\001\022\013\n"
+          + "\007WINDOWS\020\002B\360\001\n"
+          + "\037com.google.cloud.oslogin.commonB\014OsLoginProtoZ4cloud.google.com/go/oslogin/com"
           + "mon/commonpb;commonpb\252\002\033Google.Cloud.OsL"
-          + "ogin.Common\312\002\033Google\\Cloud\\OsLogin\\Commo"
-          + "n\352\002\036Google::Cloud::OsLogin::Common\352A+\n\033o"
-          + "slogin.googleapis.com/User\022\014users/{user}"
-          + "b\006proto3"
+          + "ogin.Common\312\002\033Google\\Cloud\\OsLogin\\Common\352\002\036Google::Cloud::OsLogin::Common\352A+\n"
+          + "\033oslogin.googleapis.com/User\022\014users/{user}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

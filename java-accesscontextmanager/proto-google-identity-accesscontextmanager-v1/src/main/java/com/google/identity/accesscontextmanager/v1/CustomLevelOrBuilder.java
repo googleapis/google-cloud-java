@@ -36,6 +36,7 @@ public interface CustomLevelOrBuilder
    * @return Whether the expr field is set.
    */
   boolean hasExpr();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CustomLevelOrBuilder
    * @return The expr.
    */
   com.google.type.Expr getExpr();
+
   /**
    *
    *

@@ -44,6 +44,7 @@ public interface CustomAttributeOrBuilder
    * @return A list containing the text.
    */
   java.util.List<java.lang.String> getTextList();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CustomAttributeOrBuilder
    * @return The count of text.
    */
   int getTextCount();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CustomAttributeOrBuilder
    * @return The text at the given index.
    */
   java.lang.String getText(int index);
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface CustomAttributeOrBuilder
    * @return A list containing the numbers.
    */
   java.util.List<java.lang.Double> getNumbersList();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface CustomAttributeOrBuilder
    * @return The count of numbers.
    */
   int getNumbersCount();
+
   /**
    *
    *
@@ -183,11 +188,12 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2beta.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2beta/common.proto;l=511
+   *     google/cloud/retail/v2beta/common.proto;l=561
    * @return Whether the searchable field is set.
    */
   @java.lang.Deprecated
   boolean hasSearchable();
+
   /**
    *
    *
@@ -211,7 +217,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2beta.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2beta/common.proto;l=511
+   *     google/cloud/retail/v2beta/common.proto;l=561
    * @return The searchable.
    */
   @java.lang.Deprecated
@@ -245,11 +251,12 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2beta.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2beta/common.proto;l=532
+   *     google/cloud/retail/v2beta/common.proto;l=582
    * @return Whether the indexable field is set.
    */
   @java.lang.Deprecated
   boolean hasIndexable();
+
   /**
    *
    *
@@ -278,7 +285,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2beta.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2beta/common.proto;l=532
+   *     google/cloud/retail/v2beta/common.proto;l=582
    * @return The indexable.
    */
   @java.lang.Deprecated

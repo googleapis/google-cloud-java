@@ -33,6 +33,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextClassificationDatasetMetadata)
     TextClassificationDatasetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextClassificationDatasetMetadata.newBuilder() to construct.
   private TextClassificationDatasetMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
 
   public static final int CLASSIFICATION_TYPE_FIELD_NUMBER = 1;
   private int classificationType_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
   public int getClassificationTypeValue() {
     return classificationType_;
   }
+
   /**
    *
    *
@@ -263,6 +266,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -448,6 +452,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     private int bitField0_;
 
     private int classificationType_ = 0;
+
     /**
      *
      *
@@ -463,6 +468,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     public int getClassificationTypeValue() {
       return classificationType_;
     }
+
     /**
      *
      *
@@ -481,6 +487,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -498,6 +505,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
           com.google.cloud.automl.v1.ClassificationType.forNumber(classificationType_);
       return result == null ? com.google.cloud.automl.v1.ClassificationType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -519,6 +527,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

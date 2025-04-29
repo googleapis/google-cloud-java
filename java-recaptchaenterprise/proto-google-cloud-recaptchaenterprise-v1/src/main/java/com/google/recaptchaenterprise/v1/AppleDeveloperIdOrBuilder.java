@@ -40,6 +40,7 @@ public interface AppleDeveloperIdOrBuilder
    * @return The privateKey.
    */
   java.lang.String getPrivateKey();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface AppleDeveloperIdOrBuilder
    * @return The keyId.
    */
   java.lang.String getKeyId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface AppleDeveloperIdOrBuilder
    * @return The teamId.
    */
   java.lang.String getTeamId();
+
   /**
    *
    *

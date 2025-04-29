@@ -42,6 +42,7 @@ public interface UpdateRuleDeploymentRequestOrBuilder
    * @return Whether the ruleDeployment field is set.
    */
   boolean hasRuleDeployment();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateRuleDeploymentRequestOrBuilder
    * @return The ruleDeployment.
    */
   google.cloud.chronicle.v1.RuleDeployment getRuleDeployment();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpdateRuleDeploymentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateRuleDeploymentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

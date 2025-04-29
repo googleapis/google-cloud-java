@@ -38,6 +38,7 @@ public interface CreateMemberRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CreateMemberRequestOrBuilder
    * @return Whether the member field is set.
    */
   boolean hasMember();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CreateMemberRequestOrBuilder
    * @return The member.
    */
   com.google.apps.meet.v2beta.Member getMember();
+
   /**
    *
    *

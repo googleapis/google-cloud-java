@@ -33,6 +33,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.VRF)
     VRFOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VRF.newBuilder() to construct.
   private VRF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONING = 1;</code>
      */
     public static final int PROVISIONING_VALUE = 1;
+
     /**
      *
      *
@@ -240,6 +243,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      */
     double getBandwidthGbps();
   }
+
   /**
    *
    *
@@ -254,6 +258,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.VRF.QosPolicy)
       QosPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QosPolicy.newBuilder() to construct.
     private QosPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -284,6 +289,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BANDWIDTH_GBPS_FIELD_NUMBER = 1;
     private double bandwidthGbps_ = 0D;
+
     /**
      *
      *
@@ -465,6 +471,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -650,6 +657,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double bandwidthGbps_;
+
       /**
        *
        *
@@ -665,6 +673,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public double getBandwidthGbps() {
         return bandwidthGbps_;
       }
+
       /**
        *
        *
@@ -684,6 +693,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -796,6 +806,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The peerIp.
      */
     java.lang.String getPeerIp();
+
     /**
      *
      *
@@ -821,6 +832,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The routerIp.
      */
     java.lang.String getRouterIp();
+
     /**
      *
      *
@@ -846,6 +858,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The pairingKey.
      */
     java.lang.String getPairingKey();
+
     /**
      *
      *
@@ -872,6 +885,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the qosPolicy field is set.
      */
     boolean hasQosPolicy();
+
     /**
      *
      *
@@ -885,6 +899,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The qosPolicy.
      */
     com.google.cloud.baremetalsolution.v2.VRF.QosPolicy getQosPolicy();
+
     /**
      *
      *
@@ -909,6 +924,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -937,6 +953,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The interconnectAttachment.
      */
     java.lang.String getInterconnectAttachment();
+
     /**
      *
      *
@@ -953,6 +970,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getInterconnectAttachmentBytes();
   }
+
   /**
    *
    *
@@ -967,6 +985,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.VRF.VlanAttachment)
       VlanAttachmentOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VlanAttachment.newBuilder() to construct.
     private VlanAttachment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1004,6 +1023,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int PEER_VLAN_ID_FIELD_NUMBER = 1;
     private long peerVlanId_ = 0L;
+
     /**
      *
      *
@@ -1024,6 +1044,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerIp_ = "";
+
     /**
      *
      *
@@ -1047,6 +1068,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1097,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object routerIp_ = "";
+
     /**
      *
      *
@@ -1098,6 +1121,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1150,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pairingKey_ = "";
+
     /**
      *
      *
@@ -1149,6 +1174,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1201,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     public static final int QOS_POLICY_FIELD_NUMBER = 5;
     private com.google.cloud.baremetalsolution.v2.VRF.QosPolicy qosPolicy_;
+
     /**
      *
      *
@@ -1191,6 +1218,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQosPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1209,6 +1237,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
           : qosPolicy_;
     }
+
     /**
      *
      *
@@ -1230,6 +1259,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1253,6 +1283,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1312,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object interconnectAttachment_ = "";
+
     /**
      *
      *
@@ -1307,6 +1339,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1555,6 +1588,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1844,6 +1878,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long peerVlanId_;
+
       /**
        *
        *
@@ -1859,6 +1894,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public long getPeerVlanId() {
         return peerVlanId_;
       }
+
       /**
        *
        *
@@ -1878,6 +1914,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1897,6 +1934,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object peerIp_ = "";
+
       /**
        *
        *
@@ -1919,6 +1957,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1941,6 +1980,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1962,6 +2002,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1979,6 +2020,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2003,6 +2045,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object routerIp_ = "";
+
       /**
        *
        *
@@ -2025,6 +2068,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2047,6 +2091,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2068,6 +2113,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2085,6 +2131,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2109,6 +2156,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object pairingKey_ = "";
+
       /**
        *
        *
@@ -2131,6 +2179,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2153,6 +2202,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2174,6 +2224,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2191,6 +2242,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2220,6 +2272,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder,
               com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder>
           qosPolicyBuilder_;
+
       /**
        *
        *
@@ -2235,6 +2288,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public boolean hasQosPolicy() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -2256,6 +2310,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return qosPolicyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2279,6 +2334,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2300,6 +2356,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2329,6 +2386,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2349,6 +2407,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2364,6 +2423,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getQosPolicyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2383,6 +2443,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
               : qosPolicy_;
         }
       }
+
       /**
        *
        *
@@ -2411,6 +2472,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -2433,6 +2495,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2455,6 +2518,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2476,6 +2540,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2493,6 +2558,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2517,6 +2583,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object interconnectAttachment_ = "";
+
       /**
        *
        *
@@ -2542,6 +2609,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2567,6 +2635,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2591,6 +2660,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2611,6 +2681,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2706,6 +2777,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2729,6 +2801,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2755,6 +2828,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2770,6 +2844,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2790,6 +2865,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QOS_POLICY_FIELD_NUMBER = 6;
   private com.google.cloud.baremetalsolution.v2.VRF.QosPolicy qosPolicy_;
+
   /**
    *
    *
@@ -2808,6 +2884,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQosPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2828,6 +2905,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
         : qosPolicy_;
   }
+
   /**
    *
    *
@@ -2851,6 +2929,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment> vlanAttachments_;
+
   /**
    *
    *
@@ -2866,6 +2945,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       getVlanAttachmentsList() {
     return vlanAttachments_;
   }
+
   /**
    *
    *
@@ -2881,6 +2961,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       getVlanAttachmentsOrBuilderList() {
     return vlanAttachments_;
   }
+
   /**
    *
    *
@@ -2895,6 +2976,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
   public int getVlanAttachmentsCount() {
     return vlanAttachments_.size();
   }
+
   /**
    *
    *
@@ -2909,6 +2991,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment getVlanAttachments(int index) {
     return vlanAttachments_.get(index);
   }
+
   /**
    *
    *
@@ -3118,6 +3201,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3405,6 +3489,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3427,6 +3512,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3449,6 +3535,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3470,6 +3557,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3487,6 +3575,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3511,6 +3600,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3526,6 +3616,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3544,6 +3635,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3561,6 +3653,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.baremetalsolution.v2.VRF.State.forNumber(state_);
       return result == null ? com.google.cloud.baremetalsolution.v2.VRF.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3582,6 +3675,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3606,6 +3700,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder,
             com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder>
         qosPolicyBuilder_;
+
     /**
      *
      *
@@ -3623,6 +3718,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQosPolicy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3646,6 +3742,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return qosPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3671,6 +3768,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3694,6 +3792,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3725,6 +3824,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3747,6 +3847,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3764,6 +3865,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQosPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3785,6 +3887,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
             : qosPolicy_;
       }
     }
+
     /**
      *
      *
@@ -3850,6 +3953,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3867,6 +3971,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3884,6 +3989,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3908,6 +4014,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3930,6 +4037,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3954,6 +4062,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3978,6 +4087,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3999,6 +4109,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4021,6 +4132,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4043,6 +4155,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4063,6 +4176,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4083,6 +4197,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4097,6 +4212,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         getVlanAttachmentsBuilder(int index) {
       return getVlanAttachmentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4115,6 +4231,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4134,6 +4251,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vlanAttachments_);
       }
     }
+
     /**
      *
      *
@@ -4150,6 +4268,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4166,6 +4285,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment.getDefaultInstance());
     }
+
     /**
      *
      *

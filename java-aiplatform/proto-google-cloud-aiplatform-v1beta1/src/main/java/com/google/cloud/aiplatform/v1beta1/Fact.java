@@ -33,6 +33,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Fact)
     FactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Fact.newBuilder() to construct.
   private Fact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUri() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object summary_ = "";
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSummary() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -307,6 +319,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VECTOR_DISTANCE_FIELD_NUMBER = 5;
   private double vectorDistance_ = 0D;
+
   /**
    *
    *
@@ -351,6 +365,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVectorDistance() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -372,6 +387,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 6;
   private double score_ = 0D;
+
   /**
    *
    *
@@ -394,6 +410,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScore() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -419,6 +436,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHUNK_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.RagChunk chunk_;
+
   /**
    *
    *
@@ -434,6 +452,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChunk() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -451,6 +470,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
         : chunk_;
   }
+
   /**
    *
    *
@@ -722,6 +742,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1011,6 +1032,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -1025,6 +1047,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1093,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1115,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1133,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1158,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -1145,6 +1173,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1167,6 +1196,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1219,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1284,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1265,6 +1299,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1287,6 +1322,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1345,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1367,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1347,6 +1385,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1410,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object summary_ = "";
+
     /**
      *
      *
@@ -1385,6 +1425,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSummary() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1407,6 +1448,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1429,6 +1471,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1450,6 +1493,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1511,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,6 +1536,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double vectorDistance_;
+
     /**
      *
      *
@@ -1509,6 +1555,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVectorDistance() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1527,6 +1574,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public double getVectorDistance() {
       return vectorDistance_;
     }
+
     /**
      *
      *
@@ -1549,6 +1597,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1620,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double score_;
+
     /**
      *
      *
@@ -1593,6 +1643,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScore() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1615,6 +1666,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public double getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -1641,6 +1693,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1725,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
             com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
         chunkBuilder_;
+
     /**
      *
      *
@@ -1686,6 +1740,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChunk() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1706,6 +1761,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
         return chunkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1728,6 +1784,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1804,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1832,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1793,6 +1852,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1867,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getChunkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1825,6 +1886,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
             : chunk_;
       }
     }
+
     /**
      *
      *

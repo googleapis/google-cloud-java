@@ -40,6 +40,7 @@ public interface IntentInputOrBuilder
    * @return The intent.
    */
   java.lang.String getIntent();
+
   /**
    *
    *

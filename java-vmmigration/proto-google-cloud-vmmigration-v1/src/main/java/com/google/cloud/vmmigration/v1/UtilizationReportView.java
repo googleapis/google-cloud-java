@@ -77,6 +77,7 @@ public enum UtilizationReportView implements com.google.protobuf.ProtocolMessage
    * <code>UTILIZATION_REPORT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int UTILIZATION_REPORT_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public enum UtilizationReportView implements com.google.protobuf.ProtocolMessage
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *

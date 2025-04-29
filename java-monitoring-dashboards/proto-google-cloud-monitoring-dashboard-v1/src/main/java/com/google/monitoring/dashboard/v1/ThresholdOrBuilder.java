@@ -36,6 +36,7 @@ public interface ThresholdOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface ThresholdOrBuilder
    * @return The enum numeric value on the wire for color.
    */
   int getColorValue();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface ThresholdOrBuilder
    * @return The enum numeric value on the wire for direction.
    */
   int getDirectionValue();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface ThresholdOrBuilder
    * @return The enum numeric value on the wire for targetAxis.
    */
   int getTargetAxisValue();
+
   /**
    *
    *

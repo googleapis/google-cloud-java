@@ -116,7 +116,8 @@ public class MockMerchantReviewsServiceImpl extends MerchantReviewsServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InsertMerchantReview, expected %s or %s",
+                  "Unrecognized response type %s for method InsertMerchantReview, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   MerchantReview.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +138,8 @@ public class MockMerchantReviewsServiceImpl extends MerchantReviewsServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteMerchantReview, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteMerchantReview, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

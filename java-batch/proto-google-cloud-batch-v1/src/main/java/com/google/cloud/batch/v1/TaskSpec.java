@@ -33,6 +33,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.TaskSpec)
     TaskSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TaskSpec.newBuilder() to construct.
   private TaskSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.Runnable> runnables_;
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.batch.v1.Runnable> getRunnablesList() {
     return runnables_;
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       getRunnablesOrBuilderList() {
     return runnables_;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public int getRunnablesCount() {
     return runnables_.size();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1.Runnable getRunnables(int index) {
     return runnables_.get(index);
   }
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPUTE_RESOURCE_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1.ComputeResource computeResource_;
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasComputeResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1.ComputeResource.getDefaultInstance()
         : computeResource_;
   }
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_RUN_DURATION_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration maxRunDuration_;
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxRunDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : maxRunDuration_;
   }
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_RETRY_COUNT_FIELD_NUMBER = 5;
   private int maxRetryCount_ = 0;
+
   /**
    *
    *
@@ -342,6 +355,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.LifecyclePolicy> lifecyclePolicies_;
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.batch.v1.LifecyclePolicy> getLifecyclePoliciesList() {
     return lifecyclePolicies_;
   }
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       getLifecyclePoliciesOrBuilderList() {
     return lifecyclePolicies_;
   }
+
   /**
    *
    *
@@ -403,6 +419,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public int getLifecyclePoliciesCount() {
     return lifecyclePolicies_.size();
   }
+
   /**
    *
    *
@@ -423,6 +440,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1.LifecyclePolicy getLifecyclePolicies(int index) {
     return lifecyclePolicies_.get(index);
   }
+
   /**
    *
    *
@@ -474,6 +492,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public int getEnvironmentsCount() {
     return internalGetEnvironments().getMap().size();
   }
+
   /**
    *
    *
@@ -491,12 +510,14 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetEnvironments().getMap().containsKey(key);
   }
+
   /** Use {@link #getEnvironmentsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getEnvironments() {
     return getEnvironmentsMap();
   }
+
   /**
    *
    *
@@ -511,6 +532,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getEnvironmentsMap() {
     return internalGetEnvironments().getMap();
   }
+
   /**
    *
    *
@@ -532,6 +554,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvironments().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -558,6 +581,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.Volume> volumes_;
+
   /**
    *
    *
@@ -571,6 +595,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.batch.v1.Volume> getVolumesList() {
     return volumes_;
   }
+
   /**
    *
    *
@@ -585,6 +610,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       getVolumesOrBuilderList() {
     return volumes_;
   }
+
   /**
    *
    *
@@ -598,6 +624,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public int getVolumesCount() {
     return volumes_.size();
   }
+
   /**
    *
    *
@@ -611,6 +638,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
+
   /**
    *
    *
@@ -627,6 +655,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 10;
   private com.google.cloud.batch.v1.Environment environment_;
+
   /**
    *
    *
@@ -642,6 +671,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -659,6 +689,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
         : environment_;
   }
+
   /**
    *
    *
@@ -925,6 +956,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1430,6 +1462,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return runnablesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1455,6 +1488,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return runnablesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1480,6 +1514,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return runnablesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1546,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1540,6 +1576,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1608,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1640,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1630,6 +1669,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1659,6 +1699,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1729,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1758,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1787,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1809,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Runnable.Builder getRunnablesBuilder(int index) {
       return getRunnablesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1790,6 +1835,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return runnablesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1816,6 +1862,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(runnables_);
       }
     }
+
     /**
      *
      *
@@ -1838,6 +1885,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return getRunnablesFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1.Runnable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1860,6 +1908,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return getRunnablesFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1.Runnable.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1905,6 +1954,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.ComputeResource.Builder,
             com.google.cloud.batch.v1.ComputeResourceOrBuilder>
         computeResourceBuilder_;
+
     /**
      *
      *
@@ -1919,6 +1969,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasComputeResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1939,6 +1990,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return computeResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1961,6 +2013,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2034,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2008,6 +2062,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2082,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2097,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getComputeResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2059,6 +2116,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             : computeResource_;
       }
     }
+
     /**
      *
      *
@@ -2091,6 +2149,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxRunDurationBuilder_;
+
     /**
      *
      *
@@ -2113,6 +2172,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxRunDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2141,6 +2201,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return maxRunDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2171,6 +2232,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2198,6 +2260,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2233,6 +2296,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2260,6 +2324,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2347,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaxRunDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2308,6 +2374,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             : maxRunDuration_;
       }
     }
+
     /**
      *
      *
@@ -2343,6 +2410,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxRetryCount_;
+
     /**
      *
      *
@@ -2360,6 +2428,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public int getMaxRetryCount() {
       return maxRetryCount_;
     }
+
     /**
      *
      *
@@ -2381,6 +2450,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2441,6 +2511,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return lifecyclePoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2464,6 +2535,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return lifecyclePoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2487,6 +2559,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return lifecyclePoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2517,6 +2590,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2544,6 +2618,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2573,6 +2648,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2603,6 +2679,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2630,6 +2707,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2657,6 +2735,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2684,6 +2763,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2710,6 +2790,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2736,6 +2817,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2756,6 +2838,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getLifecyclePoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2780,6 +2863,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return lifecyclePoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2804,6 +2888,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(lifecyclePolicies_);
       }
     }
+
     /**
      *
      *
@@ -2824,6 +2909,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return getLifecyclePoliciesFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1.LifecyclePolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2845,6 +2931,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return getLifecyclePoliciesFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1.LifecyclePolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2917,6 +3004,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public int getEnvironmentsCount() {
       return internalGetEnvironments().getMap().size();
     }
+
     /**
      *
      *
@@ -2934,12 +3022,14 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetEnvironments().getMap().containsKey(key);
     }
+
     /** Use {@link #getEnvironmentsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnvironments() {
       return getEnvironmentsMap();
     }
+
     /**
      *
      *
@@ -2954,6 +3044,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getEnvironmentsMap() {
       return internalGetEnvironments().getMap();
     }
+
     /**
      *
      *
@@ -2975,6 +3066,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvironments().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3003,6 +3095,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvironments().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3020,12 +3113,14 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvironments().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironments() {
       bitField0_ |= 0x00000020;
       return internalGetMutableEnvironments().getMutableMap();
     }
+
     /**
      *
      *
@@ -3047,6 +3142,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -3095,6 +3191,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3111,6 +3208,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3127,6 +3225,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3149,6 +3248,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3168,6 +3268,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3190,6 +3291,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3212,6 +3314,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3231,6 +3334,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3354,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3270,6 +3375,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3289,6 +3395,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3308,6 +3415,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3320,6 +3428,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3336,6 +3445,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3353,6 +3463,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
+
     /**
      *
      *
@@ -3366,6 +3477,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1.Volume.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3379,6 +3491,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1.Volume.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3415,6 +3528,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.Environment.Builder,
             com.google.cloud.batch.v1.EnvironmentOrBuilder>
         environmentBuilder_;
+
     /**
      *
      *
@@ -3429,6 +3543,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3449,6 +3564,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3471,6 +3587,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3490,6 +3607,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3517,6 +3635,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3536,6 +3655,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3550,6 +3670,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3568,6 +3689,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             : environment_;
       }
     }
+
     /**
      *
      *

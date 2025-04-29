@@ -33,6 +33,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.ListTagValuesResponse)
     ListTagValuesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTagValuesResponse.newBuilder() to construct.
   private ListTagValuesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.TagValue> tagValues_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.resourcemanager.v3.TagValue> getTagValuesList() {
     return tagValues_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       getTagValuesOrBuilderList() {
     return tagValues_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
   public int getTagValuesCount() {
     return tagValues_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.resourcemanager.v3.TagValue getTagValues(int index) {
     return tagValues_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return tagValuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return tagValuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return tagValuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +891,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.resourcemanager.v3.TagValue.Builder getTagValuesBuilder(int index) {
       return getTagValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return tagValuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(tagValues_);
       }
     }
+
     /**
      *
      *
@@ -933,6 +957,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       return getTagValuesFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.TagValue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       return getTagValuesFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.TagValue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -980,6 +1006,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1004,6 +1031,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1056,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1051,6 +1080,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1100,7 @@ public final class ListTagValuesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

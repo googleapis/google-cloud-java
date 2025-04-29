@@ -41,6 +41,7 @@ public interface UpdateHttpRouteRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateHttpRouteRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateHttpRouteRequestOrBuilder
    * @return Whether the httpRoute field is set.
    */
   boolean hasHttpRoute();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateHttpRouteRequestOrBuilder
    * @return The httpRoute.
    */
   com.google.cloud.networkservices.v1.HttpRoute getHttpRoute();
+
   /**
    *
    *

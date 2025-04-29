@@ -41,6 +41,7 @@ public interface RuleDeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -118,6 +119,7 @@ public interface RuleDeploymentOrBuilder
    * @return Whether the archiveTime field is set.
    */
   boolean hasArchiveTime();
+
   /**
    *
    *
@@ -133,6 +135,7 @@ public interface RuleDeploymentOrBuilder
    * @return The archiveTime.
    */
   com.google.protobuf.Timestamp getArchiveTime();
+
   /**
    *
    *
@@ -159,6 +162,7 @@ public interface RuleDeploymentOrBuilder
    * @return The enum numeric value on the wire for runFrequency.
    */
   int getRunFrequencyValue();
+
   /**
    *
    *
@@ -186,6 +190,7 @@ public interface RuleDeploymentOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
+
   /**
    *
    *
@@ -218,6 +223,7 @@ public interface RuleDeploymentOrBuilder
    * @return A list containing the producerRules.
    */
   java.util.List<java.lang.String> getProducerRulesList();
+
   /**
    *
    *
@@ -235,6 +241,7 @@ public interface RuleDeploymentOrBuilder
    * @return The count of producerRules.
    */
   int getProducerRulesCount();
+
   /**
    *
    *
@@ -253,6 +260,7 @@ public interface RuleDeploymentOrBuilder
    * @return The producerRules at the given index.
    */
   java.lang.String getProducerRules(int index);
+
   /**
    *
    *
@@ -289,6 +297,7 @@ public interface RuleDeploymentOrBuilder
    * @return A list containing the consumerRules.
    */
   java.util.List<java.lang.String> getConsumerRulesList();
+
   /**
    *
    *
@@ -306,6 +315,7 @@ public interface RuleDeploymentOrBuilder
    * @return The count of consumerRules.
    */
   int getConsumerRulesCount();
+
   /**
    *
    *
@@ -324,6 +334,7 @@ public interface RuleDeploymentOrBuilder
    * @return The consumerRules at the given index.
    */
   java.lang.String getConsumerRules(int index);
+
   /**
    *
    *
@@ -360,6 +371,7 @@ public interface RuleDeploymentOrBuilder
    * @return Whether the lastAlertStatusChangeTime field is set.
    */
   boolean hasLastAlertStatusChangeTime();
+
   /**
    *
    *
@@ -377,6 +389,7 @@ public interface RuleDeploymentOrBuilder
    * @return The lastAlertStatusChangeTime.
    */
   com.google.protobuf.Timestamp getLastAlertStatusChangeTime();
+
   /**
    *
    *

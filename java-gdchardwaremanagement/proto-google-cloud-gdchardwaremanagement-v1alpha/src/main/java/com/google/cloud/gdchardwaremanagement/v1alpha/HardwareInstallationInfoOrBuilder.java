@@ -37,6 +37,7 @@ public interface HardwareInstallationInfoOrBuilder
    * @return The rackLocation.
    */
   java.lang.String getRackLocation();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface HardwareInstallationInfoOrBuilder
    * @return Whether the rackUnitDimensions field is set.
    */
   boolean hasRackUnitDimensions();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface HardwareInstallationInfoOrBuilder
    * @return The rackUnitDimensions.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Dimensions getRackUnitDimensions();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface HardwareInstallationInfoOrBuilder
    * @return Whether the rackSpace field is set.
    */
   boolean hasRackSpace();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface HardwareInstallationInfoOrBuilder
    * @return The rackSpace.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.RackSpace getRackSpace();
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public interface HardwareInstallationInfoOrBuilder
    * @return The enum numeric value on the wire for rackType.
    */
   int getRackTypeValue();
+
   /**
    *
    *

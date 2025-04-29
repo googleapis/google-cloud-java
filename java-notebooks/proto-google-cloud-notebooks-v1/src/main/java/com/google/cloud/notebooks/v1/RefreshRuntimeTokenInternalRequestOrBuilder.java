@@ -39,6 +39,7 @@ public interface RefreshRuntimeTokenInternalRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RefreshRuntimeTokenInternalRequestOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface LanguageInfoOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface LanguageInfoOrBuilder
    * @return The normalizedLanguageCode.
    */
   java.lang.String getNormalizedLanguageCode();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface LanguageInfoOrBuilder
    * @return The language.
    */
   java.lang.String getLanguage();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface LanguageInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

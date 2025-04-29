@@ -42,6 +42,7 @@ public interface ReadFeatureValuesRequestOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface ReadFeatureValuesRequestOrBuilder
    * @return The entityId.
    */
   java.lang.String getEntityId();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface ReadFeatureValuesRequestOrBuilder
    * @return Whether the featureSelector field is set.
    */
   boolean hasFeatureSelector();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface ReadFeatureValuesRequestOrBuilder
    * @return The featureSelector.
    */
   com.google.cloud.aiplatform.v1.FeatureSelector getFeatureSelector();
+
   /**
    *
    *

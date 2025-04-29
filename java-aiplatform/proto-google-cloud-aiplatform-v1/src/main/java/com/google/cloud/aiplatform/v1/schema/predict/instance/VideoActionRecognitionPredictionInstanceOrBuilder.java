@@ -37,6 +37,7 @@ public interface VideoActionRecognitionPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface VideoActionRecognitionPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface VideoActionRecognitionPredictionInstanceOrBuilder
    * @return The timeSegmentStart.
    */
   java.lang.String getTimeSegmentStart();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface VideoActionRecognitionPredictionInstanceOrBuilder
    * @return The timeSegmentEnd.
    */
   java.lang.String getTimeSegmentEnd();
+
   /**
    *
    *

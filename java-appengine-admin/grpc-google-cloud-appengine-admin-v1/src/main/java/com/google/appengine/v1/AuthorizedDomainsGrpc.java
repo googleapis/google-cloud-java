@@ -100,6 +100,19 @@ public final class AuthorizedDomainsGrpc {
     return AuthorizedDomainsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AuthorizedDomainsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AuthorizedDomainsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AuthorizedDomainsBlockingV2Stub>() {
+          @java.lang.Override
+          public AuthorizedDomainsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AuthorizedDomainsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AuthorizedDomainsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -214,6 +227,42 @@ public final class AuthorizedDomainsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AuthorizedDomains.
+   *
+   * <pre>
+   * Manages domains a user is authorized to administer. To authorize use of a
+   * domain, verify ownership via
+   * [Webmaster Central](https://www.google.com/webmasters/verification/home).
+   * </pre>
+   */
+  public static final class AuthorizedDomainsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AuthorizedDomainsBlockingV2Stub> {
+    private AuthorizedDomainsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AuthorizedDomainsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AuthorizedDomainsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all domains the user is authorized to administer.
+     * </pre>
+     */
+    public com.google.appengine.v1.ListAuthorizedDomainsResponse listAuthorizedDomains(
+        com.google.appengine.v1.ListAuthorizedDomainsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthorizedDomainsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AuthorizedDomains.
    *
    * <pre>
    * Manages domains a user is authorized to administer. To authorize use of a

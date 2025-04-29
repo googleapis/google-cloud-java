@@ -32,6 +32,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterBgp)
     RouterBgpOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouterBgp.newBuilder() to construct.
   private RouterBgp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,8 +103,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISE_MODE_VALUE = 0;
+
     /** <code>CUSTOM = 388595569;</code> */
     public static final int CUSTOM_VALUE = 388595569;
+
     /** <code>DEFAULT = 115302945;</code> */
     public static final int DEFAULT_VALUE = 115302945;
 
@@ -232,6 +235,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISED_GROUPS = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISED_GROUPS_VALUE = 0;
+
     /**
      *
      *
@@ -331,6 +335,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertiseMode_ = "";
+
   /**
    *
    *
@@ -347,6 +352,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdvertiseMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -371,6 +377,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -401,6 +408,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList advertisedGroups_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAdvertisedGroupsList() {
     return advertisedGroups_;
   }
+
   /**
    *
    *
@@ -431,6 +440,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public int getAdvertisedGroupsCount() {
     return advertisedGroups_.size();
   }
+
   /**
    *
    *
@@ -447,6 +457,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAdvertisedGroups(int index) {
     return advertisedGroups_.get(index);
   }
+
   /**
    *
    *
@@ -468,6 +479,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RouterAdvertisedIpRange> advertisedIpRanges_;
+
   /**
    *
    *
@@ -484,6 +496,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       getAdvertisedIpRangesList() {
     return advertisedIpRanges_;
   }
+
   /**
    *
    *
@@ -500,6 +513,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       getAdvertisedIpRangesOrBuilderList() {
     return advertisedIpRanges_;
   }
+
   /**
    *
    *
@@ -515,6 +529,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public int getAdvertisedIpRangesCount() {
     return advertisedIpRanges_.size();
   }
+
   /**
    *
    *
@@ -530,6 +545,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.RouterAdvertisedIpRange getAdvertisedIpRanges(int index) {
     return advertisedIpRanges_.get(index);
   }
+
   /**
    *
    *
@@ -549,6 +565,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASN_FIELD_NUMBER = 96892;
   private int asn_ = 0;
+
   /**
    *
    *
@@ -564,6 +581,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAsn() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -584,6 +602,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object identifierRange_ = "";
+
   /**
    *
    *
@@ -599,6 +618,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIdentifierRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -622,6 +642,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -648,6 +669,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KEEPALIVE_INTERVAL_FIELD_NUMBER = 276771516;
   private int keepaliveInterval_ = 0;
+
   /**
    *
    *
@@ -663,6 +685,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKeepaliveInterval() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -914,6 +937,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1226,6 +1250,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object advertiseMode_ = "";
+
     /**
      *
      *
@@ -1241,6 +1266,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdvertiseMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1264,6 +1290,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1287,6 +1314,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1309,6 +1337,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1356,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1390,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1376,6 +1407,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       advertisedGroups_.makeImmutable();
       return advertisedGroups_;
     }
+
     /**
      *
      *
@@ -1391,6 +1423,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public int getAdvertisedGroupsCount() {
       return advertisedGroups_.size();
     }
+
     /**
      *
      *
@@ -1407,6 +1440,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAdvertisedGroups(int index) {
       return advertisedGroups_.get(index);
     }
+
     /**
      *
      *
@@ -1423,6 +1457,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAdvertisedGroupsBytes(int index) {
       return advertisedGroups_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1447,6 +1482,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1506,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1527,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1547,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1571,6 +1610,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return advertisedIpRangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1589,6 +1629,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return advertisedIpRangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1648,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return advertisedIpRangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1632,6 +1674,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1697,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1679,6 +1723,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1749,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1726,6 +1772,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1795,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1770,6 +1818,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1840,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1812,6 +1862,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1827,6 +1878,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAdvertisedIpRangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1846,6 +1898,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return advertisedIpRangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1865,6 +1918,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(advertisedIpRanges_);
       }
     }
+
     /**
      *
      *
@@ -1881,6 +1935,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       return getAdvertisedIpRangesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.RouterAdvertisedIpRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1898,6 +1953,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.RouterAdvertisedIpRange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1935,6 +1991,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int asn_;
+
     /**
      *
      *
@@ -1950,6 +2007,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAsn() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1965,6 +2023,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public int getAsn() {
       return asn_;
     }
+
     /**
      *
      *
@@ -1984,6 +2043,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2063,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object identifierRange_ = "";
+
     /**
      *
      *
@@ -2017,6 +2078,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIdentifierRange() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2039,6 +2101,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2061,6 +2124,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2082,6 +2146,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2164,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2189,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int keepaliveInterval_;
+
     /**
      *
      *
@@ -2138,6 +2205,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKeepaliveInterval() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2153,6 +2221,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public int getKeepaliveInterval() {
       return keepaliveInterval_;
     }
+
     /**
      *
      *
@@ -2172,6 +2241,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

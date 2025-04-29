@@ -34,6 +34,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest)
     SearchProtectedResourcesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchProtectedResourcesRequest.newBuilder() to construct.
   private SearchProtectedResourcesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoKey_ = "";
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -298,6 +307,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getResourceTypesList() {
     return resourceTypes_;
   }
+
   /**
    *
    *
@@ -325,6 +335,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
   public int getResourceTypesCount() {
     return resourceTypes_.size();
   }
+
   /**
    *
    *
@@ -353,6 +364,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
   public java.lang.String getResourceTypes(int index) {
     return resourceTypes_.get(index);
   }
+
   /**
    *
    *
@@ -586,6 +598,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -841,6 +854,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object scope_ = "";
+
     /**
      *
      *
@@ -866,6 +880,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -891,6 +906,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -915,6 +931,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +980,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object cryptoKey_ = "";
+
     /**
      *
      *
@@ -987,6 +1006,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1032,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1057,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1078,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1101,6 +1125,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1123,6 +1148,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1171,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1173,6 +1200,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1229,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1257,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1281,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1320,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1317,6 +1349,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       resourceTypes_.makeImmutable();
       return resourceTypes_;
     }
+
     /**
      *
      *
@@ -1344,6 +1377,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     public int getResourceTypesCount() {
       return resourceTypes_.size();
     }
+
     /**
      *
      *
@@ -1372,6 +1406,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     public java.lang.String getResourceTypes(int index) {
       return resourceTypes_.get(index);
     }
+
     /**
      *
      *
@@ -1400,6 +1435,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
       return resourceTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1436,6 +1472,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1508,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1541,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1573,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

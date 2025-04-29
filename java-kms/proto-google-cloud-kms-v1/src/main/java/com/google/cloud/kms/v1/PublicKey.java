@@ -35,6 +35,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.PublicKey)
     PublicKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublicKey.newBuilder() to construct.
   private PublicKey(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -146,6 +147,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
      * <code>PUBLIC_KEY_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int PUBLIC_KEY_FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -160,6 +162,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
      * <code>PEM = 1;</code>
      */
     public static final int PEM_VALUE = 1;
+
     /**
      *
      *
@@ -263,6 +266,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pem_ = "";
+
   /**
    *
    *
@@ -290,6 +294,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       return s;
     }
   }
+
   /**
    *
    *
@@ -320,6 +325,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   public static final int ALGORITHM_FIELD_NUMBER = 2;
   private int algorithm_ = 0;
+
   /**
    *
    *
@@ -337,6 +343,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
   public int getAlgorithmValue() {
     return algorithm_;
   }
+
   /**
    *
    *
@@ -361,6 +368,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   public static final int PEM_CRC32C_FIELD_NUMBER = 3;
   private com.google.protobuf.Int64Value pemCrc32C_;
+
   /**
    *
    *
@@ -389,6 +397,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
   public boolean hasPemCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -417,6 +426,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
   public com.google.protobuf.Int64Value getPemCrc32C() {
     return pemCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : pemCrc32C_;
   }
+
   /**
    *
    *
@@ -448,6 +458,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -475,6 +486,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       return s;
     }
   }
+
   /**
    *
    *
@@ -505,6 +517,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
   private int protectionLevel_ = 0;
+
   /**
    *
    *
@@ -521,6 +534,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
+
   /**
    *
    *
@@ -542,6 +556,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   public static final int PUBLIC_KEY_FORMAT_FIELD_NUMBER = 7;
   private int publicKeyFormat_ = 0;
+
   /**
    *
    *
@@ -560,6 +575,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
   public int getPublicKeyFormatValue() {
     return publicKeyFormat_;
   }
+
   /**
    *
    *
@@ -583,6 +599,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 8;
   private com.google.cloud.kms.v1.ChecksummedData publicKey_;
+
   /**
    *
    *
@@ -600,6 +617,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
   public boolean hasPublicKey() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -619,6 +637,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         ? com.google.cloud.kms.v1.ChecksummedData.getDefaultInstance()
         : publicKey_;
   }
+
   /**
    *
    *
@@ -870,6 +889,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1156,6 +1176,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     private int bitField0_;
 
     private java.lang.Object pem_ = "";
+
     /**
      *
      *
@@ -1182,6 +1203,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1230,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1256,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1278,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1307,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     }
 
     private int algorithm_ = 0;
+
     /**
      *
      *
@@ -1299,6 +1325,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     public int getAlgorithmValue() {
       return algorithm_;
     }
+
     /**
      *
      *
@@ -1319,6 +1346,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1368,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1364,6 +1393,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1420,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         pemCrc32CBuilder_;
+
     /**
      *
      *
@@ -1417,6 +1448,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     public boolean hasPemCrc32C() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1450,6 +1482,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         return pemCrc32CBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1485,6 +1518,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1551,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1557,6 +1592,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       }
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1625,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1653,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return getPemCrc32CFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1647,6 +1685,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
             : pemCrc32C_;
       }
     }
+
     /**
      *
      *
@@ -1687,6 +1726,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1713,6 +1753,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1739,6 +1780,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1806,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1828,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1857,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     }
 
     private int protectionLevel_ = 0;
+
     /**
      *
      *
@@ -1829,6 +1874,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
+
     /**
      *
      *
@@ -1848,6 +1894,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1913,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1888,6 +1936,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1908,6 +1957,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     }
 
     private int publicKeyFormat_ = 0;
+
     /**
      *
      *
@@ -1926,6 +1976,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     public int getPublicKeyFormatValue() {
       return publicKeyFormat_;
     }
+
     /**
      *
      *
@@ -1947,6 +1998,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2021,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
           ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1993,6 +2046,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2074,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
             com.google.cloud.kms.v1.ChecksummedData.Builder,
             com.google.cloud.kms.v1.ChecksummedDataOrBuilder>
         publicKeyBuilder_;
+
     /**
      *
      *
@@ -2036,6 +2091,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
     public boolean hasPublicKey() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2058,6 +2114,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
         return publicKeyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2082,6 +2139,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2103,6 +2161,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2132,6 +2191,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       }
       return this;
     }
+
     /**
      *
      *
@@ -2153,6 +2213,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2169,6 +2230,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
       onChanged();
       return getPublicKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2189,6 +2251,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV4
             : publicKey_;
       }
     }
+
     /**
      *
      *

@@ -32,6 +32,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy)
     InstanceGroupManagerStandbyPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerStandbyPolicy.newBuilder() to construct.
   private InstanceGroupManagerStandbyPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -116,6 +117,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      * <code>MANUAL = 119397318;</code>
      */
     public static final int MANUAL_VALUE = 119397318;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
   private int bitField0_;
   public static final int INITIAL_DELAY_SEC_FIELD_NUMBER = 263207002;
   private int initialDelaySec_ = 0;
+
   /**
    *
    *
@@ -240,6 +244,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
   public boolean hasInitialDelaySec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
+
   /**
    *
    *
@@ -276,6 +282,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
   public boolean hasMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -300,6 +307,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -504,6 +512,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -707,6 +716,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     private int bitField0_;
 
     private int initialDelaySec_;
+
     /**
      *
      *
@@ -722,6 +732,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     public boolean hasInitialDelaySec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -737,6 +748,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     public int getInitialDelaySec() {
       return initialDelaySec_;
     }
+
     /**
      *
      *
@@ -756,6 +768,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     }
 
     private java.lang.Object mode_ = "";
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
     public boolean hasMode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class CreateServiceConnectionTokenRequest
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.CreateServiceConnectionTokenRequest)
     CreateServiceConnectionTokenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateServiceConnectionTokenRequest.newBuilder() to construct.
   private CreateServiceConnectionTokenRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class CreateServiceConnectionTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateServiceConnectionTokenRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class CreateServiceConnectionTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceConnectionTokenId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateServiceConnectionTokenRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class CreateServiceConnectionTokenRequest
 
   public static final int SERVICE_CONNECTION_TOKEN_FIELD_NUMBER = 3;
   private com.google.cloud.networkconnectivity.v1.ServiceConnectionToken serviceConnectionToken_;
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class CreateServiceConnectionTokenRequest
   public boolean hasServiceConnectionToken() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class CreateServiceConnectionTokenRequest
         ? com.google.cloud.networkconnectivity.v1.ServiceConnectionToken.getDefaultInstance()
         : serviceConnectionToken_;
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class CreateServiceConnectionTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -282,6 +291,7 @@ public final class CreateServiceConnectionTokenRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -519,6 +529,7 @@ public final class CreateServiceConnectionTokenRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -777,6 +788,7 @@ public final class CreateServiceConnectionTokenRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -802,6 +814,7 @@ public final class CreateServiceConnectionTokenRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +840,7 @@ public final class CreateServiceConnectionTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -851,6 +865,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +886,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +914,7 @@ public final class CreateServiceConnectionTokenRequest
     }
 
     private java.lang.Object serviceConnectionTokenId_ = "";
+
     /**
      *
      *
@@ -925,6 +942,7 @@ public final class CreateServiceConnectionTokenRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -952,6 +970,7 @@ public final class CreateServiceConnectionTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -978,6 +997,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1020,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1055,7 @@ public final class CreateServiceConnectionTokenRequest
             com.google.cloud.networkconnectivity.v1.ServiceConnectionToken.Builder,
             com.google.cloud.networkconnectivity.v1.ServiceConnectionTokenOrBuilder>
         serviceConnectionTokenBuilder_;
+
     /**
      *
      *
@@ -1050,6 +1072,7 @@ public final class CreateServiceConnectionTokenRequest
     public boolean hasServiceConnectionToken() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1073,6 +1096,7 @@ public final class CreateServiceConnectionTokenRequest
         return serviceConnectionTokenBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1122,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1145,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1178,7 @@ public final class CreateServiceConnectionTokenRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1200,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1218,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return getServiceConnectionTokenFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1211,6 +1240,7 @@ public final class CreateServiceConnectionTokenRequest
             : serviceConnectionToken_;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1270,7 @@ public final class CreateServiceConnectionTokenRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1274,6 +1305,7 @@ public final class CreateServiceConnectionTokenRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1340,7 @@ public final class CreateServiceConnectionTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1374,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1404,7 @@ public final class CreateServiceConnectionTokenRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

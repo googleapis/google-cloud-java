@@ -41,6 +41,7 @@ public interface AnalyticsAccountLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface AnalyticsAccountLinkOrBuilder
    * @return The analyticsAccount.
    */
   java.lang.String getAnalyticsAccount();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface AnalyticsAccountLinkOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface AnalyticsAccountLinkOrBuilder
    * @return The enum numeric value on the wire for linkVerificationState.
    */
   int getLinkVerificationStateValue();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface ReloadDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ReloadDocumentRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ReloadDocumentRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource();
+
   /**
    *
    *

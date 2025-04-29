@@ -36,6 +36,7 @@ public interface AssetReferenceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AssetReferenceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AssetReferenceOrBuilder
    * @return The inputs.
    */
   com.google.cloud.privatecatalog.v1beta1.Inputs getInputs();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface AssetReferenceOrBuilder
    * @return The enum numeric value on the wire for validationStatus.
    */
   int getValidationStatusValue();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the validationOperation field is set.
    */
   boolean hasValidationOperation();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface AssetReferenceOrBuilder
    * @return The validationOperation.
    */
   com.google.longrunning.Operation getValidationOperation();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface AssetReferenceOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface AssetReferenceOrBuilder
    */
   @java.lang.Deprecated
   boolean hasGcsPath();
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public interface AssetReferenceOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getGcsPath();
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the gitSource field is set.
    */
   boolean hasGitSource();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface AssetReferenceOrBuilder
    * @return The gitSource.
    */
   com.google.cloud.privatecatalog.v1beta1.GitSource getGitSource();
+
   /**
    *
    *
@@ -328,6 +341,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -342,6 +356,7 @@ public interface AssetReferenceOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.privatecatalog.v1beta1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -368,6 +383,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -381,6 +397,7 @@ public interface AssetReferenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -406,6 +423,7 @@ public interface AssetReferenceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -419,6 +437,7 @@ public interface AssetReferenceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -446,6 +465,7 @@ public interface AssetReferenceOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getVersion();
+
   /**
    *
    *

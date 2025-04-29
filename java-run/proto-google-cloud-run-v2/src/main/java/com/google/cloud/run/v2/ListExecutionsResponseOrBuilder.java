@@ -34,6 +34,7 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Execution executions = 1;</code>
    */
   java.util.List<com.google.cloud.run.v2.Execution> getExecutionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Execution executions = 1;</code>
    */
   com.google.cloud.run.v2.Execution getExecutions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Execution executions = 1;</code>
    */
   int getExecutionsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.run.v2.Execution executions = 1;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ExecutionOrBuilder> getExecutionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListExecutionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

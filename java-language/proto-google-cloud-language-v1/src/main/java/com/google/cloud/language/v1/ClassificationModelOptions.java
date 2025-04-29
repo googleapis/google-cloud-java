@@ -33,6 +33,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.ClassificationModelOptions)
     ClassificationModelOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClassificationModelOptions.newBuilder() to construct.
   private ClassificationModelOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.ClassificationModelOptions.V1Model)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.language.v1.ClassificationModelOptions.V1Model)
       V1ModelOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use V1Model.newBuilder() to construct.
     private V1Model(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -260,6 +263,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -511,6 +515,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
      * @return The enum numeric value on the wire for contentCategoriesVersion.
      */
     int getContentCategoriesVersionValue();
+
     /**
      *
      *
@@ -527,6 +532,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     com.google.cloud.language.v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion
         getContentCategoriesVersion();
   }
+
   /**
    *
    *
@@ -541,6 +547,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.language.v1.ClassificationModelOptions.V2Model)
       V2ModelOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use V2Model.newBuilder() to construct.
     private V2Model(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -627,6 +634,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
        * <code>CONTENT_CATEGORIES_VERSION_UNSPECIFIED = 0;</code>
        */
       public static final int CONTENT_CATEGORIES_VERSION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -637,6 +645,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
        * <code>V1 = 1;</code>
        */
       public static final int V1_VALUE = 1;
+
       /**
        *
        *
@@ -738,6 +747,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
 
     public static final int CONTENT_CATEGORIES_VERSION_FIELD_NUMBER = 1;
     private int contentCategoriesVersion_ = 0;
+
     /**
      *
      *
@@ -755,6 +765,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     public int getContentCategoriesVersionValue() {
       return contentCategoriesVersion_;
     }
+
     /**
      *
      *
@@ -949,6 +960,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1139,6 +1151,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       private int bitField0_;
 
       private int contentCategoriesVersion_ = 0;
+
       /**
        *
        *
@@ -1156,6 +1169,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       public int getContentCategoriesVersionValue() {
         return contentCategoriesVersion_;
       }
+
       /**
        *
        *
@@ -1176,6 +1190,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1202,6 +1217,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
                 .ContentCategoriesVersion.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1227,6 +1243,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1331,6 +1348,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     private ModelTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1364,6 +1382,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
   }
 
   public static final int V1_MODEL_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1381,6 +1400,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
   public boolean hasV1Model() {
     return modelTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -1401,6 +1421,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     }
     return com.google.cloud.language.v1.ClassificationModelOptions.V1Model.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1422,6 +1443,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
   }
 
   public static final int V2_MODEL_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1438,6 +1460,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
   public boolean hasV2Model() {
     return modelTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -1457,6 +1480,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     }
     return com.google.cloud.language.v1.ClassificationModelOptions.V2Model.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1668,6 +1692,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1904,6 +1929,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
             com.google.cloud.language.v1.ClassificationModelOptions.V1Model.Builder,
             com.google.cloud.language.v1.ClassificationModelOptions.V1ModelOrBuilder>
         v1ModelBuilder_;
+
     /**
      *
      *
@@ -1921,6 +1947,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     public boolean hasV1Model() {
       return modelTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1948,6 +1975,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         return com.google.cloud.language.v1.ClassificationModelOptions.V1Model.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1973,6 +2001,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       modelTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1995,6 +2024,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       modelTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2032,6 +2062,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       modelTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2090,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2106,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         getV1ModelBuilder() {
       return getV1ModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2097,6 +2130,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         return com.google.cloud.language.v1.ClassificationModelOptions.V1Model.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2138,6 +2172,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
             com.google.cloud.language.v1.ClassificationModelOptions.V2Model.Builder,
             com.google.cloud.language.v1.ClassificationModelOptions.V2ModelOrBuilder>
         v2ModelBuilder_;
+
     /**
      *
      *
@@ -2154,6 +2189,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     public boolean hasV2Model() {
       return modelTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -2180,6 +2216,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         return com.google.cloud.language.v1.ClassificationModelOptions.V2Model.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2204,6 +2241,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       modelTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2263,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       modelTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2261,6 +2300,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       modelTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2287,6 +2327,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2342,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         getV2ModelBuilder() {
       return getV2ModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2323,6 +2365,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         return com.google.cloud.language.v1.ClassificationModelOptions.V2Model.getDefaultInstance();
       }
     }
+
     /**
      *
      *

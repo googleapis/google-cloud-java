@@ -34,6 +34,7 @@ public final class DeleteDeploymentResourcePoolRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DeleteDeploymentResourcePoolRequest)
     DeleteDeploymentResourcePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDeploymentResourcePoolRequest.newBuilder() to construct.
   private DeleteDeploymentResourcePoolRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DeleteDeploymentResourcePoolRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class DeleteDeploymentResourcePoolRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +288,7 @@ public final class DeleteDeploymentResourcePoolRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -476,6 +480,7 @@ public final class DeleteDeploymentResourcePoolRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -502,6 +507,7 @@ public final class DeleteDeploymentResourcePoolRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -528,6 +534,7 @@ public final class DeleteDeploymentResourcePoolRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -553,6 +560,7 @@ public final class DeleteDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class DeleteDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

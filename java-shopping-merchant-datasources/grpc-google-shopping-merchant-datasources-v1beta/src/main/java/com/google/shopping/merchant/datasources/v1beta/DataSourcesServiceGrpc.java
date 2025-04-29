@@ -334,6 +334,19 @@ public final class DataSourcesServiceGrpc {
     return DataSourcesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataSourcesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataSourcesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataSourcesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DataSourcesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataSourcesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataSourcesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -616,6 +629,112 @@ public final class DataSourcesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataSourcesService.
+   *
+   * <pre>
+   * Service to manage primary, supplemental, inventory and other data sources.
+   * See more in the [Merchant
+   * Center](https://support.google.com/merchants/answer/7439058) help article.
+   * </pre>
+   */
+  public static final class DataSourcesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataSourcesServiceBlockingV2Stub> {
+    private DataSourcesServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataSourcesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataSourcesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the data source configuration for the given account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.DataSource getDataSource(
+        com.google.shopping.merchant.datasources.v1beta.GetDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the configurations for data sources for the given account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.ListDataSourcesResponse listDataSources(
+        com.google.shopping.merchant.datasources.v1beta.ListDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates the new data source configuration for the given account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.DataSource createDataSource(
+        com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing data source configuration. The fields that are
+     * set in the update mask but not provided in the resource will be deleted.
+     * </pre>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.DataSource updateDataSource(
+        com.google.shopping.merchant.datasources.v1beta.UpdateDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data source from your Merchant Center account.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataSource(
+        com.google.shopping.merchant.datasources.v1beta.DeleteDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs the data fetch immediately (even outside fetch schedule) on a
+     * data source from your Merchant Center Account. If you need to call
+     * this method more than once per day, you should use the Products service to
+     * update your product data instead.
+     * This method only works on data sources with a file input set.
+     * </pre>
+     */
+    public com.google.protobuf.Empty fetchDataSource(
+        com.google.shopping.merchant.datasources.v1beta.FetchDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchDataSourceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataSourcesService.
    *
    * <pre>
    * Service to manage primary, supplemental, inventory and other data sources.

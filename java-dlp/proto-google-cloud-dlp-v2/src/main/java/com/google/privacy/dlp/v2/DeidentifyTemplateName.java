@@ -345,7 +345,8 @@ public class DeidentifyTemplateName implements ResourceName {
     private Builder(DeidentifyTemplateName deidentifyTemplateName) {
       Preconditions.checkArgument(
           Objects.equals(deidentifyTemplateName.pathTemplate, ORGANIZATION_DEIDENTIFY_TEMPLATE),
-          "toBuilder is only supported when DeidentifyTemplateName has the pattern of organizations/{organization}/deidentifyTemplates/{deidentify_template}");
+          "toBuilder is only supported when DeidentifyTemplateName has the pattern of"
+              + " organizations/{organization}/deidentifyTemplates/{deidentify_template}");
       this.organization = deidentifyTemplateName.organization;
       this.deidentifyTemplate = deidentifyTemplateName.deidentifyTemplate;
     }

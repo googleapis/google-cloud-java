@@ -36,6 +36,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicyRuleResource field is set.
    */
   boolean hasFirewallPolicyRuleResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicyRuleResource.
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getFirewallPolicyRuleResource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface PatchPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

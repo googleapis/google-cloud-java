@@ -263,6 +263,19 @@ public final class AssetServiceGrpc {
     return AssetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AssetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AssetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AssetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -477,6 +490,92 @@ public final class AssetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AssetService.
+   *
+   * <pre>
+   * Asset service definition.
+   * </pre>
+   */
+  public static final class AssetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingV2Stub> {
+    private AssetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AssetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AssetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a feed in a parent project/folder/organization to listen to its
+     * asset updates.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1p2beta1.Feed createFeed(
+        com.google.cloud.asset.v1p2beta1.CreateFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about an asset feed.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1p2beta1.Feed getFeed(
+        com.google.cloud.asset.v1p2beta1.GetFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all asset feeds in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1p2beta1.ListFeedsResponse listFeeds(
+        com.google.cloud.asset.v1p2beta1.ListFeedsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeedsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an asset feed configuration.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1p2beta1.Feed updateFeed(
+        com.google.cloud.asset.v1p2beta1.UpdateFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset feed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFeed(
+        com.google.cloud.asset.v1p2beta1.DeleteFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeedMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.

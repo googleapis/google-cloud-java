@@ -245,6 +245,19 @@ public final class ProductReviewsServiceGrpc {
     return ProductReviewsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProductReviewsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProductReviewsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductReviewsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProductReviewsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductReviewsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProductReviewsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -449,6 +462,80 @@ public final class ProductReviewsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProductReviewsService.
+   *
+   * <pre>
+   * Service to manage product reviews.
+   * </pre>
+   */
+  public static final class ProductReviewsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProductReviewsServiceBlockingV2Stub> {
+    private ProductReviewsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProductReviewsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProductReviewsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a product review.
+     * </pre>
+     */
+    public com.google.shopping.merchant.reviews.v1beta.ProductReview getProductReview(
+        com.google.shopping.merchant.reviews.v1beta.GetProductReviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductReviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists product reviews.
+     * </pre>
+     */
+    public com.google.shopping.merchant.reviews.v1beta.ListProductReviewsResponse
+        listProductReviews(
+            com.google.shopping.merchant.reviews.v1beta.ListProductReviewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProductReviewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a product review.
+     * </pre>
+     */
+    public com.google.shopping.merchant.reviews.v1beta.ProductReview insertProductReview(
+        com.google.shopping.merchant.reviews.v1beta.InsertProductReviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInsertProductReviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a product review.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteProductReview(
+        com.google.shopping.merchant.reviews.v1beta.DeleteProductReviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProductReviewMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProductReviewsService.
    *
    * <pre>
    * Service to manage product reviews.

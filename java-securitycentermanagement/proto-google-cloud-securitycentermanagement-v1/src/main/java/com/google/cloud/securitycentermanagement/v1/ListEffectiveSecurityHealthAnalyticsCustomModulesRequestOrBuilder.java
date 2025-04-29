@@ -43,6 +43,7 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public interface ListEffectiveSecurityHealthAnalyticsCustomModulesRequestOrBuild
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

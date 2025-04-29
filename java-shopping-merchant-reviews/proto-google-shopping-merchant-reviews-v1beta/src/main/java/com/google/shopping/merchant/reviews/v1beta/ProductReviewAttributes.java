@@ -33,6 +33,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ProductReviewAttributes)
     ProductReviewAttributesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductReviewAttributes.newBuilder() to construct.
   private ProductReviewAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,6 +141,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      * <code>COLLECTION_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int COLLECTION_METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -151,6 +153,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      * <code>UNSOLICITED = 1;</code>
      */
     public static final int UNSOLICITED_VALUE = 1;
+
     /**
      *
      *
@@ -269,6 +272,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -297,6 +301,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      * @return The link.
      */
     java.lang.String getLink();
+
     /**
      *
      *
@@ -311,6 +316,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getLinkBytes();
   }
+
   /**
    *
    *
@@ -326,6 +332,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLink)
       ReviewLinkOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReviewLink.newBuilder() to construct.
     private ReviewLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -412,6 +419,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -422,6 +430,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
        * <code>SINGLETON = 1;</code>
        */
       public static final int SINGLETON_VALUE = 1;
+
       /**
        *
        *
@@ -521,6 +530,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -538,6 +548,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -567,6 +578,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object link_ = "";
+
     /**
      *
      *
@@ -591,6 +603,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return s;
       }
     }
+
     /**
      *
      *
@@ -800,6 +813,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1017,6 +1031,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1034,6 +1049,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1054,6 +1070,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1078,6 +1095,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1103,6 +1121,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1124,6 +1143,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
 
       private java.lang.Object link_ = "";
+
       /**
        *
        *
@@ -1147,6 +1167,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1170,6 +1191,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1192,6 +1214,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1210,6 +1233,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1308,6 +1332,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object aggregatorName_ = "";
+
   /**
    *
    *
@@ -1327,6 +1352,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasAggregatorName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1354,6 +1380,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1386,6 +1413,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subclientName_ = "";
+
   /**
    *
    *
@@ -1405,6 +1433,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasSubclientName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1432,6 +1461,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1464,6 +1494,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publisherName_ = "";
+
   /**
    *
    *
@@ -1483,6 +1514,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasPublisherName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1510,6 +1542,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1542,6 +1575,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publisherFavicon_ = "";
+
   /**
    *
    *
@@ -1559,6 +1593,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasPublisherFavicon() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1584,6 +1619,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1614,6 +1650,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reviewerId_ = "";
+
   /**
    *
    *
@@ -1632,6 +1669,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewerId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1658,6 +1696,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1687,6 +1726,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int REVIEWER_IS_ANONYMOUS_FIELD_NUMBER = 6;
   private boolean reviewerIsAnonymous_ = false;
+
   /**
    *
    *
@@ -1702,6 +1742,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewerIsAnonymous() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1722,6 +1763,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reviewerUsername_ = "";
+
   /**
    *
    *
@@ -1737,6 +1779,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewerUsername() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1760,6 +1803,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1788,6 +1832,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reviewLanguage_ = "";
+
   /**
    *
    *
@@ -1803,6 +1848,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewLanguage() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1826,6 +1872,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1854,6 +1901,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reviewCountry_ = "";
+
   /**
    *
    *
@@ -1870,6 +1918,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewCountry() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1894,6 +1943,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1921,6 +1971,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int REVIEW_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp reviewTime_;
+
   /**
    *
    *
@@ -1937,6 +1988,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewTime() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -1953,6 +2005,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getReviewTime() {
     return reviewTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reviewTime_;
   }
+
   /**
    *
    *
@@ -1972,6 +2025,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -1987,6 +2041,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -2010,6 +2065,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -2038,6 +2094,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -2053,6 +2110,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasContent() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -2076,6 +2134,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -2105,6 +2164,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList pros_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2120,6 +2180,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getProsList() {
     return pros_;
   }
+
   /**
    *
    *
@@ -2135,6 +2196,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getProsCount() {
     return pros_.size();
   }
+
   /**
    *
    *
@@ -2151,6 +2213,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getPros(int index) {
     return pros_.get(index);
   }
+
   /**
    *
    *
@@ -2173,6 +2236,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList cons_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2188,6 +2252,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getConsList() {
     return cons_;
   }
+
   /**
    *
    *
@@ -2203,6 +2268,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getConsCount() {
     return cons_.size();
   }
+
   /**
    *
    *
@@ -2219,6 +2285,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getCons(int index) {
     return cons_.get(index);
   }
+
   /**
    *
    *
@@ -2239,6 +2306,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public static final int REVIEW_LINK_FIELD_NUMBER = 15;
   private com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLink
       reviewLink_;
+
   /**
    *
    *
@@ -2256,6 +2324,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasReviewLink() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -2277,6 +2346,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
             .getDefaultInstance()
         : reviewLink_;
   }
+
   /**
    *
    *
@@ -2302,6 +2372,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList reviewerImageLinks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2318,6 +2389,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getReviewerImageLinksList() {
     return reviewerImageLinks_;
   }
+
   /**
    *
    *
@@ -2334,6 +2406,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getReviewerImageLinksCount() {
     return reviewerImageLinks_.size();
   }
+
   /**
    *
    *
@@ -2351,6 +2424,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getReviewerImageLinks(int index) {
     return reviewerImageLinks_.get(index);
   }
+
   /**
    *
    *
@@ -2371,6 +2445,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int MIN_RATING_FIELD_NUMBER = 17;
   private long minRating_ = 0L;
+
   /**
    *
    *
@@ -2388,6 +2463,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasMinRating() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -2408,6 +2484,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int MAX_RATING_FIELD_NUMBER = 18;
   private long maxRating_ = 0L;
+
   /**
    *
    *
@@ -2424,6 +2501,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasMaxRating() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -2443,6 +2521,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int RATING_FIELD_NUMBER = 19;
   private double rating_ = 0D;
+
   /**
    *
    *
@@ -2458,6 +2537,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasRating() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -2479,6 +2559,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList productNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2493,6 +2574,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getProductNamesList() {
     return productNames_;
   }
+
   /**
    *
    *
@@ -2507,6 +2589,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getProductNamesCount() {
     return productNames_.size();
   }
+
   /**
    *
    *
@@ -2522,6 +2605,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getProductNames(int index) {
     return productNames_.get(index);
   }
+
   /**
    *
    *
@@ -2543,6 +2627,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList productLinks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2559,6 +2644,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getProductLinksList() {
     return productLinks_;
   }
+
   /**
    *
    *
@@ -2575,6 +2661,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getProductLinksCount() {
     return productLinks_.size();
   }
+
   /**
    *
    *
@@ -2592,6 +2679,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getProductLinks(int index) {
     return productLinks_.get(index);
   }
+
   /**
    *
    *
@@ -2615,6 +2703,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList asins_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2630,6 +2719,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getAsinsList() {
     return asins_;
   }
+
   /**
    *
    *
@@ -2645,6 +2735,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getAsinsCount() {
     return asins_.size();
   }
+
   /**
    *
    *
@@ -2661,6 +2752,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getAsins(int index) {
     return asins_.get(index);
   }
+
   /**
    *
    *
@@ -2683,6 +2775,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList gtins_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2698,6 +2791,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getGtinsList() {
     return gtins_;
   }
+
   /**
    *
    *
@@ -2713,6 +2807,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getGtinsCount() {
     return gtins_.size();
   }
+
   /**
    *
    *
@@ -2729,6 +2824,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getGtins(int index) {
     return gtins_.get(index);
   }
+
   /**
    *
    *
@@ -2751,6 +2847,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList mpns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2766,6 +2863,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getMpnsList() {
     return mpns_;
   }
+
   /**
    *
    *
@@ -2781,6 +2879,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getMpnsCount() {
     return mpns_.size();
   }
+
   /**
    *
    *
@@ -2797,6 +2896,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getMpns(int index) {
     return mpns_.get(index);
   }
+
   /**
    *
    *
@@ -2819,6 +2919,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList skus_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2834,6 +2935,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getSkusList() {
     return skus_;
   }
+
   /**
    *
    *
@@ -2849,6 +2951,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getSkusCount() {
     return skus_.size();
   }
+
   /**
    *
    *
@@ -2865,6 +2968,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getSkus(int index) {
     return skus_.get(index);
   }
+
   /**
    *
    *
@@ -2887,6 +2991,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList brands_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2901,6 +3006,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getBrandsList() {
     return brands_;
   }
+
   /**
    *
    *
@@ -2915,6 +3021,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getBrandsCount() {
     return brands_.size();
   }
+
   /**
    *
    *
@@ -2930,6 +3037,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public java.lang.String getBrands(int index) {
     return brands_.get(index);
   }
+
   /**
    *
    *
@@ -2948,6 +3056,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int IS_SPAM_FIELD_NUMBER = 27;
   private boolean isSpam_ = false;
+
   /**
    *
    *
@@ -2964,6 +3073,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public boolean hasIsSpam() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -2983,6 +3093,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   public static final int COLLECTION_METHOD_FIELD_NUMBER = 28;
   private int collectionMethod_ = 0;
+
   /**
    *
    *
@@ -3000,6 +3111,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
   public int getCollectionMethodValue() {
     return collectionMethod_;
   }
+
   /**
    *
    *
@@ -3029,6 +3141,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object transactionId_ = "";
+
   /**
    *
    *
@@ -3054,6 +3167,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -3658,6 +3772,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4360,6 +4475,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object aggregatorName_ = "";
+
     /**
      *
      *
@@ -4378,6 +4494,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasAggregatorName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4404,6 +4521,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4430,6 +4548,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4455,6 +4574,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4476,6 +4596,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4504,6 +4625,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object subclientName_ = "";
+
     /**
      *
      *
@@ -4522,6 +4644,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasSubclientName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4548,6 +4671,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4574,6 +4698,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4599,6 +4724,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4620,6 +4746,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4648,6 +4775,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object publisherName_ = "";
+
     /**
      *
      *
@@ -4666,6 +4794,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasPublisherName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4692,6 +4821,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4718,6 +4848,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4743,6 +4874,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4764,6 +4896,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4792,6 +4925,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object publisherFavicon_ = "";
+
     /**
      *
      *
@@ -4808,6 +4942,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasPublisherFavicon() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4832,6 +4967,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4856,6 +4992,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4879,6 +5016,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4898,6 +5036,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4924,6 +5063,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object reviewerId_ = "";
+
     /**
      *
      *
@@ -4941,6 +5081,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewerId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4966,6 +5107,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4991,6 +5133,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5015,6 +5158,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5035,6 +5179,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5062,6 +5207,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private boolean reviewerIsAnonymous_;
+
     /**
      *
      *
@@ -5078,6 +5224,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewerIsAnonymous() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5094,6 +5241,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean getReviewerIsAnonymous() {
       return reviewerIsAnonymous_;
     }
+
     /**
      *
      *
@@ -5114,6 +5262,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5134,6 +5283,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object reviewerUsername_ = "";
+
     /**
      *
      *
@@ -5148,6 +5298,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewerUsername() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -5170,6 +5321,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5192,6 +5344,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5213,6 +5366,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5230,6 +5384,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5254,6 +5409,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object reviewLanguage_ = "";
+
     /**
      *
      *
@@ -5268,6 +5424,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewLanguage() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -5290,6 +5447,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5312,6 +5470,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5333,6 +5492,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5350,6 +5510,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5374,6 +5535,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object reviewCountry_ = "";
+
     /**
      *
      *
@@ -5389,6 +5551,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewCountry() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -5412,6 +5575,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5435,6 +5599,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5457,6 +5622,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5475,6 +5641,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5505,6 +5672,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         reviewTimeBuilder_;
+
     /**
      *
      *
@@ -5520,6 +5688,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -5541,6 +5710,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return reviewTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5564,6 +5734,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5584,6 +5755,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5612,6 +5784,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -5632,6 +5805,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5647,6 +5821,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return getReviewTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5666,6 +5841,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
             : reviewTime_;
       }
     }
+
     /**
      *
      *
@@ -5694,6 +5870,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -5708,6 +5885,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5730,6 +5908,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5752,6 +5931,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5773,6 +5953,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5790,6 +5971,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5814,6 +5996,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -5828,6 +6011,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasContent() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -5850,6 +6034,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5872,6 +6057,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5893,6 +6079,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5910,6 +6097,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5942,6 +6130,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00001000;
     }
+
     /**
      *
      *
@@ -5958,6 +6147,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       pros_.makeImmutable();
       return pros_;
     }
+
     /**
      *
      *
@@ -5973,6 +6163,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getProsCount() {
       return pros_.size();
     }
+
     /**
      *
      *
@@ -5989,6 +6180,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getPros(int index) {
       return pros_.get(index);
     }
+
     /**
      *
      *
@@ -6005,6 +6197,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getProsBytes(int index) {
       return pros_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6029,6 +6222,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6052,6 +6246,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6072,6 +6267,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6091,6 +6287,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6125,6 +6322,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00002000;
     }
+
     /**
      *
      *
@@ -6141,6 +6339,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       cons_.makeImmutable();
       return cons_;
     }
+
     /**
      *
      *
@@ -6156,6 +6355,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getConsCount() {
       return cons_.size();
     }
+
     /**
      *
      *
@@ -6172,6 +6372,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getCons(int index) {
       return cons_.get(index);
     }
+
     /**
      *
      *
@@ -6188,6 +6389,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getConsBytes(int index) {
       return cons_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6212,6 +6414,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6235,6 +6438,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6255,6 +6459,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6274,6 +6479,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6306,6 +6512,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLink.Builder,
             com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes.ReviewLinkOrBuilder>
         reviewLinkBuilder_;
+
     /**
      *
      *
@@ -6322,6 +6529,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasReviewLink() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -6346,6 +6554,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return reviewLinkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6371,6 +6580,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6394,6 +6604,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6426,6 +6637,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -6447,6 +6659,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6464,6 +6677,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return getReviewLinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6486,6 +6700,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
             : reviewLink_;
       }
     }
+
     /**
      *
      *
@@ -6524,6 +6739,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00008000;
     }
+
     /**
      *
      *
@@ -6541,6 +6757,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       reviewerImageLinks_.makeImmutable();
       return reviewerImageLinks_;
     }
+
     /**
      *
      *
@@ -6557,6 +6774,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getReviewerImageLinksCount() {
       return reviewerImageLinks_.size();
     }
+
     /**
      *
      *
@@ -6574,6 +6792,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getReviewerImageLinks(int index) {
       return reviewerImageLinks_.get(index);
     }
+
     /**
      *
      *
@@ -6591,6 +6810,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getReviewerImageLinksBytes(int index) {
       return reviewerImageLinks_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6616,6 +6836,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6640,6 +6861,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6661,6 +6883,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6681,6 +6904,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6708,6 +6932,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private long minRating_;
+
     /**
      *
      *
@@ -6725,6 +6950,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasMinRating() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -6742,6 +6968,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public long getMinRating() {
       return minRating_;
     }
+
     /**
      *
      *
@@ -6763,6 +6990,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6784,6 +7012,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private long maxRating_;
+
     /**
      *
      *
@@ -6800,6 +7029,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasMaxRating() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -6816,6 +7046,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public long getMaxRating() {
       return maxRating_;
     }
+
     /**
      *
      *
@@ -6836,6 +7067,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6856,6 +7088,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private double rating_;
+
     /**
      *
      *
@@ -6871,6 +7104,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasRating() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -6886,6 +7120,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public double getRating() {
       return rating_;
     }
+
     /**
      *
      *
@@ -6905,6 +7140,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6932,6 +7168,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00080000;
     }
+
     /**
      *
      *
@@ -6947,6 +7184,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       productNames_.makeImmutable();
       return productNames_;
     }
+
     /**
      *
      *
@@ -6961,6 +7199,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getProductNamesCount() {
       return productNames_.size();
     }
+
     /**
      *
      *
@@ -6976,6 +7215,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getProductNames(int index) {
       return productNames_.get(index);
     }
+
     /**
      *
      *
@@ -6991,6 +7231,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getProductNamesBytes(int index) {
       return productNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7014,6 +7255,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7036,6 +7278,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7055,6 +7298,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7073,6 +7317,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7106,6 +7351,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00100000;
     }
+
     /**
      *
      *
@@ -7123,6 +7369,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       productLinks_.makeImmutable();
       return productLinks_;
     }
+
     /**
      *
      *
@@ -7139,6 +7386,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getProductLinksCount() {
       return productLinks_.size();
     }
+
     /**
      *
      *
@@ -7156,6 +7404,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getProductLinks(int index) {
       return productLinks_.get(index);
     }
+
     /**
      *
      *
@@ -7173,6 +7422,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getProductLinksBytes(int index) {
       return productLinks_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7198,6 +7448,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7222,6 +7473,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7243,6 +7495,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7263,6 +7516,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7298,6 +7552,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00200000;
     }
+
     /**
      *
      *
@@ -7314,6 +7569,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       asins_.makeImmutable();
       return asins_;
     }
+
     /**
      *
      *
@@ -7329,6 +7585,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getAsinsCount() {
       return asins_.size();
     }
+
     /**
      *
      *
@@ -7345,6 +7602,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getAsins(int index) {
       return asins_.get(index);
     }
+
     /**
      *
      *
@@ -7361,6 +7619,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getAsinsBytes(int index) {
       return asins_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7385,6 +7644,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7408,6 +7668,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7428,6 +7689,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7447,6 +7709,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7481,6 +7744,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00400000;
     }
+
     /**
      *
      *
@@ -7497,6 +7761,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       gtins_.makeImmutable();
       return gtins_;
     }
+
     /**
      *
      *
@@ -7512,6 +7777,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getGtinsCount() {
       return gtins_.size();
     }
+
     /**
      *
      *
@@ -7528,6 +7794,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getGtins(int index) {
       return gtins_.get(index);
     }
+
     /**
      *
      *
@@ -7544,6 +7811,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getGtinsBytes(int index) {
       return gtins_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7568,6 +7836,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7591,6 +7860,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7611,6 +7881,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7630,6 +7901,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7664,6 +7936,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00800000;
     }
+
     /**
      *
      *
@@ -7680,6 +7953,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       mpns_.makeImmutable();
       return mpns_;
     }
+
     /**
      *
      *
@@ -7695,6 +7969,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getMpnsCount() {
       return mpns_.size();
     }
+
     /**
      *
      *
@@ -7711,6 +7986,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getMpns(int index) {
       return mpns_.get(index);
     }
+
     /**
      *
      *
@@ -7727,6 +8003,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getMpnsBytes(int index) {
       return mpns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7751,6 +8028,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7774,6 +8052,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7794,6 +8073,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7813,6 +8093,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7847,6 +8128,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x01000000;
     }
+
     /**
      *
      *
@@ -7863,6 +8145,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       skus_.makeImmutable();
       return skus_;
     }
+
     /**
      *
      *
@@ -7878,6 +8161,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getSkusCount() {
       return skus_.size();
     }
+
     /**
      *
      *
@@ -7894,6 +8178,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getSkus(int index) {
       return skus_.get(index);
     }
+
     /**
      *
      *
@@ -7910,6 +8195,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getSkusBytes(int index) {
       return skus_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7934,6 +8220,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7957,6 +8244,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7977,6 +8265,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7996,6 +8285,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8030,6 +8320,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x02000000;
     }
+
     /**
      *
      *
@@ -8045,6 +8336,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       brands_.makeImmutable();
       return brands_;
     }
+
     /**
      *
      *
@@ -8059,6 +8351,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getBrandsCount() {
       return brands_.size();
     }
+
     /**
      *
      *
@@ -8074,6 +8367,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public java.lang.String getBrands(int index) {
       return brands_.get(index);
     }
+
     /**
      *
      *
@@ -8089,6 +8383,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getBrandsBytes(int index) {
       return brands_.getByteString(index);
     }
+
     /**
      *
      *
@@ -8112,6 +8407,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8134,6 +8430,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8153,6 +8450,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8171,6 +8469,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8196,6 +8495,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private boolean isSpam_;
+
     /**
      *
      *
@@ -8212,6 +8512,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean hasIsSpam() {
       return ((bitField0_ & 0x04000000) != 0);
     }
+
     /**
      *
      *
@@ -8228,6 +8529,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public boolean getIsSpam() {
       return isSpam_;
     }
+
     /**
      *
      *
@@ -8248,6 +8550,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8268,6 +8571,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private int collectionMethod_ = 0;
+
     /**
      *
      *
@@ -8285,6 +8589,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     public int getCollectionMethodValue() {
       return collectionMethod_;
     }
+
     /**
      *
      *
@@ -8305,6 +8610,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8329,6 +8635,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -8354,6 +8661,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8375,6 +8683,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
     }
 
     private java.lang.Object transactionId_ = "";
+
     /**
      *
      *
@@ -8399,6 +8708,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8423,6 +8733,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8446,6 +8757,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8465,6 +8777,7 @@ public final class ProductReviewAttributes extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

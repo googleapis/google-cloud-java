@@ -33,6 +33,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1.PrivateClusterConfig)
     PrivateClusterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrivateClusterConfig.newBuilder() to construct.
   private PrivateClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ENABLE_PRIVATE_NODES_FIELD_NUMBER = 1;
   private boolean enablePrivateNodes_ = false;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 2;
   private boolean enablePrivateEndpoint_ = false;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object masterIpv4CidrBlock_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateEndpoint_ = "";
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicEndpoint_ = "";
+
   /**
    *
    *
@@ -283,6 +291,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -320,6 +329,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peeringName_ = "";
+
   /**
    *
    *
@@ -343,6 +353,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +380,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   public static final int MASTER_GLOBAL_ACCESS_CONFIG_FIELD_NUMBER = 8;
   private com.google.container.v1.PrivateClusterMasterGlobalAccessConfig masterGlobalAccessConfig_;
+
   /**
    *
    *
@@ -393,6 +405,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
   public boolean hasMasterGlobalAccessConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -420,6 +433,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         ? com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.getDefaultInstance()
         : masterGlobalAccessConfig_;
   }
+
   /**
    *
    *
@@ -448,6 +462,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateEndpointSubnetwork_ = "";
+
   /**
    *
    *
@@ -479,6 +494,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -741,6 +757,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1043,6 +1060,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enablePrivateNodes_;
+
     /**
      *
      *
@@ -1067,6 +1085,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnablePrivateNodes() {
       return enablePrivateNodes_;
     }
+
     /**
      *
      *
@@ -1095,6 +1114,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1143,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private boolean enablePrivateEndpoint_;
+
     /**
      *
      *
@@ -1146,6 +1167,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnablePrivateEndpoint() {
       return enablePrivateEndpoint_;
     }
+
     /**
      *
      *
@@ -1173,6 +1195,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1223,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object masterIpv4CidrBlock_ = "";
+
     /**
      *
      *
@@ -1225,6 +1249,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1275,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1274,6 +1300,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1321,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1349,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object privateEndpoint_ = "";
+
     /**
      *
      *
@@ -1352,6 +1381,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1383,6 +1413,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1444,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1471,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1505,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object publicEndpoint_ = "";
+
     /**
      *
      *
@@ -1503,6 +1537,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1534,6 +1569,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1564,6 +1600,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,6 +1627,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1623,6 +1661,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object peeringName_ = "";
+
     /**
      *
      *
@@ -1645,6 +1684,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1707,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1688,6 +1729,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1747,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1735,6 +1778,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
             com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder,
             com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder>
         masterGlobalAccessConfigBuilder_;
+
     /**
      *
      *
@@ -1758,6 +1802,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public boolean hasMasterGlobalAccessConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1788,6 +1833,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return masterGlobalAccessConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1818,6 +1864,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1892,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1930,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1908,6 +1957,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1930,6 +1980,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMasterGlobalAccessConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1956,6 +2007,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
             : masterGlobalAccessConfig_;
       }
     }
+
     /**
      *
      *
@@ -1989,6 +2041,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object privateEndpointSubnetwork_ = "";
+
     /**
      *
      *
@@ -2019,6 +2072,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2049,6 +2103,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2078,6 +2133,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2103,6 +2159,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

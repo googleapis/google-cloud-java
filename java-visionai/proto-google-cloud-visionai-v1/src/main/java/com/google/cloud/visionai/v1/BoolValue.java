@@ -25,6 +25,7 @@ public final class BoolValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.BoolValue)
     BoolValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BoolValue.newBuilder() to construct.
   private BoolValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -55,6 +56,7 @@ public final class BoolValue extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private boolean value_ = false;
+
   /**
    * <code>bool value = 1;</code>
    *
@@ -223,6 +225,7 @@ public final class BoolValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.visionai.v1.BoolValue} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -396,6 +399,7 @@ public final class BoolValue extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean value_;
+
     /**
      * <code>bool value = 1;</code>
      *
@@ -405,6 +409,7 @@ public final class BoolValue extends com.google.protobuf.GeneratedMessageV3
     public boolean getValue() {
       return value_;
     }
+
     /**
      * <code>bool value = 1;</code>
      *
@@ -418,6 +423,7 @@ public final class BoolValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>bool value = 1;</code>
      *

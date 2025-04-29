@@ -46,6 +46,7 @@ public interface GenerateAwsAccessTokenRequestOrBuilder
    * @return The awsCluster.
    */
   java.lang.String getAwsCluster();
+
   /**
    *
    *

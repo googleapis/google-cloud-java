@@ -41,6 +41,7 @@ public interface UpdateServiceConnectionPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateServiceConnectionPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateServiceConnectionPolicyRequestOrBuilder
    * @return Whether the serviceConnectionPolicy field is set.
    */
   boolean hasServiceConnectionPolicy();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateServiceConnectionPolicyRequestOrBuilder
    * @return The serviceConnectionPolicy.
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy getServiceConnectionPolicy();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateServiceConnectionPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

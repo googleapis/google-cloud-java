@@ -37,6 +37,7 @@ public interface EditAtomOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface EditAtomOrBuilder
    * @return A list containing the inputs.
    */
   java.util.List<java.lang.String> getInputsList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface EditAtomOrBuilder
    * @return The count of inputs.
    */
   int getInputsCount();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface EditAtomOrBuilder
    * @return The inputs at the given index.
    */
   java.lang.String getInputs(int index);
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface EditAtomOrBuilder
    * @return Whether the endTimeOffset field is set.
    */
   boolean hasEndTimeOffset();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface EditAtomOrBuilder
    * @return The endTimeOffset.
    */
   com.google.protobuf.Duration getEndTimeOffset();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface EditAtomOrBuilder
    * @return Whether the startTimeOffset field is set.
    */
   boolean hasStartTimeOffset();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface EditAtomOrBuilder
    * @return The startTimeOffset.
    */
   com.google.protobuf.Duration getStartTimeOffset();
+
   /**
    *
    *

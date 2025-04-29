@@ -38,6 +38,7 @@ public interface GetNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

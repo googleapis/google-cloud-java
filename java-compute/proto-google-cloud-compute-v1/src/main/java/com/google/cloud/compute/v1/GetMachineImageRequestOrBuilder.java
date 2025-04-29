@@ -36,6 +36,7 @@ public interface GetMachineImageRequestOrBuilder
    * @return The machineImage.
    */
   java.lang.String getMachineImage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetMachineImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *

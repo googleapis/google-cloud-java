@@ -35,6 +35,7 @@ public interface SearchModelMonitoringStatsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStats> getMonitoringStatsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SearchModelMonitoringStatsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringStats getMonitoringStats(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SearchModelMonitoringStatsResponseOrBuilder
    * </code>
    */
   int getMonitoringStatsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface SearchModelMonitoringStatsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsOrBuilder>
       getMonitoringStatsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface SearchModelMonitoringStatsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

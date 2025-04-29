@@ -36,6 +36,7 @@ public interface PrivateConnectivityOrBuilder
    * @return The privateConnection.
    */
   java.lang.String getPrivateConnection();
+
   /**
    *
    *

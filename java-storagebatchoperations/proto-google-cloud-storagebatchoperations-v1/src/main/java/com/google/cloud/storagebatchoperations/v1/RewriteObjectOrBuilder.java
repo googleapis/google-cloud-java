@@ -46,6 +46,7 @@ public interface RewriteObjectOrBuilder
    * @return Whether the kmsKey field is set.
    */
   boolean hasKmsKey();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RewriteObjectOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
+
   /**
    *
    *

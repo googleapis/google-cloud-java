@@ -44,6 +44,7 @@ public interface ListReplayResultsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface ListReplayResultsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

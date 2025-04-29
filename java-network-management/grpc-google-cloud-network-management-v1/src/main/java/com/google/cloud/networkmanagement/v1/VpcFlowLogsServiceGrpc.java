@@ -302,6 +302,19 @@ public final class VpcFlowLogsServiceGrpc {
     return VpcFlowLogsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VpcFlowLogsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VpcFlowLogsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VpcFlowLogsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VpcFlowLogsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VpcFlowLogsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VpcFlowLogsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -592,6 +605,121 @@ public final class VpcFlowLogsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VpcFlowLogsService.
+   *
+   * <pre>
+   * The VPC Flow Logs service in the Google Cloud Network Management API provides
+   * configurations that generate Flow Logs. The service and the configuration
+   * resources created using this service are global.
+   * </pre>
+   */
+  public static final class VpcFlowLogsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VpcFlowLogsServiceBlockingV2Stub> {
+    private VpcFlowLogsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VpcFlowLogsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VpcFlowLogsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all `VpcFlowLogsConfigs` in a given project.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsResponse
+        listVpcFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVpcFlowLogsConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific `VpcFlowLogsConfig`.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig getVpcFlowLogsConfig(
+        com.google.cloud.networkmanagement.v1.GetVpcFlowLogsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVpcFlowLogsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `VpcFlowLogsConfig`.
+     * If a configuration with the exact same settings already exists (even if the
+     * ID is different), the creation fails.
+     * Notes:
+     *   1. Creating a configuration with state=DISABLED will fail
+     *   2. The following fields are not considered as `settings` for the purpose
+     *   of the check mentioned above, therefore - creating another configuration
+     *   with the same fields but different values for the following fields will
+     *   fail as well:
+     *       * name
+     *       * create_time
+     *       * update_time
+     *       * labels
+     *       * description
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVpcFlowLogsConfig(
+        com.google.cloud.networkmanagement.v1.CreateVpcFlowLogsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVpcFlowLogsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing `VpcFlowLogsConfig`.
+     * If a configuration with the exact same settings already exists (even if the
+     * ID is different), the creation fails.
+     * Notes:
+     *   1. Updating a configuration with state=DISABLED will fail.
+     *   2. The following fields are not considered as `settings` for the purpose
+     *   of the check mentioned above, therefore - updating another configuration
+     *   with the same fields but different values for the following fields will
+     *   fail as well:
+     *       * name
+     *       * create_time
+     *       * update_time
+     *       * labels
+     *       * description
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateVpcFlowLogsConfig(
+        com.google.cloud.networkmanagement.v1.UpdateVpcFlowLogsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVpcFlowLogsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific `VpcFlowLogsConfig`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVpcFlowLogsConfig(
+        com.google.cloud.networkmanagement.v1.DeleteVpcFlowLogsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVpcFlowLogsConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VpcFlowLogsService.
    *
    * <pre>
    * The VPC Flow Logs service in the Google Cloud Network Management API provides

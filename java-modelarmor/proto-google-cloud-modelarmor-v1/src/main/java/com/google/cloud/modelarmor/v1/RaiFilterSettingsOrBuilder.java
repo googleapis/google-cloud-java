@@ -36,6 +36,7 @@ public interface RaiFilterSettingsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter> getRaiFiltersList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RaiFilterSettingsOrBuilder
    * </code>
    */
   com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter getRaiFilters(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface RaiFilterSettingsOrBuilder
    * </code>
    */
   int getRaiFiltersCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface RaiFilterSettingsOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilterOrBuilder>
       getRaiFiltersOrBuilderList();
+
   /**
    *
    *

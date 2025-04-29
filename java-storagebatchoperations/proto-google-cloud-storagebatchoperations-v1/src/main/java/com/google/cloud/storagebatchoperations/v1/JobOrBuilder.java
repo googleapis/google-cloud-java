@@ -29,10 +29,10 @@ public interface JobOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the Job. job_id is unique
-   * within the project and location, that is either set by the customer or
+   * within the project, that is either set by the customer or
    * defined by the service. Format:
-   * projects/{project}/locations/{location}/jobs/{job_id} .
-   * For example: "projects/123456/locations/us-central1/jobs/job01".
+   * projects/{project}/locations/global/jobs/{job_id} .
+   * For example: "projects/123456/locations/global/jobs/job01".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -40,15 +40,16 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Identifier. The resource name of the Job. job_id is unique
-   * within the project and location, that is either set by the customer or
+   * within the project, that is either set by the customer or
    * defined by the service. Format:
-   * projects/{project}/locations/{location}/jobs/{job_id} .
-   * For example: "projects/123456/locations/us-central1/jobs/job01".
+   * projects/{project}/locations/global/jobs/{job_id} .
+   * For example: "projects/123456/locations/global/jobs/job01".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -70,6 +71,7 @@ public interface JobOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface JobOrBuilder
    * @return Whether the bucketList field is set.
    */
   boolean hasBucketList();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface JobOrBuilder
    * @return The bucketList.
    */
   com.google.cloud.storagebatchoperations.v1.BucketList getBucketList();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface JobOrBuilder
    * @return Whether the putObjectHold field is set.
    */
   boolean hasPutObjectHold();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface JobOrBuilder
    * @return The putObjectHold.
    */
   com.google.cloud.storagebatchoperations.v1.PutObjectHold getPutObjectHold();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface JobOrBuilder
    * @return Whether the deleteObject field is set.
    */
   boolean hasDeleteObject();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface JobOrBuilder
    * @return The deleteObject.
    */
   com.google.cloud.storagebatchoperations.v1.DeleteObject getDeleteObject();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface JobOrBuilder
    * @return Whether the putMetadata field is set.
    */
   boolean hasPutMetadata();
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public interface JobOrBuilder
    * @return The putMetadata.
    */
   com.google.cloud.storagebatchoperations.v1.PutMetadata getPutMetadata();
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface JobOrBuilder
    * @return Whether the rewriteObject field is set.
    */
   boolean hasRewriteObject();
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public interface JobOrBuilder
    * @return The rewriteObject.
    */
   com.google.cloud.storagebatchoperations.v1.RewriteObject getRewriteObject();
+
   /**
    *
    *
@@ -279,6 +291,7 @@ public interface JobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface JobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.storagebatchoperations.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -319,6 +333,7 @@ public interface JobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -332,6 +347,7 @@ public interface JobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -358,6 +374,7 @@ public interface JobOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public interface JobOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
+
   /**
    *
    *
@@ -399,6 +417,7 @@ public interface JobOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
+
   /**
    *
    *
@@ -413,6 +432,7 @@ public interface JobOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
+
   /**
    *
    *
@@ -440,6 +460,7 @@ public interface JobOrBuilder
    * @return Whether the counters field is set.
    */
   boolean hasCounters();
+
   /**
    *
    *
@@ -454,6 +475,7 @@ public interface JobOrBuilder
    * @return The counters.
    */
   com.google.cloud.storagebatchoperations.v1.Counters getCounters();
+
   /**
    *
    *
@@ -479,6 +501,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.storagebatchoperations.v1.ErrorSummary> getErrorSummariesList();
+
   /**
    *
    *
@@ -491,6 +514,7 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.cloud.storagebatchoperations.v1.ErrorSummary getErrorSummaries(int index);
+
   /**
    *
    *
@@ -503,6 +527,7 @@ public interface JobOrBuilder
    * </code>
    */
   int getErrorSummariesCount();
+
   /**
    *
    *
@@ -516,6 +541,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.cloud.storagebatchoperations.v1.ErrorSummaryOrBuilder>
       getErrorSummariesOrBuilderList();
+
   /**
    *
    *
@@ -544,6 +570,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

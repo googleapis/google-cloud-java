@@ -56,8 +56,7 @@ public class ChangeRequestTest {
             dns,
             ZONE_NAME,
             new ChangeRequestInfo.BuilderImpl(
-                CHANGE_REQUEST_INFO
-                    .toBuilder()
+                CHANGE_REQUEST_INFO.toBuilder()
                     .setStartTime(132L)
                     .setGeneratedId("12")
                     .setStatus(ChangeRequest.Status.DONE)
@@ -67,8 +66,7 @@ public class ChangeRequestTest {
             dns,
             ZONE_NAME,
             new ChangeRequestInfo.BuilderImpl(
-                CHANGE_REQUEST_INFO
-                    .toBuilder()
+                CHANGE_REQUEST_INFO.toBuilder()
                     .setStartTime(132L)
                     .setGeneratedId("12")
                     .setStatus(ChangeRequest.Status.PENDING)

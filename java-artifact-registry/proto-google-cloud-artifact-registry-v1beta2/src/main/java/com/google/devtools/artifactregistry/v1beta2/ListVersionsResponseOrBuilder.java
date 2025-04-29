@@ -34,6 +34,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Version versions = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1beta2.Version> getVersionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Version versions = 1;</code>
    */
   com.google.devtools.artifactregistry.v1beta2.Version getVersions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListVersionsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Version versions = 1;</code>
    */
   int getVersionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1beta2.VersionOrBuilder>
       getVersionsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

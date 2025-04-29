@@ -34,6 +34,7 @@ public interface StructValueOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.StructFieldValue values = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.StructFieldValue> getValuesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface StructValueOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.StructFieldValue values = 1;</code>
    */
   com.google.cloud.aiplatform.v1.StructFieldValue getValues(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface StructValueOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.StructFieldValue values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface StructValueOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.StructFieldValueOrBuilder>
       getValuesOrBuilderList();
+
   /**
    *
    *

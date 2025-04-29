@@ -37,6 +37,7 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * @return A list containing the capacityCommitmentIds.
    */
   java.util.List<java.lang.String> getCapacityCommitmentIdsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * @return The count of capacityCommitmentIds.
    */
   int getCapacityCommitmentIdsCount();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * @return The capacityCommitmentIds at the given index.
    */
   java.lang.String getCapacityCommitmentIds(int index);
+
   /**
    *
    *

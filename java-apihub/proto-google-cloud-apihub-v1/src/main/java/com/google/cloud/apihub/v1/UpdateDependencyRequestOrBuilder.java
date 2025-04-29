@@ -41,6 +41,7 @@ public interface UpdateDependencyRequestOrBuilder
    * @return Whether the dependency field is set.
    */
   boolean hasDependency();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateDependencyRequestOrBuilder
    * @return The dependency.
    */
   com.google.cloud.apihub.v1.Dependency getDependency();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateDependencyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateDependencyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

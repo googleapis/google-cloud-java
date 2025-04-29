@@ -33,6 +33,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.PromoteReplicaRequest)
     PromoteReplicaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PromoteReplicaRequest.newBuilder() to construct.
   private PromoteReplicaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerInstance_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -351,6 +356,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -550,6 +556,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -575,6 +582,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object peerInstance_ = "";
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

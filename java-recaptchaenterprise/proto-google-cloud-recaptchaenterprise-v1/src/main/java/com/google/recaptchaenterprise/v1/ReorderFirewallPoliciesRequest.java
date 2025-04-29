@@ -33,6 +33,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest)
     ReorderFirewallPoliciesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReorderFirewallPoliciesRequest.newBuilder() to construct.
   private ReorderFirewallPoliciesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -374,6 +381,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -584,6 +592,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -784,6 +801,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +877,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class ReorderFirewallPoliciesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

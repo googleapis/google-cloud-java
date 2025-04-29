@@ -446,6 +446,19 @@ public final class GkeHubMembershipServiceGrpc {
     return GkeHubMembershipServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GkeHubMembershipServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GkeHubMembershipServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GkeHubMembershipServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public GkeHubMembershipServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GkeHubMembershipServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GkeHubMembershipServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -829,6 +842,157 @@ public final class GkeHubMembershipServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GkeHubMembershipService.
+   *
+   * <pre>
+   * The GKE Hub MembershipService handles the registration of many Kubernetes
+   * clusters to Google Cloud, represented with the
+   * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * GKE Hub is currently available in the global region and all regions in
+   * https://cloud.google.com/compute/docs/regions-zones.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
+   * </pre>
+   */
+  public static final class GkeHubMembershipServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GkeHubMembershipServiceBlockingV2Stub> {
+    private GkeHubMembershipServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GkeHubMembershipServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GkeHubMembershipServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Memberships in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1beta1.ListMembershipsResponse listMemberships(
+        com.google.cloud.gkehub.v1beta1.ListMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMembershipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a Membership.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1beta1.Membership getMembership(
+        com.google.cloud.gkehub.v1beta1.GetMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMembership(
+        com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMembership(
+        com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing Membership.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMembership(
+        com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates the manifest for deployment of the GKE connect agent.
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse generateConnectManifest(
+        com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateConnectManifestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateExclusivity validates the state of exclusivity in the cluster.
+     * The validation does not depend on an existing Hub membership resource.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse validateExclusivity(
+        com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateExclusivityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * GenerateExclusivityManifest generates the manifests to update the
+     * exclusivity artifacts in the cluster if needed.
+     * Exclusivity artifacts include the Membership custom resource definition
+     * (CRD) and the singleton Membership custom resource (CR). Combined with
+     * ValidateExclusivity, exclusivity artifacts guarantee that a Kubernetes
+     * cluster is only registered to a single GKE Hub.
+     * The Membership CRD is versioned, and may require conversion when the GKE
+     * Hub API server begins serving a newer version of the CRD and
+     * corresponding CR. The response will be the converted CRD and CR if there
+     * are any differences between the versions.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestResponse
+        generateExclusivityManifest(
+            com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateExclusivityManifestMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service GkeHubMembershipService.
    *
    * <pre>
    * The GKE Hub MembershipService handles the registration of many Kubernetes

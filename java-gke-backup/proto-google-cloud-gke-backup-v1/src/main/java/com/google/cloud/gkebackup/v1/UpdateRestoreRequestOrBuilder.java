@@ -38,6 +38,7 @@ public interface UpdateRestoreRequestOrBuilder
    * @return Whether the restore field is set.
    */
   boolean hasRestore();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateRestoreRequestOrBuilder
    * @return The restore.
    */
   com.google.cloud.gkebackup.v1.Restore getRestore();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateRestoreRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateRestoreRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

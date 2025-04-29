@@ -106,6 +106,7 @@ public enum DeploymentLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPLOYMENT_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int DEPLOYMENT_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -120,6 +121,7 @@ public enum DeploymentLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HYDRATION = 1;</code>
    */
   public static final int HYDRATION_VALUE = 1;
+
   /**
    *
    *
@@ -133,6 +135,7 @@ public enum DeploymentLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SINGLE_DEPLOYMENT = 2;</code>
    */
   public static final int SINGLE_DEPLOYMENT_VALUE = 2;
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public enum DeploymentLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MULTI_DEPLOYMENT = 3;</code>
    */
   public static final int MULTI_DEPLOYMENT_VALUE = 3;
+
   /**
    *
    *

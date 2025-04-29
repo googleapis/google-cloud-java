@@ -36,6 +36,7 @@ public interface InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
    * @return Whether the allEffective field is set.
    */
   boolean hasAllEffective();
+
   /**
    *
    *

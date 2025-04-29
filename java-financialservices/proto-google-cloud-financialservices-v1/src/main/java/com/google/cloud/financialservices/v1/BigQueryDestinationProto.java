@@ -50,11 +50,14 @@ public final class BigQueryDestinationProto {
           + "1.BigQueryDestination.WriteDispositionB\003"
           + "\340A\002\"Z\n\020WriteDisposition\022!\n\035WRITE_DISPOSI"
           + "TION_UNSPECIFIED\020\000\022\017\n\013WRITE_EMPTY\020\001\022\022\n\016W"
-          + "RITE_TRUNCATE\020\002B\230\001\n%com.google.cloud.fin"
+          + "RITE_TRUNCATE\020\002B\207\002\n%com.google.cloud.fin"
           + "ancialservices.v1B\030BigQueryDestinationPr"
           + "otoP\001ZScloud.google.com/go/financialserv"
           + "ices/apiv1/financialservicespb;financial"
-          + "servicespbb\006proto3"
+          + "servicespb\252\002!Google.Cloud.FinancialServi"
+          + "ces.V1\312\002!Google\\Cloud\\FinancialServices\\"
+          + "V1\352\002$Google::Cloud::FinancialServices::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

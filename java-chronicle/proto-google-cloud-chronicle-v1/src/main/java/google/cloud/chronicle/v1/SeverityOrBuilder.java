@@ -37,6 +37,7 @@ public interface SeverityOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

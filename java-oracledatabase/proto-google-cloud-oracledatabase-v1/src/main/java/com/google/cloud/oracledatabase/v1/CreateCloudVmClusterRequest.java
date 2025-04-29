@@ -33,6 +33,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest)
     CreateCloudVmClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateCloudVmClusterRequest.newBuilder() to construct.
   private CreateCloudVmClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudVmClusterId_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
 
   public static final int CLOUD_VM_CLUSTER_FIELD_NUMBER = 3;
   private com.google.cloud.oracledatabase.v1.CloudVmCluster cloudVmCluster_;
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
   public boolean hasCloudVmCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         ? com.google.cloud.oracledatabase.v1.CloudVmCluster.getDefaultInstance()
         : cloudVmCluster_;
   }
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -497,6 +507,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -744,6 +755,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -769,6 +781,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -794,6 +807,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -818,6 +832,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +853,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object cloudVmClusterId_ = "";
+
     /**
      *
      *
@@ -890,6 +907,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -915,6 +933,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -939,6 +958,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +979,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
             com.google.cloud.oracledatabase.v1.CloudVmCluster.Builder,
             com.google.cloud.oracledatabase.v1.CloudVmClusterOrBuilder>
         cloudVmClusterBuilder_;
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
     public boolean hasCloudVmCluster() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return cloudVmClusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1077,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1131,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1170,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return getCloudVmClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1162,6 +1191,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
             : cloudVmCluster_;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1221,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1222,6 +1253,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1285,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1316,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1343,7 @@ public final class CreateCloudVmClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

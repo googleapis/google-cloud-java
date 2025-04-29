@@ -33,6 +33,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         java.lang.Integer, com.google.cloud.networkconnectivity.v1.LocationFeature>(
         locationFeatures_, locationFeatures_converter_);
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public int getLocationFeaturesCount() {
     return locationFeatures_.size();
   }
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.networkconnectivity.v1.LocationFeature getLocationFeatures(int index) {
     return locationFeatures_converter_.convert(locationFeatures_.get(index));
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getLocationFeaturesValueList() {
     return locationFeatures_;
   }
+
   /**
    *
    *
@@ -347,6 +353,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +571,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -582,6 +590,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
           java.lang.Integer, com.google.cloud.networkconnectivity.v1.LocationFeature>(
           locationFeatures_, locationFeatures_converter_);
     }
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public int getLocationFeaturesCount() {
       return locationFeatures_.size();
     }
+
     /**
      *
      *
@@ -613,6 +623,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkconnectivity.v1.LocationFeature getLocationFeatures(int index) {
       return locationFeatures_converter_.convert(locationFeatures_.get(index));
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getLocationFeaturesValueList() {
       return java.util.Collections.unmodifiableList(locationFeatures_);
     }
+
     /**
      *
      *
@@ -732,6 +748,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public int getLocationFeaturesValue(int index) {
       return locationFeatures_.get(index);
     }
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +789,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

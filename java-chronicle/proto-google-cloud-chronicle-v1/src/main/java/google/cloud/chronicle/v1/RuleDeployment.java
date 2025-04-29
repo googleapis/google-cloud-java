@@ -33,6 +33,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.RuleDeployment)
     RuleDeploymentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuleDeployment.newBuilder() to construct.
   private RuleDeployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
      * <code>EXECUTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int EXECUTION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
      * <code>DEFAULT = 1;</code>
      */
     public static final int DEFAULT_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +153,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
      * <code>LIMITED = 2;</code>
      */
     public static final int LIMITED_VALUE = 2;
+
     /**
      *
      *
@@ -251,6 +255,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -279,6 +284,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -310,6 +316,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 2;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -328,6 +335,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALERTING_FIELD_NUMBER = 3;
   private boolean alerting_ = false;
+
   /**
    *
    *
@@ -347,6 +355,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ARCHIVED_FIELD_NUMBER = 4;
   private boolean archived_ = false;
+
   /**
    *
    *
@@ -369,6 +378,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ARCHIVE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp archiveTime_;
+
   /**
    *
    *
@@ -387,6 +397,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArchiveTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -405,6 +416,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getArchiveTime() {
     return archiveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : archiveTime_;
   }
+
   /**
    *
    *
@@ -424,6 +436,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RUN_FREQUENCY_FIELD_NUMBER = 6;
   private int runFrequency_ = 0;
+
   /**
    *
    *
@@ -439,6 +452,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public int getRunFrequencyValue() {
     return runFrequency_;
   }
+
   /**
    *
    *
@@ -459,6 +473,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 7;
   private int executionState_ = 0;
+
   /**
    *
    *
@@ -476,6 +491,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public int getExecutionStateValue() {
     return executionState_;
   }
+
   /**
    *
    *
@@ -503,6 +519,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList producerRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -522,6 +539,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getProducerRulesList() {
     return producerRules_;
   }
+
   /**
    *
    *
@@ -541,6 +559,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public int getProducerRulesCount() {
     return producerRules_.size();
   }
+
   /**
    *
    *
@@ -561,6 +580,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getProducerRules(int index) {
     return producerRules_.get(index);
   }
+
   /**
    *
    *
@@ -587,6 +607,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList consumerRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -606,6 +627,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getConsumerRulesList() {
     return consumerRules_;
   }
+
   /**
    *
    *
@@ -625,6 +647,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public int getConsumerRulesCount() {
     return consumerRules_.size();
   }
+
   /**
    *
    *
@@ -645,6 +668,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getConsumerRules(int index) {
     return consumerRules_.get(index);
   }
+
   /**
    *
    *
@@ -668,6 +692,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_ALERT_STATUS_CHANGE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp lastAlertStatusChangeTime_;
+
   /**
    *
    *
@@ -688,6 +713,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastAlertStatusChangeTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -710,6 +736,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastAlertStatusChangeTime_;
   }
+
   /**
    *
    *
@@ -1003,6 +1030,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1348,6 +1376,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1375,6 +1404,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1432,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1428,6 +1459,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1482,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1512,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -1494,6 +1528,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -1513,6 +1548,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1568,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean alerting_;
+
     /**
      *
      *
@@ -1548,6 +1585,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public boolean getAlerting() {
       return alerting_;
     }
+
     /**
      *
      *
@@ -1568,6 +1606,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1627,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean archived_;
+
     /**
      *
      *
@@ -1607,6 +1647,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public boolean getArchived() {
       return archived_;
     }
+
     /**
      *
      *
@@ -1630,6 +1671,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1700,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         archiveTimeBuilder_;
+
     /**
      *
      *
@@ -1676,6 +1719,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArchiveTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1700,6 +1744,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
         return archiveTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1726,6 +1771,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1795,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1827,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1851,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1821,6 +1870,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getArchiveTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1843,6 +1893,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
             : archiveTime_;
       }
     }
+
     /**
      *
      *
@@ -1874,6 +1925,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int runFrequency_ = 0;
+
     /**
      *
      *
@@ -1889,6 +1941,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public int getRunFrequencyValue() {
       return runFrequency_;
     }
+
     /**
      *
      *
@@ -1907,6 +1960,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1978,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
           google.cloud.chronicle.v1.RunFrequency.forNumber(runFrequency_);
       return result == null ? google.cloud.chronicle.v1.RunFrequency.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1945,6 +2000,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2020,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int executionState_ = 0;
+
     /**
      *
      *
@@ -1981,6 +2038,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public int getExecutionStateValue() {
       return executionState_;
     }
+
     /**
      *
      *
@@ -2001,6 +2059,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2081,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
           ? google.cloud.chronicle.v1.RuleDeployment.ExecutionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2046,6 +2106,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2075,6 +2136,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2095,6 +2157,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       producerRules_.makeImmutable();
       return producerRules_;
     }
+
     /**
      *
      *
@@ -2114,6 +2177,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public int getProducerRulesCount() {
       return producerRules_.size();
     }
+
     /**
      *
      *
@@ -2134,6 +2198,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProducerRules(int index) {
       return producerRules_.get(index);
     }
+
     /**
      *
      *
@@ -2154,6 +2219,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getProducerRulesBytes(int index) {
       return producerRules_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2182,6 +2248,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2209,6 +2276,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2233,6 +2301,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2256,6 +2325,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2294,6 +2364,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -2314,6 +2385,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       consumerRules_.makeImmutable();
       return consumerRules_;
     }
+
     /**
      *
      *
@@ -2333,6 +2405,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public int getConsumerRulesCount() {
       return consumerRules_.size();
     }
+
     /**
      *
      *
@@ -2353,6 +2426,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getConsumerRules(int index) {
       return consumerRules_.get(index);
     }
+
     /**
      *
      *
@@ -2373,6 +2447,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getConsumerRulesBytes(int index) {
       return consumerRules_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2401,6 +2476,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2428,6 +2504,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2529,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2475,6 +2553,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2510,6 +2589,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastAlertStatusChangeTimeBuilder_;
+
     /**
      *
      *
@@ -2529,6 +2609,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastAlertStatusChangeTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2554,6 +2635,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
         return lastAlertStatusChangeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2581,6 +2663,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2606,6 +2689,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2638,6 +2722,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2662,6 +2747,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2681,6 +2767,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastAlertStatusChangeTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2704,6 +2791,7 @@ public final class RuleDeployment extends com.google.protobuf.GeneratedMessageV3
             : lastAlertStatusChangeTime_;
       }
     }
+
     /**
      *
      *

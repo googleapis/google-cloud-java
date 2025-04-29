@@ -45,6 +45,7 @@ public interface QueryContextLineageSubgraphRequestOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
+
   /**
    *
    *

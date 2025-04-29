@@ -92,6 +92,7 @@ public enum IngressTraffic implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INGRESS_TRAFFIC_UNSPECIFIED = 0;</code>
    */
   public static final int INGRESS_TRAFFIC_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum IngressTraffic implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INGRESS_TRAFFIC_ALL = 1;</code>
    */
   public static final int INGRESS_TRAFFIC_ALL_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum IngressTraffic implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INGRESS_TRAFFIC_INTERNAL_ONLY = 2;</code>
    */
   public static final int INGRESS_TRAFFIC_INTERNAL_ONLY_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum IngressTraffic implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER = 3;</code>
    */
   public static final int INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER_VALUE = 3;
+
   /**
    *
    *

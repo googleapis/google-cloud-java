@@ -38,6 +38,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicy field is set.
    */
   boolean hasFirewallPolicy();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicy();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateFirewallPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

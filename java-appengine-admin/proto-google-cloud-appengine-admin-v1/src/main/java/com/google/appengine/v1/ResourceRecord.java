@@ -33,6 +33,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ResourceRecord)
     ResourceRecordOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceRecord.newBuilder() to construct.
   private ResourceRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,6 +129,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
      * <code>RECORD_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RECORD_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
      * <code>A = 1;</code>
      */
     public static final int A_VALUE = 1;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
      * <code>AAAA = 2;</code>
      */
     public static final int AAAA_VALUE = 2;
+
     /**
      *
      *
@@ -248,6 +252,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -272,6 +277,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rrdata_ = "";
+
   /**
    *
    *
@@ -325,6 +332,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -352,6 +360,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
+
   /**
    *
    *
@@ -367,6 +376,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -563,6 +573,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -774,6 +785,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -797,6 +809,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +833,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +856,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +875,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +901,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object rrdata_ = "";
+
     /**
      *
      *
@@ -908,6 +925,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -931,6 +949,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +991,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
           ? com.google.appengine.v1.ResourceRecord.RecordType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class ResourceRecord extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

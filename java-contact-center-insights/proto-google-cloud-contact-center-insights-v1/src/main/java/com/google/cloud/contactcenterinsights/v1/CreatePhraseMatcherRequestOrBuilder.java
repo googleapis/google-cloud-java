@@ -41,6 +41,7 @@ public interface CreatePhraseMatcherRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface CreatePhraseMatcherRequestOrBuilder
    * @return Whether the phraseMatcher field is set.
    */
   boolean hasPhraseMatcher();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreatePhraseMatcherRequestOrBuilder
    * @return The phraseMatcher.
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatcher getPhraseMatcher();
+
   /**
    *
    *

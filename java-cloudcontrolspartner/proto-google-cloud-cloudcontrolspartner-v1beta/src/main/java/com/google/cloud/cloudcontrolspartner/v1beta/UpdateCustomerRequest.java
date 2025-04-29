@@ -33,6 +33,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1beta.UpdateCustomerRequest)
     UpdateCustomerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateCustomerRequest.newBuilder() to construct.
   private UpdateCustomerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int CUSTOMER_FIELD_NUMBER = 1;
   private com.google.cloud.cloudcontrolspartner.v1beta.Customer customer_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCustomer() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.cloudcontrolspartner.v1beta.Customer.getDefaultInstance()
         : customer_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -353,6 +360,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +590,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.cloudcontrolspartner.v1beta.Customer.Builder,
             com.google.cloud.cloudcontrolspartner.v1beta.CustomerOrBuilder>
         customerBuilder_;
+
     /**
      *
      *
@@ -600,6 +609,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCustomer() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
         return customerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCustomerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
             : customer_;
       }
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -864,6 +884,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
+
     /**
      *
      *

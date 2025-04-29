@@ -35,6 +35,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1.ClusterEndpoint)
     ClusterEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterEndpoint.newBuilder() to construct.
   private ClusterEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.redis.cluster.v1.ConnectionDetail> connections_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.redis.cluster.v1.ConnectionDetail> getConnectionsList() {
     return connections_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       getConnectionsOrBuilderList() {
     return connections_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
   public int getConnectionsCount() {
     return connections_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.redis.cluster.v1.ConnectionDetail getConnections(int index) {
     return connections_.get(index);
   }
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
         return connectionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
         return connectionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
         return connectionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +684,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getConnectionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -831,6 +851,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
         return connectionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -849,6 +870,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(connections_);
       }
     }
+
     /**
      *
      *
@@ -863,6 +885,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
       return getConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.redis.cluster.v1.ConnectionDetail.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -879,6 +902,7 @@ public final class ClusterEndpoint extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.redis.cluster.v1.ConnectionDetail.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface DeleteDatasetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

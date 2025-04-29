@@ -38,6 +38,7 @@ public interface RetrohuntMetadataOrBuilder
    * @return The retrohunt.
    */
   java.lang.String getRetrohunt();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface RetrohuntMetadataOrBuilder
    * @return Whether the executionInterval field is set.
    */
   boolean hasExecutionInterval();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RetrohuntMetadataOrBuilder
    * @return The executionInterval.
    */
   com.google.type.Interval getExecutionInterval();
+
   /**
    *
    *

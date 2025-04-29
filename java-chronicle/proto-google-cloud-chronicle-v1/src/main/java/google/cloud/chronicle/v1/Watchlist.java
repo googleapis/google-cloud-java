@@ -34,6 +34,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.Watchlist)
     WatchlistOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Watchlist.newBuilder() to construct.
   private Watchlist(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manual field is set.
      */
     boolean hasManual();
+
     /**
      *
      *
@@ -99,6 +101,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
      * @return The manual.
      */
     google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.Manual getManual();
+
     /**
      *
      *
@@ -115,6 +118,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
     google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.MechanismCase getMechanismCase();
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism)
       EntityPopulationMechanismOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EntityPopulationMechanism.newBuilder() to construct.
     private EntityPopulationMechanism(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -161,6 +166,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.Manual)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -175,6 +181,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.Manual)
         ManualOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Manual.newBuilder() to construct.
       private Manual(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -358,6 +365,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -612,6 +620,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       private MechanismCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -643,6 +652,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MANUAL_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManual() {
       return mechanismCase_ == 1;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       return google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.Manual
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -880,6 +892,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1106,6 +1119,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
               google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.Manual.Builder,
               google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.ManualOrBuilder>
           manualBuilder_;
+
       /**
        *
        *
@@ -1123,6 +1137,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       public boolean hasManual() {
         return mechanismCase_ == 1;
       }
+
       /**
        *
        *
@@ -1153,6 +1168,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1178,6 +1194,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         mechanismCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1201,6 +1218,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         mechanismCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1239,6 +1257,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         mechanismCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1266,6 +1285,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1281,6 +1301,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
           getManualBuilder() {
         return getManualFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1306,6 +1327,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1441,6 +1463,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
      */
     int getAsset();
   }
+
   /**
    *
    *
@@ -1455,6 +1478,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.Watchlist.EntityCount)
       EntityCountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EntityCount.newBuilder() to construct.
     private EntityCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1485,6 +1509,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
     public static final int USER_FIELD_NUMBER = 1;
     private int user_ = 0;
+
     /**
      *
      *
@@ -1503,6 +1528,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ASSET_FIELD_NUMBER = 2;
     private int asset_ = 0;
+
     /**
      *
      *
@@ -1688,6 +1714,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1886,6 +1913,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int user_;
+
       /**
        *
        *
@@ -1901,6 +1929,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       public int getUser() {
         return user_;
       }
+
       /**
        *
        *
@@ -1920,6 +1949,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1939,6 +1969,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int asset_;
+
       /**
        *
        *
@@ -1954,6 +1985,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       public int getAsset() {
         return asset_;
       }
+
       /**
        *
        *
@@ -1973,6 +2005,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2060,6 +2093,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2085,6 +2119,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2115,6 +2150,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -2140,6 +2176,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2170,6 +2207,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -2193,6 +2231,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2219,6 +2258,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MULTIPLYING_FACTOR_FIELD_NUMBER = 5;
   private float multiplyingFactor_ = 0F;
+
   /**
    *
    *
@@ -2239,6 +2279,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTITY_POPULATION_MECHANISM_FIELD_NUMBER = 6;
   private google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism entityPopulationMechanism_;
+
   /**
    *
    *
@@ -2256,6 +2297,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntityPopulationMechanism() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2276,6 +2318,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         ? google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.getDefaultInstance()
         : entityPopulationMechanism_;
   }
+
   /**
    *
    *
@@ -2297,6 +2340,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTITY_COUNT_FIELD_NUMBER = 7;
   private google.cloud.chronicle.v1.Watchlist.EntityCount entityCount_;
+
   /**
    *
    *
@@ -2314,6 +2358,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntityCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2333,6 +2378,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         ? google.cloud.chronicle.v1.Watchlist.EntityCount.getDefaultInstance()
         : entityCount_;
   }
+
   /**
    *
    *
@@ -2353,6 +2399,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -2369,6 +2416,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2385,6 +2433,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -2402,6 +2451,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -2418,6 +2468,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2434,6 +2485,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -2451,6 +2503,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WATCHLIST_USER_PREFERENCES_FIELD_NUMBER = 10;
   private google.cloud.chronicle.v1.WatchlistUserPreferences watchlistUserPreferences_;
+
   /**
    *
    *
@@ -2468,6 +2521,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWatchlistUserPreferences() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -2487,6 +2541,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         ? google.cloud.chronicle.v1.WatchlistUserPreferences.getDefaultInstance()
         : watchlistUserPreferences_;
   }
+
   /**
    *
    *
@@ -2766,6 +2821,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3106,6 +3162,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3130,6 +3187,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3154,6 +3212,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3177,6 +3236,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3196,6 +3256,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3283,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3246,6 +3308,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3270,6 +3333,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3293,6 +3357,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3312,6 +3377,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3338,6 +3404,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3360,6 +3427,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3382,6 +3450,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3403,6 +3472,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3420,6 +3490,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3444,6 +3515,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float multiplyingFactor_;
+
     /**
      *
      *
@@ -3461,6 +3533,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public float getMultiplyingFactor() {
       return multiplyingFactor_;
     }
+
     /**
      *
      *
@@ -3482,6 +3555,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3509,6 +3583,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.Builder,
             google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanismOrBuilder>
         entityPopulationMechanismBuilder_;
+
     /**
      *
      *
@@ -3525,6 +3600,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntityPopulationMechanism() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3548,6 +3624,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return entityPopulationMechanismBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3573,6 +3650,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3595,6 +3673,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3627,6 +3706,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3648,6 +3728,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3665,6 +3746,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEntityPopulationMechanismFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3686,6 +3768,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             : entityPopulationMechanism_;
       }
     }
+
     /**
      *
      *
@@ -3720,6 +3803,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             google.cloud.chronicle.v1.Watchlist.EntityCount.Builder,
             google.cloud.chronicle.v1.Watchlist.EntityCountOrBuilder>
         entityCountBuilder_;
+
     /**
      *
      *
@@ -3736,6 +3820,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntityCount() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3758,6 +3843,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return entityCountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3782,6 +3868,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3804,6 +3891,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3834,6 +3922,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3855,6 +3944,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3871,6 +3961,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEntityCountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3891,6 +3982,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             : entityCount_;
       }
     }
+
     /**
      *
      *
@@ -3925,6 +4017,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3941,6 +4034,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3963,6 +4057,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3987,6 +4082,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4008,6 +4104,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4037,6 +4134,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4058,6 +4156,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4074,6 +4173,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4094,6 +4194,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -4128,6 +4229,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -4144,6 +4246,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4166,6 +4269,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4190,6 +4294,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4211,6 +4316,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4240,6 +4346,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4261,6 +4368,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4277,6 +4385,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4297,6 +4406,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -4331,6 +4441,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             google.cloud.chronicle.v1.WatchlistUserPreferences.Builder,
             google.cloud.chronicle.v1.WatchlistUserPreferencesOrBuilder>
         watchlistUserPreferencesBuilder_;
+
     /**
      *
      *
@@ -4347,6 +4458,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWatchlistUserPreferences() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4369,6 +4481,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
         return watchlistUserPreferencesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4394,6 +4507,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4416,6 +4530,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4447,6 +4562,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4468,6 +4584,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4485,6 +4602,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWatchlistUserPreferencesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4506,6 +4624,7 @@ public final class Watchlist extends com.google.protobuf.GeneratedMessageV3
             : watchlistUserPreferences_;
       }
     }
+
     /**
      *
      *

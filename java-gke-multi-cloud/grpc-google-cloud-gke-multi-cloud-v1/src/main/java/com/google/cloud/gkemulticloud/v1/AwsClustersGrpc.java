@@ -802,6 +802,19 @@ public final class AwsClustersGrpc {
     return AwsClustersStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AwsClustersBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AwsClustersBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AwsClustersBlockingV2Stub>() {
+          @java.lang.Override
+          public AwsClustersBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AwsClustersBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AwsClustersBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1452,6 +1465,271 @@ public final class AwsClustersGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AwsClusters.
+   *
+   * <pre>
+   * The AwsClusters API provides a single centrally managed service
+   * to create and manage Anthos clusters that run on AWS infrastructure.
+   * </pre>
+   */
+  public static final class AwsClustersBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AwsClustersBlockingV2Stub> {
+    private AwsClustersBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AwsClustersBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AwsClustersBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource on a given Google Cloud Platform project and region.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAwsCluster(
+        com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAwsClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAwsCluster(
+        com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAwsClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster(
+        com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+     * on a given Google Cloud project and region.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse listAwsClusters(
+        com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAwsClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
+     * Fails if the cluster has one or more associated
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAwsCluster(
+        com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAwsClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse
+        generateAwsClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAwsClusterAgentTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a short-lived access token to authenticate to a given
+     * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse generateAwsAccessToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAwsAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool],
+     * attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAwsNodePool(
+        com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAwsNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAwsNodePool(
+        com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAwsNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a previously aborted or failed
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request.
+     * Makes no changes if the last update request successfully finished.
+     * If an update request is in progress, you cannot rollback the update.
+     * You must first cancel or let it finish unsuccessfully before you can
+     * rollback.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rollbackAwsNodePoolUpdate(
+        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackAwsNodePoolUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool(
+        com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resources on a given
+     * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse listAwsNodePools(
+        com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAwsNodePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resource.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAwsNodePool(
+        com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAwsNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig getAwsOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsOpenIdConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys getAwsJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsJsonWebKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information, such as supported AWS regions and Kubernetes
+     * versions, on a given Google Cloud location.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsServerConfig getAwsServerConfig(
+        com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAwsServerConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AwsClusters.
    *
    * <pre>
    * The AwsClusters API provides a single centrally managed service

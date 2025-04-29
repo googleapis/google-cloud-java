@@ -33,6 +33,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse)
     BatchGetSettingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchGetSettingsResponse.newBuilder() to construct.
   private BatchGetSettingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Settings> settings_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       getSettingsList() {
     return settings_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       getSettingsOrBuilderList() {
     return settings_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
   public int getSettingsCount() {
     return settings_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
   public com.google.cloud.securitycenter.settings.v1beta1.Settings getSettings(int index) {
     return settings_.get(index);
   }
+
   /**
    *
    *
@@ -302,6 +308,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +585,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         return settingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         return settingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         return settingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +755,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +777,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         int index) {
       return getSettingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -829,6 +849,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         return settingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -847,6 +868,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(settings_);
       }
     }
+
     /**
      *
      *
@@ -861,6 +883,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
           .addBuilder(
               com.google.cloud.securitycenter.settings.v1beta1.Settings.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -877,6 +900,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
               index,
               com.google.cloud.securitycenter.settings.v1beta1.Settings.getDefaultInstance());
     }
+
     /**
      *
      *

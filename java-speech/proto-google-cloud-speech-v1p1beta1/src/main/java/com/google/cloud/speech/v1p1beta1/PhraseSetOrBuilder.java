@@ -36,6 +36,7 @@ public interface PhraseSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase> getPhrasesList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
   com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase getPhrases(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
   int getPhrasesCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface PhraseSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder>
       getPhrasesOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface PhraseSetOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface PhraseSetOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface PhraseSetOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface PhraseSetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public interface PhraseSetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public interface PhraseSetOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface PhraseSetOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public interface PhraseSetOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -346,6 +359,7 @@ public interface PhraseSetOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -373,6 +387,7 @@ public interface PhraseSetOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -387,9 +402,11 @@ public interface PhraseSetOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -404,6 +421,7 @@ public interface PhraseSetOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -422,6 +440,7 @@ public interface PhraseSetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -452,6 +471,7 @@ public interface PhraseSetOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ListBackupsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface ListBackupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface ListBackupsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface ListBackupsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -157,4 +161,18 @@ public interface ListBackupsRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will return partial results when
+   * some regions are unreachable and the unreachable field will be populated.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  boolean getReturnPartialSuccess();
 }

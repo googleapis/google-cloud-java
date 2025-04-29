@@ -14,30 +14,28 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.v1beta1.samples;
+package com.google.cloud.retail.v2alpha.samples;
 
-// [START aiplatform_v1beta1_generated_SessionService_CreateSession_LocationnameSession_sync]
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Session;
-import com.google.cloud.aiplatform.v1beta1.SessionServiceClient;
+// [START retail_v2alpha_generated_ConversationalSearchService_Create_UseHttpJsonTransport_sync]
+import com.google.cloud.retail.v2alpha.ConversationalSearchServiceClient;
+import com.google.cloud.retail.v2alpha.ConversationalSearchServiceSettings;
 
-public class SyncCreateSessionLocationnameSession {
+public class SyncCreateUseHttpJsonTransport {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSessionLocationnameSession();
+    syncCreateUseHttpJsonTransport();
   }
 
-  public static void syncCreateSessionLocationnameSession() throws Exception {
+  public static void syncCreateUseHttpJsonTransport() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      Session session = Session.newBuilder().build();
-      Session response = sessionServiceClient.createSessionAsync(parent, session).get();
-    }
+    ConversationalSearchServiceSettings conversationalSearchServiceSettings =
+        ConversationalSearchServiceSettings.newHttpJsonBuilder().build();
+    ConversationalSearchServiceClient conversationalSearchServiceClient =
+        ConversationalSearchServiceClient.create(conversationalSearchServiceSettings);
   }
 }
-// [END aiplatform_v1beta1_generated_SessionService_CreateSession_LocationnameSession_sync]
+// [END retail_v2alpha_generated_ConversationalSearchService_Create_UseHttpJsonTransport_sync]

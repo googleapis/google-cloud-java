@@ -34,6 +34,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.QuotaRule quota_rules = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.QuotaRule> getQuotaRulesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.QuotaRule quota_rules = 1;</code>
    */
   com.google.cloud.netapp.v1.QuotaRule getQuotaRules(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.QuotaRule quota_rules = 1;</code>
    */
   int getQuotaRulesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListQuotaRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.QuotaRuleOrBuilder>
       getQuotaRulesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListQuotaRulesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

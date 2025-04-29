@@ -36,6 +36,7 @@ public interface DoubleArrayOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.Double> getValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DoubleArrayOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.BoundingPoly)
     BoundingPolyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BoundingPoly.newBuilder() to construct.
   private BoundingPoly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.Vertex> vertices_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Vertex> getVerticesList() {
     return vertices_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       getVerticesOrBuilderList() {
     return vertices_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
   public int getVerticesCount() {
     return vertices_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datalabeling.v1beta1.Vertex getVertices(int index) {
     return vertices_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,6 +564,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         return verticesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         return verticesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         return verticesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +771,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +791,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +804,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.Vertex.Builder getVerticesBuilder(int index) {
       return getVerticesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -801,6 +821,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         return verticesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -818,6 +839,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vertices_);
       }
     }
+
     /**
      *
      *
@@ -831,6 +853,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       return getVerticesFieldBuilder()
           .addBuilder(com.google.cloud.datalabeling.v1beta1.Vertex.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -844,6 +867,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       return getVerticesFieldBuilder()
           .addBuilder(index, com.google.cloud.datalabeling.v1beta1.Vertex.getDefaultInstance());
     }
+
     /**
      *
      *

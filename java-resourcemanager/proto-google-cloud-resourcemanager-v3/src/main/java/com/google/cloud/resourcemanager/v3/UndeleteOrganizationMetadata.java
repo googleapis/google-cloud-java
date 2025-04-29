@@ -34,6 +34,7 @@ public final class UndeleteOrganizationMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.UndeleteOrganizationMetadata)
     UndeleteOrganizationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UndeleteOrganizationMetadata.newBuilder() to construct.
   private UndeleteOrganizationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class UndeleteOrganizationMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

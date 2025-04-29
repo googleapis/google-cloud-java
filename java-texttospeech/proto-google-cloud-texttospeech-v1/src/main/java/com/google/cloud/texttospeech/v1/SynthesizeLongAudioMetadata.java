@@ -33,6 +33,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata)
     SynthesizeLongAudioMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SynthesizeLongAudioMetadata.newBuilder() to construct.
   private SynthesizeLongAudioMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
 
   public static final int PROGRESS_PERCENTAGE_FIELD_NUMBER = 3;
   private double progressPercentage_ = 0D;
+
   /**
    *
    *
@@ -375,6 +383,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -614,6 +623,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +748,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +763,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -763,6 +780,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -835,6 +855,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -858,6 +879,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +900,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +950,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +966,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -960,6 +986,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1014,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     }
 
     private double progressPercentage_;
+
     /**
      *
      *
@@ -1002,6 +1030,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     public double getProgressPercentage() {
       return progressPercentage_;
     }
+
     /**
      *
      *
@@ -1021,6 +1050,7 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

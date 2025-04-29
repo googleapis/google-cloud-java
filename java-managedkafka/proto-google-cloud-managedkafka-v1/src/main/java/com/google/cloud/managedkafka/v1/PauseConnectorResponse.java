@@ -33,6 +33,7 @@ public final class PauseConnectorResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.PauseConnectorResponse)
     PauseConnectorResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PauseConnectorResponse.newBuilder() to construct.
   private PauseConnectorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class PauseConnectorResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

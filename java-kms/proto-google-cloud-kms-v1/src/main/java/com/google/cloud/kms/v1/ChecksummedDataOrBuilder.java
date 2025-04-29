@@ -62,6 +62,7 @@ public interface ChecksummedDataOrBuilder
    * @return Whether the crc32cChecksum field is set.
    */
   boolean hasCrc32CChecksum();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ChecksummedDataOrBuilder
    * @return The crc32cChecksum.
    */
   com.google.protobuf.Int64Value getCrc32CChecksum();
+
   /**
    *
    *

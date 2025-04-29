@@ -33,6 +33,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.BackupRule)
     BackupRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackupRule.newBuilder() to construct.
   private BackupRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     private BackupScheduleOneofCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BACKUP_RETENTION_DAYS_FIELD_NUMBER = 4;
   private int backupRetentionDays_ = 0;
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STANDARD_SCHEDULE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -215,6 +221,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStandardSchedule() {
     return backupScheduleOneofCase_ == 5;
   }
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.backupdr.v1.StandardSchedule.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -447,6 +455,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -689,6 +698,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object ruleId_ = "";
+
     /**
      *
      *
@@ -716,6 +726,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -743,6 +754,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -769,6 +781,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +804,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +834,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int backupRetentionDays_;
+
     /**
      *
      *
@@ -843,6 +858,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     public int getBackupRetentionDays() {
       return backupRetentionDays_;
     }
+
     /**
      *
      *
@@ -870,6 +886,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.backupdr.v1.StandardSchedule.Builder,
             com.google.cloud.backupdr.v1.StandardScheduleOrBuilder>
         standardScheduleBuilder_;
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStandardSchedule() {
       return backupScheduleOneofCase_ == 5;
     }
+
     /**
      *
      *
@@ -947,6 +966,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.StandardSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       backupScheduleOneofCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1016,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       backupScheduleOneofCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1053,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       backupScheduleOneofCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1082,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1098,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.backupdr.v1.StandardSchedule.Builder getStandardScheduleBuilder() {
       return getStandardScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1097,6 +1122,7 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.StandardSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface EntityTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface EntityTypeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface EntityTypeOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface EntityTypeOrBuilder
    * @return The enum numeric value on the wire for autoExpansionMode.
    */
   int getAutoExpansionModeValue();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface EntityTypeOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EntityType.Entity entities = 5;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface EntityTypeOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EntityType.Entity entities = 5;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity getEntities(int index);
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface EntityTypeOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EntityType.Entity entities = 5;</code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface EntityTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface EntityTypeOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.EntityType.ExcludedPhrase>
       getExcludedPhrasesList();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface EntityTypeOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.EntityType.ExcludedPhrase getExcludedPhrases(int index);
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public interface EntityTypeOrBuilder
    * </code>
    */
   int getExcludedPhrasesCount();
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface EntityTypeOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.cx.v3beta1.EntityType.ExcludedPhraseOrBuilder>
       getExcludedPhrasesOrBuilderList();
+
   /**
    *
    *

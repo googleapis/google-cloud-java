@@ -38,6 +38,7 @@ public interface CheckGroundingResponseOrBuilder
    * @return Whether the supportScore field is set.
    */
   boolean hasSupportScore();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.FactChunk cited_chunks = 3;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.FactChunk> getCitedChunksList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.FactChunk cited_chunks = 3;</code>
    */
   com.google.cloud.discoveryengine.v1beta.FactChunk getCitedChunks(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.FactChunk cited_chunks = 3;</code>
    */
   int getCitedChunksCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface CheckGroundingResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.FactChunkOrBuilder>
       getCitedChunksOrBuilderList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface CheckGroundingResponseOrBuilder
   java.util.List<
           com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk>
       getCitedFactsList();
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public interface CheckGroundingResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
       getCitedFacts(int index);
+
   /**
    *
    *
@@ -152,6 +159,7 @@ public interface CheckGroundingResponseOrBuilder
    * </code>
    */
   int getCitedFactsCount();
+
   /**
    *
    *
@@ -169,6 +177,7 @@ public interface CheckGroundingResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
                   .CheckGroundingFactChunkOrBuilder>
       getCitedFactsOrBuilderList();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface CheckGroundingResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim>
       getClaimsList();
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface CheckGroundingResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim getClaims(int index);
+
   /**
    *
    *
@@ -218,6 +229,7 @@ public interface CheckGroundingResponseOrBuilder
    * </code>
    */
   int getClaimsCount();
+
   /**
    *
    *
@@ -231,6 +243,7 @@ public interface CheckGroundingResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.ClaimOrBuilder>
       getClaimsOrBuilderList();
+
   /**
    *
    *

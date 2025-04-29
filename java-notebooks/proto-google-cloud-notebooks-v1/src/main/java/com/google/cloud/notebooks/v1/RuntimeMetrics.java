@@ -33,6 +33,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.RuntimeMetrics)
     RuntimeMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeMetrics.newBuilder() to construct.
   private RuntimeMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,6 +102,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
   public int getSystemMetricsCount() {
     return internalGetSystemMetrics().getMap().size();
   }
+
   /**
    *
    *
@@ -119,12 +121,14 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetSystemMetrics().getMap().containsKey(key);
   }
+
   /** Use {@link #getSystemMetricsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSystemMetrics() {
     return getSystemMetricsMap();
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getSystemMetricsMap() {
     return internalGetSystemMetrics().getMap();
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -588,6 +595,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     public int getSystemMetricsCount() {
       return internalGetSystemMetrics().getMap().size();
     }
+
     /**
      *
      *
@@ -606,12 +614,14 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetSystemMetrics().getMap().containsKey(key);
     }
+
     /** Use {@link #getSystemMetricsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSystemMetrics() {
       return getSystemMetricsMap();
     }
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getSystemMetricsMap() {
       return internalGetSystemMetrics().getMap();
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemMetrics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSystemMetrics().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -695,12 +708,14 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSystemMetrics().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSystemMetrics() {
       bitField0_ |= 0x00000001;
       return internalGetMutableSystemMetrics().getMutableMap();
     }
+
     /**
      *
      *
@@ -723,6 +738,7 @@ public final class RuntimeMetrics extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

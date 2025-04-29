@@ -34,6 +34,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CreateEkmConnectionRequest)
     CreateEkmConnectionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateEkmConnectionRequest.newBuilder() to construct.
   private CreateEkmConnectionRequest(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ekmConnectionId_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
 
   public static final int EKM_CONNECTION_FIELD_NUMBER = 3;
   private com.google.cloud.kms.v1.EkmConnection ekmConnection_;
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
   public boolean hasEkmConnection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
         ? com.google.cloud.kms.v1.EkmConnection.getDefaultInstance()
         : ekmConnection_;
   }
+
   /**
    *
    *
@@ -419,6 +427,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object ekmConnectionId_ = "";
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
             com.google.cloud.kms.v1.EkmConnection.Builder,
             com.google.cloud.kms.v1.EkmConnectionOrBuilder>
         ekmConnectionBuilder_;
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
     public boolean hasEkmConnection() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -931,6 +952,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
         return ekmConnectionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1073,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
       onChanged();
       return getEkmConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class CreateEkmConnectionRequest extends com.google.protobuf.Genera
             : ekmConnection_;
       }
     }
+
     /**
      *
      *

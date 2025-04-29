@@ -37,6 +37,7 @@ public interface ListApprovalRequestsMessageOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface ListApprovalRequestsMessageOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public interface ListApprovalRequestsMessageOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Tool)
     ToolOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Tool.newBuilder() to construct.
   private Tool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.Tool.GoogleSearch)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Tool.GoogleSearch)
       GoogleSearchOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GoogleSearch.newBuilder() to construct.
     private GoogleSearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -267,6 +270,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -497,6 +501,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.Tool.CodeExecution)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -515,6 +520,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Tool.CodeExecution)
       CodeExecutionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CodeExecution.newBuilder() to construct.
     private CodeExecution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -694,6 +700,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -928,6 +935,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.FunctionDeclaration> functionDeclarations_;
+
   /**
    *
    *
@@ -952,6 +960,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       getFunctionDeclarationsList() {
     return functionDeclarations_;
   }
+
   /**
    *
    *
@@ -976,6 +985,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       getFunctionDeclarationsOrBuilderList() {
     return functionDeclarations_;
   }
+
   /**
    *
    *
@@ -999,6 +1009,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public int getFunctionDeclarationsCount() {
     return functionDeclarations_.size();
   }
+
   /**
    *
    *
@@ -1022,6 +1033,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vertexai.api.FunctionDeclaration getFunctionDeclarations(int index) {
     return functionDeclarations_.get(index);
   }
+
   /**
    *
    *
@@ -1049,6 +1061,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETRIEVAL_FIELD_NUMBER = 2;
   private com.google.cloud.vertexai.api.Retrieval retrieval_;
+
   /**
    *
    *
@@ -1069,6 +1082,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetrieval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1091,6 +1105,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.Retrieval.getDefaultInstance()
         : retrieval_;
   }
+
   /**
    *
    *
@@ -1114,6 +1129,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GOOGLE_SEARCH_FIELD_NUMBER = 7;
   private com.google.cloud.vertexai.api.Tool.GoogleSearch googleSearch_;
+
   /**
    *
    *
@@ -1132,6 +1148,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleSearch() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1152,6 +1169,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance()
         : googleSearch_;
   }
+
   /**
    *
    *
@@ -1173,6 +1191,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER = 3;
   private com.google.cloud.vertexai.api.GoogleSearchRetrieval googleSearchRetrieval_;
+
   /**
    *
    *
@@ -1191,6 +1210,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleSearchRetrieval() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1211,6 +1231,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()
         : googleSearchRetrieval_;
   }
+
   /**
    *
    *
@@ -1233,6 +1254,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTERPRISE_WEB_SEARCH_FIELD_NUMBER = 6;
   private com.google.cloud.vertexai.api.EnterpriseWebSearch enterpriseWebSearch_;
+
   /**
    *
    *
@@ -1251,6 +1273,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnterpriseWebSearch() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1271,6 +1294,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.EnterpriseWebSearch.getDefaultInstance()
         : enterpriseWebSearch_;
   }
+
   /**
    *
    *
@@ -1293,6 +1317,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CODE_EXECUTION_FIELD_NUMBER = 4;
   private com.google.cloud.vertexai.api.Tool.CodeExecution codeExecution_;
+
   /**
    *
    *
@@ -1311,6 +1336,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCodeExecution() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1331,6 +1357,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance()
         : codeExecution_;
   }
+
   /**
    *
    *
@@ -1581,6 +1608,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1975,6 +2003,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2001,6 +2030,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2027,6 +2057,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2060,6 +2091,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2122,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2156,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2156,6 +2190,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2186,6 +2221,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2216,6 +2252,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2246,6 +2283,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2275,6 +2313,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2304,6 +2343,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2327,6 +2367,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFunctionDeclarationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2354,6 +2395,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return functionDeclarationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2381,6 +2423,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(functionDeclarations_);
       }
     }
+
     /**
      *
      *
@@ -2405,6 +2448,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return getFunctionDeclarationsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.FunctionDeclaration.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2430,6 +2474,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vertexai.api.FunctionDeclaration.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2480,6 +2525,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Retrieval.Builder,
             com.google.cloud.vertexai.api.RetrievalOrBuilder>
         retrievalBuilder_;
+
     /**
      *
      *
@@ -2499,6 +2545,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetrieval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2524,6 +2571,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return retrievalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2551,6 +2599,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2575,6 +2624,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2607,6 +2657,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2631,6 +2682,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2702,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRetrievalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2673,6 +2726,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : retrieval_;
       }
     }
+
     /**
      *
      *
@@ -2710,6 +2764,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder,
             com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder>
         googleSearchBuilder_;
+
     /**
      *
      *
@@ -2727,6 +2782,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleSearch() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2750,6 +2806,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return googleSearchBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2775,6 +2832,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2798,6 +2856,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2829,6 +2888,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2851,6 +2911,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2868,6 +2929,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGoogleSearchFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2889,6 +2951,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : googleSearch_;
       }
     }
+
     /**
      *
      *
@@ -2924,6 +2987,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder,
             com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder>
         googleSearchRetrievalBuilder_;
+
     /**
      *
      *
@@ -2941,6 +3005,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleSearchRetrieval() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2964,6 +3029,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return googleSearchRetrievalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2990,6 +3056,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3013,6 +3080,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3045,6 +3113,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3067,6 +3136,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3085,6 +3155,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGoogleSearchRetrievalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3107,6 +3178,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : googleSearchRetrieval_;
       }
     }
+
     /**
      *
      *
@@ -3142,6 +3214,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.EnterpriseWebSearch.Builder,
             com.google.cloud.vertexai.api.EnterpriseWebSearchOrBuilder>
         enterpriseWebSearchBuilder_;
+
     /**
      *
      *
@@ -3159,6 +3232,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnterpriseWebSearch() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3182,6 +3256,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return enterpriseWebSearchBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3207,6 +3282,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3230,6 +3306,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3262,6 +3339,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3284,6 +3362,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3302,6 +3381,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnterpriseWebSearchFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3324,6 +3404,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : enterpriseWebSearch_;
       }
     }
+
     /**
      *
      *
@@ -3359,6 +3440,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Tool.CodeExecution.Builder,
             com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder>
         codeExecutionBuilder_;
+
     /**
      *
      *
@@ -3376,6 +3458,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCodeExecution() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3399,6 +3482,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         return codeExecutionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3424,6 +3508,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3447,6 +3532,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3478,6 +3564,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3500,6 +3587,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3517,6 +3605,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCodeExecutionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3538,6 +3627,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             : codeExecution_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsOrBuilder
    * @return Whether the recaptchaOptions field is set.
    */
   boolean hasRecaptchaOptions();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SecurityPolicyRuleMatcherExprOptionsOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions
       getRecaptchaOptions();
+
   /**
    *
    *

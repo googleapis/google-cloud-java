@@ -40,6 +40,7 @@ public interface CountTokensRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CountTokensRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getInstancesList();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   com.google.protobuf.Value getInstances(int index);
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface CountTokensRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getContentsOrBuilderList();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface CountTokensRequestOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface CountTokensRequestOrBuilder
    * @return The systemInstruction.
    */
   com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> getToolsList();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Tool getTools(int index);
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   int getToolsCount();
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public interface CountTokensRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
       getToolsOrBuilderList();
+
   /**
    *
    *
@@ -358,6 +374,7 @@ public interface CountTokensRequestOrBuilder
    * @return Whether the generationConfig field is set.
    */
   boolean hasGenerationConfig();
+
   /**
    *
    *
@@ -373,6 +390,7 @@ public interface CountTokensRequestOrBuilder
    * @return The generationConfig.
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig();
+
   /**
    *
    *

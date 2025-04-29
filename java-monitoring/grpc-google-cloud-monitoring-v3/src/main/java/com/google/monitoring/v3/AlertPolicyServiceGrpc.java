@@ -278,6 +278,19 @@ public final class AlertPolicyServiceGrpc {
     return AlertPolicyServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AlertPolicyServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AlertPolicyServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AlertPolicyServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AlertPolicyServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AlertPolicyServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AlertPolicyServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -554,6 +567,112 @@ public final class AlertPolicyServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AlertPolicyService.
+   *
+   * <pre>
+   * The AlertPolicyService API is used to manage (list, create, delete,
+   * edit) alert policies in Cloud Monitoring. An alerting policy is
+   * a description of the conditions under which some aspect of your
+   * system is considered to be "unhealthy" and the ways to notify
+   * people or services about this state. In addition to using this API, alert
+   * policies can also be managed through
+   * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
+   * which can be reached by clicking the "Monitoring" tab in
+   * [Cloud console](https://console.cloud.google.com/).
+   * </pre>
+   */
+  public static final class AlertPolicyServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AlertPolicyServiceBlockingV2Stub> {
+    private AlertPolicyServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AlertPolicyServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AlertPolicyServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing alerting policies for the workspace.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListAlertPoliciesResponse listAlertPolicies(
+        com.google.monitoring.v3.ListAlertPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAlertPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single alerting policy.
+     * </pre>
+     */
+    public com.google.monitoring.v3.AlertPolicy getAlertPolicy(
+        com.google.monitoring.v3.GetAlertPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAlertPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
+     * </pre>
+     */
+    public com.google.monitoring.v3.AlertPolicy createAlertPolicy(
+        com.google.monitoring.v3.CreateAlertPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAlertPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAlertPolicy(
+        com.google.monitoring.v3.DeleteAlertPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAlertPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an alerting policy. You can either replace the entire policy with
+     * a new one or replace only certain fields in the current alerting policy by
+     * specifying the fields to be updated via `updateMask`. Returns the
+     * updated alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
+     * </pre>
+     */
+    public com.google.monitoring.v3.AlertPolicy updateAlertPolicy(
+        com.google.monitoring.v3.UpdateAlertPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAlertPolicyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AlertPolicyService.
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,

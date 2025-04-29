@@ -36,6 +36,7 @@ public interface AnnotationOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface AnnotationOrBuilder
    * @return Whether the startIndex field is set.
    */
   boolean hasStartIndex();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface AnnotationOrBuilder
    * @return Whether the userMention field is set.
    */
   boolean hasUserMention();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface AnnotationOrBuilder
    * @return The userMention.
    */
   com.google.chat.v1.UserMentionMetadata getUserMention();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface AnnotationOrBuilder
    * @return Whether the slashCommand field is set.
    */
   boolean hasSlashCommand();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface AnnotationOrBuilder
    * @return The slashCommand.
    */
   com.google.chat.v1.SlashCommandMetadata getSlashCommand();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface AnnotationOrBuilder
    * @return Whether the richLinkMetadata field is set.
    */
   boolean hasRichLinkMetadata();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface AnnotationOrBuilder
    * @return The richLinkMetadata.
    */
   com.google.chat.v1.RichLinkMetadata getRichLinkMetadata();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface AnnotationOrBuilder
    * @return Whether the customEmojiMetadata field is set.
    */
   boolean hasCustomEmojiMetadata();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface AnnotationOrBuilder
    * @return The customEmojiMetadata.
    */
   com.google.chat.v1.CustomEmojiMetadata getCustomEmojiMetadata();
+
   /**
    *
    *

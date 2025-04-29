@@ -38,6 +38,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return Whether the routePolicyResource field is set.
    */
   boolean hasRoutePolicyResource();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return The routePolicyResource.
    */
   com.google.cloud.compute.v1.RoutePolicy getRoutePolicyResource();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface UpdateRoutePolicyRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
+
   /**
    *
    *

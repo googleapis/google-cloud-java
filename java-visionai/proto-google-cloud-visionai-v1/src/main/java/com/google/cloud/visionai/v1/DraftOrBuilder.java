@@ -36,6 +36,7 @@ public interface DraftOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DraftOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DraftOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface DraftOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface DraftOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface DraftOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -145,9 +151,11 @@ public interface DraftOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface DraftOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface DraftOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public interface DraftOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -220,6 +231,7 @@ public interface DraftOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -245,6 +257,7 @@ public interface DraftOrBuilder
    * @return Whether the draftApplicationConfigs field is set.
    */
   boolean hasDraftApplicationConfigs();
+
   /**
    *
    *
@@ -257,6 +270,7 @@ public interface DraftOrBuilder
    * @return The draftApplicationConfigs.
    */
   com.google.cloud.visionai.v1.ApplicationConfigs getDraftApplicationConfigs();
+
   /**
    *
    *

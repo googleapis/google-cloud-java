@@ -30,7 +30,7 @@ public interface EngineVersionOrBuilder
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
@@ -40,13 +40,14 @@ public interface EngineVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
@@ -71,6 +72,7 @@ public interface EngineVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface EngineVersionOrBuilder
    * @return Whether the expectedLimitationStartTime field is set.
    */
   boolean hasExpectedLimitationStartTime();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface EngineVersionOrBuilder
    * @return The expectedLimitationStartTime.
    */
   com.google.protobuf.Timestamp getExpectedLimitationStartTime();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface EngineVersionOrBuilder
    * @return Whether the expectedDecommissionTime field is set.
    */
   boolean hasExpectedDecommissionTime();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface EngineVersionOrBuilder
    * @return The expectedDecommissionTime.
    */
   com.google.protobuf.Timestamp getExpectedDecommissionTime();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface EngineVersionOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
+
   /**
    *
    *

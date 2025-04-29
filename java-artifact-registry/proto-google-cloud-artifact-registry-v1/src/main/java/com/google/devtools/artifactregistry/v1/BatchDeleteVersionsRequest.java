@@ -33,6 +33,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest)
     BatchDeleteVersionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteVersionsRequest.newBuilder() to construct.
   private BatchDeleteVersionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
   public int getNamesCount() {
     return names_.size();
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -399,6 +407,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +634,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       names_.makeImmutable();
       return names_;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     public int getNamesCount() {
       return names_.size();
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +911,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +964,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -956,6 +980,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -975,6 +1000,7 @@ public final class BatchDeleteVersionsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

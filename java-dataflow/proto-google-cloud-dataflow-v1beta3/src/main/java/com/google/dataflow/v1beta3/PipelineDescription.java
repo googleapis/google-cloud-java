@@ -35,6 +35,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.PipelineDescription)
     PipelineDescriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PipelineDescription.newBuilder() to construct.
   private PipelineDescription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.TransformSummary> originalPipelineTransform_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       getOriginalPipelineTransformList() {
     return originalPipelineTransform_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       getOriginalPipelineTransformOrBuilderList() {
     return originalPipelineTransform_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public int getOriginalPipelineTransformCount() {
     return originalPipelineTransform_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public com.google.dataflow.v1beta3.TransformSummary getOriginalPipelineTransform(int index) {
     return originalPipelineTransform_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary> executionPipelineStage_;
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       getExecutionPipelineStageList() {
     return executionPipelineStage_;
   }
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       getExecutionPipelineStageOrBuilderList() {
     return executionPipelineStage_;
   }
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public int getExecutionPipelineStageCount() {
     return executionPipelineStage_.size();
   }
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public com.google.dataflow.v1beta3.ExecutionStageSummary getExecutionPipelineStage(int index) {
     return executionPipelineStage_.get(index);
   }
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DisplayData> displayData_;
+
   /**
    *
    *
@@ -240,6 +252,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.dataflow.v1beta3.DisplayData> getDisplayDataList() {
     return displayData_;
   }
+
   /**
    *
    *
@@ -254,6 +267,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       getDisplayDataOrBuilderList() {
     return displayData_;
   }
+
   /**
    *
    *
@@ -267,6 +281,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public int getDisplayDataCount() {
     return displayData_.size();
   }
+
   /**
    *
    *
@@ -280,6 +295,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
   public com.google.dataflow.v1beta3.DisplayData getDisplayData(int index) {
     return displayData_.get(index);
   }
+
   /**
    *
    *
@@ -483,6 +499,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -864,6 +881,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return originalPipelineTransformBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return originalPipelineTransformBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return originalPipelineTransformBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -922,6 +942,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +964,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1058,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1101,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1122,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         int index) {
       return getOriginalPipelineTransformFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return originalPipelineTransformBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1144,6 +1175,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(originalPipelineTransform_);
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1191,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       return getOriginalPipelineTransformFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.TransformSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1174,6 +1207,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       return getOriginalPipelineTransformFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.TransformSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1245,6 +1279,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return executionPipelineStageBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1262,6 +1297,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return executionPipelineStageBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1279,6 +1315,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return executionPipelineStageBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1340,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1362,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1387,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1412,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1434,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1456,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1478,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1499,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1520,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1535,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         getExecutionPipelineStageBuilder(int index) {
       return getExecutionPipelineStageFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1507,6 +1554,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return executionPipelineStageBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1525,6 +1573,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(executionPipelineStage_);
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1589,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       return getExecutionPipelineStageFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.ExecutionStageSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1556,6 +1606,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.dataflow.v1beta3.ExecutionStageSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1624,6 +1675,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return displayDataBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1640,6 +1692,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return displayDataBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1656,6 +1709,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return displayDataBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1678,6 +1732,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1698,6 +1753,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1776,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1799,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1761,6 +1819,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1840,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1801,6 +1861,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1820,6 +1881,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1901,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1914,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
     public com.google.dataflow.v1beta3.DisplayData.Builder getDisplayDataBuilder(int index) {
       return getDisplayDataFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1867,6 +1931,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return displayDataBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1884,6 +1949,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(displayData_);
       }
     }
+
     /**
      *
      *
@@ -1897,6 +1963,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       return getDisplayDataFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.DisplayData.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1910,6 +1977,7 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
       return getDisplayDataFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.DisplayData.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface NetworkConfigOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
+
   /**
    *
    *

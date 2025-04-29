@@ -36,6 +36,7 @@ public interface ScheduleOptionsOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ScheduleOptionsOrBuilder
    * @return The schedule.
    */
   com.google.ads.admanager.v1.Schedule getSchedule();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ScheduleOptionsOrBuilder
    * @return The enum numeric value on the wire for deliveryCondition.
    */
   int getDeliveryConditionValue();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface ScheduleOptionsOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ScheduleOptionsOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.Report.Flag getFlags(int index);
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface ScheduleOptionsOrBuilder
    * </code>
    */
   int getFlagsCount();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface ScheduleOptionsOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.Report.FlagOrBuilder>
       getFlagsOrBuilderList();
+
   /**
    *
    *

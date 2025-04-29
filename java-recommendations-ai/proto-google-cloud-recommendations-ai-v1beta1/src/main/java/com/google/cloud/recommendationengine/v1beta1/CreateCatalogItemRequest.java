@@ -33,6 +33,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest)
     CreateCatalogItemRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateCatalogItemRequest.newBuilder() to construct.
   private CreateCatalogItemRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
 
   public static final int CATALOG_ITEM_FIELD_NUMBER = 2;
   private com.google.cloud.recommendationengine.v1beta1.CatalogItem catalogItem_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
   public boolean hasCatalogItem() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
         ? com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance()
         : catalogItem_;
   }
+
   /**
    *
    *
@@ -353,6 +359,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +582,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -649,6 +659,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
             com.google.cloud.recommendationengine.v1beta1.CatalogItem.Builder,
             com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder>
         catalogItemBuilder_;
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
     public boolean hasCatalogItem() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
         return catalogItemBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
       onChanged();
       return getCatalogItemFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
             : catalogItem_;
       }
     }
+
     /**
      *
      *

@@ -25,6 +25,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.GetDocumentRequest)
     GetDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetDocumentRequest.newBuilder() to construct.
   private GetDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -60,6 +61,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int DOCUMENT_ID_FIELD_NUMBER = 2;
   private com.google.cloud.documentai.v1beta3.DocumentId documentId_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasDocumentId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.documentai.v1beta3.DocumentId.getDefaultInstance()
         : documentId_;
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int READ_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask readMask_;
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_RANGE_FIELD_NUMBER = 4;
   private com.google.cloud.documentai.v1beta3.DocumentPageRange pageRange_;
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasPageRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.documentai.v1beta3.DocumentPageRange.getDefaultInstance()
         : pageRange_;
   }
+
   /**
    *
    *
@@ -475,6 +487,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.documentai.v1beta3.GetDocumentRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -718,6 +731,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -795,6 +811,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +867,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.documentai.v1beta3.DocumentId.Builder,
             com.google.cloud.documentai.v1beta3.DocumentIdOrBuilder>
         documentIdBuilder_;
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasDocumentId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return documentIdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -911,6 +932,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +955,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1007,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1024,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDocumentIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1019,6 +1045,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             : documentId_;
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
+
     /**
      *
      *
@@ -1068,6 +1096,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1087,6 +1116,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return readMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1110,6 +1140,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1161,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1190,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1211,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1227,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1210,6 +1245,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1279,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.documentai.v1beta3.DocumentPageRange.Builder,
             com.google.cloud.documentai.v1beta3.DocumentPageRangeOrBuilder>
         pageRangeBuilder_;
+
     /**
      *
      *
@@ -1258,6 +1295,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasPageRange() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1279,6 +1317,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return pageRangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1302,6 +1341,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1363,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1393,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1414,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1387,6 +1430,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPageRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1406,6 +1450,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             : pageRange_;
       }
     }
+
     /**
      *
      *

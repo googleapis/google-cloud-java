@@ -36,6 +36,7 @@ public interface RegisterSubscriberResponseOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *

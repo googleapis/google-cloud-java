@@ -92,6 +92,7 @@ public enum CompletionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPLETION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int COMPLETION_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum CompletionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PENDING = 1;</code>
    */
   public static final int PENDING_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum CompletionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SUCCEEDED = 2;</code>
    */
   public static final int SUCCEEDED_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum CompletionState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FAILED = 3;</code>
    */
   public static final int FAILED_VALUE = 3;
+
   /**
    *
    *

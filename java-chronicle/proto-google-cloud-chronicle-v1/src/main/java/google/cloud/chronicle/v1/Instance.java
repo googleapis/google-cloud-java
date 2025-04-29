@@ -33,6 +33,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.Instance)
     InstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Instance.newBuilder() to construct.
   private Instance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,15 +68,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of this instance.
+   * Identifier. The resource name of this instance.
    * Format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -91,15 +93,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. The resource name of this instance.
+   * Identifier. The resource name of this instance.
    * Format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -273,6 +276,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -455,15 +459,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of this instance.
+     * Identifier. The resource name of this instance.
      * Format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -478,15 +483,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of this instance.
+     * Identifier. The resource name of this instance.
      * Format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -501,15 +507,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of this instance.
+     * Identifier. The resource name of this instance.
      * Format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -523,15 +530,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of this instance.
+     * Identifier. The resource name of this instance.
      * Format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -541,15 +549,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The resource name of this instance.
+     * Identifier. The resource name of this instance.
      * Format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

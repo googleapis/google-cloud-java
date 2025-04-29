@@ -33,6 +33,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetPublicDelegatedPrefixeRequest)
     GetPublicDelegatedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetPublicDelegatedPrefixeRequest.newBuilder() to construct.
   private GetPublicDelegatedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicDelegatedPrefix_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -401,6 +408,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -618,6 +626,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -640,6 +649,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
     }
 
     private java.lang.Object publicDelegatedPrefix_ = "";
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +853,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +921,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +939,7 @@ public final class GetPublicDelegatedPrefixeRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

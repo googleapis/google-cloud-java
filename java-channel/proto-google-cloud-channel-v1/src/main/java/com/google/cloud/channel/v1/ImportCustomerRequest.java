@@ -34,6 +34,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ImportCustomerRequest)
     ImportCustomerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportCustomerRequest.newBuilder() to construct.
   private ImportCustomerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     private CustomerIdentityCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,6 +122,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DOMAIN_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDomain() {
     return customerIdentityCase_ == 2;
   }
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CLOUD_IDENTITY_ID_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCloudIdentityId() {
     return customerIdentityCase_ == 3;
   }
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PRIMARY_ADMIN_EMAIL_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   public boolean hasPrimaryAdminEmail() {
     return customerIdentityCase_ == 8;
   }
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -333,6 +344,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -358,6 +370,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -388,6 +401,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object authToken_ = "";
+
   /**
    *
    *
@@ -414,6 +428,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -443,6 +458,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
 
   public static final int OVERWRITE_IF_EXISTS_FIELD_NUMBER = 5;
   private boolean overwriteIfExists_ = false;
+
   /**
    *
    *
@@ -465,6 +481,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object channelPartnerId_ = "";
+
   /**
    *
    *
@@ -491,6 +508,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -522,6 +540,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customer_ = "";
+
   /**
    *
    *
@@ -549,6 +568,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -820,6 +840,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1147,6 +1168,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDomain() {
       return customerIdentityCase_ == 2;
     }
+
     /**
      *
      *
@@ -1175,6 +1197,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1226,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1248,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1268,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1307,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCloudIdentityId() {
       return customerIdentityCase_ == 3;
     }
+
     /**
      *
      *
@@ -1309,6 +1336,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1365,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1358,6 +1387,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1407,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1446,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean hasPrimaryAdminEmail() {
       return customerIdentityCase_ == 8;
     }
+
     /**
      *
      *
@@ -1443,6 +1475,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1471,6 +1504,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1492,6 +1526,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +1546,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1571,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1559,6 +1596,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1583,6 +1621,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1645,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1665,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1692,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object authToken_ = "";
+
     /**
      *
      *
@@ -1676,6 +1718,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1701,6 +1744,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1725,6 +1769,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1790,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1818,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean overwriteIfExists_;
+
     /**
      *
      *
@@ -1789,6 +1836,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     public boolean getOverwriteIfExists() {
       return overwriteIfExists_;
     }
+
     /**
      *
      *
@@ -1810,6 +1858,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1831,6 +1880,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object channelPartnerId_ = "";
+
     /**
      *
      *
@@ -1856,6 +1906,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1881,6 +1932,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1905,6 +1957,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1925,6 +1978,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +2006,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object customer_ = "";
+
     /**
      *
      *
@@ -1978,6 +2033,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2004,6 +2060,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2029,6 +2086,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2108,7 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

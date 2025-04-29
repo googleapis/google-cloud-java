@@ -39,6 +39,7 @@ public interface DataAccessScopeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface DataAccessScopeOrBuilder
    */
   java.util.List<google.cloud.chronicle.v1.DataAccessLabelReference>
       getAllowedDataAccessLabelsList();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DataAccessScopeOrBuilder
    * </code>
    */
   google.cloud.chronicle.v1.DataAccessLabelReference getAllowedDataAccessLabels(int index);
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface DataAccessScopeOrBuilder
    * </code>
    */
   int getAllowedDataAccessLabelsCount();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DataAccessScopeOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.DataAccessLabelReferenceOrBuilder>
       getAllowedDataAccessLabelsOrBuilderList();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface DataAccessScopeOrBuilder
    */
   java.util.List<google.cloud.chronicle.v1.DataAccessLabelReference>
       getDeniedDataAccessLabelsList();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface DataAccessScopeOrBuilder
    * </code>
    */
   google.cloud.chronicle.v1.DataAccessLabelReference getDeniedDataAccessLabels(int index);
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface DataAccessScopeOrBuilder
    * </code>
    */
   int getDeniedDataAccessLabelsCount();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface DataAccessScopeOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.DataAccessLabelReferenceOrBuilder>
       getDeniedDataAccessLabelsOrBuilderList();
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public interface DataAccessScopeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public interface DataAccessScopeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface DataAccessScopeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public interface DataAccessScopeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public interface DataAccessScopeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -348,6 +362,7 @@ public interface DataAccessScopeOrBuilder
    * @return The author.
    */
   java.lang.String getAuthor();
+
   /**
    *
    *
@@ -373,6 +388,7 @@ public interface DataAccessScopeOrBuilder
    * @return The lastEditor.
    */
   java.lang.String getLastEditor();
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public interface DataAccessScopeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

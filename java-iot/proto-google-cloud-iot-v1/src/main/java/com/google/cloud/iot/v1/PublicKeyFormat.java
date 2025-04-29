@@ -105,6 +105,7 @@ public enum PublicKeyFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNSPECIFIED_PUBLIC_KEY_FORMAT = 0;</code>
    */
   public static final int UNSPECIFIED_PUBLIC_KEY_FORMAT_VALUE = 0;
+
   /**
    *
    *
@@ -118,6 +119,7 @@ public enum PublicKeyFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RSA_PEM = 3;</code>
    */
   public static final int RSA_PEM_VALUE = 3;
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public enum PublicKeyFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RSA_X509_PEM = 1;</code>
    */
   public static final int RSA_X509_PEM_VALUE = 1;
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public enum PublicKeyFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ES256_PEM = 2;</code>
    */
   public static final int ES256_PEM_VALUE = 2;
+
   /**
    *
    *

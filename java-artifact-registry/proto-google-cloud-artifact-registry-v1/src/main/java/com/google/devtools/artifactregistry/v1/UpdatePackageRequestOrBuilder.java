@@ -36,6 +36,7 @@ public interface UpdatePackageRequestOrBuilder
    * @return Whether the package field is set.
    */
   boolean hasPackage();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdatePackageRequestOrBuilder
    * @return The package.
    */
   com.google.devtools.artifactregistry.v1.Package getPackage();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UpdatePackageRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface UpdatePackageRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

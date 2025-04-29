@@ -34,6 +34,7 @@ public interface ListRagFilesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagFile rag_files = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.RagFile> getRagFilesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListRagFilesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagFile rag_files = 1;</code>
    */
   com.google.cloud.aiplatform.v1.RagFile getRagFiles(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListRagFilesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.RagFile rag_files = 1;</code>
    */
   int getRagFilesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListRagFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.RagFileOrBuilder>
       getRagFilesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListRagFilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * @return The triggerId.
    */
   java.lang.String getTriggerId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * @return Whether the trigger field is set.
    */
   boolean hasTrigger();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * @return The trigger.
    */
   com.google.cloudbuild.v1.BuildTrigger getTrigger();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

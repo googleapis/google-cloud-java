@@ -34,6 +34,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.RunTestCaseResponse)
     RunTestCaseResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunTestCaseResponse.newBuilder() to construct.
   private RunTestCaseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3.TestCaseResult result_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dialogflow.cx.v3.TestCaseResult.getDefaultInstance()
         : result_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.cx.v3.TestCaseResult.Builder,
             com.google.cloud.dialogflow.cx.v3.TestCaseResultOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -496,6 +502,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +595,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -604,6 +615,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -636,6 +649,7 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
             : result_;
       }
     }
+
     /**
      *
      *

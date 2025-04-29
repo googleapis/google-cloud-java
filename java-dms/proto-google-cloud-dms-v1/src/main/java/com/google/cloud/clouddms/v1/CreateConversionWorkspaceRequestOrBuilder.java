@@ -38,6 +38,7 @@ public interface CreateConversionWorkspaceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateConversionWorkspaceRequestOrBuilder
    * @return The conversionWorkspaceId.
    */
   java.lang.String getConversionWorkspaceId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateConversionWorkspaceRequestOrBuilder
    * @return Whether the conversionWorkspace field is set.
    */
   boolean hasConversionWorkspace();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateConversionWorkspaceRequestOrBuilder
    * @return The conversionWorkspace.
    */
   com.google.cloud.clouddms.v1.ConversionWorkspace getConversionWorkspace();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface CreateConversionWorkspaceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

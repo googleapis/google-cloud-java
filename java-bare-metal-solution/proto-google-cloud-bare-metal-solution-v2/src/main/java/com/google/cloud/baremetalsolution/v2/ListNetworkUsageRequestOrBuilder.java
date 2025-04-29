@@ -38,6 +38,7 @@ public interface ListNetworkUsageRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

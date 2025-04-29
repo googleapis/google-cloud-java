@@ -39,6 +39,7 @@ public interface CreateNotificationSubscriptionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateNotificationSubscriptionRequestOrBuilder
    * @return Whether the notificationSubscription field is set.
    */
   boolean hasNotificationSubscription();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface CreateNotificationSubscriptionRequestOrBuilder
    */
   com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
       getNotificationSubscription();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse)
     ComputeRepositoryAccessTokenStatusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeRepositoryAccessTokenStatusResponse.newBuilder() to construct.
   private ComputeRepositoryAccessTokenStatusResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -131,6 +132,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
      * <code>TOKEN_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int TOKEN_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
      * <code>NOT_FOUND = 1;</code>
      */
     public static final int NOT_FOUND_VALUE = 1;
+
     /**
      *
      *
@@ -152,6 +155,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
      * <code>INVALID = 2;</code>
      */
     public static final int INVALID_VALUE = 2;
+
     /**
      *
      *
@@ -253,6 +257,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
 
   public static final int TOKEN_STATUS_FIELD_NUMBER = 1;
   private int tokenStatus_ = 0;
+
   /**
    *
    *
@@ -270,6 +275,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
   public int getTokenStatusValue() {
     return tokenStatus_;
   }
+
   /**
    *
    *
@@ -469,6 +475,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -662,6 +669,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
     private int bitField0_;
 
     private int tokenStatus_ = 0;
+
     /**
      *
      *
@@ -679,6 +687,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
     public int getTokenStatusValue() {
       return tokenStatus_;
     }
+
     /**
      *
      *
@@ -699,6 +708,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +734,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -749,6 +760,7 @@ public final class ComputeRepositoryAccessTokenStatusResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

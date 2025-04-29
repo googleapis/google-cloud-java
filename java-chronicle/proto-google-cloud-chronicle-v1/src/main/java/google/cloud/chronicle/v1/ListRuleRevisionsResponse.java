@@ -33,6 +33,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ListRuleRevisionsResponse)
     ListRuleRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListRuleRevisionsResponse.newBuilder() to construct.
   private ListRuleRevisionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<google.cloud.chronicle.v1.Rule> rules_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
   public java.util.List<google.cloud.chronicle.v1.Rule> getRulesList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
   public java.util.List<? extends google.cloud.chronicle.v1.RuleOrBuilder> getRulesOrBuilderList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
   public int getRulesCount() {
     return rules_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
   public google.cloud.chronicle.v1.Rule getRules(int index) {
     return rules_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -357,6 +365,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -632,6 +641,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return rulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return rulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return rulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +845,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +878,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
     public google.cloud.chronicle.v1.Rule.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -890,6 +913,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(rules_);
       }
     }
+
     /**
      *
      *
@@ -902,6 +926,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
     public google.cloud.chronicle.v1.Rule.Builder addRulesBuilder() {
       return getRulesFieldBuilder().addBuilder(google.cloud.chronicle.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -915,6 +940,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       return getRulesFieldBuilder()
           .addBuilder(index, google.cloud.chronicle.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -946,6 +972,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -969,6 +996,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1020,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1062,7 @@ public final class ListRuleRevisionsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface AccessStateDiffOrBuilder
    * @return Whether the baseline field is set.
    */
   boolean hasBaseline();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface AccessStateDiffOrBuilder
    * @return The baseline.
    */
   com.google.cloud.policysimulator.v1.ExplainedAccess getBaseline();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AccessStateDiffOrBuilder
    * @return Whether the simulated field is set.
    */
   boolean hasSimulated();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface AccessStateDiffOrBuilder
    * @return The simulated.
    */
   com.google.cloud.policysimulator.v1.ExplainedAccess getSimulated();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AccessStateDiffOrBuilder
    * @return The enum numeric value on the wire for accessChange.
    */
   int getAccessChangeValue();
+
   /**
    *
    *

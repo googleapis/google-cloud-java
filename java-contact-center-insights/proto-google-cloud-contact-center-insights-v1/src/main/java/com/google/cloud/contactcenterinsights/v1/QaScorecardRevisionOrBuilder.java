@@ -38,6 +38,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return Whether the snapshot field is set.
    */
   boolean hasSnapshot();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return The snapshot.
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecard getSnapshot();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return A list containing the alternateIds.
    */
   java.util.List<java.lang.String> getAlternateIdsList();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return The count of alternateIds.
    */
   int getAlternateIdsCount();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return The alternateIds at the given index.
    */
   java.lang.String getAlternateIds(int index);
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface QaScorecardRevisionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

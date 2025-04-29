@@ -38,6 +38,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CertificateMapEntryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface CertificateMapEntryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface CertificateMapEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -174,9 +181,11 @@ public interface CertificateMapEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -187,6 +196,7 @@ public interface CertificateMapEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface CertificateMapEntryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface CertificateMapEntryOrBuilder
    * @return Whether the hostname field is set.
    */
   boolean hasHostname();
+
   /**
    *
    *
@@ -240,6 +252,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public interface CertificateMapEntryOrBuilder
    * @return Whether the matcher field is set.
    */
   boolean hasMatcher();
+
   /**
    *
    *
@@ -279,6 +293,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The enum numeric value on the wire for matcher.
    */
   int getMatcherValue();
+
   /**
    *
    *
@@ -306,6 +321,7 @@ public interface CertificateMapEntryOrBuilder
    * @return A list containing the certificates.
    */
   java.util.List<java.lang.String> getCertificatesList();
+
   /**
    *
    *
@@ -320,6 +336,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The count of certificates.
    */
   int getCertificatesCount();
+
   /**
    *
    *
@@ -335,6 +352,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The certificates at the given index.
    */
   java.lang.String getCertificates(int index);
+
   /**
    *
    *
@@ -365,6 +383,7 @@ public interface CertificateMapEntryOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface DeleteFeatureMonitorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

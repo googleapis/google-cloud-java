@@ -82,6 +82,7 @@ public enum ReferenceListSyntaxType implements com.google.protobuf.ProtocolMessa
    * <code>REFERENCE_LIST_SYNTAX_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int REFERENCE_LIST_SYNTAX_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum ReferenceListSyntaxType implements com.google.protobuf.ProtocolMessa
    * <code>REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING = 1;</code>
    */
   public static final int REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum ReferenceListSyntaxType implements com.google.protobuf.ProtocolMessa
    * <code>REFERENCE_LIST_SYNTAX_TYPE_REGEX = 2;</code>
    */
   public static final int REFERENCE_LIST_SYNTAX_TYPE_REGEX_VALUE = 2;
+
   /**
    *
    *

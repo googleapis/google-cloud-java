@@ -38,6 +38,7 @@ public interface CreateRouteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateRouteRequestOrBuilder
    * @return The routeId.
    */
   java.lang.String getRouteId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateRouteRequestOrBuilder
    * @return Whether the route field is set.
    */
   boolean hasRoute();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateRouteRequestOrBuilder
    * @return The route.
    */
   com.google.cloud.datastream.v1.Route getRoute();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface CreateRouteRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

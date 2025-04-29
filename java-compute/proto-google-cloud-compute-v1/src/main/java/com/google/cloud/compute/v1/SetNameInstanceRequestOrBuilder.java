@@ -36,6 +36,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return Whether the instancesSetNameRequestResource field is set.
    */
   boolean hasInstancesSetNameRequestResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return The instancesSetNameRequestResource.
    */
   com.google.cloud.compute.v1.InstancesSetNameRequest getInstancesSetNameRequestResource();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface SetNameInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrimitiveTransformation)
     PrimitiveTransformationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrimitiveTransformation.newBuilder() to construct.
   private PrimitiveTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     private TransformationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -141,6 +143,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int REPLACE_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -156,6 +159,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasReplaceConfig() {
     return transformationCase_ == 1;
   }
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int REDACT_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasRedactConfig() {
     return transformationCase_ == 2;
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int CHARACTER_MASK_CONFIG_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasCharacterMaskConfig() {
     return transformationCase_ == 3;
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int CRYPTO_REPLACE_FFX_FPE_CONFIG_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasCryptoReplaceFfxFpeConfig() {
     return transformationCase_ == 4;
   }
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -352,6 +366,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int FIXED_SIZE_BUCKETING_CONFIG_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasFixedSizeBucketingConfig() {
     return transformationCase_ == 5;
   }
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.FixedSizeBucketingConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -404,6 +421,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int BUCKETING_CONFIG_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -419,6 +437,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasBucketingConfig() {
     return transformationCase_ == 6;
   }
+
   /**
    *
    *
@@ -437,6 +456,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -455,6 +475,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int REPLACE_WITH_INFO_TYPE_CONFIG_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -471,6 +492,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasReplaceWithInfoTypeConfig() {
     return transformationCase_ == 7;
   }
+
   /**
    *
    *
@@ -490,6 +512,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -510,6 +533,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int TIME_PART_CONFIG_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -525,6 +549,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasTimePartConfig() {
     return transformationCase_ == 8;
   }
+
   /**
    *
    *
@@ -543,6 +568,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -561,6 +587,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int CRYPTO_HASH_CONFIG_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -576,6 +603,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasCryptoHashConfig() {
     return transformationCase_ == 9;
   }
+
   /**
    *
    *
@@ -594,6 +622,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -612,6 +641,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int DATE_SHIFT_CONFIG_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -627,6 +657,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasDateShiftConfig() {
     return transformationCase_ == 11;
   }
+
   /**
    *
    *
@@ -645,6 +676,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -663,6 +695,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int CRYPTO_DETERMINISTIC_CONFIG_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -678,6 +711,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasCryptoDeterministicConfig() {
     return transformationCase_ == 12;
   }
+
   /**
    *
    *
@@ -696,6 +730,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -715,6 +750,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   }
 
   public static final int REPLACE_DICTIONARY_CONFIG_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -730,6 +766,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
   public boolean hasReplaceDictionaryConfig() {
     return transformationCase_ == 13;
   }
+
   /**
    *
    *
@@ -748,6 +785,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1110,6 +1148,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1522,6 +1561,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.ReplaceValueConfig.Builder,
             com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder>
         replaceConfigBuilder_;
+
     /**
      *
      *
@@ -1537,6 +1577,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasReplaceConfig() {
       return transformationCase_ == 1;
     }
+
     /**
      *
      *
@@ -1562,6 +1603,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1584,6 +1626,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1604,6 +1647,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1681,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1707,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1720,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.ReplaceValueConfig.Builder getReplaceConfigBuilder() {
       return getReplaceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1694,6 +1741,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceValueConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1732,6 +1780,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.RedactConfig.Builder,
             com.google.privacy.dlp.v2.RedactConfigOrBuilder>
         redactConfigBuilder_;
+
     /**
      *
      *
@@ -1747,6 +1796,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasRedactConfig() {
       return transformationCase_ == 2;
     }
+
     /**
      *
      *
@@ -1772,6 +1822,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1794,6 +1845,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1865,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1898,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1924,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1882,6 +1937,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.RedactConfig.Builder getRedactConfigBuilder() {
       return getRedactConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1902,6 +1958,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.RedactConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1940,6 +1997,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CharacterMaskConfig.Builder,
             com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder>
         characterMaskConfigBuilder_;
+
     /**
      *
      *
@@ -1955,6 +2013,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasCharacterMaskConfig() {
       return transformationCase_ == 3;
     }
+
     /**
      *
      *
@@ -1980,6 +2039,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2002,6 +2062,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2083,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2055,6 +2117,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2143,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2092,6 +2156,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.CharacterMaskConfig.Builder getCharacterMaskConfigBuilder() {
       return getCharacterMaskConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2113,6 +2178,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CharacterMaskConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2151,6 +2217,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder,
             com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder>
         cryptoReplaceFfxFpeConfigBuilder_;
+
     /**
      *
      *
@@ -2168,6 +2235,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasCryptoReplaceFfxFpeConfig() {
       return transformationCase_ == 4;
     }
+
     /**
      *
      *
@@ -2195,6 +2263,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2220,6 +2289,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2242,6 +2312,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2278,6 +2349,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2305,6 +2377,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2320,6 +2393,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         getCryptoReplaceFfxFpeConfigBuilder() {
       return getCryptoReplaceFfxFpeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2343,6 +2417,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2384,6 +2459,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.FixedSizeBucketingConfig.Builder,
             com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder>
         fixedSizeBucketingConfigBuilder_;
+
     /**
      *
      *
@@ -2399,6 +2475,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasFixedSizeBucketingConfig() {
       return transformationCase_ == 5;
     }
+
     /**
      *
      *
@@ -2424,6 +2501,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.FixedSizeBucketingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2447,6 +2525,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +2546,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2501,6 +2581,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2526,6 +2607,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2539,6 +2621,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         getFixedSizeBucketingConfigBuilder() {
       return getFixedSizeBucketingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2560,6 +2643,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.FixedSizeBucketingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2598,6 +2682,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.BucketingConfig.Builder,
             com.google.privacy.dlp.v2.BucketingConfigOrBuilder>
         bucketingConfigBuilder_;
+
     /**
      *
      *
@@ -2613,6 +2698,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasBucketingConfig() {
       return transformationCase_ == 6;
     }
+
     /**
      *
      *
@@ -2638,6 +2724,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2660,6 +2747,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2680,6 +2768,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2712,6 +2801,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2737,6 +2827,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2749,6 +2840,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.BucketingConfig.Builder getBucketingConfigBuilder() {
       return getBucketingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2769,6 +2861,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.BucketingConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2807,6 +2900,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.Builder,
             com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder>
         replaceWithInfoTypeConfigBuilder_;
+
     /**
      *
      *
@@ -2823,6 +2917,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasReplaceWithInfoTypeConfig() {
       return transformationCase_ == 7;
     }
+
     /**
      *
      *
@@ -2849,6 +2944,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2873,6 +2969,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2894,6 +2991,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2929,6 +3027,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2955,6 +3054,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2969,6 +3069,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         getReplaceWithInfoTypeConfigBuilder() {
       return getReplaceWithInfoTypeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2991,6 +3092,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3031,6 +3133,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.TimePartConfig.Builder,
             com.google.privacy.dlp.v2.TimePartConfigOrBuilder>
         timePartConfigBuilder_;
+
     /**
      *
      *
@@ -3046,6 +3149,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasTimePartConfig() {
       return transformationCase_ == 8;
     }
+
     /**
      *
      *
@@ -3071,6 +3175,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3093,6 +3198,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3113,6 +3219,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3145,6 +3252,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3170,6 +3278,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3182,6 +3291,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.TimePartConfig.Builder getTimePartConfigBuilder() {
       return getTimePartConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3202,6 +3312,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.TimePartConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3240,6 +3351,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CryptoHashConfig.Builder,
             com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder>
         cryptoHashConfigBuilder_;
+
     /**
      *
      *
@@ -3255,6 +3367,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasCryptoHashConfig() {
       return transformationCase_ == 9;
     }
+
     /**
      *
      *
@@ -3280,6 +3393,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3302,6 +3416,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3322,6 +3437,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3354,6 +3470,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3379,6 +3496,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3391,6 +3509,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.CryptoHashConfig.Builder getCryptoHashConfigBuilder() {
       return getCryptoHashConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3411,6 +3530,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoHashConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3449,6 +3569,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.DateShiftConfig.Builder,
             com.google.privacy.dlp.v2.DateShiftConfigOrBuilder>
         dateShiftConfigBuilder_;
+
     /**
      *
      *
@@ -3464,6 +3585,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasDateShiftConfig() {
       return transformationCase_ == 11;
     }
+
     /**
      *
      *
@@ -3489,6 +3611,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3511,6 +3634,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3531,6 +3655,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3563,6 +3688,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3588,6 +3714,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3600,6 +3727,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.DateShiftConfig.Builder getDateShiftConfigBuilder() {
       return getDateShiftConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3620,6 +3748,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3658,6 +3787,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder,
             com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder>
         cryptoDeterministicConfigBuilder_;
+
     /**
      *
      *
@@ -3674,6 +3804,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasCryptoDeterministicConfig() {
       return transformationCase_ == 12;
     }
+
     /**
      *
      *
@@ -3700,6 +3831,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3724,6 +3856,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3745,6 +3878,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3780,6 +3914,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3806,6 +3941,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -3820,6 +3956,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         getCryptoDeterministicConfigBuilder() {
       return getCryptoDeterministicConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3842,6 +3979,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3882,6 +4020,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder,
             com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder>
         replaceDictionaryConfigBuilder_;
+
     /**
      *
      *
@@ -3897,6 +4036,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public boolean hasReplaceDictionaryConfig() {
       return transformationCase_ == 13;
     }
+
     /**
      *
      *
@@ -3922,6 +4062,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3945,6 +4086,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -3965,6 +4107,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -3999,6 +4142,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       transformationCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4024,6 +4168,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -4037,6 +4182,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         getReplaceDictionaryConfigBuilder() {
       return getReplaceDictionaryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4058,6 +4204,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         return com.google.privacy.dlp.v2.ReplaceDictionaryConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

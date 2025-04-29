@@ -34,6 +34,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1beta1.ResourceManifest)
     ResourceManifestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceManifest.newBuilder() to construct.
   private ResourceManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object manifest_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
 
   public static final int CLUSTER_SCOPED_FIELD_NUMBER = 2;
   private boolean clusterScoped_ = false;
+
   /**
    *
    *
@@ -305,6 +309,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -503,6 +508,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object manifest_ = "";
+
     /**
      *
      *
@@ -525,6 +531,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -568,6 +576,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean clusterScoped_;
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     public boolean getClusterScoped() {
       return clusterScoped_;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

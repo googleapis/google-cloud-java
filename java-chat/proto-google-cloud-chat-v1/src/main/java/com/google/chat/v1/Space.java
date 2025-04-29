@@ -34,6 +34,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Space)
     SpaceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Space.newBuilder() to construct.
   private Space(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>ROOM = 1;</code>
      */
     public static final int ROOM_VALUE = 1;
+
     /**
      *
      *
@@ -292,6 +295,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>SPACE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SPACE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -303,6 +307,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>SPACE = 1;</code>
      */
     public static final int SPACE_VALUE = 1;
+
     /**
      *
      *
@@ -314,6 +319,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>GROUP_CHAT = 2;</code>
      */
     public static final int GROUP_CHAT_VALUE = 2;
+
     /**
      *
      *
@@ -477,6 +483,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>SPACE_THREADING_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int SPACE_THREADING_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -489,6 +496,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>THREADED_MESSAGES = 2;</code>
      */
     public static final int THREADED_MESSAGES_VALUE = 2;
+
     /**
      *
      *
@@ -500,6 +508,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>GROUPED_MESSAGES = 3;</code>
      */
     public static final int GROUPED_MESSAGES_VALUE = 3;
+
     /**
      *
      *
@@ -658,6 +667,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>PREDEFINED_PERMISSION_SETTINGS_UNSPECIFIED = 0;</code>
      */
     public static final int PREDEFINED_PERMISSION_SETTINGS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>COLLABORATION_SPACE = 1;</code>
      */
     public static final int COLLABORATION_SPACE_VALUE = 1;
+
     /**
      *
      *
@@ -787,6 +798,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -817,6 +829,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The guidelines.
      */
     java.lang.String getGuidelines();
+
     /**
      *
      *
@@ -832,6 +845,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getGuidelinesBytes();
   }
+
   /**
    *
    *
@@ -846,6 +860,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.Space.SpaceDetails)
       SpaceDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SpaceDetails.newBuilder() to construct.
     private SpaceDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -881,6 +896,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -907,6 +923,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -938,6 +955,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object guidelines_ = "";
+
     /**
      *
      *
@@ -963,6 +981,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1157,6 +1176,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1358,6 +1378,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -1383,6 +1404,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1408,6 +1430,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1432,6 +1455,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1452,6 +1476,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1479,6 +1504,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object guidelines_ = "";
+
       /**
        *
        *
@@ -1503,6 +1529,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1527,6 +1554,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1550,6 +1578,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1569,6 +1598,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1691,6 +1721,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     int getJoinedGroupCount();
   }
+
   /**
    *
    *
@@ -1705,6 +1736,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.Space.MembershipCount)
       MembershipCountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MembershipCount.newBuilder() to construct.
     private MembershipCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1735,6 +1767,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int JOINED_DIRECT_HUMAN_USER_COUNT_FIELD_NUMBER = 4;
     private int joinedDirectHumanUserCount_ = 0;
+
     /**
      *
      *
@@ -1755,6 +1788,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int JOINED_GROUP_COUNT_FIELD_NUMBER = 5;
     private int joinedGroupCount_ = 0;
+
     /**
      *
      *
@@ -1941,6 +1975,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2138,6 +2173,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int joinedDirectHumanUserCount_;
+
       /**
        *
        *
@@ -2156,6 +2192,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public int getJoinedDirectHumanUserCount() {
         return joinedDirectHumanUserCount_;
       }
+
       /**
        *
        *
@@ -2178,6 +2215,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2200,6 +2238,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int joinedGroupCount_;
+
       /**
        *
        *
@@ -2215,6 +2254,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public int getJoinedGroupCount() {
         return joinedGroupCount_;
       }
+
       /**
        *
        *
@@ -2234,6 +2274,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2335,6 +2376,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for accessState.
      */
     int getAccessStateValue();
+
     /**
      *
      *
@@ -2391,6 +2433,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The audience.
      */
     java.lang.String getAudience();
+
     /**
      *
      *
@@ -2433,6 +2476,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAudienceBytes();
   }
+
   /**
    *
    *
@@ -2448,6 +2492,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.Space.AccessSettings)
       AccessSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AccessSettings.newBuilder() to construct.
     private AccessSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2541,6 +2586,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * <code>ACCESS_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int ACCESS_STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2553,6 +2599,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * <code>PRIVATE = 1;</code>
        */
       public static final int PRIVATE_VALUE = 1;
+
       /**
        *
        *
@@ -2656,6 +2703,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ACCESS_STATE_FIELD_NUMBER = 1;
     private int accessState_ = 0;
+
     /**
      *
      *
@@ -2673,6 +2721,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public int getAccessStateValue() {
       return accessState_;
     }
+
     /**
      *
      *
@@ -2699,6 +2748,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object audience_ = "";
+
     /**
      *
      *
@@ -2751,6 +2801,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2976,6 +3027,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3176,6 +3228,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int accessState_ = 0;
+
       /**
        *
        *
@@ -3193,6 +3246,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public int getAccessStateValue() {
         return accessState_;
       }
+
       /**
        *
        *
@@ -3213,6 +3267,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3234,6 +3289,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             ? com.google.chat.v1.Space.AccessSettings.AccessState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3257,6 +3313,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3278,6 +3335,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object audience_ = "";
+
       /**
        *
        *
@@ -3329,6 +3387,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3380,6 +3439,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3430,6 +3490,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3476,6 +3537,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3611,6 +3673,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manageMembersAndGroups field is set.
      */
     boolean hasManageMembersAndGroups();
+
     /**
      *
      *
@@ -3625,6 +3688,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The manageMembersAndGroups.
      */
     com.google.chat.v1.Space.PermissionSetting getManageMembersAndGroups();
+
     /**
      *
      *
@@ -3653,6 +3717,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the modifySpaceDetails field is set.
      */
     boolean hasModifySpaceDetails();
+
     /**
      *
      *
@@ -3668,6 +3733,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The modifySpaceDetails.
      */
     com.google.chat.v1.Space.PermissionSetting getModifySpaceDetails();
+
     /**
      *
      *
@@ -3696,6 +3762,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the toggleHistory field is set.
      */
     boolean hasToggleHistory();
+
     /**
      *
      *
@@ -3710,6 +3777,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The toggleHistory.
      */
     com.google.chat.v1.Space.PermissionSetting getToggleHistory();
+
     /**
      *
      *
@@ -3737,6 +3805,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the useAtMentionAll field is set.
      */
     boolean hasUseAtMentionAll();
+
     /**
      *
      *
@@ -3751,6 +3820,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The useAtMentionAll.
      */
     com.google.chat.v1.Space.PermissionSetting getUseAtMentionAll();
+
     /**
      *
      *
@@ -3778,6 +3848,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manageApps field is set.
      */
     boolean hasManageApps();
+
     /**
      *
      *
@@ -3792,6 +3863,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The manageApps.
      */
     com.google.chat.v1.Space.PermissionSetting getManageApps();
+
     /**
      *
      *
@@ -3819,6 +3891,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manageWebhooks field is set.
      */
     boolean hasManageWebhooks();
+
     /**
      *
      *
@@ -3833,6 +3906,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The manageWebhooks.
      */
     com.google.chat.v1.Space.PermissionSetting getManageWebhooks();
+
     /**
      *
      *
@@ -3860,6 +3934,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postMessages field is set.
      */
     boolean hasPostMessages();
+
     /**
      *
      *
@@ -3874,6 +3949,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The postMessages.
      */
     com.google.chat.v1.Space.PermissionSetting getPostMessages();
+
     /**
      *
      *
@@ -3901,6 +3977,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the replyMessages field is set.
      */
     boolean hasReplyMessages();
+
     /**
      *
      *
@@ -3915,6 +3992,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return The replyMessages.
      */
     com.google.chat.v1.Space.PermissionSetting getReplyMessages();
+
     /**
      *
      *
@@ -3928,6 +4006,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getReplyMessagesOrBuilder();
   }
+
   /**
    *
    *
@@ -3946,6 +4025,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.Space.PermissionSettings)
       PermissionSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PermissionSettings.newBuilder() to construct.
     private PermissionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3977,6 +4057,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MANAGE_MEMBERS_AND_GROUPS_FIELD_NUMBER = 1;
     private com.google.chat.v1.Space.PermissionSetting manageMembersAndGroups_;
+
     /**
      *
      *
@@ -3994,6 +4075,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManageMembersAndGroups() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4013,6 +4095,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : manageMembersAndGroups_;
     }
+
     /**
      *
      *
@@ -4034,6 +4117,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MODIFY_SPACE_DETAILS_FIELD_NUMBER = 2;
     private com.google.chat.v1.Space.PermissionSetting modifySpaceDetails_;
+
     /**
      *
      *
@@ -4052,6 +4136,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasModifySpaceDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4072,6 +4157,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : modifySpaceDetails_;
     }
+
     /**
      *
      *
@@ -4093,6 +4179,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOGGLE_HISTORY_FIELD_NUMBER = 3;
     private com.google.chat.v1.Space.PermissionSetting toggleHistory_;
+
     /**
      *
      *
@@ -4110,6 +4197,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasToggleHistory() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4129,6 +4217,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : toggleHistory_;
     }
+
     /**
      *
      *
@@ -4149,6 +4238,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int USE_AT_MENTION_ALL_FIELD_NUMBER = 4;
     private com.google.chat.v1.Space.PermissionSetting useAtMentionAll_;
+
     /**
      *
      *
@@ -4166,6 +4256,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUseAtMentionAll() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -4185,6 +4276,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : useAtMentionAll_;
     }
+
     /**
      *
      *
@@ -4205,6 +4297,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MANAGE_APPS_FIELD_NUMBER = 5;
     private com.google.chat.v1.Space.PermissionSetting manageApps_;
+
     /**
      *
      *
@@ -4222,6 +4315,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManageApps() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4241,6 +4335,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : manageApps_;
     }
+
     /**
      *
      *
@@ -4261,6 +4356,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MANAGE_WEBHOOKS_FIELD_NUMBER = 6;
     private com.google.chat.v1.Space.PermissionSetting manageWebhooks_;
+
     /**
      *
      *
@@ -4278,6 +4374,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManageWebhooks() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4297,6 +4394,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : manageWebhooks_;
     }
+
     /**
      *
      *
@@ -4317,6 +4415,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int POST_MESSAGES_FIELD_NUMBER = 7;
     private com.google.chat.v1.Space.PermissionSetting postMessages_;
+
     /**
      *
      *
@@ -4334,6 +4433,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostMessages() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4353,6 +4453,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : postMessages_;
     }
+
     /**
      *
      *
@@ -4373,6 +4474,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REPLY_MESSAGES_FIELD_NUMBER = 8;
     private com.google.chat.v1.Space.PermissionSetting replyMessages_;
+
     /**
      *
      *
@@ -4390,6 +4492,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReplyMessages() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4409,6 +4512,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
           : replyMessages_;
     }
+
     /**
      *
      *
@@ -4693,6 +4797,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5051,6 +5156,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           manageMembersAndGroupsBuilder_;
+
       /**
        *
        *
@@ -5067,6 +5173,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasManageMembersAndGroups() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5089,6 +5196,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return manageMembersAndGroupsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5113,6 +5221,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5135,6 +5244,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5165,6 +5275,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5186,6 +5297,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5202,6 +5314,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getManageMembersAndGroupsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5223,6 +5336,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : manageMembersAndGroups_;
         }
       }
+
       /**
        *
        *
@@ -5257,6 +5371,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           modifySpaceDetailsBuilder_;
+
       /**
        *
        *
@@ -5274,6 +5389,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasModifySpaceDetails() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -5297,6 +5413,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return modifySpaceDetailsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5322,6 +5439,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5345,6 +5463,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5376,6 +5495,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5398,6 +5518,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5415,6 +5536,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getModifySpaceDetailsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5436,6 +5558,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : modifySpaceDetails_;
         }
       }
+
       /**
        *
        *
@@ -5471,6 +5594,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           toggleHistoryBuilder_;
+
       /**
        *
        *
@@ -5487,6 +5611,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasToggleHistory() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -5509,6 +5634,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return toggleHistoryBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5533,6 +5659,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5555,6 +5682,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5585,6 +5713,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5606,6 +5735,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5622,6 +5752,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getToggleHistoryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5642,6 +5773,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : toggleHistory_;
         }
       }
+
       /**
        *
        *
@@ -5676,6 +5808,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           useAtMentionAllBuilder_;
+
       /**
        *
        *
@@ -5692,6 +5825,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUseAtMentionAll() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -5714,6 +5848,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return useAtMentionAllBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5738,6 +5873,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5760,6 +5896,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5790,6 +5927,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5811,6 +5949,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5827,6 +5966,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUseAtMentionAllFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5847,6 +5987,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : useAtMentionAll_;
         }
       }
+
       /**
        *
        *
@@ -5881,6 +6022,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           manageAppsBuilder_;
+
       /**
        *
        *
@@ -5897,6 +6039,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasManageApps() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -5919,6 +6062,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return manageAppsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5943,6 +6087,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5965,6 +6110,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5994,6 +6140,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6015,6 +6162,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6031,6 +6179,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getManageAppsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6051,6 +6200,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : manageApps_;
         }
       }
+
       /**
        *
        *
@@ -6085,6 +6235,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           manageWebhooksBuilder_;
+
       /**
        *
        *
@@ -6101,6 +6252,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasManageWebhooks() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -6123,6 +6275,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return manageWebhooksBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6147,6 +6300,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6169,6 +6323,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6199,6 +6354,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6220,6 +6376,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6236,6 +6393,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getManageWebhooksFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6256,6 +6414,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : manageWebhooks_;
         }
       }
+
       /**
        *
        *
@@ -6290,6 +6449,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           postMessagesBuilder_;
+
       /**
        *
        *
@@ -6306,6 +6466,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPostMessages() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -6328,6 +6489,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return postMessagesBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6352,6 +6514,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6374,6 +6537,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6403,6 +6567,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6424,6 +6589,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6440,6 +6606,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getPostMessagesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6460,6 +6627,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : postMessages_;
         }
       }
+
       /**
        *
        *
@@ -6494,6 +6662,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder,
               com.google.chat.v1.Space.PermissionSettingOrBuilder>
           replyMessagesBuilder_;
+
       /**
        *
        *
@@ -6510,6 +6679,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean hasReplyMessages() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -6532,6 +6702,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           return replyMessagesBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6556,6 +6727,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6578,6 +6750,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6608,6 +6781,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6629,6 +6803,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6645,6 +6820,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getReplyMessagesFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6665,6 +6841,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               : replyMessages_;
         }
       }
+
       /**
        *
        *
@@ -6788,6 +6965,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getMembersAllowed();
   }
+
   /**
    *
    *
@@ -6802,6 +6980,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.chat.v1.Space.PermissionSetting)
       PermissionSettingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PermissionSetting.newBuilder() to construct.
     private PermissionSetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6832,6 +7011,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MANAGERS_ALLOWED_FIELD_NUMBER = 1;
     private boolean managersAllowed_ = false;
+
     /**
      *
      *
@@ -6850,6 +7030,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MEMBERS_ALLOWED_FIELD_NUMBER = 2;
     private boolean membersAllowed_ = false;
+
     /**
      *
      *
@@ -7035,6 +7216,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7232,6 +7414,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean managersAllowed_;
+
       /**
        *
        *
@@ -7247,6 +7430,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean getManagersAllowed() {
         return managersAllowed_;
       }
+
       /**
        *
        *
@@ -7266,6 +7450,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7285,6 +7470,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean membersAllowed_;
+
       /**
        *
        *
@@ -7300,6 +7486,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public boolean getMembersAllowed() {
         return membersAllowed_;
       }
+
       /**
        *
        *
@@ -7319,6 +7506,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7419,6 +7607,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     private SpacePermissionSettingsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -7455,6 +7644,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -7487,6 +7677,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7522,6 +7713,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -7542,6 +7734,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -7566,6 +7759,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPACE_TYPE_FIELD_NUMBER = 10;
   private int spaceType_ = 0;
+
   /**
    *
    *
@@ -7584,6 +7778,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public int getSpaceTypeValue() {
     return spaceType_;
   }
+
   /**
    *
    *
@@ -7607,6 +7802,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SINGLE_USER_BOT_DM_FIELD_NUMBER = 4;
   private boolean singleUserBotDm_ = false;
+
   /**
    *
    *
@@ -7626,6 +7822,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THREADED_FIELD_NUMBER = 5;
   private boolean threaded_ = false;
+
   /**
    *
    *
@@ -7649,6 +7846,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -7681,6 +7879,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7716,6 +7915,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTERNAL_USER_ALLOWED_FIELD_NUMBER = 8;
   private boolean externalUserAllowed_ = false;
+
   /**
    *
    *
@@ -7744,6 +7944,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPACE_THREADING_STATE_FIELD_NUMBER = 9;
   private int spaceThreadingState_ = 0;
+
   /**
    *
    *
@@ -7761,6 +7962,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public int getSpaceThreadingStateValue() {
     return spaceThreadingState_;
   }
+
   /**
    *
    *
@@ -7783,6 +7985,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPACE_DETAILS_FIELD_NUMBER = 11;
   private com.google.chat.v1.Space.SpaceDetails spaceDetails_;
+
   /**
    *
    *
@@ -7800,6 +8003,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpaceDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -7819,6 +8023,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         ? com.google.chat.v1.Space.SpaceDetails.getDefaultInstance()
         : spaceDetails_;
   }
+
   /**
    *
    *
@@ -7839,6 +8044,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPACE_HISTORY_STATE_FIELD_NUMBER = 13;
   private int spaceHistoryState_ = 0;
+
   /**
    *
    *
@@ -7856,6 +8062,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public int getSpaceHistoryStateValue() {
     return spaceHistoryState_;
   }
+
   /**
    *
    *
@@ -7878,6 +8085,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORT_MODE_FIELD_NUMBER = 16;
   private boolean importMode_ = false;
+
   /**
    *
    *
@@ -7901,6 +8109,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -7925,6 +8134,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -7949,6 +8159,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -7974,6 +8185,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_ACTIVE_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp lastActiveTime_;
+
   /**
    *
    *
@@ -7991,6 +8203,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastActiveTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -8010,6 +8223,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastActiveTime_;
   }
+
   /**
    *
    *
@@ -8030,6 +8244,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADMIN_INSTALLED_FIELD_NUMBER = 19;
   private boolean adminInstalled_ = false;
+
   /**
    *
    *
@@ -8053,6 +8268,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEMBERSHIP_COUNT_FIELD_NUMBER = 20;
   private com.google.chat.v1.Space.MembershipCount membershipCount_;
+
   /**
    *
    *
@@ -8072,6 +8288,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMembershipCount() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -8093,6 +8310,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         ? com.google.chat.v1.Space.MembershipCount.getDefaultInstance()
         : membershipCount_;
   }
+
   /**
    *
    *
@@ -8115,6 +8333,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_SETTINGS_FIELD_NUMBER = 23;
   private com.google.chat.v1.Space.AccessSettings accessSettings_;
+
   /**
    *
    *
@@ -8134,6 +8353,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessSettings() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -8155,6 +8375,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         ? com.google.chat.v1.Space.AccessSettings.getDefaultInstance()
         : accessSettings_;
   }
+
   /**
    *
    *
@@ -8179,6 +8400,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object spaceUri_ = "";
+
   /**
    *
    *
@@ -8202,6 +8424,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -8227,6 +8450,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREDEFINED_PERMISSION_SETTINGS_FIELD_NUMBER = 26;
+
   /**
    *
    *
@@ -8246,6 +8470,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPredefinedPermissionSettings() {
     return spacePermissionSettingsCase_ == 26;
   }
+
   /**
    *
    *
@@ -8268,6 +8493,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -8298,6 +8524,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERMISSION_SETTINGS_FIELD_NUMBER = 27;
+
   /**
    *
    *
@@ -8317,6 +8544,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPermissionSettings() {
     return spacePermissionSettingsCase_ == 27;
   }
+
   /**
    *
    *
@@ -8339,6 +8567,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.Space.PermissionSettings.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8362,6 +8591,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORT_MODE_EXPIRE_TIME_FIELD_NUMBER = 28;
   private com.google.protobuf.Timestamp importModeExpireTime_;
+
   /**
    *
    *
@@ -8385,6 +8615,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImportModeExpireTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -8410,6 +8641,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : importModeExpireTime_;
   }
+
   /**
    *
    *
@@ -8823,6 +9055,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -9339,6 +9572,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -9370,6 +9604,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9401,6 +9636,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9431,6 +9667,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9457,6 +9694,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9490,6 +9728,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -9510,6 +9749,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -9533,6 +9773,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9554,6 +9795,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       com.google.chat.v1.Space.Type result = com.google.chat.v1.Space.Type.forNumber(type_);
       return result == null ? com.google.chat.v1.Space.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -9580,6 +9822,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9604,6 +9847,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spaceType_ = 0;
+
     /**
      *
      *
@@ -9622,6 +9866,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public int getSpaceTypeValue() {
       return spaceType_;
     }
+
     /**
      *
      *
@@ -9643,6 +9888,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9663,6 +9909,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.Space.SpaceType.forNumber(spaceType_);
       return result == null ? com.google.chat.v1.Space.SpaceType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -9687,6 +9934,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9709,6 +9957,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean singleUserBotDm_;
+
     /**
      *
      *
@@ -9725,6 +9974,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean getSingleUserBotDm() {
       return singleUserBotDm_;
     }
+
     /**
      *
      *
@@ -9745,6 +9995,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9765,6 +10016,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean threaded_;
+
     /**
      *
      *
@@ -9784,6 +10036,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean getThreaded() {
       return threaded_;
     }
+
     /**
      *
      *
@@ -9807,6 +10060,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9830,6 +10084,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -9861,6 +10116,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9892,6 +10148,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9922,6 +10179,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9948,6 +10206,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9981,6 +10240,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean externalUserAllowed_;
+
     /**
      *
      *
@@ -10006,6 +10266,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean getExternalUserAllowed() {
       return externalUserAllowed_;
     }
+
     /**
      *
      *
@@ -10035,6 +10296,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10064,6 +10326,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spaceThreadingState_ = 0;
+
     /**
      *
      *
@@ -10081,6 +10344,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public int getSpaceThreadingStateValue() {
       return spaceThreadingState_;
     }
+
     /**
      *
      *
@@ -10101,6 +10365,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10120,6 +10385,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.Space.SpaceThreadingState.forNumber(spaceThreadingState_);
       return result == null ? com.google.chat.v1.Space.SpaceThreadingState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -10143,6 +10409,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10169,6 +10436,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Space.SpaceDetails.Builder,
             com.google.chat.v1.Space.SpaceDetailsOrBuilder>
         spaceDetailsBuilder_;
+
     /**
      *
      *
@@ -10185,6 +10453,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpaceDetails() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -10207,6 +10476,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return spaceDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10231,6 +10501,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10252,6 +10523,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10281,6 +10553,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10302,6 +10575,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10318,6 +10592,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpaceDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10338,6 +10613,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             : spaceDetails_;
       }
     }
+
     /**
      *
      *
@@ -10367,6 +10643,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spaceHistoryState_ = 0;
+
     /**
      *
      *
@@ -10384,6 +10661,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public int getSpaceHistoryStateValue() {
       return spaceHistoryState_;
     }
+
     /**
      *
      *
@@ -10404,6 +10682,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10423,6 +10702,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.HistoryState.forNumber(spaceHistoryState_);
       return result == null ? com.google.chat.v1.HistoryState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -10446,6 +10726,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10467,6 +10748,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean importMode_;
+
     /**
      *
      *
@@ -10487,6 +10769,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean getImportMode() {
       return importMode_;
     }
+
     /**
      *
      *
@@ -10511,6 +10794,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10540,6 +10824,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -10563,6 +10848,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -10592,6 +10878,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10623,6 +10910,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10651,6 +10939,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10687,6 +10976,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10715,6 +11005,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10738,6 +11029,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10765,6 +11057,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -10806,6 +11099,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastActiveTimeBuilder_;
+
     /**
      *
      *
@@ -10822,6 +11116,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastActiveTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -10844,6 +11139,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return lastActiveTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10868,6 +11164,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10889,6 +11186,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10918,6 +11216,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10939,6 +11238,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10955,6 +11255,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastActiveTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10975,6 +11276,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             : lastActiveTime_;
       }
     }
+
     /**
      *
      *
@@ -11004,6 +11306,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean adminInstalled_;
+
     /**
      *
      *
@@ -11024,6 +11327,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean getAdminInstalled() {
       return adminInstalled_;
     }
+
     /**
      *
      *
@@ -11048,6 +11352,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11077,6 +11382,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Space.MembershipCount.Builder,
             com.google.chat.v1.Space.MembershipCountOrBuilder>
         membershipCountBuilder_;
+
     /**
      *
      *
@@ -11095,6 +11401,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMembershipCount() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -11119,6 +11426,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return membershipCountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11145,6 +11453,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11169,6 +11478,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11200,6 +11510,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11223,6 +11534,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11241,6 +11553,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMembershipCountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11263,6 +11576,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             : membershipCount_;
       }
     }
+
     /**
      *
      *
@@ -11299,6 +11613,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Space.AccessSettings.Builder,
             com.google.chat.v1.Space.AccessSettingsOrBuilder>
         accessSettingsBuilder_;
+
     /**
      *
      *
@@ -11317,6 +11632,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessSettings() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -11341,6 +11657,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return accessSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11367,6 +11684,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11391,6 +11709,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11422,6 +11741,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11445,6 +11765,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11463,6 +11784,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccessSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11485,6 +11807,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             : accessSettings_;
       }
     }
+
     /**
      *
      *
@@ -11516,6 +11839,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object spaceUri_ = "";
+
     /**
      *
      *
@@ -11538,6 +11862,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11560,6 +11885,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11581,6 +11907,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11598,6 +11925,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11641,6 +11969,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPredefinedPermissionSettings() {
       return spacePermissionSettingsCase_ == 26;
     }
+
     /**
      *
      *
@@ -11664,6 +11993,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -11687,6 +12017,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11716,6 +12047,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return com.google.chat.v1.Space.PredefinedPermissionSettings
           .PREDEFINED_PERMISSION_SETTINGS_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -11743,6 +12075,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11773,6 +12106,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Space.PermissionSettings.Builder,
             com.google.chat.v1.Space.PermissionSettingsOrBuilder>
         permissionSettingsBuilder_;
+
     /**
      *
      *
@@ -11792,6 +12126,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPermissionSettings() {
       return spacePermissionSettingsCase_ == 27;
     }
+
     /**
      *
      *
@@ -11821,6 +12156,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.Space.PermissionSettings.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -11847,6 +12183,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spacePermissionSettingsCase_ = 27;
       return this;
     }
+
     /**
      *
      *
@@ -11871,6 +12208,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spacePermissionSettingsCase_ = 27;
       return this;
     }
+
     /**
      *
      *
@@ -11908,6 +12246,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spacePermissionSettingsCase_ = 27;
       return this;
     }
+
     /**
      *
      *
@@ -11937,6 +12276,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11953,6 +12293,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.Space.PermissionSettings.Builder getPermissionSettingsBuilder() {
       return getPermissionSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11977,6 +12318,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.Space.PermissionSettings.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12021,6 +12363,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         importModeExpireTimeBuilder_;
+
     /**
      *
      *
@@ -12043,6 +12386,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImportModeExpireTime() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -12071,6 +12415,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return importModeExpireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -12101,6 +12446,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12128,6 +12474,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12163,6 +12510,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -12190,6 +12538,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12212,6 +12561,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getImportModeExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12238,6 +12588,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
             : importModeExpireTime_;
       }
     }
+
     /**
      *
      *

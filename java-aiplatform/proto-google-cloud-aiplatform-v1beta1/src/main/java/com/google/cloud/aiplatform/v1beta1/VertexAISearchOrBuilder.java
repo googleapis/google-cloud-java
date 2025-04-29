@@ -38,6 +38,7 @@ public interface VertexAISearchOrBuilder
    * @return The datastore.
    */
   java.lang.String getDatastore();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VertexAISearchOrBuilder
    * @return The engine.
    */
   java.lang.String getEngine();
+
   /**
    *
    *

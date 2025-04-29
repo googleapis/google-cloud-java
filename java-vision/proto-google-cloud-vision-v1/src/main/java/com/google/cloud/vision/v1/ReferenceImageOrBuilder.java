@@ -41,6 +41,7 @@ public interface ReferenceImageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ReferenceImageOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ReferenceImageOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1.BoundingPoly> getBoundingPolysList();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface ReferenceImageOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingPolys(int index);
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface ReferenceImageOrBuilder
    * </code>
    */
   int getBoundingPolysCount();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface ReferenceImageOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder>
       getBoundingPolysOrBuilderList();
+
   /**
    *
    *

@@ -194,6 +194,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>TRANSFORMATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TRANSFORMATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -204,6 +205,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>RECORD_SUPPRESSION = 1;</code>
    */
   public static final int RECORD_SUPPRESSION_VALUE = 1;
+
   /**
    *
    *
@@ -214,6 +216,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>REPLACE_VALUE = 2;</code>
    */
   public static final int REPLACE_VALUE_VALUE = 2;
+
   /**
    *
    *
@@ -224,6 +227,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>REPLACE_DICTIONARY = 15;</code>
    */
   public static final int REPLACE_DICTIONARY_VALUE = 15;
+
   /**
    *
    *
@@ -234,6 +238,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>REDACT = 3;</code>
    */
   public static final int REDACT_VALUE = 3;
+
   /**
    *
    *
@@ -244,6 +249,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>CHARACTER_MASK = 4;</code>
    */
   public static final int CHARACTER_MASK_VALUE = 4;
+
   /**
    *
    *
@@ -254,6 +260,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>CRYPTO_REPLACE_FFX_FPE = 5;</code>
    */
   public static final int CRYPTO_REPLACE_FFX_FPE_VALUE = 5;
+
   /**
    *
    *
@@ -264,6 +271,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>FIXED_SIZE_BUCKETING = 6;</code>
    */
   public static final int FIXED_SIZE_BUCKETING_VALUE = 6;
+
   /**
    *
    *
@@ -274,6 +282,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>BUCKETING = 7;</code>
    */
   public static final int BUCKETING_VALUE = 7;
+
   /**
    *
    *
@@ -284,6 +293,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>REPLACE_WITH_INFO_TYPE = 8;</code>
    */
   public static final int REPLACE_WITH_INFO_TYPE_VALUE = 8;
+
   /**
    *
    *
@@ -294,6 +304,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>TIME_PART = 9;</code>
    */
   public static final int TIME_PART_VALUE = 9;
+
   /**
    *
    *
@@ -304,6 +315,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>CRYPTO_HASH = 10;</code>
    */
   public static final int CRYPTO_HASH_VALUE = 10;
+
   /**
    *
    *
@@ -314,6 +326,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATE_SHIFT = 12;</code>
    */
   public static final int DATE_SHIFT_VALUE = 12;
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
    * <code>CRYPTO_DETERMINISTIC_CONFIG = 13;</code>
    */
   public static final int CRYPTO_DETERMINISTIC_CONFIG_VALUE = 13;
+
   /**
    *
    *

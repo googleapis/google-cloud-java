@@ -33,6 +33,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.RouteInfo)
     RouteInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouteInfo.newBuilder() to construct.
   private RouteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -200,6 +201,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ROUTE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -210,6 +212,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SUBNET = 1;</code>
      */
     public static final int SUBNET_VALUE = 1;
+
     /**
      *
      *
@@ -221,6 +224,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>STATIC = 2;</code>
      */
     public static final int STATIC_VALUE = 2;
+
     /**
      *
      *
@@ -231,6 +235,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>DYNAMIC = 3;</code>
      */
     public static final int DYNAMIC_VALUE = 3;
+
     /**
      *
      *
@@ -241,6 +246,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PEERING_SUBNET = 4;</code>
      */
     public static final int PEERING_SUBNET_VALUE = 4;
+
     /**
      *
      *
@@ -251,6 +257,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PEERING_STATIC = 5;</code>
      */
     public static final int PEERING_STATIC_VALUE = 5;
+
     /**
      *
      *
@@ -261,6 +268,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PEERING_DYNAMIC = 6;</code>
      */
     public static final int PEERING_DYNAMIC_VALUE = 6;
+
     /**
      *
      *
@@ -271,6 +279,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>POLICY_BASED = 7;</code>
      */
     public static final int POLICY_BASED_VALUE = 7;
+
     /**
      *
      *
@@ -540,6 +549,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NEXT_HOP_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -550,6 +560,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_IP = 1;</code>
      */
     public static final int NEXT_HOP_IP_VALUE = 1;
+
     /**
      *
      *
@@ -560,6 +571,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_INSTANCE = 2;</code>
      */
     public static final int NEXT_HOP_INSTANCE_VALUE = 2;
+
     /**
      *
      *
@@ -570,6 +582,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_NETWORK = 3;</code>
      */
     public static final int NEXT_HOP_NETWORK_VALUE = 3;
+
     /**
      *
      *
@@ -582,6 +595,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_PEERING = 4;</code>
      */
     public static final int NEXT_HOP_PEERING_VALUE = 4;
+
     /**
      *
      *
@@ -592,6 +606,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_INTERCONNECT = 5;</code>
      */
     public static final int NEXT_HOP_INTERCONNECT_VALUE = 5;
+
     /**
      *
      *
@@ -602,6 +617,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_VPN_TUNNEL = 6;</code>
      */
     public static final int NEXT_HOP_VPN_TUNNEL_VALUE = 6;
+
     /**
      *
      *
@@ -615,6 +631,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_VPN_GATEWAY = 7;</code>
      */
     public static final int NEXT_HOP_VPN_GATEWAY_VALUE = 7;
+
     /**
      *
      *
@@ -625,6 +642,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_INTERNET_GATEWAY = 8;</code>
      */
     public static final int NEXT_HOP_INTERNET_GATEWAY_VALUE = 8;
+
     /**
      *
      *
@@ -636,6 +654,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_BLACKHOLE = 9;</code>
      */
     public static final int NEXT_HOP_BLACKHOLE_VALUE = 9;
+
     /**
      *
      *
@@ -646,6 +665,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_ILB = 10;</code>
      */
     public static final int NEXT_HOP_ILB_VALUE = 10;
+
     /**
      *
      *
@@ -658,6 +678,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_ROUTER_APPLIANCE = 11;</code>
      */
     public static final int NEXT_HOP_ROUTER_APPLIANCE_VALUE = 11;
+
     /**
      *
      *
@@ -826,6 +847,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTE_SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int ROUTE_SCOPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -836,6 +858,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK = 1;</code>
      */
     public static final int NETWORK_VALUE = 1;
+
     /**
      *
      *
@@ -933,6 +956,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ROUTE_TYPE_FIELD_NUMBER = 8;
   private int routeType_ = 0;
+
   /**
    *
    *
@@ -948,6 +972,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getRouteTypeValue() {
     return routeType_;
   }
+
   /**
    *
    *
@@ -970,6 +995,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEXT_HOP_TYPE_FIELD_NUMBER = 9;
   private int nextHopType_ = 0;
+
   /**
    *
    *
@@ -985,6 +1011,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getNextHopTypeValue() {
     return nextHopType_;
   }
+
   /**
    *
    *
@@ -1007,6 +1034,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTE_SCOPE_FIELD_NUMBER = 14;
   private int routeScope_ = 0;
+
   /**
    *
    *
@@ -1028,6 +1056,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getRouteScopeValue() {
     return routeScope_;
   }
+
   /**
    *
    *
@@ -1058,6 +1087,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1081,6 +1111,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1109,6 +1140,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -1133,6 +1165,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1162,6 +1195,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -1187,6 +1221,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1217,6 +1252,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destIpRange_ = "";
+
   /**
    *
    *
@@ -1240,6 +1276,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1268,6 +1305,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextHop_ = "";
+
   /**
    *
    *
@@ -1296,6 +1334,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1329,6 +1368,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkUri_ = "";
+
   /**
    *
    *
@@ -1352,6 +1392,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1378,6 +1419,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIORITY_FIELD_NUMBER = 6;
   private int priority_ = 0;
+
   /**
    *
    *
@@ -1399,6 +1441,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instanceTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1413,6 +1456,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getInstanceTagsList() {
     return instanceTags_;
   }
+
   /**
    *
    *
@@ -1427,6 +1471,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getInstanceTagsCount() {
     return instanceTags_.size();
   }
+
   /**
    *
    *
@@ -1442,6 +1487,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getInstanceTags(int index) {
     return instanceTags_.get(index);
   }
+
   /**
    *
    *
@@ -1462,6 +1508,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object srcIpRange_ = "";
+
   /**
    *
    *
@@ -1485,6 +1532,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1514,6 +1562,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destPortRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1528,6 +1577,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDestPortRangesList() {
     return destPortRanges_;
   }
+
   /**
    *
    *
@@ -1542,6 +1592,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getDestPortRangesCount() {
     return destPortRanges_.size();
   }
+
   /**
    *
    *
@@ -1557,6 +1608,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDestPortRanges(int index) {
     return destPortRanges_.get(index);
   }
+
   /**
    *
    *
@@ -1578,6 +1630,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList srcPortRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1592,6 +1645,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSrcPortRangesList() {
     return srcPortRanges_;
   }
+
   /**
    *
    *
@@ -1606,6 +1660,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getSrcPortRangesCount() {
     return srcPortRanges_.size();
   }
+
   /**
    *
    *
@@ -1621,6 +1676,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSrcPortRanges(int index) {
     return srcPortRanges_.get(index);
   }
+
   /**
    *
    *
@@ -1642,6 +1698,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList protocols_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1656,6 +1713,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getProtocolsList() {
     return protocols_;
   }
+
   /**
    *
    *
@@ -1670,6 +1728,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public int getProtocolsCount() {
     return protocols_.size();
   }
+
   /**
    *
    *
@@ -1685,6 +1744,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getProtocols(int index) {
     return protocols_.get(index);
   }
+
   /**
    *
    *
@@ -1705,6 +1765,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nccHubUri_ = "";
+
   /**
    *
    *
@@ -1721,6 +1782,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNccHubUri() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1745,6 +1807,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1774,6 +1837,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nccSpokeUri_ = "";
+
   /**
    *
    *
@@ -1790,6 +1854,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNccSpokeUri() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1814,6 +1879,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1843,6 +1909,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertisedRouteSourceRouterUri_ = "";
+
   /**
    *
    *
@@ -1859,6 +1926,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdvertisedRouteSourceRouterUri() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1883,6 +1951,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1912,6 +1981,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object advertisedRouteNextHopUri_ = "";
+
   /**
    *
    *
@@ -1934,6 +2004,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdvertisedRouteNextHopUri() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1964,6 +2035,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1999,6 +2071,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextHopUri_ = "";
+
   /**
    *
    *
@@ -2022,6 +2095,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2050,6 +2124,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextHopNetworkUri_ = "";
+
   /**
    *
    *
@@ -2073,6 +2148,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2101,6 +2177,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object originatingRouteUri_ = "";
+
   /**
    *
    *
@@ -2125,6 +2202,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2154,6 +2232,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object originatingRouteDisplayName_ = "";
+
   /**
    *
    *
@@ -2178,6 +2257,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2207,6 +2287,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nccHubRouteUri_ = "";
+
   /**
    *
    *
@@ -2231,6 +2312,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2692,6 +2774,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3247,6 +3330,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int routeType_ = 0;
+
     /**
      *
      *
@@ -3262,6 +3346,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getRouteTypeValue() {
       return routeType_;
     }
+
     /**
      *
      *
@@ -3280,6 +3365,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3299,6 +3385,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.RouteInfo.RouteType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3320,6 +3407,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3339,6 +3427,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int nextHopType_ = 0;
+
     /**
      *
      *
@@ -3354,6 +3443,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getNextHopTypeValue() {
       return nextHopType_;
     }
+
     /**
      *
      *
@@ -3372,6 +3462,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3391,6 +3482,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.RouteInfo.NextHopType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3413,6 +3505,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3432,6 +3525,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int routeScope_ = 0;
+
     /**
      *
      *
@@ -3453,6 +3547,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getRouteScopeValue() {
       return routeScope_;
     }
+
     /**
      *
      *
@@ -3477,6 +3572,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3502,6 +3598,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3529,6 +3626,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3554,6 +3652,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3576,6 +3675,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3598,6 +3698,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3619,6 +3720,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3636,6 +3738,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3660,6 +3763,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -3683,6 +3787,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3706,6 +3811,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3728,6 +3834,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3746,6 +3853,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3771,6 +3879,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -3795,6 +3904,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3819,6 +3929,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3842,6 +3953,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3861,6 +3973,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3887,6 +4000,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object destIpRange_ = "";
+
     /**
      *
      *
@@ -3909,6 +4023,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3931,6 +4046,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3952,6 +4068,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3969,6 +4086,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3993,6 +4111,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nextHop_ = "";
+
     /**
      *
      *
@@ -4020,6 +4139,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4047,6 +4167,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4073,6 +4194,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4095,6 +4217,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4124,6 +4247,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object networkUri_ = "";
+
     /**
      *
      *
@@ -4146,6 +4270,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4168,6 +4293,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4189,6 +4315,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4206,6 +4333,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4230,6 +4358,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int priority_;
+
     /**
      *
      *
@@ -4245,6 +4374,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -4264,6 +4394,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4291,6 +4422,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -4306,6 +4438,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       instanceTags_.makeImmutable();
       return instanceTags_;
     }
+
     /**
      *
      *
@@ -4320,6 +4453,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getInstanceTagsCount() {
       return instanceTags_.size();
     }
+
     /**
      *
      *
@@ -4335,6 +4469,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getInstanceTags(int index) {
       return instanceTags_.get(index);
     }
+
     /**
      *
      *
@@ -4350,6 +4485,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getInstanceTagsBytes(int index) {
       return instanceTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4373,6 +4509,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4395,6 +4532,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4414,6 +4552,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4432,6 +4571,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4457,6 +4597,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object srcIpRange_ = "";
+
     /**
      *
      *
@@ -4479,6 +4620,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4501,6 +4643,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4522,6 +4665,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4539,6 +4683,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4571,6 +4716,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00001000;
     }
+
     /**
      *
      *
@@ -4586,6 +4732,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       destPortRanges_.makeImmutable();
       return destPortRanges_;
     }
+
     /**
      *
      *
@@ -4600,6 +4747,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getDestPortRangesCount() {
       return destPortRanges_.size();
     }
+
     /**
      *
      *
@@ -4615,6 +4763,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDestPortRanges(int index) {
       return destPortRanges_.get(index);
     }
+
     /**
      *
      *
@@ -4630,6 +4779,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDestPortRangesBytes(int index) {
       return destPortRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4653,6 +4803,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4675,6 +4826,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4694,6 +4846,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4712,6 +4865,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4745,6 +4899,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00002000;
     }
+
     /**
      *
      *
@@ -4760,6 +4915,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       srcPortRanges_.makeImmutable();
       return srcPortRanges_;
     }
+
     /**
      *
      *
@@ -4774,6 +4930,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getSrcPortRangesCount() {
       return srcPortRanges_.size();
     }
+
     /**
      *
      *
@@ -4789,6 +4946,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSrcPortRanges(int index) {
       return srcPortRanges_.get(index);
     }
+
     /**
      *
      *
@@ -4804,6 +4962,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSrcPortRangesBytes(int index) {
       return srcPortRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4827,6 +4986,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4849,6 +5009,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4868,6 +5029,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4886,6 +5048,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4919,6 +5082,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00004000;
     }
+
     /**
      *
      *
@@ -4934,6 +5098,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       protocols_.makeImmutable();
       return protocols_;
     }
+
     /**
      *
      *
@@ -4948,6 +5113,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public int getProtocolsCount() {
       return protocols_.size();
     }
+
     /**
      *
      *
@@ -4963,6 +5129,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProtocols(int index) {
       return protocols_.get(index);
     }
+
     /**
      *
      *
@@ -4978,6 +5145,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getProtocolsBytes(int index) {
       return protocols_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5001,6 +5169,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5023,6 +5192,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5042,6 +5212,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5060,6 +5231,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5085,6 +5257,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nccHubUri_ = "";
+
     /**
      *
      *
@@ -5100,6 +5273,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNccHubUri() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -5123,6 +5297,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5146,6 +5321,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5168,6 +5344,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5186,6 +5363,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5211,6 +5389,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nccSpokeUri_ = "";
+
     /**
      *
      *
@@ -5226,6 +5405,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNccSpokeUri() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -5249,6 +5429,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5272,6 +5453,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5294,6 +5476,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5312,6 +5495,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5337,6 +5521,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object advertisedRouteSourceRouterUri_ = "";
+
     /**
      *
      *
@@ -5352,6 +5537,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdvertisedRouteSourceRouterUri() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -5375,6 +5561,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5398,6 +5585,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5420,6 +5608,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5438,6 +5627,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5463,6 +5653,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object advertisedRouteNextHopUri_ = "";
+
     /**
      *
      *
@@ -5484,6 +5675,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdvertisedRouteNextHopUri() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -5513,6 +5705,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5542,6 +5735,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5570,6 +5764,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5594,6 +5789,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5625,6 +5821,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nextHopUri_ = "";
+
     /**
      *
      *
@@ -5647,6 +5844,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5669,6 +5867,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5690,6 +5889,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5707,6 +5907,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5731,6 +5932,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nextHopNetworkUri_ = "";
+
     /**
      *
      *
@@ -5753,6 +5955,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5775,6 +5978,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5796,6 +6000,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5813,6 +6018,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5837,6 +6043,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object originatingRouteUri_ = "";
+
     /**
      *
      *
@@ -5860,6 +6067,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5883,6 +6091,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5905,6 +6114,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5923,6 +6133,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5948,6 +6159,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object originatingRouteDisplayName_ = "";
+
     /**
      *
      *
@@ -5971,6 +6183,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5994,6 +6207,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6016,6 +6230,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6034,6 +6249,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6059,6 +6275,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nccHubRouteUri_ = "";
+
     /**
      *
      *
@@ -6082,6 +6299,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6105,6 +6323,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6127,6 +6346,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6145,6 +6365,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

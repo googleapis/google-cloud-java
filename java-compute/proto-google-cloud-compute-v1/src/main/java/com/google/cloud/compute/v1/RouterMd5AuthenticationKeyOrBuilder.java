@@ -36,6 +36,7 @@ public interface RouterMd5AuthenticationKeyOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterMd5AuthenticationKeyOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RouterMd5AuthenticationKeyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RouterMd5AuthenticationKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

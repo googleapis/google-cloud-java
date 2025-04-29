@@ -37,6 +37,7 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface JobOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface JobOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface JobOrBuilder
    * @return Whether the templateId field is set.
    */
   boolean hasTemplateId();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface JobOrBuilder
    * @return The templateId.
    */
   java.lang.String getTemplateId();
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface JobOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface JobOrBuilder
    * @return The config.
    */
   com.google.cloud.video.transcoder.v1.JobConfig getConfig();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface JobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface JobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface JobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -293,6 +304,7 @@ public interface JobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -318,6 +330,7 @@ public interface JobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public interface JobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -369,6 +383,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -380,9 +395,11 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -394,6 +411,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -434,6 +453,7 @@ public interface JobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -447,6 +467,7 @@ public interface JobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -472,6 +493,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -517,6 +539,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for optimization.
    */
   int getOptimizationValue();
+
   /**
    *
    *

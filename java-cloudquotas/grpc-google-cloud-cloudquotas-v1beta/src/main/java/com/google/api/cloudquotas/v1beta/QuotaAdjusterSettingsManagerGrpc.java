@@ -159,6 +159,20 @@ public final class QuotaAdjusterSettingsManagerGrpc {
     return QuotaAdjusterSettingsManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static QuotaAdjusterSettingsManagerBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<QuotaAdjusterSettingsManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<QuotaAdjusterSettingsManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public QuotaAdjusterSettingsManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new QuotaAdjusterSettingsManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return QuotaAdjusterSettingsManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -312,6 +326,58 @@ public final class QuotaAdjusterSettingsManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service QuotaAdjusterSettingsManager.
+   *
+   * <pre>
+   * The Quotas Adjuster Settings API is an infrastructure service for Google
+   *  Cloud that lets service consumers view and update their quota adjuster
+   *  settings.
+   * - Update quota adjuster settings.
+   * - Get the name of the configurations.
+   * </pre>
+   */
+  public static final class QuotaAdjusterSettingsManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<QuotaAdjusterSettingsManagerBlockingV2Stub> {
+    private QuotaAdjusterSettingsManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected QuotaAdjusterSettingsManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new QuotaAdjusterSettingsManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC Method for updating QuotaAdjusterSettings based on the request
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings updateQuotaAdjusterSettings(
+        com.google.api.cloudquotas.v1beta.UpdateQuotaAdjusterSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQuotaAdjusterSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC Method for getting QuotaAdjusterSettings based on the request
+     * </pre>
+     */
+    public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings getQuotaAdjusterSettings(
+        com.google.api.cloudquotas.v1beta.GetQuotaAdjusterSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQuotaAdjusterSettingsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * QuotaAdjusterSettingsManager.
    *
    * <pre>
    * The Quotas Adjuster Settings API is an infrastructure service for Google

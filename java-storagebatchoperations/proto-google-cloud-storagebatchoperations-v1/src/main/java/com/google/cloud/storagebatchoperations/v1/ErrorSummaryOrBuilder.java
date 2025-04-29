@@ -36,6 +36,7 @@ public interface ErrorSummaryOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface ErrorSummaryOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.storagebatchoperations.v1.ErrorLogEntry> getErrorLogEntriesList();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ErrorSummaryOrBuilder
    * </code>
    */
   com.google.cloud.storagebatchoperations.v1.ErrorLogEntry getErrorLogEntries(int index);
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ErrorSummaryOrBuilder
    * </code>
    */
   int getErrorLogEntriesCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface ErrorSummaryOrBuilder
    */
   java.util.List<? extends com.google.cloud.storagebatchoperations.v1.ErrorLogEntryOrBuilder>
       getErrorLogEntriesOrBuilderList();
+
   /**
    *
    *

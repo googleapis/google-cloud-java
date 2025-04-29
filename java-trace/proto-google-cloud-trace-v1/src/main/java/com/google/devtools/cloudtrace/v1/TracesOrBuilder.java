@@ -34,6 +34,7 @@ public interface TracesOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
   java.util.List<com.google.devtools.cloudtrace.v1.Trace> getTracesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface TracesOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
   com.google.devtools.cloudtrace.v1.Trace getTraces(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface TracesOrBuilder
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
   int getTracesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface TracesOrBuilder
    */
   java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceOrBuilder>
       getTracesOrBuilderList();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * @return Whether the attachedCluster field is set.
    */
   boolean hasAttachedCluster();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * @return The attachedCluster.
    */
   com.google.cloud.gkemulticloud.v1.AttachedCluster getAttachedCluster();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

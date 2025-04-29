@@ -34,6 +34,7 @@ public interface ListApiConfigsResponseOrBuilder
    * <code>repeated .google.cloud.apigateway.v1.ApiConfig api_configs = 1;</code>
    */
   java.util.List<com.google.cloud.apigateway.v1.ApiConfig> getApiConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListApiConfigsResponseOrBuilder
    * <code>repeated .google.cloud.apigateway.v1.ApiConfig api_configs = 1;</code>
    */
   com.google.cloud.apigateway.v1.ApiConfig getApiConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListApiConfigsResponseOrBuilder
    * <code>repeated .google.cloud.apigateway.v1.ApiConfig api_configs = 1;</code>
    */
   int getApiConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListApiConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigateway.v1.ApiConfigOrBuilder>
       getApiConfigsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListApiConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListApiConfigsResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListApiConfigsResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListApiConfigsResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
+
   /**
    *
    *

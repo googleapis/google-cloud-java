@@ -33,6 +33,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.Counters)
     CountersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Counters.newBuilder() to construct.
   private Counters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_OBJECT_COUNT_FIELD_NUMBER = 1;
   private long totalObjectCount_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUCCEEDED_OBJECT_COUNT_FIELD_NUMBER = 2;
   private long succeededObjectCount_ = 0L;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAILED_OBJECT_COUNT_FIELD_NUMBER = 3;
   private long failedObjectCount_ = 0L;
+
   /**
    *
    *
@@ -292,6 +296,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long totalObjectCount_;
+
     /**
      *
      *
@@ -515,6 +521,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     public long getTotalObjectCount() {
       return totalObjectCount_;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long succeededObjectCount_;
+
     /**
      *
      *
@@ -568,6 +577,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     public long getSucceededObjectCount() {
       return succeededObjectCount_;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +617,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long failedObjectCount_;
+
     /**
      *
      *
@@ -621,6 +633,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     public long getFailedObjectCount() {
       return failedObjectCount_;
     }
+
     /**
      *
      *
@@ -640,6 +653,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

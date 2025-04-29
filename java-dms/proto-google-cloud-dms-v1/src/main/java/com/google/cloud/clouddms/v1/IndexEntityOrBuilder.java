@@ -36,6 +36,7 @@ public interface IndexEntityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface IndexEntityOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface IndexEntityOrBuilder
    * @return A list containing the tableColumns.
    */
   java.util.List<java.lang.String> getTableColumnsList();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface IndexEntityOrBuilder
    * @return The count of tableColumns.
    */
   int getTableColumnsCount();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface IndexEntityOrBuilder
    * @return The tableColumns at the given index.
    */
   java.lang.String getTableColumns(int index);
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface IndexEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface IndexEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
+
   /**
    *
    *

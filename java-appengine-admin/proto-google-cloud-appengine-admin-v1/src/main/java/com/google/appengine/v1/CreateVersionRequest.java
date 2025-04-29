@@ -33,6 +33,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.appengine.v1.CreateVersionRequest)
     CreateVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateVersionRequest.newBuilder() to construct.
   private CreateVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VERSION_FIELD_NUMBER = 2;
   private com.google.appengine.v1.Version version_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
   public com.google.appengine.v1.Version getVersion() {
     return version_ == null ? com.google.appengine.v1.Version.getDefaultInstance() : version_;
   }
+
   /**
    *
    *
@@ -336,6 +342,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +555,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
             com.google.appengine.v1.Version.Builder,
             com.google.appengine.v1.VersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +781,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +801,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -813,6 +833,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
         return version_ == null ? com.google.appengine.v1.Version.getDefaultInstance() : version_;
       }
     }
+
     /**
      *
      *

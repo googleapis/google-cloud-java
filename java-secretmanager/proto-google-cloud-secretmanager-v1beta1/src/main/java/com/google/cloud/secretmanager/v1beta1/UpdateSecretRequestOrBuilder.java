@@ -28,7 +28,8 @@ public interface UpdateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -38,11 +39,13 @@ public interface UpdateSecretRequestOrBuilder
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
+
   /**
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -52,11 +55,13 @@ public interface UpdateSecretRequestOrBuilder
    * @return The secret.
    */
   com.google.cloud.secretmanager.v1beta1.Secret getSecret();
+
   /**
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -78,6 +83,7 @@ public interface UpdateSecretRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +97,7 @@ public interface UpdateSecretRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

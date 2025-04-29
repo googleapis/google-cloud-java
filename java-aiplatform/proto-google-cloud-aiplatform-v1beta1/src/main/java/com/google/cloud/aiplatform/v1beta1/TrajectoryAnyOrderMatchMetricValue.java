@@ -33,6 +33,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchMetricValue)
     TrajectoryAnyOrderMatchMetricValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrajectoryAnyOrderMatchMetricValue.newBuilder() to construct.
   private TrajectoryAnyOrderMatchMetricValue(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -263,6 +266,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -456,6 +460,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -471,6 +476,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -486,6 +492,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -505,6 +512,7 @@ public final class TrajectoryAnyOrderMatchMetricValue extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

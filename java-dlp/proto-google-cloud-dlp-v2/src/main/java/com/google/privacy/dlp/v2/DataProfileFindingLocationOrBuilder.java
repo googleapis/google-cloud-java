@@ -41,6 +41,7 @@ public interface DataProfileFindingLocationOrBuilder
    * @return The containerName.
    */
   java.lang.String getContainerName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface DataProfileFindingLocationOrBuilder
    * @return Whether the dataProfileFindingRecordLocation field is set.
    */
   boolean hasDataProfileFindingRecordLocation();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface DataProfileFindingLocationOrBuilder
    * @return The dataProfileFindingRecordLocation.
    */
   com.google.privacy.dlp.v2.DataProfileFindingRecordLocation getDataProfileFindingRecordLocation();
+
   /**
    *
    *

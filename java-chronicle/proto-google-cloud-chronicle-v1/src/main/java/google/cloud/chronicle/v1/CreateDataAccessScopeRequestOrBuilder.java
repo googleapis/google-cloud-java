@@ -39,6 +39,7 @@ public interface CreateDataAccessScopeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateDataAccessScopeRequestOrBuilder
    * @return Whether the dataAccessScope field is set.
    */
   boolean hasDataAccessScope();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateDataAccessScopeRequestOrBuilder
    * @return The dataAccessScope.
    */
   google.cloud.chronicle.v1.DataAccessScope getDataAccessScope();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateDataAccessScopeRequestOrBuilder
    * @return The dataAccessScopeId.
    */
   java.lang.String getDataAccessScopeId();
+
   /**
    *
    *

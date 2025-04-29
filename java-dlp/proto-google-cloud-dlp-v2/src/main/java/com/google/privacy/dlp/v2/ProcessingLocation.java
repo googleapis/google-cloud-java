@@ -35,6 +35,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ProcessingLocation)
     ProcessingLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProcessingLocation.newBuilder() to construct.
   private ProcessingLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing)
       MultiRegionProcessingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MultiRegionProcessing.newBuilder() to construct.
     private MultiRegionProcessing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -263,6 +266,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -502,6 +506,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -516,6 +521,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing)
       GlobalProcessingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GlobalProcessing.newBuilder() to construct.
     private GlobalProcessing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -696,6 +702,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -947,6 +954,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      * @return Whether the multiRegionProcessing field is set.
      */
     boolean hasMultiRegionProcessing();
+
     /**
      *
      *
@@ -962,6 +970,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      * @return The multiRegionProcessing.
      */
     com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing getMultiRegionProcessing();
+
     /**
      *
      *
@@ -990,6 +999,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      * @return Whether the globalProcessing field is set.
      */
     boolean hasGlobalProcessing();
+
     /**
      *
      *
@@ -1003,6 +1013,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      * @return The globalProcessing.
      */
     com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing getGlobalProcessing();
+
     /**
      *
      *
@@ -1016,6 +1027,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder
         getGlobalProcessingOrBuilder();
   }
+
   /**
    *
    *
@@ -1031,6 +1043,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation)
       ImageFallbackLocationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImageFallbackLocation.newBuilder() to construct.
     private ImageFallbackLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1063,6 +1076,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     public static final int MULTI_REGION_PROCESSING_FIELD_NUMBER = 100;
     private com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
         multiRegionProcessing_;
+
     /**
      *
      *
@@ -1081,6 +1095,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     public boolean hasMultiRegionProcessing() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1102,6 +1117,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
           ? com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.getDefaultInstance()
           : multiRegionProcessing_;
     }
+
     /**
      *
      *
@@ -1124,6 +1140,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
 
     public static final int GLOBAL_PROCESSING_FIELD_NUMBER = 200;
     private com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing globalProcessing_;
+
     /**
      *
      *
@@ -1140,6 +1157,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     public boolean hasGlobalProcessing() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1158,6 +1176,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
           ? com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.getDefaultInstance()
           : globalProcessing_;
     }
+
     /**
      *
      *
@@ -1360,6 +1379,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1602,6 +1622,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
               com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.Builder,
               com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder>
           multiRegionProcessingBuilder_;
+
       /**
        *
        *
@@ -1619,6 +1640,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       public boolean hasMultiRegionProcessing() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1644,6 +1666,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
           return multiRegionProcessingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1670,6 +1693,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1694,6 +1718,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1727,6 +1752,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1749,6 +1775,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1767,6 +1794,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getMultiRegionProcessingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1790,6 +1818,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
               : multiRegionProcessing_;
         }
       }
+
       /**
        *
        *
@@ -1825,6 +1854,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
               com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.Builder,
               com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder>
           globalProcessingBuilder_;
+
       /**
        *
        *
@@ -1840,6 +1870,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       public boolean hasGlobalProcessing() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1861,6 +1892,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
           return globalProcessingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1885,6 +1917,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1906,6 +1939,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1937,6 +1971,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1957,6 +1992,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1973,6 +2009,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getGlobalProcessingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1993,6 +2030,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
               : globalProcessing_;
         }
       }
+
       /**
        *
        *
@@ -2090,6 +2128,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int IMAGE_FALLBACK_LOCATION_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation imageFallbackLocation_;
+
   /**
    *
    *
@@ -2107,6 +2146,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
   public boolean hasImageFallbackLocation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2127,6 +2167,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation.getDefaultInstance()
         : imageFallbackLocation_;
   }
+
   /**
    *
    *
@@ -2311,6 +2352,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2520,6 +2562,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation.Builder,
             com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocationOrBuilder>
         imageFallbackLocationBuilder_;
+
     /**
      *
      *
@@ -2536,6 +2579,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     public boolean hasImageFallbackLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2560,6 +2604,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         return imageFallbackLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2585,6 +2630,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2608,6 +2654,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2640,6 +2687,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2661,6 +2709,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2678,6 +2727,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getImageFallbackLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2700,6 +2750,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
             : imageFallbackLocation_;
       }
     }
+
     /**
      *
      *

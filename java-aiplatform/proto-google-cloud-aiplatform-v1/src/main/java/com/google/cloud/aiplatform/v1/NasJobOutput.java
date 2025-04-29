@@ -33,6 +33,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobOutput)
     NasJobOutputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NasJobOutput.newBuilder() to construct.
   private NasJobOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1.NasTrial> getSearchTrialsList();
+
     /**
      *
      *
@@ -90,6 +92,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.aiplatform.v1.NasTrial getSearchTrials(int index);
+
     /**
      *
      *
@@ -102,6 +105,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getSearchTrialsCount();
+
     /**
      *
      *
@@ -115,6 +119,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1.NasTrialOrBuilder>
         getSearchTrialsOrBuilderList();
+
     /**
      *
      *
@@ -140,6 +145,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1.NasTrial> getTrainTrialsList();
+
     /**
      *
      *
@@ -152,6 +158,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.aiplatform.v1.NasTrial getTrainTrials(int index);
+
     /**
      *
      *
@@ -164,6 +171,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getTrainTrialsCount();
+
     /**
      *
      *
@@ -177,6 +185,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1.NasTrialOrBuilder>
         getTrainTrialsOrBuilderList();
+
     /**
      *
      *
@@ -190,6 +199,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.NasTrialOrBuilder getTrainTrialsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -204,6 +214,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutput)
       MultiTrialJobOutputOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MultiTrialJobOutput.newBuilder() to construct.
     private MultiTrialJobOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -239,6 +250,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1.NasTrial> searchTrials_;
+
     /**
      *
      *
@@ -254,6 +266,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.aiplatform.v1.NasTrial> getSearchTrialsList() {
       return searchTrials_;
     }
+
     /**
      *
      *
@@ -270,6 +283,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         getSearchTrialsOrBuilderList() {
       return searchTrials_;
     }
+
     /**
      *
      *
@@ -285,6 +299,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public int getSearchTrialsCount() {
       return searchTrials_.size();
     }
+
     /**
      *
      *
@@ -300,6 +315,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.NasTrial getSearchTrials(int index) {
       return searchTrials_.get(index);
     }
+
     /**
      *
      *
@@ -320,6 +336,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1.NasTrial> trainTrials_;
+
     /**
      *
      *
@@ -335,6 +352,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.aiplatform.v1.NasTrial> getTrainTrialsList() {
       return trainTrials_;
     }
+
     /**
      *
      *
@@ -351,6 +369,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         getTrainTrialsOrBuilderList() {
       return trainTrials_;
     }
+
     /**
      *
      *
@@ -366,6 +385,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public int getTrainTrialsCount() {
       return trainTrials_.size();
     }
+
     /**
      *
      *
@@ -381,6 +401,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.NasTrial getTrainTrials(int index) {
       return trainTrials_.get(index);
     }
+
     /**
      *
      *
@@ -572,6 +593,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return searchTrialsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -918,6 +941,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return searchTrialsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -936,6 +960,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return searchTrialsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -960,6 +985,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -982,6 +1008,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1006,6 +1033,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1030,6 +1058,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1052,6 +1081,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1074,6 +1104,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1096,6 +1127,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1117,6 +1149,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1138,6 +1171,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1152,6 +1186,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.NasTrial.Builder getSearchTrialsBuilder(int index) {
         return getSearchTrialsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1170,6 +1205,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return searchTrialsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1189,6 +1225,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(searchTrials_);
         }
       }
+
       /**
        *
        *
@@ -1204,6 +1241,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         return getSearchTrialsFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1.NasTrial.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1219,6 +1257,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         return getSearchTrialsFieldBuilder()
             .addBuilder(index, com.google.cloud.aiplatform.v1.NasTrial.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1290,6 +1329,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return trainTrialsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1308,6 +1348,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return trainTrialsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1326,6 +1367,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return trainTrialsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1350,6 +1392,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1372,6 +1415,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1396,6 +1440,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1420,6 +1465,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1442,6 +1488,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1464,6 +1511,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1486,6 +1534,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1507,6 +1556,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1528,6 +1578,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1542,6 +1593,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.NasTrial.Builder getTrainTrialsBuilder(int index) {
         return getTrainTrialsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1560,6 +1612,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return trainTrialsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1579,6 +1632,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(trainTrials_);
         }
       }
+
       /**
        *
        *
@@ -1594,6 +1648,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         return getTrainTrialsFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1.NasTrial.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1609,6 +1664,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         return getTrainTrialsFieldBuilder()
             .addBuilder(index, com.google.cloud.aiplatform.v1.NasTrial.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1728,6 +1784,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     private OutputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1759,6 +1816,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MULTI_TRIAL_JOB_OUTPUT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1777,6 +1835,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMultiTrialJobOutput() {
     return outputCase_ == 1;
   }
+
   /**
    *
    *
@@ -1798,6 +1857,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutput.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1994,6 +2054,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2212,6 +2273,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutput.Builder,
             com.google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutputOrBuilder>
         multiTrialJobOutputBuilder_;
+
     /**
      *
      *
@@ -2230,6 +2292,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMultiTrialJobOutput() {
       return outputCase_ == 1;
     }
+
     /**
      *
      *
@@ -2259,6 +2322,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2285,6 +2349,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       outputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2308,6 +2373,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       outputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2346,6 +2412,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       outputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2374,6 +2441,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2390,6 +2458,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         getMultiTrialJobOutputBuilder() {
       return getMultiTrialJobOutputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2414,6 +2483,7 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.NasJobOutput.MultiTrialJobOutput.getDefaultInstance();
       }
     }
+
     /**
      *
      *

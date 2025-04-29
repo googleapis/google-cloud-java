@@ -37,6 +37,7 @@ public interface SiteSearchEngineOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

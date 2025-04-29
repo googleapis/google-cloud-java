@@ -36,6 +36,7 @@ public interface DimensionExpressionOrBuilder
    * @return Whether the lowerCase field is set.
    */
   boolean hasLowerCase();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DimensionExpressionOrBuilder
    * @return The lowerCase.
    */
   com.google.analytics.data.v1beta.DimensionExpression.CaseExpression getLowerCase();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface DimensionExpressionOrBuilder
    * @return Whether the upperCase field is set.
    */
   boolean hasUpperCase();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface DimensionExpressionOrBuilder
    * @return The upperCase.
    */
   com.google.analytics.data.v1beta.DimensionExpression.CaseExpression getUpperCase();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface DimensionExpressionOrBuilder
    * @return Whether the concatenate field is set.
    */
   boolean hasConcatenate();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface DimensionExpressionOrBuilder
    * @return The concatenate.
    */
   com.google.analytics.data.v1beta.DimensionExpression.ConcatenateExpression getConcatenate();
+
   /**
    *
    *

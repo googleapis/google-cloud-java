@@ -54,6 +54,7 @@ public interface RiskAnalysisOrBuilder
    */
   java.util.List<com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason>
       getReasonsList();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RiskAnalysisOrBuilder
    * @return The count of reasons.
    */
   int getReasonsCount();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RiskAnalysisOrBuilder
    * @return The reasons at the given index.
    */
   com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason getReasons(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface RiskAnalysisOrBuilder
    * @return A list containing the enum numeric values on the wire for reasons.
    */
   java.util.List<java.lang.Integer> getReasonsValueList();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface RiskAnalysisOrBuilder
    * @return A list containing the extendedVerdictReasons.
    */
   java.util.List<java.lang.String> getExtendedVerdictReasonsList();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface RiskAnalysisOrBuilder
    * @return The count of extendedVerdictReasons.
    */
   int getExtendedVerdictReasonsCount();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface RiskAnalysisOrBuilder
    * @return The extendedVerdictReasons at the given index.
    */
   java.lang.String getExtendedVerdictReasons(int index);
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface RiskAnalysisOrBuilder
    * @return The enum numeric value on the wire for challenge.
    */
   int getChallengeValue();
+
   /**
    *
    *

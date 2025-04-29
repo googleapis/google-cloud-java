@@ -33,6 +33,7 @@ public final class PushGitCommitsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.PushGitCommitsResponse)
     PushGitCommitsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PushGitCommitsResponse.newBuilder() to construct.
   private PushGitCommitsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class PushGitCommitsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

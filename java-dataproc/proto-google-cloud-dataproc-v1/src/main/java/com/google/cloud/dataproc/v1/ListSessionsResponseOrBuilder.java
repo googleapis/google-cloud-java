@@ -36,6 +36,7 @@ public interface ListSessionsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Session> getSessionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListSessionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.Session getSessions(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListSessionsResponseOrBuilder
    * </code>
    */
   int getSessionsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListSessionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.SessionOrBuilder>
       getSessionsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListSessionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

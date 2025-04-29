@@ -33,6 +33,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.CountTokensRequest)
     CountTokensRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CountTokensRequest.newBuilder() to construct.
   private CountTokensRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Value> instances_;
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.protobuf.Value> getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Value getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Content> contents_;
+
   /**
    *
    *
@@ -281,6 +292,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.vertexai.api.Content> getContentsList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       getContentsOrBuilderList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -312,6 +325,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public int getContentsCount() {
     return contents_.size();
   }
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.vertexai.api.Content getContents(int index) {
     return contents_.get(index);
   }
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int SYSTEM_INSTRUCTION_FIELD_NUMBER = 5;
   private com.google.cloud.vertexai.api.Content systemInstruction_;
+
   /**
    *
    *
@@ -364,6 +380,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSystemInstruction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +402,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.vertexai.api.Content.getDefaultInstance()
         : systemInstruction_;
   }
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Tool> tools_;
+
   /**
    *
    *
@@ -429,6 +448,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.vertexai.api.Tool> getToolsList() {
     return tools_;
   }
+
   /**
    *
    *
@@ -450,6 +470,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       getToolsOrBuilderList() {
     return tools_;
   }
+
   /**
    *
    *
@@ -470,6 +491,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public int getToolsCount() {
     return tools_.size();
   }
+
   /**
    *
    *
@@ -490,6 +512,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.vertexai.api.Tool getTools(int index) {
     return tools_.get(index);
   }
+
   /**
    *
    *
@@ -513,6 +536,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int GENERATION_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.vertexai.api.GenerationConfig generationConfig_;
+
   /**
    *
    *
@@ -531,6 +555,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasGenerationConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -551,6 +576,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.vertexai.api.GenerationConfig.getDefaultInstance()
         : generationConfig_;
   }
+
   /**
    *
    *
@@ -799,6 +825,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1227,6 +1254,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -1253,6 +1281,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1279,6 +1308,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1304,6 +1334,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1356,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1385,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1377,6 +1410,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1401,6 +1435,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1459,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1479,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1540,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1522,6 +1560,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1541,6 +1580,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1566,6 +1606,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1629,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1613,6 +1655,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1681,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1704,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1727,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1750,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1726,6 +1773,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1796,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1763,6 +1812,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Value.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1782,6 +1832,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1802,6 +1853,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1869,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Value.Builder addInstancesBuilder() {
       return getInstancesFieldBuilder().addBuilder(com.google.protobuf.Value.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1833,6 +1886,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.protobuf.Value.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1900,6 +1954,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return contentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1918,6 +1973,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return contentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1936,6 +1992,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return contentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1960,6 +2017,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1982,6 +2040,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2065,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2090,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2112,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2135,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2095,6 +2158,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2180,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2137,6 +2202,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2151,6 +2217,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.vertexai.api.Content.Builder getContentsBuilder(int index) {
       return getContentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2169,6 +2236,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return contentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2188,6 +2256,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(contents_);
       }
     }
+
     /**
      *
      *
@@ -2203,6 +2272,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return getContentsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2218,6 +2288,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return getContentsFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2256,6 +2327,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.vertexai.api.Content.Builder,
             com.google.cloud.vertexai.api.ContentOrBuilder>
         systemInstructionBuilder_;
+
     /**
      *
      *
@@ -2274,6 +2346,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSystemInstruction() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2298,6 +2371,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return systemInstructionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2324,6 +2398,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2348,6 +2423,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2455,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2402,6 +2479,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2420,6 +2498,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSystemInstructionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2442,6 +2521,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
             : systemInstruction_;
       }
     }
+
     /**
      *
      *
@@ -2511,6 +2591,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return toolsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2534,6 +2615,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return toolsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2557,6 +2639,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return toolsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2586,6 +2669,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2612,6 +2696,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2641,6 +2726,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2670,6 +2756,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2696,6 +2783,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2722,6 +2810,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2749,6 +2838,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2775,6 +2865,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2801,6 +2892,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2820,6 +2912,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.vertexai.api.Tool.Builder getToolsBuilder(int index) {
       return getToolsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2843,6 +2936,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return toolsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2867,6 +2961,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(tools_);
       }
     }
+
     /**
      *
      *
@@ -2887,6 +2982,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return getToolsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Tool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2907,6 +3003,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       return getToolsFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Tool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2950,6 +3047,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.vertexai.api.GenerationConfig.Builder,
             com.google.cloud.vertexai.api.GenerationConfigOrBuilder>
         generationConfigBuilder_;
+
     /**
      *
      *
@@ -2967,6 +3065,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasGenerationConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2990,6 +3089,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
         return generationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3015,6 +3115,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3038,6 +3139,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3069,6 +3171,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3091,6 +3194,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3108,6 +3212,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGenerationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3129,6 +3234,7 @@ public final class CountTokensRequest extends com.google.protobuf.GeneratedMessa
             : generationConfig_;
       }
     }
+
     /**
      *
      *

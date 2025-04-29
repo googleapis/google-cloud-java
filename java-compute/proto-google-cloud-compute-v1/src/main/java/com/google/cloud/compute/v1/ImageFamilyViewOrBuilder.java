@@ -36,6 +36,7 @@ public interface ImageFamilyViewOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImageFamilyViewOrBuilder
    * @return The image.
    */
   com.google.cloud.compute.v1.Image getImage();
+
   /**
    *
    *

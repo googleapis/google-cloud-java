@@ -39,6 +39,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface ServiceConnectionMapOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -151,9 +157,11 @@ public interface ServiceConnectionMapOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -164,6 +172,7 @@ public interface ServiceConnectionMapOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -178,6 +187,7 @@ public interface ServiceConnectionMapOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The serviceClass.
    */
   java.lang.String getServiceClass();
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The serviceClassUri.
    */
   java.lang.String getServiceClassUri();
+
   /**
    *
    *
@@ -285,6 +298,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The enum numeric value on the wire for infrastructure.
    */
   int getInfrastructureValue();
+
   /**
    *
    *
@@ -314,6 +328,7 @@ public interface ServiceConnectionMapOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ProducerPscConfig>
       getProducerPscConfigsList();
+
   /**
    *
    *
@@ -327,6 +342,7 @@ public interface ServiceConnectionMapOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ProducerPscConfig
       getProducerPscConfigs(int index);
+
   /**
    *
    *
@@ -339,6 +355,7 @@ public interface ServiceConnectionMapOrBuilder
    * </code>
    */
   int getProducerPscConfigsCount();
+
   /**
    *
    *
@@ -355,6 +372,7 @@ public interface ServiceConnectionMapOrBuilder
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap
                   .ProducerPscConfigOrBuilder>
       getProducerPscConfigsOrBuilderList();
+
   /**
    *
    *
@@ -382,6 +400,7 @@ public interface ServiceConnectionMapOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConfig>
       getConsumerPscConfigsList();
+
   /**
    *
    *
@@ -395,6 +414,7 @@ public interface ServiceConnectionMapOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConfig
       getConsumerPscConfigs(int index);
+
   /**
    *
    *
@@ -407,6 +427,7 @@ public interface ServiceConnectionMapOrBuilder
    * </code>
    */
   int getConsumerPscConfigsCount();
+
   /**
    *
    *
@@ -423,6 +444,7 @@ public interface ServiceConnectionMapOrBuilder
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap
                   .ConsumerPscConfigOrBuilder>
       getConsumerPscConfigsOrBuilderList();
+
   /**
    *
    *
@@ -450,6 +472,7 @@ public interface ServiceConnectionMapOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConnection>
       getConsumerPscConnectionsList();
+
   /**
    *
    *
@@ -463,6 +486,7 @@ public interface ServiceConnectionMapOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConnection
       getConsumerPscConnections(int index);
+
   /**
    *
    *
@@ -475,6 +499,7 @@ public interface ServiceConnectionMapOrBuilder
    * </code>
    */
   int getConsumerPscConnectionsCount();
+
   /**
    *
    *
@@ -491,6 +516,7 @@ public interface ServiceConnectionMapOrBuilder
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap
                   .ConsumerPscConnectionOrBuilder>
       getConsumerPscConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -518,6 +544,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The token.
    */
   java.lang.String getToken();
+
   /**
    *
    *
@@ -546,6 +573,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    *
    *
@@ -560,6 +588,7 @@ public interface ServiceConnectionMapOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

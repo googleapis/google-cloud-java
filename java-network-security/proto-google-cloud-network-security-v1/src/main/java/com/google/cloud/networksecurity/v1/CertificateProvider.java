@@ -34,6 +34,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.CertificateProvider)
     CertificateProviderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CertificateProvider.newBuilder() to construct.
   private CertificateProvider(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GRPC_ENDPOINT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
   public boolean hasGrpcEndpoint() {
     return typeCase_ == 2;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.networksecurity.v1.GrpcEndpoint.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CERTIFICATE_PROVIDER_INSTANCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
   public boolean hasCertificateProviderInstance() {
     return typeCase_ == 3;
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.networksecurity.v1.CertificateProviderInstance.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -422,6 +430,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -660,6 +669,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
             com.google.cloud.networksecurity.v1.GrpcEndpoint.Builder,
             com.google.cloud.networksecurity.v1.GrpcEndpointOrBuilder>
         grpcEndpointBuilder_;
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     public boolean hasGrpcEndpoint() {
       return typeCase_ == 2;
     }
+
     /**
      *
      *
@@ -702,6 +713,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
         return com.google.cloud.networksecurity.v1.GrpcEndpoint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       typeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       typeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       typeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +820,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networksecurity.v1.GrpcEndpoint.Builder getGrpcEndpointBuilder() {
       return getGrpcEndpointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
         return com.google.cloud.networksecurity.v1.GrpcEndpoint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
             com.google.cloud.networksecurity.v1.CertificateProviderInstance.Builder,
             com.google.cloud.networksecurity.v1.CertificateProviderInstanceOrBuilder>
         certificateProviderInstanceBuilder_;
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     public boolean hasCertificateProviderInstance() {
       return typeCase_ == 3;
     }
+
     /**
      *
      *
@@ -927,6 +947,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
         return com.google.cloud.networksecurity.v1.CertificateProviderInstance.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -954,6 +975,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       typeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       typeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       typeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1070,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
         getCertificateProviderInstanceBuilder() {
       return getCertificateProviderInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1088,6 +1114,7 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
         return com.google.cloud.networksecurity.v1.CertificateProviderInstance.getDefaultInstance();
       }
     }
+
     /**
      *
      *

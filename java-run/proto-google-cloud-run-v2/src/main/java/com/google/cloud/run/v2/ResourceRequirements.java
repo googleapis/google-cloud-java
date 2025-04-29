@@ -33,6 +33,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.ResourceRequirements)
     ResourceRequirementsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceRequirements.newBuilder() to construct.
   private ResourceRequirements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   public int getLimitsCount() {
     return internalGetLimits().getMap().size();
   }
+
   /**
    *
    *
@@ -122,12 +124,14 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     }
     return internalGetLimits().getMap().containsKey(key);
   }
+
   /** Use {@link #getLimitsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLimits() {
     return getLimitsMap();
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLimitsMap() {
     return internalGetLimits().getMap();
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLimits().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
 
   public static final int CPU_IDLE_FIELD_NUMBER = 2;
   private boolean cpuIdle_ = false;
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
 
   public static final int STARTUP_CPU_BOOST_FIELD_NUMBER = 3;
   private boolean startupCpuBoost_ = false;
+
   /**
    *
    *
@@ -428,6 +436,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +696,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public int getLimitsCount() {
       return internalGetLimits().getMap().size();
     }
+
     /**
      *
      *
@@ -710,12 +720,14 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       }
       return internalGetLimits().getMap().containsKey(key);
     }
+
     /** Use {@link #getLimitsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLimits() {
       return getLimitsMap();
     }
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLimitsMap() {
       return internalGetLimits().getMap();
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLimits().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       internalGetMutableLimits().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -819,12 +834,14 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       internalGetMutableLimits().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLimits() {
       bitField0_ |= 0x00000001;
       return internalGetMutableLimits().getMutableMap();
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +893,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     }
 
     private boolean cpuIdle_;
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public boolean getCpuIdle() {
       return cpuIdle_;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     }
 
     private boolean startupCpuBoost_;
+
     /**
      *
      *
@@ -951,6 +973,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public boolean getStartupCpuBoost() {
       return startupCpuBoost_;
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

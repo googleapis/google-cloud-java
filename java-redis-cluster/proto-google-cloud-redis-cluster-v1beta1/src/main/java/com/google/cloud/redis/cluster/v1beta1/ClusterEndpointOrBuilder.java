@@ -35,6 +35,7 @@ public interface ClusterEndpointOrBuilder
    * <code>repeated .google.cloud.redis.cluster.v1beta1.ConnectionDetail connections = 1;</code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1beta1.ConnectionDetail> getConnectionsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ClusterEndpointOrBuilder
    * <code>repeated .google.cloud.redis.cluster.v1beta1.ConnectionDetail connections = 1;</code>
    */
   com.google.cloud.redis.cluster.v1beta1.ConnectionDetail getConnections(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ClusterEndpointOrBuilder
    * <code>repeated .google.cloud.redis.cluster.v1beta1.ConnectionDetail connections = 1;</code>
    */
   int getConnectionsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ClusterEndpointOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1beta1.ConnectionDetailOrBuilder>
       getConnectionsOrBuilderList();
+
   /**
    *
    *

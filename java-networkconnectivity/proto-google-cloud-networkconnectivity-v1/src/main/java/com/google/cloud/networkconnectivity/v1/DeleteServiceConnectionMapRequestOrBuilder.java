@@ -38,6 +38,7 @@ public interface DeleteServiceConnectionMapRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface DeleteServiceConnectionMapRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface DeleteServiceConnectionMapRequestOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface DeleteServiceConnectionMapRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

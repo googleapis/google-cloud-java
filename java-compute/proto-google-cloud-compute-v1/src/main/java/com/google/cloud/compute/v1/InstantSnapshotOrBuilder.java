@@ -37,6 +37,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InstantSnapshotOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface InstantSnapshotOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface InstantSnapshotOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface InstantSnapshotOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface InstantSnapshotOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public interface InstantSnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -282,9 +295,11 @@ public interface InstantSnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -295,6 +310,7 @@ public interface InstantSnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -309,6 +325,7 @@ public interface InstantSnapshotOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -332,6 +349,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -344,6 +362,7 @@ public interface InstantSnapshotOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -369,6 +388,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -381,6 +401,7 @@ public interface InstantSnapshotOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -408,6 +429,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
+
   /**
    *
    *
@@ -422,6 +444,7 @@ public interface InstantSnapshotOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.InstantSnapshotResourceStatus getResourceStatus();
+
   /**
    *
    *
@@ -447,6 +470,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -472,6 +496,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -497,6 +522,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -509,6 +535,7 @@ public interface InstantSnapshotOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -534,6 +561,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -546,6 +574,7 @@ public interface InstantSnapshotOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -571,6 +600,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the sourceDisk field is set.
    */
   boolean hasSourceDisk();
+
   /**
    *
    *
@@ -583,6 +613,7 @@ public interface InstantSnapshotOrBuilder
    * @return The sourceDisk.
    */
   java.lang.String getSourceDisk();
+
   /**
    *
    *
@@ -608,6 +639,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the sourceDiskId field is set.
    */
   boolean hasSourceDiskId();
+
   /**
    *
    *
@@ -620,6 +652,7 @@ public interface InstantSnapshotOrBuilder
    * @return The sourceDiskId.
    */
   java.lang.String getSourceDiskId();
+
   /**
    *
    *
@@ -646,6 +679,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -659,6 +693,7 @@ public interface InstantSnapshotOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -685,6 +720,7 @@ public interface InstantSnapshotOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -697,6 +733,7 @@ public interface InstantSnapshotOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

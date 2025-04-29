@@ -33,6 +33,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.NotificationConfig)
     NotificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotificationConfig.newBuilder() to construct.
   private NotificationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>UPGRADE_AVAILABLE_EVENT = 1;</code>
      */
     public static final int UPGRADE_AVAILABLE_EVENT_VALUE = 1;
+
     /**
      *
      *
@@ -145,6 +148,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>UPGRADE_EVENT = 2;</code>
      */
     public static final int UPGRADE_EVENT_VALUE = 2;
+
     /**
      *
      *
@@ -272,6 +276,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return The topic.
      */
     java.lang.String getTopic();
+
     /**
      *
      *
@@ -300,6 +305,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the filter field is set.
      */
     boolean hasFilter();
+
     /**
      *
      *
@@ -314,6 +320,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return The filter.
      */
     com.google.container.v1beta1.NotificationConfig.Filter getFilter();
+
     /**
      *
      *
@@ -327,6 +334,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     com.google.container.v1beta1.NotificationConfig.FilterOrBuilder getFilterOrBuilder();
   }
+
   /**
    *
    *
@@ -341,6 +349,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.NotificationConfig.PubSub)
       PubSubOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PubSub.newBuilder() to construct.
     private PubSub(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -374,6 +383,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -394,6 +404,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -418,6 +429,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -445,6 +457,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
     public static final int FILTER_FIELD_NUMBER = 3;
     private com.google.container.v1beta1.NotificationConfig.Filter filter_;
+
     /**
      *
      *
@@ -462,6 +475,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -481,6 +495,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           ? com.google.container.v1beta1.NotificationConfig.Filter.getDefaultInstance()
           : filter_;
     }
+
     /**
      *
      *
@@ -683,6 +698,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -912,6 +928,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -927,6 +944,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -946,6 +964,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -965,6 +984,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object topic_ = "";
+
       /**
        *
        *
@@ -988,6 +1008,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1011,6 +1032,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1033,6 +1055,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1051,6 +1074,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1081,6 +1105,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               com.google.container.v1beta1.NotificationConfig.Filter.Builder,
               com.google.container.v1beta1.NotificationConfig.FilterOrBuilder>
           filterBuilder_;
+
       /**
        *
        *
@@ -1097,6 +1122,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasFilter() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1119,6 +1145,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           return filterBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1143,6 +1170,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1165,6 +1193,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1195,6 +1224,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1216,6 +1246,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1232,6 +1263,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1252,6 +1284,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               : filter_;
         }
       }
+
       /**
        *
        *
@@ -1361,6 +1394,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return A list containing the eventType.
      */
     java.util.List<com.google.container.v1beta1.NotificationConfig.EventType> getEventTypeList();
+
     /**
      *
      *
@@ -1373,6 +1407,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return The count of eventType.
      */
     int getEventTypeCount();
+
     /**
      *
      *
@@ -1386,6 +1421,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return The eventType at the given index.
      */
     com.google.container.v1beta1.NotificationConfig.EventType getEventType(int index);
+
     /**
      *
      *
@@ -1398,6 +1434,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * @return A list containing the enum numeric values on the wire for eventType.
      */
     java.util.List<java.lang.Integer> getEventTypeValueList();
+
     /**
      *
      *
@@ -1412,6 +1449,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      */
     int getEventTypeValue(int index);
   }
+
   /**
    *
    *
@@ -1429,6 +1467,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.NotificationConfig.Filter)
       FilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Filter.newBuilder() to construct.
     private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1478,6 +1517,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
                     : result;
               }
             };
+
     /**
      *
      *
@@ -1496,6 +1536,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.container.v1beta1.NotificationConfig.EventType>(
           eventType_, eventType_converter_);
     }
+
     /**
      *
      *
@@ -1511,6 +1552,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public int getEventTypeCount() {
       return eventType_.size();
     }
+
     /**
      *
      *
@@ -1527,6 +1569,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.NotificationConfig.EventType getEventType(int index) {
       return eventType_converter_.convert(eventType_.get(index));
     }
+
     /**
      *
      *
@@ -1542,6 +1585,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getEventTypeValueList() {
       return eventType_;
     }
+
     /**
      *
      *
@@ -1738,6 +1782,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1961,6 +2006,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000001;
         }
       }
+
       /**
        *
        *
@@ -1979,6 +2025,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             java.lang.Integer, com.google.container.v1beta1.NotificationConfig.EventType>(
             eventType_, eventType_converter_);
       }
+
       /**
        *
        *
@@ -1994,6 +2041,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public int getEventTypeCount() {
         return eventType_.size();
       }
+
       /**
        *
        *
@@ -2010,6 +2058,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public com.google.container.v1beta1.NotificationConfig.EventType getEventType(int index) {
         return eventType_converter_.convert(eventType_.get(index));
       }
+
       /**
        *
        *
@@ -2034,6 +2083,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2056,6 +2106,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2079,6 +2130,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2097,6 +2149,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2112,6 +2165,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public java.util.List<java.lang.Integer> getEventTypeValueList() {
         return java.util.Collections.unmodifiableList(eventType_);
       }
+
       /**
        *
        *
@@ -2128,6 +2182,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       public int getEventTypeValue(int index) {
         return eventType_.get(index);
       }
+
       /**
        *
        *
@@ -2148,6 +2203,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2167,6 +2223,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2256,6 +2313,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int PUBSUB_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.NotificationConfig.PubSub pubsub_;
+
   /**
    *
    *
@@ -2271,6 +2329,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasPubsub() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2288,6 +2347,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.NotificationConfig.PubSub.getDefaultInstance()
         : pubsub_;
   }
+
   /**
    *
    *
@@ -2468,6 +2528,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2671,6 +2732,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.NotificationConfig.PubSub.Builder,
             com.google.container.v1beta1.NotificationConfig.PubSubOrBuilder>
         pubsubBuilder_;
+
     /**
      *
      *
@@ -2685,6 +2747,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasPubsub() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2705,6 +2768,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return pubsubBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2727,6 +2791,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2747,6 +2812,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2775,6 +2841,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2794,6 +2861,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2808,6 +2876,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPubsubFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2826,6 +2895,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             : pubsub_;
       }
     }
+
     /**
      *
      *

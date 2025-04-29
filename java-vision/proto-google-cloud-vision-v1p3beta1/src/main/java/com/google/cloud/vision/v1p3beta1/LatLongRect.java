@@ -33,6 +33,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.LatLongRect)
     LatLongRectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LatLongRect.newBuilder() to construct.
   private LatLongRect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MIN_LAT_LNG_FIELD_NUMBER = 1;
   private com.google.type.LatLng minLatLng_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinLatLng() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getMinLatLng() {
     return minLatLng_ == null ? com.google.type.LatLng.getDefaultInstance() : minLatLng_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_LAT_LNG_FIELD_NUMBER = 2;
   private com.google.type.LatLng maxLatLng_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxLatLng() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getMaxLatLng() {
     return maxLatLng_ == null ? com.google.type.LatLng.getDefaultInstance() : maxLatLng_;
   }
+
   /**
    *
    *
@@ -332,6 +339,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +559,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         minLatLngBuilder_;
+
     /**
      *
      *
@@ -565,6 +574,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinLatLng() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -583,6 +593,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
         return minLatLngBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -605,6 +616,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +636,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +664,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +684,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +699,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMinLatLngFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -700,6 +716,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
         return minLatLng_ == null ? com.google.type.LatLng.getDefaultInstance() : minLatLng_;
       }
     }
+
     /**
      *
      *
@@ -727,6 +744,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         maxLatLngBuilder_;
+
     /**
      *
      *
@@ -741,6 +759,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxLatLng() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -759,6 +778,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
         return maxLatLngBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -781,6 +801,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +821,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +849,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +869,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +884,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaxLatLngFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -876,6 +901,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
         return maxLatLng_ == null ? com.google.type.LatLng.getDefaultInstance() : maxLatLng_;
       }
     }
+
     /**
      *
      *

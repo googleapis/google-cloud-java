@@ -36,6 +36,7 @@ public interface DataAccessEventOrBuilder
    * @return The eventId.
    */
   java.lang.String getEventId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DataAccessEventOrBuilder
    * @return The principalEmail.
    */
   java.lang.String getPrincipalEmail();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DataAccessEventOrBuilder
    * @return The enum numeric value on the wire for operation.
    */
   int getOperationValue();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface DataAccessEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface DataAccessEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *

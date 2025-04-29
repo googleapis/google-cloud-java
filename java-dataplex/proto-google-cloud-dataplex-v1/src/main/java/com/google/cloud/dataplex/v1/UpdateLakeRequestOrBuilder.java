@@ -37,6 +37,7 @@ public interface UpdateLakeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateLakeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateLakeRequestOrBuilder
    * @return Whether the lake field is set.
    */
   boolean hasLake();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface UpdateLakeRequestOrBuilder
    * @return The lake.
    */
   com.google.cloud.dataplex.v1.Lake getLake();
+
   /**
    *
    *

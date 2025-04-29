@@ -38,6 +38,7 @@ public interface ReferenceListOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ReferenceListOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ReferenceListOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ReferenceListOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ReferenceListOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface ReferenceListOrBuilder
    * </code>
    */
   java.util.List<google.cloud.chronicle.v1.ReferenceListEntry> getEntriesList();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface ReferenceListOrBuilder
    * </code>
    */
   google.cloud.chronicle.v1.ReferenceListEntry getEntries(int index);
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface ReferenceListOrBuilder
    * </code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface ReferenceListOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.ReferenceListEntryOrBuilder>
       getEntriesOrBuilderList();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface ReferenceListOrBuilder
    * @return A list containing the rules.
    */
   java.util.List<java.lang.String> getRulesList();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface ReferenceListOrBuilder
    * @return The count of rules.
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public interface ReferenceListOrBuilder
    * @return The rules at the given index.
    */
   java.lang.String getRules(int index);
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public interface ReferenceListOrBuilder
    * @return The enum numeric value on the wire for syntaxType.
    */
   int getSyntaxTypeValue();
+
   /**
    *
    *
@@ -343,6 +356,7 @@ public interface ReferenceListOrBuilder
    * @return Whether the scopeInfo field is set.
    */
   boolean hasScopeInfo();
+
   /**
    *
    *
@@ -359,6 +373,7 @@ public interface ReferenceListOrBuilder
    * @return The scopeInfo.
    */
   google.cloud.chronicle.v1.ScopeInfo getScopeInfo();
+
   /**
    *
    *

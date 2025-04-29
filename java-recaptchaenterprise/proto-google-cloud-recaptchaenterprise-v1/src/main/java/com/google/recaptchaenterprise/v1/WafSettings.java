@@ -34,6 +34,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.WafSettings)
     WafSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WafSettings.newBuilder() to construct.
   private WafSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -141,6 +142,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>WAF_FEATURE_UNSPECIFIED = 0;</code>
      */
     public static final int WAF_FEATURE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -151,6 +153,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CHALLENGE_PAGE = 1;</code>
      */
     public static final int CHALLENGE_PAGE_VALUE = 1;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>SESSION_TOKEN = 2;</code>
      */
     public static final int SESSION_TOKEN_VALUE = 2;
+
     /**
      *
      *
@@ -172,6 +176,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_TOKEN = 3;</code>
      */
     public static final int ACTION_TOKEN_VALUE = 3;
+
     /**
      *
      *
@@ -344,6 +349,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>WAF_SERVICE_UNSPECIFIED = 0;</code>
      */
     public static final int WAF_SERVICE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -354,6 +360,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CA = 1;</code>
      */
     public static final int CA_VALUE = 1;
+
     /**
      *
      *
@@ -364,6 +371,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>FASTLY = 3;</code>
      */
     public static final int FASTLY_VALUE = 3;
+
     /**
      *
      *
@@ -374,6 +382,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUDFLARE = 4;</code>
      */
     public static final int CLOUDFLARE_VALUE = 4;
+
     /**
      *
      *
@@ -474,6 +483,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WAF_SERVICE_FIELD_NUMBER = 1;
   private int wafService_ = 0;
+
   /**
    *
    *
@@ -491,6 +501,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
   public int getWafServiceValue() {
     return wafService_;
   }
+
   /**
    *
    *
@@ -515,6 +526,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WAF_FEATURE_FIELD_NUMBER = 2;
   private int wafFeature_ = 0;
+
   /**
    *
    *
@@ -532,6 +544,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
   public int getWafFeatureValue() {
     return wafFeature_;
   }
+
   /**
    *
    *
@@ -730,6 +743,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -925,6 +939,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int wafService_ = 0;
+
     /**
      *
      *
@@ -942,6 +957,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     public int getWafServiceValue() {
       return wafService_;
     }
+
     /**
      *
      *
@@ -962,6 +978,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1000,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.recaptchaenterprise.v1.WafSettings.WafService.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1006,6 +1024,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1046,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int wafFeature_ = 0;
+
     /**
      *
      *
@@ -1044,6 +1064,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
     public int getWafFeatureValue() {
       return wafFeature_;
     }
+
     /**
      *
      *
@@ -1064,6 +1085,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1107,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.recaptchaenterprise.v1.WafSettings.WafFeature.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1108,6 +1131,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

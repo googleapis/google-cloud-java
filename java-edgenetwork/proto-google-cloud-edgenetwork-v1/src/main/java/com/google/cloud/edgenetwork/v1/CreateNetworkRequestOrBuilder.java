@@ -38,6 +38,7 @@ public interface CreateNetworkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateNetworkRequestOrBuilder
    * @return The networkId.
    */
   java.lang.String getNetworkId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateNetworkRequestOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateNetworkRequestOrBuilder
    * @return The network.
    */
   com.google.cloud.edgenetwork.v1.Network getNetwork();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface CreateNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface ClusterOrBuilder
    * @return Whether the gcpConfig field is set.
    */
   boolean hasGcpConfig();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ClusterOrBuilder
    * @return The gcpConfig.
    */
   com.google.cloud.managedkafka.v1.GcpConfig getGcpConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface ClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface ClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -191,9 +199,11 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -204,6 +214,7 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -218,6 +229,7 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -243,6 +255,7 @@ public interface ClusterOrBuilder
    * @return Whether the capacityConfig field is set.
    */
   boolean hasCapacityConfig();
+
   /**
    *
    *
@@ -257,6 +270,7 @@ public interface ClusterOrBuilder
    * @return The capacityConfig.
    */
   com.google.cloud.managedkafka.v1.CapacityConfig getCapacityConfig();
+
   /**
    *
    *
@@ -284,6 +298,7 @@ public interface ClusterOrBuilder
    * @return Whether the rebalanceConfig field is set.
    */
   boolean hasRebalanceConfig();
+
   /**
    *
    *
@@ -298,6 +313,7 @@ public interface ClusterOrBuilder
    * @return The rebalanceConfig.
    */
   com.google.cloud.managedkafka.v1.RebalanceConfig getRebalanceConfig();
+
   /**
    *
    *
@@ -325,6 +341,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -352,6 +369,7 @@ public interface ClusterOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -377,6 +395,7 @@ public interface ClusterOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *

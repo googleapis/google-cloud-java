@@ -39,6 +39,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.StreamDirectPredictRequest)
     StreamDirectPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamDirectPredictRequest.newBuilder() to construct.
   private StreamDirectPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Tensor> inputs_;
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.vertexai.api.Tensor> getInputsList() {
     return inputs_;
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       getInputsOrBuilderList() {
     return inputs_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
   public int getInputsCount() {
     return inputs_.size();
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
   public com.google.cloud.vertexai.api.Tensor getInputs(int index) {
     return inputs_.get(index);
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
 
   public static final int PARAMETERS_FIELD_NUMBER = 3;
   private com.google.cloud.vertexai.api.Tensor parameters_;
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         ? com.google.cloud.vertexai.api.Tensor.getDefaultInstance()
         : parameters_;
   }
+
   /**
    *
    *
@@ -452,6 +463,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -733,6 +745,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return inputsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return inputsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -928,6 +947,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return inputsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -952,6 +972,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1020,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1067,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1090,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1113,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1135,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1157,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1172,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
     public com.google.cloud.vertexai.api.Tensor.Builder getInputsBuilder(int index) {
       return getInputsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return inputsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1180,6 +1211,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(inputs_);
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       return getInputsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1210,6 +1243,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       return getInputsFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1248,6 +1282,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
             com.google.cloud.vertexai.api.Tensor.Builder,
             com.google.cloud.vertexai.api.TensorOrBuilder>
         parametersBuilder_;
+
     /**
      *
      *
@@ -1264,6 +1299,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1286,6 +1322,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
         return parametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1310,6 +1347,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1369,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1399,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1421,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1438,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1417,6 +1459,7 @@ public final class StreamDirectPredictRequest extends com.google.protobuf.Genera
             : parameters_;
       }
     }
+
     /**
      *
      *

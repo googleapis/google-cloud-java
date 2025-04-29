@@ -33,6 +33,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkRoutingConfig)
     NetworkRoutingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkRoutingConfig.newBuilder() to construct.
   private NetworkRoutingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,8 +104,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_BGP_BEST_PATH_SELECTION_MODE = 0;</code>
      */
     public static final int UNDEFINED_BGP_BEST_PATH_SELECTION_MODE_VALUE = 0;
+
     /** <code>LEGACY = 94234569;</code> */
     public static final int LEGACY_VALUE = 94234569;
+
     /** <code>STANDARD = 484642493;</code> */
     public static final int STANDARD_VALUE = 484642493;
 
@@ -234,8 +237,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_BGP_INTER_REGION_COST = 0;</code>
      */
     public static final int UNDEFINED_BGP_INTER_REGION_COST_VALUE = 0;
+
     /** <code>ADD_COST_TO_MED = 490583004;</code> */
     public static final int ADD_COST_TO_MED_VALUE = 490583004;
+
     /** <code>DEFAULT = 115302945;</code> */
     public static final int DEFAULT_VALUE = 115302945;
 
@@ -481,8 +486,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_ROUTING_MODE = 0;</code>
      */
     public static final int UNDEFINED_ROUTING_MODE_VALUE = 0;
+
     /** <code>GLOBAL = 494663587;</code> */
     public static final int GLOBAL_VALUE = 494663587;
+
     /** <code>REGIONAL = 92288543;</code> */
     public static final int REGIONAL_VALUE = 92288543;
 
@@ -572,6 +579,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int BGP_ALWAYS_COMPARE_MED_FIELD_NUMBER = 213102902;
   private boolean bgpAlwaysCompareMed_ = false;
+
   /**
    *
    *
@@ -587,6 +595,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasBgpAlwaysCompareMed() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -607,6 +616,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bgpBestPathSelectionMode_ = "";
+
   /**
    *
    *
@@ -623,6 +633,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasBgpBestPathSelectionMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -647,6 +658,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -676,6 +688,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bgpInterRegionCost_ = "";
+
   /**
    *
    *
@@ -692,6 +705,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasBgpInterRegionCost() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -716,6 +730,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -743,6 +758,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   public static final int EFFECTIVE_BGP_ALWAYS_COMPARE_MED_FIELD_NUMBER = 214661838;
   private boolean effectiveBgpAlwaysCompareMed_ = false;
+
   /**
    *
    *
@@ -758,6 +774,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasEffectiveBgpAlwaysCompareMed() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -778,6 +795,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object effectiveBgpInterRegionCost_ = "";
+
   /**
    *
    *
@@ -794,6 +812,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasEffectiveBgpInterRegionCost() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -818,6 +837,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -847,6 +867,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object routingMode_ = "";
+
   /**
    *
    *
@@ -863,6 +884,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRoutingMode() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -887,6 +909,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1159,6 +1182,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1422,6 +1446,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean bgpAlwaysCompareMed_;
+
     /**
      *
      *
@@ -1437,6 +1462,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasBgpAlwaysCompareMed() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1452,6 +1478,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean getBgpAlwaysCompareMed() {
       return bgpAlwaysCompareMed_;
     }
+
     /**
      *
      *
@@ -1471,6 +1498,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1518,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object bgpBestPathSelectionMode_ = "";
+
     /**
      *
      *
@@ -1505,6 +1534,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasBgpBestPathSelectionMode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1528,6 +1558,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1551,6 +1582,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1573,6 +1605,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1624,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1650,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object bgpInterRegionCost_ = "";
+
     /**
      *
      *
@@ -1631,6 +1666,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasBgpInterRegionCost() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1654,6 +1690,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1677,6 +1714,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1699,6 +1737,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1717,6 +1756,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1782,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     private boolean effectiveBgpAlwaysCompareMed_;
+
     /**
      *
      *
@@ -1757,6 +1798,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasEffectiveBgpAlwaysCompareMed() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1772,6 +1814,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean getEffectiveBgpAlwaysCompareMed() {
       return effectiveBgpAlwaysCompareMed_;
     }
+
     /**
      *
      *
@@ -1791,6 +1834,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1854,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object effectiveBgpInterRegionCost_ = "";
+
     /**
      *
      *
@@ -1825,6 +1870,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasEffectiveBgpInterRegionCost() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1848,6 +1894,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1871,6 +1918,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1893,6 +1941,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1911,6 +1960,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1936,6 +1986,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object routingMode_ = "";
+
     /**
      *
      *
@@ -1951,6 +2002,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasRoutingMode() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1974,6 +2026,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1997,6 +2050,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2019,6 +2073,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2092,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

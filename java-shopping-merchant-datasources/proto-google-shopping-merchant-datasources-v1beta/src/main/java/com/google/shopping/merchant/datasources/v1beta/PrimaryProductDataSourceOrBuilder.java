@@ -38,6 +38,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return Whether the feedLabel field is set.
    */
   boolean hasFeedLabel();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -163,6 +166,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return Whether the contentLanguage field is set.
    */
   boolean hasContentLanguage();
+
   /**
    *
    *
@@ -185,6 +189,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -222,6 +227,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return A list containing the countries.
    */
   java.util.List<java.lang.String> getCountriesList();
+
   /**
    *
    *
@@ -236,6 +242,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return The count of countries.
    */
   int getCountriesCount();
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return The countries at the given index.
    */
   java.lang.String getCountries(int index);
+
   /**
    *
    *
@@ -282,6 +290,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * @return Whether the defaultRule field is set.
    */
   boolean hasDefaultRule();
+
   /**
    *
    *
@@ -298,6 +307,7 @@ public interface PrimaryProductDataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.DefaultRule
       getDefaultRule();
+
   /**
    *
    *
@@ -343,6 +353,7 @@ public interface PrimaryProductDataSourceOrBuilder
   java.util.List<
           com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination>
       getDestinationsList();
+
   /**
    *
    *
@@ -372,6 +383,7 @@ public interface PrimaryProductDataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
       getDestinations(int index);
+
   /**
    *
    *
@@ -400,6 +412,7 @@ public interface PrimaryProductDataSourceOrBuilder
    * </code>
    */
   int getDestinationsCount();
+
   /**
    *
    *
@@ -432,6 +445,7 @@ public interface PrimaryProductDataSourceOrBuilder
               com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
                   .DestinationOrBuilder>
       getDestinationsOrBuilderList();
+
   /**
    *
    *

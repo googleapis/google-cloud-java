@@ -133,6 +133,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -143,6 +144,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_PUBSUB_NOTIFICATION_FAILURE = 1;</code>
    */
   public static final int TYPE_PUBSUB_NOTIFICATION_FAILURE_VALUE = 1;
+
   /**
    *
    *
@@ -153,6 +155,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_RESOURCE_STATE_CHANGE = 3;</code>
    */
   public static final int TYPE_RESOURCE_STATE_CHANGE_VALUE = 3;
+
   /**
    *
    *
@@ -163,6 +166,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_PROCESS_ABORTED = 4;</code>
    */
   public static final int TYPE_PROCESS_ABORTED_VALUE = 4;
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_RESTRICTION_VIOLATED = 5;</code>
    */
   public static final int TYPE_RESTRICTION_VIOLATED_VALUE = 5;
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_RESOURCE_DELETED = 6;</code>
    */
   public static final int TYPE_RESOURCE_DELETED_VALUE = 6;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_ROLLOUT_UPDATE = 7;</code>
    */
   public static final int TYPE_ROLLOUT_UPDATE_VALUE = 7;
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_DEPLOY_POLICY_EVALUATION = 8;</code>
    */
   public static final int TYPE_DEPLOY_POLICY_EVALUATION_VALUE = 8;
+
   /**
    *
    *

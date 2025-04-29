@@ -37,6 +37,7 @@ public interface PostdeployOrBuilder
    * @return A list containing the actions.
    */
   java.util.List<java.lang.String> getActionsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PostdeployOrBuilder
    * @return The count of actions.
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface PostdeployOrBuilder
    * @return The actions at the given index.
    */
   java.lang.String getActions(int index);
+
   /**
    *
    *

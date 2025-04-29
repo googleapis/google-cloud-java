@@ -34,6 +34,7 @@ public interface ListCustomJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.CustomJob custom_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.CustomJob> getCustomJobsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCustomJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.CustomJob custom_jobs = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.CustomJob getCustomJobs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCustomJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.CustomJob custom_jobs = 1;</code>
    */
   int getCustomJobsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCustomJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.CustomJobOrBuilder>
       getCustomJobsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListCustomJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

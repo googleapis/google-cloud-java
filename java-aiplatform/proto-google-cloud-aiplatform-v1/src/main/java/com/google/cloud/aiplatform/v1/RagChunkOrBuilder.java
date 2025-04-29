@@ -36,6 +36,7 @@ public interface RagChunkOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RagChunkOrBuilder
    * @return Whether the pageSpan field is set.
    */
   boolean hasPageSpan();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RagChunkOrBuilder
    * @return The pageSpan.
    */
   com.google.cloud.aiplatform.v1.RagChunk.PageSpan getPageSpan();
+
   /**
    *
    *

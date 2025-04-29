@@ -36,6 +36,7 @@ public interface CustomOutputFormatConfigOrBuilder
    * @return Whether the returnRawOutput field is set.
    */
   boolean hasReturnRawOutput();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ToolParameterKVMatchMetricValueOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *

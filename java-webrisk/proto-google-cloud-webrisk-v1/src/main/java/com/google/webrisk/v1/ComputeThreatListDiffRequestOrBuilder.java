@@ -40,6 +40,7 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * @return The enum numeric value on the wire for threatType.
    */
   int getThreatTypeValue();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * @return Whether the constraints field is set.
    */
   boolean hasConstraints();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface ComputeThreatListDiffRequestOrBuilder
    * @return The constraints.
    */
   com.google.webrisk.v1.ComputeThreatListDiffRequest.Constraints getConstraints();
+
   /**
    *
    *

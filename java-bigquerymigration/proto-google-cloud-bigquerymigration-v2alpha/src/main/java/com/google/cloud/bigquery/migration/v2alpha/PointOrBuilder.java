@@ -44,6 +44,7 @@ public interface PointOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface PointOrBuilder
    * @return The interval.
    */
   com.google.cloud.bigquery.migration.v2alpha.TimeInterval getInterval();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface PointOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface PointOrBuilder
    * @return The value.
    */
   com.google.cloud.bigquery.migration.v2alpha.TypedValue getValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnectors.v1.AppConnectorInstanceConfig)
     AppConnectorInstanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AppConnectorInstanceConfig.newBuilder() to construct.
   private AppConnectorInstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int SEQUENCE_NUMBER_FIELD_NUMBER = 1;
   private long sequenceNumber_ = 0L;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
 
   public static final int INSTANCE_CONFIG_FIELD_NUMBER = 2;
   private com.google.protobuf.Any instanceConfig_;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
   public boolean hasInstanceConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
   public com.google.protobuf.Any getInstanceConfig() {
     return instanceConfig_ == null ? com.google.protobuf.Any.getDefaultInstance() : instanceConfig_;
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
 
   public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig notificationConfig_;
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
   public boolean hasNotificationConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
         ? com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig.getDefaultInstance()
         : notificationConfig_;
   }
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
 
   public static final int IMAGE_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.beyondcorp.appconnectors.v1.ImageConfig imageConfig_;
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
   public boolean hasImageConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
         ? com.google.cloud.beyondcorp.appconnectors.v1.ImageConfig.getDefaultInstance()
         : imageConfig_;
   }
+
   /**
    *
    *
@@ -442,6 +453,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -707,6 +719,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     private int bitField0_;
 
     private long sequenceNumber_;
+
     /**
      *
      *
@@ -724,6 +737,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     public long getSequenceNumber() {
       return sequenceNumber_;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         instanceConfigBuilder_;
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     public boolean hasInstanceConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
         return instanceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +865,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +893,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +913,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return getInstanceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -924,6 +947,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
             : instanceConfig_;
       }
     }
+
     /**
      *
      *
@@ -956,6 +980,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
             com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig.Builder,
             com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfigOrBuilder>
         notificationConfigBuilder_;
+
     /**
      *
      *
@@ -972,6 +997,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     public boolean hasNotificationConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -994,6 +1020,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
         return notificationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1046,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1069,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1124,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1142,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1132,6 +1164,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
             : notificationConfig_;
       }
     }
+
     /**
      *
      *
@@ -1166,6 +1199,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
             com.google.cloud.beyondcorp.appconnectors.v1.ImageConfig.Builder,
             com.google.cloud.beyondcorp.appconnectors.v1.ImageConfigOrBuilder>
         imageConfigBuilder_;
+
     /**
      *
      *
@@ -1181,6 +1215,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
     public boolean hasImageConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1202,6 +1237,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
         return imageConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1261,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1246,6 +1283,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1314,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1335,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1352,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
       onChanged();
       return getImageConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1332,6 +1373,7 @@ public final class AppConnectorInstanceConfig extends com.google.protobuf.Genera
             : imageConfig_;
       }
     }
+
     /**
      *
      *

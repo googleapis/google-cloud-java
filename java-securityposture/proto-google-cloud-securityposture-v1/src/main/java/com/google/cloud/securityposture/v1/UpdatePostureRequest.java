@@ -33,6 +33,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.UpdatePostureRequest)
     UpdatePostureRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdatePostureRequest.newBuilder() to construct.
   private UpdatePostureRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
 
   public static final int POSTURE_FIELD_NUMBER = 2;
   private com.google.cloud.securityposture.v1.Posture posture_;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
   public boolean hasPosture() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.securityposture.v1.Posture.getDefaultInstance()
         : posture_;
   }
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -420,6 +429,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +667,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.securityposture.v1.Posture.Builder,
             com.google.cloud.securityposture.v1.PostureOrBuilder>
         postureBuilder_;
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
     public boolean hasPosture() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -925,6 +946,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
         return postureBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -949,6 +971,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1023,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1062,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getPostureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1056,6 +1083,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
             : posture_;
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1113,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object revisionId_ = "";
+
     /**
      *
      *
@@ -1107,6 +1136,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1159,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1181,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1199,7 @@ public final class UpdatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

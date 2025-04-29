@@ -38,6 +38,7 @@ public interface CreateMappingRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateMappingRuleRequestOrBuilder
    * @return The mappingRuleId.
    */
   java.lang.String getMappingRuleId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateMappingRuleRequestOrBuilder
    * @return Whether the mappingRule field is set.
    */
   boolean hasMappingRule();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateMappingRuleRequestOrBuilder
    * @return The mappingRule.
    */
   com.google.cloud.clouddms.v1.MappingRule getMappingRule();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface CreateMappingRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

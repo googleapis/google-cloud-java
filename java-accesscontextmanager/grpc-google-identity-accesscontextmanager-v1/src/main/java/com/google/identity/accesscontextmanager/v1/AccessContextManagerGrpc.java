@@ -1345,6 +1345,19 @@ public final class AccessContextManagerGrpc {
     return AccessContextManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AccessContextManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AccessContextManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccessContextManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public AccessContextManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccessContextManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AccessContextManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2529,6 +2542,511 @@ public final class AccessContextManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AccessContextManager.
+   *
+   * <pre>
+   * API for setting [access levels]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * for Google Cloud projects. Each organization has one [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+   * and [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
+   * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+   * applicable to all resources in the organization.
+   * AccessPolicies
+   * </pre>
+   */
+  public static final class AccessContextManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AccessContextManagerBlockingV2Stub> {
+    private AccessContextManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AccessContextManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AccessContextManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [access policies]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+     * organization.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse
+        listAccessPolicies(
+            com.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccessPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy(
+        com.google.identity.accesscontextmanager.v1.GetAccessPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an access policy. This method fails if the organization already has
+     * an access policy. The long-running operation has a successful status
+     * after the access policy propagates to long-lasting storage.
+     * Syntactic and basic semantic errors are returned in `metadata` as a
+     * BadRequest proto.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAccessPolicy(
+        com.google.identity.accesscontextmanager.v1.AccessPolicy request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAccessPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy]. The
+     * long-running operation from this RPC has a successful status after the
+     * changes to the [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] propagate
+     * to long-lasting storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAccessPolicy(
+        com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccessPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+     * resource name. The long-running operation has a successful status after the
+     * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
+     * is removed from long-lasting storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAccessPolicy(
+        com.google.identity.accesscontextmanager.v1.DeleteAccessPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccessPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] for an access
+     * policy.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.ListAccessLevelsResponse listAccessLevels(
+        com.google.identity.accesscontextmanager.v1.ListAccessLevelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccessLevelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
+     * name.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel(
+        com.google.identity.accesscontextmanager.v1.GetAccessLevelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessLevelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the [access
+     * level] [google.identity.accesscontextmanager.v1.AccessLevel]
+     * propagates to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAccessLevel(
+        com.google.identity.accesscontextmanager.v1.CreateAccessLevelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAccessLevelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the changes to
+     * the [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] propagate
+     * to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAccessLevel(
+        com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccessLevelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
+     * name. The long-running operation from this RPC has a successful status
+     * after the [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] has been removed
+     * from long-lasting storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAccessLevel(
+        com.google.identity.accesscontextmanager.v1.DeleteAccessLevelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccessLevelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces all existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
+     * the [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] provided. This
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting
+     * storage. If the replacement contains errors, an error response is returned
+     * for the first error encountered.  Upon error, the replacement is cancelled,
+     * and existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] are not
+     * affected. The Operation.response field contains
+     * ReplaceAccessLevelsResponse. Removing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an
+     * error.
+     * </pre>
+     */
+    public com.google.longrunning.Operation replaceAccessLevels(
+        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReplaceAccessLevelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
+     * access policy.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.ListServicePerimetersResponse
+        listServicePerimeters(
+            com.google.identity.accesscontextmanager.v1.ListServicePerimetersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicePerimetersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.GetServicePerimeterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServicePerimeterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServicePerimeterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServicePerimeterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name. The long-running operation from this RPC has a successful
+     * status after the [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed from
+     * long-lasting storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServicePerimeter(
+        com.google.identity.accesscontextmanager.v1.DeleteServicePerimeterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServicePerimeterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replace all existing [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting storage.
+     * Replacements containing errors result in an error response for the first
+     * error encountered. Upon an error, replacement are cancelled and existing
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] are not
+     * affected. The Operation.response field contains
+     * ReplaceServicePerimetersResponse.
+     * </pre>
+     */
+    public com.google.longrunning.Operation replaceServicePerimeters(
+        com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReplaceServicePerimetersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commits the dry-run specification for all the [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * A commit operation on a service perimeter involves copying its `spec` field
+     * to the `status` field of the service perimeter. Only [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] with
+     * `use_explicit_dry_run_spec` field set to true are affected by a commit
+     * operation. The long-running operation from this RPC has a successful
+     * status after the dry-run specifications for all the [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] have been
+     * committed. If a commit fails, it causes the long-running operation to
+     * return an error response and the entire commit operation is cancelled.
+     * When successful, the Operation.response field contains
+     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are
+     * cleared after a successful commit operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation commitServicePerimeters(
+        com.google.identity.accesscontextmanager.v1.CommitServicePerimetersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCommitServicePerimetersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [GcpUserAccessBindings]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding] for a
+     * Google Cloud organization.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsResponse
+        listGcpUserAccessBindings(
+            com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGcpUserAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the [GcpUserAccessBinding]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding] with
+     * the given name.
+     * </pre>
+     */
+    public com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding getGcpUserAccessBinding(
+        com.google.identity.accesscontextmanager.v1.GetGcpUserAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGcpUserAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [GcpUserAccessBinding]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the
+     * client specifies a [name]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name],
+     * the server ignores it. Fails if a resource already exists with the same
+     * [group_key]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key].
+     * Completion of this long-running operation does not necessarily signify that
+     * the new binding is deployed onto all affected users, which may take more
+     * time.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGcpUserAccessBinding(
+        com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGcpUserAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [GcpUserAccessBinding]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding].
+     * Completion of this long-running operation does not necessarily signify that
+     * the changed binding is deployed onto all affected users, which may take
+     * more time.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGcpUserAccessBinding(
+        com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGcpUserAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [GcpUserAccessBinding]
+     * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding].
+     * Completion of this long-running operation does not necessarily signify that
+     * the binding deletion is deployed onto all affected users, which may take
+     * more time.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGcpUserAccessBinding(
+        com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGcpUserAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * This method replaces the existing IAM policy on the access policy. The IAM
+     * policy controls the set of users who can perform specific operations on the
+     * Access Context Manager [access
+     * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the IAM permissions that the caller has on the specified Access
+     * Context Manager resource. The resource can be an
+     * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+     * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+     * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter
+     * ]. This method does not support other resources.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AccessContextManager.
    *
    * <pre>
    * API for setting [access levels]

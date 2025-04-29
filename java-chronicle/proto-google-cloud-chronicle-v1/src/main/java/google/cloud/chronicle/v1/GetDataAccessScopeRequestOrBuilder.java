@@ -40,6 +40,7 @@ public interface GetDataAccessScopeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

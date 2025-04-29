@@ -36,6 +36,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Schema)
     SchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Schema.newBuilder() to construct.
   private Schema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,6 +90,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object format_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +293,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NULLABLE_FIELD_NUMBER = 6;
   private boolean nullable_ = false;
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_FIELD_NUMBER = 23;
   private com.google.protobuf.Value default_;
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefault() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getDefault() {
     return default_ == null ? com.google.protobuf.Value.getDefaultInstance() : default_;
   }
+
   /**
    *
    *
@@ -348,6 +361,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ITEMS_FIELD_NUMBER = 2;
   private com.google.cloud.vertexai.api.Schema items_;
+
   /**
    *
    *
@@ -365,6 +379,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasItems() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -382,6 +397,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vertexai.api.Schema getItems() {
     return items_ == null ? com.google.cloud.vertexai.api.Schema.getDefaultInstance() : items_;
   }
+
   /**
    *
    *
@@ -400,6 +416,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_ITEMS_FIELD_NUMBER = 21;
   private long minItems_ = 0L;
+
   /**
    *
    *
@@ -418,6 +435,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_ITEMS_FIELD_NUMBER = 22;
   private long maxItems_ = 0L;
+
   /**
    *
    *
@@ -439,6 +457,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList enum_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -458,6 +477,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getEnumList() {
     return enum_;
   }
+
   /**
    *
    *
@@ -477,6 +497,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getEnumCount() {
     return enum_.size();
   }
+
   /**
    *
    *
@@ -497,6 +518,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEnum(int index) {
     return enum_.get(index);
   }
+
   /**
    *
    *
@@ -549,6 +571,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
+
   /**
    *
    *
@@ -568,12 +591,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Schema> getProperties() {
     return getPropertiesMap();
   }
+
   /**
    *
    *
@@ -590,6 +615,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Schema> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
+
   /**
    *
    *
@@ -614,6 +640,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -644,6 +671,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList propertyOrdering_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -660,6 +688,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPropertyOrderingList() {
     return propertyOrdering_;
   }
+
   /**
    *
    *
@@ -676,6 +705,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getPropertyOrderingCount() {
     return propertyOrdering_.size();
   }
+
   /**
    *
    *
@@ -693,6 +723,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPropertyOrdering(int index) {
     return propertyOrdering_.get(index);
   }
+
   /**
    *
    *
@@ -716,6 +747,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList required_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -730,6 +762,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRequiredList() {
     return required_;
   }
+
   /**
    *
    *
@@ -744,6 +777,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getRequiredCount() {
     return required_.size();
   }
+
   /**
    *
    *
@@ -759,6 +793,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRequired(int index) {
     return required_.get(index);
   }
+
   /**
    *
    *
@@ -777,6 +812,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_PROPERTIES_FIELD_NUMBER = 14;
   private long minProperties_ = 0L;
+
   /**
    *
    *
@@ -795,6 +831,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_PROPERTIES_FIELD_NUMBER = 15;
   private long maxProperties_ = 0L;
+
   /**
    *
    *
@@ -813,6 +850,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINIMUM_FIELD_NUMBER = 16;
   private double minimum_ = 0D;
+
   /**
    *
    *
@@ -832,6 +870,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAXIMUM_FIELD_NUMBER = 17;
   private double maximum_ = 0D;
+
   /**
    *
    *
@@ -850,6 +889,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_LENGTH_FIELD_NUMBER = 18;
   private long minLength_ = 0L;
+
   /**
    *
    *
@@ -869,6 +909,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_LENGTH_FIELD_NUMBER = 19;
   private long maxLength_ = 0L;
+
   /**
    *
    *
@@ -889,6 +930,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pattern_ = "";
+
   /**
    *
    *
@@ -913,6 +955,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -940,6 +983,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXAMPLE_FIELD_NUMBER = 4;
   private com.google.protobuf.Value example_;
+
   /**
    *
    *
@@ -956,6 +1000,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExample() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -972,6 +1017,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getExample() {
     return example_ == null ? com.google.protobuf.Value.getDefaultInstance() : example_;
   }
+
   /**
    *
    *
@@ -991,6 +1037,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Schema> anyOf_;
+
   /**
    *
    *
@@ -1007,6 +1054,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vertexai.api.Schema> getAnyOfList() {
     return anyOf_;
   }
+
   /**
    *
    *
@@ -1024,6 +1072,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       getAnyOfOrBuilderList() {
     return anyOf_;
   }
+
   /**
    *
    *
@@ -1040,6 +1089,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getAnyOfCount() {
     return anyOf_.size();
   }
+
   /**
    *
    *
@@ -1056,6 +1106,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vertexai.api.Schema getAnyOf(int index) {
     return anyOf_.get(index);
   }
+
   /**
    *
    *
@@ -1474,6 +1525,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2070,6 +2122,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -2086,6 +2139,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2105,6 +2159,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2178,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vertexai.api.Type.forNumber(type_);
       return result == null ? com.google.cloud.vertexai.api.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2145,6 +2201,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2165,6 +2222,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object format_ = "";
+
     /**
      *
      *
@@ -2191,6 +2249,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2217,6 +2276,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2242,6 +2302,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2263,6 +2324,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2291,6 +2353,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -2313,6 +2376,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2335,6 +2399,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2356,6 +2421,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2373,6 +2439,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2397,6 +2464,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2419,6 +2487,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2441,6 +2510,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2462,6 +2532,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2550,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2503,6 +2575,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean nullable_;
+
     /**
      *
      *
@@ -2518,6 +2591,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean getNullable() {
       return nullable_;
     }
+
     /**
      *
      *
@@ -2537,6 +2611,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2561,6 +2636,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         defaultBuilder_;
+
     /**
      *
      *
@@ -2575,6 +2651,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefault() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2593,6 +2670,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return defaultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2615,6 +2693,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2634,6 +2713,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2661,6 +2741,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2680,6 +2761,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2694,6 +2776,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2710,6 +2793,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return default_ == null ? com.google.protobuf.Value.getDefaultInstance() : default_;
       }
     }
+
     /**
      *
      *
@@ -2742,6 +2826,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Schema.Builder,
             com.google.cloud.vertexai.api.SchemaOrBuilder>
         itemsBuilder_;
+
     /**
      *
      *
@@ -2758,6 +2843,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasItems() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2778,6 +2864,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2802,6 +2889,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2823,6 +2911,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2852,6 +2941,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2873,6 +2963,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2889,6 +2980,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getItemsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2907,6 +2999,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return items_ == null ? com.google.cloud.vertexai.api.Schema.getDefaultInstance() : items_;
       }
     }
+
     /**
      *
      *
@@ -2936,6 +3029,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long minItems_;
+
     /**
      *
      *
@@ -2951,6 +3045,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public long getMinItems() {
       return minItems_;
     }
+
     /**
      *
      *
@@ -2970,6 +3065,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2989,6 +3085,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long maxItems_;
+
     /**
      *
      *
@@ -3004,6 +3101,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public long getMaxItems() {
       return maxItems_;
     }
+
     /**
      *
      *
@@ -3023,6 +3121,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3050,6 +3149,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -3070,6 +3170,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       enum_.makeImmutable();
       return enum_;
     }
+
     /**
      *
      *
@@ -3089,6 +3190,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public int getEnumCount() {
       return enum_.size();
     }
+
     /**
      *
      *
@@ -3109,6 +3211,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEnum(int index) {
       return enum_.get(index);
     }
+
     /**
      *
      *
@@ -3129,6 +3232,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getEnumBytes(int index) {
       return enum_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3157,6 +3261,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3184,6 +3289,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3208,6 +3314,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3231,6 +3338,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3279,7 +3387,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PropertiesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PropertiesConverter propertiesConverter = new PropertiesConverter();
 
@@ -3319,6 +3428,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3338,12 +3448,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Schema> getProperties() {
       return getPropertiesMap();
     }
+
     /**
      *
      *
@@ -3361,6 +3473,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         getPropertiesMap() {
       return internalGetProperties().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3385,6 +3498,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableProperties().ensureBuilderMap();
       return map.containsKey(key) ? propertiesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3415,6 +3529,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3434,6 +3549,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Schema>
@@ -3441,6 +3557,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return internalGetMutableProperties().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3464,6 +3581,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *
@@ -3488,6 +3606,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *
@@ -3525,6 +3644,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -3543,6 +3663,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       propertyOrdering_.makeImmutable();
       return propertyOrdering_;
     }
+
     /**
      *
      *
@@ -3560,6 +3681,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public int getPropertyOrderingCount() {
       return propertyOrdering_.size();
     }
+
     /**
      *
      *
@@ -3578,6 +3700,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPropertyOrdering(int index) {
       return propertyOrdering_.get(index);
     }
+
     /**
      *
      *
@@ -3596,6 +3719,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPropertyOrderingBytes(int index) {
       return propertyOrdering_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3622,6 +3746,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3647,6 +3772,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3669,6 +3795,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3690,6 +3817,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3726,6 +3854,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00001000;
     }
+
     /**
      *
      *
@@ -3741,6 +3870,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       required_.makeImmutable();
       return required_;
     }
+
     /**
      *
      *
@@ -3755,6 +3885,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public int getRequiredCount() {
       return required_.size();
     }
+
     /**
      *
      *
@@ -3770,6 +3901,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRequired(int index) {
       return required_.get(index);
     }
+
     /**
      *
      *
@@ -3785,6 +3917,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRequiredBytes(int index) {
       return required_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3808,6 +3941,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3830,6 +3964,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3849,6 +3984,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3867,6 +4003,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3892,6 +4029,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long minProperties_;
+
     /**
      *
      *
@@ -3907,6 +4045,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public long getMinProperties() {
       return minProperties_;
     }
+
     /**
      *
      *
@@ -3926,6 +4065,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3945,6 +4085,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long maxProperties_;
+
     /**
      *
      *
@@ -3960,6 +4101,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public long getMaxProperties() {
       return maxProperties_;
     }
+
     /**
      *
      *
@@ -3979,6 +4121,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3998,6 +4141,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double minimum_;
+
     /**
      *
      *
@@ -4014,6 +4158,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public double getMinimum() {
       return minimum_;
     }
+
     /**
      *
      *
@@ -4034,6 +4179,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4054,6 +4200,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double maximum_;
+
     /**
      *
      *
@@ -4069,6 +4216,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public double getMaximum() {
       return maximum_;
     }
+
     /**
      *
      *
@@ -4088,6 +4236,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4107,6 +4256,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long minLength_;
+
     /**
      *
      *
@@ -4123,6 +4273,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public long getMinLength() {
       return minLength_;
     }
+
     /**
      *
      *
@@ -4143,6 +4294,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4163,6 +4315,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long maxLength_;
+
     /**
      *
      *
@@ -4178,6 +4331,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public long getMaxLength() {
       return maxLength_;
     }
+
     /**
      *
      *
@@ -4197,6 +4351,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4216,6 +4371,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pattern_ = "";
+
     /**
      *
      *
@@ -4239,6 +4395,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4262,6 +4419,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4284,6 +4442,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4302,6 +4461,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4332,6 +4492,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         exampleBuilder_;
+
     /**
      *
      *
@@ -4347,6 +4508,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExample() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -4366,6 +4528,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return exampleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4389,6 +4552,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4409,6 +4573,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4437,6 +4602,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4457,6 +4623,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4472,6 +4639,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExampleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4489,6 +4657,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return example_ == null ? com.google.protobuf.Value.getDefaultInstance() : example_;
       }
     }
+
     /**
      *
      *
@@ -4551,6 +4720,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return anyOfBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4570,6 +4740,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return anyOfBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4589,6 +4760,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return anyOfBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4614,6 +4786,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4637,6 +4810,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4662,6 +4836,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4687,6 +4862,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4709,6 +4885,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4732,6 +4909,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4755,6 +4933,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4777,6 +4956,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4799,6 +4979,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4814,6 +4995,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vertexai.api.Schema.Builder getAnyOfBuilder(int index) {
       return getAnyOfFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4833,6 +5015,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return anyOfBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4853,6 +5036,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(anyOf_);
       }
     }
+
     /**
      *
      *
@@ -4869,6 +5053,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return getAnyOfFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Schema.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4885,6 +5070,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return getAnyOfFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Schema.getDefaultInstance());
     }
+
     /**
      *
      *

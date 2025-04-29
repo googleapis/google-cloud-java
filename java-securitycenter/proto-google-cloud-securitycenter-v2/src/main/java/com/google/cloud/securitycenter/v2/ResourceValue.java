@@ -92,6 +92,7 @@ public enum ResourceValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESOURCE_VALUE_UNSPECIFIED = 0;</code>
    */
   public static final int RESOURCE_VALUE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum ResourceValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HIGH = 1;</code>
    */
   public static final int HIGH_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum ResourceValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDIUM = 2;</code>
    */
   public static final int MEDIUM_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum ResourceValue implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOW = 3;</code>
    */
   public static final int LOW_VALUE = 3;
+
   /**
    *
    *

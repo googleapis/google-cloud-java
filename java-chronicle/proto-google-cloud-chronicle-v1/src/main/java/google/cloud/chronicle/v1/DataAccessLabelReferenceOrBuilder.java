@@ -36,6 +36,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return Whether the dataAccessLabel field is set.
    */
   boolean hasDataAccessLabel();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return The dataAccessLabel.
    */
   java.lang.String getDataAccessLabel();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return Whether the logType field is set.
    */
   boolean hasLogType();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return The logType.
    */
   java.lang.String getLogType();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return Whether the assetNamespace field is set.
    */
   boolean hasAssetNamespace();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return The assetNamespace.
    */
   java.lang.String getAssetNamespace();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return Whether the ingestionLabel field is set.
    */
   boolean hasIngestionLabel();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return The ingestionLabel.
    */
   google.cloud.chronicle.v1.IngestionLabel getIngestionLabel();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface DataAccessLabelReferenceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

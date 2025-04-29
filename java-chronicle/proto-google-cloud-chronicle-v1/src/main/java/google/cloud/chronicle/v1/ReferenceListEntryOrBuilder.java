@@ -36,6 +36,7 @@ public interface ReferenceListEntryOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

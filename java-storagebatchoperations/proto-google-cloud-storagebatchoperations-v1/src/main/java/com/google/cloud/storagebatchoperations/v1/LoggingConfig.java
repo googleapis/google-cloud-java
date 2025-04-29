@@ -33,6 +33,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.LoggingConfig)
     LoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,6 +108,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOGGABLE_ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int LOGGABLE_ACTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -256,6 +258,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOGGABLE_ACTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int LOGGABLE_ACTION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -267,6 +270,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
+
     /**
      *
      *
@@ -390,6 +394,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -410,6 +415,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableAction>(
         logActions_, logActions_converter_);
   }
+
   /**
    *
    *
@@ -427,6 +433,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLogActionsCount() {
     return logActions_.size();
   }
+
   /**
    *
    *
@@ -446,6 +453,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return logActions_converter_.convert(logActions_.get(index));
   }
+
   /**
    *
    *
@@ -463,6 +471,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getLogActionsValueList() {
     return logActions_;
   }
+
   /**
    *
    *
@@ -507,6 +516,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -530,6 +540,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableActionState>(
         logActionStates_, logActionStates_converter_);
   }
+
   /**
    *
    *
@@ -548,6 +559,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLogActionStatesCount() {
     return logActionStates_.size();
   }
+
   /**
    *
    *
@@ -568,6 +580,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       getLogActionStates(int index) {
     return logActionStates_converter_.convert(logActionStates_.get(index));
   }
+
   /**
    *
    *
@@ -586,6 +599,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getLogActionStatesValueList() {
     return logActionStates_;
   }
+
   /**
    *
    *
@@ -809,6 +823,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1062,6 +1077,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1098,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableAction>(
           logActions_, logActions_converter_);
     }
+
     /**
      *
      *
@@ -1098,6 +1115,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogActionsCount() {
       return logActions_.size();
     }
+
     /**
      *
      *
@@ -1116,6 +1134,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return logActions_converter_.convert(logActions_.get(index));
     }
+
     /**
      *
      *
@@ -1141,6 +1160,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1185,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1211,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1231,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1248,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getLogActionsValueList() {
       return java.util.Collections.unmodifiableList(logActions_);
     }
+
     /**
      *
      *
@@ -1242,6 +1266,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogActionsValue(int index) {
       return logActions_.get(index);
     }
+
     /**
      *
      *
@@ -1263,6 +1288,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1309,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1341,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1364,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.storagebatchoperations.v1.LoggingConfig.LoggableActionState>(
           logActionStates_, logActionStates_converter_);
     }
+
     /**
      *
      *
@@ -1353,6 +1382,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogActionStatesCount() {
       return logActionStates_.size();
     }
+
     /**
      *
      *
@@ -1372,6 +1402,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         getLogActionStates(int index) {
       return logActionStates_converter_.convert(logActionStates_.get(index));
     }
+
     /**
      *
      *
@@ -1399,6 +1430,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1456,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1452,6 +1485,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1506,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1524,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getLogActionStatesValueList() {
       return java.util.Collections.unmodifiableList(logActionStates_);
     }
+
     /**
      *
      *
@@ -1507,6 +1543,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogActionStatesValue(int index) {
       return logActionStates_.get(index);
     }
+
     /**
      *
      *
@@ -1529,6 +1566,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1550,6 +1588,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

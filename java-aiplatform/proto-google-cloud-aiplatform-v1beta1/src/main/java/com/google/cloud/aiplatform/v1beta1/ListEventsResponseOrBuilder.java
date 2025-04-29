@@ -28,48 +28,57 @@ public interface ListEventsResponseOrBuilder
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SessionEvent> getSessionEventsList();
+
   /**
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.SessionEvent getSessionEvents(int index);
+
   /**
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   int getSessionEventsCount();
+
   /**
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SessionEventOrBuilder>
       getSessionEventsOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -91,6 +100,7 @@ public interface ListEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

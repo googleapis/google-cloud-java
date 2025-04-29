@@ -35,6 +35,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.FetchSitemapsResponse)
     FetchSitemapsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchSitemapsResponse.newBuilder() to construct.
   private FetchSitemapsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the sitemap field is set.
      */
     boolean hasSitemap();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
      * @return The sitemap.
      */
     com.google.cloud.discoveryengine.v1beta.Sitemap getSitemap();
+
     /**
      *
      *
@@ -105,6 +108,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.discoveryengine.v1beta.SitemapOrBuilder getSitemapOrBuilder();
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.SitemapMetadata)
       SitemapMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SitemapMetadata.newBuilder() to construct.
     private SitemapMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -152,6 +157,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int SITEMAP_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1beta.Sitemap sitemap_;
+
     /**
      *
      *
@@ -167,6 +173,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasSitemap() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -184,6 +191,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.discoveryengine.v1beta.Sitemap.getDefaultInstance()
           : sitemap_;
     }
+
     /**
      *
      *
@@ -374,6 +382,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.discoveryengine.v1beta.Sitemap.Builder,
               com.google.cloud.discoveryengine.v1beta.SitemapOrBuilder>
           sitemapBuilder_;
+
       /**
        *
        *
@@ -609,6 +619,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       public boolean hasSitemap() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -629,6 +640,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
           return sitemapBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -651,6 +663,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -671,6 +684,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -698,6 +712,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -717,6 +732,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -731,6 +747,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return getSitemapFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -749,6 +766,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
               : sitemap_;
         }
       }
+
       /**
        *
        *
@@ -850,6 +868,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
   private java.util.List<
           com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.SitemapMetadata>
       sitemapsMetadata_;
+
   /**
    *
    *
@@ -867,6 +886,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       getSitemapsMetadataList() {
     return sitemapsMetadata_;
   }
+
   /**
    *
    *
@@ -886,6 +906,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       getSitemapsMetadataOrBuilderList() {
     return sitemapsMetadata_;
   }
+
   /**
    *
    *
@@ -901,6 +922,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
   public int getSitemapsMetadataCount() {
     return sitemapsMetadata_.size();
   }
+
   /**
    *
    *
@@ -917,6 +939,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       getSitemapsMetadata(int index) {
     return sitemapsMetadata_.get(index);
   }
+
   /**
    *
    *
@@ -1096,6 +1119,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1372,6 +1396,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         return sitemapsMetadataBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1390,6 +1415,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         return sitemapsMetadataBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1409,6 +1435,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         return sitemapsMetadataBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1462,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1487,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1513,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1510,6 +1540,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1533,6 +1564,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1557,6 +1589,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1582,6 +1615,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1637,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1659,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1675,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         getSitemapsMetadataBuilder(int index) {
       return getSitemapsMetadataFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1658,6 +1695,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         return sitemapsMetadataBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1680,6 +1718,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(sitemapsMetadata_);
       }
     }
+
     /**
      *
      *
@@ -1698,6 +1737,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.SitemapMetadata
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1717,6 +1757,7 @@ public final class FetchSitemapsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.discoveryengine.v1beta.FetchSitemapsResponse.SitemapMetadata
                   .getDefaultInstance());
     }
+
     /**
      *
      *

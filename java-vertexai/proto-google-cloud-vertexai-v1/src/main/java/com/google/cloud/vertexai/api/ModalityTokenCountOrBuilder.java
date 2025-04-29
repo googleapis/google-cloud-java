@@ -36,6 +36,7 @@ public interface ModalityTokenCountOrBuilder
    * @return The enum numeric value on the wire for modality.
    */
   int getModalityValue();
+
   /**
    *
    *

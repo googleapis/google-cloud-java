@@ -38,6 +38,7 @@ public interface ManagementSettingsOrBuilder
    * @return The enum numeric value on the wire for renewalMethod.
    */
   int getRenewalMethodValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ManagementSettingsOrBuilder
    * @return The enum numeric value on the wire for transferLockState.
    */
   int getTransferLockStateValue();
+
   /**
    *
    *

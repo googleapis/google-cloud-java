@@ -34,6 +34,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.ProductStatusChangeMessage)
     ProductStatusChangeMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductStatusChangeMessage.newBuilder() to construct.
   private ProductStatusChangeMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object account_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public boolean hasAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object managingAccount_ = "";
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public boolean hasManagingAccount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 3;
   private int resourceType_ = 0;
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public boolean hasResourceType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public int getResourceTypeValue() {
     return resourceType_;
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   public static final int ATTRIBUTE_FIELD_NUMBER = 4;
   private int attribute_ = 0;
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public boolean hasAttribute() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public int getAttributeValue() {
     return attribute_;
   }
+
   /**
    *
    *
@@ -327,6 +340,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.notifications.v1beta.ProductChange> changes_;
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       getChangesList() {
     return changes_;
   }
+
   /**
    *
    *
@@ -356,6 +371,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       getChangesOrBuilderList() {
     return changes_;
   }
+
   /**
    *
    *
@@ -369,6 +385,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public int getChangesCount() {
     return changes_.size();
   }
+
   /**
    *
    *
@@ -382,6 +399,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public com.google.shopping.merchant.notifications.v1beta.ProductChange getChanges(int index) {
     return changes_.get(index);
   }
+
   /**
    *
    *
@@ -401,6 +419,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceId_ = "";
+
   /**
    *
    *
@@ -416,6 +435,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public boolean hasResourceId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -439,6 +459,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -467,6 +488,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -483,6 +505,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
   public boolean hasResource() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -507,6 +530,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -785,6 +809,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1122,6 +1147,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object account_ = "";
+
     /**
      *
      *
@@ -1137,6 +1163,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public boolean hasAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1160,6 +1187,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1211,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1234,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1253,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1279,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     }
 
     private java.lang.Object managingAccount_ = "";
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public boolean hasManagingAccount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1288,6 +1321,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1312,6 +1346,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1335,6 +1370,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1390,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1417,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     }
 
     private int resourceType_ = 0;
+
     /**
      *
      *
@@ -1396,6 +1434,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public boolean hasResourceType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1412,6 +1451,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public int getResourceTypeValue() {
       return resourceType_;
     }
+
     /**
      *
      *
@@ -1431,6 +1471,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1492,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
           ? com.google.shopping.merchant.notifications.v1beta.Resource.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1474,6 +1516,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1537,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     }
 
     private int attribute_ = 0;
+
     /**
      *
      *
@@ -1510,6 +1554,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public boolean hasAttribute() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1526,6 +1571,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public int getAttributeValue() {
       return attribute_;
     }
+
     /**
      *
      *
@@ -1545,6 +1591,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1612,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
           ? com.google.shopping.merchant.notifications.v1beta.Attribute.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1587,6 +1635,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1691,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return changesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1659,6 +1709,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return changesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1676,6 +1727,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return changesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1700,6 +1752,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1775,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1800,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1770,6 +1825,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1847,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1870,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1836,6 +1894,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1915,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1936,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1890,6 +1951,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         getChangesBuilder(int index) {
       return getChangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1908,6 +1970,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return changesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1927,6 +1990,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(changes_);
       }
     }
+
     /**
      *
      *
@@ -1943,6 +2007,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
           .addBuilder(
               com.google.shopping.merchant.notifications.v1beta.ProductChange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1960,6 +2025,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
               index,
               com.google.shopping.merchant.notifications.v1beta.ProductChange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1993,6 +2059,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     }
 
     private java.lang.Object resourceId_ = "";
+
     /**
      *
      *
@@ -2007,6 +2074,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public boolean hasResourceId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2029,6 +2097,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2051,6 +2120,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2072,6 +2142,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2089,6 +2160,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2185,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -2128,6 +2201,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
     public boolean hasResource() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2151,6 +2225,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2174,6 +2249,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2196,6 +2272,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2214,6 +2291,7 @@ public final class ProductStatusChangeMessage extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

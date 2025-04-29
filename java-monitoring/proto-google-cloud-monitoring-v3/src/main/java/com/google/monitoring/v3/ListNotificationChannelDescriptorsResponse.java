@@ -34,6 +34,7 @@ public final class ListNotificationChannelDescriptorsResponse
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListNotificationChannelDescriptorsResponse)
     ListNotificationChannelDescriptorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListNotificationChannelDescriptorsResponse.newBuilder() to construct.
   private ListNotificationChannelDescriptorsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListNotificationChannelDescriptorsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.NotificationChannelDescriptor>
       channelDescriptors_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListNotificationChannelDescriptorsResponse
       getChannelDescriptorsList() {
     return channelDescriptors_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ListNotificationChannelDescriptorsResponse
       getChannelDescriptorsOrBuilderList() {
     return channelDescriptors_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ListNotificationChannelDescriptorsResponse
   public int getChannelDescriptorsCount() {
     return channelDescriptors_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class ListNotificationChannelDescriptorsResponse
   public com.google.monitoring.v3.NotificationChannelDescriptor getChannelDescriptors(int index) {
     return channelDescriptors_.get(index);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class ListNotificationChannelDescriptorsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class ListNotificationChannelDescriptorsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class ListNotificationChannelDescriptorsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +678,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return channelDescriptorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -687,6 +697,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return channelDescriptorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -705,6 +716,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return channelDescriptorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +840,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +909,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class ListNotificationChannelDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +947,7 @@ public final class ListNotificationChannelDescriptorsResponse
         getChannelDescriptorsBuilder(int index) {
       return getChannelDescriptorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return channelDescriptorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return java.util.Collections.unmodifiableList(channelDescriptors_);
       }
     }
+
     /**
      *
      *
@@ -980,6 +1004,7 @@ public final class ListNotificationChannelDescriptorsResponse
       return getChannelDescriptorsFieldBuilder()
           .addBuilder(com.google.monitoring.v3.NotificationChannelDescriptor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -997,6 +1022,7 @@ public final class ListNotificationChannelDescriptorsResponse
           .addBuilder(
               index, com.google.monitoring.v3.NotificationChannelDescriptor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class ListNotificationChannelDescriptorsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class ListNotificationChannelDescriptorsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class ListNotificationChannelDescriptorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1158,7 @@ public final class ListNotificationChannelDescriptorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

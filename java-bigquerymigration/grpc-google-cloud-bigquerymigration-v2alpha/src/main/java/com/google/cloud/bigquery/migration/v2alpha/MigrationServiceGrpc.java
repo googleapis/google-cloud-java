@@ -404,6 +404,19 @@ public final class MigrationServiceGrpc {
     return MigrationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MigrationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MigrationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public MigrationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MigrationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MigrationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -709,6 +722,123 @@ public final class MigrationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MigrationService.
+   *
+   * <pre>
+   * Service to handle EDW migrations.
+   * </pre>
+   */
+  public static final class MigrationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MigrationServiceBlockingV2Stub> {
+    private MigrationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MigrationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MigrationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a migration workflow.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow createMigrationWorkflow(
+        com.google.cloud.bigquery.migration.v2alpha.CreateMigrationWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMigrationWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a previously created migration workflow.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow getMigrationWorkflow(
+        com.google.cloud.bigquery.migration.v2alpha.GetMigrationWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMigrationWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists previously created migration workflow.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.ListMigrationWorkflowsResponse
+        listMigrationWorkflows(
+            com.google.cloud.bigquery.migration.v2alpha.ListMigrationWorkflowsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMigrationWorkflowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a migration workflow by name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMigrationWorkflow(
+        com.google.cloud.bigquery.migration.v2alpha.DeleteMigrationWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMigrationWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a previously created migration workflow. I.e., the state transitions
+     * from DRAFT to RUNNING. This is a no-op if the state is already RUNNING.
+     * An error will be signaled if the state is anything other than DRAFT or
+     * RUNNING.
+     * </pre>
+     */
+    public com.google.protobuf.Empty startMigrationWorkflow(
+        com.google.cloud.bigquery.migration.v2alpha.StartMigrationWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartMigrationWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a previously created migration subtask.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask getMigrationSubtask(
+        com.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMigrationSubtaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists previously created migration subtasks.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksResponse
+        listMigrationSubtasks(
+            com.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMigrationSubtasksMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MigrationService.
    *
    * <pre>
    * Service to handle EDW migrations.

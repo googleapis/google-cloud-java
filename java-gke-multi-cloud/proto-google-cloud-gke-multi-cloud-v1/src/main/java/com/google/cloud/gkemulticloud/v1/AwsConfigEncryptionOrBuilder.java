@@ -36,6 +36,7 @@ public interface AwsConfigEncryptionOrBuilder
    * @return The kmsKeyArn.
    */
   java.lang.String getKmsKeyArn();
+
   /**
    *
    *

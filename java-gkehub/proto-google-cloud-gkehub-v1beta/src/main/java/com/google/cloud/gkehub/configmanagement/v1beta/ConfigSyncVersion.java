@@ -33,6 +33,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion)
     ConfigSyncVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigSyncVersion.newBuilder() to construct.
   private ConfigSyncVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importer_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object syncer_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gitSync_ = "";
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object monitor_ = "";
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reconcilerManager_ = "";
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -330,6 +341,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rootReconciler_ = "";
+
   /**
    *
    *
@@ -353,6 +365,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object admissionWebhook_ = "";
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -432,6 +447,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceGroupControllerManager_ = "";
+
   /**
    *
    *
@@ -455,6 +471,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -483,6 +500,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object otelCollector_ = "";
+
   /**
    *
    *
@@ -506,6 +524,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -767,6 +786,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1076,6 +1096,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object importer_ = "";
+
     /**
      *
      *
@@ -1098,6 +1119,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1142,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1141,6 +1164,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1182,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1207,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object syncer_ = "";
+
     /**
      *
      *
@@ -1204,6 +1230,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1253,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1275,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1293,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1318,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object gitSync_ = "";
+
     /**
      *
      *
@@ -1310,6 +1341,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1332,6 +1364,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1353,6 +1386,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1404,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1429,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object monitor_ = "";
+
     /**
      *
      *
@@ -1416,6 +1452,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1475,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1497,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1515,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1540,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object reconcilerManager_ = "";
+
     /**
      *
      *
@@ -1522,6 +1563,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1544,6 +1586,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1565,6 +1608,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1582,6 +1626,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1651,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object rootReconciler_ = "";
+
     /**
      *
      *
@@ -1628,6 +1674,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1650,6 +1697,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1671,6 +1719,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1737,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1762,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object admissionWebhook_ = "";
+
     /**
      *
      *
@@ -1734,6 +1785,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1808,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1777,6 +1830,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1848,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1873,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resourceGroupControllerManager_ = "";
+
     /**
      *
      *
@@ -1840,6 +1896,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1862,6 +1919,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1883,6 +1941,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1959,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1924,6 +1984,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object otelCollector_ = "";
+
     /**
      *
      *
@@ -1946,6 +2007,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1968,6 +2030,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1989,6 +2052,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2070,7 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface RouterNatOrBuilder
    * @return Whether the autoNetworkTier field is set.
    */
   boolean hasAutoNetworkTier();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RouterNatOrBuilder
    * @return The autoNetworkTier.
    */
   java.lang.String getAutoNetworkTier();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface RouterNatOrBuilder
    * @return A list containing the drainNatIps.
    */
   java.util.List<java.lang.String> getDrainNatIpsList();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface RouterNatOrBuilder
    * @return The count of drainNatIps.
    */
   int getDrainNatIpsCount();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface RouterNatOrBuilder
    * @return The drainNatIps at the given index.
    */
   java.lang.String getDrainNatIps(int index);
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface RouterNatOrBuilder
    * @return Whether the enableDynamicPortAllocation field is set.
    */
   boolean hasEnableDynamicPortAllocation();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface RouterNatOrBuilder
    * @return Whether the enableEndpointIndependentMapping field is set.
    */
   boolean hasEnableEndpointIndependentMapping();
+
   /**
    * <code>optional bool enable_endpoint_independent_mapping = 259441819;</code>
    *
@@ -166,6 +173,7 @@ public interface RouterNatOrBuilder
    * @return A list containing the endpointTypes.
    */
   java.util.List<java.lang.String> getEndpointTypesList();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface RouterNatOrBuilder
    * @return The count of endpointTypes.
    */
   int getEndpointTypesCount();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface RouterNatOrBuilder
    * @return The endpointTypes at the given index.
    */
   java.lang.String getEndpointTypes(int index);
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public interface RouterNatOrBuilder
    * @return Whether the icmpIdleTimeoutSec field is set.
    */
   boolean hasIcmpIdleTimeoutSec();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface RouterNatOrBuilder
    * @return Whether the logConfig field is set.
    */
   boolean hasLogConfig();
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public interface RouterNatOrBuilder
    * @return The logConfig.
    */
   com.google.cloud.compute.v1.RouterNatLogConfig getLogConfig();
+
   /**
    *
    *
@@ -280,6 +293,7 @@ public interface RouterNatOrBuilder
    * @return Whether the maxPortsPerVm field is set.
    */
   boolean hasMaxPortsPerVm();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface RouterNatOrBuilder
    * @return Whether the minPortsPerVm field is set.
    */
   boolean hasMinPortsPerVm();
+
   /**
    *
    *
@@ -330,6 +345,7 @@ public interface RouterNatOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public interface RouterNatOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -359,6 +376,73 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * List of Subnetwork resources whose traffic should be translated by NAT64 Gateway. It is used only when LIST_OF_IPV6_SUBNETWORKS is selected for the SubnetworkIpRangeToNat64Option above.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat64 nat64_subnetworks = 63585701;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat64> getNat64SubnetworksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Subnetwork resources whose traffic should be translated by NAT64 Gateway. It is used only when LIST_OF_IPV6_SUBNETWORKS is selected for the SubnetworkIpRangeToNat64Option above.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat64 nat64_subnetworks = 63585701;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterNatSubnetworkToNat64 getNat64Subnetworks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Subnetwork resources whose traffic should be translated by NAT64 Gateway. It is used only when LIST_OF_IPV6_SUBNETWORKS is selected for the SubnetworkIpRangeToNat64Option above.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat64 nat64_subnetworks = 63585701;
+   * </code>
+   */
+  int getNat64SubnetworksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Subnetwork resources whose traffic should be translated by NAT64 Gateway. It is used only when LIST_OF_IPV6_SUBNETWORKS is selected for the SubnetworkIpRangeToNat64Option above.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat64 nat64_subnetworks = 63585701;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterNatSubnetworkToNat64OrBuilder>
+      getNat64SubnetworksOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Subnetwork resources whose traffic should be translated by NAT64 Gateway. It is used only when LIST_OF_IPV6_SUBNETWORKS is selected for the SubnetworkIpRangeToNat64Option above.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat64 nat64_subnetworks = 63585701;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterNatSubnetworkToNat64OrBuilder getNat64SubnetworksOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
    * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
@@ -368,6 +452,7 @@ public interface RouterNatOrBuilder
    * @return Whether the natIpAllocateOption field is set.
    */
   boolean hasNatIpAllocateOption();
+
   /**
    *
    *
@@ -381,6 +466,7 @@ public interface RouterNatOrBuilder
    * @return The natIpAllocateOption.
    */
   java.lang.String getNatIpAllocateOption();
+
   /**
    *
    *
@@ -407,6 +493,7 @@ public interface RouterNatOrBuilder
    * @return A list containing the natIps.
    */
   java.util.List<java.lang.String> getNatIpsList();
+
   /**
    *
    *
@@ -419,6 +506,7 @@ public interface RouterNatOrBuilder
    * @return The count of natIps.
    */
   int getNatIpsCount();
+
   /**
    *
    *
@@ -432,6 +520,7 @@ public interface RouterNatOrBuilder
    * @return The natIps at the given index.
    */
   java.lang.String getNatIps(int index);
+
   /**
    *
    *
@@ -456,6 +545,7 @@ public interface RouterNatOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterNatRule> getRulesList();
+
   /**
    *
    *
@@ -466,6 +556,7 @@ public interface RouterNatOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
    */
   com.google.cloud.compute.v1.RouterNatRule getRules(int index);
+
   /**
    *
    *
@@ -476,6 +567,7 @@ public interface RouterNatOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -487,6 +579,7 @@ public interface RouterNatOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterNatRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
@@ -511,6 +604,7 @@ public interface RouterNatOrBuilder
    * @return Whether the sourceSubnetworkIpRangesToNat field is set.
    */
   boolean hasSourceSubnetworkIpRangesToNat();
+
   /**
    *
    *
@@ -524,6 +618,7 @@ public interface RouterNatOrBuilder
    * @return The sourceSubnetworkIpRangesToNat.
    */
   java.lang.String getSourceSubnetworkIpRangesToNat();
+
   /**
    *
    *
@@ -542,6 +637,48 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * Specify the Nat option for NAT64, which can take one of the following values: - ALL_IPV6_SUBNETWORKS: All of the IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_IPV6_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field nat64_subnetwork below) The default is NAT64_OPTION_UNSPECIFIED. Note that if this field contains NAT64_ALL_V6_SUBNETWORKS no other Router.Nat section in this region can also enable NAT64 for any Subnetworks in this network. Other Router.Nat sections can still be present to enable NAT44 only.
+   * Check the SourceSubnetworkIpRangesToNat64 enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string source_subnetwork_ip_ranges_to_nat64 = 248116185;</code>
+   *
+   * @return Whether the sourceSubnetworkIpRangesToNat64 field is set.
+   */
+  boolean hasSourceSubnetworkIpRangesToNat64();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the Nat option for NAT64, which can take one of the following values: - ALL_IPV6_SUBNETWORKS: All of the IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_IPV6_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field nat64_subnetwork below) The default is NAT64_OPTION_UNSPECIFIED. Note that if this field contains NAT64_ALL_V6_SUBNETWORKS no other Router.Nat section in this region can also enable NAT64 for any Subnetworks in this network. Other Router.Nat sections can still be present to enable NAT44 only.
+   * Check the SourceSubnetworkIpRangesToNat64 enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string source_subnetwork_ip_ranges_to_nat64 = 248116185;</code>
+   *
+   * @return The sourceSubnetworkIpRangesToNat64.
+   */
+  java.lang.String getSourceSubnetworkIpRangesToNat64();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the Nat option for NAT64, which can take one of the following values: - ALL_IPV6_SUBNETWORKS: All of the IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_IPV6_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field nat64_subnetwork below) The default is NAT64_OPTION_UNSPECIFIED. Note that if this field contains NAT64_ALL_V6_SUBNETWORKS no other Router.Nat section in this region can also enable NAT64 for any Subnetworks in this network. Other Router.Nat sections can still be present to enable NAT44 only.
+   * Check the SourceSubnetworkIpRangesToNat64 enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string source_subnetwork_ip_ranges_to_nat64 = 248116185;</code>
+   *
+   * @return The bytes for sourceSubnetworkIpRangesToNat64.
+   */
+  com.google.protobuf.ByteString getSourceSubnetworkIpRangesToNat64Bytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
@@ -549,6 +686,7 @@ public interface RouterNatOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat> getSubnetworksList();
+
   /**
    *
    *
@@ -560,6 +698,7 @@ public interface RouterNatOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.RouterNatSubnetworkToNat getSubnetworks(int index);
+
   /**
    *
    *
@@ -571,6 +710,7 @@ public interface RouterNatOrBuilder
    * </code>
    */
   int getSubnetworksCount();
+
   /**
    *
    *
@@ -583,6 +723,7 @@ public interface RouterNatOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder>
       getSubnetworksOrBuilderList();
+
   /**
    *
    *
@@ -607,6 +748,7 @@ public interface RouterNatOrBuilder
    * @return Whether the tcpEstablishedIdleTimeoutSec field is set.
    */
   boolean hasTcpEstablishedIdleTimeoutSec();
+
   /**
    *
    *
@@ -632,6 +774,7 @@ public interface RouterNatOrBuilder
    * @return Whether the tcpTimeWaitTimeoutSec field is set.
    */
   boolean hasTcpTimeWaitTimeoutSec();
+
   /**
    *
    *
@@ -657,6 +800,7 @@ public interface RouterNatOrBuilder
    * @return Whether the tcpTransitoryIdleTimeoutSec field is set.
    */
   boolean hasTcpTransitoryIdleTimeoutSec();
+
   /**
    *
    *
@@ -683,6 +827,7 @@ public interface RouterNatOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -696,6 +841,7 @@ public interface RouterNatOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -722,6 +868,7 @@ public interface RouterNatOrBuilder
    * @return Whether the udpIdleTimeoutSec field is set.
    */
   boolean hasUdpIdleTimeoutSec();
+
   /**
    *
    *

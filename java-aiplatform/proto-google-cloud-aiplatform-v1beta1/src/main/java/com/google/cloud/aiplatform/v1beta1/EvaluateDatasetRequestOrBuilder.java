@@ -39,6 +39,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return Whether the dataset field is set.
    */
   boolean hasDataset();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return The dataset.
    */
   com.google.cloud.aiplatform.v1beta1.EvaluationDataset getDataset();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Metric> getMetricsList();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * </code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface EvaluateDatasetRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.aiplatform.v1beta1.OutputConfig getOutputConfig();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return Whether the autoraterConfig field is set.
    */
   boolean hasAutoraterConfig();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface EvaluateDatasetRequestOrBuilder
    * @return The autoraterConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AutoraterConfig getAutoraterConfig();
+
   /**
    *
    *

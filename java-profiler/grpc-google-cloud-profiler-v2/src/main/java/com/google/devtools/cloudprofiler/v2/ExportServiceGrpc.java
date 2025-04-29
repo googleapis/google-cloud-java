@@ -97,6 +97,19 @@ public final class ExportServiceGrpc {
     return ExportServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ExportServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ExportServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ExportServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ExportServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ExportServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ExportServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -209,6 +222,41 @@ public final class ExportServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ExportService.
+   *
+   * <pre>
+   * Service allows existing Cloud Profiler customers to export their profile data
+   * out of Google Cloud.
+   * </pre>
+   */
+  public static final class ExportServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ExportServiceBlockingV2Stub> {
+    private ExportServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ExportServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ExportServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists profiles which have been collected so far and for which the caller
+     * has permission to view.
+     * </pre>
+     */
+    public com.google.devtools.cloudprofiler.v2.ListProfilesResponse listProfiles(
+        com.google.devtools.cloudprofiler.v2.ListProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProfilesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ExportService.
    *
    * <pre>
    * Service allows existing Cloud Profiler customers to export their profile data

@@ -36,6 +36,7 @@ public interface PullStartedEventOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return Whether the gcfsConfig field is set.
    */
   boolean hasGcfsConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return The gcfsConfig.
    */
   com.google.container.v1.GcfsConfig getGcfsConfig();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return The loggingConfig.
    */
   com.google.container.v1.NodePoolLoggingConfig getLoggingConfig();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return Whether the containerdConfig field is set.
    */
   boolean hasContainerdConfig();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return The containerdConfig.
    */
   com.google.container.v1.ContainerdConfig getContainerdConfig();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return Whether the nodeKubeletConfig field is set.
    */
   boolean hasNodeKubeletConfig();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface NodeConfigDefaultsOrBuilder
    * @return The nodeKubeletConfig.
    */
   com.google.container.v1.NodeKubeletConfig getNodeKubeletConfig();
+
   /**
    *
    *

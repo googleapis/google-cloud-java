@@ -38,6 +38,7 @@ public interface BucketListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.storagebatchoperations.v1.BucketList.Bucket> getBucketsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BucketListOrBuilder
    * </code>
    */
   com.google.cloud.storagebatchoperations.v1.BucketList.Bucket getBuckets(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface BucketListOrBuilder
    * </code>
    */
   int getBucketsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface BucketListOrBuilder
    */
   java.util.List<? extends com.google.cloud.storagebatchoperations.v1.BucketList.BucketOrBuilder>
       getBucketsOrBuilderList();
+
   /**
    *
    *

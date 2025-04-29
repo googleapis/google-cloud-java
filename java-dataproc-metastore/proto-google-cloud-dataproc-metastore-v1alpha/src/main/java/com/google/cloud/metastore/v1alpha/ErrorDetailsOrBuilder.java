@@ -37,6 +37,7 @@ public interface ErrorDetailsOrBuilder
    * <code>map&lt;string, string&gt; details = 1;</code>
    */
   int getDetailsCount();
+
   /**
    *
    *
@@ -50,9 +51,11 @@ public interface ErrorDetailsOrBuilder
    * <code>map&lt;string, string&gt; details = 1;</code>
    */
   boolean containsDetails(java.lang.String key);
+
   /** Use {@link #getDetailsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDetails();
+
   /**
    *
    *
@@ -66,6 +69,7 @@ public interface ErrorDetailsOrBuilder
    * <code>map&lt;string, string&gt; details = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDetailsMap();
+
   /**
    *
    *
@@ -83,6 +87,7 @@ public interface ErrorDetailsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

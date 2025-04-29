@@ -33,6 +33,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.DataCollectionOptions)
     DataCollectionOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataCollectionOptions.newBuilder() to construct.
   private DataCollectionOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
 
   public static final int DIAGNOSTICS_EVENTS_ENABLED_FIELD_NUMBER = 1;
   private boolean diagnosticsEventsEnabled_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
 
   public static final int HEALTH_MONITORING_ENABLED_FIELD_NUMBER = 2;
   private boolean healthMonitoringEnabled_ = false;
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
 
   public static final int INCIDENT_LOGS_ENABLED_FIELD_NUMBER = 3;
   private boolean incidentLogsEnabled_ = false;
+
   /**
    *
    *
@@ -295,6 +299,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -503,6 +508,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private boolean diagnosticsEventsEnabled_;
+
     /**
      *
      *
@@ -519,6 +525,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     public boolean getDiagnosticsEventsEnabled() {
       return diagnosticsEventsEnabled_;
     }
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     }
 
     private boolean healthMonitoringEnabled_;
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     public boolean getHealthMonitoringEnabled() {
       return healthMonitoringEnabled_;
     }
+
     /**
      *
      *
@@ -593,6 +603,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +623,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     }
 
     private boolean incidentLogsEnabled_;
+
     /**
      *
      *
@@ -628,6 +640,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
     public boolean getIncidentLogsEnabled() {
       return incidentLogsEnabled_;
     }
+
     /**
      *
      *
@@ -648,6 +661,7 @@ public final class DataCollectionOptions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

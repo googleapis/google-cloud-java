@@ -39,6 +39,7 @@ public interface CreateTlsRouteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateTlsRouteRequestOrBuilder
    * @return The tlsRouteId.
    */
   java.lang.String getTlsRouteId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateTlsRouteRequestOrBuilder
    * @return Whether the tlsRoute field is set.
    */
   boolean hasTlsRoute();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateTlsRouteRequestOrBuilder
    * @return The tlsRoute.
    */
   com.google.cloud.networkservices.v1.TlsRoute getTlsRoute();
+
   /**
    *
    *

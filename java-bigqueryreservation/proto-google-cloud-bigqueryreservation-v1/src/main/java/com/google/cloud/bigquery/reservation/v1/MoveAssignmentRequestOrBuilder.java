@@ -40,6 +40,7 @@ public interface MoveAssignmentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface MoveAssignmentRequestOrBuilder
    * @return The destinationId.
    */
   java.lang.String getDestinationId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface MoveAssignmentRequestOrBuilder
    * @return The assignmentId.
    */
   java.lang.String getAssignmentId();
+
   /**
    *
    *

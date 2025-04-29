@@ -237,6 +237,19 @@ public final class PhoneNumbersGrpc {
     return PhoneNumbersStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PhoneNumbersBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PhoneNumbersBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PhoneNumbersBlockingV2Stub>() {
+          @java.lang.Override
+          public PhoneNumbersBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PhoneNumbersBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PhoneNumbersBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -459,6 +472,87 @@ public final class PhoneNumbersGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PhoneNumbers.
+   *
+   * <pre>
+   * Service for managing
+   * [PhoneNumbers][google.cloud.dialogflow.v2beta1.PhoneNumber].
+   * </pre>
+   */
+  public static final class PhoneNumbersBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PhoneNumbersBlockingV2Stub> {
+    private PhoneNumbersBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PhoneNumbersBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PhoneNumbersBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all phone numbers in the specified project.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListPhoneNumbersResponse listPhoneNumbers(
+        com.google.cloud.dialogflow.v2beta1.ListPhoneNumbersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPhoneNumbersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified `PhoneNumber`.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber updatePhoneNumber(
+        com.google.cloud.dialogflow.v2beta1.UpdatePhoneNumberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePhoneNumberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Requests deletion of a `PhoneNumber`. The `PhoneNumber` is moved into the
+     * [DELETE_REQUESTED][google.cloud.dialogflow.v2beta1.PhoneNumber.LifecycleState.DELETE_REQUESTED]
+     * state immediately, and is deleted approximately 30 days later. This method
+     * may only be called on a `PhoneNumber` in the
+     * [ACTIVE][google.cloud.dialogflow.v2beta1.PhoneNumber.LifecycleState.ACTIVE]
+     * state.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber deletePhoneNumber(
+        com.google.cloud.dialogflow.v2beta1.DeletePhoneNumberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePhoneNumberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the deletion request for a `PhoneNumber`. This method may only be
+     * called on a `PhoneNumber` in the
+     * [DELETE_REQUESTED][google.cloud.dialogflow.v2beta1.PhoneNumber.LifecycleState.DELETE_REQUESTED]
+     * state.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.PhoneNumber undeletePhoneNumber(
+        com.google.cloud.dialogflow.v2beta1.UndeletePhoneNumberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeletePhoneNumberMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service PhoneNumbers.
    *
    * <pre>
    * Service for managing

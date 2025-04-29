@@ -38,6 +38,7 @@ public interface ApplicationSettingsOrBuilder
    * @return Whether the csmSettings field is set.
    */
   boolean hasCsmSettings();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ApplicationSettingsOrBuilder
    * @return The csmSettings.
    */
   com.google.cloud.iap.v1.CsmSettings getCsmSettings();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ApplicationSettingsOrBuilder
    * @return Whether the accessDeniedPageSettings field is set.
    */
   boolean hasAccessDeniedPageSettings();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ApplicationSettingsOrBuilder
    * @return The accessDeniedPageSettings.
    */
   com.google.cloud.iap.v1.AccessDeniedPageSettings getAccessDeniedPageSettings();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface ApplicationSettingsOrBuilder
    * @return Whether the cookieDomain field is set.
    */
   boolean hasCookieDomain();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface ApplicationSettingsOrBuilder
    * @return The cookieDomain.
    */
   com.google.protobuf.StringValue getCookieDomain();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ApplicationSettingsOrBuilder
    * @return Whether the attributePropagationSettings field is set.
    */
   boolean hasAttributePropagationSettings();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface ApplicationSettingsOrBuilder
    * @return The attributePropagationSettings.
    */
   com.google.cloud.iap.v1.AttributePropagationSettings getAttributePropagationSettings();
+
   /**
    *
    *

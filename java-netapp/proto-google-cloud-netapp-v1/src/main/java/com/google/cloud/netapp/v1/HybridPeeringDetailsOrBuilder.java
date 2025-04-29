@@ -36,6 +36,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The subnetIp.
    */
   java.lang.String getSubnetIp();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The command.
    */
   java.lang.String getCommand();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return Whether the commandExpiryTime field is set.
    */
   boolean hasCommandExpiryTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The commandExpiryTime.
    */
   com.google.protobuf.Timestamp getCommandExpiryTime();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The passphrase.
    */
   java.lang.String getPassphrase();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The peerVolumeName.
    */
   java.lang.String getPeerVolumeName();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The peerClusterName.
    */
   java.lang.String getPeerClusterName();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The peerSvmName.
    */
   java.lang.String getPeerSvmName();
+
   /**
    *
    *

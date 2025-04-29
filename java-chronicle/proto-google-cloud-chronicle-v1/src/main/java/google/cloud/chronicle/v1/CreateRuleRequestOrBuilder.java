@@ -39,6 +39,7 @@ public interface CreateRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateRuleRequestOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateRuleRequestOrBuilder
    * @return The rule.
    */
   google.cloud.chronicle.v1.Rule getRule();
+
   /**
    *
    *

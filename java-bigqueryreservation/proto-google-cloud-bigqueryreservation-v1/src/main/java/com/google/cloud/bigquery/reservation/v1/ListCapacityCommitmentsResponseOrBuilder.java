@@ -37,6 +37,7 @@ public interface ListCapacityCommitmentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
       getCapacityCommitmentsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListCapacityCommitmentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitments(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListCapacityCommitmentsResponseOrBuilder
    * </code>
    */
   int getCapacityCommitmentsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListCapacityCommitmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder>
       getCapacityCommitmentsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListCapacityCommitmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

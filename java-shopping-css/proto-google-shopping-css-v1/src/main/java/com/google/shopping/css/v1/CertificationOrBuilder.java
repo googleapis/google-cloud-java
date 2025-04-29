@@ -38,6 +38,7 @@ public interface CertificationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CertificationOrBuilder
    * @return The authority.
    */
   java.lang.String getAuthority();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CertificationOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *

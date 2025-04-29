@@ -43,6 +43,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CryptoKeyVersion)
     CryptoKeyVersionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CryptoKeyVersion.newBuilder() to construct.
   private CryptoKeyVersion(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -537,6 +538,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED = 0;</code>
      */
     public static final int CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -547,6 +549,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>GOOGLE_SYMMETRIC_ENCRYPTION = 1;</code>
      */
     public static final int GOOGLE_SYMMETRIC_ENCRYPTION_VALUE = 1;
+
     /**
      *
      *
@@ -557,6 +560,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_128_GCM = 41;</code>
      */
     public static final int AES_128_GCM_VALUE = 41;
+
     /**
      *
      *
@@ -567,6 +571,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_256_GCM = 19;</code>
      */
     public static final int AES_256_GCM_VALUE = 19;
+
     /**
      *
      *
@@ -577,6 +582,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_128_CBC = 42;</code>
      */
     public static final int AES_128_CBC_VALUE = 42;
+
     /**
      *
      *
@@ -587,6 +593,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_256_CBC = 43;</code>
      */
     public static final int AES_256_CBC_VALUE = 43;
+
     /**
      *
      *
@@ -597,6 +604,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_128_CTR = 44;</code>
      */
     public static final int AES_128_CTR_VALUE = 44;
+
     /**
      *
      *
@@ -607,6 +615,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_256_CTR = 45;</code>
      */
     public static final int AES_256_CTR_VALUE = 45;
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PSS_2048_SHA256 = 2;</code>
      */
     public static final int RSA_SIGN_PSS_2048_SHA256_VALUE = 2;
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PSS_3072_SHA256 = 3;</code>
      */
     public static final int RSA_SIGN_PSS_3072_SHA256_VALUE = 3;
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PSS_4096_SHA256 = 4;</code>
      */
     public static final int RSA_SIGN_PSS_4096_SHA256_VALUE = 4;
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PSS_4096_SHA512 = 15;</code>
      */
     public static final int RSA_SIGN_PSS_4096_SHA512_VALUE = 15;
+
     /**
      *
      *
@@ -657,6 +670,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
      */
     public static final int RSA_SIGN_PKCS1_2048_SHA256_VALUE = 5;
+
     /**
      *
      *
@@ -667,6 +681,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
      */
     public static final int RSA_SIGN_PKCS1_3072_SHA256_VALUE = 6;
+
     /**
      *
      *
@@ -677,6 +692,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
      */
     public static final int RSA_SIGN_PKCS1_4096_SHA256_VALUE = 7;
+
     /**
      *
      *
@@ -687,6 +703,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_PKCS1_4096_SHA512 = 16;</code>
      */
     public static final int RSA_SIGN_PKCS1_4096_SHA512_VALUE = 16;
+
     /**
      *
      *
@@ -697,6 +714,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_RAW_PKCS1_2048 = 28;</code>
      */
     public static final int RSA_SIGN_RAW_PKCS1_2048_VALUE = 28;
+
     /**
      *
      *
@@ -707,6 +725,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_RAW_PKCS1_3072 = 29;</code>
      */
     public static final int RSA_SIGN_RAW_PKCS1_3072_VALUE = 29;
+
     /**
      *
      *
@@ -717,6 +736,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_SIGN_RAW_PKCS1_4096 = 30;</code>
      */
     public static final int RSA_SIGN_RAW_PKCS1_4096_VALUE = 30;
+
     /**
      *
      *
@@ -727,6 +747,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_2048_SHA256 = 8;</code>
      */
     public static final int RSA_DECRYPT_OAEP_2048_SHA256_VALUE = 8;
+
     /**
      *
      *
@@ -737,6 +758,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_3072_SHA256 = 9;</code>
      */
     public static final int RSA_DECRYPT_OAEP_3072_SHA256_VALUE = 9;
+
     /**
      *
      *
@@ -747,6 +769,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_4096_SHA256 = 10;</code>
      */
     public static final int RSA_DECRYPT_OAEP_4096_SHA256_VALUE = 10;
+
     /**
      *
      *
@@ -757,6 +780,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_4096_SHA512 = 17;</code>
      */
     public static final int RSA_DECRYPT_OAEP_4096_SHA512_VALUE = 17;
+
     /**
      *
      *
@@ -767,6 +791,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_2048_SHA1 = 37;</code>
      */
     public static final int RSA_DECRYPT_OAEP_2048_SHA1_VALUE = 37;
+
     /**
      *
      *
@@ -777,6 +802,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_3072_SHA1 = 38;</code>
      */
     public static final int RSA_DECRYPT_OAEP_3072_SHA1_VALUE = 38;
+
     /**
      *
      *
@@ -787,6 +813,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>RSA_DECRYPT_OAEP_4096_SHA1 = 39;</code>
      */
     public static final int RSA_DECRYPT_OAEP_4096_SHA1_VALUE = 39;
+
     /**
      *
      *
@@ -799,6 +826,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EC_SIGN_P256_SHA256 = 12;</code>
      */
     public static final int EC_SIGN_P256_SHA256_VALUE = 12;
+
     /**
      *
      *
@@ -811,6 +839,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EC_SIGN_P384_SHA384 = 13;</code>
      */
     public static final int EC_SIGN_P384_SHA384_VALUE = 13;
+
     /**
      *
      *
@@ -824,6 +853,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EC_SIGN_SECP256K1_SHA256 = 31;</code>
      */
     public static final int EC_SIGN_SECP256K1_SHA256_VALUE = 31;
+
     /**
      *
      *
@@ -834,6 +864,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EC_SIGN_ED25519 = 40;</code>
      */
     public static final int EC_SIGN_ED25519_VALUE = 40;
+
     /**
      *
      *
@@ -844,6 +875,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>HMAC_SHA256 = 32;</code>
      */
     public static final int HMAC_SHA256_VALUE = 32;
+
     /**
      *
      *
@@ -854,6 +886,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>HMAC_SHA1 = 33;</code>
      */
     public static final int HMAC_SHA1_VALUE = 33;
+
     /**
      *
      *
@@ -864,6 +897,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>HMAC_SHA384 = 34;</code>
      */
     public static final int HMAC_SHA384_VALUE = 34;
+
     /**
      *
      *
@@ -874,6 +908,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>HMAC_SHA512 = 35;</code>
      */
     public static final int HMAC_SHA512_VALUE = 35;
+
     /**
      *
      *
@@ -884,6 +919,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>HMAC_SHA224 = 36;</code>
      */
     public static final int HMAC_SHA224_VALUE = 36;
+
     /**
      *
      *
@@ -894,6 +930,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EXTERNAL_SYMMETRIC_ENCRYPTION = 18;</code>
      */
     public static final int EXTERNAL_SYMMETRIC_ENCRYPTION_VALUE = 18;
+
     /**
      *
      *
@@ -905,6 +942,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PQ_SIGN_ML_DSA_65 = 56;</code>
      */
     public static final int PQ_SIGN_ML_DSA_65_VALUE = 56;
+
     /**
      *
      *
@@ -1240,6 +1278,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>CRYPTO_KEY_VERSION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int CRYPTO_KEY_VERSION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1254,6 +1293,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PENDING_GENERATION = 5;</code>
      */
     public static final int PENDING_GENERATION_VALUE = 5;
+
     /**
      *
      *
@@ -1264,6 +1304,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -1277,6 +1318,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
+
     /**
      *
      *
@@ -1293,6 +1335,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>DESTROYED = 3;</code>
      */
     public static final int DESTROYED_VALUE = 3;
+
     /**
      *
      *
@@ -1308,6 +1351,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>DESTROY_SCHEDULED = 4;</code>
      */
     public static final int DESTROY_SCHEDULED_VALUE = 4;
+
     /**
      *
      *
@@ -1322,6 +1366,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PENDING_IMPORT = 6;</code>
      */
     public static final int PENDING_IMPORT_VALUE = 6;
+
     /**
      *
      *
@@ -1335,6 +1380,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>IMPORT_FAILED = 7;</code>
      */
     public static final int IMPORT_FAILED_VALUE = 7;
+
     /**
      *
      *
@@ -1347,6 +1393,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>GENERATION_FAILED = 8;</code>
      */
     public static final int GENERATION_FAILED_VALUE = 8;
+
     /**
      *
      *
@@ -1359,6 +1406,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PENDING_EXTERNAL_DESTRUCTION = 9;</code>
      */
     public static final int PENDING_EXTERNAL_DESTRUCTION_VALUE = 9;
+
     /**
      *
      *
@@ -1532,6 +1580,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1634,6 +1683,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1659,6 +1709,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1687,6 +1738,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1703,6 +1755,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1726,6 +1779,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 7;
   private int protectionLevel_ = 0;
+
   /**
    *
    *
@@ -1745,6 +1799,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
+
   /**
    *
    *
@@ -1769,6 +1824,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int ALGORITHM_FIELD_NUMBER = 10;
   private int algorithm_ = 0;
+
   /**
    *
    *
@@ -1789,6 +1845,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public int getAlgorithmValue() {
     return algorithm_;
   }
+
   /**
    *
    *
@@ -1816,6 +1873,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int ATTESTATION_FIELD_NUMBER = 8;
   private com.google.cloud.kms.v1.KeyOperationAttestation attestation_;
+
   /**
    *
    *
@@ -1837,6 +1895,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasAttestation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1860,6 +1919,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance()
         : attestation_;
   }
+
   /**
    *
    *
@@ -1884,6 +1944,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1901,6 +1962,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1918,6 +1980,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1936,6 +1999,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int GENERATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp generateTime_;
+
   /**
    *
    *
@@ -1955,6 +2019,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasGenerateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1976,6 +2041,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : generateTime_;
   }
+
   /**
    *
    *
@@ -1998,6 +2064,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int DESTROY_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp destroyTime_;
+
   /**
    *
    *
@@ -2018,6 +2085,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasDestroyTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2038,6 +2106,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getDestroyTime() {
     return destroyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : destroyTime_;
   }
+
   /**
    *
    *
@@ -2059,6 +2128,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int DESTROY_EVENT_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp destroyEventTime_;
+
   /**
    *
    *
@@ -2079,6 +2149,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasDestroyEventTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -2101,6 +2172,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : destroyEventTime_;
   }
+
   /**
    *
    *
@@ -2126,6 +2198,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importJob_ = "";
+
   /**
    *
    *
@@ -2152,6 +2225,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -2181,6 +2255,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int IMPORT_TIME_FIELD_NUMBER = 15;
   private com.google.protobuf.Timestamp importTime_;
+
   /**
    *
    *
@@ -2199,6 +2274,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasImportTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -2217,6 +2293,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getImportTime() {
     return importTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : importTime_;
   }
+
   /**
    *
    *
@@ -2238,6 +2315,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importFailureReason_ = "";
+
   /**
    *
    *
@@ -2263,6 +2341,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -2293,6 +2372,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object generationFailureReason_ = "";
+
   /**
    *
    *
@@ -2319,6 +2399,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -2350,6 +2431,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalDestructionFailureReason_ = "";
+
   /**
    *
    *
@@ -2378,6 +2460,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -2409,6 +2492,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int EXTERNAL_PROTECTION_LEVEL_OPTIONS_FIELD_NUMBER = 17;
   private com.google.cloud.kms.v1.ExternalProtectionLevelOptions externalProtectionLevelOptions_;
+
   /**
    *
    *
@@ -2431,6 +2515,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
   public boolean hasExternalProtectionLevelOptions() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -2456,6 +2541,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.kms.v1.ExternalProtectionLevelOptions.getDefaultInstance()
         : externalProtectionLevelOptions_;
   }
+
   /**
    *
    *
@@ -2482,6 +2568,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
   public static final int REIMPORT_ELIGIBLE_FIELD_NUMBER = 18;
   private boolean reimportEligible_ = false;
+
   /**
    *
    *
@@ -2851,6 +2938,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3309,6 +3397,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3333,6 +3422,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3357,6 +3447,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3380,6 +3471,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3399,6 +3491,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3425,6 +3518,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3441,6 +3535,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3460,6 +3555,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3480,6 +3576,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3502,6 +3599,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3522,6 +3620,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private int protectionLevel_ = 0;
+
     /**
      *
      *
@@ -3541,6 +3640,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
+
     /**
      *
      *
@@ -3563,6 +3663,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3584,6 +3685,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3609,6 +3711,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3632,6 +3735,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private int algorithm_ = 0;
+
     /**
      *
      *
@@ -3652,6 +3756,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public int getAlgorithmValue() {
       return algorithm_;
     }
+
     /**
      *
      *
@@ -3675,6 +3780,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3699,6 +3805,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3726,6 +3833,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3755,6 +3863,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.cloud.kms.v1.KeyOperationAttestation.Builder,
             com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder>
         attestationBuilder_;
+
     /**
      *
      *
@@ -3775,6 +3884,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasAttestation() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3801,6 +3911,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return attestationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3829,6 +3940,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3855,6 +3967,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3889,6 +4002,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3914,6 +4028,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3934,6 +4049,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAttestationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3958,6 +4074,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : attestation_;
       }
     }
+
     /**
      *
      *
@@ -3996,6 +4113,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4013,6 +4131,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4036,6 +4155,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4061,6 +4181,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4083,6 +4204,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4113,6 +4235,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4135,6 +4258,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4152,6 +4276,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4173,6 +4298,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -4208,6 +4334,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         generateTimeBuilder_;
+
     /**
      *
      *
@@ -4226,6 +4353,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasGenerateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4250,6 +4378,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return generateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4276,6 +4405,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4299,6 +4429,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4330,6 +4461,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4353,6 +4485,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4371,6 +4504,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getGenerateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4393,6 +4527,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : generateTime_;
       }
     }
+
     /**
      *
      *
@@ -4429,6 +4564,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         destroyTimeBuilder_;
+
     /**
      *
      *
@@ -4449,6 +4585,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasDestroyTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4475,6 +4612,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return destroyTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4503,6 +4641,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4528,6 +4667,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4561,6 +4701,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4586,6 +4727,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4606,6 +4748,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDestroyTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4630,6 +4773,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : destroyTime_;
       }
     }
+
     /**
      *
      *
@@ -4668,6 +4812,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         destroyEventTimeBuilder_;
+
     /**
      *
      *
@@ -4687,6 +4832,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasDestroyEventTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4712,6 +4858,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return destroyEventTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4739,6 +4886,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4763,6 +4911,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4795,6 +4944,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -4819,6 +4969,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4838,6 +4989,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDestroyEventTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4861,6 +5013,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : destroyEventTime_;
       }
     }
+
     /**
      *
      *
@@ -4893,6 +5046,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object importJob_ = "";
+
     /**
      *
      *
@@ -4918,6 +5072,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4943,6 +5098,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4967,6 +5123,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4987,6 +5144,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5019,6 +5177,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         importTimeBuilder_;
+
     /**
      *
      *
@@ -5037,6 +5196,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasImportTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5061,6 +5221,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return importTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5087,6 +5248,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5110,6 +5272,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5141,6 +5304,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5164,6 +5328,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5182,6 +5347,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getImportTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5204,6 +5370,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : importTime_;
       }
     }
+
     /**
      *
      *
@@ -5235,6 +5402,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object importFailureReason_ = "";
+
     /**
      *
      *
@@ -5259,6 +5427,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5283,6 +5452,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5306,6 +5476,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5325,6 +5496,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5351,6 +5523,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object generationFailureReason_ = "";
+
     /**
      *
      *
@@ -5376,6 +5549,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5401,6 +5575,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5425,6 +5600,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5445,6 +5621,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5472,6 +5649,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object externalDestructionFailureReason_ = "";
+
     /**
      *
      *
@@ -5499,6 +5677,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5526,6 +5705,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5552,6 +5732,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5575,6 +5756,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5609,6 +5791,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder,
             com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder>
         externalProtectionLevelOptionsBuilder_;
+
     /**
      *
      *
@@ -5630,6 +5813,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean hasExternalProtectionLevelOptions() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -5658,6 +5842,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return externalProtectionLevelOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5688,6 +5873,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5715,6 +5901,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5751,6 +5938,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5777,6 +5965,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5799,6 +5988,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getExternalProtectionLevelOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5825,6 +6015,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             : externalProtectionLevelOptions_;
       }
     }
+
     /**
      *
      *
@@ -5859,6 +6050,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean reimportEligible_;
+
     /**
      *
      *
@@ -5876,6 +6068,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public boolean getReimportEligible() {
       return reimportEligible_;
     }
+
     /**
      *
      *
@@ -5897,6 +6090,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

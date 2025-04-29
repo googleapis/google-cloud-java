@@ -36,6 +36,7 @@ public interface PrebuiltVoiceConfigOrBuilder
    * @return Whether the voiceName field is set.
    */
   boolean hasVoiceName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PrebuiltVoiceConfigOrBuilder
    * @return The voiceName.
    */
   java.lang.String getVoiceName();
+
   /**
    *
    *

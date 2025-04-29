@@ -34,6 +34,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.RawEncryptResponse)
     RawEncryptResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RawEncryptResponse.newBuilder() to construct.
   private RawEncryptResponse(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int CIPHERTEXT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   public static final int INITIALIZATION_VECTOR_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString initializationVector_ =
       com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int TAG_LENGTH_FIELD_NUMBER = 3;
   private int tagLength_ = 0;
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int CIPHERTEXT_CRC32C_FIELD_NUMBER = 4;
   private com.google.protobuf.Int64Value ciphertextCrc32C_;
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasCiphertextCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : ciphertextCrc32C_;
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int INITIALIZATION_VECTOR_CRC32C_FIELD_NUMBER = 5;
   private com.google.protobuf.Int64Value initializationVectorCrc32C_;
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasInitializationVectorCrc32C() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : initializationVectorCrc32C_;
   }
+
   /**
    *
    *
@@ -285,6 +295,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int VERIFIED_PLAINTEXT_CRC32C_FIELD_NUMBER = 6;
   private boolean verifiedPlaintextCrc32C_ = false;
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int VERIFIED_ADDITIONAL_AUTHENTICATED_DATA_CRC32C_FIELD_NUMBER = 7;
   private boolean verifiedAdditionalAuthenticatedDataCrc32C_ = false;
+
   /**
    *
    *
@@ -345,6 +357,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int VERIFIED_INITIALIZATION_VECTOR_CRC32C_FIELD_NUMBER = 10;
   private boolean verifiedInitializationVectorCrc32C_ = false;
+
   /**
    *
    *
@@ -377,6 +390,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -403,6 +417,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -432,6 +447,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 9;
   private int protectionLevel_ = 0;
+
   /**
    *
    *
@@ -449,6 +465,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
+
   /**
    *
    *
@@ -735,6 +752,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1066,6 +1084,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1083,6 +1102,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getCiphertext() {
       return ciphertext_;
     }
+
     /**
      *
      *
@@ -1106,6 +1126,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1149,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.ByteString initializationVector_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1146,6 +1168,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getInitializationVector() {
       return initializationVector_;
     }
+
     /**
      *
      *
@@ -1170,6 +1193,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1216,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private int tagLength_;
+
     /**
      *
      *
@@ -1208,6 +1233,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public int getTagLength() {
       return tagLength_;
     }
+
     /**
      *
      *
@@ -1228,6 +1254,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1280,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         ciphertextCrc32CBuilder_;
+
     /**
      *
      *
@@ -1276,6 +1304,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasCiphertextCrc32C() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1305,6 +1334,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
         return ciphertextCrc32CBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1366,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1395,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1432,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1461,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1485,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCiphertextCrc32CFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1478,6 +1513,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
             : ciphertextCrc32C_;
       }
     }
+
     /**
      *
      *
@@ -1519,6 +1555,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         initializationVectorCrc32CBuilder_;
+
     /**
      *
      *
@@ -1542,6 +1579,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasInitializationVectorCrc32C() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1571,6 +1609,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
         return initializationVectorCrc32CBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1602,6 +1641,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1631,6 +1671,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +1708,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1695,6 +1737,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1718,6 +1761,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInitializationVectorCrc32CFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1745,6 +1789,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
             : initializationVectorCrc32C_;
       }
     }
+
     /**
      *
      *
@@ -1781,6 +1826,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean verifiedPlaintextCrc32C_;
+
     /**
      *
      *
@@ -1808,6 +1854,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public boolean getVerifiedPlaintextCrc32C() {
       return verifiedPlaintextCrc32C_;
     }
+
     /**
      *
      *
@@ -1839,6 +1886,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1918,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean verifiedAdditionalAuthenticatedDataCrc32C_;
+
     /**
      *
      *
@@ -1897,6 +1946,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public boolean getVerifiedAdditionalAuthenticatedDataCrc32C() {
       return verifiedAdditionalAuthenticatedDataCrc32C_;
     }
+
     /**
      *
      *
@@ -1928,6 +1978,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1959,6 +2010,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean verifiedInitializationVectorCrc32C_;
+
     /**
      *
      *
@@ -1986,6 +2038,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public boolean getVerifiedInitializationVectorCrc32C() {
       return verifiedInitializationVectorCrc32C_;
     }
+
     /**
      *
      *
@@ -2017,6 +2070,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2048,6 +2102,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2073,6 +2128,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2098,6 +2154,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2122,6 +2179,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2142,6 +2200,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2169,6 +2228,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private int protectionLevel_ = 0;
+
     /**
      *
      *
@@ -2186,6 +2246,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
+
     /**
      *
      *
@@ -2206,6 +2267,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2287,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2248,6 +2311,7 @@ public final class RawEncryptResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetLabelsGlobalForwardingRuleRequest)
     SetLabelsGlobalForwardingRuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetLabelsGlobalForwardingRuleRequest.newBuilder() to construct.
   private SetLabelsGlobalForwardingRuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
   private int bitField0_;
   public static final int GLOBAL_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 319917189;
   private com.google.cloud.compute.v1.GlobalSetLabelsRequest globalSetLabelsRequestResource_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
   public boolean hasGlobalSetLabelsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
         ? com.google.cloud.compute.v1.GlobalSetLabelsRequest.getDefaultInstance()
         : globalSetLabelsRequestResource_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -417,6 +425,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
             com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder>
         globalSetLabelsRequestResourceBuilder_;
+
     /**
      *
      *
@@ -675,6 +685,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
     public boolean hasGlobalSetLabelsRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
         return globalSetLabelsRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -722,6 +734,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
             : globalSetLabelsRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1002,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1001,6 +1025,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1088,7 @@ public final class SetLabelsGlobalForwardingRuleRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

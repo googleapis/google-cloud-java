@@ -32,6 +32,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BgpRouteAsPath)
     BgpRouteAsPathOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BgpRouteAsPath.newBuilder() to construct.
   private BgpRouteAsPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,8 +101,10 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
+
     /** <code>AS_PATH_TYPE_SEQUENCE = 362887609;</code> */
     public static final int AS_PATH_TYPE_SEQUENCE_VALUE = 362887609;
+
     /** <code>AS_PATH_TYPE_SET = 302584650;</code> */
     public static final int AS_PATH_TYPE_SET_VALUE = 302584650;
 
@@ -193,6 +196,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList asns_ = emptyIntList();
+
   /**
    *
    *
@@ -208,6 +212,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAsnsList() {
     return asns_;
   }
+
   /**
    *
    *
@@ -222,6 +227,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
   public int getAsnsCount() {
     return asns_.size();
   }
+
   /**
    *
    *
@@ -244,6 +250,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -260,6 +267,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -284,6 +292,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -498,6 +507,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -724,6 +734,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -739,6 +750,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       asns_.makeImmutable();
       return asns_;
     }
+
     /**
      *
      *
@@ -753,6 +765,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public int getAsnsCount() {
       return asns_.size();
     }
+
     /**
      *
      *
@@ -768,6 +781,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public int getAsns(int index) {
       return asns_.getInt(index);
     }
+
     /**
      *
      *
@@ -789,6 +803,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

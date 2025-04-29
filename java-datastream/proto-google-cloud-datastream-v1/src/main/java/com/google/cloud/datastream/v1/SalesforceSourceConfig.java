@@ -33,6 +33,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceSourceConfig)
     SalesforceSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SalesforceSourceConfig.newBuilder() to construct.
   private SalesforceSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.SalesforceOrg includeObjects_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
   public boolean hasIncludeObjects() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance()
         : includeObjects_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.SalesforceOrg excludeObjects_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
   public boolean hasExcludeObjects() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance()
         : excludeObjects_;
   }
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
 
   public static final int POLLING_INTERVAL_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration pollingInterval_;
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
   public boolean hasPollingInterval() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Duration.getDefaultInstance()
         : pollingInterval_;
   }
+
   /**
    *
    *
@@ -414,6 +424,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +669,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SalesforceOrg.Builder,
             com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>
         includeObjectsBuilder_;
+
     /**
      *
      *
@@ -672,6 +684,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
     public boolean hasIncludeObjects() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
         return includeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +778,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +798,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
             : includeObjects_;
       }
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SalesforceOrg.Builder,
             com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>
         excludeObjectsBuilder_;
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
     public boolean hasExcludeObjects() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
         return excludeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -901,6 +924,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +974,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +994,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1009,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1000,6 +1028,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
             : excludeObjects_;
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1061,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         pollingIntervalBuilder_;
+
     /**
      *
      *
@@ -1050,6 +1080,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
     public boolean hasPollingInterval() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1074,6 +1105,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
         return pollingIntervalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1132,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1156,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1188,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1212,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1231,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getPollingIntervalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1217,6 +1254,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
             : pollingInterval_;
       }
     }
+
     /**
      *
      *

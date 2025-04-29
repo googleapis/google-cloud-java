@@ -36,6 +36,7 @@ public interface GcpCredentialsOrBuilder
    * @return A list containing the serviceAccountIdTokens.
    */
   java.util.List<java.lang.String> getServiceAccountIdTokensList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GcpCredentialsOrBuilder
    * @return The count of serviceAccountIdTokens.
    */
   int getServiceAccountIdTokensCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface GcpCredentialsOrBuilder
    * @return The serviceAccountIdTokens at the given index.
    */
   java.lang.String getServiceAccountIdTokens(int index);
+
   /**
    *
    *

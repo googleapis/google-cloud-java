@@ -38,6 +38,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    * @return The queuedResourceId.
    */
   java.lang.String getQueuedResourceId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    * @return Whether the queuedResource field is set.
    */
   boolean hasQueuedResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    * @return The queuedResource.
    */
   com.google.cloud.tpu.v2.QueuedResource getQueuedResource();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

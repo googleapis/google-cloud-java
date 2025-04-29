@@ -38,6 +38,7 @@ public interface DataLayersOrBuilder
    * @return Whether the imageryDate field is set.
    */
   boolean hasImageryDate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DataLayersOrBuilder
    * @return The imageryDate.
    */
   com.google.type.Date getImageryDate();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DataLayersOrBuilder
    * @return Whether the imageryProcessedDate field is set.
    */
   boolean hasImageryProcessedDate();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface DataLayersOrBuilder
    * @return The imageryProcessedDate.
    */
   com.google.type.Date getImageryProcessedDate();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface DataLayersOrBuilder
    * @return The dsmUrl.
    */
   java.lang.String getDsmUrl();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface DataLayersOrBuilder
    * @return The rgbUrl.
    */
   java.lang.String getRgbUrl();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface DataLayersOrBuilder
    * @return The maskUrl.
    */
   java.lang.String getMaskUrl();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface DataLayersOrBuilder
    * @return The annualFluxUrl.
    */
   java.lang.String getAnnualFluxUrl();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface DataLayersOrBuilder
    * @return The monthlyFluxUrl.
    */
   java.lang.String getMonthlyFluxUrl();
+
   /**
    *
    *
@@ -287,6 +296,7 @@ public interface DataLayersOrBuilder
    * @return A list containing the hourlyShadeUrls.
    */
   java.util.List<java.lang.String> getHourlyShadeUrlsList();
+
   /**
    *
    *
@@ -329,6 +339,7 @@ public interface DataLayersOrBuilder
    * @return The count of hourlyShadeUrls.
    */
   int getHourlyShadeUrlsCount();
+
   /**
    *
    *
@@ -372,6 +383,7 @@ public interface DataLayersOrBuilder
    * @return The hourlyShadeUrls at the given index.
    */
   java.lang.String getHourlyShadeUrls(int index);
+
   /**
    *
    *
@@ -428,6 +440,7 @@ public interface DataLayersOrBuilder
    * @return The enum numeric value on the wire for imageryQuality.
    */
   int getImageryQualityValue();
+
   /**
    *
    *

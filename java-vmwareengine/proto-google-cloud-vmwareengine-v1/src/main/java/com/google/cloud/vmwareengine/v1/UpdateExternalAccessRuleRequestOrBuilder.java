@@ -41,6 +41,7 @@ public interface UpdateExternalAccessRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateExternalAccessRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateExternalAccessRuleRequestOrBuilder
    * @return Whether the externalAccessRule field is set.
    */
   boolean hasExternalAccessRule();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateExternalAccessRuleRequestOrBuilder
    * @return The externalAccessRule.
    */
   com.google.cloud.vmwareengine.v1.ExternalAccessRule getExternalAccessRule();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface UpdateExternalAccessRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

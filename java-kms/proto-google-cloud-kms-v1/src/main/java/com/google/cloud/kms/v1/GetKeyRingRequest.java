@@ -34,6 +34,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.GetKeyRingRequest)
     GetKeyRingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetKeyRingRequest.newBuilder() to construct.
   private GetKeyRingRequest(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +283,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -464,6 +468,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -489,6 +494,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -514,6 +520,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +566,7 @@ public final class GetKeyRingRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface SalesforceProfileOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface SalesforceProfileOrBuilder
    * @return Whether the userCredentials field is set.
    */
   boolean hasUserCredentials();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SalesforceProfileOrBuilder
    * @return The userCredentials.
    */
   com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials getUserCredentials();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SalesforceProfileOrBuilder
    * @return Whether the oauth2ClientCredentials field is set.
    */
   boolean hasOauth2ClientCredentials();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SalesforceProfileOrBuilder
    */
   com.google.cloud.datastream.v1.SalesforceProfile.Oauth2ClientCredentials
       getOauth2ClientCredentials();
+
   /**
    *
    *

@@ -56,7 +56,7 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    *
    * <pre>
    * At this level, we honor the attribute configurations set in
-   * [CatalogConfig.attribute_configs][].
+   * `CatalogConfig.attribute_configs`.
    * </pre>
    *
    * <code>CATALOG_LEVEL_ATTRIBUTE_CONFIG = 2;</code>
@@ -76,6 +76,7 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    * <code>ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -87,12 +88,13 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    * <code>PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 1;</code>
    */
   public static final int PRODUCT_LEVEL_ATTRIBUTE_CONFIG_VALUE = 1;
+
   /**
    *
    *
    * <pre>
    * At this level, we honor the attribute configurations set in
-   * [CatalogConfig.attribute_configs][].
+   * `CatalogConfig.attribute_configs`.
    * </pre>
    *
    * <code>CATALOG_LEVEL_ATTRIBUTE_CONFIG = 2;</code>

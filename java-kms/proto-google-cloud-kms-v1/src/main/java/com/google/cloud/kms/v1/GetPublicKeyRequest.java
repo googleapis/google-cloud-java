@@ -34,6 +34,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.GetPublicKeyRequest)
     GetPublicKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetPublicKeyRequest.newBuilder() to construct.
   private GetPublicKeyRequest(com.google.protobuf.GeneratedMessageV4.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
 
   public static final int PUBLIC_KEY_FORMAT_FIELD_NUMBER = 2;
   private int publicKeyFormat_ = 0;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
   public int getPublicKeyFormatValue() {
     return publicKeyFormat_;
   }
+
   /**
    *
    *
@@ -345,6 +350,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -542,6 +548,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -567,6 +574,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int publicKeyFormat_ = 0;
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
     public int getPublicKeyFormatValue() {
       return publicKeyFormat_;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

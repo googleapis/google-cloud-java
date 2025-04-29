@@ -33,6 +33,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DiskEntryList)
     DiskEntryListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiskEntryList.newBuilder() to construct.
   private DiskEntryList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.DiskEntry> entries_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.migrationcenter.v1.DiskEntry> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.migrationcenter.v1.DiskEntry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +563,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +770,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.migrationcenter.v1.DiskEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -800,6 +820,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +838,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       return getEntriesFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.DiskEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -843,6 +866,7 @@ public final class DiskEntryList extends com.google.protobuf.GeneratedMessageV3
       return getEntriesFieldBuilder()
           .addBuilder(index, com.google.cloud.migrationcenter.v1.DiskEntry.getDefaultInstance());
     }
+
     /**
      *
      *
