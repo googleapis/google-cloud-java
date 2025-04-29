@@ -1203,6 +1203,22 @@ libraries:
   issue_tracker: https://issuetracker.google.com/issues?q=status:open%20componentid:310170
   GAPICs:
   - proto_path: google/cloud/iot/v1
+- api_shortname: merchantapi
+  name_pretty: Merchant Issue Resolution API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programatically manage your Merchant Issues
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-issue-resolution
+  api_id: merchantapi.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/issueresolution/v1beta
+  library_name: java-shopping-merchant-issue-resolution
+  requires_billing: true
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms
