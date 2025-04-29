@@ -78,12 +78,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!-- Other opencensus packages' versions are pulled through com.google.cloud:third-party-dependencies, but has to be manually specified for this one. -->
-      <dependency>
-        <groupId>io.opencensus</groupId>
-        <artifactId>opencensus-contrib-resource-util</artifactId>
-        <version>0.31.1</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 

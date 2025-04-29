@@ -139,10 +139,6 @@
       <artifactId>gson</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.opencensus</groupId>
-      <artifactId>opencensus-api</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-alts</artifactId>
       <scope>runtime</scope>
@@ -183,10 +179,6 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-core</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -322,11 +314,6 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-testing</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.opencensus</groupId>
-      <artifactId>opencensus-impl</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -707,20 +694,6 @@
             <version>3.3.0</version>
           </dependency>
         </dependencies>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <configuration>
-          <!--
-            grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
-            opencensus-impl-core is brought in transitively through opencensus-impl
-            -->
-          <ignoredUsedUndeclaredDependencies>
-            <ignoredUsedUndeclaredDependency>io.opencensus:opencensus-impl-core</ignoredUsedUndeclaredDependency>
-          </ignoredUsedUndeclaredDependencies>
-        </configuration>
       </plugin>
 
       <plugin>

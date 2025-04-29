@@ -41,7 +41,7 @@ This project follows
 ### Integration Tests
 
 Bigtable integration tests can either be run against an emulator or a real Bigtable instance.
-The target environment can be selected by setting a maven profile. By default it is set to 
+The target environment can be selected by setting a maven profile. By default it is set to
 `bigtable-emulator-it` and other options are `bigtable-prod-it` and `bigtable-directpath-it`.
 
 To use the `bigtable-prod-it` and `bigtable-directpath-it` environments:
@@ -49,7 +49,7 @@ To use the `bigtable-prod-it` and `bigtable-directpath-it` environments:
 1. Set up the target table using scripts/setup-test-table.sh
 2. Download the JSON service account credentials file from the Google Developer's Console.
 3. Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the credentials file
-4. Enable the profile and the system properties `bigtable.project`, `bigtable.instance` 
+4. Enable the profile and the system properties `bigtable.project`, `bigtable.instance`
    and `bigtable.table` to created earlier. Example:
   ```bash
    mvn verify \
@@ -82,7 +82,7 @@ on how to run conformance tests.
 
 ## Formatting the code
 
-To auto-format any code changes, run ``mvn com.coveo:fmt-maven-plugin:format``.
+To auto-format any code changes, run ``mvn com.spotify.fmt:fmt-maven-plugin:format``.
 
 ## Native Image Testing
 Native Image testing is enabled for tests that follow a particular naming

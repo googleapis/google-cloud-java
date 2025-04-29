@@ -43,7 +43,6 @@ import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
-import io.opencensus.tags.TagValue;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -57,13 +56,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
-/** Utilities to help integrating with OpenCensus. */
+/** Utilities to help with metrics. */
 @InternalApi("For internal use only")
 public class Util {
   static final Metadata.Key<String> ATTEMPT_HEADER_KEY =
@@ -77,7 +74,7 @@ public class Util {
   static final Metadata.Key<byte[]> LOCATION_METADATA_KEY =
       Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
 
-  /** Convert an exception into a value that can be used to create an OpenCensus tag value. */
+  /** Convert an exception into a string. */
   static String extractStatus(@Nullable Throwable error) {
     final String statusString;
 
@@ -96,26 +93,6 @@ public class Util {
     }
 
     return statusString;
-  }
-
-  /**
-   * Await the result of the future and convert it into a value that can be used as an OpenCensus
-   * tag value.
-   */
-  static TagValue extractStatusFromFuture(Future<?> future) {
-    Throwable error = null;
-
-    try {
-      future.get();
-    } catch (InterruptedException e) {
-      error = e;
-      Thread.currentThread().interrupt();
-    } catch (ExecutionException e) {
-      error = e.getCause();
-    } catch (RuntimeException e) {
-      error = e;
-    }
-    return TagValue.create(extractStatus(error));
   }
 
   static String extractTableId(Object request) {
