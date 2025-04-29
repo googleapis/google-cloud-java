@@ -16,9 +16,11 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.InternalExtensionOnly;
 import java.util.List;
 
 /** An interface to represent Google Cloud Datastore write operations. */
+@InternalExtensionOnly
 public interface DatastoreWriter {
 
   /**

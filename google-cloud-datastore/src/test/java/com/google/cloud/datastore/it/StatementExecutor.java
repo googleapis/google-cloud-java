@@ -80,9 +80,10 @@ class StatementExecutor {
     }
     return exception instanceof ExecutionException
         && exception.getCause().getClass() == DatastoreException.class
-        && exception
-            .getMessage()
-            .contains("contention"); // exception raise coz of optimistic concurrency
+        && (exception.getMessage().contains("contention")
+            || exception
+                .getMessage()
+                .contains("Conflict")); // exception raise coz of optimistic concurrency
   }
 
   interface Statement {

@@ -18,6 +18,7 @@ package com.google.cloud.datastore.testing;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -25,6 +26,7 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.time.Duration;
@@ -77,21 +79,46 @@ public class RemoteDatastoreHelper {
 
   /** Creates a {@code RemoteStorageHelper} object. */
   public static RemoteDatastoreHelper create() {
-    return create("");
+    return create(
+        "", DatastoreOptions.getDefaultHttpTransportOptions(), /* openTelemetrySdk= */ null);
+  }
+
+  public static RemoteDatastoreHelper create(String databaseId) {
+    return create(
+        databaseId,
+        DatastoreOptions.getDefaultHttpTransportOptions(),
+        /* openTelemetrySdk= */ null);
+  }
+
+  public static RemoteDatastoreHelper create(TransportOptions transportOptions) {
+    return create("", transportOptions, /* openTelemetrySdk= */ null);
+  }
+
+  public static RemoteDatastoreHelper create(
+      String databaseId, @Nullable OpenTelemetrySdk openTelemetrySdk) {
+    return create(databaseId, DatastoreOptions.getDefaultHttpTransportOptions(), openTelemetrySdk);
+  }
+
+  public static RemoteDatastoreHelper create(String databaseId, TransportOptions transportOptions) {
+    return create(databaseId, transportOptions, /* openTelemetrySdk= */ null);
   }
 
   /** Creates a {@code RemoteStorageHelper} object. */
   public static RemoteDatastoreHelper create(
-      String databaseId, @Nullable OpenTelemetrySdk openTelemetrySdk) {
-    HttpTransportOptions transportOptions = DatastoreOptions.getDefaultHttpTransportOptions();
-    transportOptions =
-        transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+      String databaseId,
+      TransportOptions transportOptions,
+      @Nullable OpenTelemetrySdk openTelemetrySdk) {
     DatastoreOptions.Builder datastoreOptionBuilder =
         DatastoreOptions.newBuilder()
             .setDatabaseId(databaseId)
             .setNamespace(UUID.randomUUID().toString())
-            .setRetrySettings(retrySettings())
-            .setTransportOptions(transportOptions);
+            .setRetrySettings(retrySettings());
+    if (transportOptions instanceof GrpcTransportOptions) {
+      datastoreOptionBuilder =
+          datastoreOptionBuilder.setTransportOptions((GrpcTransportOptions) transportOptions);
+    } else {
+      datastoreOptionBuilder = datastoreOptionBuilder.setTransportOptions(transportOptions);
+    }
 
     if (openTelemetrySdk != null) {
       datastoreOptionBuilder.setOpenTelemetryOptions(
@@ -101,10 +128,6 @@ public class RemoteDatastoreHelper {
               .build());
     }
     return new RemoteDatastoreHelper(datastoreOptionBuilder.build());
-  }
-
-  public static RemoteDatastoreHelper create(String databaseId) {
-    return create(databaseId, /* openTelemetrySdk= */ null);
   }
 
   private static RetrySettings retrySettings() {

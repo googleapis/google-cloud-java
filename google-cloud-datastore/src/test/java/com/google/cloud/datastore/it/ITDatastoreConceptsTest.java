@@ -68,6 +68,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /*
@@ -77,7 +78,7 @@ public class ITDatastoreConceptsTest {
   private static final RemoteDatastoreHelper HELPER = RemoteDatastoreHelper.create();
   private static final DatastoreOptions OPTIONS = HELPER.getOptions();
   private static final FullEntity<IncompleteKey> TEST_FULL_ENTITY = FullEntity.newBuilder().build();
-  private Datastore datastore;
+  private static Datastore datastore;
   private KeyFactory keyFactory;
   private Key taskKey;
   private Entity testEntity;
@@ -87,13 +88,15 @@ public class ITDatastoreConceptsTest {
 
   private static final String TASK_CONCEPTS = "TaskConcepts";
 
-  /**
-   * Initializes Datastore and cleans out any residual values. Also initializes global variables
-   * used for testing.
-   */
+  /** Initializes Datastore for testing. */
+  @BeforeClass
+  public static void beforeClass() throws Exception {
+    datastore = OPTIONS.getService();
+  }
+
+  /** Cleans out any residual values. Also initializes global variables used for testing. */
   @Before
   public void setUp() {
-    datastore = OPTIONS.getService();
     StructuredQuery<Key> query = Query.newKeyQueryBuilder().build();
     QueryResults<Key> result = datastore.run(query);
     datastore.delete(Iterators.toArray(result, Key.class));

@@ -157,22 +157,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
       - javadoc
-  - pattern: grpc-experimental
-    isAdminEnforced: true
-    requiredApprovingReviewCount: 1
-    requiresCodeOwnerReviews: true
-    requiresStrictStatusChecks: false
-    requiredStatusCheckContexts:
-      - dependencies (17)
-      - lint
-      - clirr
-      - units (8)
-      - units (11)
-      - 'Kokoro - Test: Integration'
-      - cla/google
-      - 'Kokoro - Test: Java GraalVM Native Image'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image'
-      - javadoc
   - pattern: 2.19.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1

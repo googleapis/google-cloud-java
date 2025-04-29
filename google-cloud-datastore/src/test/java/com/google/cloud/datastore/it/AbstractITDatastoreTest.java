@@ -16,6 +16,11 @@
 
 package com.google.cloud.datastore.it;
 
+import static com.google.api.gax.rpc.StatusCode.Code.ALREADY_EXISTS;
+import static com.google.api.gax.rpc.StatusCode.Code.DEADLINE_EXCEEDED;
+import static com.google.api.gax.rpc.StatusCode.Code.FAILED_PRECONDITION;
+import static com.google.api.gax.rpc.StatusCode.Code.INVALID_ARGUMENT;
+import static com.google.api.gax.rpc.StatusCode.Code.NOT_FOUND;
 import static com.google.cloud.datastore.aggregation.Aggregation.avg;
 import static com.google.cloud.datastore.aggregation.Aggregation.count;
 import static com.google.cloud.datastore.aggregation.Aggregation.sum;
@@ -27,8 +32,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.Tuple;
@@ -74,7 +79,6 @@ import com.google.cloud.datastore.models.ExecutionStats;
 import com.google.cloud.datastore.models.ExplainMetrics;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.cloud.datastore.models.PlanSummary;
-import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Range;
@@ -83,7 +87,6 @@ import com.google.datastore.v1.TransactionOptions;
 import com.google.datastore.v1.TransactionOptions.ReadOnly;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -97,7 +100,6 @@ import java.util.concurrent.Future;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -106,19 +108,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class ITDatastoreTest {
+public abstract class AbstractITDatastoreTest {
+  protected static final String CUSTOM_DB_ID = "test-db";
 
-  private static final RemoteDatastoreHelper HELPER = RemoteDatastoreHelper.create();
-  private static final DatastoreOptions OPTIONS_1 = HELPER.getOptions();
-  private static final Datastore DATASTORE_1 = OPTIONS_1.getService();
-
-  private static final String CUSTOM_DB_ID = "test-db";
-  private static final RemoteDatastoreHelper HELPER2 = RemoteDatastoreHelper.create(CUSTOM_DB_ID);
-  private static final DatastoreOptions OPTIONS_2 = HELPER2.getOptions();
-  private static final Datastore DATASTORE_2 = OPTIONS_2.getService();
-
-  private final DatastoreOptions options;
-  private final Datastore datastore;
+  protected DatastoreOptions options;
+  protected Datastore datastore;
 
   private static String PROJECT_ID;
   private static String NAMESPACE;
@@ -161,12 +155,21 @@ public class ITDatastoreTest {
 
   @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
-  @AfterClass
-  public static void afterClass() {
-    HELPER.deleteNamespace();
+  @Before
+  public void setUp() {
+    datastore.put(ENTITY1, ENTITY2);
   }
 
-  public ITDatastoreTest(
+  @After
+  public void tearDown() {
+    EntityQuery allEntitiesQuery = Query.newEntityQueryBuilder().build();
+    QueryResults<Entity> allEntities = datastore.run(allEntitiesQuery);
+    Key[] keysToDelete =
+        ImmutableList.copyOf(allEntities).stream().map(Entity::getKey).toArray(Key[]::new);
+    datastore.delete(keysToDelete);
+  }
+
+  public AbstractITDatastoreTest(
       DatastoreOptions options,
       Datastore datastore,
       // databaseType is unused as a variable, but used as a parameterized label when running tests
@@ -270,26 +273,6 @@ public class ITDatastoreTest {
             .set("marks", 55)
             .set("cgpa", 5.16)
             .build();
-  }
-
-  @Before
-  public void setUp() {
-    datastore.put(ENTITY1, ENTITY2);
-  }
-
-  @After
-  public void tearDown() {
-    EntityQuery allEntitiesQuery = Query.newEntityQueryBuilder().build();
-    QueryResults<Entity> allEntities = datastore.run(allEntitiesQuery);
-    Key[] keysToDelete =
-        ImmutableList.copyOf(allEntities).stream().map(Entity::getKey).toArray(Key[]::new);
-    datastore.delete(keysToDelete);
-  }
-
-  @Parameterized.Parameters(name = "database: {2}")
-  public static Iterable<Object[]> data() {
-    return Arrays.asList(
-        new Object[][] {{OPTIONS_1, DATASTORE_1, "default"}, {OPTIONS_2, DATASTORE_2, "test-db"}});
   }
 
   private <T> Iterator<T> getStronglyConsistentResults(Query scQuery, Query query)
@@ -496,19 +479,11 @@ public class ITDatastoreTest {
     assertEquals(ENTITY3, list.get(2));
     assertEquals(3, list.size());
 
-    try {
-      transaction.commit();
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
-    }
+    DatastoreException expected = assertThrows(DatastoreException.class, transaction::commit);
+    assertDatastoreException(expected, FAILED_PRECONDITION.name(), 0);
 
-    try {
-      transaction.rollback();
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
-    }
+    DatastoreException expected2 = assertThrows(DatastoreException.class, transaction::rollback);
+    assertDatastoreException(expected2, FAILED_PRECONDITION.name(), 0);
   }
 
   @Test
@@ -699,12 +674,8 @@ public class ITDatastoreTest {
     transaction.rollback();
     transaction.rollback(); // should be safe to repeat rollback calls
 
-    try {
-      transaction.commit();
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
-    }
+    DatastoreException expected = assertThrows(DatastoreException.class, transaction::commit);
+    assertDatastoreException(expected, FAILED_PRECONDITION.name(), 0);
 
     List<Entity> list = datastore.fetch(KEY1, KEY2, KEY3);
     assertEquals(ENTITY1, list.get(0));
@@ -751,12 +722,8 @@ public class ITDatastoreTest {
     assertEquals(PARTIAL_ENTITY3.getNames(), datastore.get(generatedKeys.get(0)).getNames());
     assertEquals(PARTIAL_ENTITY3.getKey(), IncompleteKey.newBuilder(generatedKeys.get(0)).build());
 
-    try {
-      batch.submit();
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
-    }
+    DatastoreException expected = assertThrows(DatastoreException.class, batch::submit);
+    assertDatastoreException(expected, FAILED_PRECONDITION.name(), 0);
 
     batch = datastore.newBatch();
     batch.delete(entity4.getKey(), entity5.getKey(), entity6.getKey());
@@ -1857,12 +1824,11 @@ public class ITDatastoreTest {
     assertEquals(EMPTY_LIST_VALUE, entity3.getValue("emptyList"));
     assertEquals(8, entity3.getNames().size());
     assertFalse(entity3.contains("bla"));
-    try {
-      entity3.getString("str");
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "FAILED_PRECONDITION", 0);
-    }
+
+    DatastoreException expected =
+        assertThrows(DatastoreException.class, () -> entity3.getString("str"));
+    assertDatastoreException(expected, FAILED_PRECONDITION.name(), 0);
+
     assertFalse(result.hasNext());
     datastore.delete(ENTITY3.getKey());
   }
@@ -1874,12 +1840,9 @@ public class ITDatastoreTest {
     assertNull(keys.get(1));
     assertEquals(2, keys.size());
 
-    try {
-      datastore.add(ENTITY1);
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "ALREADY_EXISTS", 6);
-    }
+    DatastoreException expected =
+        assertThrows(DatastoreException.class, () -> datastore.add(ENTITY1));
+    assertDatastoreException(expected, ALREADY_EXISTS.name(), 6);
 
     List<Entity> entities = datastore.add(ENTITY3, PARTIAL_ENTITY1, PARTIAL_ENTITY2);
     assertEquals(ENTITY3, datastore.get(ENTITY3.getKey()));
@@ -1902,12 +1865,10 @@ public class ITDatastoreTest {
     assertNull(keys.get(1));
     assertEquals(2, keys.size());
 
-    try {
-      datastore.update(ENTITY3);
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException(expected, "NOT_FOUND", 5);
-    }
+    DatastoreException expected =
+        assertThrows(DatastoreException.class, () -> datastore.update(ENTITY3));
+    assertDatastoreException(expected, NOT_FOUND.name(), 5);
+
     datastore.add(ENTITY3);
     assertEquals(ENTITY3, datastore.get(ENTITY3.getKey()));
     Entity entity3 = Entity.newBuilder(ENTITY3).clear().set("bla", new NullValue()).build();
@@ -1915,6 +1876,12 @@ public class ITDatastoreTest {
     datastore.update(entity3);
     assertEquals(entity3, datastore.get(ENTITY3.getKey()));
     datastore.delete(ENTITY3.getKey());
+  }
+
+  private void assertDatastoreException(
+      DatastoreException expected, String reason, int datastoreStatusCode) {
+    Truth.assertThat(expected.getReason()).isEqualTo(reason);
+    Truth.assertThat(expected.getCode()).isEqualTo(datastoreStatusCode);
   }
 
   @Test
@@ -1993,12 +1960,9 @@ public class ITDatastoreTest {
           }
         };
 
-    try {
-      datastore.runInTransaction(callable2);
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException((DatastoreException) expected.getCause(), "DEADLINE_EXCEEDED", 4);
-    }
+    DatastoreException expected =
+        assertThrows(DatastoreException.class, () -> datastore.runInTransaction(callable2));
+    assertDatastoreException((DatastoreException) expected.getCause(), DEADLINE_EXCEEDED.name(), 4);
   }
 
   @Test
@@ -2047,12 +2011,10 @@ public class ITDatastoreTest {
             .setReadOnly(TransactionOptions.ReadOnly.getDefaultInstance())
             .build();
 
-    try {
-      datastore.runInTransaction(callable2, readOnlyOptions);
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertDatastoreException((DatastoreException) expected.getCause(), "INVALID_ARGUMENT", 3);
-    }
+    DatastoreException expected =
+        assertThrows(
+            DatastoreException.class, () -> datastore.runInTransaction(callable2, readOnlyOptions));
+    assertDatastoreException((DatastoreException) expected.getCause(), INVALID_ARGUMENT.name(), 3);
   }
 
   @Test
@@ -2166,11 +2128,5 @@ public class ITDatastoreTest {
     } finally {
       datastore.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
     }
-  }
-
-  private void assertDatastoreException(
-      DatastoreException expected, String reason, int statusCode) {
-    assertEquals(reason, expected.getReason());
-    assertEquals(statusCode, expected.getCode());
   }
 }

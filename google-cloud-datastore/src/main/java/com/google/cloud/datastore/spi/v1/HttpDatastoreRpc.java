@@ -19,6 +19,7 @@ package com.google.cloud.datastore.spi.v1;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.core.InternalApi;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.http.CensusHttpModule;
@@ -44,6 +45,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
 
+@InternalApi
 public class HttpDatastoreRpc implements DatastoreRpc {
 
   private final com.google.datastore.v1.client.Datastore client;
@@ -58,6 +60,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
             .initializer(getHttpRequestInitializer(options, httpTransportOptions))
             .transport(transport);
     String normalizedHost = options.getHost() != null ? options.getHost().toLowerCase() : "";
+
     if (isLocalHost(normalizedHost)) {
       clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
     } else if (!removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST)
@@ -209,5 +212,15 @@ public class HttpDatastoreRpc implements DatastoreRpc {
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
+  }
+
+  @Override
+  public void close() throws Exception {
+    throw new UnsupportedOperationException("Not implemented.");
+  }
+
+  @Override
+  public boolean isClosed() {
+    throw new UnsupportedOperationException("Not implemented.");
   }
 }

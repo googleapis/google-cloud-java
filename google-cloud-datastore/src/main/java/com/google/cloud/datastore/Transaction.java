@@ -17,6 +17,7 @@
 package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.protobuf.ByteString;
 import java.util.Iterator;
@@ -63,6 +64,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *     This class too should not be treated as a thread safe class. </b>
  */
 @NotThreadSafe
+@InternalExtensionOnly
 public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter {
 
   interface Response {
@@ -179,9 +181,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   <T> QueryResults<T> run(Query<T> query);
 
   @BetaApi
-  default <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions) {
-    throw new UnsupportedOperationException("Not implemented.");
-  }
+  <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions);
 
   /**
    * Datastore add operation. This method will also allocate id for any entity with an incomplete

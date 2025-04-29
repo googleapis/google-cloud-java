@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.core.ObsoleteApi;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
@@ -239,6 +240,14 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    */
   public DatastoreOptions getOptions(String namespace) {
     return optionsBuilder.setNamespace(namespace).build();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost. The transportOptions is set to {@code grpcTransportOptions}.
+   */
+  public DatastoreOptions getGrpcTransportOptions(GrpcTransportOptions grpcTransportOptions) {
+    return optionsBuilder.setTransportOptions(grpcTransportOptions).build();
   }
 
   public DatastoreOptions.Builder setNamespace(String namespace) {

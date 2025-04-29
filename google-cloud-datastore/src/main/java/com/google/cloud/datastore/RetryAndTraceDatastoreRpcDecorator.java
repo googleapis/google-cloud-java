@@ -113,6 +113,16 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     return invokeRpc(() -> datastoreRpc.runAggregationQuery(request), spanName);
   }
 
+  @Override
+  public void close() throws Exception {
+    datastoreRpc.close();
+  }
+
+  @Override
+  public boolean isClosed() {
+    return datastoreRpc.isClosed();
+  }
+
   public <O> O invokeRpc(Callable<O> block, String startSpan) {
     com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(startSpan);
     try (com.google.cloud.datastore.telemetry.TraceUtil.Scope ignored = span.makeCurrent()) {

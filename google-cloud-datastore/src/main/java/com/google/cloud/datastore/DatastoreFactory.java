@@ -16,7 +16,9 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.ServiceFactory;
 
 /** An interface for Datastore factories. */
+@InternalExtensionOnly
 public interface DatastoreFactory extends ServiceFactory<Datastore, DatastoreOptions> {}

@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.GcpLaunchStage;
 
 /**
@@ -25,6 +26,7 @@ import com.google.cloud.GcpLaunchStage;
  * @param <P> the value type.
  * @param <B> the value type's associated builder.
  */
+@InternalExtensionOnly
 public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P, B>> {
 
   ValueType getValueType();

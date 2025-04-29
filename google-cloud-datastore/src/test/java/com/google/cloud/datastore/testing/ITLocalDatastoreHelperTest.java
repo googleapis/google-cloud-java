@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -23,12 +24,15 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -170,6 +174,23 @@ public class ITLocalDatastoreHelperTest {
     assertTrue(options.getHost().startsWith("localhost:"));
     assertSame(NoCredentials.getInstance(), options.getCredentials());
     assertEquals(NAMESPACE, options.getNamespace());
+  }
+
+  @Test
+  public void testDefaultHttpTransportOptions() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+    DatastoreOptions options = helper.getOptions();
+    assertThat(options.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
+  }
+
+  @Test
+  public void testSetGrpcTransportOptions() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+    DatastoreOptions options =
+        helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
+    assertThat(options.getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
+    assertThat(options.getTransportChannelProvider())
+        .isInstanceOf(InstantiatingGrpcChannelProvider.class);
   }
 
   @Test

@@ -16,5 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.InternalExtensionOnly;
+
 /** An interface that combines both Google Cloud Datastore read and write operations. */
+@InternalExtensionOnly
 public interface DatastoreReaderWriter extends DatastoreReader, DatastoreWriter {}

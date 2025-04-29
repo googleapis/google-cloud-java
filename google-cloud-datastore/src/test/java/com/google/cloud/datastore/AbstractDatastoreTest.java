@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,8 +67,6 @@ import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
-import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -78,23 +76,20 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 import org.easymock.EasyMock;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class DatastoreTest {
+public abstract class AbstractDatastoreTest {
 
-  private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0);
-  private static final DatastoreOptions options = helper.getOptions();
-  private static final Datastore datastore = options.getService();
+  private static final LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0, 9090);
+  protected static DatastoreOptions options = helper.getOptions();
+  protected static Datastore datastore;
   private static final String PROJECT_ID = options.getProjectId();
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
@@ -167,9 +162,9 @@ public class DatastoreTest {
   private DatastoreRpcFactory rpcFactoryMock;
   private DatastoreRpc rpcMock;
 
-  @BeforeClass
-  public static void beforeClass() throws IOException, InterruptedException {
-    helper.start();
+  public AbstractDatastoreTest(DatastoreOptions options, Datastore datastore) {
+    this.options = options;
+    this.datastore = datastore;
   }
 
   @Before
@@ -188,11 +183,6 @@ public class DatastoreTest {
     QueryResults<Key> result = datastore.run(query);
     datastore.delete(Iterators.toArray(result, Key.class));
     datastore.add(ENTITY1, ENTITY2);
-  }
-
-  @AfterClass
-  public static void afterClass() throws IOException, InterruptedException, TimeoutException {
-    helper.stopDuration(Duration.ofMinutes(1));
   }
 
   @Test
@@ -649,6 +639,7 @@ public class DatastoreTest {
     List<RunQueryResponse> responses = new ArrayList<>();
     RecordQuery<Key> query = Query.newKeyQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
+    requestPb.setProjectId(PROJECT_ID);
     query.populatePb(requestPb);
     QueryResultBatch queryResultBatchPb =
         RunQueryResponse.newBuilder()
@@ -758,6 +749,7 @@ public class DatastoreTest {
     List<RunQueryResponse> responses = new ArrayList<>();
     RecordQuery<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
+    requestPb.setProjectId(PROJECT_ID);
     query.populatePb(requestPb);
     QueryResultBatch queryResultBatchPb =
         RunQueryResponse.newBuilder()

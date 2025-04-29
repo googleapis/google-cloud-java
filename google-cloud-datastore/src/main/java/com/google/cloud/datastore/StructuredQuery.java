@@ -27,6 +27,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.cloud.Timestamp;
@@ -700,6 +701,7 @@ public abstract class StructuredQuery<V> extends Query<V> implements RecordQuery
    *
    * @param <V> the type of result the query returns.
    */
+  @InternalExtensionOnly
   public interface Builder<V> {
 
     /** Sets the namespace for the query. */

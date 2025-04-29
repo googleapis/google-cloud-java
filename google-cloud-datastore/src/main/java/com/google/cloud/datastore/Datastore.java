@@ -17,6 +17,7 @@
 package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.Service;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.datastore.v1.TransactionOptions;
@@ -24,7 +25,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /** An interface for Google Cloud Datastore. */
-public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWriter {
+@InternalExtensionOnly
+public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWriter, AutoCloseable {
 
   /**
    * Returns a new Datastore transaction.
@@ -488,10 +490,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  default <T> QueryResults<T> run(
-      Query<T> query, ExplainOptions explainOptions, ReadOption... options) {
-    throw new UnsupportedOperationException("Not implemented.");
-  }
+  <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
    * Submits a {@link AggregationQuery} and returns {@link AggregationResults}. {@link ReadOption}s
@@ -536,9 +535,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    * @return {@link AggregationResults}
    */
-  default AggregationResults runAggregation(AggregationQuery query, ReadOption... options) {
-    throw new UnsupportedOperationException("Not implemented.");
-  }
+  AggregationResults runAggregation(AggregationQuery query, ReadOption... options);
 
   /**
    * Submits a {@link AggregationQuery} with specified {@link
@@ -564,8 +561,17 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @return {@link AggregationResults}
    */
   @BetaApi
-  default AggregationResults runAggregation(
-      AggregationQuery query, ExplainOptions explainOptions, ReadOption... options) {
-    throw new UnsupportedOperationException("Not implemented.");
-  }
+  AggregationResults runAggregation(
+      AggregationQuery query, ExplainOptions explainOptions, ReadOption... options);
+
+  /**
+   * Closes the gRPC channels associated with this instance and frees up their resources. This
+   * method blocks until all channels are closed. Once this method is called, this Datastore client
+   * is no longer usable.
+   */
+  @Override
+  void close() throws Exception;
+
+  /** Returns true if this background resource has been shut down. */
+  boolean isClosed();
 }

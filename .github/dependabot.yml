@@ -17,8 +17,7 @@ updates:
     # If a security vulnerability comes in, we will be notified about 
     # it via template in the synthtool repository.
     ignore:
-    - dependency-name: "*"
-
+      - dependency-name: "*"
 # rules for the `grpc-experimental` branch
   - package-ecosystem: maven
     directory: "/"

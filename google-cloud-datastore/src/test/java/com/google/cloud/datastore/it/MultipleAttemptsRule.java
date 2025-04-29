@@ -37,7 +37,7 @@ public final class MultipleAttemptsRule implements TestRule {
     this(attemptCount, 1000L);
   }
 
-  MultipleAttemptsRule(int attemptCount, long initialBackoffMillis) {
+  public MultipleAttemptsRule(int attemptCount, long initialBackoffMillis) {
     checkState(attemptCount > 0, "attemptCount must be > 0");
     checkState(initialBackoffMillis > 0, "initialBackoffMillis must be > 0");
     this.initialBackoffMillis = initialBackoffMillis;

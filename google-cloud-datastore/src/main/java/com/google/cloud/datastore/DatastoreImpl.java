@@ -73,10 +73,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
+  Logger logger = Logger.getLogger(Datastore.class.getName());
   private final DatastoreRpc datastoreRpc;
   private final RetrySettings retrySettings;
   private static final ExceptionHandler TRANSACTION_EXCEPTION_HANDLER =
@@ -178,6 +181,20 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         }
       }
     }
+  }
+
+  @Override
+  public void close() throws Exception {
+    try {
+      datastoreRpc.close();
+    } catch (Exception e) {
+      logger.log(Level.WARNING, "Failed to close channels", e);
+    }
+  }
+
+  @Override
+  public boolean isClosed() {
+    return datastoreRpc.isClosed();
   }
 
   static class ReadWriteTransactionCallable<T> implements Callable<T> {

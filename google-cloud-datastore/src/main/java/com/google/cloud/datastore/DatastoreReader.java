@@ -17,11 +17,13 @@
 package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.datastore.models.ExplainOptions;
 import java.util.Iterator;
 import java.util.List;
 
 /** An interface to represent Google Cloud Datastore read operations. */
+@InternalExtensionOnly
 public interface DatastoreReader {
 
   /**
@@ -61,9 +63,7 @@ public interface DatastoreReader {
    *
    * @throws DatastoreException upon failure
    */
-  default AggregationResults runAggregation(AggregationQuery query) {
-    throw new UnsupportedOperationException("Not implemented.");
-  }
+  AggregationResults runAggregation(AggregationQuery query);
 
   /**
    * Submits a {@link AggregationQuery} with a specified {@link
@@ -72,7 +72,5 @@ public interface DatastoreReader {
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  default AggregationResults runAggregation(AggregationQuery query, ExplainOptions explainOptions) {
-    throw new UnsupportedOperationException("Not implemented.");
-  }
+  AggregationResults runAggregation(AggregationQuery query, ExplainOptions explainOptions);
 }

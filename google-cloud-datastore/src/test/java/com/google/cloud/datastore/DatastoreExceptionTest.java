@@ -97,7 +97,7 @@ public class DatastoreExceptionTest {
     cause = new IllegalArgumentException("message");
     exceptionMock = createMock(RetryHelper.RetryHelperException.class);
     expect(exceptionMock.getMessage()).andReturn("message").times(1);
-    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    expect(exceptionMock.getCause()).andReturn(cause).times(4);
     replay(exceptionMock);
     try {
       DatastoreException.translateAndThrow(exceptionMock);
