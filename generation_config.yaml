@@ -1271,6 +1271,21 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/lifesciences/v2beta
 
+- api_shortname: lustre
+  name_pretty: Google Cloud Managed Lustre API
+  product_documentation: https://cloud.google.com/managed-lustre/docs
+  api_description: Google Cloud Managed Lustre delivers a high-performance, fully
+    managed parallel file system optimized for AI and HPC applications.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-lustre/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-lustre
+  api_id: lustre.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/lustre/v1
+  requires_billing: true
 - api_shortname: managedidentities
   name_pretty: Managed Service for Microsoft Active Directory
   product_documentation: https://cloud.google.com/managed-microsoft-ad/
