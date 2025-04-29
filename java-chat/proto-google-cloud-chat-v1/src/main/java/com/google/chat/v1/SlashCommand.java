@@ -35,6 +35,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.SlashCommand)
     SlashCommandOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SlashCommand.newBuilder() to construct.
   private SlashCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMMAND_ID_FIELD_NUMBER = 1;
   private long commandId_ = 0L;
+
   /**
    *
    *
@@ -237,6 +239,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -418,6 +421,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long commandId_;
+
     /**
      *
      *
@@ -433,6 +437,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
     public long getCommandId() {
       return commandId_;
     }
+
     /**
      *
      *
@@ -452,6 +457,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

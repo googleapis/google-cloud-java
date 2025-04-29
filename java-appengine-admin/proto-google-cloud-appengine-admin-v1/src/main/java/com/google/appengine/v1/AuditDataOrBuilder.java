@@ -36,6 +36,7 @@ public interface AuditDataOrBuilder
    * @return Whether the updateService field is set.
    */
   boolean hasUpdateService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AuditDataOrBuilder
    * @return The updateService.
    */
   com.google.appengine.v1.UpdateServiceMethod getUpdateService();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface AuditDataOrBuilder
    * @return Whether the createVersion field is set.
    */
   boolean hasCreateVersion();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface AuditDataOrBuilder
    * @return The createVersion.
    */
   com.google.appengine.v1.CreateVersionMethod getCreateVersion();
+
   /**
    *
    *

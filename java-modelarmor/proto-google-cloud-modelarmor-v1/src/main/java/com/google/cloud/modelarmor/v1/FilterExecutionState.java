@@ -73,6 +73,7 @@ public enum FilterExecutionState implements com.google.protobuf.ProtocolMessageE
    * <code>FILTER_EXECUTION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int FILTER_EXECUTION_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum FilterExecutionState implements com.google.protobuf.ProtocolMessageE
    * <code>EXECUTION_SUCCESS = 1;</code>
    */
   public static final int EXECUTION_SUCCESS_VALUE = 1;
+
   /**
    *
    *

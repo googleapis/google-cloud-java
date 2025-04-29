@@ -34,6 +34,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest)
     SuggestConversationSummaryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SuggestConversationSummaryRequest.newBuilder() to construct.
   private SuggestConversationSummaryRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 4;
   private int contextSize_ = 0;
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
 
   public static final int ASSIST_QUERY_PARAMS_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.v2beta1.AssistQueryParameters assistQueryParams_;
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
   public boolean hasAssistQueryParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
         ? com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()
         : assistQueryParams_;
   }
+
   /**
    *
    *
@@ -464,6 +473,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -717,6 +727,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object conversation_ = "";
+
     /**
      *
      *
@@ -743,6 +754,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -769,6 +781,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -794,6 +807,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +829,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +858,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -872,6 +888,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +947,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +972,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1004,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     }
 
     private int contextSize_;
+
     /**
      *
      *
@@ -1001,6 +1022,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     public int getContextSize() {
       return contextSize_;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1071,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
             com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder,
             com.google.cloud.dialogflow.v2beta1.AssistQueryParametersOrBuilder>
         assistQueryParamsBuilder_;
+
     /**
      *
      *
@@ -1065,6 +1089,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
     public boolean hasAssistQueryParams() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1088,6 +1113,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
         return assistQueryParamsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1140,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1164,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1220,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1231,6 +1262,7 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
             : assistQueryParams_;
       }
     }
+
     /**
      *
      *

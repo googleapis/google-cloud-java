@@ -38,6 +38,7 @@ public interface SqlTranslationWarningOrBuilder
    * @return Whether the warningDetail field is set.
    */
   boolean hasWarningDetail();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SqlTranslationWarningOrBuilder
    * @return The warningDetail.
    */
   com.google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetail getWarningDetail();
+
   /**
    *
    *

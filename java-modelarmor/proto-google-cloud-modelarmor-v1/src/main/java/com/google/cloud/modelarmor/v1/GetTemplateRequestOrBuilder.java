@@ -38,6 +38,7 @@ public interface GetTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

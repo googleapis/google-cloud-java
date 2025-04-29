@@ -311,6 +311,19 @@ public final class SecuritySettingsServiceGrpc {
     return SecuritySettingsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SecuritySettingsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SecuritySettingsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecuritySettingsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SecuritySettingsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecuritySettingsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SecuritySettingsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -553,6 +566,96 @@ public final class SecuritySettingsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SecuritySettingsService.
+   *
+   * <pre>
+   * Service for managing security settings for Dialogflow.
+   * </pre>
+   */
+  public static final class SecuritySettingsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SecuritySettingsServiceBlockingV2Stub> {
+    private SecuritySettingsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SecuritySettingsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SecuritySettingsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create security settings in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings createSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]. The
+     * returned settings may be stale by up to 1 minute.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SecuritySettings updateSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all security settings in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse listSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSecuritySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified
+     * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSecuritySettingsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SecuritySettingsService.
    *
    * <pre>
    * Service for managing security settings for Dialogflow.

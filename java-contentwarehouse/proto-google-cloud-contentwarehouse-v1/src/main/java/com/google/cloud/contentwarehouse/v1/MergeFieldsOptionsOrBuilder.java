@@ -41,6 +41,7 @@ public interface MergeFieldsOptionsOrBuilder
    * @return Whether the replaceMessageFields field is set.
    */
   boolean hasReplaceMessageFields();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface MergeFieldsOptionsOrBuilder
    * @return Whether the replaceRepeatedFields field is set.
    */
   boolean hasReplaceRepeatedFields();
+
   /**
    *
    *

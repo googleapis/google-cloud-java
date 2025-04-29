@@ -40,6 +40,7 @@ public interface ListEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ListEventsRequestOrBuilder
    * <pre>
    * Optional. The maximum number of events to return. The service may return
    * fewer than this value. If unspecified, at most 100 events will be returned.
+   * These events are ordered by timestamp in ascending order.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,6 +89,7 @@ public interface ListEventsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

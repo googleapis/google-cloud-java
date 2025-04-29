@@ -533,6 +533,19 @@ public final class AccessApprovalGrpc {
     return AccessApprovalStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AccessApprovalBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AccessApprovalBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AccessApprovalBlockingV2Stub>() {
+          @java.lang.Override
+          public AccessApprovalBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AccessApprovalBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AccessApprovalBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1016,6 +1029,192 @@ public final class AccessApprovalGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AccessApproval.
+   *
+   * <pre>
+   * This API allows a customer to manage accesses to cloud resources by
+   * Google personnel. It defines the following resource model:
+   * - The API has a collection of
+   *   [ApprovalRequest][google.cloud.accessapproval.v1.ApprovalRequest]
+   *   resources, named `approvalRequests/{approval_request}`
+   * - The API has top-level settings per Project/Folder/Organization, named
+   *   `accessApprovalSettings`
+   * The service also periodically emails a list of recipients, defined at the
+   * Project/Folder/Organization level in the accessApprovalSettings, when there
+   * is a pending ApprovalRequest for them to act on. The ApprovalRequests can
+   * also optionally be published to a Pub/Sub topic owned by the customer
+   * (contact support if you would like to enable Pub/Sub notifications).
+   * ApprovalRequests can be approved or dismissed. Google personnel can only
+   * access the indicated resource or resources if the request is approved
+   * (subject to some exclusions:
+   * https://cloud.google.com/access-approval/docs/overview#exclusions).
+   * Note: Using Access Approval functionality will mean that Google may not be
+   * able to meet the SLAs for your chosen products, as any support response times
+   * may be dramatically increased. As such the SLAs do not apply to any service
+   * disruption to the extent impacted by Customer's use of Access Approval. Do
+   * not enable Access Approval for projects where you may require high service
+   * availability and rapid response by Google Cloud Support.
+   * After a request is approved or dismissed, no further action may be taken on
+   * it. Requests with the requested_expiration in the past or with no activity
+   * for 14 days are considered dismissed. When an approval expires, the request
+   * is considered dismissed.
+   * If a request is not approved or dismissed, we call it pending.
+   * </pre>
+   */
+  public static final class AccessApprovalBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AccessApprovalBlockingV2Stub> {
+    private AccessApprovalBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AccessApprovalBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AccessApprovalBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists approval requests associated with a project, folder, or organization.
+     * Approval requests can be filtered by state (pending, active, dismissed).
+     * The order is reverse chronological.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse listApprovalRequests(
+        com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListApprovalRequestsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an approval request. Returns NOT_FOUND if the request does not exist.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.ApprovalRequest getApprovalRequest(
+        com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApprovalRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a request and returns the updated ApprovalRequest.
+     * Returns NOT_FOUND if the request does not exist. Returns
+     * FAILED_PRECONDITION if the request exists but is not in a pending state.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.ApprovalRequest approveApprovalRequest(
+        com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApproveApprovalRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dismisses a request. Returns the updated ApprovalRequest.
+     * NOTE: This does not deny access to the resource if another request has been
+     * made and approved. It is equivalent in effect to ignoring the request
+     * altogether.
+     * Returns NOT_FOUND if the request does not exist.
+     * Returns FAILED_PRECONDITION if the request exists but is not in a pending
+     * state.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.ApprovalRequest dismissApprovalRequest(
+        com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDismissApprovalRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Invalidates an existing ApprovalRequest. Returns the updated
+     * ApprovalRequest.
+     * NOTE: This does not deny access to the resource if another request has been
+     * made and approved. It only invalidates a single approval.
+     * Returns FAILED_PRECONDITION if the request exists but is not in an approved
+     * state.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.ApprovalRequest invalidateApprovalRequest(
+        com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInvalidateApprovalRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the settings associated with a project, folder, or organization.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.AccessApprovalSettings getAccessApprovalSettings(
+        com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessApprovalSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings associated with a project, folder, or organization.
+     * Settings to update are determined by the value of field_mask.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.AccessApprovalSettings updateAccessApprovalSettings(
+        com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccessApprovalSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the settings associated with a project, folder, or organization.
+     * This will have the effect of disabling Access Approval for the project,
+     * folder, or organization, but only if all ancestors also have Access
+     * Approval disabled. If Access Approval is enabled at a higher level of the
+     * hierarchy, then Access Approval will still be enabled at this level as
+     * the settings are inherited.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAccessApprovalSettings(
+        com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccessApprovalSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the service account that is used by Access Approval to access KMS
+     * keys for signing approved approval requests.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount
+        getAccessApprovalServiceAccount(
+            com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessApprovalServiceAccountMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AccessApproval.
    *
    * <pre>
    * This API allows a customer to manage accesses to cloud resources by

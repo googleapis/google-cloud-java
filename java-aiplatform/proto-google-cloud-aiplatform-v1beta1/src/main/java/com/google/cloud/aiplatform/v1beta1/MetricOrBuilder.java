@@ -36,6 +36,7 @@ public interface MetricOrBuilder
    * @return Whether the pointwiseMetricSpec field is set.
    */
   boolean hasPointwiseMetricSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MetricOrBuilder
    * @return The pointwiseMetricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpec getPointwiseMetricSpec();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface MetricOrBuilder
    * @return Whether the pairwiseMetricSpec field is set.
    */
   boolean hasPairwiseMetricSpec();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface MetricOrBuilder
    * @return The pairwiseMetricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.PairwiseMetricSpec getPairwiseMetricSpec();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface MetricOrBuilder
    * @return Whether the exactMatchSpec field is set.
    */
   boolean hasExactMatchSpec();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface MetricOrBuilder
    * @return The exactMatchSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ExactMatchSpec getExactMatchSpec();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface MetricOrBuilder
    * @return Whether the bleuSpec field is set.
    */
   boolean hasBleuSpec();
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface MetricOrBuilder
    * @return The bleuSpec.
    */
   com.google.cloud.aiplatform.v1beta1.BleuSpec getBleuSpec();
+
   /**
    *
    *
@@ -177,6 +185,7 @@ public interface MetricOrBuilder
    * @return Whether the rougeSpec field is set.
    */
   boolean hasRougeSpec();
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface MetricOrBuilder
    * @return The rougeSpec.
    */
   com.google.cloud.aiplatform.v1beta1.RougeSpec getRougeSpec();
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public interface MetricOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Metric.AggregationMetric>
       getAggregationMetricsList();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface MetricOrBuilder
    * @return The count of aggregationMetrics.
    */
   int getAggregationMetricsCount();
+
   /**
    *
    *
@@ -244,6 +256,7 @@ public interface MetricOrBuilder
    * @return The aggregationMetrics at the given index.
    */
   com.google.cloud.aiplatform.v1beta1.Metric.AggregationMetric getAggregationMetrics(int index);
+
   /**
    *
    *
@@ -258,6 +271,7 @@ public interface MetricOrBuilder
    * @return A list containing the enum numeric values on the wire for aggregationMetrics.
    */
   java.util.List<java.lang.Integer> getAggregationMetricsValueList();
+
   /**
    *
    *

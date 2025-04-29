@@ -34,6 +34,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Content augmented_prompt = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Content> getAugmentedPromptList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Content augmented_prompt = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Content getAugmentedPrompt(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Content augmented_prompt = 1;</code>
    */
   int getAugmentedPromptCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AugmentPromptResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ContentOrBuilder>
       getAugmentedPromptOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Fact facts = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Fact> getFactsList();
+
   /**
    *
    *
@@ -96,6 +101,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Fact facts = 2;</code>
    */
   com.google.cloud.aiplatform.v1.Fact getFacts(int index);
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Fact facts = 2;</code>
    */
   int getFactsCount();
+
   /**
    *
    *
@@ -116,6 +123,7 @@ public interface AugmentPromptResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Fact facts = 2;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.FactOrBuilder> getFactsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ConnectCluster)
     ConnectClusterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectCluster.newBuilder() to construct.
   private ConnectCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,6 +143,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -152,6 +154,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -162,6 +165,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -275,6 +279,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     private PlatformConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -306,6 +311,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCP_CONFIG_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -324,6 +330,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcpConfig() {
     return platformConfigCase_ == 7;
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.managedkafka.v1.ConnectGcpConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -369,6 +377,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -393,6 +402,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -422,6 +432,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kafkaCluster_ = "";
+
   /**
    *
    *
@@ -449,6 +460,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -479,6 +491,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -495,6 +508,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -511,6 +525,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -528,6 +543,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -544,6 +560,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -560,6 +577,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -601,6 +619,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -617,12 +636,14 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -636,6 +657,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -656,6 +678,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -679,6 +702,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAPACITY_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.managedkafka.v1.CapacityConfig capacityConfig_;
+
   /**
    *
    *
@@ -696,6 +720,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCapacityConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -715,6 +740,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.managedkafka.v1.CapacityConfig.getDefaultInstance()
         : capacityConfig_;
   }
+
   /**
    *
    *
@@ -735,6 +761,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -752,6 +779,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -800,6 +828,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public int getConfigCount() {
     return internalGetConfig().getMap().size();
   }
+
   /**
    *
    *
@@ -818,12 +847,14 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetConfig().getMap().containsKey(key);
   }
+
   /** Use {@link #getConfigMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConfig() {
     return getConfigMap();
   }
+
   /**
    *
    *
@@ -839,6 +870,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
     return internalGetConfig().getMap();
   }
+
   /**
    *
    *
@@ -861,6 +893,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConfig().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1163,6 +1196,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1556,6 +1590,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.managedkafka.v1.ConnectGcpConfig.Builder,
             com.google.cloud.managedkafka.v1.ConnectGcpConfigOrBuilder>
         gcpConfigBuilder_;
+
     /**
      *
      *
@@ -1574,6 +1609,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcpConfig() {
       return platformConfigCase_ == 7;
     }
+
     /**
      *
      *
@@ -1602,6 +1638,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.managedkafka.v1.ConnectGcpConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1664,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       platformConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1650,6 +1688,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       platformConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1725,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       platformConfigCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1754,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1770,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.managedkafka.v1.ConnectGcpConfig.Builder getGcpConfigBuilder() {
       return getGcpConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1752,6 +1794,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.managedkafka.v1.ConnectGcpConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1789,6 +1832,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1812,6 +1856,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1835,6 +1880,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1857,6 +1903,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1922,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1948,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kafkaCluster_ = "";
+
     /**
      *
      *
@@ -1926,6 +1975,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1952,6 +2002,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1977,6 +2028,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1998,6 +2050,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2031,6 +2084,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2047,6 +2101,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2069,6 +2124,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2093,6 +2149,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2114,6 +2171,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2143,6 +2201,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2223,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2240,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2200,6 +2261,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2234,6 +2296,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2250,6 +2313,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2272,6 +2336,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2296,6 +2361,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2383,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2346,6 +2413,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2435,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2383,6 +2452,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2403,6 +2473,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2456,6 +2527,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2472,12 +2544,14 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2491,6 +2565,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2511,6 +2586,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2537,6 +2613,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2553,12 +2630,14 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2579,6 +2658,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2680,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.managedkafka.v1.CapacityConfig.Builder,
             com.google.cloud.managedkafka.v1.CapacityConfigOrBuilder>
         capacityConfigBuilder_;
+
     /**
      *
      *
@@ -2616,6 +2697,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCapacityConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2638,6 +2720,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
         return capacityConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2662,6 +2745,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2684,6 +2768,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2714,6 +2799,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2735,6 +2821,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2751,6 +2838,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCapacityConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2771,6 +2859,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
             : capacityConfig_;
       }
     }
+
     /**
      *
      *
@@ -2800,6 +2889,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2817,6 +2907,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2837,6 +2928,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2858,6 +2950,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.managedkafka.v1.ConnectCluster.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2881,6 +2974,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2926,6 +3020,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public int getConfigCount() {
       return internalGetConfig().getMap().size();
     }
+
     /**
      *
      *
@@ -2944,12 +3039,14 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetConfig().getMap().containsKey(key);
     }
+
     /** Use {@link #getConfigMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConfig() {
       return getConfigMap();
     }
+
     /**
      *
      *
@@ -2965,6 +3062,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
       return internalGetConfig().getMap();
     }
+
     /**
      *
      *
@@ -2987,6 +3085,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConfig().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3015,6 +3114,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConfig().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3033,12 +3133,14 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConfig().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConfig() {
       bitField0_ |= 0x00000100;
       return internalGetMutableConfig().getMutableMap();
     }
+
     /**
      *
      *
@@ -3061,6 +3163,7 @@ public final class ConnectCluster extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
+
     /**
      *
      *

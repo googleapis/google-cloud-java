@@ -40,6 +40,7 @@ public interface DeleteExampleStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

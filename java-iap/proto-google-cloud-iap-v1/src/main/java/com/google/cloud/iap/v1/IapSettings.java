@@ -33,6 +33,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.IapSettings)
     IapSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IapSettings.newBuilder() to construct.
   private IapSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_SETTINGS_FIELD_NUMBER = 5;
   private com.google.cloud.iap.v1.AccessSettings accessSettings_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.AccessSettings.getDefaultInstance()
         : accessSettings_;
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APPLICATION_SETTINGS_FIELD_NUMBER = 6;
   private com.google.cloud.iap.v1.ApplicationSettings applicationSettings_;
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApplicationSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.ApplicationSettings.getDefaultInstance()
         : applicationSettings_;
   }
+
   /**
    *
    *
@@ -412,6 +421,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +657,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.AccessSettings.Builder,
             com.google.cloud.iap.v1.AccessSettingsOrBuilder>
         accessSettingsBuilder_;
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
         return accessSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +891,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +913,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccessSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
             : accessSettings_;
       }
     }
+
     /**
      *
      *
@@ -962,6 +986,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.ApplicationSettings.Builder,
             com.google.cloud.iap.v1.ApplicationSettingsOrBuilder>
         applicationSettingsBuilder_;
+
     /**
      *
      *
@@ -978,6 +1003,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApplicationSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1000,6 +1026,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
         return applicationSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1051,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1074,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1105,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1144,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getApplicationSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1133,6 +1165,7 @@ public final class IapSettings extends com.google.protobuf.GeneratedMessageV3
             : applicationSettings_;
       }
     }
+
     /**
      *
      *

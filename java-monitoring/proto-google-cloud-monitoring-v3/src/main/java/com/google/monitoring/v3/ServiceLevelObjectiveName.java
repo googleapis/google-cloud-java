@@ -366,7 +366,8 @@ public class ServiceLevelObjectiveName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               serviceLevelObjectiveName.pathTemplate, PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE),
-          "toBuilder is only supported when ServiceLevelObjectiveName has the pattern of projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}");
+          "toBuilder is only supported when ServiceLevelObjectiveName has the pattern of"
+              + " projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}");
       this.project = serviceLevelObjectiveName.project;
       this.service = serviceLevelObjectiveName.service;
       this.serviceLevelObjective = serviceLevelObjectiveName.serviceLevelObjective;

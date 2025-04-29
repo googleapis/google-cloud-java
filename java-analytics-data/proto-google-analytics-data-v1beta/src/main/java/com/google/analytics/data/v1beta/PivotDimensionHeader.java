@@ -33,6 +33,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.PivotDimensionHeader)
     PivotDimensionHeaderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PivotDimensionHeader.newBuilder() to construct.
   private PivotDimensionHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.DimensionValue> dimensionValues_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.analytics.data.v1beta.DimensionValue> getDimensionValuesList() {
     return dimensionValues_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       getDimensionValuesOrBuilderList() {
     return dimensionValues_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
   public int getDimensionValuesCount() {
     return dimensionValues_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
   public com.google.analytics.data.v1beta.DimensionValue getDimensionValues(int index) {
     return dimensionValues_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
         return dimensionValuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
         return dimensionValuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
         return dimensionValuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +716,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +812,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
         int index) {
       return getDimensionValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -810,6 +830,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
         return dimensionValuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -827,6 +848,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(dimensionValues_);
       }
     }
+
     /**
      *
      *
@@ -840,6 +862,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       return getDimensionValuesFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.DimensionValue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -854,6 +877,7 @@ public final class PivotDimensionHeader extends com.google.protobuf.GeneratedMes
       return getDimensionValuesFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1beta.DimensionValue.getDefaultInstance());
     }
+
     /**
      *
      *

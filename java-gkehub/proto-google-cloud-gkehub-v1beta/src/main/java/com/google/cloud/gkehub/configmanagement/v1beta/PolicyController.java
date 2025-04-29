@@ -33,6 +33,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1beta.PolicyController)
     PolicyControllerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicyController.newBuilder() to construct.
   private PolicyController(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int TEMPLATE_LIBRARY_INSTALLED_FIELD_NUMBER = 2;
   private boolean templateLibraryInstalled_ = false;
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public boolean hasTemplateLibraryInstalled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int AUDIT_INTERVAL_SECONDS_FIELD_NUMBER = 3;
   private long auditIntervalSeconds_ = 0L;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public boolean hasAuditIntervalSeconds() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exemptableNamespaces_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getExemptableNamespacesList() {
     return exemptableNamespaces_;
   }
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public int getExemptableNamespacesCount() {
     return exemptableNamespaces_.size();
   }
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public java.lang.String getExemptableNamespaces(int index) {
     return exemptableNamespaces_.get(index);
   }
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int REFERENTIAL_RULES_ENABLED_FIELD_NUMBER = 5;
   private boolean referentialRulesEnabled_ = false;
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int LOG_DENIES_ENABLED_FIELD_NUMBER = 6;
   private boolean logDeniesEnabled_ = false;
+
   /**
    *
    *
@@ -259,6 +271,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int MUTATION_ENABLED_FIELD_NUMBER = 7;
   private boolean mutationEnabled_ = false;
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int MONITORING_FIELD_NUMBER = 8;
   private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring monitoring_;
+
   /**
    *
    *
@@ -295,6 +309,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public boolean hasMonitoring() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -315,6 +330,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : monitoring_;
   }
+
   /**
    *
    *
@@ -336,6 +352,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -352,6 +369,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -368,6 +386,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -643,6 +662,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -966,6 +986,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -983,6 +1004,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1048,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean templateLibraryInstalled_;
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean hasTemplateLibraryInstalled() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean getTemplateLibraryInstalled() {
       return templateLibraryInstalled_;
     }
+
     /**
      *
      *
@@ -1074,6 +1100,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     }
 
     private long auditIntervalSeconds_;
+
     /**
      *
      *
@@ -1109,6 +1137,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean hasAuditIntervalSeconds() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public long getAuditIntervalSeconds() {
       return auditIntervalSeconds_;
     }
+
     /**
      *
      *
@@ -1145,6 +1175,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1204,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       exemptableNamespaces_.makeImmutable();
       return exemptableNamespaces_;
     }
+
     /**
      *
      *
@@ -1204,6 +1237,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public int getExemptableNamespacesCount() {
       return exemptableNamespaces_.size();
     }
+
     /**
      *
      *
@@ -1220,6 +1254,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public java.lang.String getExemptableNamespaces(int index) {
       return exemptableNamespaces_.get(index);
     }
+
     /**
      *
      *
@@ -1236,6 +1271,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getExemptableNamespacesBytes(int index) {
       return exemptableNamespaces_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1260,6 +1296,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1320,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1341,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1361,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1388,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean referentialRulesEnabled_;
+
     /**
      *
      *
@@ -1364,6 +1405,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean getReferentialRulesEnabled() {
       return referentialRulesEnabled_;
     }
+
     /**
      *
      *
@@ -1384,6 +1426,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1404,6 +1447,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean logDeniesEnabled_;
+
     /**
      *
      *
@@ -1419,6 +1463,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean getLogDeniesEnabled() {
       return logDeniesEnabled_;
     }
+
     /**
      *
      *
@@ -1438,6 +1483,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1503,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean mutationEnabled_;
+
     /**
      *
      *
@@ -1474,6 +1521,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean getMutationEnabled() {
       return mutationEnabled_;
     }
+
     /**
      *
      *
@@ -1495,6 +1543,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1570,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring.Builder,
             com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoringOrBuilder>
         monitoringBuilder_;
+
     /**
      *
      *
@@ -1536,6 +1586,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean hasMonitoring() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1559,6 +1610,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
         return monitoringBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1583,6 +1635,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1658,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1690,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1711,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1728,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getMonitoringFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1693,6 +1750,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             : monitoring_;
       }
     }
+
     /**
      *
      *
@@ -1727,6 +1785,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1743,6 +1802,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -1765,6 +1825,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1789,6 +1850,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1872,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1902,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1924,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1941,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1896,6 +1962,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
+
     /**
      *
      *

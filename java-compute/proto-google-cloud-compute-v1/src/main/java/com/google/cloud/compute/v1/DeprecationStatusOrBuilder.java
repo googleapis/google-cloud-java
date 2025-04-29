@@ -36,6 +36,7 @@ public interface DeprecationStatusOrBuilder
    * @return Whether the deleted field is set.
    */
   boolean hasDeleted();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DeprecationStatusOrBuilder
    * @return The deleted.
    */
   java.lang.String getDeleted();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DeprecationStatusOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DeprecationStatusOrBuilder
    * @return The deprecated.
    */
   java.lang.String getDeprecated();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface DeprecationStatusOrBuilder
    * @return Whether the obsolete field is set.
    */
   boolean hasObsolete();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface DeprecationStatusOrBuilder
    * @return The obsolete.
    */
   java.lang.String getObsolete();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface DeprecationStatusOrBuilder
    * @return Whether the replacement field is set.
    */
   boolean hasReplacement();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface DeprecationStatusOrBuilder
    * @return The replacement.
    */
   java.lang.String getReplacement();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface DeprecationStatusOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface DeprecationStatusOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *

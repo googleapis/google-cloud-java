@@ -33,6 +33,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DeployedIndexAuthConfig)
     DeployedIndexAuthConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeployedIndexAuthConfig.newBuilder() to construct.
   private DeployedIndexAuthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return A list containing the audiences.
      */
     java.util.List<java.lang.String> getAudiencesList();
+
     /**
      *
      *
@@ -96,6 +98,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return The count of audiences.
      */
     int getAudiencesCount();
+
     /**
      *
      *
@@ -112,6 +115,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return The audiences at the given index.
      */
     java.lang.String getAudiences(int index);
+
     /**
      *
      *
@@ -144,6 +148,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return A list containing the allowedIssuers.
      */
     java.util.List<java.lang.String> getAllowedIssuersList();
+
     /**
      *
      *
@@ -159,6 +164,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return The count of allowedIssuers.
      */
     int getAllowedIssuersCount();
+
     /**
      *
      *
@@ -175,6 +181,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * @return The allowedIssuers at the given index.
      */
     java.lang.String getAllowedIssuers(int index);
+
     /**
      *
      *
@@ -192,6 +199,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getAllowedIssuersBytes(int index);
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider)
       AuthProviderOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AuthProvider.newBuilder() to construct.
     private AuthProvider(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -244,6 +253,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList audiences_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -261,6 +271,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getAudiencesList() {
       return audiences_;
     }
+
     /**
      *
      *
@@ -278,6 +289,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public int getAudiencesCount() {
       return audiences_.size();
     }
+
     /**
      *
      *
@@ -296,6 +308,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public java.lang.String getAudiences(int index) {
       return audiences_.get(index);
     }
+
     /**
      *
      *
@@ -320,6 +333,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allowedIssuers_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -337,6 +351,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public com.google.protobuf.ProtocolStringList getAllowedIssuersList() {
       return allowedIssuers_;
     }
+
     /**
      *
      *
@@ -354,6 +369,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public int getAllowedIssuersCount() {
       return allowedIssuers_.size();
     }
+
     /**
      *
      *
@@ -372,6 +388,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public java.lang.String getAllowedIssuers(int index) {
       return allowedIssuers_.get(index);
     }
+
     /**
      *
      *
@@ -576,6 +593,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -827,6 +846,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         audiences_.makeImmutable();
         return audiences_;
       }
+
       /**
        *
        *
@@ -844,6 +864,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public int getAudiencesCount() {
         return audiences_.size();
       }
+
       /**
        *
        *
@@ -862,6 +883,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public java.lang.String getAudiences(int index) {
         return audiences_.get(index);
       }
+
       /**
        *
        *
@@ -880,6 +902,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getAudiencesBytes(int index) {
         return audiences_.getByteString(index);
       }
+
       /**
        *
        *
@@ -906,6 +929,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -931,6 +955,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -953,6 +978,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -974,6 +1000,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1010,6 +1037,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1028,6 +1056,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         allowedIssuers_.makeImmutable();
         return allowedIssuers_;
       }
+
       /**
        *
        *
@@ -1045,6 +1074,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public int getAllowedIssuersCount() {
         return allowedIssuers_.size();
       }
+
       /**
        *
        *
@@ -1063,6 +1093,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public java.lang.String getAllowedIssuers(int index) {
         return allowedIssuers_.get(index);
       }
+
       /**
        *
        *
@@ -1081,6 +1112,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public com.google.protobuf.ByteString getAllowedIssuersBytes(int index) {
         return allowedIssuers_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1107,6 +1139,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1132,6 +1165,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1154,6 +1188,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1175,6 +1210,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1272,6 +1308,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int AUTH_PROVIDER_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider authProvider_;
+
   /**
    *
    *
@@ -1288,6 +1325,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
   public boolean hasAuthProvider() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1306,6 +1344,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider.getDefaultInstance()
         : authProvider_;
   }
+
   /**
    *
    *
@@ -1489,6 +1528,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1693,6 +1733,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider.Builder,
             com.google.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProviderOrBuilder>
         authProviderBuilder_;
+
     /**
      *
      *
@@ -1708,6 +1749,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public boolean hasAuthProvider() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1730,6 +1772,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         return authProviderBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1754,6 +1797,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1820,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1852,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1827,6 +1873,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1890,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       onChanged();
       return getAuthProviderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1864,6 +1912,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
             : authProvider_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1.OperationMetadata)
     OperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getResourceNamesList() {
     return resourceNames_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public int getResourceNamesCount() {
     return resourceNames_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public java.lang.String getResourceNames(int index) {
     return resourceNames_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +502,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       resourceNames_.makeImmutable();
       return resourceNames_;
     }
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getResourceNamesCount() {
       return resourceNames_.size();
     }
+
     /**
      *
      *
@@ -543,6 +552,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public java.lang.String getResourceNames(int index) {
       return resourceNames_.get(index);
     }
+
     /**
      *
      *
@@ -559,6 +569,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
       return resourceNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +618,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +639,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +659,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

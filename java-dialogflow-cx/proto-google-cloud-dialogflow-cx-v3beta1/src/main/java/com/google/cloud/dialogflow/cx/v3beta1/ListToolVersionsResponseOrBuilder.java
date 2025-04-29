@@ -35,6 +35,7 @@ public interface ListToolVersionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.ToolVersion tool_versions = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion> getToolVersionsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListToolVersionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.ToolVersion tool_versions = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.ToolVersion getToolVersions(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListToolVersionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.ToolVersion tool_versions = 1;</code>
    */
   int getToolVersionsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListToolVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ToolVersionOrBuilder>
       getToolVersionsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface ListToolVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

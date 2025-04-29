@@ -38,6 +38,7 @@ public interface GetPredictionResultRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

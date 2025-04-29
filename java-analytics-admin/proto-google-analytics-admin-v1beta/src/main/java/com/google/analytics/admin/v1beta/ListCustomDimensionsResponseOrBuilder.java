@@ -34,6 +34,7 @@ public interface ListCustomDimensionsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.CustomDimension custom_dimensions = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.CustomDimension> getCustomDimensionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCustomDimensionsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.CustomDimension custom_dimensions = 1;</code>
    */
   com.google.analytics.admin.v1beta.CustomDimension getCustomDimensions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCustomDimensionsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.CustomDimension custom_dimensions = 1;</code>
    */
   int getCustomDimensionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCustomDimensionsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.CustomDimensionOrBuilder>
       getCustomDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListCustomDimensionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

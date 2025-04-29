@@ -33,6 +33,7 @@ public final class MemoryUsageSample extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MemoryUsageSample)
     MemoryUsageSampleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MemoryUsageSample.newBuilder() to construct.
   private MemoryUsageSample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class MemoryUsageSample extends com.google.protobuf.GeneratedMessag
 
   public static final int UTILIZED_PERCENTAGE_FIELD_NUMBER = 1;
   private float utilizedPercentage_ = 0F;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class MemoryUsageSample extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class MemoryUsageSample extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private float utilizedPercentage_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class MemoryUsageSample extends com.google.protobuf.GeneratedMessag
     public float getUtilizedPercentage() {
       return utilizedPercentage_;
     }
+
     /**
      *
      *
@@ -456,6 +461,7 @@ public final class MemoryUsageSample extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

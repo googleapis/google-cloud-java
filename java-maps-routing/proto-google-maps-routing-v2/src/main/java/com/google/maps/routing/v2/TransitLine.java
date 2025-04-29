@@ -33,6 +33,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.TransitLine)
     TransitLineOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransitLine.newBuilder() to construct.
   private TransitLine(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routing.v2.TransitAgency> agencies_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.routing.v2.TransitAgency> getAgenciesList() {
     return agencies_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       getAgenciesOrBuilderList() {
     return agencies_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
   public int getAgenciesCount() {
     return agencies_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routing.v2.TransitAgency getAgencies(int index) {
     return agencies_.get(index);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object color_ = "";
+
   /**
    *
    *
@@ -271,6 +282,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object iconUri_ = "";
+
   /**
    *
    *
@@ -323,6 +336,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -351,6 +365,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nameShort_ = "";
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -404,6 +420,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object textColor_ = "";
+
   /**
    *
    *
@@ -428,6 +445,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -455,6 +473,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VEHICLE_FIELD_NUMBER = 8;
   private com.google.maps.routing.v2.TransitVehicle vehicle_;
+
   /**
    *
    *
@@ -470,6 +489,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVehicle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -487,6 +507,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routing.v2.TransitVehicle.getDefaultInstance()
         : vehicle_;
   }
+
   /**
    *
    *
@@ -731,6 +752,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1110,6 +1132,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return agenciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1126,6 +1149,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return agenciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1166,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return agenciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1189,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1210,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1233,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1256,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1276,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1297,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1318,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1338,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1358,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1371,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routing.v2.TransitAgency.Builder getAgenciesBuilder(int index) {
       return getAgenciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1353,6 +1388,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return agenciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1406,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(agencies_);
       }
     }
+
     /**
      *
      *
@@ -1383,6 +1420,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return getAgenciesFieldBuilder()
           .addBuilder(com.google.maps.routing.v2.TransitAgency.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1396,6 +1434,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       return getAgenciesFieldBuilder()
           .addBuilder(index, com.google.maps.routing.v2.TransitAgency.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1428,6 +1467,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1450,6 +1490,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1472,6 +1513,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +1535,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1510,6 +1553,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1578,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1556,6 +1601,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1578,6 +1624,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1646,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1664,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1640,6 +1689,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object color_ = "";
+
     /**
      *
      *
@@ -1663,6 +1713,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1686,6 +1737,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1708,6 +1760,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1726,6 +1779,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1805,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object iconUri_ = "";
+
     /**
      *
      *
@@ -1773,6 +1828,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1795,6 +1851,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1816,6 +1873,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1833,6 +1891,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1857,6 +1916,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nameShort_ = "";
+
     /**
      *
      *
@@ -1880,6 +1940,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1964,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1925,6 +1987,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1943,6 +2006,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1968,6 +2032,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object textColor_ = "";
+
     /**
      *
      *
@@ -1991,6 +2056,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2014,6 +2080,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2036,6 +2103,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2122,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2084,6 +2153,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routing.v2.TransitVehicle.Builder,
             com.google.maps.routing.v2.TransitVehicleOrBuilder>
         vehicleBuilder_;
+
     /**
      *
      *
@@ -2098,6 +2168,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVehicle() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2118,6 +2189,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
         return vehicleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2140,6 +2212,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2232,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2186,6 +2260,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2205,6 +2280,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2219,6 +2295,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVehicleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2237,6 +2314,7 @@ public final class TransitLine extends com.google.protobuf.GeneratedMessageV3
             : vehicle_;
       }
     }
+
     /**
      *
      *

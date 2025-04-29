@@ -40,6 +40,7 @@ public interface CreateSecuritySettingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateSecuritySettingsRequestOrBuilder
    * @return Whether the securitySettings field is set.
    */
   boolean hasSecuritySettings();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateSecuritySettingsRequestOrBuilder
    * @return The securitySettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings getSecuritySettings();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    * @return The externalKeyUri.
    */
   java.lang.String getExternalKeyUri();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    * @return The ekmConnectionKeyPath.
    */
   java.lang.String getEkmConnectionKeyPath();
+
   /**
    *
    *

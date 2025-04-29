@@ -36,6 +36,7 @@ public interface AwsSourceVmDetailsOrBuilder
    * @return The enum numeric value on the wire for firmware.
    */
   int getFirmwareValue();
+
   /**
    *
    *

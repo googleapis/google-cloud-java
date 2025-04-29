@@ -367,6 +367,19 @@ public final class ScheduleServiceGrpc {
     return ScheduleServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ScheduleServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ScheduleServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ScheduleServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ScheduleServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ScheduleServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ScheduleServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -691,6 +704,133 @@ public final class ScheduleServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ScheduleService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI's Schedule resources to
+   * periodically launch shceudled runs to make API calls.
+   * </pre>
+   */
+  public static final class ScheduleServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ScheduleServiceBlockingV2Stub> {
+    private ScheduleServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ScheduleServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ScheduleServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Schedule.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule createSchedule(
+        com.google.cloud.aiplatform.v1beta1.CreateScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Schedule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSchedule(
+        com.google.cloud.aiplatform.v1beta1.DeleteScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Schedule.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule getSchedule(
+        com.google.cloud.aiplatform.v1beta1.GetScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Schedules in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListSchedulesResponse listSchedules(
+        com.google.cloud.aiplatform.v1beta1.ListSchedulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchedulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a Schedule. Will mark
+     * [Schedule.state][google.cloud.aiplatform.v1beta1.Schedule.state] to
+     * 'PAUSED'. If the schedule is paused, no new runs will be created. Already
+     * created runs will NOT be paused or canceled.
+     * </pre>
+     */
+    public com.google.protobuf.Empty pauseSchedule(
+        com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused Schedule to start scheduling new runs. Will mark
+     * [Schedule.state][google.cloud.aiplatform.v1beta1.Schedule.state] to
+     * 'ACTIVE'. Only paused Schedule can be resumed.
+     * When the Schedule is resumed, new runs will be scheduled starting from the
+     * next execution time after the current time based on the time_specification
+     * in the Schedule. If [Schedule.catchUp][] is set up true, all
+     * missed runs will be scheduled for backfill first.
+     * </pre>
+     */
+    public com.google.protobuf.Empty resumeSchedule(
+        com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an active or paused Schedule.
+     * When the Schedule is updated, new runs will be scheduled starting from the
+     * updated next execution time after the update time based on the
+     * time_specification in the updated Schedule. All unstarted runs before the
+     * update time will be skipped while already created runs will NOT be paused
+     * or canceled.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule updateSchedule(
+        com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateScheduleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ScheduleService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's Schedule resources to

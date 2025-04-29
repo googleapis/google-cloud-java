@@ -42,6 +42,7 @@ public interface AgentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface AgentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface AgentOrBuilder
    * @return The defaultLanguageCode.
    */
   java.lang.String getDefaultLanguageCode();
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public interface AgentOrBuilder
    * @return A list containing the supportedLanguageCodes.
    */
   java.util.List<java.lang.String> getSupportedLanguageCodesList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface AgentOrBuilder
    * @return The count of supportedLanguageCodes.
    */
   int getSupportedLanguageCodesCount();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface AgentOrBuilder
    * @return The supportedLanguageCodes at the given index.
    */
   java.lang.String getSupportedLanguageCodes(int index);
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface AgentOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public interface AgentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public interface AgentOrBuilder
    * @return The avatarUri.
    */
   java.lang.String getAvatarUri();
+
   /**
    *
    *
@@ -282,6 +291,7 @@ public interface AgentOrBuilder
    * @return Whether the speechToTextSettings field is set.
    */
   boolean hasSpeechToTextSettings();
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public interface AgentOrBuilder
    * @return The speechToTextSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.SpeechToTextSettings getSpeechToTextSettings();
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public interface AgentOrBuilder
    * @return Whether the startFlow field is set.
    */
   boolean hasStartFlow();
+
   /**
    *
    *
@@ -344,6 +356,7 @@ public interface AgentOrBuilder
    * @return The startFlow.
    */
   java.lang.String getStartFlow();
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public interface AgentOrBuilder
    * @return Whether the startPlaybook field is set.
    */
   boolean hasStartPlaybook();
+
   /**
    *
    *
@@ -401,6 +415,7 @@ public interface AgentOrBuilder
    * @return The startPlaybook.
    */
   java.lang.String getStartPlaybook();
+
   /**
    *
    *
@@ -436,6 +451,7 @@ public interface AgentOrBuilder
    * @return The securitySettings.
    */
   java.lang.String getSecuritySettings();
+
   /**
    *
    *
@@ -527,6 +543,7 @@ public interface AgentOrBuilder
    * @return Whether the advancedSettings field is set.
    */
   boolean hasAdvancedSettings();
+
   /**
    *
    *
@@ -540,6 +557,7 @@ public interface AgentOrBuilder
    * @return The advancedSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
+
   /**
    *
    *
@@ -566,6 +584,7 @@ public interface AgentOrBuilder
    * @return Whether the gitIntegrationSettings field is set.
    */
   boolean hasGitIntegrationSettings();
+
   /**
    *
    *
@@ -580,6 +599,7 @@ public interface AgentOrBuilder
    * @return The gitIntegrationSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings getGitIntegrationSettings();
+
   /**
    *
    *
@@ -612,6 +632,7 @@ public interface AgentOrBuilder
    * @return Whether the bigqueryExportSettings field is set.
    */
   boolean hasBigqueryExportSettings();
+
   /**
    *
    *
@@ -630,6 +651,7 @@ public interface AgentOrBuilder
    * @return The bigqueryExportSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings getBigqueryExportSettings();
+
   /**
    *
    *
@@ -662,6 +684,7 @@ public interface AgentOrBuilder
    * @return Whether the textToSpeechSettings field is set.
    */
   boolean hasTextToSpeechSettings();
+
   /**
    *
    *
@@ -676,6 +699,7 @@ public interface AgentOrBuilder
    * @return The textToSpeechSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings getTextToSpeechSettings();
+
   /**
    *
    *
@@ -704,6 +728,7 @@ public interface AgentOrBuilder
    * @return Whether the genAppBuilderSettings field is set.
    */
   boolean hasGenAppBuilderSettings();
+
   /**
    *
    *
@@ -718,6 +743,7 @@ public interface AgentOrBuilder
    * @return The genAppBuilderSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.GenAppBuilderSettings getGenAppBuilderSettings();
+
   /**
    *
    *
@@ -746,6 +772,7 @@ public interface AgentOrBuilder
    * @return Whether the answerFeedbackSettings field is set.
    */
   boolean hasAnswerFeedbackSettings();
+
   /**
    *
    *
@@ -760,6 +787,7 @@ public interface AgentOrBuilder
    * @return The answerFeedbackSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings getAnswerFeedbackSettings();
+
   /**
    *
    *
@@ -788,6 +816,7 @@ public interface AgentOrBuilder
    * @return Whether the personalizationSettings field is set.
    */
   boolean hasPersonalizationSettings();
+
   /**
    *
    *
@@ -802,6 +831,7 @@ public interface AgentOrBuilder
    * @return The personalizationSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings getPersonalizationSettings();
+
   /**
    *
    *
@@ -830,6 +860,7 @@ public interface AgentOrBuilder
    * @return Whether the clientCertificateSettings field is set.
    */
   boolean hasClientCertificateSettings();
+
   /**
    *
    *
@@ -845,6 +876,7 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettings
       getClientCertificateSettings();
+
   /**
    *
    *
@@ -874,6 +906,7 @@ public interface AgentOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -905,6 +938,7 @@ public interface AgentOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *

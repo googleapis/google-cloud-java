@@ -30,12 +30,14 @@ public interface RoutersGetRoutePolicyResponseOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    * <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code>
    *
    * @return The resource.
    */
   com.google.cloud.compute.v1.RoutePolicy getResource();
+
   /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
   com.google.cloud.compute.v1.RoutePolicyOrBuilder getResourceOrBuilder();
 }

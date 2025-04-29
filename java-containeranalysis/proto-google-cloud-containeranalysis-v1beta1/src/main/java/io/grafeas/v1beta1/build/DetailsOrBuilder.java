@@ -36,6 +36,7 @@ public interface DetailsOrBuilder
    * @return Whether the provenance field is set.
    */
   boolean hasProvenance();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DetailsOrBuilder
    * @return The provenance.
    */
   io.grafeas.v1beta1.provenance.BuildProvenance getProvenance();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DetailsOrBuilder
    * @return The provenanceBytes.
    */
   java.lang.String getProvenanceBytes();
+
   /**
    *
    *

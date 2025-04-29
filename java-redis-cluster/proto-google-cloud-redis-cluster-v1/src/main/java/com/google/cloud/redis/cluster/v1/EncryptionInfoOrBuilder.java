@@ -38,6 +38,7 @@ public interface EncryptionInfoOrBuilder
    * @return The enum numeric value on the wire for encryptionType.
    */
   int getEncryptionTypeValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface EncryptionInfoOrBuilder
    * @return A list containing the kmsKeyVersions.
    */
   java.util.List<java.lang.String> getKmsKeyVersionsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface EncryptionInfoOrBuilder
    * @return The count of kmsKeyVersions.
    */
   int getKmsKeyVersionsCount();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface EncryptionInfoOrBuilder
    * @return The kmsKeyVersions at the given index.
    */
   java.lang.String getKmsKeyVersions(int index);
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface EncryptionInfoOrBuilder
    * @return The enum numeric value on the wire for kmsKeyPrimaryState.
    */
   int getKmsKeyPrimaryStateValue();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface EncryptionInfoOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface EncryptionInfoOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
+
   /**
    *
    *

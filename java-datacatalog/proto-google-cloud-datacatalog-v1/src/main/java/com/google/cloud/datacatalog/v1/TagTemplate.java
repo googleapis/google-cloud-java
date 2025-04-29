@@ -41,6 +41,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.TagTemplate)
     TagTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TagTemplate.newBuilder() to construct.
   private TagTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,6 +146,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>DATAPLEX_TRANSFER_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int DATAPLEX_TRANSFER_STATUS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -158,6 +160,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>MIGRATED = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int MIGRATED_VALUE = 1;
+
     /**
      *
      *
@@ -260,6 +263,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -286,6 +290,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -317,6 +322,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -374,6 +381,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_PUBLICLY_READABLE_FIELD_NUMBER = 5;
   private boolean isPubliclyReadable_ = false;
+
   /**
    *
    *
@@ -429,6 +437,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
   public int getFieldsCount() {
     return internalGetFields().getMap().size();
   }
+
   /**
    *
    *
@@ -457,6 +466,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetFields().getMap().containsKey(key);
   }
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -464,6 +474,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       getFields() {
     return getFieldsMap();
   }
+
   /**
    *
    *
@@ -490,6 +501,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       getFieldsMap() {
     return internalGetFields().getMap();
   }
+
   /**
    *
    *
@@ -523,6 +535,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         internalGetFields().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -559,6 +572,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATAPLEX_TRANSFER_STATUS_FIELD_NUMBER = 7;
   private int dataplexTransferStatus_ = 0;
+
   /**
    *
    *
@@ -576,6 +590,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
   public int getDataplexTransferStatusValue() {
     return dataplexTransferStatus_;
   }
+
   /**
    *
    *
@@ -811,6 +826,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1085,6 +1101,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1110,6 +1127,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1135,6 +1153,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1178,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1199,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1227,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1232,6 +1254,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1258,6 +1281,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1307,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1329,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1358,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isPubliclyReadable_;
+
     /**
      *
      *
@@ -1352,6 +1379,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsPubliclyReadable() {
       return isPubliclyReadable_;
     }
+
     /**
      *
      *
@@ -1376,6 +1404,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1419,7 +1448,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FieldsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final FieldsConverter fieldsConverter = new FieldsConverter();
 
@@ -1459,6 +1489,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     public int getFieldsCount() {
       return internalGetFields().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1487,6 +1518,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetFields().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getFieldsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1494,6 +1526,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         getFields() {
       return getFieldsMap();
     }
+
     /**
      *
      *
@@ -1520,6 +1553,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
         getFieldsMap() {
       return internalGetFields().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1553,6 +1587,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableFields().ensureBuilderMap();
       return map.containsKey(key) ? fieldsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1592,6 +1627,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFields().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1656,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFields().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -1627,6 +1664,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return internalGetMutableFields().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1660,6 +1698,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1732,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1731,6 +1771,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataplexTransferStatus_ = 0;
+
     /**
      *
      *
@@ -1748,6 +1789,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
     public int getDataplexTransferStatusValue() {
       return dataplexTransferStatus_;
     }
+
     /**
      *
      *
@@ -1768,6 +1810,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1834,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1815,6 +1859,7 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

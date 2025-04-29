@@ -39,6 +39,7 @@ public interface CustomFieldValueOrBuilder
    * @return The customField.
    */
   java.lang.String getCustomField();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CustomFieldValueOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CustomFieldValueOrBuilder
    * @return The value.
    */
   com.google.ads.admanager.v1.CustomFieldValue.Value getValue();
+
   /**
    *
    *

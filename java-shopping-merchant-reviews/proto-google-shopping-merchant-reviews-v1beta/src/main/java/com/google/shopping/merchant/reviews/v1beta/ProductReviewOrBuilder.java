@@ -38,6 +38,7 @@ public interface ProductReviewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ProductReviewOrBuilder
    * @return The productReviewId.
    */
   java.lang.String getProductReviewId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface ProductReviewOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ProductReviewOrBuilder
    * @return The attributes.
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes getAttributes();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface ProductReviewOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface ProductReviewOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ProductReviewOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface ProductReviewOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface ProductReviewOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface ProductReviewOrBuilder
    * @return Whether the productReviewStatus field is set.
    */
   boolean hasProductReviewStatus();
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public interface ProductReviewOrBuilder
    * @return The productReviewStatus.
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReviewStatus getProductReviewStatus();
+
   /**
    *
    *

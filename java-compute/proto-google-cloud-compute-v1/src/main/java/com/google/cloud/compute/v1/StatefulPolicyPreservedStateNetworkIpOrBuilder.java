@@ -37,6 +37,7 @@ public interface StatefulPolicyPreservedStateNetworkIpOrBuilder
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StatefulPolicyPreservedStateNetworkIpOrBuilder
    * @return The autoDelete.
    */
   java.lang.String getAutoDelete();
+
   /**
    *
    *

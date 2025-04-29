@@ -38,6 +38,7 @@ public interface DimensionOrBuilder
    * @return Whether the issueDimensionMetadata field is set.
    */
   boolean hasIssueDimensionMetadata();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface DimensionOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.Dimension.IssueDimensionMetadata
       getIssueDimensionMetadata();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DimensionOrBuilder
    * @return Whether the agentDimensionMetadata field is set.
    */
   boolean hasAgentDimensionMetadata();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface DimensionOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.Dimension.AgentDimensionMetadata
       getAgentDimensionMetadata();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface DimensionOrBuilder
    * @return Whether the qaQuestionDimensionMetadata field is set.
    */
   boolean hasQaQuestionDimensionMetadata();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface DimensionOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.Dimension.QaQuestionDimensionMetadata
       getQaQuestionDimensionMetadata();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface DimensionOrBuilder
    * @return Whether the qaQuestionAnswerDimensionMetadata field is set.
    */
   boolean hasQaQuestionAnswerDimensionMetadata();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface DimensionOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.Dimension.QaQuestionAnswerDimensionMetadata
       getQaQuestionAnswerDimensionMetadata();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface DimensionOrBuilder
    * @return The enum numeric value on the wire for dimensionKey.
    */
   int getDimensionKeyValue();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SparkSqlBatchOrBuilder
    * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SparkSqlBatchOrBuilder
    * </code>
    */
   int getQueryVariablesCount();
+
   /**
    *
    *
@@ -75,9 +77,11 @@ public interface SparkSqlBatchOrBuilder
    * </code>
    */
   boolean containsQueryVariables(java.lang.String key);
+
   /** Use {@link #getQueryVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getQueryVariables();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface SparkSqlBatchOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getQueryVariablesMap();
+
   /**
    *
    *
@@ -106,6 +111,7 @@ public interface SparkSqlBatchOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface SparkSqlBatchOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface SparkSqlBatchOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface SparkSqlBatchOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
+
   /**
    *
    *

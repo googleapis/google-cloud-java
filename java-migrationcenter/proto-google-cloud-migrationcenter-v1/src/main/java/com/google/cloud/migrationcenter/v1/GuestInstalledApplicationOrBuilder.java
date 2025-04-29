@@ -36,6 +36,7 @@ public interface GuestInstalledApplicationOrBuilder
    * @return The applicationName.
    */
   java.lang.String getApplicationName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GuestInstalledApplicationOrBuilder
    * @return The vendor.
    */
   java.lang.String getVendor();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GuestInstalledApplicationOrBuilder
    * @return Whether the installTime field is set.
    */
   boolean hasInstallTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface GuestInstalledApplicationOrBuilder
    * @return The installTime.
    */
   com.google.protobuf.Timestamp getInstallTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface GuestInstalledApplicationOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface GuestInstalledApplicationOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

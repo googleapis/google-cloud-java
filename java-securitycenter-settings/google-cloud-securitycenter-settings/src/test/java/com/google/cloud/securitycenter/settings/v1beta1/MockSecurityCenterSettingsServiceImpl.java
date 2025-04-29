@@ -176,7 +176,8 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CalculateEffectiveSettings, expected %s or %s",
+                  "Unrecognized response type %s for method CalculateEffectiveSettings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Settings.class.getName(),
                   Exception.class.getName())));
@@ -198,7 +199,8 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCalculateEffectiveSettings, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCalculateEffectiveSettings,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCalculateEffectiveSettingsResponse.class.getName(),
                   Exception.class.getName())));
@@ -219,7 +221,8 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetComponentSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetComponentSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ComponentSettings.class.getName(),
                   Exception.class.getName())));
@@ -240,7 +243,8 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateComponentSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateComponentSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ComponentSettings.class.getName(),
                   Exception.class.getName())));
@@ -261,7 +265,8 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResetComponentSettings, expected %s or %s",
+                  "Unrecognized response type %s for method ResetComponentSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -283,7 +288,8 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CalculateEffectiveComponentSettings, expected %s or %s",
+                  "Unrecognized response type %s for method CalculateEffectiveComponentSettings,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ComponentSettings.class.getName(),
                   Exception.class.getName())));

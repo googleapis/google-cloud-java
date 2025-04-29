@@ -33,6 +33,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDeviceStatesResponse)
     ListDeviceStatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDeviceStatesResponse.newBuilder() to construct.
   private ListDeviceStatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.DeviceState> deviceStates_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.iot.v1.DeviceState> getDeviceStatesList() {
     return deviceStates_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       getDeviceStatesOrBuilderList() {
     return deviceStates_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
   public int getDeviceStatesCount() {
     return deviceStates_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
   public com.google.cloud.iot.v1.DeviceState getDeviceStates(int index) {
     return deviceStates_.get(index);
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
         return deviceStatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
         return deviceStatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
         return deviceStatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +675,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +764,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +785,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +806,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +820,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
     public com.google.cloud.iot.v1.DeviceState.Builder getDeviceStatesBuilder(int index) {
       return getDeviceStatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -818,6 +838,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
         return deviceStatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -836,6 +857,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(deviceStates_);
       }
     }
+
     /**
      *
      *
@@ -850,6 +872,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       return getDeviceStatesFieldBuilder()
           .addBuilder(com.google.cloud.iot.v1.DeviceState.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -864,6 +887,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
       return getDeviceStatesFieldBuilder()
           .addBuilder(index, com.google.cloud.iot.v1.DeviceState.getDefaultInstance());
     }
+
     /**
      *
      *

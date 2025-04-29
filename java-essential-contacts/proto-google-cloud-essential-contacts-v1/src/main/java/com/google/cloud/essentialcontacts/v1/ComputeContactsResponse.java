@@ -33,6 +33,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.essentialcontacts.v1.ComputeContactsResponse)
     ComputeContactsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeContactsResponse.newBuilder() to construct.
   private ComputeContactsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.essentialcontacts.v1.Contact> contacts_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.essentialcontacts.v1.Contact> getContactsList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       getContactsOrBuilderList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
   public int getContactsCount() {
     return contacts_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
   public com.google.cloud.essentialcontacts.v1.Contact getContacts(int index) {
     return contacts_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -373,6 +381,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -655,6 +664,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return contactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return contactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return contactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +800,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +869,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +913,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +928,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
     public com.google.cloud.essentialcontacts.v1.Contact.Builder getContactsBuilder(int index) {
       return getContactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return contactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -944,6 +967,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(contacts_);
       }
     }
+
     /**
      *
      *
@@ -959,6 +983,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       return getContactsFieldBuilder()
           .addBuilder(com.google.cloud.essentialcontacts.v1.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -974,6 +999,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       return getContactsFieldBuilder()
           .addBuilder(index, com.google.cloud.essentialcontacts.v1.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1033,6 +1060,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1086,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1082,6 +1111,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1132,7 @@ public final class ComputeContactsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

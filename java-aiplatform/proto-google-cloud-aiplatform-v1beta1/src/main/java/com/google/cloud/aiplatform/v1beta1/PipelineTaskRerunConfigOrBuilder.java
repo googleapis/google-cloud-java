@@ -49,6 +49,7 @@ public interface PipelineTaskRerunConfigOrBuilder
    * @return The taskName.
    */
   java.lang.String getTaskName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface PipelineTaskRerunConfigOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface PipelineTaskRerunConfigOrBuilder
    * @return The inputs.
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig.Inputs getInputs();
+
   /**
    *
    *

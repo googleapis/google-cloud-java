@@ -583,6 +583,20 @@ public final class IdentityAwareProxyAdminServiceGrpc {
     return IdentityAwareProxyAdminServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static IdentityAwareProxyAdminServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<IdentityAwareProxyAdminServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IdentityAwareProxyAdminServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public IdentityAwareProxyAdminServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IdentityAwareProxyAdminServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return IdentityAwareProxyAdminServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1021,6 +1035,182 @@ public final class IdentityAwareProxyAdminServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service IdentityAwareProxyAdminService.
+   *
+   * <pre>
+   * APIs for Identity-Aware Proxy Admin configurations.
+   * </pre>
+   */
+  public static final class IdentityAwareProxyAdminServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<IdentityAwareProxyAdminServiceBlockingV2Stub> {
+    private IdentityAwareProxyAdminServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected IdentityAwareProxyAdminServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new IdentityAwareProxyAdminServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy for an Identity-Aware Proxy protected
+     * resource. Replaces any existing policy.
+     * More information about managing access via IAP can be found at:
+     * https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an Identity-Aware Proxy protected
+     * resource.
+     * More information about managing access via IAP can be found at:
+     * https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the Identity-Aware Proxy protected
+     * resource.
+     * More information about managing access via IAP can be found at:
+     * https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAP settings on a particular IAP protected resource.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.IapSettings getIapSettings(
+        com.google.cloud.iap.v1.GetIapSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIapSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the IAP settings on a particular IAP protected resource. It
+     * replaces all fields unless the `update_mask` is set.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.IapSettings updateIapSettings(
+        com.google.cloud.iap.v1.UpdateIapSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIapSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates that a given CEL expression conforms to IAP restrictions.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse
+        validateIapAttributeExpression(
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateIapAttributeExpressionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing TunnelDestGroups. To group across all locations, use a
+     * `-` as the location ID. For example:
+     * `/v1/projects/123/iap_tunnel/locations/-/destGroups`
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.ListTunnelDestGroupsResponse listTunnelDestGroups(
+        com.google.cloud.iap.v1.ListTunnelDestGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTunnelDestGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TunnelDestGroup.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.TunnelDestGroup createTunnelDestGroup(
+        com.google.cloud.iap.v1.CreateTunnelDestGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTunnelDestGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an existing TunnelDestGroup.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.TunnelDestGroup getTunnelDestGroup(
+        com.google.cloud.iap.v1.GetTunnelDestGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTunnelDestGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TunnelDestGroup.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTunnelDestGroup(
+        com.google.cloud.iap.v1.DeleteTunnelDestGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTunnelDestGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TunnelDestGroup.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.TunnelDestGroup updateTunnelDestGroup(
+        com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTunnelDestGroupMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * IdentityAwareProxyAdminService.
    *
    * <pre>
    * APIs for Identity-Aware Proxy Admin configurations.

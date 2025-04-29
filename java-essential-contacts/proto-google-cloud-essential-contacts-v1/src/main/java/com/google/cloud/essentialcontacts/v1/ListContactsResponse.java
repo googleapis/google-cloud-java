@@ -33,6 +33,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.essentialcontacts.v1.ListContactsResponse)
     ListContactsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListContactsResponse.newBuilder() to construct.
   private ListContactsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.essentialcontacts.v1.Contact> contacts_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.essentialcontacts.v1.Contact> getContactsList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       getContactsOrBuilderList() {
     return contacts_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
   public int getContactsCount() {
     return contacts_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.essentialcontacts.v1.Contact getContacts(int index) {
     return contacts_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +371,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -640,6 +649,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return contactsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return contactsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -672,6 +683,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return contactsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +876,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +889,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.essentialcontacts.v1.Contact.Builder getContactsBuilder(int index) {
       return getContactsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -884,6 +906,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return contactsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -901,6 +924,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(contacts_);
       }
     }
+
     /**
      *
      *
@@ -914,6 +938,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       return getContactsFieldBuilder()
           .addBuilder(com.google.cloud.essentialcontacts.v1.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -927,6 +952,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       return getContactsFieldBuilder()
           .addBuilder(index, com.google.cloud.essentialcontacts.v1.Contact.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -959,6 +985,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -984,6 +1011,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1037,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1062,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1083,7 @@ public final class ListContactsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface BudgetAmountOrBuilder
    * @return Whether the specifiedAmount field is set.
    */
   boolean hasSpecifiedAmount();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface BudgetAmountOrBuilder
    * @return The specifiedAmount.
    */
   com.google.type.Money getSpecifiedAmount();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface BudgetAmountOrBuilder
    * @return Whether the lastPeriodAmount field is set.
    */
   boolean hasLastPeriodAmount();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface BudgetAmountOrBuilder
    * @return The lastPeriodAmount.
    */
   com.google.cloud.billing.budgets.v1.LastPeriodAmount getLastPeriodAmount();
+
   /**
    *
    *

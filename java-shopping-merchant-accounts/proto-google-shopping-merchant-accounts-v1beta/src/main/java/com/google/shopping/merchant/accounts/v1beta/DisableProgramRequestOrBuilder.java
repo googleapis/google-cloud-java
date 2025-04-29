@@ -39,6 +39,7 @@ public interface DisableProgramRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

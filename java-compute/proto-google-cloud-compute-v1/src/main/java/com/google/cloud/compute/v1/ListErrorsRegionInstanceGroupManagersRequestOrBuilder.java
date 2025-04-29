@@ -36,6 +36,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public interface ListErrorsRegionInstanceGroupManagersRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
+
   /**
    *
    *

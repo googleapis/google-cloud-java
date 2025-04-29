@@ -36,6 +36,7 @@ public interface BackupFileOrBuilder
    * @return The fileName.
    */
   java.lang.String getFileName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface BackupFileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface BackupFileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

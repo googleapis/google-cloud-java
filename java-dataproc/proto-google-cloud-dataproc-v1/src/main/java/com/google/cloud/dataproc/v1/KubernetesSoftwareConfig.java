@@ -33,6 +33,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.KubernetesSoftwareConfig)
     KubernetesSoftwareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KubernetesSoftwareConfig.newBuilder() to construct.
   private KubernetesSoftwareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   public int getComponentVersionCount() {
     return internalGetComponentVersion().getMap().size();
   }
+
   /**
    *
    *
@@ -122,12 +124,14 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     }
     return internalGetComponentVersion().getMap().containsKey(key);
   }
+
   /** Use {@link #getComponentVersionMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getComponentVersion() {
     return getComponentVersionMap();
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getComponentVersionMap() {
     return internalGetComponentVersion().getMap();
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetComponentVersion().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
+
   /**
    *
    *
@@ -242,12 +249,14 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     }
     return internalGetProperties().getMap().containsKey(key);
   }
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
+
   /**
    *
    *
@@ -299,6 +309,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -514,6 +525,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -776,6 +788,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public int getComponentVersionCount() {
       return internalGetComponentVersion().getMap().size();
     }
+
     /**
      *
      *
@@ -795,12 +808,14 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       }
       return internalGetComponentVersion().getMap().containsKey(key);
     }
+
     /** Use {@link #getComponentVersionMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getComponentVersion() {
       return getComponentVersionMap();
     }
+
     /**
      *
      *
@@ -817,6 +832,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getComponentVersionMap() {
       return internalGetComponentVersion().getMap();
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
           internalGetComponentVersion().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       internalGetMutableComponentVersion().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -890,12 +908,14 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       internalGetMutableComponentVersion().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableComponentVersion() {
       bitField0_ |= 0x00000001;
       return internalGetMutableComponentVersion().getMutableMap();
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +987,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
+
     /**
      *
      *
@@ -991,12 +1013,14 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       }
       return internalGetProperties().getMap().containsKey(key);
     }
+
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
+
     /**
      *
      *
@@ -1019,6 +1043,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
+
     /**
      *
      *
@@ -1048,6 +1073,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1083,6 +1109,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1108,12 +1135,14 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000002;
       return internalGetMutableProperties().getMutableMap();
     }
+
     /**
      *
      *
@@ -1143,6 +1172,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

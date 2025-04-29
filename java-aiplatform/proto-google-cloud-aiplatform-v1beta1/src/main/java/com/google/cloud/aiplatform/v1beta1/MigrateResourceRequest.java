@@ -34,6 +34,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigrateResourceRequest)
     MigrateResourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrateResourceRequest.newBuilder() to construct.
   private MigrateResourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The endpoint.
      */
     java.lang.String getEndpoint();
+
     /**
      *
      *
@@ -125,6 +127,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The modelVersion.
      */
     java.lang.String getModelVersion();
+
     /**
      *
      *
@@ -154,6 +157,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The modelDisplayName.
      */
     java.lang.String getModelDisplayName();
+
     /**
      *
      *
@@ -168,6 +172,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getModelDisplayNameBytes();
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig)
       MigrateMlEngineModelVersionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MigrateMlEngineModelVersionConfig.newBuilder() to construct.
     private MigrateMlEngineModelVersionConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,6 +229,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -255,6 +262,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -292,6 +300,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelVersion_ = "";
+
     /**
      *
      *
@@ -318,6 +327,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -349,6 +359,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelDisplayName_ = "";
+
     /**
      *
      *
@@ -373,6 +384,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -602,6 +614,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -847,6 +860,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object endpoint_ = "";
+
       /**
        *
        *
@@ -878,6 +892,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -909,6 +924,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -939,6 +955,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -965,6 +982,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -998,6 +1016,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object modelVersion_ = "";
+
       /**
        *
        *
@@ -1023,6 +1042,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1048,6 +1068,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1072,6 +1093,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1092,6 +1114,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1119,6 +1142,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object modelDisplayName_ = "";
+
       /**
        *
        *
@@ -1142,6 +1166,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1165,6 +1190,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1187,6 +1213,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1205,6 +1232,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1322,6 +1350,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The model.
      */
     java.lang.String getModel();
+
     /**
      *
      *
@@ -1352,6 +1381,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The modelDisplayName.
      */
     java.lang.String getModelDisplayName();
+
     /**
      *
      *
@@ -1366,6 +1396,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getModelDisplayNameBytes();
   }
+
   /**
    *
    *
@@ -1381,6 +1412,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig)
       MigrateAutomlModelConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MigrateAutomlModelConfig.newBuilder() to construct.
     private MigrateAutomlModelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1418,6 +1450,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1445,6 +1478,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1477,6 +1511,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelDisplayName_ = "";
+
     /**
      *
      *
@@ -1501,6 +1536,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1717,6 +1753,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1939,6 +1976,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object model_ = "";
+
       /**
        *
        *
@@ -1965,6 +2003,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1991,6 +2030,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2016,6 +2056,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2037,6 +2078,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2065,6 +2107,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object modelDisplayName_ = "";
+
       /**
        *
        *
@@ -2088,6 +2131,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2111,6 +2155,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2133,6 +2178,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2151,6 +2197,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2266,6 +2313,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
@@ -2296,6 +2344,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The datasetDisplayName.
      */
     java.lang.String getDatasetDisplayName();
+
     /**
      *
      *
@@ -2310,6 +2359,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getDatasetDisplayNameBytes();
   }
+
   /**
    *
    *
@@ -2327,6 +2377,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlDatasetConfig)
       MigrateAutomlDatasetConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MigrateAutomlDatasetConfig.newBuilder() to construct.
     private MigrateAutomlDatasetConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2364,6 +2415,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -2391,6 +2443,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2423,6 +2476,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetDisplayName_ = "";
+
     /**
      *
      *
@@ -2447,6 +2501,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2664,6 +2719,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2889,6 +2945,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
@@ -2915,6 +2972,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2941,6 +2999,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2966,6 +3025,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2987,6 +3047,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3015,6 +3076,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object datasetDisplayName_ = "";
+
       /**
        *
        *
@@ -3038,6 +3100,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3061,6 +3124,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3083,6 +3147,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3101,6 +3166,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3217,6 +3283,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
@@ -3247,6 +3314,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * @return The datasetDisplayName.
      */
     java.lang.String getDatasetDisplayName();
+
     /**
      *
      *
@@ -3278,6 +3346,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
                 .MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig>
         getMigrateDataLabelingAnnotatedDatasetConfigsList();
+
     /**
      *
      *
@@ -3294,6 +3363,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig
             .MigrateDataLabelingAnnotatedDatasetConfig
         getMigrateDataLabelingAnnotatedDatasetConfigs(int index);
+
     /**
      *
      *
@@ -3308,6 +3378,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getMigrateDataLabelingAnnotatedDatasetConfigsCount();
+
     /**
      *
      *
@@ -3327,6 +3398,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
                     .MigrateDataLabelingDatasetConfig
                     .MigrateDataLabelingAnnotatedDatasetConfigOrBuilder>
         getMigrateDataLabelingAnnotatedDatasetConfigsOrBuilderList();
+
     /**
      *
      *
@@ -3344,6 +3416,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .MigrateDataLabelingAnnotatedDatasetConfigOrBuilder
         getMigrateDataLabelingAnnotatedDatasetConfigsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -3361,6 +3434,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig)
       MigrateDataLabelingDatasetConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MigrateDataLabelingDatasetConfig.newBuilder() to construct.
     private MigrateDataLabelingDatasetConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3417,6 +3491,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        * @return The annotatedDataset.
        */
       java.lang.String getAnnotatedDataset();
+
       /**
        *
        *
@@ -3434,6 +3509,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        */
       com.google.protobuf.ByteString getAnnotatedDatasetBytes();
     }
+
     /**
      *
      *
@@ -3451,6 +3527,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig)
         MigrateDataLabelingAnnotatedDatasetConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use MigrateDataLabelingAnnotatedDatasetConfig.newBuilder() to construct.
       private MigrateDataLabelingAnnotatedDatasetConfig(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3490,6 +3567,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object annotatedDataset_ = "";
+
       /**
        *
        *
@@ -3517,6 +3595,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return s;
         }
       }
+
       /**
        *
        *
@@ -3735,6 +3814,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3958,6 +4038,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         private int bitField0_;
 
         private java.lang.Object annotatedDataset_ = "";
+
         /**
          *
          *
@@ -3984,6 +4065,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -4010,6 +4092,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -4035,6 +4118,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4056,6 +4140,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4161,6 +4246,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -4188,6 +4274,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -4220,6 +4307,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetDisplayName_ = "";
+
     /**
      *
      *
@@ -4244,6 +4332,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -4276,6 +4365,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
                 .MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig>
         migrateDataLabelingAnnotatedDatasetConfigs_;
+
     /**
      *
      *
@@ -4296,6 +4386,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateDataLabelingAnnotatedDatasetConfigsList() {
       return migrateDataLabelingAnnotatedDatasetConfigs_;
     }
+
     /**
      *
      *
@@ -4318,6 +4409,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateDataLabelingAnnotatedDatasetConfigsOrBuilderList() {
       return migrateDataLabelingAnnotatedDatasetConfigs_;
     }
+
     /**
      *
      *
@@ -4335,6 +4427,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     public int getMigrateDataLabelingAnnotatedDatasetConfigsCount() {
       return migrateDataLabelingAnnotatedDatasetConfigs_.size();
     }
+
     /**
      *
      *
@@ -4354,6 +4447,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateDataLabelingAnnotatedDatasetConfigs(int index) {
       return migrateDataLabelingAnnotatedDatasetConfigs_.get(index);
     }
+
     /**
      *
      *
@@ -4583,6 +4677,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4890,6 +4985,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
@@ -4916,6 +5012,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4942,6 +5039,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4967,6 +5065,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4988,6 +5087,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5016,6 +5116,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object datasetDisplayName_ = "";
+
       /**
        *
        *
@@ -5039,6 +5140,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5062,6 +5164,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5084,6 +5187,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5102,6 +5206,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5177,6 +5282,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return migrateDataLabelingAnnotatedDatasetConfigsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -5197,6 +5303,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return migrateDataLabelingAnnotatedDatasetConfigsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -5219,6 +5326,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return migrateDataLabelingAnnotatedDatasetConfigsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -5249,6 +5357,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5278,6 +5387,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5307,6 +5417,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5337,6 +5448,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5364,6 +5476,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5393,6 +5506,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5423,6 +5537,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5446,6 +5561,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5469,6 +5585,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -5487,6 +5604,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           getMigrateDataLabelingAnnotatedDatasetConfigsBuilder(int index) {
         return getMigrateDataLabelingAnnotatedDatasetConfigsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -5509,6 +5627,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           return migrateDataLabelingAnnotatedDatasetConfigsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -5535,6 +5654,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
               migrateDataLabelingAnnotatedDatasetConfigs_);
         }
       }
+
       /**
        *
        *
@@ -5557,6 +5677,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
                     .MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5580,6 +5701,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
                     .MigrateDataLabelingDatasetConfig.MigrateDataLabelingAnnotatedDatasetConfig
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -5722,6 +5844,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     private RequestCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5759,6 +5882,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int MIGRATE_ML_ENGINE_MODEL_VERSION_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -5776,6 +5900,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   public boolean hasMigrateMlEngineModelVersionConfig() {
     return requestCase_ == 1;
   }
+
   /**
    *
    *
@@ -5801,6 +5926,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     return com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
         .MigrateMlEngineModelVersionConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5826,6 +5952,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int MIGRATE_AUTOML_MODEL_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -5844,6 +5971,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   public boolean hasMigrateAutomlModelConfig() {
     return requestCase_ == 2;
   }
+
   /**
    *
    *
@@ -5868,6 +5996,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     return com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5893,6 +6022,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int MIGRATE_AUTOML_DATASET_CONFIG_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -5911,6 +6041,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   public boolean hasMigrateAutomlDatasetConfig() {
     return requestCase_ == 3;
   }
+
   /**
    *
    *
@@ -5935,6 +6066,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     return com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlDatasetConfig
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5960,6 +6092,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int MIGRATE_DATA_LABELING_DATASET_CONFIG_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -5978,6 +6111,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   public boolean hasMigrateDataLabelingDatasetConfig() {
     return requestCase_ == 4;
   }
+
   /**
    *
    *
@@ -6003,6 +6137,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     return com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
         .MigrateDataLabelingDatasetConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6277,6 +6412,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6557,6 +6693,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
                 .MigrateMlEngineModelVersionConfigOrBuilder>
         migrateMlEngineModelVersionConfigBuilder_;
+
     /**
      *
      *
@@ -6574,6 +6711,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     public boolean hasMigrateMlEngineModelVersionConfig() {
       return requestCase_ == 1;
     }
+
     /**
      *
      *
@@ -6607,6 +6745,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .MigrateMlEngineModelVersionConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6633,6 +6772,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -6657,6 +6797,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -6698,6 +6839,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -6725,6 +6867,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6741,6 +6884,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateMlEngineModelVersionConfigBuilder() {
       return getMigrateMlEngineModelVersionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6768,6 +6912,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .MigrateMlEngineModelVersionConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6820,6 +6965,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
                 .MigrateAutomlModelConfigOrBuilder>
         migrateAutomlModelConfigBuilder_;
+
     /**
      *
      *
@@ -6838,6 +6984,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     public boolean hasMigrateAutomlModelConfig() {
       return requestCase_ == 2;
     }
+
     /**
      *
      *
@@ -6871,6 +7018,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6897,6 +7045,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6921,6 +7070,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6962,6 +7112,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -6990,6 +7141,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -7007,6 +7159,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateAutomlModelConfigBuilder() {
       return getMigrateAutomlModelConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7035,6 +7188,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7086,6 +7240,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
                 .MigrateAutomlDatasetConfigOrBuilder>
         migrateAutomlDatasetConfigBuilder_;
+
     /**
      *
      *
@@ -7104,6 +7259,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     public boolean hasMigrateAutomlDatasetConfig() {
       return requestCase_ == 3;
     }
+
     /**
      *
      *
@@ -7137,6 +7293,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7164,6 +7321,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7189,6 +7347,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7231,6 +7390,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7259,6 +7419,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -7276,6 +7437,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateAutomlDatasetConfigBuilder() {
       return getMigrateAutomlDatasetConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7304,6 +7466,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7357,6 +7520,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest
                 .MigrateDataLabelingDatasetConfigOrBuilder>
         migrateDataLabelingDatasetConfigBuilder_;
+
     /**
      *
      *
@@ -7375,6 +7539,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     public boolean hasMigrateDataLabelingDatasetConfig() {
       return requestCase_ == 4;
     }
+
     /**
      *
      *
@@ -7409,6 +7574,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .MigrateDataLabelingDatasetConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7436,6 +7602,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7461,6 +7628,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7503,6 +7671,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       requestCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7531,6 +7700,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -7548,6 +7718,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         getMigrateDataLabelingDatasetConfigBuilder() {
       return getMigrateDataLabelingDatasetConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7576,6 +7747,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
             .MigrateDataLabelingDatasetConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *

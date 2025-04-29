@@ -38,6 +38,7 @@ public interface BuildOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface BuildOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface BuildOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface BuildOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface BuildOrBuilder
    * @return The statusDetail.
    */
   java.lang.String getStatusDetail();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface BuildOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface BuildOrBuilder
    * @return The source.
    */
   com.google.cloudbuild.v1.Source getSource();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
   java.util.List<com.google.cloudbuild.v1.BuildStep> getStepsList();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
   com.google.cloudbuild.v1.BuildStep getSteps(int index);
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
   int getStepsCount();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.BuildStepOrBuilder> getStepsOrBuilderList();
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public interface BuildOrBuilder
    * @return Whether the results field is set.
    */
   boolean hasResults();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface BuildOrBuilder
    * @return The results.
    */
   com.google.cloudbuild.v1.Results getResults();
+
   /**
    *
    *
@@ -297,6 +310,7 @@ public interface BuildOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -310,6 +324,7 @@ public interface BuildOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public interface BuildOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -348,6 +364,7 @@ public interface BuildOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -376,6 +393,7 @@ public interface BuildOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
+
   /**
    *
    *
@@ -392,6 +410,7 @@ public interface BuildOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
+
   /**
    *
    *
@@ -425,6 +444,7 @@ public interface BuildOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -443,6 +463,7 @@ public interface BuildOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -481,6 +502,7 @@ public interface BuildOrBuilder
    * @return A list containing the images.
    */
   java.util.List<java.lang.String> getImagesList();
+
   /**
    *
    *
@@ -502,6 +524,7 @@ public interface BuildOrBuilder
    * @return The count of images.
    */
   int getImagesCount();
+
   /**
    *
    *
@@ -524,6 +547,7 @@ public interface BuildOrBuilder
    * @return The images at the given index.
    */
   java.lang.String getImages(int index);
+
   /**
    *
    *
@@ -563,6 +587,7 @@ public interface BuildOrBuilder
    * @return Whether the queueTtl field is set.
    */
   boolean hasQueueTtl();
+
   /**
    *
    *
@@ -579,6 +604,7 @@ public interface BuildOrBuilder
    * @return The queueTtl.
    */
   com.google.protobuf.Duration getQueueTtl();
+
   /**
    *
    *
@@ -607,6 +633,7 @@ public interface BuildOrBuilder
    * @return Whether the artifacts field is set.
    */
   boolean hasArtifacts();
+
   /**
    *
    *
@@ -620,6 +647,7 @@ public interface BuildOrBuilder
    * @return The artifacts.
    */
   com.google.cloudbuild.v1.Artifacts getArtifacts();
+
   /**
    *
    *
@@ -647,6 +675,7 @@ public interface BuildOrBuilder
    * @return The logsBucket.
    */
   java.lang.String getLogsBucket();
+
   /**
    *
    *
@@ -677,6 +706,7 @@ public interface BuildOrBuilder
    * @return Whether the sourceProvenance field is set.
    */
   boolean hasSourceProvenance();
+
   /**
    *
    *
@@ -691,6 +721,7 @@ public interface BuildOrBuilder
    * @return The sourceProvenance.
    */
   com.google.cloudbuild.v1.SourceProvenance getSourceProvenance();
+
   /**
    *
    *
@@ -717,6 +748,7 @@ public interface BuildOrBuilder
    * @return The buildTriggerId.
    */
   java.lang.String getBuildTriggerId();
+
   /**
    *
    *
@@ -743,6 +775,7 @@ public interface BuildOrBuilder
    * @return Whether the options field is set.
    */
   boolean hasOptions();
+
   /**
    *
    *
@@ -755,6 +788,7 @@ public interface BuildOrBuilder
    * @return The options.
    */
   com.google.cloudbuild.v1.BuildOptions getOptions();
+
   /**
    *
    *
@@ -778,6 +812,7 @@ public interface BuildOrBuilder
    * @return The logUrl.
    */
   java.lang.String getLogUrl();
+
   /**
    *
    *
@@ -801,6 +836,7 @@ public interface BuildOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
   int getSubstitutionsCount();
+
   /**
    *
    *
@@ -811,9 +847,11 @@ public interface BuildOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
   boolean containsSubstitutions(java.lang.String key);
+
   /** Use {@link #getSubstitutionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSubstitutions();
+
   /**
    *
    *
@@ -824,6 +862,7 @@ public interface BuildOrBuilder
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap();
+
   /**
    *
    *
@@ -838,6 +877,7 @@ public interface BuildOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -861,6 +901,7 @@ public interface BuildOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -873,6 +914,7 @@ public interface BuildOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -886,6 +928,7 @@ public interface BuildOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -914,6 +957,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
   java.util.List<com.google.cloudbuild.v1.Secret> getSecretsList();
+
   /**
    *
    *
@@ -928,6 +972,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
   com.google.cloudbuild.v1.Secret getSecrets(int index);
+
   /**
    *
    *
@@ -942,6 +987,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
   int getSecretsCount();
+
   /**
    *
    *
@@ -956,6 +1002,7 @@ public interface BuildOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.SecretOrBuilder> getSecretsOrBuilderList();
+
   /**
    *
    *
@@ -993,6 +1040,7 @@ public interface BuildOrBuilder
    * </code>
    */
   int getTimingCount();
+
   /**
    *
    *
@@ -1015,9 +1063,11 @@ public interface BuildOrBuilder
    * </code>
    */
   boolean containsTiming(java.lang.String key);
+
   /** Use {@link #getTimingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTiming();
+
   /**
    *
    *
@@ -1040,6 +1090,7 @@ public interface BuildOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTimingMap();
+
   /**
    *
    *
@@ -1066,6 +1117,7 @@ public interface BuildOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloudbuild.v1.TimeSpan defaultValue);
+
   /**
    *
    *
@@ -1104,6 +1156,7 @@ public interface BuildOrBuilder
    * @return Whether the approval field is set.
    */
   boolean hasApproval();
+
   /**
    *
    *
@@ -1119,6 +1172,7 @@ public interface BuildOrBuilder
    * @return The approval.
    */
   com.google.cloudbuild.v1.BuildApproval getApproval();
+
   /**
    *
    *
@@ -1147,6 +1201,7 @@ public interface BuildOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -1174,6 +1229,7 @@ public interface BuildOrBuilder
    * @return Whether the availableSecrets field is set.
    */
   boolean hasAvailableSecrets();
+
   /**
    *
    *
@@ -1186,6 +1242,7 @@ public interface BuildOrBuilder
    * @return The availableSecrets.
    */
   com.google.cloudbuild.v1.Secrets getAvailableSecrets();
+
   /**
    *
    *
@@ -1210,6 +1267,7 @@ public interface BuildOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v1.Build.Warning> getWarningsList();
+
   /**
    *
    *
@@ -1223,6 +1281,7 @@ public interface BuildOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Build.Warning getWarnings(int index);
+
   /**
    *
    *
@@ -1236,6 +1295,7 @@ public interface BuildOrBuilder
    * </code>
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -1250,6 +1310,7 @@ public interface BuildOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.Build.WarningOrBuilder>
       getWarningsOrBuilderList();
+
   /**
    *
    *
@@ -1278,6 +1339,7 @@ public interface BuildOrBuilder
    * @return Whether the gitConfig field is set.
    */
   boolean hasGitConfig();
+
   /**
    *
    *
@@ -1292,6 +1354,7 @@ public interface BuildOrBuilder
    * @return The gitConfig.
    */
   com.google.cloudbuild.v1.GitConfig getGitConfig();
+
   /**
    *
    *
@@ -1319,6 +1382,7 @@ public interface BuildOrBuilder
    * @return Whether the failureInfo field is set.
    */
   boolean hasFailureInfo();
+
   /**
    *
    *
@@ -1333,6 +1397,7 @@ public interface BuildOrBuilder
    * @return The failureInfo.
    */
   com.google.cloudbuild.v1.Build.FailureInfo getFailureInfo();
+
   /**
    *
    *
@@ -1359,6 +1424,7 @@ public interface BuildOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v1.Dependency> getDependenciesList();
+
   /**
    *
    *
@@ -1372,6 +1438,7 @@ public interface BuildOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Dependency getDependencies(int index);
+
   /**
    *
    *
@@ -1385,6 +1452,7 @@ public interface BuildOrBuilder
    * </code>
    */
   int getDependenciesCount();
+
   /**
    *
    *
@@ -1399,6 +1467,7 @@ public interface BuildOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.DependencyOrBuilder>
       getDependenciesOrBuilderList();
+
   /**
    *
    *

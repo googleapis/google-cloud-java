@@ -37,6 +37,7 @@ public interface MoveAnalysisOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface MoveAnalysisOrBuilder
    * @return Whether the analysis field is set.
    */
   boolean hasAnalysis();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface MoveAnalysisOrBuilder
    * @return The analysis.
    */
   com.google.cloud.asset.v1.MoveAnalysisResult getAnalysis();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface MoveAnalysisOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface MoveAnalysisOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

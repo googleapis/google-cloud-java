@@ -37,6 +37,7 @@ public interface PrivacyMetricOrBuilder
    * @return Whether the numericalStatsConfig field is set.
    */
   boolean hasNumericalStatsConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PrivacyMetricOrBuilder
    * @return The numericalStatsConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface PrivacyMetricOrBuilder
    * @return Whether the categoricalStatsConfig field is set.
    */
   boolean hasCategoricalStatsConfig();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface PrivacyMetricOrBuilder
    * @return The categoricalStatsConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface PrivacyMetricOrBuilder
    * @return Whether the kAnonymityConfig field is set.
    */
   boolean hasKAnonymityConfig();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface PrivacyMetricOrBuilder
    * @return The kAnonymityConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface PrivacyMetricOrBuilder
    * @return Whether the lDiversityConfig field is set.
    */
   boolean hasLDiversityConfig();
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public interface PrivacyMetricOrBuilder
    * @return The lDiversityConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface PrivacyMetricOrBuilder
    * @return Whether the kMapEstimationConfig field is set.
    */
   boolean hasKMapEstimationConfig();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface PrivacyMetricOrBuilder
    * @return The kMapEstimationConfig.
    */
   com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface PrivacyMetricOrBuilder
    * @return Whether the deltaPresenceEstimationConfig field is set.
    */
   boolean hasDeltaPresenceEstimationConfig();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface PrivacyMetricOrBuilder
    */
   com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
       getDeltaPresenceEstimationConfig();
+
   /**
    *
    *

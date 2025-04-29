@@ -33,6 +33,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInstance)
     TrajectoryAnyOrderMatchInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrajectoryAnyOrderMatchInstance.newBuilder() to construct.
   private TrajectoryAnyOrderMatchInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
   private int bitField0_;
   public static final int PREDICTED_TRAJECTORY_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Trajectory predictedTrajectory_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
   public boolean hasPredictedTrajectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : predictedTrajectory_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
 
   public static final int REFERENCE_TRAJECTORY_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Trajectory referenceTrajectory_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
   public boolean hasReferenceTrajectory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : referenceTrajectory_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -592,6 +600,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         predictedTrajectoryBuilder_;
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
     public boolean hasPredictedTrajectory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
         return predictedTrajectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return getPredictedTrajectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
             : predictedTrajectory_;
       }
     }
+
     /**
      *
      *
@@ -798,6 +815,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         referenceTrajectoryBuilder_;
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
     public boolean hasReferenceTrajectory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
         return referenceTrajectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +956,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
       onChanged();
       return getReferenceTrajectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -970,6 +995,7 @@ public final class TrajectoryAnyOrderMatchInstance extends com.google.protobuf.G
             : referenceTrajectory_;
       }
     }
+
     /**
      *
      *

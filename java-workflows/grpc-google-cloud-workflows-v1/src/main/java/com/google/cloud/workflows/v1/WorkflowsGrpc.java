@@ -313,6 +313,19 @@ public final class WorkflowsGrpc {
     return WorkflowsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WorkflowsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WorkflowsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WorkflowsBlockingV2Stub>() {
+          @java.lang.Override
+          public WorkflowsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WorkflowsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WorkflowsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -594,6 +607,115 @@ public final class WorkflowsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Workflows.
+   *
+   * <pre>
+   * Workflows is used to deploy and execute workflow programs.
+   * Workflows makes sure the program executes reliably, despite hardware and
+   * networking interruptions.
+   * </pre>
+   */
+  public static final class WorkflowsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WorkflowsBlockingV2Stub> {
+    private WorkflowsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WorkflowsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WorkflowsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workflows in a given project and location.
+     * The default order is not specified.
+     * </pre>
+     */
+    public com.google.cloud.workflows.v1.ListWorkflowsResponse listWorkflows(
+        com.google.cloud.workflows.v1.ListWorkflowsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkflowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single workflow.
+     * </pre>
+     */
+    public com.google.cloud.workflows.v1.Workflow getWorkflow(
+        com.google.cloud.workflows.v1.GetWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new workflow. If a workflow with the specified name already
+     * exists in the specified project and location, the long running operation
+     * returns a [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkflow(
+        com.google.cloud.workflows.v1.CreateWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a workflow with the specified name.
+     * This method also cancels and deletes all running executions of the
+     * workflow.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWorkflow(
+        com.google.cloud.workflows.v1.DeleteWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing workflow.
+     * Running this method has no impact on already running executions of the
+     * workflow. A new revision of the workflow might be created as a result of a
+     * successful update operation. In that case, the new revision is used
+     * in new workflow executions.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWorkflow(
+        com.google.cloud.workflows.v1.UpdateWorkflowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists revisions for a given workflow.
+     * </pre>
+     */
+    public com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse listWorkflowRevisions(
+        com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkflowRevisionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Workflows.
    *
    * <pre>
    * Workflows is used to deploy and execute workflow programs.

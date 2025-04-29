@@ -36,6 +36,7 @@ public interface ValidateIapAttributeExpressionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ValidateIapAttributeExpressionRequestOrBuilder
    * @return The expression.
    */
   java.lang.String getExpression();
+
   /**
    *
    *

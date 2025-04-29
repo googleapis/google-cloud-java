@@ -309,7 +309,8 @@ public class ColumnDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               columnDataProfileName.pathTemplate, ORGANIZATION_LOCATION_COLUMN_DATA_PROFILE),
-          "toBuilder is only supported when ColumnDataProfileName has the pattern of organizations/{organization}/locations/{location}/columnDataProfiles/{column_data_profile}");
+          "toBuilder is only supported when ColumnDataProfileName has the pattern of"
+              + " organizations/{organization}/locations/{location}/columnDataProfiles/{column_data_profile}");
       this.organization = columnDataProfileName.organization;
       this.location = columnDataProfileName.location;
       this.columnDataProfile = columnDataProfileName.columnDataProfile;

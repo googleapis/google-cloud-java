@@ -39,6 +39,7 @@ public interface CreateExecutionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateExecutionRequestOrBuilder
    * @return The executionId.
    */
   java.lang.String getExecutionId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateExecutionRequestOrBuilder
    * @return Whether the execution field is set.
    */
   boolean hasExecution();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateExecutionRequestOrBuilder
    * @return The execution.
    */
   com.google.cloud.notebooks.v1.Execution getExecution();
+
   /**
    *
    *

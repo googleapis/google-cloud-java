@@ -38,6 +38,7 @@ public interface UpdateAutomaticImprovementsRequestOrBuilder
    * @return Whether the automaticImprovements field is set.
    */
   boolean hasAutomaticImprovements();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAutomaticImprovementsRequestOrBuilder
    * @return The automaticImprovements.
    */
   com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements getAutomaticImprovements();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateAutomaticImprovementsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface UpdateAutomaticImprovementsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

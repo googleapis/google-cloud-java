@@ -34,6 +34,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StopInstancesInstanceGroupManagerRequest)
     StopInstancesInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopInstancesInstanceGroupManagerRequest.newBuilder() to construct.
   private StopInstancesInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class StopInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       37556877;
   private com.google.cloud.compute.v1.InstanceGroupManagersStopInstancesRequest
       instanceGroupManagersStopInstancesRequestResource_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class StopInstancesInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersStopInstancesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         ? com.google.cloud.compute.v1.InstanceGroupManagersStopInstancesRequest.getDefaultInstance()
         : instanceGroupManagersStopInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class StopInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class StopInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class StopInstancesInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public final class StopInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -571,6 +584,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -843,6 +857,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -866,6 +881,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +905,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +947,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +979,7 @@ public final class StopInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersStopInstancesRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersStopInstancesRequestOrBuilder>
         instanceGroupManagersStopInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -976,6 +996,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersStopInstancesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1000,6 +1021,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return instanceGroupManagersStopInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1047,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1072,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1105,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1127,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersStopInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1141,6 +1168,7 @@ public final class StopInstancesInstanceGroupManagerRequest
             : instanceGroupManagersStopInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1200,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1196,6 +1225,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1250,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1274,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1294,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1321,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1302,6 +1336,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1324,6 +1359,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1382,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1367,6 +1404,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1422,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1447,7 @@ public final class StopInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1432,6 +1472,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1497,7 @@ public final class StopInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1479,6 +1521,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1541,7 @@ public final class StopInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

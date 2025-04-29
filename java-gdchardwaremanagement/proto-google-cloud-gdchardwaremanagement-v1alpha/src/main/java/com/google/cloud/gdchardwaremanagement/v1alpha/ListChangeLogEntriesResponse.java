@@ -33,6 +33,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.ListChangeLogEntriesResponse)
     ListChangeLogEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListChangeLogEntriesResponse.newBuilder() to construct.
   private ListChangeLogEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry>
       changeLogEntries_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       getChangeLogEntriesList() {
     return changeLogEntries_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       getChangeLogEntriesOrBuilderList() {
     return changeLogEntries_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
   public int getChangeLogEntriesCount() {
     return changeLogEntries_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       int index) {
     return changeLogEntries_.get(index);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -461,6 +473,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -776,6 +789,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return changeLogEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -794,6 +808,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return changeLogEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return changeLogEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -838,6 +854,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +953,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +977,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1001,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1023,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1045,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         getChangeLogEntriesBuilder(int index) {
       return getChangeLogEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return changeLogEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(changeLogEntries_);
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1120,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
           .addBuilder(
               com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1110,6 +1139,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
               index,
               com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1147,6 +1177,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1169,6 +1200,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1223,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1212,6 +1245,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1263,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1296,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1276,6 +1312,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1290,6 +1327,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1305,6 +1343,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1320,6 +1359,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1343,6 +1383,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1406,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1384,6 +1426,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1445,7 @@ public final class ListChangeLogEntriesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

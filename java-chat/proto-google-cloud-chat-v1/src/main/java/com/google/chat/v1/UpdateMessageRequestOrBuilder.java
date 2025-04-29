@@ -36,6 +36,7 @@ public interface UpdateMessageRequestOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateMessageRequestOrBuilder
    * @return The message.
    */
   com.google.chat.v1.Message getMessage();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateMessageRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface UpdateMessageRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

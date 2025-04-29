@@ -37,6 +37,7 @@ public interface ResourceCAIInfoOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.RangeInfo)
     RangeInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RangeInfo.newBuilder() to construct.
   private RangeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_FIELD_NUMBER = 1;
   private long start_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStart() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_FIELD_NUMBER = 2;
   private long end_ = 0L;
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnd() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -309,6 +314,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -507,6 +513,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long start_;
+
     /**
      *
      *
@@ -524,6 +531,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStart() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     public long getStart() {
       return start_;
     }
+
     /**
      *
      *
@@ -562,6 +571,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +593,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long end_;
+
     /**
      *
      *
@@ -598,6 +609,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnd() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +625,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
     public long getEnd() {
       return end_;
     }
+
     /**
      *
      *
@@ -632,6 +645,7 @@ public final class RangeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

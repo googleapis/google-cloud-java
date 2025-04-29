@@ -36,6 +36,7 @@ public interface InputConfigOrBuilder
    * @return Whether the textMetadata field is set.
    */
   boolean hasTextMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InputConfigOrBuilder
    * @return The textMetadata.
    */
   com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface InputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface InputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface InputConfigOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface InputConfigOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface InputConfigOrBuilder
    * @return The enum numeric value on the wire for dataType.
    */
   int getDataTypeValue();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface InputConfigOrBuilder
    * @return The enum numeric value on the wire for annotationType.
    */
   int getAnnotationTypeValue();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface InputConfigOrBuilder
    * @return Whether the classificationMetadata field is set.
    */
   boolean hasClassificationMetadata();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface InputConfigOrBuilder
    * @return The classificationMetadata.
    */
   com.google.cloud.datalabeling.v1beta1.ClassificationMetadata getClassificationMetadata();
+
   /**
    *
    *

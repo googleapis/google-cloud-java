@@ -33,6 +33,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.CreateReportTaskRequest)
     CreateReportTaskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateReportTaskRequest.newBuilder() to construct.
   private CreateReportTaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
 
   public static final int REPORT_TASK_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.ReportTask reportTask_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
   public boolean hasReportTask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
         ? com.google.analytics.data.v1alpha.ReportTask.getDefaultInstance()
         : reportTask_;
   }
+
   /**
    *
    *
@@ -351,6 +357,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -564,6 +571,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -638,6 +648,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +669,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.ReportTask.Builder,
             com.google.analytics.data.v1alpha.ReportTaskOrBuilder>
         reportTaskBuilder_;
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
     public boolean hasReportTask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
         return reportTaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
       onChanged();
       return getReportTaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class CreateReportTaskRequest extends com.google.protobuf.Generated
             : reportTask_;
       }
     }
+
     /**
      *
      *

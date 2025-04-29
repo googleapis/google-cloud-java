@@ -34,6 +34,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1alpha.MembershipSpec)
     MembershipSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MembershipSpec.newBuilder() to construct.
   private MembershipSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CONFIG_SYNC_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync configSync_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfigSync() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync.getDefaultInstance()
         : configSync_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_CONTROLLER_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController policyController_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolicyController() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController.getDefaultInstance()
         : policyController_;
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BINAUTHZ_FIELD_NUMBER = 3;
   private com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzConfig binauthz_;
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBinauthz() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzConfig.getDefaultInstance()
         : binauthz_;
   }
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int HIERARCHY_CONTROLLER_FIELD_NUMBER = 4;
   private com.google.cloud.gkehub.configmanagement.v1alpha.HierarchyControllerConfig
       hierarchyController_;
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHierarchyController() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -262,6 +274,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : hierarchyController_;
   }
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -309,6 +323,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -549,6 +564,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -835,6 +851,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncOrBuilder>
         configSyncBuilder_;
+
     /**
      *
      *
@@ -849,6 +866,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfigSync() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         return configSyncBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +932,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +963,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +983,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigSyncFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             : configSync_;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerOrBuilder>
         policyControllerBuilder_;
+
     /**
      *
      *
@@ -1042,6 +1068,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolicyController() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         return policyControllerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1115,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1169,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1190,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1207,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPolicyControllerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1195,6 +1228,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             : policyController_;
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1262,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzConfig.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzConfigOrBuilder>
         binauthzBuilder_;
+
     /**
      *
      *
@@ -1242,6 +1277,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBinauthz() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1262,6 +1298,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         return binauthzBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1285,6 +1322,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1343,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1374,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1394,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1410,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBinauthzFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1388,6 +1430,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             : binauthz_;
       }
     }
+
     /**
      *
      *
@@ -1421,6 +1464,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1alpha.HierarchyControllerConfig.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.HierarchyControllerConfigOrBuilder>
         hierarchyControllerBuilder_;
+
     /**
      *
      *
@@ -1437,6 +1481,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHierarchyController() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1461,6 +1506,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         return hierarchyControllerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1486,6 +1532,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1556,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1589,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1562,6 +1611,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1629,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHierarchyControllerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1601,6 +1652,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             : hierarchyController_;
       }
     }
+
     /**
      *
      *
@@ -1631,6 +1683,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -1653,6 +1706,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1675,6 +1729,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1751,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1713,6 +1769,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

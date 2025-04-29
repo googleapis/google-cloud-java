@@ -33,6 +33,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig)
     CustomOutputFormatConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomOutputFormatConfig.newBuilder() to construct.
   private CustomOutputFormatConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
     private CustomOutputFormatConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
   }
 
   public static final int RETURN_RAW_OUTPUT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
   public boolean hasReturnRawOutput() {
     return customOutputFormatConfigCase_ == 1;
   }
+
   /**
    *
    *
@@ -318,6 +322,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -543,6 +548,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
     public boolean hasReturnRawOutput() {
       return customOutputFormatConfigCase_ == 1;
     }
+
     /**
      *
      *
@@ -560,6 +566,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
       }
       return false;
     }
+
     /**
      *
      *
@@ -579,6 +586,7 @@ public final class CustomOutputFormatConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

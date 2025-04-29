@@ -33,6 +33,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CreateReleaseConfigRequest)
     CreateReleaseConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateReleaseConfigRequest.newBuilder() to construct.
   private CreateReleaseConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
 
   public static final int RELEASE_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1beta1.ReleaseConfig releaseConfig_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
   public boolean hasReleaseConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
         ? com.google.cloud.dataform.v1beta1.ReleaseConfig.getDefaultInstance()
         : releaseConfig_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object releaseConfigId_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +707,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +753,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
             com.google.cloud.dataform.v1beta1.ReleaseConfig.Builder,
             com.google.cloud.dataform.v1beta1.ReleaseConfigOrBuilder>
         releaseConfigBuilder_;
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
     public boolean hasReleaseConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
         return releaseConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +944,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return getReleaseConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -943,6 +965,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
             : releaseConfig_;
       }
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object releaseConfigId_ = "";
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class CreateReleaseConfigRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

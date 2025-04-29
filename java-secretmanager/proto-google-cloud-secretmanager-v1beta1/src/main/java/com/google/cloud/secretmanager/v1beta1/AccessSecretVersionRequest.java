@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.AccessSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AccessSecretVersion].
+ * Request message for
+ * [SecretManagerService.AccessSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AccessSecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.AccessSecretVersionRequest}
@@ -33,6 +34,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.AccessSecretVersionRequest)
     AccessSecretVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessSecretVersionRequest.newBuilder() to construct.
   private AccessSecretVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,11 +69,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -93,11 +97,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -281,11 +287,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.AccessSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AccessSecretVersion].
+   * Request message for
+   * [SecretManagerService.AccessSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AccessSecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.AccessSecretVersionRequest}
@@ -470,11 +478,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -495,11 +505,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -520,11 +532,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -544,11 +558,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -564,11 +580,13 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *

@@ -34,6 +34,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1alpha1.GcpCredentials)
     GcpCredentialsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcpCredentials.newBuilder() to construct.
   private GcpCredentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> idTokens_ =
       emptyList(com.google.protobuf.ByteString.class);
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.ByteString> getIdTokensList() {
     return idTokens_;
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   public int getIdTokensCount() {
     return idTokens_.size();
   }
+
   /**
    *
    *
@@ -296,6 +300,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -520,6 +526,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       idTokens_.makeImmutable();
       return idTokens_;
     }
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     public int getIdTokensCount() {
       return idTokens_.size();
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIdTokens(int index) {
       return idTokens_.get(index);
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

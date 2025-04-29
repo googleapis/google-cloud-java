@@ -36,6 +36,7 @@ public interface GetTargetTcpProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetTargetTcpProxyRequestOrBuilder
    * @return The targetTcpProxy.
    */
   java.lang.String getTargetTcpProxy();
+
   /**
    *
    *

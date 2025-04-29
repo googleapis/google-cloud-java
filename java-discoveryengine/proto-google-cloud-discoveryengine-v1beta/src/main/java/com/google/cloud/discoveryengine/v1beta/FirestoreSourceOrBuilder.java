@@ -38,6 +38,7 @@ public interface FirestoreSourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface FirestoreSourceOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface FirestoreSourceOrBuilder
    * @return The collectionId.
    */
   java.lang.String getCollectionId();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface FirestoreSourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
+
   /**
    *
    *

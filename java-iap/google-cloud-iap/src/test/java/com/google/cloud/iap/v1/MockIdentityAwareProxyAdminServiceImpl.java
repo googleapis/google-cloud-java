@@ -183,7 +183,8 @@ public class MockIdentityAwareProxyAdminServiceImpl extends IdentityAwareProxyAd
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ValidateIapAttributeExpression, expected %s or %s",
+                  "Unrecognized response type %s for method ValidateIapAttributeExpression,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ValidateIapAttributeExpressionResponse.class.getName(),
                   Exception.class.getName())));
@@ -205,7 +206,8 @@ public class MockIdentityAwareProxyAdminServiceImpl extends IdentityAwareProxyAd
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTunnelDestGroups, expected %s or %s",
+                  "Unrecognized response type %s for method ListTunnelDestGroups, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTunnelDestGroupsResponse.class.getName(),
                   Exception.class.getName())));
@@ -226,7 +228,8 @@ public class MockIdentityAwareProxyAdminServiceImpl extends IdentityAwareProxyAd
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTunnelDestGroup, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTunnelDestGroup, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TunnelDestGroup.class.getName(),
                   Exception.class.getName())));
@@ -268,7 +271,8 @@ public class MockIdentityAwareProxyAdminServiceImpl extends IdentityAwareProxyAd
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTunnelDestGroup, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteTunnelDestGroup, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -289,7 +293,8 @@ public class MockIdentityAwareProxyAdminServiceImpl extends IdentityAwareProxyAd
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTunnelDestGroup, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateTunnelDestGroup, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TunnelDestGroup.class.getName(),
                   Exception.class.getName())));

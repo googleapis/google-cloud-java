@@ -42,6 +42,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The machineMgmtIpv4Range.
    */
   java.lang.String getMachineMgmtIpv4Range();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The kubernetesNodeIpv4Range.
    */
   java.lang.String getKubernetesNodeIpv4Range();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The kubernetesControlPlaneIpv4Range.
    */
   java.lang.String getKubernetesControlPlaneIpv4Range();
+
   /**
    *
    *
@@ -149,6 +152,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return Whether the managementIpv4Subnet field is set.
    */
   boolean hasManagementIpv4Subnet();
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The managementIpv4Subnet.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Subnet getManagementIpv4Subnet();
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return Whether the kubernetesIpv4Subnet field is set.
    */
   boolean hasKubernetesIpv4Subnet();
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The kubernetesIpv4Subnet.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Subnet getKubernetesIpv4Subnet();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return A list containing the dnsIpv4Addresses.
    */
   java.util.List<java.lang.String> getDnsIpv4AddressesList();
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The count of dnsIpv4Addresses.
    */
   int getDnsIpv4AddressesCount();
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public interface ZoneNetworkConfigOrBuilder
    * @return The dnsIpv4Addresses at the given index.
    */
   java.lang.String getDnsIpv4Addresses(int index);
+
   /**
    *
    *

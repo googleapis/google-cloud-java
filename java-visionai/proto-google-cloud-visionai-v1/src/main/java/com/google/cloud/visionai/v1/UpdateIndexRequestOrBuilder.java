@@ -37,6 +37,7 @@ public interface UpdateIndexRequestOrBuilder
    * @return Whether the index field is set.
    */
   boolean hasIndex();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateIndexRequestOrBuilder
    * @return The index.
    */
   com.google.cloud.visionai.v1.Index getIndex();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateIndexRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateIndexRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

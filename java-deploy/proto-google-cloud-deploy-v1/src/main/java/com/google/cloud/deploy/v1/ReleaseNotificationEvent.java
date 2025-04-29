@@ -35,6 +35,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ReleaseNotificationEvent)
     ReleaseNotificationEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReleaseNotificationEvent.newBuilder() to construct.
   private ReleaseNotificationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object releaseUid_ = "";
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object release_ = "";
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -502,6 +513,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +758,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -768,6 +781,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +869,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object pipelineUid_ = "";
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object releaseUid_ = "";
+
     /**
      *
      *
@@ -980,6 +1003,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object release_ = "";
+
     /**
      *
      *
@@ -1086,6 +1114,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1159,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1202,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1185,6 +1218,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1203,6 +1237,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1219,6 +1254,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1240,6 +1276,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

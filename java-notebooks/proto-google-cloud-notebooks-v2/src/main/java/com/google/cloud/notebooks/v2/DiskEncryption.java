@@ -72,6 +72,7 @@ public enum DiskEncryption implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DISK_ENCRYPTION_UNSPECIFIED = 0;</code>
    */
   public static final int DISK_ENCRYPTION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum DiskEncryption implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GMEK = 1;</code>
    */
   public static final int GMEK_VALUE = 1;
+
   /**
    *
    *

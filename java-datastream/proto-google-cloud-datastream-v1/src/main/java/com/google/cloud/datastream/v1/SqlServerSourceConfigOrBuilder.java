@@ -36,6 +36,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return Whether the includeObjects field is set.
    */
   boolean hasIncludeObjects();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return The includeObjects.
    */
   com.google.cloud.datastream.v1.SqlServerRdbms getIncludeObjects();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return Whether the excludeObjects field is set.
    */
   boolean hasExcludeObjects();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return The excludeObjects.
    */
   com.google.cloud.datastream.v1.SqlServerRdbms getExcludeObjects();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return Whether the transactionLogs field is set.
    */
   boolean hasTransactionLogs();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return The transactionLogs.
    */
   com.google.cloud.datastream.v1.SqlServerTransactionLogs getTransactionLogs();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return Whether the changeTables field is set.
    */
   boolean hasChangeTables();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface SqlServerSourceConfigOrBuilder
    * @return The changeTables.
    */
   com.google.cloud.datastream.v1.SqlServerChangeTables getChangeTables();
+
   /**
    *
    *

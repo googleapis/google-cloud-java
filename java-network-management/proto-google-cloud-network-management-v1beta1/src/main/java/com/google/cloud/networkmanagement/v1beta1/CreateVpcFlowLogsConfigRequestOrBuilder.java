@@ -39,6 +39,7 @@ public interface CreateVpcFlowLogsConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateVpcFlowLogsConfigRequestOrBuilder
    * @return The vpcFlowLogsConfigId.
    */
   java.lang.String getVpcFlowLogsConfigId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface CreateVpcFlowLogsConfigRequestOrBuilder
    * @return Whether the vpcFlowLogsConfig field is set.
    */
   boolean hasVpcFlowLogsConfig();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateVpcFlowLogsConfigRequestOrBuilder
    * @return The vpcFlowLogsConfig.
    */
   com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig getVpcFlowLogsConfig();
+
   /**
    *
    *

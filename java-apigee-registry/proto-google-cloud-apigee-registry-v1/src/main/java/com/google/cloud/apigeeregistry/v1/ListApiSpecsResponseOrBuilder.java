@@ -34,6 +34,7 @@ public interface ListApiSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiSpec api_specs = 1;</code>
    */
   java.util.List<com.google.cloud.apigeeregistry.v1.ApiSpec> getApiSpecsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListApiSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiSpec api_specs = 1;</code>
    */
   com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpecs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListApiSpecsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.ApiSpec api_specs = 1;</code>
    */
   int getApiSpecsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListApiSpecsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigeeregistry.v1.ApiSpecOrBuilder>
       getApiSpecsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListApiSpecsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateTrustConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateTrustConfigRequestOrBuilder
    * @return The trustConfigId.
    */
   java.lang.String getTrustConfigId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateTrustConfigRequestOrBuilder
    * @return Whether the trustConfig field is set.
    */
   boolean hasTrustConfig();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateTrustConfigRequestOrBuilder
    * @return The trustConfig.
    */
   com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfig();
+
   /**
    *
    *

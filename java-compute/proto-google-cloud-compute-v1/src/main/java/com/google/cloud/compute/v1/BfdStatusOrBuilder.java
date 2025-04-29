@@ -37,6 +37,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the bfdSessionInitializationMode field is set.
    */
   boolean hasBfdSessionInitializationMode();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BfdStatusOrBuilder
    * @return The bfdSessionInitializationMode.
    */
   java.lang.String getBfdSessionInitializationMode();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the configUpdateTimestampMicros field is set.
    */
   boolean hasConfigUpdateTimestampMicros();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the controlPacketCounts field is set.
    */
   boolean hasControlPacketCounts();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface BfdStatusOrBuilder
    * @return The controlPacketCounts.
    */
   com.google.cloud.compute.v1.BfdStatusPacketCounts getControlPacketCounts();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface BfdStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.PacketIntervals> getControlPacketIntervalsList();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface BfdStatusOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.PacketIntervals getControlPacketIntervals(int index);
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public interface BfdStatusOrBuilder
    * </code>
    */
   int getControlPacketIntervalsCount();
+
   /**
    *
    *
@@ -175,6 +183,7 @@ public interface BfdStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PacketIntervalsOrBuilder>
       getControlPacketIntervalsOrBuilderList();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the localDiagnostic field is set.
    */
   boolean hasLocalDiagnostic();
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public interface BfdStatusOrBuilder
    * @return The localDiagnostic.
    */
   java.lang.String getLocalDiagnostic();
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the localState field is set.
    */
   boolean hasLocalState();
+
   /**
    *
    *
@@ -254,6 +266,7 @@ public interface BfdStatusOrBuilder
    * @return The localState.
    */
   java.lang.String getLocalState();
+
   /**
    *
    *
@@ -280,6 +293,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the negotiatedLocalControlTxIntervalMs field is set.
    */
   boolean hasNegotiatedLocalControlTxIntervalMs();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the rxPacket field is set.
    */
   boolean hasRxPacket();
+
   /**
    *
    *
@@ -317,6 +332,7 @@ public interface BfdStatusOrBuilder
    * @return The rxPacket.
    */
   com.google.cloud.compute.v1.BfdPacket getRxPacket();
+
   /**
    *
    *
@@ -340,6 +356,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the txPacket field is set.
    */
   boolean hasTxPacket();
+
   /**
    *
    *
@@ -352,6 +369,7 @@ public interface BfdStatusOrBuilder
    * @return The txPacket.
    */
   com.google.cloud.compute.v1.BfdPacket getTxPacket();
+
   /**
    *
    *
@@ -375,6 +393,7 @@ public interface BfdStatusOrBuilder
    * @return Whether the uptimeMs field is set.
    */
   boolean hasUptimeMs();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.ResourceOptions)
     ResourceOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceOptions.newBuilder() to construct.
   private ResourceOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectVersion_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int V1BETA1_CRD_FIELD_NUMBER = 2;
   private boolean v1Beta1Crd_ = false;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object k8SVersion_ = "";
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -372,6 +378,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -583,6 +590,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object connectVersion_ = "";
+
     /**
      *
      *
@@ -607,6 +615,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -631,6 +640,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -654,6 +664,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean v1Beta1Crd_;
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     public boolean getV1Beta1Crd() {
       return v1Beta1Crd_;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object k8SVersion_ = "";
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

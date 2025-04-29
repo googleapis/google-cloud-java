@@ -214,6 +214,19 @@ public final class IDSGrpc {
     return IDSStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static IDSBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<IDSBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IDSBlockingV2Stub>() {
+          @java.lang.Override
+          public IDSBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IDSBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return IDSBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -407,6 +420,77 @@ public final class IDSGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service IDS.
+   *
+   * <pre>
+   * The IDS Service
+   * </pre>
+   */
+  public static final class IDSBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<IDSBlockingV2Stub> {
+    private IDSBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected IDSBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new IDSBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.ids.v1.ListEndpointsResponse listEndpoints(
+        com.google.cloud.ids.v1.ListEndpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.ids.v1.Endpoint getEndpoint(
+        com.google.cloud.ids.v1.GetEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Endpoint in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEndpoint(
+        com.google.cloud.ids.v1.CreateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEndpoint(
+        com.google.cloud.ids.v1.DeleteEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service IDS.
    *
    * <pre>
    * The IDS Service

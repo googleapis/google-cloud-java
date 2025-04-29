@@ -40,6 +40,7 @@ public interface GetKeyEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

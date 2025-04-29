@@ -134,7 +134,8 @@ public class MockSpacesServiceImpl extends SpacesServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ConnectActiveConference, expected %s or %s",
+                  "Unrecognized response type %s for method ConnectActiveConference, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConnectActiveConferenceResponse.class.getName(),
                   Exception.class.getName())));

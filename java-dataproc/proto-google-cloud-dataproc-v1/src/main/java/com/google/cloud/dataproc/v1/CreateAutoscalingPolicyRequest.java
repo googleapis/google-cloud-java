@@ -33,6 +33,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest)
     CreateAutoscalingPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateAutoscalingPolicyRequest.newBuilder() to construct.
   private CreateAutoscalingPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
 
   public static final int POLICY_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.AutoscalingPolicy policy_;
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dataproc.v1.AutoscalingPolicy.getDefaultInstance()
         : policy_;
   }
+
   /**
    *
    *
@@ -368,6 +374,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +588,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -614,6 +622,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +656,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -679,6 +689,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +759,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
             com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder,
             com.google.cloud.dataproc.v1.AutoscalingPolicyOrBuilder>
         policyBuilder_;
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
         return policyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
             : policy_;
       }
     }
+
     /**
      *
      *

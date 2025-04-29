@@ -36,6 +36,7 @@ public interface ScalingScheduleStatusOrBuilder
    * @return Whether the lastStartTime field is set.
    */
   boolean hasLastStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ScalingScheduleStatusOrBuilder
    * @return The lastStartTime.
    */
   java.lang.String getLastStartTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ScalingScheduleStatusOrBuilder
    * @return Whether the nextStartTime field is set.
    */
   boolean hasNextStartTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ScalingScheduleStatusOrBuilder
    * @return The nextStartTime.
    */
   java.lang.String getNextStartTime();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface ScalingScheduleStatusOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface ScalingScheduleStatusOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface SetCloudArmorTierProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SetCloudArmorTierProjectRequestOrBuilder
    * @return Whether the projectsSetCloudArmorTierRequestResource field is set.
    */
   boolean hasProjectsSetCloudArmorTierRequestResource();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface SetCloudArmorTierProjectRequestOrBuilder
    */
   com.google.cloud.compute.v1.ProjectsSetCloudArmorTierRequest
       getProjectsSetCloudArmorTierRequestResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SetCloudArmorTierProjectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface SetCloudArmorTierProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

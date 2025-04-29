@@ -33,6 +33,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.EnumTypeOptions)
     EnumTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EnumTypeOptions.newBuilder() to construct.
   private EnumTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList possibleValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getPossibleValuesList() {
     return possibleValues_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   public int getPossibleValuesCount() {
     return possibleValues_.size();
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getPossibleValues(int index) {
     return possibleValues_.get(index);
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int VALIDATION_CHECK_DISABLED_FIELD_NUMBER = 2;
   private boolean validationCheckDisabled_ = false;
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -534,6 +541,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -549,6 +557,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       possibleValues_.makeImmutable();
       return possibleValues_;
     }
+
     /**
      *
      *
@@ -563,6 +572,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public int getPossibleValuesCount() {
       return possibleValues_.size();
     }
+
     /**
      *
      *
@@ -578,6 +588,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getPossibleValues(int index) {
       return possibleValues_.get(index);
     }
+
     /**
      *
      *
@@ -593,6 +604,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getPossibleValuesBytes(int index) {
       return possibleValues_.getByteString(index);
     }
+
     /**
      *
      *
@@ -616,6 +628,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +671,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +690,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +716,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean validationCheckDisabled_;
+
     /**
      *
      *
@@ -717,6 +734,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public boolean getValidationCheckDisabled() {
       return validationCheckDisabled_;
     }
+
     /**
      *
      *
@@ -738,6 +756,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

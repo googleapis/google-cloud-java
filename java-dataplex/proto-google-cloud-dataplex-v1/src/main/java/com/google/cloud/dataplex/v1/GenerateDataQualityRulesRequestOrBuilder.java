@@ -41,6 +41,7 @@ public interface GenerateDataQualityRulesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

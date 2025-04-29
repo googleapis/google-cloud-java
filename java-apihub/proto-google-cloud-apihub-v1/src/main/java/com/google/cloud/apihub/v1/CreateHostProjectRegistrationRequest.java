@@ -36,6 +36,7 @@ public final class CreateHostProjectRegistrationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.CreateHostProjectRegistrationRequest)
     CreateHostProjectRegistrationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateHostProjectRegistrationRequest.newBuilder() to construct.
   private CreateHostProjectRegistrationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class CreateHostProjectRegistrationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateHostProjectRegistrationRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class CreateHostProjectRegistrationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostProjectRegistrationId_ = "";
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class CreateHostProjectRegistrationRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class CreateHostProjectRegistrationRequest
 
   public static final int HOST_PROJECT_REGISTRATION_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.HostProjectRegistration hostProjectRegistration_;
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class CreateHostProjectRegistrationRequest
   public boolean hasHostProjectRegistration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class CreateHostProjectRegistrationRequest
         ? com.google.cloud.apihub.v1.HostProjectRegistration.getDefaultInstance()
         : hostProjectRegistration_;
   }
+
   /**
    *
    *
@@ -425,6 +433,7 @@ public final class CreateHostProjectRegistrationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -663,6 +672,7 @@ public final class CreateHostProjectRegistrationRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -688,6 +698,7 @@ public final class CreateHostProjectRegistrationRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -713,6 +724,7 @@ public final class CreateHostProjectRegistrationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -737,6 +749,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +770,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class CreateHostProjectRegistrationRequest
     }
 
     private java.lang.Object hostProjectRegistrationId_ = "";
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class CreateHostProjectRegistrationRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class CreateHostProjectRegistrationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +900,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class CreateHostProjectRegistrationRequest
             com.google.cloud.apihub.v1.HostProjectRegistration.Builder,
             com.google.cloud.apihub.v1.HostProjectRegistrationOrBuilder>
         hostProjectRegistrationBuilder_;
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class CreateHostProjectRegistrationRequest
     public boolean hasHostProjectRegistration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class CreateHostProjectRegistrationRequest
         return hostProjectRegistrationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1023,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class CreateHostProjectRegistrationRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class CreateHostProjectRegistrationRequest
       onChanged();
       return getHostProjectRegistrationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1090,6 +1117,7 @@ public final class CreateHostProjectRegistrationRequest
             : hostProjectRegistration_;
       }
     }
+
     /**
      *
      *

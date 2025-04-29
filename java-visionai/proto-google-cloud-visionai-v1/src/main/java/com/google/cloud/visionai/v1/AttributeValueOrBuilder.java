@@ -36,6 +36,7 @@ public interface AttributeValueOrBuilder
    * @return Whether the i field is set.
    */
   boolean hasI();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AttributeValueOrBuilder
    * @return Whether the f field is set.
    */
   boolean hasF();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AttributeValueOrBuilder
    * @return Whether the b field is set.
    */
   boolean hasB();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface AttributeValueOrBuilder
    * @return Whether the s field is set.
    */
   boolean hasS();
+
   /**
    *
    *

@@ -372,6 +372,19 @@ public final class EntityTypesGrpc {
     return EntityTypesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EntityTypesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EntityTypesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EntityTypesBlockingV2Stub>() {
+          @java.lang.Override
+          public EntityTypesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EntityTypesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EntityTypesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -680,6 +693,124 @@ public final class EntityTypesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EntityTypes.
+   *
+   * <pre>
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+   * </pre>
+   */
+  public static final class EntityTypesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EntityTypesBlockingV2Stub> {
+    private EntityTypesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EntityTypesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EntityTypesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified entity type.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.EntityType getEntityType(
+        com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an entity type in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.EntityType createEntityType(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateEntityTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.EntityType updateEntityType(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified entity type.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntityType(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all entity types in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse listEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected entity types.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportEntityTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified entitytypes into the agent.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportEntityTypesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EntityTypes.
    *
    * <pre>
    * Service for managing

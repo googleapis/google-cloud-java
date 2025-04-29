@@ -38,6 +38,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The query.
    */
   com.google.cloud.dialogflow.v2beta1.TextInput getQuery();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The sessionId.
    */
   java.lang.String getSessionId();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *
@@ -246,6 +253,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The enum numeric value on the wire for querySource.
    */
   int getQuerySourceValue();
+
   /**
    *
    *
@@ -290,6 +298,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return Whether the endUserMetadata field is set.
    */
   boolean hasEndUserMetadata();
+
   /**
    *
    *
@@ -319,6 +328,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The endUserMetadata.
    */
   com.google.protobuf.Struct getEndUserMetadata();
+
   /**
    *
    *
@@ -361,6 +371,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return Whether the searchConfig field is set.
    */
   boolean hasSearchConfig();
+
   /**
    *
    *
@@ -375,6 +386,7 @@ public interface SearchKnowledgeRequestOrBuilder
    * @return The searchConfig.
    */
   com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig getSearchConfig();
+
   /**
    *
    *

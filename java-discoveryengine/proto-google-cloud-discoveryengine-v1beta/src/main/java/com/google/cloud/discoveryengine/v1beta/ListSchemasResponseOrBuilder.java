@@ -34,6 +34,7 @@ public interface ListSchemasResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Schema schemas = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Schema> getSchemasList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSchemasResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Schema schemas = 1;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Schema getSchemas(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSchemasResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Schema schemas = 1;</code>
    */
   int getSchemasCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSchemasResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.SchemaOrBuilder>
       getSchemasOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListSchemasResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

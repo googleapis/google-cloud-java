@@ -44,6 +44,7 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest>
       getRequestsList();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest getRequests(int index);
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

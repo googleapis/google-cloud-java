@@ -36,6 +36,7 @@ public interface StoragePoolDiskOrBuilder
    * @return A list containing the attachedInstances.
    */
   java.util.List<java.lang.String> getAttachedInstancesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The count of attachedInstances.
    */
   int getAttachedInstancesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The attachedInstances at the given index.
    */
   java.lang.String getAttachedInstances(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the disk field is set.
    */
   boolean hasDisk();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the provisionedIops field is set.
    */
   boolean hasProvisionedIops();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the provisionedThroughput field is set.
    */
   boolean hasProvisionedThroughput();
+
   /**
    *
    *
@@ -248,6 +259,7 @@ public interface StoragePoolDiskOrBuilder
    * @return A list containing the resourcePolicies.
    */
   java.util.List<java.lang.String> getResourcePoliciesList();
+
   /**
    *
    *
@@ -260,6 +272,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The count of resourcePolicies.
    */
   int getResourcePoliciesCount();
+
   /**
    *
    *
@@ -273,6 +286,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The resourcePolicies at the given index.
    */
   java.lang.String getResourcePolicies(int index);
+
   /**
    *
    *
@@ -299,6 +313,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the sizeGb field is set.
    */
   boolean hasSizeGb();
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -338,6 +354,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -364,6 +381,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -376,6 +394,7 @@ public interface StoragePoolDiskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -401,6 +420,7 @@ public interface StoragePoolDiskOrBuilder
    * @return Whether the usedBytes field is set.
    */
   boolean hasUsedBytes();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateRunRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateRunRequestOrBuilder
    * @return Whether the run field is set.
    */
   boolean hasRun();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateRunRequestOrBuilder
    * @return The run.
    */
   com.google.cloud.datacatalog.lineage.v1.Run getRun();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateRunRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

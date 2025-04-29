@@ -39,7 +39,7 @@ public class AsyncGetSession {
       GetSessionRequest request =
           GetSessionRequest.newBuilder()
               .setName(
-                  SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                       .toString())
               .build();
       ApiFuture<Session> future = sessionServiceClient.getSessionCallable().futureCall(request);

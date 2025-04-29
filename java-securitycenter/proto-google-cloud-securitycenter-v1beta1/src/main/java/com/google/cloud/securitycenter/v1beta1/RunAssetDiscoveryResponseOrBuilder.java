@@ -36,6 +36,7 @@ public interface RunAssetDiscoveryResponseOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RunAssetDiscoveryResponseOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RunAssetDiscoveryResponseOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *

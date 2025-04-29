@@ -36,6 +36,7 @@ public interface ProductTextGenerationSuggestionOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProductTextGenerationSuggestionOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ProductTextGenerationSuggestionOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ProductTextGenerationSuggestionOrBuilder
    * @return Whether the changeSummary field is set.
    */
   boolean hasChangeSummary();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface ProductTextGenerationSuggestionOrBuilder
    * @return The changeSummary.
    */
   java.lang.String getChangeSummary();
+
   /**
    *
    *

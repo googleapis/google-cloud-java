@@ -35,6 +35,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.TimestampedObject)
     TimestampedObjectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimestampedObject.newBuilder() to construct.
   private TimestampedObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int NORMALIZED_BOUNDING_BOX_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.NormalizedBoundingBox normalizedBoundingBox_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public boolean hasNormalizedBoundingBox() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.videointelligence.v1.NormalizedBoundingBox.getDefaultInstance()
         : normalizedBoundingBox_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration timeOffset_;
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.DetectedAttribute> attributes_;
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       getAttributesList() {
     return attributes_;
   }
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       getAttributesOrBuilderList() {
     return attributes_;
   }
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public int getAttributesCount() {
     return attributes_.size();
   }
+
   /**
    *
    *
@@ -236,6 +247,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.videointelligence.v1.DetectedAttribute getAttributes(int index) {
     return attributes_.get(index);
   }
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.DetectedLandmark> landmarks_;
+
   /**
    *
    *
@@ -272,6 +285,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.videointelligence.v1.DetectedLandmark> getLandmarksList() {
     return landmarks_;
   }
+
   /**
    *
    *
@@ -288,6 +302,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       getLandmarksOrBuilderList() {
     return landmarks_;
   }
+
   /**
    *
    *
@@ -303,6 +318,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public int getLandmarksCount() {
     return landmarks_.size();
   }
+
   /**
    *
    *
@@ -318,6 +334,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.videointelligence.v1.DetectedLandmark getLandmarks(int index) {
     return landmarks_.get(index);
   }
+
   /**
    *
    *
@@ -537,6 +554,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -886,6 +904,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             com.google.cloud.videointelligence.v1.NormalizedBoundingBox.Builder,
             com.google.cloud.videointelligence.v1.NormalizedBoundingBoxOrBuilder>
         normalizedBoundingBoxBuilder_;
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     public boolean hasNormalizedBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -922,6 +942,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return normalizedBoundingBoxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -946,6 +967,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1021,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1042,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNormalizedBoundingBoxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             : normalizedBoundingBox_;
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1114,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1123,6 +1152,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return timeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1176,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1197,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1226,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1247,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1263,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1248,6 +1283,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             : timeOffset_;
       }
     }
+
     /**
      *
      *
@@ -1312,6 +1348,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return attributesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1367,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return attributesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1386,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return attributesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1373,6 +1412,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1436,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1461,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1445,6 +1487,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1510,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1534,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1558,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1580,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1555,6 +1602,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1618,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         int index) {
       return getAttributesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1589,6 +1638,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return attributesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1609,6 +1659,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(attributes_);
       }
     }
+
     /**
      *
      *
@@ -1624,6 +1675,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       return getAttributesFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.DetectedAttribute.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1641,6 +1693,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.DetectedAttribute.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1711,6 +1764,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return landmarksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1783,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return landmarksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1747,6 +1802,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return landmarksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1772,6 +1828,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1851,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1876,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1902,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1925,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1887,6 +1948,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1972,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1931,6 +1994,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1952,6 +2016,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2032,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         int index) {
       return getLandmarksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1986,6 +2052,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return landmarksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2072,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(landmarks_);
       }
     }
+
     /**
      *
      *
@@ -2020,6 +2088,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       return getLandmarksFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.DetectedLandmark.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2037,6 +2106,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.videointelligence.v1.DetectedLandmark.getDefaultInstance());
     }
+
     /**
      *
      *

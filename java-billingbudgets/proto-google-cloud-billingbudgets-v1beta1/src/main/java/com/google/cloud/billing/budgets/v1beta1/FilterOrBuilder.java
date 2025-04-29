@@ -39,6 +39,7 @@ public interface FilterOrBuilder
    * @return A list containing the projects.
    */
   java.util.List<java.lang.String> getProjectsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface FilterOrBuilder
    * @return The count of projects.
    */
   int getProjectsCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface FilterOrBuilder
    * @return The projects at the given index.
    */
   java.lang.String getProjects(int index);
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface FilterOrBuilder
    * @return A list containing the resourceAncestors.
    */
   java.util.List<java.lang.String> getResourceAncestorsList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface FilterOrBuilder
    * @return The count of resourceAncestors.
    */
   int getResourceAncestorsCount();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface FilterOrBuilder
    * @return The resourceAncestors at the given index.
    */
   java.lang.String getResourceAncestors(int index);
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface FilterOrBuilder
    * @return A list containing the creditTypes.
    */
   java.util.List<java.lang.String> getCreditTypesList();
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public interface FilterOrBuilder
    * @return The count of creditTypes.
    */
   int getCreditTypesCount();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface FilterOrBuilder
    * @return The creditTypes at the given index.
    */
   java.lang.String getCreditTypes(int index);
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface FilterOrBuilder
    * @return The enum numeric value on the wire for creditTypesTreatment.
    */
   int getCreditTypesTreatmentValue();
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public interface FilterOrBuilder
    * @return A list containing the services.
    */
   java.util.List<java.lang.String> getServicesList();
+
   /**
    *
    *
@@ -312,6 +323,7 @@ public interface FilterOrBuilder
    * @return The count of services.
    */
   int getServicesCount();
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public interface FilterOrBuilder
    * @return The services at the given index.
    */
   java.lang.String getServices(int index);
+
   /**
    *
    *
@@ -366,6 +379,7 @@ public interface FilterOrBuilder
    * @return A list containing the subaccounts.
    */
   java.util.List<java.lang.String> getSubaccountsList();
+
   /**
    *
    *
@@ -383,6 +397,7 @@ public interface FilterOrBuilder
    * @return The count of subaccounts.
    */
   int getSubaccountsCount();
+
   /**
    *
    *
@@ -401,6 +416,7 @@ public interface FilterOrBuilder
    * @return The subaccounts at the given index.
    */
   java.lang.String getSubaccounts(int index);
+
   /**
    *
    *
@@ -440,6 +456,7 @@ public interface FilterOrBuilder
    * </code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -460,9 +477,11 @@ public interface FilterOrBuilder
    * </code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels();
+
   /**
    *
    *
@@ -483,6 +502,7 @@ public interface FilterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap();
+
   /**
    *
    *
@@ -507,6 +527,7 @@ public interface FilterOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.ListValue defaultValue);
+
   /**
    *
    *
@@ -547,6 +568,7 @@ public interface FilterOrBuilder
    * @return Whether the calendarPeriod field is set.
    */
   boolean hasCalendarPeriod();
+
   /**
    *
    *
@@ -566,6 +588,7 @@ public interface FilterOrBuilder
    * @return The enum numeric value on the wire for calendarPeriod.
    */
   int getCalendarPeriodValue();
+
   /**
    *
    *
@@ -601,6 +624,7 @@ public interface FilterOrBuilder
    * @return Whether the customPeriod field is set.
    */
   boolean hasCustomPeriod();
+
   /**
    *
    *
@@ -616,6 +640,7 @@ public interface FilterOrBuilder
    * @return The customPeriod.
    */
   com.google.cloud.billing.budgets.v1beta1.CustomPeriod getCustomPeriod();
+
   /**
    *
    *

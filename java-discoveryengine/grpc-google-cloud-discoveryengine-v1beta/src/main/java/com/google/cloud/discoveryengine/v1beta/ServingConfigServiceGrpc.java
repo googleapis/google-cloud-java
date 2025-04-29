@@ -197,6 +197,19 @@ public final class ServingConfigServiceGrpc {
     return ServingConfigServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServingConfigServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServingConfigServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServingConfigServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ServingConfigServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServingConfigServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServingConfigServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -378,6 +391,69 @@ public final class ServingConfigServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServingConfigService.
+   *
+   * <pre>
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig].
+   * </pre>
+   */
+  public static final class ServingConfigServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServingConfigServiceBlockingV2Stub> {
+    private ServingConfigServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServingConfigServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServingConfigServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ServingConfig updateServingConfig(
+        com.google.cloud.discoveryengine.v1beta.UpdateServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ServingConfig getServingConfig(
+        com.google.cloud.discoveryengine.v1beta.GetServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListServingConfigsResponse listServingConfigs(
+        com.google.cloud.discoveryengine.v1beta.ListServingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServingConfigService.
    *
    * <pre>
    * Service for operations related to

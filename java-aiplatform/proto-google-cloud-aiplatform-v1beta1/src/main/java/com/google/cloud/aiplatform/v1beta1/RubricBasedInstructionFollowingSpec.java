@@ -35,6 +35,7 @@ public final class RubricBasedInstructionFollowingSpec
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingSpec)
     RubricBasedInstructionFollowingSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RubricBasedInstructionFollowingSpec.newBuilder() to construct.
   private RubricBasedInstructionFollowingSpec(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class RubricBasedInstructionFollowingSpec
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

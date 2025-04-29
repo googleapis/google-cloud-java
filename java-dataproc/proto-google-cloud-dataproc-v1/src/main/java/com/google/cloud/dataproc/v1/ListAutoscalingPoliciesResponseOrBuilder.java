@@ -36,6 +36,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.AutoscalingPolicy> getPoliciesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicies(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * </code>
    */
   int getPoliciesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.AutoscalingPolicyOrBuilder>
       getPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -196,6 +196,19 @@ public final class ProductInputsServiceGrpc {
     return ProductInputsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProductInputsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProductInputsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductInputsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProductInputsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductInputsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProductInputsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -385,6 +398,75 @@ public final class ProductInputsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProductInputsService.
+   *
+   * <pre>
+   * Service to use ProductInput resource.
+   * This service works for products with online channel only.
+   * </pre>
+   */
+  public static final class ProductInputsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProductInputsServiceBlockingV2Stub> {
+    private ProductInputsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProductInputsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProductInputsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads a product input to your Merchant Center account. If an input
+     * with the same contentLanguage, offerId, and dataSource already exists,
+     * this method replaces that entry.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductInput insertProductInput(
+        com.google.shopping.merchant.products.v1beta.InsertProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInsertProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing product input in your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductInput updateProductInput(
+        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a product input from your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteProductInput(
+        com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProductInputMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProductInputsService.
    *
    * <pre>
    * Service to use ProductInput resource.

@@ -37,6 +37,7 @@ public interface CutoffTimeOrBuilder
    * @return Whether the hour field is set.
    */
   boolean hasHour();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CutoffTimeOrBuilder
    * @return Whether the minute field is set.
    */
   boolean hasMinute();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CutoffTimeOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CutoffTimeOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *

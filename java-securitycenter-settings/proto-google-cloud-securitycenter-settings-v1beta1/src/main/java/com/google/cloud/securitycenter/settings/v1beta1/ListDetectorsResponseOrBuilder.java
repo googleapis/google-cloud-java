@@ -34,6 +34,7 @@ public interface ListDetectorsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Detector> getDetectorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDetectorsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
   com.google.cloud.securitycenter.settings.v1beta1.Detector getDetectors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDetectorsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
   int getDetectorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDetectorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.settings.v1beta1.DetectorOrBuilder>
       getDetectorsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListDetectorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

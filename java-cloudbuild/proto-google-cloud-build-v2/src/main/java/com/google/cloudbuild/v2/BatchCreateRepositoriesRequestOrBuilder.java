@@ -41,6 +41,7 @@ public interface BatchCreateRepositoriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface BatchCreateRepositoriesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v2.CreateRepositoryRequest> getRequestsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface BatchCreateRepositoriesRequestOrBuilder
    * </code>
    */
   com.google.cloudbuild.v2.CreateRepositoryRequest getRequests(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface BatchCreateRepositoriesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface BatchCreateRepositoriesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v2.CreateRepositoryRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.AudienceDimension)
     AudienceDimensionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AudienceDimension.newBuilder() to construct.
   private AudienceDimension(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dimensionName_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +281,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -463,6 +467,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object dimensionName_ = "";
+
     /**
      *
      *
@@ -487,6 +492,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -511,6 +517,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

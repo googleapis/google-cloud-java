@@ -36,6 +36,7 @@ public interface ModelVersionCheckpointOrBuilder
    * @return The checkpointId.
    */
   java.lang.String getCheckpointId();
+
   /**
    *
    *

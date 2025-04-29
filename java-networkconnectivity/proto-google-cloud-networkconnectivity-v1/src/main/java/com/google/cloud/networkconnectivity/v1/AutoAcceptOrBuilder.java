@@ -39,6 +39,7 @@ public interface AutoAcceptOrBuilder
    * @return A list containing the autoAcceptProjects.
    */
   java.util.List<java.lang.String> getAutoAcceptProjectsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface AutoAcceptOrBuilder
    * @return The count of autoAcceptProjects.
    */
   int getAutoAcceptProjectsCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface AutoAcceptOrBuilder
    * @return The autoAcceptProjects at the given index.
    */
   java.lang.String getAutoAcceptProjects(int index);
+
   /**
    *
    *

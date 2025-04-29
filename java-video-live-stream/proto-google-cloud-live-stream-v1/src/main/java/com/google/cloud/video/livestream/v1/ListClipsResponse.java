@@ -33,6 +33,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.ListClipsResponse)
     ListClipsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListClipsResponse.newBuilder() to construct.
   private ListClipsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Clip> clips_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.video.livestream.v1.Clip> getClipsList() {
     return clips_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       getClipsOrBuilderList() {
     return clips_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   public int getClipsCount() {
     return clips_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.video.livestream.v1.Clip getClips(int index) {
     return clips_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +749,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return clipsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return clipsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return clipsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +893,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +935,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +975,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +988,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.video.livestream.v1.Clip.Builder getClipsBuilder(int index) {
       return getClipsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return clipsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -996,6 +1023,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(clips_);
       }
     }
+
     /**
      *
      *
@@ -1009,6 +1037,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       return getClipsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.Clip.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1022,6 +1051,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       return getClipsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.Clip.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1053,6 +1083,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1075,6 +1106,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1129,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1151,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1169,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1202,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1182,6 +1218,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1196,6 +1233,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1211,6 +1249,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1226,6 +1265,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1249,6 +1289,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1312,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1332,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1351,7 @@ public final class ListClipsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

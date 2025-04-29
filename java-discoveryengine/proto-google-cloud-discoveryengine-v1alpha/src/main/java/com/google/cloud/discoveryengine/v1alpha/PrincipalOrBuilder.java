@@ -40,6 +40,7 @@ public interface PrincipalOrBuilder
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface PrincipalOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface PrincipalOrBuilder
    * @return Whether the groupId field is set.
    */
   boolean hasGroupId();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface PrincipalOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
+
   /**
    *
    *

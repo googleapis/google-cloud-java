@@ -35,6 +35,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.Column)
     ColumnOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Column.newBuilder() to construct.
   private Column(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -161,6 +162,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -171,6 +173,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * <code>STRING = 1;</code>
      */
     public static final int STRING_VALUE = 1;
+
     /**
      *
      *
@@ -181,6 +184,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * <code>INT = 2;</code>
      */
     public static final int INT_VALUE = 2;
+
     /**
      *
      *
@@ -191,6 +195,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * <code>DECIMAL = 3;</code>
      */
     public static final int DECIMAL_VALUE = 3;
+
     /**
      *
      *
@@ -201,6 +206,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * <code>MONEY = 4;</code>
      */
     public static final int MONEY_VALUE = 4;
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      * <code>DATE = 5;</code>
      */
     public static final int DATE_VALUE = 5;
+
     /**
      *
      *
@@ -317,6 +324,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object columnId_ = "";
+
   /**
    *
    *
@@ -344,6 +352,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +385,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -399,6 +409,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -425,6 +436,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_TYPE_FIELD_NUMBER = 3;
   private int dataType_ = 0;
+
   /**
    *
    *
@@ -440,6 +452,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   public int getDataTypeValue() {
     return dataType_;
   }
+
   /**
    *
    *
@@ -635,6 +648,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -846,6 +860,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object columnId_ = "";
+
     /**
      *
      *
@@ -872,6 +887,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -898,6 +914,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -923,6 +940,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +962,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +991,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -994,6 +1014,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1037,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1059,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1077,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataType_ = 0;
+
     /**
      *
      *
@@ -1093,6 +1118,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     public int getDataTypeValue() {
       return dataType_;
     }
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.channel.v1.Column.DataType.forNumber(dataType_);
       return result == null ? com.google.cloud.channel.v1.Column.DataType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1149,6 +1177,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

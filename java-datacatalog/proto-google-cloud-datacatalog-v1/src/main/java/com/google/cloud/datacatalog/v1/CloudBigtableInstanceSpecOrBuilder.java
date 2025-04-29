@@ -37,6 +37,7 @@ public interface CloudBigtableInstanceSpecOrBuilder
    */
   java.util.List<com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec.CloudBigtableClusterSpec>
       getCloudBigtableClusterSpecsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CloudBigtableInstanceSpecOrBuilder
    */
   com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec.CloudBigtableClusterSpec
       getCloudBigtableClusterSpecs(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface CloudBigtableInstanceSpecOrBuilder
    * </code>
    */
   int getCloudBigtableClusterSpecsCount();
+
   /**
    *
    *
@@ -78,6 +81,7 @@ public interface CloudBigtableInstanceSpecOrBuilder
               com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec
                   .CloudBigtableClusterSpecOrBuilder>
       getCloudBigtableClusterSpecsOrBuilderList();
+
   /**
    *
    *

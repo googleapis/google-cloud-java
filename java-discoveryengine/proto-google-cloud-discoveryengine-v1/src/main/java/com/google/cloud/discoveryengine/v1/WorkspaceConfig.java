@@ -33,6 +33,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.WorkspaceConfig)
     WorkspaceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkspaceConfig.newBuilder() to construct.
   private WorkspaceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,6 +180,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -189,6 +191,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_DRIVE = 1;</code>
      */
     public static final int GOOGLE_DRIVE_VALUE = 1;
+
     /**
      *
      *
@@ -199,6 +202,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_MAIL = 2;</code>
      */
     public static final int GOOGLE_MAIL_VALUE = 2;
+
     /**
      *
      *
@@ -209,6 +213,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_SITES = 3;</code>
      */
     public static final int GOOGLE_SITES_VALUE = 3;
+
     /**
      *
      *
@@ -219,6 +224,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_CALENDAR = 4;</code>
      */
     public static final int GOOGLE_CALENDAR_VALUE = 4;
+
     /**
      *
      *
@@ -229,6 +235,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_CHAT = 5;</code>
      */
     public static final int GOOGLE_CHAT_VALUE = 5;
+
     /**
      *
      *
@@ -239,6 +246,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_GROUPS = 6;</code>
      */
     public static final int GOOGLE_GROUPS_VALUE = 6;
+
     /**
      *
      *
@@ -249,6 +257,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_KEEP = 7;</code>
      */
     public static final int GOOGLE_KEEP_VALUE = 7;
+
     /**
      *
      *
@@ -359,6 +368,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -374,6 +384,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -398,6 +409,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dasherCustomerId_ = "";
+
   /**
    *
    *
@@ -421,6 +433,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -449,6 +462,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object superAdminServiceAccount_ = "";
+
   /**
    *
    *
@@ -474,6 +488,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -504,6 +519,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object superAdminEmailAddress_ = "";
+
   /**
    *
    *
@@ -529,6 +545,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -744,6 +761,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -971,6 +989,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -986,6 +1005,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1004,6 +1024,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1044,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.discoveryengine.v1.WorkspaceConfig.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1044,6 +1066,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1086,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object dasherCustomerId_ = "";
+
     /**
      *
      *
@@ -1085,6 +1109,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1132,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1154,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1172,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object superAdminServiceAccount_ = "";
+
     /**
      *
      *
@@ -1194,6 +1223,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1249,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1274,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1295,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1323,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object superAdminEmailAddress_ = "";
+
     /**
      *
      *
@@ -1314,6 +1348,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1338,6 +1373,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1361,6 +1397,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1417,7 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

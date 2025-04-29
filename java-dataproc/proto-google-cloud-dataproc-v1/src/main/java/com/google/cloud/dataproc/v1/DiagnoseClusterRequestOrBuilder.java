@@ -37,6 +37,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The tarballGcsDir.
    */
   java.lang.String getTarballGcsDir();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The enum numeric value on the wire for tarballAccess.
    */
   int getTarballAccessValue();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return Whether the diagnosisInterval field is set.
    */
   boolean hasDiagnosisInterval();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The diagnosisInterval.
    */
   com.google.type.Interval getDiagnosisInterval();
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return A list containing the jobs.
    */
   java.util.List<java.lang.String> getJobsList();
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The count of jobs.
    */
   int getJobsCount();
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The jobs at the given index.
    */
   java.lang.String getJobs(int index);
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return A list containing the yarnApplicationIds.
    */
   java.util.List<java.lang.String> getYarnApplicationIdsList();
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The count of yarnApplicationIds.
    */
   int getYarnApplicationIdsCount();
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The yarnApplicationIds at the given index.
    */
   java.lang.String getYarnApplicationIds(int index);
+
   /**
    *
    *

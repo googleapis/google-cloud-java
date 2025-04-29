@@ -40,6 +40,7 @@ public interface ShowEffectiveAutokeyConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

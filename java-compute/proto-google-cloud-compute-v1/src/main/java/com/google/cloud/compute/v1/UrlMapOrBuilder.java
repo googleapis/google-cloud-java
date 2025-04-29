@@ -36,6 +36,7 @@ public interface UrlMapOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UrlMapOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UrlMapOrBuilder
    * @return Whether the defaultCustomErrorResponsePolicy field is set.
    */
   boolean hasDefaultCustomErrorResponsePolicy();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UrlMapOrBuilder
    * @return The defaultCustomErrorResponsePolicy.
    */
   com.google.cloud.compute.v1.CustomErrorResponsePolicy getDefaultCustomErrorResponsePolicy();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface UrlMapOrBuilder
    * @return Whether the defaultRouteAction field is set.
    */
   boolean hasDefaultRouteAction();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface UrlMapOrBuilder
    * @return The defaultRouteAction.
    */
   com.google.cloud.compute.v1.HttpRouteAction getDefaultRouteAction();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface UrlMapOrBuilder
    * @return Whether the defaultService field is set.
    */
   boolean hasDefaultService();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface UrlMapOrBuilder
    * @return The defaultService.
    */
   java.lang.String getDefaultService();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface UrlMapOrBuilder
    * @return Whether the defaultUrlRedirect field is set.
    */
   boolean hasDefaultUrlRedirect();
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public interface UrlMapOrBuilder
    * @return The defaultUrlRedirect.
    */
   com.google.cloud.compute.v1.HttpRedirectAction getDefaultUrlRedirect();
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public interface UrlMapOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface UrlMapOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface UrlMapOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -277,6 +290,7 @@ public interface UrlMapOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -302,6 +316,7 @@ public interface UrlMapOrBuilder
    * @return Whether the headerAction field is set.
    */
   boolean hasHeaderAction();
+
   /**
    *
    *
@@ -314,6 +329,7 @@ public interface UrlMapOrBuilder
    * @return The headerAction.
    */
   com.google.cloud.compute.v1.HttpHeaderAction getHeaderAction();
+
   /**
    *
    *
@@ -335,6 +351,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HostRule> getHostRulesList();
+
   /**
    *
    *
@@ -345,6 +362,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   com.google.cloud.compute.v1.HostRule getHostRules(int index);
+
   /**
    *
    *
@@ -355,6 +373,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   int getHostRulesCount();
+
   /**
    *
    *
@@ -366,6 +385,7 @@ public interface UrlMapOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HostRuleOrBuilder>
       getHostRulesOrBuilderList();
+
   /**
    *
    *
@@ -389,6 +409,7 @@ public interface UrlMapOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -414,6 +435,7 @@ public interface UrlMapOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -426,6 +448,7 @@ public interface UrlMapOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -451,6 +474,7 @@ public interface UrlMapOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -463,6 +487,7 @@ public interface UrlMapOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -486,6 +511,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   java.util.List<com.google.cloud.compute.v1.PathMatcher> getPathMatchersList();
+
   /**
    *
    *
@@ -496,6 +522,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   com.google.cloud.compute.v1.PathMatcher getPathMatchers(int index);
+
   /**
    *
    *
@@ -506,6 +533,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   int getPathMatchersCount();
+
   /**
    *
    *
@@ -517,6 +545,7 @@ public interface UrlMapOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PathMatcherOrBuilder>
       getPathMatchersOrBuilderList();
+
   /**
    *
    *
@@ -540,6 +569,7 @@ public interface UrlMapOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -552,6 +582,7 @@ public interface UrlMapOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -577,6 +608,7 @@ public interface UrlMapOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -589,6 +621,7 @@ public interface UrlMapOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -612,6 +645,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
    */
   java.util.List<com.google.cloud.compute.v1.UrlMapTest> getTestsList();
+
   /**
    *
    *
@@ -622,6 +656,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
    */
   com.google.cloud.compute.v1.UrlMapTest getTests(int index);
+
   /**
    *
    *
@@ -632,6 +667,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
    */
   int getTestsCount();
+
   /**
    *
    *
@@ -642,6 +678,7 @@ public interface UrlMapOrBuilder
    * <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestOrBuilder> getTestsOrBuilderList();
+
   /**
    *
    *

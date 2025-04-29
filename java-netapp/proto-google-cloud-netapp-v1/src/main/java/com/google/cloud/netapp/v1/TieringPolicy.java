@@ -33,6 +33,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.TieringPolicy)
     TieringPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TieringPolicy.newBuilder() to construct.
   private TieringPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>TIER_ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int TIER_ACTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TIER_ACTION_FIELD_NUMBER = 1;
   private int tierAction_ = 0;
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTierAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -261,6 +266,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getTierActionValue() {
     return tierAction_;
   }
+
   /**
    *
    *
@@ -286,12 +292,13 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COOLING_THRESHOLD_DAYS_FIELD_NUMBER = 2;
   private int coolingThresholdDays_ = 0;
+
   /**
    *
    *
    * <pre>
    * Optional. Time in days to mark the volume's data block as cold and make it
-   * eligible for tiering, can be range from 7-183. Default is 31.
+   * eligible for tiering, can be range from 2-183. Default is 31.
    * </pre>
    *
    * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -303,12 +310,13 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCoolingThresholdDays() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
    * <pre>
    * Optional. Time in days to mark the volume's data block as cold and make it
-   * eligible for tiering, can be range from 7-183. Default is 31.
+   * eligible for tiering, can be range from 2-183. Default is 31.
    * </pre>
    *
    * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -498,6 +506,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -696,6 +705,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int tierAction_ = 0;
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTierAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -732,6 +743,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getTierActionValue() {
       return tierAction_;
     }
+
     /**
      *
      *
@@ -753,6 +765,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.netapp.v1.TieringPolicy.TierAction.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,12 +836,13 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int coolingThresholdDays_;
+
     /**
      *
      *
      * <pre>
      * Optional. Time in days to mark the volume's data block as cold and make it
-     * eligible for tiering, can be range from 7-183. Default is 31.
+     * eligible for tiering, can be range from 2-183. Default is 31.
      * </pre>
      *
      * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -838,12 +854,13 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCoolingThresholdDays() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
      * <pre>
      * Optional. Time in days to mark the volume's data block as cold and make it
-     * eligible for tiering, can be range from 7-183. Default is 31.
+     * eligible for tiering, can be range from 2-183. Default is 31.
      * </pre>
      *
      * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -855,12 +872,13 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getCoolingThresholdDays() {
       return coolingThresholdDays_;
     }
+
     /**
      *
      *
      * <pre>
      * Optional. Time in days to mark the volume's data block as cold and make it
-     * eligible for tiering, can be range from 7-183. Default is 31.
+     * eligible for tiering, can be range from 2-183. Default is 31.
      * </pre>
      *
      * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -876,12 +894,13 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Optional. Time in days to mark the volume's data block as cold and make it
-     * eligible for tiering, can be range from 7-183. Default is 31.
+     * eligible for tiering, can be range from 2-183. Default is 31.
      * </pre>
      *
      * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];

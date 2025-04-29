@@ -40,6 +40,7 @@ public interface CreateTopicRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateTopicRequestOrBuilder
    * @return The topicId.
    */
   java.lang.String getTopicId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateTopicRequestOrBuilder
    * @return Whether the topic field is set.
    */
   boolean hasTopic();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateTopicRequestOrBuilder
    * @return The topic.
    */
   com.google.cloud.managedkafka.v1.Topic getTopic();
+
   /**
    *
    *

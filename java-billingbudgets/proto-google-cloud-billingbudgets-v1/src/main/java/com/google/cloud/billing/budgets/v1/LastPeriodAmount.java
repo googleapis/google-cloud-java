@@ -39,6 +39,7 @@ public final class LastPeriodAmount extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1.LastPeriodAmount)
     LastPeriodAmountOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LastPeriodAmount.newBuilder() to construct.
   private LastPeriodAmount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -217,6 +218,7 @@ public final class LastPeriodAmount extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

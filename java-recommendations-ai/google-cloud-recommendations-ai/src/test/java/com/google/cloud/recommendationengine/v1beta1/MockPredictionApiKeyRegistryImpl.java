@@ -74,7 +74,8 @@ public class MockPredictionApiKeyRegistryImpl extends PredictionApiKeyRegistryIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePredictionApiKeyRegistration, expected %s or %s",
+                  "Unrecognized response type %s for method CreatePredictionApiKeyRegistration,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PredictionApiKeyRegistration.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockPredictionApiKeyRegistryImpl extends PredictionApiKeyRegistryIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPredictionApiKeyRegistrations, expected %s or %s",
+                  "Unrecognized response type %s for method ListPredictionApiKeyRegistrations,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPredictionApiKeyRegistrationsResponse.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +119,8 @@ public class MockPredictionApiKeyRegistryImpl extends PredictionApiKeyRegistryIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePredictionApiKeyRegistration, expected %s or %s",
+                  "Unrecognized response type %s for method DeletePredictionApiKeyRegistration,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

@@ -37,6 +37,7 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -109,9 +111,11 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; metadata = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public interface ServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.servicedirectory.v1beta1.Endpoint> getEndpointsList();
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoints(int index);
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getEndpointsCount();
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public interface ServiceOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder>
       getEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -294,6 +304,7 @@ public interface ServiceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public interface ServiceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public interface ServiceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public interface ServiceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -376,6 +390,7 @@ public interface ServiceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

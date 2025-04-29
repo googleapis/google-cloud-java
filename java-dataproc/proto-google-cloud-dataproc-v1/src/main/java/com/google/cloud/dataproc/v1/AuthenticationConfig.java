@@ -36,6 +36,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.AuthenticationConfig)
     AuthenticationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuthenticationConfig.newBuilder() to construct.
   private AuthenticationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,6 +125,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
      * <code>AUTHENTICATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int AUTHENTICATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -134,6 +136,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
      * <code>SERVICE_ACCOUNT = 1;</code>
      */
     public static final int SERVICE_ACCOUNT_VALUE = 1;
+
     /**
      *
      *
@@ -236,6 +239,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
 
   public static final int USER_WORKLOAD_AUTHENTICATION_TYPE_FIELD_NUMBER = 1;
   private int userWorkloadAuthenticationType_ = 0;
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
   public int getUserWorkloadAuthenticationTypeValue() {
     return userWorkloadAuthenticationType_;
   }
+
   /**
    *
    *
@@ -443,6 +448,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -628,6 +634,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int userWorkloadAuthenticationType_ = 0;
+
     /**
      *
      *
@@ -645,6 +652,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
     public int getUserWorkloadAuthenticationTypeValue() {
       return userWorkloadAuthenticationType_;
     }
+
     /**
      *
      *
@@ -665,6 +673,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +697,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -712,6 +722,7 @@ public final class AuthenticationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

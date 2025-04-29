@@ -147,6 +147,7 @@ public interface BatchTranslateDocumentResponseOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
+
   /**
    *
    *
@@ -159,6 +160,7 @@ public interface BatchTranslateDocumentResponseOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
+
   /**
    *
    *
@@ -184,6 +186,7 @@ public interface BatchTranslateDocumentResponseOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -198,6 +201,7 @@ public interface BatchTranslateDocumentResponseOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

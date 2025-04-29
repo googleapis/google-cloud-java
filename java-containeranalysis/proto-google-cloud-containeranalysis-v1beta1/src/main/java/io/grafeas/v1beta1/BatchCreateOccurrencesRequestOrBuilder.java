@@ -37,6 +37,7 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
   java.util.List<io.grafeas.v1beta1.Occurrence> getOccurrencesList();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
   io.grafeas.v1beta1.Occurrence getOccurrences(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
   int getOccurrencesCount();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface BatchCreateOccurrencesRequestOrBuilder
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
   java.util.List<? extends io.grafeas.v1beta1.OccurrenceOrBuilder> getOccurrencesOrBuilderList();
+
   /**
    *
    *

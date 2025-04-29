@@ -34,6 +34,7 @@ public interface SearchAllResourcesResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
   java.util.List<com.google.cloud.asset.v1p1beta1.StandardResourceMetadata> getResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchAllResourcesResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
   com.google.cloud.asset.v1p1beta1.StandardResourceMetadata getResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchAllResourcesResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchAllResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1p1beta1.StandardResourceMetadataOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface SearchAllResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

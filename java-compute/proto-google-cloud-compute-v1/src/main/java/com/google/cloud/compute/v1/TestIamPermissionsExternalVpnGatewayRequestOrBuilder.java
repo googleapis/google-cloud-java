@@ -36,6 +36,7 @@ public interface TestIamPermissionsExternalVpnGatewayRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TestIamPermissionsExternalVpnGatewayRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface TestIamPermissionsExternalVpnGatewayRequestOrBuilder
    * @return Whether the testPermissionsRequestResource field is set.
    */
   boolean hasTestPermissionsRequestResource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface TestIamPermissionsExternalVpnGatewayRequestOrBuilder
    * @return The testPermissionsRequestResource.
    */
   com.google.cloud.compute.v1.TestPermissionsRequest getTestPermissionsRequestResource();
+
   /**
    *
    *

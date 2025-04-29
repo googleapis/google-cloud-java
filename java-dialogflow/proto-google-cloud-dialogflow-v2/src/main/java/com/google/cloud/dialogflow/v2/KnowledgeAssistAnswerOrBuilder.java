@@ -38,6 +38,7 @@ public interface KnowledgeAssistAnswerOrBuilder
    * @return Whether the suggestedQuery field is set.
    */
   boolean hasSuggestedQuery();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface KnowledgeAssistAnswerOrBuilder
    * @return The suggestedQuery.
    */
   com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery getSuggestedQuery();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface KnowledgeAssistAnswerOrBuilder
    * @return Whether the suggestedQueryAnswer field is set.
    */
   boolean hasSuggestedQueryAnswer();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface KnowledgeAssistAnswerOrBuilder
    * @return The suggestedQueryAnswer.
    */
   com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer getSuggestedQueryAnswer();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface KnowledgeAssistAnswerOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
+
   /**
    *
    *

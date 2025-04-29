@@ -36,6 +36,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return Whether the regionDisksResizeRequestResource field is set.
    */
   boolean hasRegionDisksResizeRequestResource();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return The regionDisksResizeRequestResource.
    */
   com.google.cloud.compute.v1.RegionDisksResizeRequest getRegionDisksResizeRequestResource();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface ResizeRegionDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

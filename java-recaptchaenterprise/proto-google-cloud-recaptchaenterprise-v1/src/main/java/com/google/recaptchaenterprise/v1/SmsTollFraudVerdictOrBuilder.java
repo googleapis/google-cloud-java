@@ -53,6 +53,7 @@ public interface SmsTollFraudVerdictOrBuilder
    */
   java.util.List<com.google.recaptchaenterprise.v1.SmsTollFraudVerdict.SmsTollFraudReason>
       getReasonsList();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SmsTollFraudVerdictOrBuilder
    * @return The count of reasons.
    */
   int getReasonsCount();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface SmsTollFraudVerdictOrBuilder
    * @return The reasons at the given index.
    */
   com.google.recaptchaenterprise.v1.SmsTollFraudVerdict.SmsTollFraudReason getReasons(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface SmsTollFraudVerdictOrBuilder
    * @return A list containing the enum numeric values on the wire for reasons.
    */
   java.util.List<java.lang.Integer> getReasonsValueList();
+
   /**
    *
    *

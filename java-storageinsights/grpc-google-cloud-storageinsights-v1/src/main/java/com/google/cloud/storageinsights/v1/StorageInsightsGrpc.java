@@ -378,6 +378,19 @@ public final class StorageInsightsGrpc {
     return StorageInsightsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static StorageInsightsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<StorageInsightsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<StorageInsightsBlockingV2Stub>() {
+          @java.lang.Override
+          public StorageInsightsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StorageInsightsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return StorageInsightsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -675,6 +688,118 @@ public final class StorageInsightsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service StorageInsights.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class StorageInsightsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<StorageInsightsBlockingV2Stub> {
+    private StorageInsightsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected StorageInsightsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new StorageInsightsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReportConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.storageinsights.v1.ListReportConfigsResponse listReportConfigs(
+        com.google.cloud.storageinsights.v1.ListReportConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReportConfig.
+     * </pre>
+     */
+    public com.google.cloud.storageinsights.v1.ReportConfig getReportConfig(
+        com.google.cloud.storageinsights.v1.GetReportConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ReportConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.storageinsights.v1.ReportConfig createReportConfig(
+        com.google.cloud.storageinsights.v1.CreateReportConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ReportConfig.
+     * </pre>
+     */
+    public com.google.cloud.storageinsights.v1.ReportConfig updateReportConfig(
+        com.google.cloud.storageinsights.v1.UpdateReportConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ReportConfig.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReportConfig(
+        com.google.cloud.storageinsights.v1.DeleteReportConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReportConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReportDetails in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.storageinsights.v1.ListReportDetailsResponse listReportDetails(
+        com.google.cloud.storageinsights.v1.ListReportDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReportDetail.
+     * </pre>
+     */
+    public com.google.cloud.storageinsights.v1.ReportDetail getReportDetail(
+        com.google.cloud.storageinsights.v1.GetReportDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportDetailMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service StorageInsights.
    *
    * <pre>
    * Service describing handlers for resources

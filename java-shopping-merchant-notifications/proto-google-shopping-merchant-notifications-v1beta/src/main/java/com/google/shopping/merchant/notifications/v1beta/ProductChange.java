@@ -34,6 +34,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.ProductChange)
     ProductChangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductChange.newBuilder() to construct.
   private ProductChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oldValue_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOldValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object newValue_ = "";
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNewValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRegionCode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPORTING_CONTEXT_FIELD_NUMBER = 4;
   private int reportingContext_ = 0;
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReportingContext() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
   public int getReportingContextValue() {
     return reportingContext_;
   }
+
   /**
    *
    *
@@ -531,6 +544,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -769,6 +783,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object oldValue_ = "";
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOldValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +909,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object newValue_ = "";
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNewValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +992,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1010,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1035,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -1023,6 +1050,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRegionCode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1045,6 +1073,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1096,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1118,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1136,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1161,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int reportingContext_ = 0;
+
     /**
      *
      *
@@ -1146,6 +1179,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportingContext() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1163,6 +1197,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
     public int getReportingContextValue() {
       return reportingContext_;
     }
+
     /**
      *
      *
@@ -1183,6 +1218,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1241,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1229,6 +1266,7 @@ public final class ProductChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

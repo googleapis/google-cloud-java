@@ -40,6 +40,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ImportItem)
     ImportItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportItem.newBuilder() to construct.
   private ImportItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENTRY_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.Entry entry_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataplex.v1.Entry getEntry() {
     return entry_ == null ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance() : entry_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList aspectKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAspectKeysList() {
     return aspectKeys_;
   }
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public int getAspectKeysCount() {
     return aspectKeys_.size();
   }
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAspectKeys(int index) {
     return aspectKeys_.get(index);
   }
+
   /**
    *
    *
@@ -548,6 +559,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -798,6 +810,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Entry.Builder,
             com.google.cloud.dataplex.v1.EntryOrBuilder>
         entryBuilder_;
+
     /**
      *
      *
@@ -812,6 +825,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntry() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -830,6 +844,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
         return entryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -852,6 +867,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +887,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +915,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +935,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +950,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEntryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
         return entry_ == null ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance() : entry_;
       }
     }
+
     /**
      *
      *
@@ -979,6 +1000,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1053,6 +1076,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1119,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1159,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1207,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1247,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1282,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1292,6 +1321,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1347,6 +1377,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1379,6 +1410,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       aspectKeys_.makeImmutable();
       return aspectKeys_;
     }
+
     /**
      *
      *
@@ -1410,6 +1442,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     public int getAspectKeysCount() {
       return aspectKeys_.size();
     }
+
     /**
      *
      *
@@ -1442,6 +1475,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAspectKeys(int index) {
       return aspectKeys_.get(index);
     }
+
     /**
      *
      *
@@ -1474,6 +1508,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAspectKeysBytes(int index) {
       return aspectKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1514,6 +1549,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1553,6 +1589,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1626,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1662,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

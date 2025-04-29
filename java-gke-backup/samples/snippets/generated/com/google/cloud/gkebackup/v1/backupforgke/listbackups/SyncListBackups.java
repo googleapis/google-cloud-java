@@ -42,6 +42,7 @@ public class SyncListBackups {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
+              .setReturnPartialSuccess(true)
               .build();
       for (Backup element : backupForGKEClient.listBackups(request).iterateAll()) {
         // doThingsWith(element);

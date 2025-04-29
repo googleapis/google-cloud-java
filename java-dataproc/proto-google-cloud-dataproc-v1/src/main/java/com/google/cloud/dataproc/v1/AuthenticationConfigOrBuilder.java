@@ -38,6 +38,7 @@ public interface AuthenticationConfigOrBuilder
    * @return The enum numeric value on the wire for userWorkloadAuthenticationType.
    */
   int getUserWorkloadAuthenticationTypeValue();
+
   /**
    *
    *

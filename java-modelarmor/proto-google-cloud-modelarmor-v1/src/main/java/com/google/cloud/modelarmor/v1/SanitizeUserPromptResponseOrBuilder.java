@@ -38,6 +38,7 @@ public interface SanitizeUserPromptResponseOrBuilder
    * @return Whether the sanitizationResult field is set.
    */
   boolean hasSanitizationResult();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SanitizeUserPromptResponseOrBuilder
    * @return The sanitizationResult.
    */
   com.google.cloud.modelarmor.v1.SanitizationResult getSanitizationResult();
+
   /**
    *
    *

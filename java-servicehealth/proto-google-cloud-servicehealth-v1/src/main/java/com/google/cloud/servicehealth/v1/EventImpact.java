@@ -33,6 +33,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.EventImpact)
     EventImpactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EventImpact.newBuilder() to construct.
   private EventImpact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PRODUCT_FIELD_NUMBER = 1;
   private com.google.cloud.servicehealth.v1.Product product_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProduct() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.servicehealth.v1.Product.getDefaultInstance()
         : product_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCATION_FIELD_NUMBER = 2;
   private com.google.cloud.servicehealth.v1.Location location_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.servicehealth.v1.Location.getDefaultInstance()
         : location_;
   }
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +569,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.servicehealth.v1.Product.Builder,
             com.google.cloud.servicehealth.v1.ProductOrBuilder>
         productBuilder_;
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProduct() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
         return productBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +676,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +696,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +711,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -714,6 +730,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
             : product_;
       }
     }
+
     /**
      *
      *
@@ -746,6 +763,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.servicehealth.v1.Location.Builder,
             com.google.cloud.servicehealth.v1.LocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -760,6 +778,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -780,6 +799,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +842,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +870,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +890,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +905,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -899,6 +924,7 @@ public final class EventImpact extends com.google.protobuf.GeneratedMessageV3
             : location_;
       }
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.Attestor)
     AttestorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Attestor.newBuilder() to construct.
   private Attestor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     private AttestorTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_OWNED_DRYDOCK_NOTE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserOwnedDrydockNote() {
     return attestorTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -312,6 +323,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -535,6 +547,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -811,6 +824,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -834,6 +848,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -857,6 +872,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -879,6 +895,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +988,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1011,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1030,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote.Builder,
             com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNoteOrBuilder>
         userOwnedDrydockNoteBuilder_;
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserOwnedDrydockNote() {
       return attestorTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1084,6 +1109,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1109,6 +1135,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       attestorTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1158,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       attestorTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1197,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       attestorTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1225,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1241,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
         getUserOwnedDrydockNoteBuilder() {
       return getUserOwnedDrydockNoteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1235,6 +1266,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1310,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1294,6 +1327,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1316,6 +1350,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1340,6 +1375,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1397,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1427,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1411,6 +1449,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1427,6 +1466,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1447,6 +1487,7 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

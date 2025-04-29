@@ -38,6 +38,7 @@ public interface TrajectoryRecallInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TrajectoryRecallInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryRecallSpec getMetricSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface TrajectoryRecallInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInstance> getInstancesList();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface TrajectoryRecallInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInstance getInstances(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface TrajectoryRecallInputOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface TrajectoryRecallInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

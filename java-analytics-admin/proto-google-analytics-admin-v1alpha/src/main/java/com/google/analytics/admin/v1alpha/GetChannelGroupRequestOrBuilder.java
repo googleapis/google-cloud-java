@@ -39,6 +39,7 @@ public interface GetChannelGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

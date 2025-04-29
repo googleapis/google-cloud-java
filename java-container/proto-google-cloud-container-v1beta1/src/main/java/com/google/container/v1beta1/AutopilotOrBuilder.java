@@ -49,6 +49,7 @@ public interface AutopilotOrBuilder
    * @return Whether the workloadPolicyConfig field is set.
    */
   boolean hasWorkloadPolicyConfig();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AutopilotOrBuilder
    * @return The workloadPolicyConfig.
    */
   com.google.container.v1beta1.WorkloadPolicyConfig getWorkloadPolicyConfig();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AutopilotOrBuilder
    * @return Whether the conversionStatus field is set.
    */
   boolean hasConversionStatus();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface AutopilotOrBuilder
    * @return The conversionStatus.
    */
   com.google.container.v1beta1.AutopilotConversionStatus getConversionStatus();
+
   /**
    *
    *

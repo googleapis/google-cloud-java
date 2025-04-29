@@ -36,6 +36,7 @@ public interface ImageOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ImageOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ImageOrBuilder
    * @return Whether the data field is set.
    */
   boolean hasData();
+
   /**
    *
    *

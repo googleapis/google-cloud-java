@@ -36,6 +36,7 @@ public interface CustomEmojiMetadataOrBuilder
    * @return Whether the customEmoji field is set.
    */
   boolean hasCustomEmoji();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CustomEmojiMetadataOrBuilder
    * @return The customEmoji.
    */
   com.google.chat.v1.CustomEmoji getCustomEmoji();
+
   /**
    *
    *

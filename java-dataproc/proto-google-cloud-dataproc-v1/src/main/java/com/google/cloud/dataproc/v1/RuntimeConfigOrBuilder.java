@@ -36,6 +36,7 @@ public interface RuntimeConfigOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RuntimeConfigOrBuilder
    * @return The containerImage.
    */
   java.lang.String getContainerImage();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface RuntimeConfigOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -100,9 +103,11 @@ public interface RuntimeConfigOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface RuntimeConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface RuntimeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the repositoryConfig field is set.
    */
   boolean hasRepositoryConfig();
+
   /**
    *
    *
@@ -172,6 +180,7 @@ public interface RuntimeConfigOrBuilder
    * @return The repositoryConfig.
    */
   com.google.cloud.dataproc.v1.RepositoryConfig getRepositoryConfig();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface RuntimeConfigOrBuilder
    * @return Whether the autotuningConfig field is set.
    */
   boolean hasAutotuningConfig();
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public interface RuntimeConfigOrBuilder
    * @return The autotuningConfig.
    */
   com.google.cloud.dataproc.v1.AutotuningConfig getAutotuningConfig();
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface RuntimeConfigOrBuilder
    * @return The cohort.
    */
   java.lang.String getCohort();
+
   /**
    *
    *

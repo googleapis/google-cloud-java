@@ -36,6 +36,7 @@ public interface FailOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *

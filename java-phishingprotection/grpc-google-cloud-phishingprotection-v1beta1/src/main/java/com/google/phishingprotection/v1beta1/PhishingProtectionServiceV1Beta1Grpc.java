@@ -99,6 +99,21 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
     return PhishingProtectionServiceV1Beta1Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PhishingProtectionServiceV1Beta1BlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PhishingProtectionServiceV1Beta1BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<
+            PhishingProtectionServiceV1Beta1BlockingV2Stub>() {
+          @java.lang.Override
+          public PhishingProtectionServiceV1Beta1BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PhishingProtectionServiceV1Beta1BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PhishingProtectionServiceV1Beta1BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -222,6 +237,47 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
+   * PhishingProtectionServiceV1Beta1.
+   *
+   * <pre>
+   * Service to report phishing URIs.
+   * </pre>
+   */
+  public static final class PhishingProtectionServiceV1Beta1BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PhishingProtectionServiceV1Beta1BlockingV2Stub> {
+    private PhishingProtectionServiceV1Beta1BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PhishingProtectionServiceV1Beta1BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PhishingProtectionServiceV1Beta1BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reports a URI suspected of containing phishing content to be reviewed. Once
+     * the report review is complete, its result can be found in the Cloud
+     * Security Command Center findings dashboard for Phishing Protection. If the
+     * result verifies the existence of malicious phishing content, the site will
+     * be added the to [Google's Social Engineering
+     * lists](https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future.
+     * </pre>
+     */
+    public com.google.phishingprotection.v1beta1.ReportPhishingResponse reportPhishing(
+        com.google.phishingprotection.v1beta1.ReportPhishingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReportPhishingMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
    * PhishingProtectionServiceV1Beta1.
    *
    * <pre>

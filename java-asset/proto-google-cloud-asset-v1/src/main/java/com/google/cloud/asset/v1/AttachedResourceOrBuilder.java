@@ -42,6 +42,7 @@ public interface AttachedResourceOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface AttachedResourceOrBuilder
    * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 3;</code>
    */
   java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface AttachedResourceOrBuilder
    * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 3;</code>
    */
   com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface AttachedResourceOrBuilder
    * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 3;</code>
    */
   int getVersionedResourcesCount();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface AttachedResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.VersionedResourceOrBuilder>
       getVersionedResourcesOrBuilderList();
+
   /**
    *
    *

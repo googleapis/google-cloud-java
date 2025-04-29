@@ -32,6 +32,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ProjectsSetCloudArmorTierRequest)
     ProjectsSetCloudArmorTierRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProjectsSetCloudArmorTierRequest.newBuilder() to construct.
   private ProjectsSetCloudArmorTierRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -126,6 +127,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
      * <code>UNDEFINED_CLOUD_ARMOR_TIER = 0;</code>
      */
     public static final int UNDEFINED_CLOUD_ARMOR_TIER_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
      * <code>CA_ENTERPRISE_ANNUAL = 219921116;</code>
      */
     public static final int CA_ENTERPRISE_ANNUAL_VALUE = 219921116;
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
      * <code>CA_ENTERPRISE_PAYGO = 453530323;</code>
      */
     public static final int CA_ENTERPRISE_PAYGO_VALUE = 453530323;
+
     /**
      *
      *
@@ -249,6 +253,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudArmorTier_ = "";
+
   /**
    *
    *
@@ -265,6 +270,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
   public boolean hasCloudArmorTier() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -289,6 +295,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -479,6 +486,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +676,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object cloudArmorTier_ = "";
+
     /**
      *
      *
@@ -683,6 +692,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
     public boolean hasCloudArmorTier() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -706,6 +716,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -729,6 +740,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -751,6 +763,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +782,7 @@ public final class ProjectsSetCloudArmorTierRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

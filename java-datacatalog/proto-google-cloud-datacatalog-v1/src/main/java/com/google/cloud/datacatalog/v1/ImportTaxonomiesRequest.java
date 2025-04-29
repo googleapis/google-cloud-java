@@ -34,6 +34,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ImportTaxonomiesRequest)
     ImportTaxonomiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportTaxonomiesRequest.newBuilder() to construct.
   private ImportTaxonomiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   public static final int INLINE_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
   public boolean hasInlineSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     }
     return com.google.cloud.datacatalog.v1.InlineSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   public static final int CROSS_REGIONAL_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
   public boolean hasCrossRegionalSource() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     }
     return com.google.cloud.datacatalog.v1.CrossRegionalSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -472,6 +482,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -721,6 +732,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +784,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +862,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
             com.google.cloud.datacatalog.v1.InlineSource.Builder,
             com.google.cloud.datacatalog.v1.InlineSourceOrBuilder>
         inlineSourceBuilder_;
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     public boolean hasInlineSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         return com.google.cloud.datacatalog.v1.InlineSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -908,6 +927,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +948,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     public com.google.cloud.datacatalog.v1.InlineSource.Builder getInlineSourceBuilder() {
       return getInlineSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1017,6 +1041,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         return com.google.cloud.datacatalog.v1.InlineSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
             com.google.cloud.datacatalog.v1.CrossRegionalSource.Builder,
             com.google.cloud.datacatalog.v1.CrossRegionalSourceOrBuilder>
         crossRegionalSourceBuilder_;
+
     /**
      *
      *
@@ -1070,6 +1096,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     public boolean hasCrossRegionalSource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1095,6 +1122,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         return com.google.cloud.datacatalog.v1.CrossRegionalSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1146,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1167,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1202,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1228,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1242,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         getCrossRegionalSourceBuilder() {
       return getCrossRegionalSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1231,6 +1264,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
         return com.google.cloud.datacatalog.v1.CrossRegionalSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *

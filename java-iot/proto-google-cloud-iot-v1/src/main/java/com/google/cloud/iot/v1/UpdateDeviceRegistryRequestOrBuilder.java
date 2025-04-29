@@ -40,6 +40,7 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    * @return Whether the deviceRegistry field is set.
    */
   boolean hasDeviceRegistry();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    * @return The deviceRegistry.
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface UpdateDeviceRegistryRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

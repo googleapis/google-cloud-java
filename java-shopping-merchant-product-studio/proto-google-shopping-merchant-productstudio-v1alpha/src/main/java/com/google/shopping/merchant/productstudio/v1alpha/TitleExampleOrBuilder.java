@@ -37,6 +37,7 @@ public interface TitleExampleOrBuilder
    * </code>
    */
   int getProductInfoCount();
+
   /**
    *
    *
@@ -50,9 +51,11 @@ public interface TitleExampleOrBuilder
    * </code>
    */
   boolean containsProductInfo(java.lang.String key);
+
   /** Use {@link #getProductInfoMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProductInfo();
+
   /**
    *
    *
@@ -66,6 +69,7 @@ public interface TitleExampleOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getProductInfoMap();
+
   /**
    *
    *
@@ -83,6 +87,7 @@ public interface TitleExampleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface TitleExampleOrBuilder
    * @return Whether the category field is set.
    */
   boolean hasCategory();
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface TitleExampleOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface TitleExampleOrBuilder
    * @return Whether the titleFormat field is set.
    */
   boolean hasTitleFormat();
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface TitleExampleOrBuilder
    * @return The titleFormat.
    */
   java.lang.String getTitleFormat();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface TitleExampleOrBuilder
    * </code>
    */
   int getFinalProductInfoCount();
+
   /**
    *
    *
@@ -212,9 +222,11 @@ public interface TitleExampleOrBuilder
    * </code>
    */
   boolean containsFinalProductInfo(java.lang.String key);
+
   /** Use {@link #getFinalProductInfoMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getFinalProductInfo();
+
   /**
    *
    *
@@ -231,6 +243,7 @@ public interface TitleExampleOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getFinalProductInfoMap();
+
   /**
    *
    *
@@ -251,6 +264,7 @@ public interface TitleExampleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

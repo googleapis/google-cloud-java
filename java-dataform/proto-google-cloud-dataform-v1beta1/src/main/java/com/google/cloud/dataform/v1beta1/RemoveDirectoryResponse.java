@@ -33,6 +33,7 @@ public final class RemoveDirectoryResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.RemoveDirectoryResponse)
     RemoveDirectoryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RemoveDirectoryResponse.newBuilder() to construct.
   private RemoveDirectoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class RemoveDirectoryResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

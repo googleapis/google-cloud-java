@@ -37,6 +37,7 @@ public interface RegistrationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RegistrationOrBuilder
    * @return The domainName.
    */
   java.lang.String getDomainName();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface RegistrationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface RegistrationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface RegistrationOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface RegistrationOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface RegistrationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface RegistrationOrBuilder
    * @return A list containing the issues.
    */
   java.util.List<com.google.cloud.domains.v1alpha2.Registration.Issue> getIssuesList();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface RegistrationOrBuilder
    * @return The count of issues.
    */
   int getIssuesCount();
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public interface RegistrationOrBuilder
    * @return The issues at the given index.
    */
   com.google.cloud.domains.v1alpha2.Registration.Issue getIssues(int index);
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface RegistrationOrBuilder
    * @return A list containing the enum numeric values on the wire for issues.
    */
   java.util.List<java.lang.Integer> getIssuesValueList();
+
   /**
    *
    *
@@ -268,6 +279,7 @@ public interface RegistrationOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -278,9 +290,11 @@ public interface RegistrationOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -291,6 +305,7 @@ public interface RegistrationOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -305,6 +320,7 @@ public interface RegistrationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -331,6 +347,7 @@ public interface RegistrationOrBuilder
    * @return Whether the managementSettings field is set.
    */
   boolean hasManagementSettings();
+
   /**
    *
    *
@@ -346,6 +363,7 @@ public interface RegistrationOrBuilder
    * @return The managementSettings.
    */
   com.google.cloud.domains.v1alpha2.ManagementSettings getManagementSettings();
+
   /**
    *
    *
@@ -374,6 +392,7 @@ public interface RegistrationOrBuilder
    * @return Whether the dnsSettings field is set.
    */
   boolean hasDnsSettings();
+
   /**
    *
    *
@@ -388,6 +407,7 @@ public interface RegistrationOrBuilder
    * @return The dnsSettings.
    */
   com.google.cloud.domains.v1alpha2.DnsSettings getDnsSettings();
+
   /**
    *
    *
@@ -417,6 +437,7 @@ public interface RegistrationOrBuilder
    * @return Whether the contactSettings field is set.
    */
   boolean hasContactSettings();
+
   /**
    *
    *
@@ -433,6 +454,7 @@ public interface RegistrationOrBuilder
    * @return The contactSettings.
    */
   com.google.cloud.domains.v1alpha2.ContactSettings getContactSettings();
+
   /**
    *
    *
@@ -468,6 +490,7 @@ public interface RegistrationOrBuilder
    * @return Whether the pendingContactSettings field is set.
    */
   boolean hasPendingContactSettings();
+
   /**
    *
    *
@@ -488,6 +511,7 @@ public interface RegistrationOrBuilder
    * @return The pendingContactSettings.
    */
   com.google.cloud.domains.v1alpha2.ContactSettings getPendingContactSettings();
+
   /**
    *
    *
@@ -522,6 +546,7 @@ public interface RegistrationOrBuilder
    * @return A list containing the supportedPrivacy.
    */
   java.util.List<com.google.cloud.domains.v1alpha2.ContactPrivacy> getSupportedPrivacyList();
+
   /**
    *
    *
@@ -537,6 +562,7 @@ public interface RegistrationOrBuilder
    * @return The count of supportedPrivacy.
    */
   int getSupportedPrivacyCount();
+
   /**
    *
    *
@@ -553,6 +579,7 @@ public interface RegistrationOrBuilder
    * @return The supportedPrivacy at the given index.
    */
   com.google.cloud.domains.v1alpha2.ContactPrivacy getSupportedPrivacy(int index);
+
   /**
    *
    *
@@ -568,6 +595,7 @@ public interface RegistrationOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedPrivacy.
    */
   java.util.List<java.lang.Integer> getSupportedPrivacyValueList();
+
   /**
    *
    *

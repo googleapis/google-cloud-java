@@ -33,6 +33,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec)
     ReasoningEngineSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReasoningEngineSpec.newBuilder() to construct.
   private ReasoningEngineSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The pickleObjectGcsUri.
      */
     java.lang.String getPickleObjectGcsUri();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The dependencyFilesGcsUri.
      */
     java.lang.String getDependencyFilesGcsUri();
+
     /**
      *
      *
@@ -131,6 +134,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The requirementsGcsUri.
      */
     java.lang.String getRequirementsGcsUri();
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The pythonVersion.
      */
     java.lang.String getPythonVersion();
+
     /**
      *
      *
@@ -171,6 +176,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getPythonVersionBytes();
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec)
       PackageSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PackageSpec.newBuilder() to construct.
     private PackageSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -222,6 +229,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pickleObjectGcsUri_ = "";
+
     /**
      *
      *
@@ -245,6 +253,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -273,6 +282,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dependencyFilesGcsUri_ = "";
+
     /**
      *
      *
@@ -296,6 +306,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -324,6 +335,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object requirementsGcsUri_ = "";
+
     /**
      *
      *
@@ -347,6 +359,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -375,6 +388,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pythonVersion_ = "";
+
     /**
      *
      *
@@ -399,6 +413,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -613,6 +628,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object pickleObjectGcsUri_ = "";
+
       /**
        *
        *
@@ -874,6 +891,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -896,6 +914,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -917,6 +936,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -934,6 +954,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -958,6 +979,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object dependencyFilesGcsUri_ = "";
+
       /**
        *
        *
@@ -980,6 +1002,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1002,6 +1025,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1023,6 +1047,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1040,6 +1065,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1064,6 +1090,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object requirementsGcsUri_ = "";
+
       /**
        *
        *
@@ -1086,6 +1113,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1108,6 +1136,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1129,6 +1158,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1146,6 +1176,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1170,6 +1201,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object pythonVersion_ = "";
+
       /**
        *
        *
@@ -1193,6 +1225,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1216,6 +1249,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1238,6 +1272,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1256,6 +1291,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1366,6 +1402,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList();
+
     /**
      *
      *
@@ -1380,6 +1417,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index);
+
     /**
      *
      *
@@ -1394,6 +1432,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     int getEnvCount();
+
     /**
      *
      *
@@ -1409,6 +1448,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
         getEnvOrBuilderList();
+
     /**
      *
      *
@@ -1440,6 +1480,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.SecretEnvVar> getSecretEnvList();
+
     /**
      *
      *
@@ -1456,6 +1497,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.SecretEnvVar getSecretEnv(int index);
+
     /**
      *
      *
@@ -1472,6 +1514,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     int getSecretEnvCount();
+
     /**
      *
      *
@@ -1489,6 +1532,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SecretEnvVarOrBuilder>
         getSecretEnvOrBuilderList();
+
     /**
      *
      *
@@ -1506,6 +1550,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     com.google.cloud.aiplatform.v1beta1.SecretEnvVarOrBuilder getSecretEnvOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -1520,6 +1565,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec)
       DeploymentSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DeploymentSpec.newBuilder() to construct.
     private DeploymentSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1555,6 +1601,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> env_;
+
     /**
      *
      *
@@ -1572,6 +1619,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList() {
       return env_;
     }
+
     /**
      *
      *
@@ -1590,6 +1638,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         getEnvOrBuilderList() {
       return env_;
     }
+
     /**
      *
      *
@@ -1607,6 +1656,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public int getEnvCount() {
       return env_.size();
     }
+
     /**
      *
      *
@@ -1624,6 +1674,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index) {
       return env_.get(index);
     }
+
     /**
      *
      *
@@ -1646,6 +1697,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.SecretEnvVar> secretEnv_;
+
     /**
      *
      *
@@ -1665,6 +1717,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public java.util.List<com.google.cloud.aiplatform.v1beta1.SecretEnvVar> getSecretEnvList() {
       return secretEnv_;
     }
+
     /**
      *
      *
@@ -1685,6 +1738,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         getSecretEnvOrBuilderList() {
       return secretEnv_;
     }
+
     /**
      *
      *
@@ -1704,6 +1758,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public int getSecretEnvCount() {
       return secretEnv_.size();
     }
+
     /**
      *
      *
@@ -1723,6 +1778,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.SecretEnvVar getSecretEnv(int index) {
       return secretEnv_.get(index);
     }
+
     /**
      *
      *
@@ -1920,6 +1976,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2255,6 +2312,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return envBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2275,6 +2333,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return envBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2295,6 +2354,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return envBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2321,6 +2381,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2345,6 +2406,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2371,6 +2433,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2397,6 +2460,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2420,6 +2484,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2444,6 +2509,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2468,6 +2534,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2491,6 +2558,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2514,6 +2582,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2530,6 +2599,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       public com.google.cloud.aiplatform.v1beta1.EnvVar.Builder getEnvBuilder(int index) {
         return getEnvFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -2550,6 +2620,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return envBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -2571,6 +2642,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return java.util.Collections.unmodifiableList(env_);
         }
       }
+
       /**
        *
        *
@@ -2588,6 +2660,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return getEnvFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1beta1.EnvVar.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2605,6 +2678,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return getEnvFieldBuilder()
             .addBuilder(index, com.google.cloud.aiplatform.v1beta1.EnvVar.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2679,6 +2753,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return secretEnvBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2701,6 +2776,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return secretEnvBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2723,6 +2799,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return secretEnvBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2752,6 +2829,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2778,6 +2856,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2806,6 +2885,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2835,6 +2915,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2861,6 +2942,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2887,6 +2969,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2913,6 +2996,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2938,6 +3022,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2963,6 +3048,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -2982,6 +3068,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           int index) {
         return getSecretEnvFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3005,6 +3092,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return secretEnvBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3028,6 +3116,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return java.util.Collections.unmodifiableList(secretEnv_);
         }
       }
+
       /**
        *
        *
@@ -3047,6 +3136,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return getSecretEnvFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1beta1.SecretEnvVar.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3068,6 +3158,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             .addBuilder(
                 index, com.google.cloud.aiplatform.v1beta1.SecretEnvVar.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3176,6 +3267,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int PACKAGE_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec packageSpec_;
+
   /**
    *
    *
@@ -3196,6 +3288,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public boolean hasPackageSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3218,6 +3311,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec.getDefaultInstance()
         : packageSpec_;
   }
+
   /**
    *
    *
@@ -3242,6 +3336,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
   public static final int DEPLOYMENT_SPEC_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec deploymentSpec_;
+
   /**
    *
    *
@@ -3259,6 +3354,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public boolean hasDeploymentSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3280,6 +3376,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             .getDefaultInstance()
         : deploymentSpec_;
   }
+
   /**
    *
    *
@@ -3304,6 +3401,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Struct> classMethods_;
+
   /**
    *
    *
@@ -3320,6 +3418,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.protobuf.Struct> getClassMethodsList() {
     return classMethods_;
   }
+
   /**
    *
    *
@@ -3337,6 +3436,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       getClassMethodsOrBuilderList() {
     return classMethods_;
   }
+
   /**
    *
    *
@@ -3353,6 +3453,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public int getClassMethodsCount() {
     return classMethods_.size();
   }
+
   /**
    *
    *
@@ -3369,6 +3470,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Struct getClassMethods(int index) {
     return classMethods_.get(index);
   }
+
   /**
    *
    *
@@ -3390,6 +3492,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object agentFramework_ = "";
+
   /**
    *
    *
@@ -3414,6 +3517,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -3638,6 +3742,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3938,6 +4043,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpecOrBuilder>
         packageSpecBuilder_;
+
     /**
      *
      *
@@ -3957,6 +4063,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public boolean hasPackageSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3983,6 +4090,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return packageSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4011,6 +4119,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4037,6 +4146,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4072,6 +4182,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4096,6 +4207,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4116,6 +4228,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPackageSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4141,6 +4254,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             : packageSpec_;
       }
     }
+
     /**
      *
      *
@@ -4178,6 +4292,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpecOrBuilder>
         deploymentSpecBuilder_;
+
     /**
      *
      *
@@ -4194,6 +4309,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public boolean hasDeploymentSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4218,6 +4334,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return deploymentSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4243,6 +4360,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4266,6 +4384,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4298,6 +4417,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4319,6 +4439,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4336,6 +4457,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDeploymentSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4358,6 +4480,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             : deploymentSpec_;
       }
     }
+
     /**
      *
      *
@@ -4421,6 +4544,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4440,6 +4564,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4459,6 +4584,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4484,6 +4610,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4506,6 +4633,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4531,6 +4659,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4556,6 +4685,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4578,6 +4708,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4600,6 +4731,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4623,6 +4755,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4645,6 +4778,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4667,6 +4801,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4682,6 +4817,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Struct.Builder getClassMethodsBuilder(int index) {
       return getClassMethodsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4701,6 +4837,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4721,6 +4858,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(classMethods_);
       }
     }
+
     /**
      *
      *
@@ -4737,6 +4875,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return getClassMethodsFieldBuilder()
           .addBuilder(com.google.protobuf.Struct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4753,6 +4892,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return getClassMethodsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Struct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4787,6 +4927,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object agentFramework_ = "";
+
     /**
      *
      *
@@ -4810,6 +4951,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4833,6 +4975,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4855,6 +4998,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4873,6 +5017,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

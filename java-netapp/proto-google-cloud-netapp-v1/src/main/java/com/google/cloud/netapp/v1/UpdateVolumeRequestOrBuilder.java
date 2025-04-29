@@ -41,6 +41,7 @@ public interface UpdateVolumeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateVolumeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateVolumeRequestOrBuilder
    * @return Whether the volume field is set.
    */
   boolean hasVolume();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateVolumeRequestOrBuilder
    * @return The volume.
    */
   com.google.cloud.netapp.v1.Volume getVolume();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * @return A list containing the entityTypeNames.
    */
   java.util.List<java.lang.String> getEntityTypeNamesList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * @return The count of entityTypeNames.
    */
   int getEntityTypeNamesCount();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * @return The entityTypeNames at the given index.
    */
   java.lang.String getEntityTypeNames(int index);
+
   /**
    *
    *

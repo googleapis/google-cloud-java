@@ -37,6 +37,7 @@ public interface ListOSPolicyAssignmentReportsResponseOrBuilder
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport>
       getOsPolicyAssignmentReportsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListOSPolicyAssignmentReportsResponseOrBuilder
    */
   com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport getOsPolicyAssignmentReports(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListOSPolicyAssignmentReportsResponseOrBuilder
    * </code>
    */
   int getOsPolicyAssignmentReportsCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListOSPolicyAssignmentReportsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportOrBuilder>
       getOsPolicyAssignmentReportsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListOSPolicyAssignmentReportsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

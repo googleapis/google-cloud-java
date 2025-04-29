@@ -33,6 +33,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.UpdateWorkerPoolOperationMetadata)
     UpdateWorkerPoolOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateWorkerPoolOperationMetadata.newBuilder() to construct.
   private UpdateWorkerPoolOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerPool_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
 
   public static final int COMPLETE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp completeTime_;
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
   public boolean hasCompleteTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : completeTime_;
   }
+
   /**
    *
    *
@@ -404,6 +413,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +647,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object workerPool_ = "";
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -911,6 +934,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         completeTimeBuilder_;
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
     public boolean hasCompleteTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -977,6 +1003,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
         return completeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1046,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1074,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1094,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1109,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
       onChanged();
       return getCompleteTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1096,6 +1128,7 @@ public final class UpdateWorkerPoolOperationMetadata extends com.google.protobuf
             : completeTime_;
       }
     }
+
     /**
      *
      *

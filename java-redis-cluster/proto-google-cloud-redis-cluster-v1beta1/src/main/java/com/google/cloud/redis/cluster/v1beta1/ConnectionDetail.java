@@ -33,6 +33,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.ConnectionDetail)
     ConnectionDetailOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectionDetail.newBuilder() to construct.
   private ConnectionDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     private ConnectionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PSC_AUTO_CONNECTION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
   public boolean hasPscAutoConnection() {
     return connectionCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.redis.cluster.v1beta1.PscAutoConnection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PSC_CONNECTION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
   public boolean hasPscConnection() {
     return connectionCase_ == 2;
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.redis.cluster.v1beta1.PscConnection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -410,6 +418,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +656,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
             com.google.cloud.redis.cluster.v1beta1.PscAutoConnection.Builder,
             com.google.cloud.redis.cluster.v1beta1.PscAutoConnectionOrBuilder>
         pscAutoConnectionBuilder_;
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     public boolean hasPscAutoConnection() {
       return connectionCase_ == 1;
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.redis.cluster.v1beta1.PscAutoConnection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       connectionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       connectionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       connectionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
         getPscAutoConnectionBuilder() {
       return getPscAutoConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -831,6 +848,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.redis.cluster.v1beta1.PscAutoConnection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
             com.google.cloud.redis.cluster.v1beta1.PscConnection.Builder,
             com.google.cloud.redis.cluster.v1beta1.PscConnectionOrBuilder>
         pscConnectionBuilder_;
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     public boolean hasPscConnection() {
       return connectionCase_ == 2;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.redis.cluster.v1beta1.PscConnection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       connectionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       connectionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       connectionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1041,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.redis.cluster.v1beta1.PscConnection.Builder getPscConnectionBuilder() {
       return getPscConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class ConnectionDetail extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.redis.cluster.v1beta1.PscConnection.getDefaultInstance();
       }
     }
+
     /**
      *
      *

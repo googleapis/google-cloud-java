@@ -637,6 +637,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.InputConfig)
     InputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InputConfig.newBuilder() to construct.
   private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -693,6 +694,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -724,6 +726,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -742,6 +745,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -763,6 +767,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -809,6 +814,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public int getParamsCount() {
     return internalGetParams().getMap().size();
   }
+
   /**
    *
    *
@@ -835,12 +841,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetParams().getMap().containsKey(key);
   }
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
   }
+
   /**
    *
    *
@@ -864,6 +872,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
+
   /**
    *
    *
@@ -894,6 +903,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1115,6 +1125,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1977,6 +1988,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1.GcsSource.Builder,
             com.google.cloud.automl.v1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -1995,6 +2007,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -2023,6 +2036,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2048,6 +2062,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2070,6 +2085,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2105,6 +2121,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2150,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2148,6 +2166,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2171,6 +2190,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2230,6 +2250,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public int getParamsCount() {
       return internalGetParams().getMap().size();
     }
+
     /**
      *
      *
@@ -2256,12 +2277,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetParams().getMap().containsKey(key);
     }
+
     /** Use {@link #getParamsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
     }
+
     /**
      *
      *
@@ -2285,6 +2308,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
+
     /**
      *
      *
@@ -2315,6 +2339,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2351,6 +2376,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2377,12 +2403,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParams().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
       bitField0_ |= 0x00000002;
       return internalGetMutableParams().getMutableMap();
     }
+
     /**
      *
      *
@@ -2413,6 +2441,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

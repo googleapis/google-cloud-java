@@ -34,6 +34,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.SearchResult results = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.SearchResponse.SearchResult> getResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.SearchResult results = 1;</code>
    */
   com.google.cloud.retail.v2alpha.SearchResponse.SearchResult getResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.SearchResult results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.SearchResponse.SearchResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 2;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.SearchResponse.Facet> getFacetsList();
+
   /**
    *
    *
@@ -97,6 +102,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 2;</code>
    */
   com.google.cloud.retail.v2alpha.SearchResponse.Facet getFacets(int index);
+
   /**
    *
    *
@@ -107,6 +113,7 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.SearchResponse.Facet facets = 2;</code>
    */
   int getFacetsCount();
+
   /**
    *
    *
@@ -118,6 +125,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.SearchResponse.FacetOrBuilder>
       getFacetsOrBuilderList();
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface SearchResponseOrBuilder
    * @return The correctedQuery.
    */
   java.lang.String getCorrectedQuery();
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface SearchResponseOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface SearchResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -248,6 +259,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the queryExpansionInfo field is set.
    */
   boolean hasQueryExpansionInfo();
+
   /**
    *
    *
@@ -261,6 +273,7 @@ public interface SearchResponseOrBuilder
    * @return The queryExpansionInfo.
    */
   com.google.cloud.retail.v2alpha.SearchResponse.QueryExpansionInfo getQueryExpansionInfo();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface SearchResponseOrBuilder
    * @return The redirectUri.
    */
   java.lang.String getRedirectUri();
+
   /**
    *
    *
@@ -320,6 +334,7 @@ public interface SearchResponseOrBuilder
    * @return A list containing the appliedControls.
    */
   java.util.List<java.lang.String> getAppliedControlsList();
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public interface SearchResponseOrBuilder
    * @return The count of appliedControls.
    */
   int getAppliedControlsCount();
+
   /**
    *
    *
@@ -347,6 +363,7 @@ public interface SearchResponseOrBuilder
    * @return The appliedControls at the given index.
    */
   java.lang.String getAppliedControls(int index);
+
   /**
    *
    *
@@ -366,6 +383,58 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+   *
+   * @return Whether the pinControlMetadata field is set.
+   */
+  boolean hasPinControlMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+   *
+   * @return The pinControlMetadata.
+   */
+  com.google.cloud.retail.v2alpha.PinControlMetadata getPinControlMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+   */
+  com.google.cloud.retail.v2alpha.PinControlMetadataOrBuilder getPinControlMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The invalid
    * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2alpha.SearchRequest.BoostSpec.condition_boost_specs]
    * that are not applied during serving.
@@ -377,6 +446,7 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec.ConditionBoostSpec>
       getInvalidConditionBoostSpecsList();
+
   /**
    *
    *
@@ -392,6 +462,7 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec.ConditionBoostSpec
       getInvalidConditionBoostSpecs(int index);
+
   /**
    *
    *
@@ -406,6 +477,7 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   int getInvalidConditionBoostSpecsCount();
+
   /**
    *
    *
@@ -423,6 +495,7 @@ public interface SearchResponseOrBuilder
           ? extends
               com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
       getInvalidConditionBoostSpecsOrBuilderList();
+
   /**
    *
    *
@@ -443,44 +516,43 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.ExperimentInfo experiment_info = 17;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.ExperimentInfo> getExperimentInfoList();
+
   /**
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.ExperimentInfo experiment_info = 17;</code>
    */
   com.google.cloud.retail.v2alpha.ExperimentInfo getExperimentInfo(int index);
+
   /**
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.ExperimentInfo experiment_info = 17;</code>
    */
   int getExperimentInfoCount();
+
   /**
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -488,12 +560,12 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.ExperimentInfoOrBuilder>
       getExperimentInfoOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -516,6 +588,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the conversationalSearchResult field is set.
    */
   boolean hasConversationalSearchResult();
+
   /**
    *
    *
@@ -532,6 +605,7 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.retail.v2alpha.SearchResponse.ConversationalSearchResult
       getConversationalSearchResult();
+
   /**
    *
    *
@@ -562,6 +636,7 @@ public interface SearchResponseOrBuilder
    * @return Whether the tileNavigationResult field is set.
    */
   boolean hasTileNavigationResult();
+
   /**
    *
    *
@@ -577,6 +652,7 @@ public interface SearchResponseOrBuilder
    * @return The tileNavigationResult.
    */
   com.google.cloud.retail.v2alpha.SearchResponse.TileNavigationResult getTileNavigationResult();
+
   /**
    *
    *

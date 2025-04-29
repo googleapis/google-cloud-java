@@ -34,6 +34,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.SizeTypeEnum)
     SizeTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SizeTypeEnum.newBuilder() to construct.
   private SizeTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -171,6 +172,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SIZE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -181,6 +183,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>PIXEL = 1;</code>
      */
     public static final int PIXEL_VALUE = 1;
+
     /**
      *
      *
@@ -192,6 +195,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>ASPECT_RATIO = 2;</code>
      */
     public static final int ASPECT_RATIO_VALUE = 2;
+
     /**
      *
      *
@@ -203,6 +207,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERSTITIAL = 3;</code>
      */
     public static final int INTERSTITIAL_VALUE = 3;
+
     /**
      *
      *
@@ -214,6 +219,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>IGNORED = 4;</code>
      */
     public static final int IGNORED_VALUE = 4;
+
     /**
      *
      *
@@ -225,6 +231,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>NATIVE = 5;</code>
      */
     public static final int NATIVE_VALUE = 5;
+
     /**
      *
      *
@@ -237,6 +244,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
      * <code>FLUID = 6;</code>
      */
     public static final int FLUID_VALUE = 6;
+
     /**
      *
      *
@@ -490,6 +498,7 @@ public final class SizeTypeEnum extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

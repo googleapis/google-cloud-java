@@ -38,6 +38,7 @@ public interface CreateCollectorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateCollectorRequestOrBuilder
    * @return The collectorId.
    */
   java.lang.String getCollectorId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateCollectorRequestOrBuilder
    * @return Whether the collector field is set.
    */
   boolean hasCollector();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateCollectorRequestOrBuilder
    * @return The collector.
    */
   com.google.cloud.rapidmigrationassessment.v1.Collector getCollector();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface CreateCollectorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

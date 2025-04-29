@@ -39,6 +39,7 @@ public interface RetrieveForApplicationTermsOfServiceAgreementStateRequestOrBuil
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

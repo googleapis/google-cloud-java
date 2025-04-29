@@ -37,6 +37,7 @@ public interface DataQualityDimensionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

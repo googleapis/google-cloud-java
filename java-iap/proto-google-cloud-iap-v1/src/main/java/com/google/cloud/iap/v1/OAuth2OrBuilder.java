@@ -37,6 +37,7 @@ public interface OAuth2OrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface OAuth2OrBuilder
    * @return The clientSecret.
    */
   java.lang.String getClientSecret();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface OAuth2OrBuilder
    * @return The clientSecretSha256.
    */
   java.lang.String getClientSecretSha256();
+
   /**
    *
    *

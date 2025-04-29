@@ -37,6 +37,7 @@ public interface ListSuggestionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion suggestions = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion> getSuggestionsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListSuggestionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion suggestions = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Suggestion getSuggestions(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListSuggestionsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion suggestions = 1;</code>
    */
   int getSuggestionsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListSuggestionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SuggestionOrBuilder>
       getSuggestionsOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListSuggestionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

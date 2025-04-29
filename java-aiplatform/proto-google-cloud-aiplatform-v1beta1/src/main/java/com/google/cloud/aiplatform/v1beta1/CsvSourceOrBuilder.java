@@ -38,6 +38,7 @@ public interface CsvSourceOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CsvSourceOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
+
   /**
    *
    *

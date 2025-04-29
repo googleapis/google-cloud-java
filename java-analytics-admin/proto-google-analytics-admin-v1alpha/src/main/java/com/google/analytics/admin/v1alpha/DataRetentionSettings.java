@@ -33,6 +33,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataRetentionSettings)
     DataRetentionSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataRetentionSettings.newBuilder() to construct.
   private DataRetentionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,6 +152,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * <code>RETENTION_DURATION_UNSPECIFIED = 0;</code>
      */
     public static final int RETENTION_DURATION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -161,6 +163,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * <code>TWO_MONTHS = 1;</code>
      */
     public static final int TWO_MONTHS_VALUE = 1;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * <code>FOURTEEN_MONTHS = 3;</code>
      */
     public static final int FOURTEEN_MONTHS_VALUE = 3;
+
     /**
      *
      *
@@ -182,6 +186,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * <code>TWENTY_SIX_MONTHS = 4;</code>
      */
     public static final int TWENTY_SIX_MONTHS_VALUE = 4;
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * <code>THIRTY_EIGHT_MONTHS = 5;</code>
      */
     public static final int THIRTY_EIGHT_MONTHS_VALUE = 5;
+
     /**
      *
      *
@@ -303,6 +309,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -327,6 +334,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
 
   public static final int EVENT_DATA_RETENTION_FIELD_NUMBER = 2;
   private int eventDataRetention_ = 0;
+
   /**
    *
    *
@@ -371,6 +380,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   public int getEventDataRetentionValue() {
     return eventDataRetention_;
   }
+
   /**
    *
    *
@@ -397,6 +407,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
 
   public static final int USER_DATA_RETENTION_FIELD_NUMBER = 4;
   private int userDataRetention_ = 0;
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   public int getUserDataRetentionValue() {
     return userDataRetention_;
   }
+
   /**
    *
    *
@@ -440,6 +452,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
 
   public static final int RESET_USER_DATA_ON_NEW_ACTIVITY_FIELD_NUMBER = 3;
   private boolean resetUserDataOnNewActivity_ = false;
+
   /**
    *
    *
@@ -656,6 +669,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -879,6 +893,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -902,6 +917,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -925,6 +941,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -947,6 +964,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +983,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1009,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     }
 
     private int eventDataRetention_ = 0;
+
     /**
      *
      *
@@ -1007,6 +1027,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public int getEventDataRetentionValue() {
       return eventDataRetention_;
     }
+
     /**
      *
      *
@@ -1027,6 +1048,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1072,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
           ? com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1074,6 +1097,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1119,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     }
 
     private int userDataRetention_ = 0;
+
     /**
      *
      *
@@ -1112,6 +1137,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public int getUserDataRetentionValue() {
       return userDataRetention_;
     }
+
     /**
      *
      *
@@ -1132,6 +1158,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1182,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
           ? com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1179,6 +1207,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1229,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     }
 
     private boolean resetUserDataOnNewActivity_;
+
     /**
      *
      *
@@ -1216,6 +1246,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public boolean getResetUserDataOnNewActivity() {
       return resetUserDataOnNewActivity_;
     }
+
     /**
      *
      *
@@ -1236,6 +1267,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

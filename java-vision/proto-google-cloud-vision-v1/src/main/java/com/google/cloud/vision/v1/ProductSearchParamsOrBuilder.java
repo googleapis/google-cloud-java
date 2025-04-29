@@ -37,6 +37,7 @@ public interface ProductSearchParamsOrBuilder
    * @return Whether the boundingPoly field is set.
    */
   boolean hasBoundingPoly();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ProductSearchParamsOrBuilder
    * @return The boundingPoly.
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingPoly();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ProductSearchParamsOrBuilder
    * @return The productSet.
    */
   java.lang.String getProductSet();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ProductSearchParamsOrBuilder
    * @return A list containing the productCategories.
    */
   java.util.List<java.lang.String> getProductCategoriesList();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ProductSearchParamsOrBuilder
    * @return The count of productCategories.
    */
   int getProductCategoriesCount();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface ProductSearchParamsOrBuilder
    * @return The productCategories at the given index.
    */
   java.lang.String getProductCategories(int index);
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface ProductSearchParamsOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

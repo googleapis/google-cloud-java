@@ -33,6 +33,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectAttachmentPrivateInfo)
     InterconnectAttachmentPrivateInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectAttachmentPrivateInfo.newBuilder() to construct.
   private InterconnectAttachmentPrivateInfo(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
   private int bitField0_;
   public static final int TAG8021Q_FIELD_NUMBER = 271820992;
   private int tag8021Q_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
   public boolean hasTag8021Q() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -261,6 +264,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -449,6 +453,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     private int bitField0_;
 
     private int tag8021Q_;
+
     /**
      *
      *
@@ -464,6 +469,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     public boolean hasTag8021Q() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -479,6 +485,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     public int getTag8021Q() {
       return tag8021Q_;
     }
+
     /**
      *
      *
@@ -498,6 +505,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

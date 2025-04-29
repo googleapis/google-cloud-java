@@ -36,6 +36,7 @@ public interface RecurringTimeWindowOrBuilder
    * @return Whether the window field is set.
    */
   boolean hasWindow();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RecurringTimeWindowOrBuilder
    * @return The window.
    */
   com.google.cloud.edgecontainer.v1.TimeWindow getWindow();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RecurringTimeWindowOrBuilder
    * @return The recurrence.
    */
   java.lang.String getRecurrence();
+
   /**
    *
    *

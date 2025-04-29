@@ -34,6 +34,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UnmanagedContainerModel)
     UnmanagedContainerModelOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UnmanagedContainerModel.newBuilder() to construct.
   private UnmanagedContainerModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifactUri_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
 
   public static final int PREDICT_SCHEMATA_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.PredictSchemata predictSchemata_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
   public boolean hasPredictSchemata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.PredictSchemata.getDefaultInstance()
         : predictSchemata_;
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
 
   public static final int CONTAINER_SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.ModelContainerSpec containerSpec_;
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
   public boolean hasContainerSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.ModelContainerSpec.getDefaultInstance()
         : containerSpec_;
   }
+
   /**
    *
    *
@@ -415,6 +424,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +660,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object artifactUri_ = "";
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.PredictSchemata.Builder,
             com.google.cloud.aiplatform.v1.PredictSchemataOrBuilder>
         predictSchemataBuilder_;
+
     /**
      *
      *
@@ -780,6 +796,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     public boolean hasPredictSchemata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         return predictSchemataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +910,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +925,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return getPredictSchemataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -921,6 +944,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
             : predictSchemata_;
       }
     }
+
     /**
      *
      *
@@ -953,6 +977,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.ModelContainerSpec.Builder,
             com.google.cloud.aiplatform.v1.ModelContainerSpecOrBuilder>
         containerSpecBuilder_;
+
     /**
      *
      *
@@ -970,6 +995,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
     public boolean hasContainerSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
         return containerSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1045,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1069,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1101,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1124,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1142,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
       onChanged();
       return getContainerSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1132,6 +1164,7 @@ public final class UnmanagedContainerModel extends com.google.protobuf.Generated
             : containerSpec_;
       }
     }
+
     /**
      *
      *

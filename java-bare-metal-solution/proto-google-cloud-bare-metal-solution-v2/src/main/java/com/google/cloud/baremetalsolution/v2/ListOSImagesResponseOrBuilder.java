@@ -34,6 +34,7 @@ public interface ListOSImagesResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.OSImage os_images = 1;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.OSImage> getOsImagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListOSImagesResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.OSImage os_images = 1;</code>
    */
   com.google.cloud.baremetalsolution.v2.OSImage getOsImages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListOSImagesResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.OSImage os_images = 1;</code>
    */
   int getOsImagesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListOSImagesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.OSImageOrBuilder>
       getOsImagesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListOSImagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

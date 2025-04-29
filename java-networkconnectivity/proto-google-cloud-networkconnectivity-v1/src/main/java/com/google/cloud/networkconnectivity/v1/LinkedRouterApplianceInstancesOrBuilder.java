@@ -36,6 +36,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.RouterApplianceInstance>
       getInstancesList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.RouterApplianceInstance getInstances(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.RouterApplianceInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return A list containing the includeImportRanges.
    */
   java.util.List<java.lang.String> getIncludeImportRangesList();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return The count of includeImportRanges.
    */
   int getIncludeImportRangesCount();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return The includeImportRanges at the given index.
    */
   java.lang.String getIncludeImportRanges(int index);
+
   /**
    *
    *

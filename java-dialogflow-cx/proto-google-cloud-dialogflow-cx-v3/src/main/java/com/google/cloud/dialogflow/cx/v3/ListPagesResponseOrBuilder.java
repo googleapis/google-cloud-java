@@ -35,6 +35,7 @@ public interface ListPagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Page pages = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.Page> getPagesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListPagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Page pages = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.Page getPages(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListPagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Page pages = 1;</code>
    */
   int getPagesCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface ListPagesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Page pages = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.PageOrBuilder> getPagesOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface ListPagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface VulnerableHeadersOrBuilder
    */
   java.util.List<com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.Header>
       getHeadersList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface VulnerableHeadersOrBuilder
    * </code>
    */
   com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.Header getHeaders(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface VulnerableHeadersOrBuilder
    * </code>
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -71,6 +74,7 @@ public interface VulnerableHeadersOrBuilder
   java.util.List<
           ? extends com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.HeaderOrBuilder>
       getHeadersOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface VulnerableHeadersOrBuilder
    */
   java.util.List<com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.Header>
       getMissingHeadersList();
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface VulnerableHeadersOrBuilder
    * </code>
    */
   com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.Header getMissingHeaders(int index);
+
   /**
    *
    *
@@ -121,6 +127,7 @@ public interface VulnerableHeadersOrBuilder
    * </code>
    */
   int getMissingHeadersCount();
+
   /**
    *
    *
@@ -135,6 +142,7 @@ public interface VulnerableHeadersOrBuilder
   java.util.List<
           ? extends com.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders.HeaderOrBuilder>
       getMissingHeadersOrBuilderList();
+
   /**
    *
    *

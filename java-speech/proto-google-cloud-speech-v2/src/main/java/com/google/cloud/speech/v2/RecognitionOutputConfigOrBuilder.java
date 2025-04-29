@@ -37,6 +37,7 @@ public interface RecognitionOutputConfigOrBuilder
    * @return Whether the gcsOutputConfig field is set.
    */
   boolean hasGcsOutputConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RecognitionOutputConfigOrBuilder
    * @return The gcsOutputConfig.
    */
   com.google.cloud.speech.v2.GcsOutputConfig getGcsOutputConfig();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface RecognitionOutputConfigOrBuilder
    * @return Whether the inlineResponseConfig field is set.
    */
   boolean hasInlineResponseConfig();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface RecognitionOutputConfigOrBuilder
    * @return The inlineResponseConfig.
    */
   com.google.cloud.speech.v2.InlineOutputConfig getInlineResponseConfig();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface RecognitionOutputConfigOrBuilder
    * @return Whether the outputFormatConfig field is set.
    */
   boolean hasOutputFormatConfig();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface RecognitionOutputConfigOrBuilder
    * @return The outputFormatConfig.
    */
   com.google.cloud.speech.v2.OutputFormatConfig getOutputFormatConfig();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface MemberOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface MemberOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface MemberOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface MemberOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
+
   /**
    *
    *

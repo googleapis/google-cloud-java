@@ -33,6 +33,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionNetworkEndpointGroupsAttachEndpointsRequest)
     RegionNetworkEndpointGroupsAttachEndpointsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionNetworkEndpointGroupsAttachEndpointsRequest.newBuilder() to construct.
   private RegionNetworkEndpointGroupsAttachEndpointsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkEndpoint> networkEndpoints_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
   public java.util.List<com.google.cloud.compute.v1.NetworkEndpoint> getNetworkEndpointsList() {
     return networkEndpoints_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       getNetworkEndpointsOrBuilderList() {
     return networkEndpoints_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
   public int getNetworkEndpointsCount() {
     return networkEndpoints_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
   public com.google.cloud.compute.v1.NetworkEndpoint getNetworkEndpoints(int index) {
     return networkEndpoints_.get(index);
   }
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +588,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
         return networkEndpointsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
         return networkEndpointsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
         return networkEndpointsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +777,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +817,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
         int index) {
       return getNetworkEndpointsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -829,6 +849,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
         return networkEndpointsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -846,6 +867,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
         return java.util.Collections.unmodifiableList(networkEndpoints_);
       }
     }
+
     /**
      *
      *
@@ -859,6 +881,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       return getNetworkEndpointsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -873,6 +896,7 @@ public final class RegionNetworkEndpointGroupsAttachEndpointsRequest
       return getNetworkEndpointsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance());
     }
+
     /**
      *
      *

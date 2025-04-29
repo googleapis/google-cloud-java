@@ -40,6 +40,7 @@ public interface DescribeConversionWorkspaceRevisionsRequestOrBuilder
    * @return The conversionWorkspace.
    */
   java.lang.String getConversionWorkspace();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface DescribeConversionWorkspaceRevisionsRequestOrBuilder
    * @return The commitId.
    */
   java.lang.String getCommitId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AgentAssistantRecord)
     AgentAssistantRecordOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AgentAssistantRecord.newBuilder() to construct.
   private AgentAssistantRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     private AnswerCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ARTICLE_SUGGESTION_ANSWER_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   public boolean hasArticleSuggestionAnswer() {
     return answerCase_ == 5;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.dialogflow.v2beta1.ArticleAnswer.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FAQ_ANSWER_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   public boolean hasFaqAnswer() {
     return answerCase_ == 6;
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.dialogflow.v2beta1.FaqAnswer.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DIALOGFLOW_ASSIST_ANSWER_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   public boolean hasDialogflowAssistAnswer() {
     return answerCase_ == 7;
   }
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -491,6 +502,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +758,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.v2beta1.ArticleAnswer.Builder,
             com.google.cloud.dialogflow.v2beta1.ArticleAnswerOrBuilder>
         articleSuggestionAnswerBuilder_;
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     public boolean hasArticleSuggestionAnswer() {
       return answerCase_ == 5;
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.v2beta1.ArticleAnswer.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +853,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         getArticleSuggestionAnswerBuilder() {
       return getArticleSuggestionAnswerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.v2beta1.ArticleAnswer.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.v2beta1.FaqAnswer.Builder,
             com.google.cloud.dialogflow.v2beta1.FaqAnswerOrBuilder>
         faqAnswerBuilder_;
+
     /**
      *
      *
@@ -994,6 +1016,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     public boolean hasFaqAnswer() {
       return answerCase_ == 6;
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.v2beta1.FaqAnswer.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1092,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1127,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1170,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2beta1.FaqAnswer.Builder getFaqAnswerBuilder() {
       return getFaqAnswerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1164,6 +1193,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.v2beta1.FaqAnswer.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1204,6 +1234,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.Builder,
             com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder>
         dialogflowAssistAnswerBuilder_;
+
     /**
      *
      *
@@ -1221,6 +1252,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     public boolean hasDialogflowAssistAnswer() {
       return answerCase_ == 7;
     }
+
     /**
      *
      *
@@ -1248,6 +1280,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1306,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1329,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1367,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1395,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1411,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         getDialogflowAssistAnswerBuilder() {
       return getDialogflowAssistAnswerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1397,6 +1435,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
       }
     }
+
     /**
      *
      *

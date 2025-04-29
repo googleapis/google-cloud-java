@@ -44,6 +44,7 @@ public interface QualityMetricsOrBuilder
    * @return Whether the docRecall field is set.
    */
   boolean hasDocRecall();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface QualityMetricsOrBuilder
    * @return The docRecall.
    */
   com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics getDocRecall();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface QualityMetricsOrBuilder
    * @return Whether the docPrecision field is set.
    */
   boolean hasDocPrecision();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface QualityMetricsOrBuilder
    * @return The docPrecision.
    */
   com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics getDocPrecision();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface QualityMetricsOrBuilder
    * @return Whether the docNdcg field is set.
    */
   boolean hasDocNdcg();
+
   /**
    *
    *
@@ -204,6 +209,7 @@ public interface QualityMetricsOrBuilder
    * @return The docNdcg.
    */
   com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics getDocNdcg();
+
   /**
    *
    *
@@ -253,6 +259,7 @@ public interface QualityMetricsOrBuilder
    * @return Whether the pageRecall field is set.
    */
   boolean hasPageRecall();
+
   /**
    *
    *
@@ -273,6 +280,7 @@ public interface QualityMetricsOrBuilder
    * @return The pageRecall.
    */
   com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics getPageRecall();
+
   /**
    *
    *
@@ -323,6 +331,7 @@ public interface QualityMetricsOrBuilder
    * @return Whether the pageNdcg field is set.
    */
   boolean hasPageNdcg();
+
   /**
    *
    *
@@ -353,6 +362,7 @@ public interface QualityMetricsOrBuilder
    * @return The pageNdcg.
    */
   com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics getPageNdcg();
+
   /**
    *
    *

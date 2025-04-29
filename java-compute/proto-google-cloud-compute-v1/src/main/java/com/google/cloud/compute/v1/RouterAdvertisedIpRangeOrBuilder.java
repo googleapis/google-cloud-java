@@ -36,6 +36,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * @return Whether the range field is set.
    */
   boolean hasRange();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * @return The range.
    */
   java.lang.String getRange();
+
   /**
    *
    *

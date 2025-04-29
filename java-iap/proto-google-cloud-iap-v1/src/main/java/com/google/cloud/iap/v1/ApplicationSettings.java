@@ -33,6 +33,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ApplicationSettings)
     ApplicationSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApplicationSettings.newBuilder() to construct.
   private ApplicationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CSM_SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.iap.v1.CsmSettings csmSettings_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasCsmSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.iap.v1.CsmSettings.getDefaultInstance()
         : csmSettings_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ACCESS_DENIED_PAGE_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.AccessDeniedPageSettings accessDeniedPageSettings_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasAccessDeniedPageSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.iap.v1.AccessDeniedPageSettings.getDefaultInstance()
         : accessDeniedPageSettings_;
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
 
   public static final int COOKIE_DOMAIN_FIELD_NUMBER = 3;
   private com.google.protobuf.StringValue cookieDomain_;
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasCookieDomain() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.StringValue.getDefaultInstance()
         : cookieDomain_;
   }
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ATTRIBUTE_PROPAGATION_SETTINGS_FIELD_NUMBER = 4;
   private com.google.cloud.iap.v1.AttributePropagationSettings attributePropagationSettings_;
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasAttributePropagationSettings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.iap.v1.AttributePropagationSettings.getDefaultInstance()
         : attributePropagationSettings_;
   }
+
   /**
    *
    *
@@ -496,6 +509,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -765,6 +779,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.cloud.iap.v1.CsmSettings.Builder,
             com.google.cloud.iap.v1.CsmSettingsOrBuilder>
         csmSettingsBuilder_;
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     public boolean hasCsmSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -803,6 +819,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return csmSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +935,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCsmSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : csmSettings_;
       }
     }
+
     /**
      *
      *
@@ -968,6 +991,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.cloud.iap.v1.AccessDeniedPageSettings.Builder,
             com.google.cloud.iap.v1.AccessDeniedPageSettingsOrBuilder>
         accessDeniedPageSettingsBuilder_;
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     public boolean hasAccessDeniedPageSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return accessDeniedPageSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1057,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1134,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1152,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAccessDeniedPageSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1143,6 +1174,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : accessDeniedPageSettings_;
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1209,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         cookieDomainBuilder_;
+
     /**
      *
      *
@@ -1192,6 +1225,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     public boolean hasCookieDomain() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1213,6 +1247,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return cookieDomainBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1271,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1292,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1321,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1342,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1319,6 +1358,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCookieDomainFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1338,6 +1378,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : cookieDomain_;
       }
     }
+
     /**
      *
      *
@@ -1371,6 +1412,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.cloud.iap.v1.AttributePropagationSettings.Builder,
             com.google.cloud.iap.v1.AttributePropagationSettingsOrBuilder>
         attributePropagationSettingsBuilder_;
+
     /**
      *
      *
@@ -1387,6 +1429,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     public boolean hasAttributePropagationSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1409,6 +1452,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return attributePropagationSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1434,6 +1478,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1456,6 +1501,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1533,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1555,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1525,6 +1573,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAttributePropagationSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1546,6 +1595,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : attributePropagationSettings_;
       }
     }
+
     /**
      *
      *

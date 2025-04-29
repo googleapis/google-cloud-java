@@ -35,6 +35,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.PgpSignedAttestation)
     PgpSignedAttestationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PgpSignedAttestation.newBuilder() to construct.
   private PgpSignedAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,6 +113,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * <code>CONTENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CONTENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -225,6 +227,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     private KeyIdCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -259,6 +262,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signature_ = "";
+
   /**
    *
    *
@@ -290,6 +294,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +329,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
   private int contentType_ = 0;
+
   /**
    *
    *
@@ -342,6 +348,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
   public int getContentTypeValue() {
     return contentType_;
   }
+
   /**
    *
    *
@@ -366,6 +373,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PGP_KEY_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -395,6 +403,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
   public boolean hasPgpKeyId() {
     return keyIdCase_ == 2;
   }
+
   /**
    *
    *
@@ -437,6 +446,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -674,6 +684,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -915,6 +926,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object signature_ = "";
+
     /**
      *
      *
@@ -945,6 +957,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +988,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1018,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1044,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1077,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     }
 
     private int contentType_ = 0;
+
     /**
      *
      *
@@ -1079,6 +1096,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     public int getContentTypeValue() {
       return contentType_;
     }
+
     /**
      *
      *
@@ -1100,6 +1118,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1141,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
           ? io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1147,6 +1167,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1219,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
     public boolean hasPgpKeyId() {
       return keyIdCase_ == 2;
     }
+
     /**
      *
      *
@@ -1241,6 +1263,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1284,6 +1307,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1344,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1379,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *

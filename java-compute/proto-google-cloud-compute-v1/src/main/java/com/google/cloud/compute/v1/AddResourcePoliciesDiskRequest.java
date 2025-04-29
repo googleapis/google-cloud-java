@@ -33,6 +33,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddResourcePoliciesDiskRequest)
     AddResourcePoliciesDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddResourcePoliciesDiskRequest.newBuilder() to construct.
   private AddResourcePoliciesDiskRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
   public static final int DISKS_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER = 496483363;
   private com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest
       disksAddResourcePoliciesRequestResource_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
   public boolean hasDisksAddResourcePoliciesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.getDefaultInstance()
         : disksAddResourcePoliciesRequestResource_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +285,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -328,6 +340,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -564,6 +577,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -829,6 +843,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
+
     /**
      *
      *
@@ -851,6 +866,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -873,6 +889,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +911,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +929,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +960,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.Builder,
             com.google.cloud.compute.v1.DisksAddResourcePoliciesRequestOrBuilder>
         disksAddResourcePoliciesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -957,6 +977,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     public boolean hasDisksAddResourcePoliciesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return disksAddResourcePoliciesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1027,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1050,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1083,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1105,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return getDisksAddResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
             : disksAddResourcePoliciesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1175,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1225,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1249,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1269,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1296,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1277,6 +1311,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1299,6 +1334,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1357,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1379,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1397,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1422,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1407,6 +1447,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1431,6 +1472,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1454,6 +1496,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1473,6 +1516,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

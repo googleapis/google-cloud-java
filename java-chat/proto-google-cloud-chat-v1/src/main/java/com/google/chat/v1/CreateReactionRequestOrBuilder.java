@@ -40,6 +40,7 @@ public interface CreateReactionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReactionRequestOrBuilder
    * @return Whether the reaction field is set.
    */
   boolean hasReaction();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateReactionRequestOrBuilder
    * @return The reaction.
    */
   com.google.chat.v1.Reaction getReaction();
+
   /**
    *
    *

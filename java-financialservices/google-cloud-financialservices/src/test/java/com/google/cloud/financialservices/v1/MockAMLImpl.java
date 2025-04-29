@@ -177,7 +177,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportRegisteredParties, expected %s or %s",
+                  "Unrecognized response type %s for method ImportRegisteredParties, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -198,7 +199,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportRegisteredParties, expected %s or %s",
+                  "Unrecognized response type %s for method ExportRegisteredParties, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -530,7 +532,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportEngineConfigMetadata, expected %s or %s",
+                  "Unrecognized response type %s for method ExportEngineConfigMetadata, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -616,7 +619,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPredictionResults, expected %s or %s",
+                  "Unrecognized response type %s for method ListPredictionResults, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPredictionResultsResponse.class.getName(),
                   Exception.class.getName())));
@@ -658,7 +662,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePredictionResult, expected %s or %s",
+                  "Unrecognized response type %s for method CreatePredictionResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -679,7 +684,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdatePredictionResult, expected %s or %s",
+                  "Unrecognized response type %s for method UpdatePredictionResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -700,7 +706,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportPredictionResultMetadata, expected %s or %s",
+                  "Unrecognized response type %s for method ExportPredictionResultMetadata,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -721,7 +728,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePredictionResult, expected %s or %s",
+                  "Unrecognized response type %s for method DeletePredictionResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -785,7 +793,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateBacktestResult, expected %s or %s",
+                  "Unrecognized response type %s for method CreateBacktestResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -806,7 +815,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateBacktestResult, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateBacktestResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -827,7 +837,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportBacktestResultMetadata, expected %s or %s",
+                  "Unrecognized response type %s for method ExportBacktestResultMetadata, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -848,7 +859,8 @@ public class MockAMLImpl extends AMLImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteBacktestResult, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteBacktestResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

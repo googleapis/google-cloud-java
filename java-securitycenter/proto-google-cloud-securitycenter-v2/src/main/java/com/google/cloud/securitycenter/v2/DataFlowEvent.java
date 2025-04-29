@@ -35,6 +35,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.DataFlowEvent)
     DataFlowEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataFlowEvent.newBuilder() to construct.
   private DataFlowEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,6 +132,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>OPERATION_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -141,6 +143,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>READ = 1;</code>
      */
     public static final int READ_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>MOVE = 2;</code>
      */
     public static final int MOVE_VALUE = 2;
+
     /**
      *
      *
@@ -252,6 +256,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventId_ = "";
+
   /**
    *
    *
@@ -275,6 +280,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +309,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object principalEmail_ = "";
+
   /**
    *
    *
@@ -327,6 +334,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OPERATION_FIELD_NUMBER = 3;
   private int operation_ = 0;
+
   /**
    *
    *
@@ -369,6 +378,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
   public int getOperationValue() {
     return operation_;
   }
+
   /**
    *
    *
@@ -393,6 +403,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object violatedLocation_ = "";
+
   /**
    *
    *
@@ -416,6 +427,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -442,6 +454,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp eventTime_;
+
   /**
    *
    *
@@ -457,6 +470,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -472,6 +486,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
+
   /**
    *
    *
@@ -690,6 +705,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -948,6 +964,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object eventId_ = "";
+
     /**
      *
      *
@@ -970,6 +987,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1010,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1032,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1050,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1075,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object principalEmail_ = "";
+
     /**
      *
      *
@@ -1077,6 +1099,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1123,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1146,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1165,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1191,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int operation_ = 0;
+
     /**
      *
      *
@@ -1180,6 +1207,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     public int getOperationValue() {
       return operation_;
     }
+
     /**
      *
      *
@@ -1198,6 +1226,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1246,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v2.DataFlowEvent.Operation.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1238,6 +1268,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1288,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object violatedLocation_ = "";
+
     /**
      *
      *
@@ -1279,6 +1311,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1301,6 +1334,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1356,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1339,6 +1374,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1404,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
+
     /**
      *
      *
@@ -1382,6 +1419,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1400,6 +1438,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1461,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1481,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1468,6 +1509,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1529,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1544,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1517,6 +1561,7 @@ public final class DataFlowEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
+
     /**
      *
      *

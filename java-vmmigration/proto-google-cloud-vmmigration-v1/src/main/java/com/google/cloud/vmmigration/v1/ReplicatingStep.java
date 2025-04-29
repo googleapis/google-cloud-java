@@ -33,6 +33,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ReplicatingStep)
     ReplicatingStepOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReplicatingStep.newBuilder() to construct.
   private ReplicatingStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
 
   public static final int TOTAL_BYTES_FIELD_NUMBER = 1;
   private long totalBytes_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
 
   public static final int REPLICATED_BYTES_FIELD_NUMBER = 2;
   private long replicatedBytes_ = 0L;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
 
   public static final int LAST_TWO_MINUTES_AVERAGE_BYTES_PER_SECOND_FIELD_NUMBER = 3;
   private long lastTwoMinutesAverageBytesPerSecond_ = 0L;
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
 
   public static final int LAST_THIRTY_MINUTES_AVERAGE_BYTES_PER_SECOND_FIELD_NUMBER = 4;
   private long lastThirtyMinutesAverageBytesPerSecond_ = 0L;
+
   /**
    *
    *
@@ -331,6 +336,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +559,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private long totalBytes_;
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public long getTotalBytes() {
       return totalBytes_;
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     }
 
     private long replicatedBytes_;
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public long getReplicatedBytes() {
       return replicatedBytes_;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     }
 
     private long lastTwoMinutesAverageBytesPerSecond_;
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public long getLastTwoMinutesAverageBytesPerSecond() {
       return lastTwoMinutesAverageBytesPerSecond_;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     }
 
     private long lastThirtyMinutesAverageBytesPerSecond_;
+
     /**
      *
      *
@@ -731,6 +747,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
     public long getLastThirtyMinutesAverageBytesPerSecond() {
       return lastThirtyMinutesAverageBytesPerSecond_;
     }
+
     /**
      *
      *
@@ -751,6 +768,7 @@ public final class ReplicatingStep extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

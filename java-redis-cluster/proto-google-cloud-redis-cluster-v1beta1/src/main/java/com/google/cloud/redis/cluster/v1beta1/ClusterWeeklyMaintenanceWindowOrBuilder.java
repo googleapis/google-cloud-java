@@ -36,6 +36,7 @@ public interface ClusterWeeklyMaintenanceWindowOrBuilder
    * @return The enum numeric value on the wire for day.
    */
   int getDayValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ClusterWeeklyMaintenanceWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ClusterWeeklyMaintenanceWindowOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
+
   /**
    *
    *

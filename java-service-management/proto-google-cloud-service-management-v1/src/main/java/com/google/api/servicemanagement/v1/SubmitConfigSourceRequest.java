@@ -33,6 +33,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.api.servicemanagement.v1.SubmitConfigSourceRequest)
     SubmitConfigSourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SubmitConfigSourceRequest.newBuilder() to construct.
   private SubmitConfigSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceName_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
 
   public static final int CONFIG_SOURCE_FIELD_NUMBER = 2;
   private com.google.api.servicemanagement.v1.ConfigSource configSource_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
   public boolean hasConfigSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         ? com.google.api.servicemanagement.v1.ConfigSource.getDefaultInstance()
         : configSource_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -378,6 +385,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -608,6 +616,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
+
     /**
      *
      *
@@ -632,6 +641,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
             com.google.api.servicemanagement.v1.ConfigSource.Builder,
             com.google.api.servicemanagement.v1.ConfigSourceOrBuilder>
         configSourceBuilder_;
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     public boolean hasConfigSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         return configSourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return getConfigSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -900,6 +921,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
             : configSource_;
       }
     }
+
     /**
      *
      *
@@ -929,6 +951,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -946,6 +969,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

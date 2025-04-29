@@ -33,6 +33,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.AbortInfo)
     AbortInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AbortInfo.newBuilder() to construct.
   private AbortInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -500,6 +501,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CAUSE_UNSPECIFIED = 0;</code>
      */
     public static final int CAUSE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -510,6 +512,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN_NETWORK = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int UNKNOWN_NETWORK_VALUE = 1;
+
     /**
      *
      *
@@ -521,6 +524,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN_PROJECT = 3 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int UNKNOWN_PROJECT_VALUE = 3;
+
     /**
      *
      *
@@ -532,6 +536,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_EXTERNAL_IP = 7 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int NO_EXTERNAL_IP_VALUE = 7;
+
     /**
      *
      *
@@ -544,6 +549,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNINTENDED_DESTINATION = 8 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int UNINTENDED_DESTINATION_VALUE = 8;
+
     /**
      *
      *
@@ -555,6 +561,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_ENDPOINT_NOT_FOUND = 11 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int SOURCE_ENDPOINT_NOT_FOUND_VALUE = 11;
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>MISMATCHED_SOURCE_NETWORK = 12 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int MISMATCHED_SOURCE_NETWORK_VALUE = 12;
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>DESTINATION_ENDPOINT_NOT_FOUND = 13 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int DESTINATION_ENDPOINT_NOT_FOUND_VALUE = 13;
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>MISMATCHED_DESTINATION_NETWORK = 14 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int MISMATCHED_DESTINATION_NETWORK_VALUE = 14;
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN_IP = 2;</code>
      */
     public static final int UNKNOWN_IP_VALUE = 2;
+
     /**
      *
      *
@@ -610,6 +621,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_MANAGED_SERVICE_UNKNOWN_IP = 32;</code>
      */
     public static final int GOOGLE_MANAGED_SERVICE_UNKNOWN_IP_VALUE = 32;
+
     /**
      *
      *
@@ -621,6 +633,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK = 23;</code>
      */
     public static final int SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK_VALUE = 23;
+
     /**
      *
      *
@@ -632,6 +645,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED = 4;</code>
      */
     public static final int PERMISSION_DENIED_VALUE = 4;
+
     /**
      *
      *
@@ -643,6 +657,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS = 28;</code>
      */
     public static final int PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS_VALUE = 28;
+
     /**
      *
      *
@@ -654,6 +669,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS = 29;</code>
      */
     public static final int PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS_VALUE = 29;
+
     /**
      *
      *
@@ -665,6 +681,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS = 36;</code>
      */
     public static final int PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS_VALUE = 36;
+
     /**
      *
      *
@@ -676,6 +693,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_SOURCE_LOCATION = 5;</code>
      */
     public static final int NO_SOURCE_LOCATION_VALUE = 5;
+
     /**
      *
      *
@@ -692,6 +710,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INVALID_ARGUMENT = 6;</code>
      */
     public static final int INVALID_ARGUMENT_VALUE = 6;
+
     /**
      *
      *
@@ -703,6 +722,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>TRACE_TOO_LONG = 9;</code>
      */
     public static final int TRACE_TOO_LONG_VALUE = 9;
+
     /**
      *
      *
@@ -713,6 +733,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNAL_ERROR = 10;</code>
      */
     public static final int INTERNAL_ERROR_VALUE = 10;
+
     /**
      *
      *
@@ -723,6 +744,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED = 15;</code>
      */
     public static final int UNSUPPORTED_VALUE = 15;
+
     /**
      *
      *
@@ -734,6 +756,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>MISMATCHED_IP_VERSION = 16;</code>
      */
     public static final int MISMATCHED_IP_VERSION_VALUE = 16;
+
     /**
      *
      *
@@ -746,6 +769,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GKE_KONNECTIVITY_PROXY_UNSUPPORTED = 17;</code>
      */
     public static final int GKE_KONNECTIVITY_PROXY_UNSUPPORTED_VALUE = 17;
+
     /**
      *
      *
@@ -756,6 +780,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_CONFIG_NOT_FOUND = 18;</code>
      */
     public static final int RESOURCE_CONFIG_NOT_FOUND_VALUE = 18;
+
     /**
      *
      *
@@ -766,6 +791,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>VM_INSTANCE_CONFIG_NOT_FOUND = 24;</code>
      */
     public static final int VM_INSTANCE_CONFIG_NOT_FOUND_VALUE = 24;
+
     /**
      *
      *
@@ -776,6 +802,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_CONFIG_NOT_FOUND = 25;</code>
      */
     public static final int NETWORK_CONFIG_NOT_FOUND_VALUE = 25;
+
     /**
      *
      *
@@ -786,6 +813,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>FIREWALL_CONFIG_NOT_FOUND = 26;</code>
      */
     public static final int FIREWALL_CONFIG_NOT_FOUND_VALUE = 26;
+
     /**
      *
      *
@@ -796,6 +824,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTE_CONFIG_NOT_FOUND = 27;</code>
      */
     public static final int ROUTE_CONFIG_NOT_FOUND_VALUE = 27;
+
     /**
      *
      *
@@ -807,6 +836,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
      */
     public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT_VALUE = 19;
+
     /**
      *
      *
@@ -818,6 +848,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_PSC_CLOUD_SQL_UNSUPPORTED = 20;</code>
      */
     public static final int SOURCE_PSC_CLOUD_SQL_UNSUPPORTED_VALUE = 20;
+
     /**
      *
      *
@@ -828,6 +859,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_REDIS_CLUSTER_UNSUPPORTED = 34;</code>
      */
     public static final int SOURCE_REDIS_CLUSTER_UNSUPPORTED_VALUE = 34;
+
     /**
      *
      *
@@ -839,6 +871,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_REDIS_INSTANCE_UNSUPPORTED = 35;</code>
      */
     public static final int SOURCE_REDIS_INSTANCE_UNSUPPORTED_VALUE = 35;
+
     /**
      *
      *
@@ -850,6 +883,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
      */
     public static final int SOURCE_FORWARDING_RULE_UNSUPPORTED_VALUE = 21;
+
     /**
      *
      *
@@ -861,6 +895,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NON_ROUTABLE_IP_ADDRESS = 22;</code>
      */
     public static final int NON_ROUTABLE_IP_ADDRESS_VALUE = 22;
+
     /**
      *
      *
@@ -871,6 +906,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT = 30;</code>
      */
     public static final int UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT_VALUE = 30;
+
     /**
      *
      *
@@ -882,6 +918,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG = 31;</code>
      */
     public static final int UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG_VALUE = 31;
+
     /**
      *
      *
@@ -1047,6 +1084,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAUSE_FIELD_NUMBER = 1;
   private int cause_ = 0;
+
   /**
    *
    *
@@ -1062,6 +1100,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   public int getCauseValue() {
     return cause_;
   }
+
   /**
    *
    *
@@ -1086,6 +1125,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUri_ = "";
+
   /**
    *
    *
@@ -1109,6 +1149,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1137,6 +1178,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -1160,6 +1202,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1189,6 +1232,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList projectsMissingPermission_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1204,6 +1248,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getProjectsMissingPermissionList() {
     return projectsMissingPermission_;
   }
+
   /**
    *
    *
@@ -1219,6 +1264,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   public int getProjectsMissingPermissionCount() {
     return projectsMissingPermission_.size();
   }
+
   /**
    *
    *
@@ -1235,6 +1281,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getProjectsMissingPermission(int index) {
     return projectsMissingPermission_.get(index);
   }
+
   /**
    *
    *
@@ -1449,6 +1496,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1683,6 +1731,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int cause_ = 0;
+
     /**
      *
      *
@@ -1698,6 +1747,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public int getCauseValue() {
       return cause_;
     }
+
     /**
      *
      *
@@ -1716,6 +1766,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1735,6 +1786,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.AbortInfo.Cause.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1756,6 +1808,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1775,6 +1828,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceUri_ = "";
+
     /**
      *
      *
@@ -1797,6 +1851,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1819,6 +1874,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1840,6 +1896,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1857,6 +1914,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1881,6 +1939,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1903,6 +1962,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1925,6 +1985,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1946,6 +2007,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1963,6 +2025,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1996,6 +2059,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -2012,6 +2076,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       projectsMissingPermission_.makeImmutable();
       return projectsMissingPermission_;
     }
+
     /**
      *
      *
@@ -2027,6 +2092,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public int getProjectsMissingPermissionCount() {
       return projectsMissingPermission_.size();
     }
+
     /**
      *
      *
@@ -2043,6 +2109,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProjectsMissingPermission(int index) {
       return projectsMissingPermission_.get(index);
     }
+
     /**
      *
      *
@@ -2059,6 +2126,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getProjectsMissingPermissionBytes(int index) {
       return projectsMissingPermission_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2083,6 +2151,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2175,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2196,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2216,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

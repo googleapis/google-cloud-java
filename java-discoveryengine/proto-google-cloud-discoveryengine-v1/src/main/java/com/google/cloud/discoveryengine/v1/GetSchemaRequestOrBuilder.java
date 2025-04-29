@@ -39,6 +39,7 @@ public interface GetSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
