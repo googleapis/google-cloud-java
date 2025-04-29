@@ -116,10 +116,12 @@
     <module>java-infra-manager</module>
     <module>java-iot</module>
     <module>java-java-shopping-merchant-issue-resolution</module>
+    <module>java-java-shopping-merchant-order-tracking</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
     <module>java-life-sciences</module>
+    <module>java-lustre</module>
     <module>java-managed-identities</module>
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
