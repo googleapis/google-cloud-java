@@ -34,6 +34,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetUrlMapRegionTargetHttpsProxyRequest)
     SetUrlMapRegionTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetUrlMapRegionTargetHttpsProxyRequest.newBuilder() to construct.
   private SetUrlMapRegionTargetHttpsProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
 
   public static final int URL_MAP_REFERENCE_RESOURCE_FIELD_NUMBER = 398701333;
   private com.google.cloud.compute.v1.UrlMapReference urlMapReferenceResource_;
+
   /**
    *
    *
@@ -315,6 +326,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
   public boolean hasUrlMapReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         ? com.google.cloud.compute.v1.UrlMapReference.getDefaultInstance()
         : urlMapReferenceResource_;
   }
+
   /**
    *
    *
@@ -562,6 +575,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -832,6 +846,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -856,6 +871,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -880,6 +896,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1041,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1061,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1078,6 +1103,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1100,6 +1126,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1149,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1171,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1189,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1214,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
+
     /**
      *
      *
@@ -1206,6 +1237,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1260,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1249,6 +1282,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1330,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
             com.google.cloud.compute.v1.UrlMapReference.Builder,
             com.google.cloud.compute.v1.UrlMapReferenceOrBuilder>
         urlMapReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -1311,6 +1347,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
     public boolean hasUrlMapReferenceResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1333,6 +1370,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
         return urlMapReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1357,6 +1395,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1418,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1449,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1430,6 +1471,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1488,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
       onChanged();
       return getUrlMapReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1467,6 +1510,7 @@ public final class SetUrlMapRegionTargetHttpsProxyRequest
             : urlMapReferenceResource_;
       }
     }
+
     /**
      *
      *

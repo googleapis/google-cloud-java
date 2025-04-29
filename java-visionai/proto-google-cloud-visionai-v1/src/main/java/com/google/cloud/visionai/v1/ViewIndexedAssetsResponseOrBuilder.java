@@ -34,6 +34,7 @@ public interface ViewIndexedAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IndexedAsset indexed_assets = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.IndexedAsset> getIndexedAssetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ViewIndexedAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IndexedAsset indexed_assets = 1;</code>
    */
   com.google.cloud.visionai.v1.IndexedAsset getIndexedAssets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ViewIndexedAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.IndexedAsset indexed_assets = 1;</code>
    */
   int getIndexedAssetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ViewIndexedAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.IndexedAssetOrBuilder>
       getIndexedAssetsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ViewIndexedAssetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

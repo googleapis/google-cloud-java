@@ -33,6 +33,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.FetchAclRequest)
     FetchAclRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchAclRequest.newBuilder() to construct.
   private FetchAclRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROJECT_OWNER_FIELD_NUMBER = 3;
   private boolean projectOwner_ = false;
+
   /**
    *
    *
@@ -380,6 +387,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -607,6 +615,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -634,6 +643,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +756,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
         return requestMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +909,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -909,6 +930,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
             : requestMetadata_;
       }
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean projectOwner_;
+
     /**
      *
      *
@@ -953,6 +976,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
     public boolean getProjectOwner() {
       return projectOwner_;
     }
+
     /**
      *
      *
@@ -973,6 +997,7 @@ public final class FetchAclRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

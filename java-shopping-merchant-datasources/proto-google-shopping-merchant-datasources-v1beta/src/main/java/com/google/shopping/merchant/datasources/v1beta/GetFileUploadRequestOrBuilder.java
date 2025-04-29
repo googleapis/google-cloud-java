@@ -40,6 +40,7 @@ public interface GetFileUploadRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

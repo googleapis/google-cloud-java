@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.DeleteSecret][google.cloud.secrets.v1beta1.SecretManagerService.DeleteSecret].
+ * Request message for
+ * [SecretManagerService.DeleteSecret][google.cloud.secrets.v1beta1.SecretManagerService.DeleteSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.DeleteSecretRequest}
@@ -33,6 +34,7 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.DeleteSecretRequest)
     DeleteSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteSecretRequest.newBuilder() to construct.
   private DeleteSecretRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,11 +69,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
    * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
@@ -93,11 +97,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
    * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
@@ -280,11 +286,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.DeleteSecret][google.cloud.secrets.v1beta1.SecretManagerService.DeleteSecret].
+   * Request message for
+   * [SecretManagerService.DeleteSecret][google.cloud.secrets.v1beta1.SecretManagerService.DeleteSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.DeleteSecretRequest}
@@ -464,11 +472,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -489,11 +499,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -514,11 +526,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -538,11 +552,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
@@ -558,11 +574,13 @@ public final class DeleteSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
      * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *

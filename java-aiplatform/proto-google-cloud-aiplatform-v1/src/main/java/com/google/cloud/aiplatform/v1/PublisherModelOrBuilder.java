@@ -36,6 +36,7 @@ public interface PublisherModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PublisherModelOrBuilder
    * @return The versionId.
    */
   java.lang.String getVersionId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface PublisherModelOrBuilder
    * @return The enum numeric value on the wire for openSourceCategory.
    */
   int getOpenSourceCategoryValue();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface PublisherModelOrBuilder
    * @return Whether the supportedActions field is set.
    */
   boolean hasSupportedActions();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface PublisherModelOrBuilder
    * @return The supportedActions.
    */
   com.google.cloud.aiplatform.v1.PublisherModel.CallToAction getSupportedActions();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface PublisherModelOrBuilder
    * @return A list containing the frameworks.
    */
   java.util.List<java.lang.String> getFrameworksList();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface PublisherModelOrBuilder
    * @return The count of frameworks.
    */
   int getFrameworksCount();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface PublisherModelOrBuilder
    * @return The frameworks at the given index.
    */
   java.lang.String getFrameworks(int index);
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public interface PublisherModelOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public interface PublisherModelOrBuilder
    * @return The enum numeric value on the wire for versionState.
    */
   int getVersionStateValue();
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public interface PublisherModelOrBuilder
    * @return The publisherModelTemplate.
    */
   java.lang.String getPublisherModelTemplate();
+
   /**
    *
    *
@@ -313,6 +324,7 @@ public interface PublisherModelOrBuilder
    * @return Whether the predictSchemata field is set.
    */
   boolean hasPredictSchemata();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface PublisherModelOrBuilder
    * @return The predictSchemata.
    */
   com.google.cloud.aiplatform.v1.PredictSchemata getPredictSchemata();
+
   /**
    *
    *

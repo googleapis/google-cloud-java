@@ -33,6 +33,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CreateSnapshotRegionDiskRequest)
     CreateSnapshotRegionDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateSnapshotRegionDiskRequest.newBuilder() to construct.
   private CreateSnapshotRegionDiskRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
   public static final int SNAPSHOT_RESOURCE_FIELD_NUMBER = 481319977;
   private com.google.cloud.compute.v1.Snapshot snapshotResource_;
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
   public boolean hasSnapshotResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -333,6 +345,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.Snapshot.getDefaultInstance()
         : snapshotResource_;
   }
+
   /**
    *
    *
@@ -559,6 +572,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -820,6 +834,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
+
     /**
      *
      *
@@ -842,6 +857,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -864,6 +880,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -885,6 +902,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +920,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +945,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +995,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1039,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1140,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1187,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1172,6 +1202,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1194,6 +1225,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1248,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1270,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1288,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1318,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.Snapshot.Builder,
             com.google.cloud.compute.v1.SnapshotOrBuilder>
         snapshotResourceBuilder_;
+
     /**
      *
      *
@@ -1299,6 +1335,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     public boolean hasSnapshotResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1321,6 +1358,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return snapshotResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1345,6 +1383,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1406,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1436,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1458,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1475,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       onChanged();
       return getSnapshotResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1453,6 +1496,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
             : snapshotResource_;
       }
     }
+
     /**
      *
      *

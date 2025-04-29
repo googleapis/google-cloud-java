@@ -42,6 +42,7 @@ public interface PeripheralsConfigOrBuilder
    * @return The metastoreService.
    */
   java.lang.String getMetastoreService();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface PeripheralsConfigOrBuilder
    * @return Whether the sparkHistoryServerConfig field is set.
    */
   boolean hasSparkHistoryServerConfig();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface PeripheralsConfigOrBuilder
    * @return The sparkHistoryServerConfig.
    */
   com.google.cloud.dataproc.v1.SparkHistoryServerConfig getSparkHistoryServerConfig();
+
   /**
    *
    *

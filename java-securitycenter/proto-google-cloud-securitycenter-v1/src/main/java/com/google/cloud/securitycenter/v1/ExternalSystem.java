@@ -33,6 +33,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ExternalSystem)
     ExternalSystemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExternalSystem.newBuilder() to construct.
   private ExternalSystem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -110,6 +112,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return The assignee.
      */
     java.lang.String getAssignee();
+
     /**
      *
      *
@@ -135,6 +138,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -160,6 +164,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -185,6 +190,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return The status.
      */
     java.lang.String getStatus();
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -224,6 +231,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -236,6 +244,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.ExternalSystem.TicketInfo)
       TicketInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TicketInfo.newBuilder() to construct.
     private TicketInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -290,6 +300,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -313,6 +324,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -341,6 +353,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object assignee_ = "";
+
     /**
      *
      *
@@ -364,6 +377,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -392,6 +406,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -415,6 +430,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -443,6 +459,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -466,6 +483,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -494,6 +512,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -517,6 +536,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -543,6 +563,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 6;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -559,6 +580,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -575,6 +597,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -801,6 +824,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1082,6 +1106,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -1104,6 +1129,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1126,6 +1152,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1147,6 +1174,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1164,6 +1192,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1188,6 +1217,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object assignee_ = "";
+
       /**
        *
        *
@@ -1210,6 +1240,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1232,6 +1263,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1253,6 +1285,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1270,6 +1303,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1294,6 +1328,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -1316,6 +1351,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1338,6 +1374,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1359,6 +1396,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1376,6 +1414,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1400,6 +1439,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -1422,6 +1462,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1444,6 +1485,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1465,6 +1507,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1482,6 +1525,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1506,6 +1550,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object status_ = "";
+
       /**
        *
        *
@@ -1528,6 +1573,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1550,6 +1596,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1571,6 +1618,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1588,6 +1636,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1617,6 +1666,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -1632,6 +1682,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -1653,6 +1704,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1676,6 +1728,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1696,6 +1749,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1724,6 +1778,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1744,6 +1799,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1759,6 +1815,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1778,6 +1835,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -1877,6 +1935,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1903,6 +1962,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1935,6 +1995,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList assignees_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1949,6 +2010,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAssigneesList() {
     return assignees_;
   }
+
   /**
    *
    *
@@ -1963,6 +2025,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public int getAssigneesCount() {
     return assignees_.size();
   }
+
   /**
    *
    *
@@ -1978,6 +2041,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAssignees(int index) {
     return assignees_.get(index);
   }
+
   /**
    *
    *
@@ -1998,6 +2062,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalUid_ = "";
+
   /**
    *
    *
@@ -2022,6 +2087,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2051,6 +2117,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -2075,6 +2142,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2102,6 +2170,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXTERNAL_SYSTEM_UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp externalSystemUpdateTime_;
+
   /**
    *
    *
@@ -2118,6 +2187,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExternalSystemUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2136,6 +2206,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : externalSystemUpdateTime_;
   }
+
   /**
    *
    *
@@ -2157,6 +2228,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object caseUri_ = "";
+
   /**
    *
    *
@@ -2180,6 +2252,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2208,6 +2281,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object casePriority_ = "";
+
   /**
    *
    *
@@ -2231,6 +2305,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2257,6 +2332,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CASE_SLA_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp caseSla_;
+
   /**
    *
    *
@@ -2272,6 +2348,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCaseSla() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2287,6 +2364,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCaseSla() {
     return caseSla_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : caseSla_;
   }
+
   /**
    *
    *
@@ -2303,6 +2381,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CASE_CREATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp caseCreateTime_;
+
   /**
    *
    *
@@ -2318,6 +2397,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCaseCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2335,6 +2415,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : caseCreateTime_;
   }
+
   /**
    *
    *
@@ -2353,6 +2434,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CASE_CLOSE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp caseCloseTime_;
+
   /**
    *
    *
@@ -2368,6 +2450,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCaseCloseTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2385,6 +2468,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : caseCloseTime_;
   }
+
   /**
    *
    *
@@ -2403,6 +2487,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TICKET_INFO_FIELD_NUMBER = 8;
   private com.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo ticketInfo_;
+
   /**
    *
    *
@@ -2419,6 +2504,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTicketInfo() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -2437,6 +2523,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo.getDefaultInstance()
         : ticketInfo_;
   }
+
   /**
    *
    *
@@ -2738,6 +2825,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3115,6 +3203,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3140,6 +3229,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3165,6 +3255,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3189,6 +3280,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3209,6 +3301,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3244,6 +3337,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -3259,6 +3353,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       assignees_.makeImmutable();
       return assignees_;
     }
+
     /**
      *
      *
@@ -3273,6 +3368,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public int getAssigneesCount() {
       return assignees_.size();
     }
+
     /**
      *
      *
@@ -3288,6 +3384,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAssignees(int index) {
       return assignees_.get(index);
     }
+
     /**
      *
      *
@@ -3303,6 +3400,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAssigneesBytes(int index) {
       return assignees_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3326,6 +3424,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3348,6 +3447,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3367,6 +3467,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3385,6 +3486,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3410,6 +3512,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object externalUid_ = "";
+
     /**
      *
      *
@@ -3433,6 +3536,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3456,6 +3560,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3478,6 +3583,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3496,6 +3602,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3521,6 +3628,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -3544,6 +3652,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3567,6 +3676,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3589,6 +3699,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3607,6 +3718,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3637,6 +3749,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         externalSystemUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -3652,6 +3765,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExternalSystemUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3673,6 +3787,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return externalSystemUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3696,6 +3811,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3717,6 +3833,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3745,6 +3862,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3765,6 +3883,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3780,6 +3899,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExternalSystemUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3799,6 +3919,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             : externalSystemUpdateTime_;
       }
     }
+
     /**
      *
      *
@@ -3827,6 +3948,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object caseUri_ = "";
+
     /**
      *
      *
@@ -3849,6 +3971,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3871,6 +3994,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3892,6 +4016,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3909,6 +4034,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3933,6 +4059,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object casePriority_ = "";
+
     /**
      *
      *
@@ -3955,6 +4082,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3977,6 +4105,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3998,6 +4127,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4015,6 +4145,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4044,6 +4175,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         caseSlaBuilder_;
+
     /**
      *
      *
@@ -4058,6 +4190,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCaseSla() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4076,6 +4209,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return caseSlaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4098,6 +4232,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4117,6 +4252,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4144,6 +4280,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4163,6 +4300,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4177,6 +4315,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCaseSlaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4193,6 +4332,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return caseSla_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : caseSla_;
       }
     }
+
     /**
      *
      *
@@ -4225,6 +4365,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         caseCreateTimeBuilder_;
+
     /**
      *
      *
@@ -4239,6 +4380,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCaseCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4259,6 +4401,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return caseCreateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4281,6 +4424,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4300,6 +4444,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4327,6 +4472,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4346,6 +4492,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4360,6 +4507,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCaseCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4378,6 +4526,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             : caseCreateTime_;
       }
     }
+
     /**
      *
      *
@@ -4410,6 +4559,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         caseCloseTimeBuilder_;
+
     /**
      *
      *
@@ -4424,6 +4574,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCaseCloseTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -4444,6 +4595,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return caseCloseTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4466,6 +4618,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4485,6 +4638,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4512,6 +4666,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4531,6 +4686,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4545,6 +4701,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCaseCloseTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4563,6 +4720,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             : caseCloseTime_;
       }
     }
+
     /**
      *
      *
@@ -4595,6 +4753,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo.Builder,
             com.google.cloud.securitycenter.v1.ExternalSystem.TicketInfoOrBuilder>
         ticketInfoBuilder_;
+
     /**
      *
      *
@@ -4610,6 +4769,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTicketInfo() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4631,6 +4791,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
         return ticketInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4655,6 +4816,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4676,6 +4838,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4707,6 +4870,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4727,6 +4891,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4743,6 +4908,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTicketInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4763,6 +4929,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
             : ticketInfo_;
       }
     }
+
     /**
      *
      *

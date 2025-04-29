@@ -38,6 +38,7 @@ public interface ListFeedsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

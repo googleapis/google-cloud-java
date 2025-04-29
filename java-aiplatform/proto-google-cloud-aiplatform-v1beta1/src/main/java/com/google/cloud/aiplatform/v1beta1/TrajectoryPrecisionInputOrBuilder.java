@@ -38,6 +38,7 @@ public interface TrajectoryPrecisionInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TrajectoryPrecisionInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionSpec getMetricSpec();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface TrajectoryPrecisionInputOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance>
       getInstancesList();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface TrajectoryPrecisionInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance getInstances(int index);
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface TrajectoryPrecisionInputOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface TrajectoryPrecisionInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

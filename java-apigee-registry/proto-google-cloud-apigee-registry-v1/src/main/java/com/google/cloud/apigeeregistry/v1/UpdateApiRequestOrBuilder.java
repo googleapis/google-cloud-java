@@ -40,6 +40,7 @@ public interface UpdateApiRequestOrBuilder
    * @return Whether the api field is set.
    */
   boolean hasApi();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateApiRequestOrBuilder
    * @return The api.
    */
   com.google.cloud.apigeeregistry.v1.Api getApi();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface UpdateApiRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateApiRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

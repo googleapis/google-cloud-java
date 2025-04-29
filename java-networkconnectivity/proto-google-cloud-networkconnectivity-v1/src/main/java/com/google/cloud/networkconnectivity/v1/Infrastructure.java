@@ -62,6 +62,7 @@ public enum Infrastructure implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INFRASTRUCTURE_UNSPECIFIED = 0;</code>
    */
   public static final int INFRASTRUCTURE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

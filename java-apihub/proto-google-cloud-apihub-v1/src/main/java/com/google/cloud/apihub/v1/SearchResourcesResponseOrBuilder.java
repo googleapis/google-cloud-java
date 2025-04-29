@@ -35,6 +35,7 @@ public interface SearchResourcesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.SearchResult search_results = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.SearchResult> getSearchResultsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface SearchResourcesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.SearchResult search_results = 1;</code>
    */
   com.google.cloud.apihub.v1.SearchResult getSearchResults(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface SearchResourcesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.SearchResult search_results = 1;</code>
    */
   int getSearchResultsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface SearchResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.SearchResultOrBuilder>
       getSearchResultsOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface SearchResourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

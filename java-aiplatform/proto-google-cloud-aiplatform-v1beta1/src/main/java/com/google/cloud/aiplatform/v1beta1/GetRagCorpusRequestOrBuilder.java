@@ -40,6 +40,7 @@ public interface GetRagCorpusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

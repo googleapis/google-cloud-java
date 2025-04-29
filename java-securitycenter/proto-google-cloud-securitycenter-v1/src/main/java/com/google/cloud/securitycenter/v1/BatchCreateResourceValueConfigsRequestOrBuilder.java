@@ -40,6 +40,7 @@ public interface BatchCreateResourceValueConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface BatchCreateResourceValueConfigsRequestOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v1.CreateResourceValueConfigRequest>
       getRequestsList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface BatchCreateResourceValueConfigsRequestOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.CreateResourceValueConfigRequest getRequests(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface BatchCreateResourceValueConfigsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface BatchCreateResourceValueConfigsRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.securitycenter.v1.CreateResourceValueConfigRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

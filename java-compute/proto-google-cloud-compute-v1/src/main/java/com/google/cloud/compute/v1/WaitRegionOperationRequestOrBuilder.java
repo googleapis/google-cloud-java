@@ -36,6 +36,7 @@ public interface WaitRegionOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WaitRegionOperationRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface WaitRegionOperationRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

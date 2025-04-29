@@ -74,7 +74,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServiceConnectionMaps, expected %s or %s",
+                  "Unrecognized response type %s for method ListServiceConnectionMaps, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServiceConnectionMapsResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetServiceConnectionMap, expected %s or %s",
+                  "Unrecognized response type %s for method GetServiceConnectionMap, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceConnectionMap.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +119,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceConnectionMap, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceConnectionMap, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +141,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateServiceConnectionMap, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateServiceConnectionMap, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -159,7 +163,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceConnectionMap, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteServiceConnectionMap, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -181,7 +186,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServiceConnectionPolicies, expected %s or %s",
+                  "Unrecognized response type %s for method ListServiceConnectionPolicies, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServiceConnectionPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -203,7 +209,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetServiceConnectionPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method GetServiceConnectionPolicy, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceConnectionPolicy.class.getName(),
                   Exception.class.getName())));
@@ -224,7 +231,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceConnectionPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceConnectionPolicy, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -245,7 +253,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateServiceConnectionPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateServiceConnectionPolicy, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -266,7 +275,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceConnectionPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteServiceConnectionPolicy, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -373,7 +383,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetServiceConnectionToken, expected %s or %s",
+                  "Unrecognized response type %s for method GetServiceConnectionToken, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceConnectionToken.class.getName(),
                   Exception.class.getName())));
@@ -395,7 +406,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServiceConnectionTokens, expected %s or %s",
+                  "Unrecognized response type %s for method ListServiceConnectionTokens, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServiceConnectionTokensResponse.class.getName(),
                   Exception.class.getName())));
@@ -416,7 +428,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceConnectionToken, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceConnectionToken, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -437,7 +450,8 @@ public class MockCrossNetworkAutomationServiceImpl extends CrossNetworkAutomatio
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceConnectionToken, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteServiceConnectionToken, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

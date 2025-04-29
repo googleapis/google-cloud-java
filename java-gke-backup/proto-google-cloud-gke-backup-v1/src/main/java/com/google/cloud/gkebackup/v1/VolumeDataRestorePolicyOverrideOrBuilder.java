@@ -39,6 +39,7 @@ public interface VolumeDataRestorePolicyOverrideOrBuilder
    * @return The enum numeric value on the wire for policy.
    */
   int getPolicyValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VolumeDataRestorePolicyOverrideOrBuilder
    * @return Whether the selectedPvcs field is set.
    */
   boolean hasSelectedPvcs();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface VolumeDataRestorePolicyOverrideOrBuilder
    * @return The selectedPvcs.
    */
   com.google.cloud.gkebackup.v1.NamespacedNames getSelectedPvcs();
+
   /**
    *
    *

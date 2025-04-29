@@ -36,6 +36,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.SynthesisInput)
     SynthesisInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SynthesisInput.newBuilder() to construct.
   private SynthesisInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     private InputSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return inputSourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SSML_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSsml() {
     return inputSourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -270,6 +278,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MULTI_SPEAKER_MARKUP_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -286,6 +295,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMultiSpeakerMarkup() {
     return inputSourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -305,6 +315,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_PRONUNCIATIONS_FIELD_NUMBER = 3;
   private com.google.cloud.texttospeech.v1beta1.CustomPronunciations customPronunciations_;
+
   /**
    *
    *
@@ -354,6 +366,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomPronunciations() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -384,6 +397,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.texttospeech.v1beta1.CustomPronunciations.getDefaultInstance()
         : customPronunciations_;
   }
+
   /**
    *
    *
@@ -630,6 +644,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -923,6 +938,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return inputSourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -951,6 +967,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -979,6 +996,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1018,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1038,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1081,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSsml() {
       return inputSourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1093,6 +1114,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1147,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1173,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1197,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1230,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Builder,
             com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkupOrBuilder>
         multiSpeakerMarkupBuilder_;
+
     /**
      *
      *
@@ -1221,6 +1247,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMultiSpeakerMarkup() {
       return inputSourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1247,6 +1274,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1299,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       inputSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1321,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       inputSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1357,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       inputSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1384,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1399,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         getMultiSpeakerMarkupBuilder() {
       return getMultiSpeakerMarkupFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1389,6 +1422,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1430,6 +1464,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1beta1.CustomPronunciations.Builder,
             com.google.cloud.texttospeech.v1beta1.CustomPronunciationsOrBuilder>
         customPronunciationsBuilder_;
+
     /**
      *
      *
@@ -1457,6 +1492,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomPronunciations() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1490,6 +1526,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         return customPronunciationsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1526,6 +1563,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1597,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1641,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1674,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1703,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomPronunciationsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1694,6 +1736,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
             : customPronunciations_;
       }
     }
+
     /**
      *
      *

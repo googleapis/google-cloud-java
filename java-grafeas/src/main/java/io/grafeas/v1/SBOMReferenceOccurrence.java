@@ -37,6 +37,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:grafeas.v1.SBOMReferenceOccurrence)
     SBOMReferenceOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SBOMReferenceOccurrence.newBuilder() to construct.
   private SBOMReferenceOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int PAYLOAD_FIELD_NUMBER = 1;
   private io.grafeas.v1.SbomReferenceIntotoPayload payload_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
   public boolean hasPayload() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         ? io.grafeas.v1.SbomReferenceIntotoPayload.getDefaultInstance()
         : payload_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object payloadType_ = "";
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.EnvelopeSignature> signatures_;
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
   public java.util.List<io.grafeas.v1.EnvelopeSignature> getSignaturesList() {
     return signatures_;
   }
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       getSignaturesOrBuilderList() {
     return signatures_;
   }
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
   public int getSignaturesCount() {
     return signatures_.size();
   }
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
   public io.grafeas.v1.EnvelopeSignature getSignatures(int index) {
     return signatures_.get(index);
   }
+
   /**
    *
    *
@@ -425,6 +436,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -703,6 +715,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
             io.grafeas.v1.SbomReferenceIntotoPayload.Builder,
             io.grafeas.v1.SbomReferenceIntotoPayloadOrBuilder>
         payloadBuilder_;
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
     public boolean hasPayload() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return payloadBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +794,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +857,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -856,6 +876,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
             : payload_;
       }
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
     }
 
     private java.lang.Object payloadType_ = "";
+
     /**
      *
      *
@@ -907,6 +929,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +998,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1056,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return signaturesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1073,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return signaturesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1090,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return signaturesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1113,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1134,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1157,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1180,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1200,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1221,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1242,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1262,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1282,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1295,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
     public io.grafeas.v1.EnvelopeSignature.Builder getSignaturesBuilder(int index) {
       return getSignaturesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1273,6 +1312,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return signaturesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1330,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(signatures_);
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1344,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       return getSignaturesFieldBuilder()
           .addBuilder(io.grafeas.v1.EnvelopeSignature.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1316,6 +1358,7 @@ public final class SBOMReferenceOccurrence extends com.google.protobuf.Generated
       return getSignaturesFieldBuilder()
           .addBuilder(index, io.grafeas.v1.EnvelopeSignature.getDefaultInstance());
     }
+
     /**
      *
      *

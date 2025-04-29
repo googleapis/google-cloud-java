@@ -191,6 +191,19 @@ public final class SimulatorGrpc {
     return SimulatorStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SimulatorBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SimulatorBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SimulatorBlockingV2Stub>() {
+          @java.lang.Override
+          public SimulatorBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SimulatorBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SimulatorBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -386,6 +399,77 @@ public final class SimulatorGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Simulator.
+   *
+   * <pre>
+   * Policy Simulator API service.
+   * Policy Simulator is a collection of endpoints for creating, running, and
+   * viewing a [Replay][google.cloud.policysimulator.v1.Replay]. A
+   * [Replay][google.cloud.policysimulator.v1.Replay] is a type of simulation that
+   * lets you see how your principals' access to resources might change if you
+   * changed your IAM policy.
+   * During a [Replay][google.cloud.policysimulator.v1.Replay], Policy Simulator
+   * re-evaluates, or replays, past access attempts under both the current policy
+   * and  your proposed policy, and compares those results to determine how your
+   * principals' access might change under the proposed policy.
+   * </pre>
+   */
+  public static final class SimulatorBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SimulatorBlockingV2Stub> {
+    private SimulatorBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SimulatorBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SimulatorBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified [Replay][google.cloud.policysimulator.v1.Replay]. Each
+     * `Replay` is available for at least 7 days.
+     * </pre>
+     */
+    public com.google.cloud.policysimulator.v1.Replay getReplay(
+        com.google.cloud.policysimulator.v1.GetReplayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReplayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates and starts a [Replay][google.cloud.policysimulator.v1.Replay] using
+     * the given [ReplayConfig][google.cloud.policysimulator.v1.ReplayConfig].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReplay(
+        com.google.cloud.policysimulator.v1.CreateReplayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReplayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the results of running a
+     * [Replay][google.cloud.policysimulator.v1.Replay].
+     * </pre>
+     */
+    public com.google.cloud.policysimulator.v1.ListReplayResultsResponse listReplayResults(
+        com.google.cloud.policysimulator.v1.ListReplayResultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReplayResultsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Simulator.
    *
    * <pre>
    * Policy Simulator API service.

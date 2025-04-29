@@ -34,6 +34,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.DirectPredictRequest)
     DirectPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DirectPredictRequest.newBuilder() to construct.
   private DirectPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Tensor> inputs_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.vertexai.api.Tensor> getInputsList() {
     return inputs_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       getInputsOrBuilderList() {
     return inputs_;
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
   public int getInputsCount() {
     return inputs_.size();
   }
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.vertexai.api.Tensor getInputs(int index) {
     return inputs_.get(index);
   }
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PARAMETERS_FIELD_NUMBER = 3;
   private com.google.cloud.vertexai.api.Tensor parameters_;
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.vertexai.api.Tensor.getDefaultInstance()
         : parameters_;
   }
+
   /**
    *
    *
@@ -430,6 +441,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -706,6 +718,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +772,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +880,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return inputsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return inputsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -895,6 +914,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return inputsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +958,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1004,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1024,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1066,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1106,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1119,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.vertexai.api.Tensor.Builder getInputsBuilder(int index) {
       return getInputsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1106,6 +1136,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return inputsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1123,6 +1154,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(inputs_);
       }
     }
+
     /**
      *
      *
@@ -1136,6 +1168,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       return getInputsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1149,6 +1182,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       return getInputsFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1185,6 +1219,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.vertexai.api.Tensor.Builder,
             com.google.cloud.vertexai.api.TensorOrBuilder>
         parametersBuilder_;
+
     /**
      *
      *
@@ -1199,6 +1234,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1219,6 +1255,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
         return parametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1241,6 +1278,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1298,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1326,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1346,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1361,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1338,6 +1380,7 @@ public final class DirectPredictRequest extends com.google.protobuf.GeneratedMes
             : parameters_;
       }
     }
+
     /**
      *
      *

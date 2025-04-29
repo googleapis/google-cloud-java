@@ -34,6 +34,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ServingConfig)
     ServingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServingConfig.newBuilder() to construct.
   private ServingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,6 +134,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DIVERSITY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DIVERSITY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -143,6 +145,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>RULE_BASED_DIVERSITY = 2;</code>
      */
     public static final int RULE_BASED_DIVERSITY_VALUE = 2;
+
     /**
      *
      *
@@ -242,6 +245,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -266,6 +270,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -295,6 +300,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +361,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelId_ = "";
+
   /**
    *
    *
@@ -368,7 +376,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Required when
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string model_id = 3;</code>
@@ -387,6 +395,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -401,7 +410,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Required when
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string model_id = 3;</code>
@@ -425,6 +434,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object priceRerankingLevel_ = "";
+
   /**
    *
    *
@@ -447,7 +457,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string price_reranking_level = 4;</code>
@@ -466,6 +476,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -488,7 +499,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string price_reranking_level = 4;</code>
@@ -513,6 +524,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList facetControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -528,7 +540,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string facet_control_ids = 5;</code>
@@ -538,6 +550,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFacetControlIdsList() {
     return facetControlIds_;
   }
+
   /**
    *
    *
@@ -553,7 +566,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string facet_control_ids = 5;</code>
@@ -563,6 +576,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getFacetControlIdsCount() {
     return facetControlIds_.size();
   }
+
   /**
    *
    *
@@ -578,7 +592,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string facet_control_ids = 5;</code>
@@ -589,6 +603,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFacetControlIds(int index) {
     return facetControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -604,7 +619,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string facet_control_ids = 5;</code>
@@ -618,6 +633,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DYNAMIC_FACET_SPEC_FIELD_NUMBER = 6;
   private com.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamicFacetSpec_;
+
   /**
    *
    *
@@ -628,7 +644,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -640,6 +656,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDynamicFacetSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -650,7 +667,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -664,6 +681,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec.getDefaultInstance()
         : dynamicFacetSpec_;
   }
+
   /**
    *
    *
@@ -674,7 +692,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -693,6 +711,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList boostControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -713,7 +732,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string boost_control_ids = 7;</code>
@@ -723,6 +742,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getBoostControlIdsList() {
     return boostControlIds_;
   }
+
   /**
    *
    *
@@ -743,7 +763,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string boost_control_ids = 7;</code>
@@ -753,6 +773,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getBoostControlIdsCount() {
     return boostControlIds_.size();
   }
+
   /**
    *
    *
@@ -773,7 +794,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string boost_control_ids = 7;</code>
@@ -784,6 +805,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBoostControlIds(int index) {
     return boostControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -804,7 +826,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string boost_control_ids = 7;</code>
@@ -821,6 +843,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList filterControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -833,7 +856,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string filter_control_ids = 9;</code>
@@ -843,6 +866,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFilterControlIdsList() {
     return filterControlIds_;
   }
+
   /**
    *
    *
@@ -855,7 +879,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string filter_control_ids = 9;</code>
@@ -865,6 +889,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getFilterControlIdsCount() {
     return filterControlIds_.size();
   }
+
   /**
    *
    *
@@ -877,7 +902,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string filter_control_ids = 9;</code>
@@ -888,6 +913,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFilterControlIds(int index) {
     return filterControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -900,7 +926,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string filter_control_ids = 9;</code>
@@ -917,6 +943,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList redirectControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -928,7 +955,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string redirect_control_ids = 10;</code>
@@ -938,6 +965,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRedirectControlIdsList() {
     return redirectControlIds_;
   }
+
   /**
    *
    *
@@ -949,7 +977,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string redirect_control_ids = 10;</code>
@@ -959,6 +987,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getRedirectControlIdsCount() {
     return redirectControlIds_.size();
   }
+
   /**
    *
    *
@@ -970,7 +999,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string redirect_control_ids = 10;</code>
@@ -981,6 +1010,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRedirectControlIds(int index) {
     return redirectControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -992,7 +1022,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string redirect_control_ids = 10;</code>
@@ -1009,6 +1039,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList twowaySynonymsControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1021,7 +1052,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -1031,6 +1062,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTwowaySynonymsControlIdsList() {
     return twowaySynonymsControlIds_;
   }
+
   /**
    *
    *
@@ -1043,7 +1075,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -1053,6 +1085,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getTwowaySynonymsControlIdsCount() {
     return twowaySynonymsControlIds_.size();
   }
+
   /**
    *
    *
@@ -1065,7 +1098,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -1076,6 +1109,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTwowaySynonymsControlIds(int index) {
     return twowaySynonymsControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -1088,7 +1122,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -1105,6 +1139,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList onewaySynonymsControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1117,7 +1152,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -1127,6 +1162,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getOnewaySynonymsControlIdsList() {
     return onewaySynonymsControlIds_;
   }
+
   /**
    *
    *
@@ -1139,7 +1175,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -1149,6 +1185,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getOnewaySynonymsControlIdsCount() {
     return onewaySynonymsControlIds_.size();
   }
+
   /**
    *
    *
@@ -1161,7 +1198,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -1172,6 +1209,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getOnewaySynonymsControlIds(int index) {
     return onewaySynonymsControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -1184,7 +1222,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -1201,6 +1239,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList doNotAssociateControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1214,7 +1253,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -1224,6 +1263,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDoNotAssociateControlIdsList() {
     return doNotAssociateControlIds_;
   }
+
   /**
    *
    *
@@ -1237,7 +1277,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -1247,6 +1287,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getDoNotAssociateControlIdsCount() {
     return doNotAssociateControlIds_.size();
   }
+
   /**
    *
    *
@@ -1260,7 +1301,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -1271,6 +1312,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDoNotAssociateControlIds(int index) {
     return doNotAssociateControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -1284,7 +1326,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -1301,6 +1343,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList replacementControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1313,7 +1356,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string replacement_control_ids = 14;</code>
@@ -1323,6 +1366,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getReplacementControlIdsList() {
     return replacementControlIds_;
   }
+
   /**
    *
    *
@@ -1335,7 +1379,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string replacement_control_ids = 14;</code>
@@ -1345,6 +1389,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getReplacementControlIdsCount() {
     return replacementControlIds_.size();
   }
+
   /**
    *
    *
@@ -1357,7 +1402,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string replacement_control_ids = 14;</code>
@@ -1368,6 +1413,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getReplacementControlIds(int index) {
     return replacementControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -1380,7 +1426,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string replacement_control_ids = 14;</code>
@@ -1397,6 +1443,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ignoreControlIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1410,7 +1457,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string ignore_control_ids = 15;</code>
@@ -1420,6 +1467,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIgnoreControlIdsList() {
     return ignoreControlIds_;
   }
+
   /**
    *
    *
@@ -1433,7 +1481,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string ignore_control_ids = 15;</code>
@@ -1443,6 +1491,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getIgnoreControlIdsCount() {
     return ignoreControlIds_.size();
   }
+
   /**
    *
    *
@@ -1456,7 +1505,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string ignore_control_ids = 15;</code>
@@ -1467,6 +1516,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIgnoreControlIds(int index) {
     return ignoreControlIds_.get(index);
   }
+
   /**
    *
    *
@@ -1480,7 +1530,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>repeated string ignore_control_ids = 15;</code>
@@ -1496,6 +1546,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object diversityLevel_ = "";
+
   /**
    *
    *
@@ -1515,7 +1566,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string diversity_level = 8;</code>
@@ -1534,6 +1585,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1553,7 +1605,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string diversity_level = 8;</code>
@@ -1575,6 +1627,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIVERSITY_TYPE_FIELD_NUMBER = 20;
   private int diversityType_ = 0;
+
   /**
    *
    *
@@ -1592,6 +1645,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getDiversityTypeValue() {
     return diversityType_;
   }
+
   /**
    *
    *
@@ -1618,6 +1672,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object enableCategoryFilterLevel_ = "";
+
   /**
    *
    *
@@ -1636,7 +1691,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string enable_category_filter_level = 16;</code>
@@ -1655,6 +1710,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1673,7 +1729,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    * </pre>
    *
    * <code>string enable_category_filter_level = 16;</code>
@@ -1695,6 +1751,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IGNORE_RECS_DENYLIST_FIELD_NUMBER = 24;
   private boolean ignoreRecsDenylist_ = false;
+
   /**
    *
    *
@@ -1714,6 +1771,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERSONALIZATION_SPEC_FIELD_NUMBER = 21;
   private com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec personalizationSpec_;
+
   /**
    *
    *
@@ -1723,7 +1781,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -1744,6 +1802,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPersonalizationSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1753,7 +1812,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -1777,6 +1836,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.getDefaultInstance()
         : personalizationSpec_;
   }
+
   /**
    *
    *
@@ -1786,7 +1846,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -1827,6 +1887,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -1847,6 +1908,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
         solutionTypes_, solutionTypes_converter_);
   }
+
   /**
    *
    *
@@ -1865,6 +1927,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getSolutionTypesCount() {
     return solutionTypes_.size();
   }
+
   /**
    *
    *
@@ -1884,6 +1947,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2alpha.SolutionType getSolutionTypes(int index) {
     return solutionTypes_converter_.convert(solutionTypes_.get(index));
   }
+
   /**
    *
    *
@@ -1902,6 +1966,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSolutionTypesValueList() {
     return solutionTypes_;
   }
+
   /**
    *
    *
@@ -2357,6 +2422,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2934,6 +3000,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2957,6 +3024,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2980,6 +3048,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3002,6 +3071,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3020,6 +3090,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3045,6 +3116,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3071,6 +3143,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3097,6 +3170,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3122,6 +3196,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3143,6 +3218,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3171,6 +3247,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object modelId_ = "";
+
     /**
      *
      *
@@ -3185,7 +3262,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Required when
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string model_id = 3;</code>
@@ -3203,6 +3280,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3217,7 +3295,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Required when
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string model_id = 3;</code>
@@ -3235,6 +3313,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3249,7 +3328,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Required when
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string model_id = 3;</code>
@@ -3266,6 +3345,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3280,7 +3360,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Required when
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string model_id = 3;</code>
@@ -3293,6 +3373,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3307,7 +3388,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Required when
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string model_id = 3;</code>
@@ -3327,6 +3408,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object priceRerankingLevel_ = "";
+
     /**
      *
      *
@@ -3349,7 +3431,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string price_reranking_level = 4;</code>
@@ -3367,6 +3449,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3389,7 +3472,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string price_reranking_level = 4;</code>
@@ -3407,6 +3490,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3429,7 +3513,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string price_reranking_level = 4;</code>
@@ -3446,6 +3530,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3468,7 +3553,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string price_reranking_level = 4;</code>
@@ -3481,6 +3566,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3503,7 +3589,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string price_reranking_level = 4;</code>
@@ -3531,6 +3617,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -3546,7 +3633,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3557,6 +3644,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       facetControlIds_.makeImmutable();
       return facetControlIds_;
     }
+
     /**
      *
      *
@@ -3572,7 +3660,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3582,6 +3670,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getFacetControlIdsCount() {
       return facetControlIds_.size();
     }
+
     /**
      *
      *
@@ -3597,7 +3686,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3608,6 +3697,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFacetControlIds(int index) {
       return facetControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -3623,7 +3713,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3634,6 +3724,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFacetControlIdsBytes(int index) {
       return facetControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3649,7 +3740,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3668,6 +3759,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3683,7 +3775,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3701,6 +3793,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3716,7 +3809,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3731,6 +3824,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3746,7 +3840,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3760,6 +3854,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3775,7 +3870,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string facet_control_ids = 5;</code>
@@ -3801,6 +3896,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec.Builder,
             com.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpecOrBuilder>
         dynamicFacetSpecBuilder_;
+
     /**
      *
      *
@@ -3811,7 +3907,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3822,6 +3918,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDynamicFacetSpec() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3832,7 +3929,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3849,6 +3946,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return dynamicFacetSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3859,7 +3957,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3879,6 +3977,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3889,7 +3988,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3906,6 +4005,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3916,7 +4016,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3943,6 +4043,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3953,7 +4054,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3969,6 +4070,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3979,7 +4081,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -3991,6 +4093,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDynamicFacetSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4001,7 +4104,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -4017,6 +4120,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             : dynamicFacetSpec_;
       }
     }
+
     /**
      *
      *
@@ -4027,7 +4131,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 6;
@@ -4059,6 +4163,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -4079,7 +4184,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4090,6 +4195,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       boostControlIds_.makeImmutable();
       return boostControlIds_;
     }
+
     /**
      *
      *
@@ -4110,7 +4216,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4120,6 +4226,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getBoostControlIdsCount() {
       return boostControlIds_.size();
     }
+
     /**
      *
      *
@@ -4140,7 +4247,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4151,6 +4258,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBoostControlIds(int index) {
       return boostControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -4171,7 +4279,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4182,6 +4290,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBoostControlIdsBytes(int index) {
       return boostControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4202,7 +4311,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4221,6 +4330,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4241,7 +4351,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4259,6 +4369,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4279,7 +4390,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4294,6 +4405,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4314,7 +4426,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4328,6 +4440,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4348,7 +4461,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string boost_control_ids = 7;</code>
@@ -4377,6 +4490,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -4389,7 +4503,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4400,6 +4514,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       filterControlIds_.makeImmutable();
       return filterControlIds_;
     }
+
     /**
      *
      *
@@ -4412,7 +4527,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4422,6 +4537,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getFilterControlIdsCount() {
       return filterControlIds_.size();
     }
+
     /**
      *
      *
@@ -4434,7 +4550,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4445,6 +4561,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFilterControlIds(int index) {
       return filterControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -4457,7 +4574,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4468,6 +4585,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFilterControlIdsBytes(int index) {
       return filterControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4480,7 +4598,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4499,6 +4617,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4511,7 +4630,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4529,6 +4648,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4541,7 +4661,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4556,6 +4676,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4568,7 +4689,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4582,6 +4703,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4594,7 +4716,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string filter_control_ids = 9;</code>
@@ -4623,6 +4745,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -4634,7 +4757,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4645,6 +4768,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       redirectControlIds_.makeImmutable();
       return redirectControlIds_;
     }
+
     /**
      *
      *
@@ -4656,7 +4780,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4666,6 +4790,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getRedirectControlIdsCount() {
       return redirectControlIds_.size();
     }
+
     /**
      *
      *
@@ -4677,7 +4802,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4688,6 +4813,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRedirectControlIds(int index) {
       return redirectControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -4699,7 +4825,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4710,6 +4836,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRedirectControlIdsBytes(int index) {
       return redirectControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4721,7 +4848,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4740,6 +4867,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4751,7 +4879,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4769,6 +4897,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4780,7 +4909,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4795,6 +4924,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4806,7 +4936,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4820,6 +4950,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4831,7 +4962,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string redirect_control_ids = 10;</code>
@@ -4861,6 +4992,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -4873,7 +5005,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -4884,6 +5016,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       twowaySynonymsControlIds_.makeImmutable();
       return twowaySynonymsControlIds_;
     }
+
     /**
      *
      *
@@ -4896,7 +5029,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -4906,6 +5039,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTwowaySynonymsControlIdsCount() {
       return twowaySynonymsControlIds_.size();
     }
+
     /**
      *
      *
@@ -4918,7 +5052,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -4929,6 +5063,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTwowaySynonymsControlIds(int index) {
       return twowaySynonymsControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -4941,7 +5076,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -4952,6 +5087,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTwowaySynonymsControlIdsBytes(int index) {
       return twowaySynonymsControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4964,7 +5100,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -4983,6 +5119,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4995,7 +5132,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -5013,6 +5150,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5025,7 +5163,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -5040,6 +5178,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5052,7 +5191,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -5066,6 +5205,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5078,7 +5218,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string twoway_synonyms_control_ids = 18;</code>
@@ -5108,6 +5248,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
+
     /**
      *
      *
@@ -5120,7 +5261,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5131,6 +5272,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onewaySynonymsControlIds_.makeImmutable();
       return onewaySynonymsControlIds_;
     }
+
     /**
      *
      *
@@ -5143,7 +5285,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5153,6 +5295,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getOnewaySynonymsControlIdsCount() {
       return onewaySynonymsControlIds_.size();
     }
+
     /**
      *
      *
@@ -5165,7 +5308,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5176,6 +5319,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getOnewaySynonymsControlIds(int index) {
       return onewaySynonymsControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -5188,7 +5332,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5199,6 +5343,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getOnewaySynonymsControlIdsBytes(int index) {
       return onewaySynonymsControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5211,7 +5356,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5230,6 +5375,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5242,7 +5388,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5260,6 +5406,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5272,7 +5419,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5287,6 +5434,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5299,7 +5447,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5313,6 +5461,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5325,7 +5474,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string oneway_synonyms_control_ids = 12;</code>
@@ -5355,6 +5504,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -5368,7 +5518,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5379,6 +5529,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       doNotAssociateControlIds_.makeImmutable();
       return doNotAssociateControlIds_;
     }
+
     /**
      *
      *
@@ -5392,7 +5543,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5402,6 +5553,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getDoNotAssociateControlIdsCount() {
       return doNotAssociateControlIds_.size();
     }
+
     /**
      *
      *
@@ -5415,7 +5567,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5426,6 +5578,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDoNotAssociateControlIds(int index) {
       return doNotAssociateControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -5439,7 +5592,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5450,6 +5603,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDoNotAssociateControlIdsBytes(int index) {
       return doNotAssociateControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5463,7 +5617,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5482,6 +5636,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5495,7 +5650,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5513,6 +5668,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5526,7 +5682,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5541,6 +5697,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5554,7 +5711,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5568,6 +5725,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5581,7 +5739,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string do_not_associate_control_ids = 13;</code>
@@ -5611,6 +5769,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00001000;
     }
+
     /**
      *
      *
@@ -5623,7 +5782,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5634,6 +5793,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       replacementControlIds_.makeImmutable();
       return replacementControlIds_;
     }
+
     /**
      *
      *
@@ -5646,7 +5806,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5656,6 +5816,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getReplacementControlIdsCount() {
       return replacementControlIds_.size();
     }
+
     /**
      *
      *
@@ -5668,7 +5829,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5679,6 +5840,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getReplacementControlIds(int index) {
       return replacementControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -5691,7 +5853,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5702,6 +5864,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getReplacementControlIdsBytes(int index) {
       return replacementControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5714,7 +5877,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5733,6 +5896,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5745,7 +5909,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5763,6 +5927,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5775,7 +5940,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5790,6 +5955,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5802,7 +5968,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5816,6 +5982,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5828,7 +5995,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string replacement_control_ids = 14;</code>
@@ -5857,6 +6024,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00002000;
     }
+
     /**
      *
      *
@@ -5870,7 +6038,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -5881,6 +6049,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       ignoreControlIds_.makeImmutable();
       return ignoreControlIds_;
     }
+
     /**
      *
      *
@@ -5894,7 +6063,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -5904,6 +6073,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getIgnoreControlIdsCount() {
       return ignoreControlIds_.size();
     }
+
     /**
      *
      *
@@ -5917,7 +6087,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -5928,6 +6098,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIgnoreControlIds(int index) {
       return ignoreControlIds_.get(index);
     }
+
     /**
      *
      *
@@ -5941,7 +6112,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -5952,6 +6123,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIgnoreControlIdsBytes(int index) {
       return ignoreControlIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5965,7 +6137,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -5984,6 +6156,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5997,7 +6170,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -6015,6 +6188,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6028,7 +6202,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -6043,6 +6217,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6056,7 +6231,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -6070,6 +6245,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6083,7 +6259,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>repeated string ignore_control_ids = 15;</code>
@@ -6104,6 +6280,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object diversityLevel_ = "";
+
     /**
      *
      *
@@ -6123,7 +6300,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string diversity_level = 8;</code>
@@ -6141,6 +6318,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6160,7 +6338,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string diversity_level = 8;</code>
@@ -6178,6 +6356,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6197,7 +6376,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string diversity_level = 8;</code>
@@ -6214,6 +6393,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6233,7 +6413,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string diversity_level = 8;</code>
@@ -6246,6 +6426,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6265,7 +6446,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string diversity_level = 8;</code>
@@ -6285,6 +6466,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int diversityType_ = 0;
+
     /**
      *
      *
@@ -6302,6 +6484,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getDiversityTypeValue() {
       return diversityType_;
     }
+
     /**
      *
      *
@@ -6322,6 +6505,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6343,6 +6527,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.retail.v2alpha.ServingConfig.DiversityType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -6367,6 +6552,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6388,6 +6574,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object enableCategoryFilterLevel_ = "";
+
     /**
      *
      *
@@ -6406,7 +6593,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string enable_category_filter_level = 16;</code>
@@ -6424,6 +6611,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6442,7 +6630,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string enable_category_filter_level = 16;</code>
@@ -6460,6 +6648,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6478,7 +6667,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string enable_category_filter_level = 16;</code>
@@ -6495,6 +6684,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6513,7 +6703,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string enable_category_filter_level = 16;</code>
@@ -6526,6 +6716,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6544,7 +6735,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
      * </pre>
      *
      * <code>string enable_category_filter_level = 16;</code>
@@ -6564,6 +6755,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean ignoreRecsDenylist_;
+
     /**
      *
      *
@@ -6580,6 +6772,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getIgnoreRecsDenylist() {
       return ignoreRecsDenylist_;
     }
+
     /**
      *
      *
@@ -6600,6 +6793,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6625,6 +6819,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Builder,
             com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpecOrBuilder>
         personalizationSpecBuilder_;
+
     /**
      *
      *
@@ -6634,7 +6829,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6655,6 +6850,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPersonalizationSpec() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -6664,7 +6860,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6692,6 +6888,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         return personalizationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6701,7 +6898,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6731,6 +6928,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6740,7 +6938,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6767,6 +6965,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6776,7 +6975,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6813,6 +7012,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6822,7 +7022,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6848,6 +7048,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6857,7 +7058,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6879,6 +7080,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPersonalizationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6888,7 +7090,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6914,6 +7116,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
             : personalizationSpec_;
       }
     }
+
     /**
      *
      *
@@ -6923,7 +7126,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Can only be set if
      * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
      * is
-     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
      *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
@@ -6964,6 +7167,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00080000;
       }
     }
+
     /**
      *
      *
@@ -6983,6 +7187,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
           solutionTypes_, solutionTypes_converter_);
     }
+
     /**
      *
      *
@@ -7000,6 +7205,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypesCount() {
       return solutionTypes_.size();
     }
+
     /**
      *
      *
@@ -7018,6 +7224,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.SolutionType getSolutionTypes(int index) {
       return solutionTypes_converter_.convert(solutionTypes_.get(index));
     }
+
     /**
      *
      *
@@ -7043,6 +7250,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7067,6 +7275,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7091,6 +7300,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7111,6 +7321,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7128,6 +7339,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSolutionTypesValueList() {
       return java.util.Collections.unmodifiableList(solutionTypes_);
     }
+
     /**
      *
      *
@@ -7146,6 +7358,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypesValue(int index) {
       return solutionTypes_.get(index);
     }
+
     /**
      *
      *
@@ -7168,6 +7381,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7189,6 +7403,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

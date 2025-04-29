@@ -40,6 +40,7 @@ public interface UpdateFeatureMonitorRequestOrBuilder
    * @return Whether the featureMonitor field is set.
    */
   boolean hasFeatureMonitor();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateFeatureMonitorRequestOrBuilder
    * @return The featureMonitor.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureMonitor getFeatureMonitor();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface UpdateFeatureMonitorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface UpdateFeatureMonitorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface UpdateAssignmentRequestOrBuilder
    * @return Whether the assignment field is set.
    */
   boolean hasAssignment();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateAssignmentRequestOrBuilder
    * @return The assignment.
    */
   com.google.cloud.bigquery.reservation.v1.Assignment getAssignment();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UpdateAssignmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface UpdateAssignmentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

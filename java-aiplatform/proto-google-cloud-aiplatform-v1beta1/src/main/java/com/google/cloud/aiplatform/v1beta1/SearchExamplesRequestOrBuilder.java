@@ -38,6 +38,7 @@ public interface SearchExamplesRequestOrBuilder
    * @return Whether the storedContentsExampleParameters field is set.
    */
   boolean hasStoredContentsExampleParameters();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SearchExamplesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters
       getStoredContentsExampleParameters();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SearchExamplesRequestOrBuilder
    * @return The exampleStore.
    */
   java.lang.String getExampleStore();
+
   /**
    *
    *

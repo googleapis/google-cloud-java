@@ -37,6 +37,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DetectIntentResponseOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.cx.v3.QueryResult getQueryResult();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface DetectIntentResponseOrBuilder
    * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.cx.v3.OutputAudioConfig getOutputAudioConfig();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface DetectIntentResponseOrBuilder
    * @return The enum numeric value on the wire for responseType.
    */
   int getResponseTypeValue();
+
   /**
    *
    *

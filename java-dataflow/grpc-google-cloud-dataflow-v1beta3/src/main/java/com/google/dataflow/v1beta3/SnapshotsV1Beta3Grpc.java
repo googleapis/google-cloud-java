@@ -184,6 +184,19 @@ public final class SnapshotsV1Beta3Grpc {
     return SnapshotsV1Beta3Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SnapshotsV1Beta3BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SnapshotsV1Beta3BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SnapshotsV1Beta3BlockingV2Stub>() {
+          @java.lang.Override
+          public SnapshotsV1Beta3BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SnapshotsV1Beta3BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SnapshotsV1Beta3BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -353,6 +366,66 @@ public final class SnapshotsV1Beta3Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SnapshotsV1Beta3.
+   *
+   * <pre>
+   * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
+   * </pre>
+   */
+  public static final class SnapshotsV1Beta3BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SnapshotsV1Beta3BlockingV2Stub> {
+    private SnapshotsV1Beta3BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SnapshotsV1Beta3BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SnapshotsV1Beta3BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a snapshot.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.Snapshot getSnapshot(
+        com.google.dataflow.v1beta3.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.DeleteSnapshotResponse deleteSnapshot(
+        com.google.dataflow.v1beta3.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists snapshots.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.ListSnapshotsResponse listSnapshots(
+        com.google.dataflow.v1beta3.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SnapshotsV1Beta3.
    *
    * <pre>
    * Provides methods to manage snapshots of Google Cloud Dataflow jobs.

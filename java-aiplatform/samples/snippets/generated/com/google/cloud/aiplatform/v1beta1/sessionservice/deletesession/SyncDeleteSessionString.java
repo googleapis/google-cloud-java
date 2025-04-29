@@ -35,8 +35,7 @@ public class SyncDeleteSessionString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       String name =
-          SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-              .toString();
+          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
       sessionServiceClient.deleteSessionAsync(name).get();
     }
   }

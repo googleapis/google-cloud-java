@@ -162,6 +162,19 @@ public final class OnlineReturnPolicyServiceGrpc {
     return OnlineReturnPolicyServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static OnlineReturnPolicyServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<OnlineReturnPolicyServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OnlineReturnPolicyServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public OnlineReturnPolicyServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OnlineReturnPolicyServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return OnlineReturnPolicyServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -314,6 +327,58 @@ public final class OnlineReturnPolicyServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service OnlineReturnPolicyService.
+   *
+   * <pre>
+   * The service facilitates the management of a merchant's remorse return policy
+   * configuration, encompassing return policies for both ads and free listings
+   * ## programs. This API defines the following resource model:
+   * [OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+   * </pre>
+   */
+  public static final class OnlineReturnPolicyServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<OnlineReturnPolicyServiceBlockingV2Stub> {
+    private OnlineReturnPolicyServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected OnlineReturnPolicyServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new OnlineReturnPolicyServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing return policy for a given business.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy getOnlineReturnPolicy(
+        com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOnlineReturnPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all existing return policies for a given business.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse
+        listOnlineReturnPolicies(
+            com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOnlineReturnPoliciesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * OnlineReturnPolicyService.
    *
    * <pre>
    * The service facilitates the management of a merchant's remorse return policy

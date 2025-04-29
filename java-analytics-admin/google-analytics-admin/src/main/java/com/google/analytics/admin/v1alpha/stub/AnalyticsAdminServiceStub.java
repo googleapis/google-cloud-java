@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
@@ -90,6 +91,7 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
@@ -121,6 +123,7 @@ import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
@@ -162,6 +165,7 @@ import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
@@ -216,6 +220,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
@@ -231,6 +237,7 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
 import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
 import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
@@ -240,6 +247,8 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
@@ -264,6 +273,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
@@ -1172,6 +1182,48 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
       deleteSubpropertyEventFilterCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReportingDataAnnotationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReportingDataAnnotationsCallable()");
+  }
+
+  public UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable() {
+    throw new UnsupportedOperationException("Not implemented: submitUserDeletionCallable()");
   }
 
   @Override

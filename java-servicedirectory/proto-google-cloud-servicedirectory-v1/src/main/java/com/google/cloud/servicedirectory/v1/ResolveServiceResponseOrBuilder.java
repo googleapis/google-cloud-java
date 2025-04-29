@@ -30,12 +30,14 @@ public interface ResolveServiceResponseOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    * <code>.google.cloud.servicedirectory.v1.Service service = 1;</code>
    *
    * @return The service.
    */
   com.google.cloud.servicedirectory.v1.Service getService();
+
   /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
   com.google.cloud.servicedirectory.v1.ServiceOrBuilder getServiceOrBuilder();
 }

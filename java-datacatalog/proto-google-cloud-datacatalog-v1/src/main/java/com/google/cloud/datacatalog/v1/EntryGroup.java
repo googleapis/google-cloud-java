@@ -36,6 +36,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.EntryGroup)
     EntryGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntryGroup.newBuilder() to construct.
   private EntryGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_CATALOG_TIMESTAMPS_FIELD_NUMBER = 4;
   private com.google.cloud.datacatalog.v1.SystemTimestamps dataCatalogTimestamps_;
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataCatalogTimestamps() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()
         : dataCatalogTimestamps_;
   }
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSFERRED_TO_DATAPLEX_FIELD_NUMBER = 9;
   private boolean transferredToDataplex_ = false;
+
   /**
    *
    *
@@ -514,6 +525,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -776,6 +788,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -801,6 +814,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +840,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -850,6 +865,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +886,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -920,6 +938,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -943,6 +962,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -965,6 +985,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1004,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1030,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1032,6 +1055,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1080,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1104,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1124,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.SystemTimestamps.Builder,
             com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder>
         dataCatalogTimestampsBuilder_;
+
     /**
      *
      *
@@ -1145,6 +1173,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataCatalogTimestamps() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1167,6 +1196,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         return dataCatalogTimestampsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1222,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1245,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1277,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1299,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1317,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDataCatalogTimestampsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1304,6 +1339,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
             : dataCatalogTimestamps_;
       }
     }
+
     /**
      *
      *
@@ -1333,6 +1369,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean transferredToDataplex_;
+
     /**
      *
      *
@@ -1352,6 +1389,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean getTransferredToDataplex() {
       return transferredToDataplex_;
     }
+
     /**
      *
      *
@@ -1375,6 +1413,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

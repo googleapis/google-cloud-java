@@ -33,6 +33,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.Settings)
     SettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Settings.newBuilder() to construct.
   private Settings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,6 +180,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * <code>ONBOARDING_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ONBOARDING_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -189,6 +191,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -199,6 +202,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
+
     /**
      *
      *
@@ -209,6 +213,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * <code>BILLING_SELECTED = 3;</code>
      */
     public static final int BILLING_SELECTED_VALUE = 3;
+
     /**
      *
      *
@@ -219,6 +224,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVIDERS_SELECTED = 4;</code>
      */
     public static final int PROVIDERS_SELECTED_VALUE = 4;
+
     /**
      *
      *
@@ -229,6 +235,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCES_SELECTED = 5;</code>
      */
     public static final int RESOURCES_SELECTED_VALUE = 5;
+
     /**
      *
      *
@@ -353,6 +360,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -367,6 +375,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState();
   }
+
   /**
    *
    *
@@ -382,6 +391,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings)
       DetectorGroupSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DetectorGroupSettings.newBuilder() to construct.
     private DetectorGroupSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -415,6 +425,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -431,6 +442,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -628,6 +640,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -830,6 +843,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -846,6 +860,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -865,6 +880,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -886,6 +902,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -909,6 +926,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1002,6 +1020,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1032,6 +1051,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1065,6 +1085,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BILLING_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.settings.v1beta1.BillingSettings billingSettings_;
+
   /**
    *
    *
@@ -1081,6 +1102,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBillingSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1099,6 +1121,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.settings.v1beta1.BillingSettings.getDefaultInstance()
         : billingSettings_;
   }
+
   /**
    *
    *
@@ -1119,6 +1142,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1134,6 +1158,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1158,6 +1183,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orgServiceAccount_ = "";
+
   /**
    *
    *
@@ -1183,6 +1209,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1211,6 +1238,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SINK_SETTINGS_FIELD_NUMBER = 6;
   private com.google.cloud.securitycenter.settings.v1beta1.SinkSettings sinkSettings_;
+
   /**
    *
    *
@@ -1226,6 +1254,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSinkSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1243,6 +1272,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.settings.v1beta1.SinkSettings.getDefaultInstance()
         : sinkSettings_;
   }
+
   /**
    *
    *
@@ -1297,6 +1327,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public int getComponentSettingsCount() {
     return internalGetComponentSettings().getMap().size();
   }
+
   /**
    *
    *
@@ -1315,6 +1346,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetComponentSettings().getMap().containsKey(key);
   }
+
   /** Use {@link #getComponentSettingsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1323,6 +1355,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       getComponentSettings() {
     return getComponentSettingsMap();
   }
+
   /**
    *
    *
@@ -1340,6 +1373,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       getComponentSettingsMap() {
     return internalGetComponentSettings().getMap();
   }
+
   /**
    *
    *
@@ -1365,6 +1399,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         map = internalGetComponentSettings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1431,6 +1466,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public int getDetectorGroupSettingsCount() {
     return internalGetDetectorGroupSettings().getMap().size();
   }
+
   /**
    *
    *
@@ -1451,6 +1487,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDetectorGroupSettings().getMap().containsKey(key);
   }
+
   /** Use {@link #getDetectorGroupSettingsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1460,6 +1497,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       getDetectorGroupSettings() {
     return getDetectorGroupSettingsMap();
   }
+
   /**
    *
    *
@@ -1480,6 +1518,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       getDetectorGroupSettingsMap() {
     return internalGetDetectorGroupSettings().getMap();
   }
+
   /**
    *
    *
@@ -1510,6 +1549,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         map = internalGetDetectorGroupSettings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1543,6 +1583,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -1567,6 +1608,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1594,6 +1636,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1610,6 +1653,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1626,6 +1670,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1925,6 +1970,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2293,6 +2339,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2322,6 +2369,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2399,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2379,6 +2428,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2403,6 +2453,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2439,6 +2490,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.settings.v1beta1.BillingSettings.Builder,
             com.google.cloud.securitycenter.settings.v1beta1.BillingSettingsOrBuilder>
         billingSettingsBuilder_;
+
     /**
      *
      *
@@ -2454,6 +2506,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBillingSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2475,6 +2528,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return billingSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2499,6 +2553,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2520,6 +2575,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2551,6 +2607,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2571,6 +2628,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2587,6 +2645,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBillingSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2607,6 +2666,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : billingSettings_;
       }
     }
+
     /**
      *
      *
@@ -2635,6 +2695,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2651,6 +2712,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2670,6 +2732,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2691,6 +2754,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.settings.v1beta1.Settings.OnboardingState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2714,6 +2778,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2734,6 +2799,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object orgServiceAccount_ = "";
+
     /**
      *
      *
@@ -2758,6 +2824,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2782,6 +2849,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2805,6 +2873,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2824,6 +2893,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2855,6 +2925,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.settings.v1beta1.SinkSettings.Builder,
             com.google.cloud.securitycenter.settings.v1beta1.SinkSettingsOrBuilder>
         sinkSettingsBuilder_;
+
     /**
      *
      *
@@ -2869,6 +2940,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSinkSettings() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2889,6 +2961,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return sinkSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2912,6 +2985,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2932,6 +3006,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2962,6 +3037,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2981,6 +3057,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2996,6 +3073,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSinkSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3015,6 +3093,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : sinkSettings_;
       }
     }
+
     /**
      *
      *
@@ -3062,7 +3141,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ComponentSettingsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ComponentSettingsConverter componentSettingsConverter =
         new ComponentSettingsConverter();
@@ -3103,6 +3183,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public int getComponentSettingsCount() {
       return internalGetComponentSettings().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3121,6 +3202,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetComponentSettings().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getComponentSettingsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3129,6 +3211,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         getComponentSettings() {
       return getComponentSettingsMap();
     }
+
     /**
      *
      *
@@ -3146,6 +3229,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         getComponentSettingsMap() {
       return internalGetComponentSettings().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3172,6 +3256,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableComponentSettings().ensureBuilderMap();
       return map.containsKey(key) ? componentSettingsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3204,6 +3289,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableComponentSettings().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3308,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableComponentSettings().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3230,6 +3317,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return internalGetMutableComponentSettings().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3254,6 +3342,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -3281,6 +3370,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -3342,7 +3432,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DetectorGroupSettingsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final DetectorGroupSettingsConverter detectorGroupSettingsConverter =
         new DetectorGroupSettingsConverter();
@@ -3387,6 +3478,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public int getDetectorGroupSettingsCount() {
       return internalGetDetectorGroupSettings().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3407,6 +3499,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDetectorGroupSettings().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getDetectorGroupSettingsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3416,6 +3509,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         getDetectorGroupSettings() {
       return getDetectorGroupSettingsMap();
     }
+
     /**
      *
      *
@@ -3436,6 +3530,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         getDetectorGroupSettingsMap() {
       return internalGetDetectorGroupSettings().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3469,6 +3564,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           ? detectorGroupSettingsConverter.build(map.get(key))
           : defaultValue;
     }
+
     /**
      *
      *
@@ -3504,6 +3600,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDetectorGroupSettings().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3524,6 +3621,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDetectorGroupSettings().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3533,6 +3631,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return internalGetMutableDetectorGroupSettings().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -3559,6 +3658,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3589,6 +3689,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -3632,6 +3733,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -3655,6 +3757,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3678,6 +3781,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3700,6 +3804,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3718,6 +3823,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3748,6 +3854,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3764,6 +3871,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3786,6 +3894,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3810,6 +3919,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3831,6 +3941,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3860,6 +3971,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3881,6 +3993,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3897,6 +4010,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3917,6 +4031,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface TimeWindowOrBuilder
    * @return Whether the maintenanceExclusionOptions field is set.
    */
   boolean hasMaintenanceExclusionOptions();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TimeWindowOrBuilder
    * @return The maintenanceExclusionOptions.
    */
   com.google.container.v1.MaintenanceExclusionOptions getMaintenanceExclusionOptions();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface TimeWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface TimeWindowOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface TimeWindowOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface TimeWindowOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

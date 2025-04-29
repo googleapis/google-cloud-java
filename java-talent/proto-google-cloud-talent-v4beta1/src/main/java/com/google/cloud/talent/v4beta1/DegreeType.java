@@ -159,6 +159,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEGREE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DEGREE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -171,6 +172,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRIMARY_EDUCATION = 1;</code>
    */
   public static final int PRIMARY_EDUCATION_VALUE = 1;
+
   /**
    *
    *
@@ -184,6 +186,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOWER_SECONDARY_EDUCATION = 2;</code>
    */
   public static final int LOWER_SECONDARY_EDUCATION_VALUE = 2;
+
   /**
    *
    *
@@ -198,6 +201,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPPER_SECONDARY_EDUCATION = 3;</code>
    */
   public static final int UPPER_SECONDARY_EDUCATION_VALUE = 3;
+
   /**
    *
    *
@@ -211,6 +215,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ADULT_REMEDIAL_EDUCATION = 4;</code>
    */
   public static final int ADULT_REMEDIAL_EDUCATION_VALUE = 4;
+
   /**
    *
    *
@@ -224,6 +229,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ASSOCIATES_OR_EQUIVALENT = 5;</code>
    */
   public static final int ASSOCIATES_OR_EQUIVALENT_VALUE = 5;
+
   /**
    *
    *
@@ -236,6 +242,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BACHELORS_OR_EQUIVALENT = 6;</code>
    */
   public static final int BACHELORS_OR_EQUIVALENT_VALUE = 6;
+
   /**
    *
    *
@@ -248,6 +255,7 @@ public enum DegreeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MASTERS_OR_EQUIVALENT = 7;</code>
    */
   public static final int MASTERS_OR_EQUIVALENT_VALUE = 7;
+
   /**
    *
    *

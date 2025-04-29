@@ -37,6 +37,7 @@ public interface OverrideInlineSourceOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaOverride overrides = 1;</code>
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> getOverridesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface OverrideInlineSourceOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaOverride overrides = 1;</code>
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getOverrides(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface OverrideInlineSourceOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaOverride overrides = 1;</code>
    */
   int getOverridesCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface OverrideInlineSourceOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder>
       getOverridesOrBuilderList();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface RenameVolumeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RenameVolumeRequestOrBuilder
    * @return The newVolumeId.
    */
   java.lang.String getNewVolumeId();
+
   /**
    *
    *

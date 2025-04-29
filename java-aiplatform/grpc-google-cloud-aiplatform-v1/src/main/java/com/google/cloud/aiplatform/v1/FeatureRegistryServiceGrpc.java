@@ -559,6 +559,19 @@ public final class FeatureRegistryServiceGrpc {
     return FeatureRegistryServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FeatureRegistryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FeatureRegistryServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FeatureRegistryServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public FeatureRegistryServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FeatureRegistryServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FeatureRegistryServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -969,6 +982,171 @@ public final class FeatureRegistryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FeatureRegistryService.
+   *
+   * <pre>
+   * The service that handles CRUD and List for resources for
+   * FeatureRegistry.
+   * </pre>
+   */
+  public static final class FeatureRegistryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FeatureRegistryServiceBlockingV2Stub> {
+    private FeatureRegistryServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FeatureRegistryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FeatureRegistryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FeatureGroup in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeatureGroup(
+        com.google.cloud.aiplatform.v1.CreateFeatureGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeatureGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single FeatureGroup.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.FeatureGroup getFeatureGroup(
+        com.google.cloud.aiplatform.v1.GetFeatureGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeatureGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists FeatureGroups in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListFeatureGroupsResponse listFeatureGroups(
+        com.google.cloud.aiplatform.v1.ListFeatureGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeatureGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single FeatureGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeatureGroup(
+        com.google.cloud.aiplatform.v1.UpdateFeatureGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeatureGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single FeatureGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeatureGroup(
+        com.google.cloud.aiplatform.v1.DeleteFeatureGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeatureGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Feature in a given FeatureGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeature(
+        com.google.cloud.aiplatform.v1.CreateFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a batch of Features in a given FeatureGroup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateFeatures(
+        com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateFeaturesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Feature.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Feature getFeature(
+        com.google.cloud.aiplatform.v1.GetFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Features in a given FeatureGroup.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListFeaturesResponse listFeatures(
+        com.google.cloud.aiplatform.v1.ListFeaturesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeaturesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeature(
+        com.google.cloud.aiplatform.v1.UpdateFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeature(
+        com.google.cloud.aiplatform.v1.DeleteFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeatureMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service FeatureRegistryService.
    *
    * <pre>
    * The service that handles CRUD and List for resources for

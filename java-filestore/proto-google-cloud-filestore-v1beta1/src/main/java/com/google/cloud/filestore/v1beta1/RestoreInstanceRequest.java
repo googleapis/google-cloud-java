@@ -34,6 +34,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.RestoreInstanceRequest)
     RestoreInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RestoreInstanceRequest.newBuilder() to construct.
   private RestoreInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileShare_ = "";
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SOURCE_SNAPSHOT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   public boolean hasSourceSnapshot() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -311,6 +320,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SOURCE_BACKUP_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -326,6 +336,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   public boolean hasSourceBackup() {
     return sourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -354,6 +365,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -587,6 +599,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -844,6 +857,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -869,6 +883,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +909,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -918,6 +934,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +955,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +983,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object fileShare_ = "";
+
     /**
      *
      *
@@ -988,6 +1007,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1031,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1054,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1073,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1119,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     public boolean hasSourceSnapshot() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1130,6 +1154,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1189,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1217,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1243,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1289,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     public boolean hasSourceBackup() {
       return sourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1290,6 +1319,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1319,6 +1349,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1341,6 +1372,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1393,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *

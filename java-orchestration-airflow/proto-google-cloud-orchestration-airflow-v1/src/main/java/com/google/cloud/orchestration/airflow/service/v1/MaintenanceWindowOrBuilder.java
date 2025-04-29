@@ -37,6 +37,7 @@ public interface MaintenanceWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MaintenanceWindowOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface MaintenanceWindowOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface MaintenanceWindowOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface MaintenanceWindowOrBuilder
    * @return The recurrence.
    */
   java.lang.String getRecurrence();
+
   /**
    *
    *

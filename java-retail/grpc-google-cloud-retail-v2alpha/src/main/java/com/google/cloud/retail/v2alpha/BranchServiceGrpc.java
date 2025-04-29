@@ -143,6 +143,19 @@ public final class BranchServiceGrpc {
     return BranchServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BranchServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BranchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BranchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public BranchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BranchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BranchServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -294,6 +307,58 @@ public final class BranchServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BranchService.
+   *
+   * <pre>
+   * Service for [Branch][google.cloud.retail.v2alpha.Branch] Management
+   * [Branch][google.cloud.retail.v2alpha.Branch]es are automatically created when
+   * a [Catalog][google.cloud.retail.v2alpha.Catalog] is created. There are fixed
+   * three branches in each catalog, and may use
+   * [ListBranches][google.cloud.retail.v2alpha.BranchService.ListBranches] method
+   * to get the details of all branches.
+   * </pre>
+   */
+  public static final class BranchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BranchServiceBlockingV2Stub> {
+    private BranchServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BranchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BranchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all instances of [Branch][google.cloud.retail.v2alpha.Branch] under
+     * the specified parent [Catalog][google.cloud.retail.v2alpha.Catalog].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ListBranchesResponse listBranches(
+        com.google.cloud.retail.v2alpha.ListBranchesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBranchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a [Branch][google.cloud.retail.v2alpha.Branch].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.Branch getBranch(
+        com.google.cloud.retail.v2alpha.GetBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBranchMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BranchService.
    *
    * <pre>
    * Service for [Branch][google.cloud.retail.v2alpha.Branch] Management

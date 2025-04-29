@@ -35,6 +35,7 @@ public final class ImageClassificationPredictionInstance
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.instance.ImageClassificationPredictionInstance)
     ImageClassificationPredictionInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageClassificationPredictionInstance.newBuilder() to construct.
   private ImageClassificationPredictionInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class ImageClassificationPredictionInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class ImageClassificationPredictionInstance
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ImageClassificationPredictionInstance
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class ImageClassificationPredictionInstance
       return s;
     }
   }
+
   /**
    *
    *
@@ -383,6 +388,7 @@ public final class ImageClassificationPredictionInstance
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -611,6 +617,7 @@ public final class ImageClassificationPredictionInstance
     private int bitField0_;
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -633,6 +640,7 @@ public final class ImageClassificationPredictionInstance
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -655,6 +663,7 @@ public final class ImageClassificationPredictionInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -676,6 +685,7 @@ public final class ImageClassificationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +703,7 @@ public final class ImageClassificationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class ImageClassificationPredictionInstance
     }
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -747,6 +759,7 @@ public final class ImageClassificationPredictionInstance
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +790,7 @@ public final class ImageClassificationPredictionInstance
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +820,7 @@ public final class ImageClassificationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +846,7 @@ public final class ImageClassificationPredictionInstance
       onChanged();
       return this;
     }
+
     /**
      *
      *

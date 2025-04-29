@@ -47,6 +47,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    * @return Whether the notificationChannel field is set.
    */
   boolean hasNotificationChannel();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    * @return The notificationChannel.
    */
   com.google.monitoring.v3.NotificationChannel getNotificationChannel();
+
   /**
    *
    *

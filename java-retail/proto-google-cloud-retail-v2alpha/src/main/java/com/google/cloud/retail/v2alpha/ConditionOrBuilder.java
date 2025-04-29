@@ -37,6 +37,7 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Condition.QueryTerm query_terms = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.Condition.QueryTerm> getQueryTermsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Condition.QueryTerm query_terms = 1;</code>
    */
   com.google.cloud.retail.v2alpha.Condition.QueryTerm getQueryTerms(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Condition.QueryTerm query_terms = 1;</code>
    */
   int getQueryTermsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ConditionOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.Condition.QueryTermOrBuilder>
       getQueryTermsOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Condition.TimeRange active_time_range = 3;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.Condition.TimeRange> getActiveTimeRangeList();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Condition.TimeRange active_time_range = 3;</code>
    */
   com.google.cloud.retail.v2alpha.Condition.TimeRange getActiveTimeRange(int index);
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Condition.TimeRange active_time_range = 3;</code>
    */
   int getActiveTimeRangeCount();
+
   /**
    *
    *
@@ -136,6 +143,7 @@ public interface ConditionOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.Condition.TimeRangeOrBuilder>
       getActiveTimeRangeOrBuilderList();
+
   /**
    *
    *
@@ -164,6 +172,7 @@ public interface ConditionOrBuilder
    * @return A list containing the pageCategories.
    */
   java.util.List<java.lang.String> getPageCategoriesList();
+
   /**
    *
    *
@@ -179,6 +188,7 @@ public interface ConditionOrBuilder
    * @return The count of pageCategories.
    */
   int getPageCategoriesCount();
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public interface ConditionOrBuilder
    * @return The pageCategories at the given index.
    */
   java.lang.String getPageCategories(int index);
+
   /**
    *
    *

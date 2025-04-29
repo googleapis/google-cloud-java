@@ -84,6 +84,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EDITION_UNSPECIFIED = 0;</code>
    */
   public static final int EDITION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STANDARD = 1;</code>
    */
   public static final int STANDARD_VALUE = 1;
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTERPRISE = 2;</code>
    */
   public static final int ENTERPRISE_VALUE = 2;
+
   /**
    *
    *

@@ -93,6 +93,7 @@ public interface DatasetStatsOrBuilder
    * @return Whether the userInputTokenDistribution field is set.
    */
   boolean hasUserInputTokenDistribution();
+
   /**
    *
    *
@@ -107,6 +108,7 @@ public interface DatasetStatsOrBuilder
    * @return The userInputTokenDistribution.
    */
   com.google.cloud.aiplatform.v1beta1.DatasetDistribution getUserInputTokenDistribution();
+
   /**
    *
    *
@@ -135,6 +137,7 @@ public interface DatasetStatsOrBuilder
    * @return Whether the userOutputTokenDistribution field is set.
    */
   boolean hasUserOutputTokenDistribution();
+
   /**
    *
    *
@@ -149,6 +152,7 @@ public interface DatasetStatsOrBuilder
    * @return The userOutputTokenDistribution.
    */
   com.google.cloud.aiplatform.v1beta1.DatasetDistribution getUserOutputTokenDistribution();
+
   /**
    *
    *
@@ -177,6 +181,7 @@ public interface DatasetStatsOrBuilder
    * @return Whether the userMessagePerExampleDistribution field is set.
    */
   boolean hasUserMessagePerExampleDistribution();
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public interface DatasetStatsOrBuilder
    * @return The userMessagePerExampleDistribution.
    */
   com.google.cloud.aiplatform.v1beta1.DatasetDistribution getUserMessagePerExampleDistribution();
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public interface DatasetStatsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getUserDatasetExamplesList();
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public interface DatasetStatsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getUserDatasetExamples(int index);
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public interface DatasetStatsOrBuilder
    * </code>
    */
   int getUserDatasetExamplesCount();
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface DatasetStatsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getUserDatasetExamplesOrBuilderList();
+
   /**
    *
    *

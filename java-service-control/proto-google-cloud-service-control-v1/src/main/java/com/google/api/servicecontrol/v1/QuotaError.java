@@ -33,6 +33,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v1.QuotaError)
     QuotaErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuotaError.newBuilder() to construct.
   private QuotaError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -154,6 +155,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -165,6 +167,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_EXHAUSTED = 8;</code>
      */
     public static final int RESOURCE_EXHAUSTED_VALUE = 8;
+
     /**
      *
      *
@@ -176,6 +179,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
      * <code>BILLING_NOT_ACTIVE = 107;</code>
      */
     public static final int BILLING_NOT_ACTIVE_VALUE = 107;
+
     /**
      *
      *
@@ -186,6 +190,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
      * <code>PROJECT_DELETED = 108;</code>
      */
     public static final int PROJECT_DELETED_VALUE = 108;
+
     /**
      *
      *
@@ -196,6 +201,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
      * <code>API_KEY_INVALID = 105;</code>
      */
     public static final int API_KEY_INVALID_VALUE = 105;
+
     /**
      *
      *
@@ -299,6 +305,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -314,6 +321,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -336,6 +344,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subject_ = "";
+
   /**
    *
    *
@@ -361,6 +370,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +401,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -440,6 +452,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 4;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -456,6 +469,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -472,6 +486,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -678,6 +693,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -918,6 +934,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -933,6 +950,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -951,6 +969,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +989,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
           ? com.google.api.servicecontrol.v1.QuotaError.Code.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -991,6 +1011,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1031,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subject_ = "";
+
     /**
      *
      *
@@ -1034,6 +1056,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1105,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1125,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1152,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1148,6 +1175,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1170,6 +1198,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1220,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1238,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1266,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -1250,6 +1282,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1269,6 +1302,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1292,6 +1326,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1347,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1376,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1397,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1413,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1392,6 +1431,7 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *

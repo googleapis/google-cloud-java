@@ -33,6 +33,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
     ReportErrorEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportErrorEventRequest.newBuilder() to construct.
   private ReportErrorEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectName_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
 
   public static final int EVENT_FIELD_NUMBER = 2;
   private com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
   public boolean hasEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
         ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance()
         : event_;
   }
+
   /**
    *
    *
@@ -361,6 +367,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -584,6 +591,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object projectName_ = "";
+
     /**
      *
      *
@@ -613,6 +621,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -642,6 +651,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
             com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder>
         eventBuilder_;
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     public boolean hasEvent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
         return eventBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +866,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
             : event_;
       }
     }
+
     /**
      *
      *

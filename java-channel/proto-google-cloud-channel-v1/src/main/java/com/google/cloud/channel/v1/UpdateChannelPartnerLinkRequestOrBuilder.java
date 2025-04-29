@@ -38,6 +38,7 @@ public interface UpdateChannelPartnerLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface UpdateChannelPartnerLinkRequestOrBuilder
    * @return Whether the channelPartnerLink field is set.
    */
   boolean hasChannelPartnerLink();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateChannelPartnerLinkRequestOrBuilder
    * @return The channelPartnerLink.
    */
   com.google.cloud.channel.v1.ChannelPartnerLink getChannelPartnerLink();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface UpdateChannelPartnerLinkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface UpdateChannelPartnerLinkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

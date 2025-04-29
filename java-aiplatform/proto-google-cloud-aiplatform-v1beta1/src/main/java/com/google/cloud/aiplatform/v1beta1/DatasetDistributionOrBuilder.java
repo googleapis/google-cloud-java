@@ -128,6 +128,7 @@ public interface DatasetDistributionOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.DatasetDistribution.DistributionBucket>
       getBucketsList();
+
   /**
    *
    *
@@ -140,6 +141,7 @@ public interface DatasetDistributionOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.DatasetDistribution.DistributionBucket getBuckets(int index);
+
   /**
    *
    *
@@ -152,6 +154,7 @@ public interface DatasetDistributionOrBuilder
    * </code>
    */
   int getBucketsCount();
+
   /**
    *
    *
@@ -167,6 +170,7 @@ public interface DatasetDistributionOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.DatasetDistribution.DistributionBucketOrBuilder>
       getBucketsOrBuilderList();
+
   /**
    *
    *

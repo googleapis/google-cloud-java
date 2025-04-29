@@ -37,6 +37,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface InstanceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface InstanceOrBuilder
    * @return The appEngineRelease.
    */
   java.lang.String getAppEngineRelease();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for availability.
    */
   int getAvailabilityValue();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface InstanceOrBuilder
    * @return The vmName.
    */
   java.lang.String getVmName();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface InstanceOrBuilder
    * @return The vmZoneName.
    */
   java.lang.String getVmZoneName();
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public interface InstanceOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public interface InstanceOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public interface InstanceOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -335,6 +344,7 @@ public interface InstanceOrBuilder
    * @return The vmStatus.
    */
   java.lang.String getVmStatus();
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public interface InstanceOrBuilder
    * @return The vmIp.
    */
   java.lang.String getVmIp();
+
   /**
    *
    *
@@ -405,6 +416,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for vmLiveness.
    */
   int getVmLivenessValue();
+
   /**
    *
    *

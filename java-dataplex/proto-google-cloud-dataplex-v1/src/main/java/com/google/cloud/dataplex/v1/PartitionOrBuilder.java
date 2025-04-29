@@ -42,6 +42,7 @@ public interface PartitionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface PartitionOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface PartitionOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface PartitionOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface PartitionOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface PartitionOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getEtag();
+
   /**
    *
    *

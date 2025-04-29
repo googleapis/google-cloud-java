@@ -36,6 +36,7 @@ public interface ListJobsRequestOrBuilder
    * @return The enum numeric value on the wire for filter.
    */
   int getFilterValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ListJobsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ListJobsRequestOrBuilder
    */
   @java.lang.Deprecated
   int getViewValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ListJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public interface ListJobsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

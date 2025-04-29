@@ -537,6 +537,19 @@ public final class DepServiceGrpc {
     return DepServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DepServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DepServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DepServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DepServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DepServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DepServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -924,6 +937,158 @@ public final class DepServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DepService.
+   *
+   * <pre>
+   * Service describing handlers for resources.
+   * </pre>
+   */
+  public static final class DepServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DepServiceBlockingV2Stub> {
+    private DepServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DepServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DepServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `LbTrafficExtension` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse
+        listLbTrafficExtensions(
+            com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLbTrafficExtensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `LbTrafficExtension` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.LbTrafficExtension getLbTrafficExtension(
+        com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLbTrafficExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `LbTrafficExtension` resource in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLbTrafficExtension(
+        com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLbTrafficExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `LbTrafficExtension` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLbTrafficExtension(
+        com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLbTrafficExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `LbTrafficExtension` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteLbTrafficExtension(
+        com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLbTrafficExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `LbRouteExtension` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse listLbRouteExtensions(
+        com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLbRouteExtensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specified `LbRouteExtension` resource.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.LbRouteExtension getLbRouteExtension(
+        com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLbRouteExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new `LbRouteExtension` resource in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLbRouteExtension(
+        com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLbRouteExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of the specified `LbRouteExtension` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLbRouteExtension(
+        com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLbRouteExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified `LbRouteExtension` resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteLbRouteExtension(
+        com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLbRouteExtensionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DepService.
    *
    * <pre>
    * Service describing handlers for resources.

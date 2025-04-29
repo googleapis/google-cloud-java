@@ -38,6 +38,7 @@ public interface CreateMigratingVmRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateMigratingVmRequestOrBuilder
    * @return The migratingVmId.
    */
   java.lang.String getMigratingVmId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreateMigratingVmRequestOrBuilder
    * @return Whether the migratingVm field is set.
    */
   boolean hasMigratingVm();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateMigratingVmRequestOrBuilder
    * @return The migratingVm.
    */
   com.google.cloud.vmmigration.v1.MigratingVm getMigratingVm();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface CreateMigratingVmRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface AutomaticItemUpdatesOrBuilder
    * @return Whether the accountItemUpdatesSettings field is set.
    */
   boolean hasAccountItemUpdatesSettings();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface AutomaticItemUpdatesOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates.ItemUpdatesAccountLevelSettings
       getAccountItemUpdatesSettings();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ImagePayload)
     ImagePayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImagePayload.newBuilder() to construct.
   private ImagePayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMAGE_THUMBNAIL_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString imageThumbnail_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageUri_ = "";
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signedUri_ = "";
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +431,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object mimeType_ = "";
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString imageThumbnail_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getImageThumbnail() {
       return imageThumbnail_;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object imageUri_ = "";
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +939,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object signedUri_ = "";
+
     /**
      *
      *
@@ -939,6 +962,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -961,6 +985,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -982,6 +1007,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1025,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

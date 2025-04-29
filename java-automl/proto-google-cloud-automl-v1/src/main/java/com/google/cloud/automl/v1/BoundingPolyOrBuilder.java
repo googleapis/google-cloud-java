@@ -34,6 +34,7 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.automl.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
   java.util.List<com.google.cloud.automl.v1.NormalizedVertex> getNormalizedVerticesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.automl.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
   com.google.cloud.automl.v1.NormalizedVertex getNormalizedVertices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.automl.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
   int getNormalizedVerticesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BoundingPolyOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList();
+
   /**
    *
    *

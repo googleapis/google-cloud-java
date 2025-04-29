@@ -113,63 +113,7 @@ public class SessionServiceClientTest {
     Session expectedResponse =
         Session.newBuilder()
             .setName(
-                SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-                    .toString())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setUpdateTime(Timestamp.newBuilder().build())
-            .setDisplayName("displayName1714148973")
-            .setSessionState(Struct.newBuilder().build())
-            .setUserId("userId-836030906")
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("createSessionTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockSessionService.addResponse(resultOperation);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-    Session session = Session.newBuilder().build();
-
-    Session actualResponse = client.createSessionAsync(parent, session).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockSessionService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateSessionRequest actualRequest = ((CreateSessionRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(session, actualRequest.getSession());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createSessionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockSessionService.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      Session session = Session.newBuilder().build();
-      client.createSessionAsync(parent, session).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void createSessionTest2() throws Exception {
-    Session expectedResponse =
-        Session.newBuilder()
-            .setName(
-                SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -205,7 +149,7 @@ public class SessionServiceClientTest {
   }
 
   @Test
-  public void createSessionExceptionTest2() throws Exception {
+  public void createSessionExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSessionService.addException(exception);
 
@@ -223,11 +167,11 @@ public class SessionServiceClientTest {
   }
 
   @Test
-  public void createSessionTest3() throws Exception {
+  public void createSessionTest2() throws Exception {
     Session expectedResponse =
         Session.newBuilder()
             .setName(
-                SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -262,7 +206,7 @@ public class SessionServiceClientTest {
   }
 
   @Test
-  public void createSessionExceptionTest3() throws Exception {
+  public void createSessionExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSessionService.addException(exception);
 
@@ -283,7 +227,7 @@ public class SessionServiceClientTest {
     Session expectedResponse =
         Session.newBuilder()
             .setName(
-                SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -293,8 +237,7 @@ public class SessionServiceClientTest {
             .build();
     mockSessionService.addResponse(expectedResponse);
 
-    SessionName name =
-        SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+    SessionName name = SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
 
     Session actualResponse = client.getSession(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -317,7 +260,7 @@ public class SessionServiceClientTest {
 
     try {
       SessionName name =
-          SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
       client.getSession(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -330,7 +273,7 @@ public class SessionServiceClientTest {
     Session expectedResponse =
         Session.newBuilder()
             .setName(
-                SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -380,7 +323,8 @@ public class SessionServiceClientTest {
             .build();
     mockSessionService.addResponse(expectedResponse);
 
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ReasoningEngineName parent =
+        ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
 
     ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
 
@@ -406,51 +350,6 @@ public class SessionServiceClientTest {
     mockSessionService.addException(exception);
 
     try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      client.listSessions(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listSessionsTest2() throws Exception {
-    Session responsesElement = Session.newBuilder().build();
-    ListSessionsResponse expectedResponse =
-        ListSessionsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSessions(Arrays.asList(responsesElement))
-            .build();
-    mockSessionService.addResponse(expectedResponse);
-
-    ReasoningEngineName parent =
-        ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
-
-    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
-
-    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockSessionService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListSessionsRequest actualRequest = ((ListSessionsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listSessionsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockSessionService.addException(exception);
-
-    try {
       ReasoningEngineName parent =
           ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
       client.listSessions(parent);
@@ -461,7 +360,7 @@ public class SessionServiceClientTest {
   }
 
   @Test
-  public void listSessionsTest3() throws Exception {
+  public void listSessionsTest2() throws Exception {
     Session responsesElement = Session.newBuilder().build();
     ListSessionsResponse expectedResponse =
         ListSessionsResponse.newBuilder()
@@ -491,7 +390,7 @@ public class SessionServiceClientTest {
   }
 
   @Test
-  public void listSessionsExceptionTest3() throws Exception {
+  public void listSessionsExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSessionService.addException(exception);
 
@@ -509,7 +408,7 @@ public class SessionServiceClientTest {
     Session expectedResponse =
         Session.newBuilder()
             .setName(
-                SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                     .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -563,8 +462,7 @@ public class SessionServiceClientTest {
             .build();
     mockSessionService.addResponse(resultOperation);
 
-    SessionName name =
-        SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+    SessionName name = SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
 
     client.deleteSessionAsync(name).get();
 
@@ -586,7 +484,7 @@ public class SessionServiceClientTest {
 
     try {
       SessionName name =
-          SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]");
+          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
       client.deleteSessionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -649,8 +547,7 @@ public class SessionServiceClientTest {
     mockSessionService.addResponse(expectedResponse);
 
     SessionName parent =
-        SessionName.ofProjectLocationReasoningEngineSessionName(
-            "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+        SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
 
     ListEventsPagedResponse pagedListResponse = client.listEvents(parent);
 
@@ -677,8 +574,7 @@ public class SessionServiceClientTest {
 
     try {
       SessionName parent =
-          SessionName.ofProjectLocationReasoningEngineSessionName(
-              "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
       client.listEvents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -735,9 +631,7 @@ public class SessionServiceClientTest {
     AppendEventResponse expectedResponse = AppendEventResponse.newBuilder().build();
     mockSessionService.addResponse(expectedResponse);
 
-    SessionName name =
-        SessionName.ofProjectLocationReasoningEngineSessionName(
-            "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+    SessionName name = SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
     SessionEvent event = SessionEvent.newBuilder().build();
 
     AppendEventResponse actualResponse = client.appendEvent(name, event);
@@ -762,8 +656,7 @@ public class SessionServiceClientTest {
 
     try {
       SessionName name =
-          SessionName.ofProjectLocationReasoningEngineSessionName(
-              "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
       SessionEvent event = SessionEvent.newBuilder().build();
       client.appendEvent(name, event);
       Assert.fail("No exception raised");

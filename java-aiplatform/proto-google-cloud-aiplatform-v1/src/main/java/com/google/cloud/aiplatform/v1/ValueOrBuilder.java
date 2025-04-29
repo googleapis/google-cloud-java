@@ -36,6 +36,7 @@ public interface ValueOrBuilder
    * @return Whether the intValue field is set.
    */
   boolean hasIntValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.CloudVmClusterProperties)
     CloudVmClusterPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudVmClusterProperties.newBuilder() to construct.
   private CloudVmClusterProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,6 +135,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>LICENSE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LICENSE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -144,6 +146,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>LICENSE_INCLUDED = 1;</code>
      */
     public static final int LICENSE_INCLUDED_VALUE = 1;
+
     /**
      *
      *
@@ -293,6 +296,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>DISK_REDUNDANCY_UNSPECIFIED = 0;</code>
      */
     public static final int DISK_REDUNDANCY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -303,6 +307,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>HIGH = 1;</code>
      */
     public static final int HIGH_VALUE = 1;
+
     /**
      *
      *
@@ -502,6 +507,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -512,6 +518,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>PROVISIONING = 1;</code>
      */
     public static final int PROVISIONING_VALUE = 1;
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>AVAILABLE = 2;</code>
      */
     public static final int AVAILABLE_VALUE = 2;
+
     /**
      *
      *
@@ -532,6 +540,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -542,6 +551,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>TERMINATING = 4;</code>
      */
     public static final int TERMINATING_VALUE = 4;
+
     /**
      *
      *
@@ -552,6 +562,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>TERMINATED = 5;</code>
      */
     public static final int TERMINATED_VALUE = 5;
+
     /**
      *
      *
@@ -562,6 +573,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      * <code>FAILED = 6;</code>
      */
     public static final int FAILED_VALUE = 6;
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ocid_ = "";
+
   /**
    *
    *
@@ -696,6 +709,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -722,6 +736,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int LICENSE_TYPE_FIELD_NUMBER = 2;
   private int licenseType_ = 0;
+
   /**
    *
    *
@@ -739,6 +754,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public int getLicenseTypeValue() {
     return licenseType_;
   }
+
   /**
    *
    *
@@ -766,6 +782,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object giVersion_ = "";
+
   /**
    *
    *
@@ -789,6 +806,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -815,6 +833,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int TIME_ZONE_FIELD_NUMBER = 4;
   private com.google.type.TimeZone timeZone_;
+
   /**
    *
    *
@@ -830,6 +849,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public boolean hasTimeZone() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -845,6 +865,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public com.google.type.TimeZone getTimeZone() {
     return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
   }
+
   /**
    *
    *
@@ -864,6 +885,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sshPublicKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -878,6 +900,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getSshPublicKeysList() {
     return sshPublicKeys_;
   }
+
   /**
    *
    *
@@ -892,6 +915,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public int getSshPublicKeysCount() {
     return sshPublicKeys_.size();
   }
+
   /**
    *
    *
@@ -907,6 +931,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public java.lang.String getSshPublicKeys(int index) {
     return sshPublicKeys_.get(index);
   }
+
   /**
    *
    *
@@ -925,6 +950,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int NODE_COUNT_FIELD_NUMBER = 6;
   private int nodeCount_ = 0;
+
   /**
    *
    *
@@ -945,6 +971,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shape_ = "";
+
   /**
    *
    *
@@ -968,6 +995,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -994,6 +1022,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int OCPU_COUNT_FIELD_NUMBER = 8;
   private float ocpuCount_ = 0F;
+
   /**
    *
    *
@@ -1012,6 +1041,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int MEMORY_SIZE_GB_FIELD_NUMBER = 9;
   private int memorySizeGb_ = 0;
+
   /**
    *
    *
@@ -1030,6 +1060,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int DB_NODE_STORAGE_SIZE_GB_FIELD_NUMBER = 10;
   private int dbNodeStorageSizeGb_ = 0;
+
   /**
    *
    *
@@ -1048,6 +1079,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int STORAGE_SIZE_GB_FIELD_NUMBER = 11;
   private int storageSizeGb_ = 0;
+
   /**
    *
    *
@@ -1066,6 +1098,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int DATA_STORAGE_SIZE_TB_FIELD_NUMBER = 12;
   private double dataStorageSizeTb_ = 0D;
+
   /**
    *
    *
@@ -1084,6 +1117,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int DISK_REDUNDANCY_FIELD_NUMBER = 13;
   private int diskRedundancy_ = 0;
+
   /**
    *
    *
@@ -1101,6 +1135,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public int getDiskRedundancyValue() {
     return diskRedundancy_;
   }
+
   /**
    *
    *
@@ -1127,6 +1162,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int SPARSE_DISKGROUP_ENABLED_FIELD_NUMBER = 14;
   private boolean sparseDiskgroupEnabled_ = false;
+
   /**
    *
    *
@@ -1145,6 +1181,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int LOCAL_BACKUP_ENABLED_FIELD_NUMBER = 15;
   private boolean localBackupEnabled_ = false;
+
   /**
    *
    *
@@ -1165,6 +1202,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostnamePrefix_ = "";
+
   /**
    *
    *
@@ -1188,6 +1226,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1215,6 +1254,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public static final int DIAGNOSTICS_DATA_COLLECTION_OPTIONS_FIELD_NUMBER = 19;
   private com.google.cloud.oracledatabase.v1.DataCollectionOptions
       diagnosticsDataCollectionOptions_;
+
   /**
    *
    *
@@ -1232,6 +1272,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public boolean hasDiagnosticsDataCollectionOptions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1252,6 +1293,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         ? com.google.cloud.oracledatabase.v1.DataCollectionOptions.getDefaultInstance()
         : diagnosticsDataCollectionOptions_;
   }
+
   /**
    *
    *
@@ -1273,6 +1315,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int STATE_FIELD_NUMBER = 20;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1290,6 +1333,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1314,6 +1358,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int SCAN_LISTENER_PORT_TCP_FIELD_NUMBER = 21;
   private int scanListenerPortTcp_ = 0;
+
   /**
    *
    *
@@ -1332,6 +1377,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int SCAN_LISTENER_PORT_TCP_SSL_FIELD_NUMBER = 22;
   private int scanListenerPortTcpSsl_ = 0;
+
   /**
    *
    *
@@ -1353,6 +1399,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
+
   /**
    *
    *
@@ -1377,6 +1424,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1406,6 +1454,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scanDns_ = "";
+
   /**
    *
    *
@@ -1430,6 +1479,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1459,6 +1509,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
+
   /**
    *
    *
@@ -1484,6 +1535,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1512,6 +1564,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   public static final int CPU_CORE_COUNT_FIELD_NUMBER = 26;
   private int cpuCoreCount_ = 0;
+
   /**
    *
    *
@@ -1532,6 +1585,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object systemVersion_ = "";
+
   /**
    *
    *
@@ -1555,6 +1609,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1584,6 +1639,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList scanIpIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1598,6 +1654,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getScanIpIdsList() {
     return scanIpIds_;
   }
+
   /**
    *
    *
@@ -1612,6 +1669,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public int getScanIpIdsCount() {
     return scanIpIds_.size();
   }
+
   /**
    *
    *
@@ -1627,6 +1685,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public java.lang.String getScanIpIds(int index) {
     return scanIpIds_.get(index);
   }
+
   /**
    *
    *
@@ -1647,6 +1706,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scanDnsRecordId_ = "";
+
   /**
    *
    *
@@ -1670,6 +1730,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1698,6 +1759,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ociUrl_ = "";
+
   /**
    *
    *
@@ -1721,6 +1783,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1750,6 +1813,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dbServerOcids_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1764,6 +1828,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getDbServerOcidsList() {
     return dbServerOcids_;
   }
+
   /**
    *
    *
@@ -1778,6 +1843,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public int getDbServerOcidsCount() {
     return dbServerOcids_.size();
   }
+
   /**
    *
    *
@@ -1793,6 +1859,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
   public java.lang.String getDbServerOcids(int index) {
     return dbServerOcids_.get(index);
   }
+
   /**
    *
    *
@@ -1813,6 +1880,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object compartmentId_ = "";
+
   /**
    *
    *
@@ -1836,6 +1904,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1864,6 +1933,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dnsListenerIp_ = "";
+
   /**
    *
    *
@@ -1887,6 +1957,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1915,6 +1986,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterName_ = "";
+
   /**
    *
    *
@@ -1938,6 +2010,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -2457,6 +2530,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3122,6 +3196,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object ocid_ = "";
+
     /**
      *
      *
@@ -3144,6 +3219,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3166,6 +3242,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3187,6 +3264,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3204,6 +3282,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3228,6 +3307,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int licenseType_ = 0;
+
     /**
      *
      *
@@ -3245,6 +3325,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getLicenseTypeValue() {
       return licenseType_;
     }
+
     /**
      *
      *
@@ -3265,6 +3346,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3288,6 +3370,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
           ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.LicenseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3312,6 +3395,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3333,6 +3417,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object giVersion_ = "";
+
     /**
      *
      *
@@ -3355,6 +3440,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3377,6 +3463,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3398,6 +3485,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3415,6 +3503,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3444,6 +3533,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
             com.google.type.TimeZone.Builder,
             com.google.type.TimeZoneOrBuilder>
         timeZoneBuilder_;
+
     /**
      *
      *
@@ -3458,6 +3548,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public boolean hasTimeZone() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3476,6 +3567,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return timeZoneBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3498,6 +3590,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3517,6 +3610,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3544,6 +3638,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -3563,6 +3658,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3577,6 +3673,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return getTimeZoneFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3593,6 +3690,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
       }
     }
+
     /**
      *
      *
@@ -3628,6 +3726,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -3643,6 +3742,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       sshPublicKeys_.makeImmutable();
       return sshPublicKeys_;
     }
+
     /**
      *
      *
@@ -3657,6 +3757,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getSshPublicKeysCount() {
       return sshPublicKeys_.size();
     }
+
     /**
      *
      *
@@ -3672,6 +3773,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public java.lang.String getSshPublicKeys(int index) {
       return sshPublicKeys_.get(index);
     }
+
     /**
      *
      *
@@ -3687,6 +3789,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getSshPublicKeysBytes(int index) {
       return sshPublicKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3710,6 +3813,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3732,6 +3836,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3751,6 +3856,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3769,6 +3875,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3794,6 +3901,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int nodeCount_;
+
     /**
      *
      *
@@ -3809,6 +3917,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getNodeCount() {
       return nodeCount_;
     }
+
     /**
      *
      *
@@ -3828,6 +3937,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3847,6 +3957,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object shape_ = "";
+
     /**
      *
      *
@@ -3869,6 +3980,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3891,6 +4003,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3912,6 +4025,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3929,6 +4043,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3953,6 +4068,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private float ocpuCount_;
+
     /**
      *
      *
@@ -3968,6 +4084,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public float getOcpuCount() {
       return ocpuCount_;
     }
+
     /**
      *
      *
@@ -3987,6 +4104,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4006,6 +4124,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int memorySizeGb_;
+
     /**
      *
      *
@@ -4021,6 +4140,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getMemorySizeGb() {
       return memorySizeGb_;
     }
+
     /**
      *
      *
@@ -4040,6 +4160,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4059,6 +4180,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int dbNodeStorageSizeGb_;
+
     /**
      *
      *
@@ -4074,6 +4196,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getDbNodeStorageSizeGb() {
       return dbNodeStorageSizeGb_;
     }
+
     /**
      *
      *
@@ -4093,6 +4216,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4112,6 +4236,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int storageSizeGb_;
+
     /**
      *
      *
@@ -4127,6 +4252,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getStorageSizeGb() {
       return storageSizeGb_;
     }
+
     /**
      *
      *
@@ -4146,6 +4272,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4165,6 +4292,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private double dataStorageSizeTb_;
+
     /**
      *
      *
@@ -4180,6 +4308,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public double getDataStorageSizeTb() {
       return dataStorageSizeTb_;
     }
+
     /**
      *
      *
@@ -4199,6 +4328,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4218,6 +4348,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int diskRedundancy_ = 0;
+
     /**
      *
      *
@@ -4235,6 +4366,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getDiskRedundancyValue() {
       return diskRedundancy_;
     }
+
     /**
      *
      *
@@ -4255,6 +4387,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4278,6 +4411,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
           ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.DiskRedundancy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4302,6 +4436,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4323,6 +4458,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private boolean sparseDiskgroupEnabled_;
+
     /**
      *
      *
@@ -4338,6 +4474,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public boolean getSparseDiskgroupEnabled() {
       return sparseDiskgroupEnabled_;
     }
+
     /**
      *
      *
@@ -4357,6 +4494,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4376,6 +4514,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private boolean localBackupEnabled_;
+
     /**
      *
      *
@@ -4391,6 +4530,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public boolean getLocalBackupEnabled() {
       return localBackupEnabled_;
     }
+
     /**
      *
      *
@@ -4410,6 +4550,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4429,6 +4570,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object hostnamePrefix_ = "";
+
     /**
      *
      *
@@ -4451,6 +4593,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4473,6 +4616,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4494,6 +4638,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4511,6 +4656,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4541,6 +4687,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
             com.google.cloud.oracledatabase.v1.DataCollectionOptions.Builder,
             com.google.cloud.oracledatabase.v1.DataCollectionOptionsOrBuilder>
         diagnosticsDataCollectionOptionsBuilder_;
+
     /**
      *
      *
@@ -4557,6 +4704,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public boolean hasDiagnosticsDataCollectionOptions() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -4580,6 +4728,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return diagnosticsDataCollectionOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4605,6 +4754,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4627,6 +4777,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4658,6 +4809,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4679,6 +4831,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4696,6 +4849,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return getDiagnosticsDataCollectionOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4717,6 +4871,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
             : diagnosticsDataCollectionOptions_;
       }
     }
+
     /**
      *
      *
@@ -4746,6 +4901,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -4763,6 +4919,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4783,6 +4940,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4804,6 +4962,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
           ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4828,6 +4987,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4849,6 +5009,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int scanListenerPortTcp_;
+
     /**
      *
      *
@@ -4864,6 +5025,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getScanListenerPortTcp() {
       return scanListenerPortTcp_;
     }
+
     /**
      *
      *
@@ -4883,6 +5045,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4902,6 +5065,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int scanListenerPortTcpSsl_;
+
     /**
      *
      *
@@ -4918,6 +5082,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getScanListenerPortTcpSsl() {
       return scanListenerPortTcpSsl_;
     }
+
     /**
      *
      *
@@ -4938,6 +5103,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4958,6 +5124,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object domain_ = "";
+
     /**
      *
      *
@@ -4981,6 +5148,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5004,6 +5172,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5026,6 +5195,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5044,6 +5214,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5069,6 +5240,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object scanDns_ = "";
+
     /**
      *
      *
@@ -5092,6 +5264,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5115,6 +5288,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5137,6 +5311,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5155,6 +5330,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5180,6 +5356,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object hostname_ = "";
+
     /**
      *
      *
@@ -5204,6 +5381,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5228,6 +5406,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5251,6 +5430,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5270,6 +5450,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5296,6 +5477,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int cpuCoreCount_;
+
     /**
      *
      *
@@ -5311,6 +5493,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getCpuCoreCount() {
       return cpuCoreCount_;
     }
+
     /**
      *
      *
@@ -5330,6 +5513,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5349,6 +5533,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object systemVersion_ = "";
+
     /**
      *
      *
@@ -5371,6 +5556,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5393,6 +5579,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5414,6 +5601,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5431,6 +5619,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5463,6 +5652,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x02000000;
     }
+
     /**
      *
      *
@@ -5478,6 +5668,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       scanIpIds_.makeImmutable();
       return scanIpIds_;
     }
+
     /**
      *
      *
@@ -5492,6 +5683,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getScanIpIdsCount() {
       return scanIpIds_.size();
     }
+
     /**
      *
      *
@@ -5507,6 +5699,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public java.lang.String getScanIpIds(int index) {
       return scanIpIds_.get(index);
     }
+
     /**
      *
      *
@@ -5522,6 +5715,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getScanIpIdsBytes(int index) {
       return scanIpIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5545,6 +5739,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5567,6 +5762,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5586,6 +5782,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5604,6 +5801,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5629,6 +5827,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object scanDnsRecordId_ = "";
+
     /**
      *
      *
@@ -5651,6 +5850,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5673,6 +5873,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5694,6 +5895,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5711,6 +5913,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5735,6 +5938,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object ociUrl_ = "";
+
     /**
      *
      *
@@ -5757,6 +5961,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5779,6 +5984,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5800,6 +6006,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5817,6 +6024,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5849,6 +6057,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x10000000;
     }
+
     /**
      *
      *
@@ -5864,6 +6073,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       dbServerOcids_.makeImmutable();
       return dbServerOcids_;
     }
+
     /**
      *
      *
@@ -5878,6 +6088,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public int getDbServerOcidsCount() {
       return dbServerOcids_.size();
     }
+
     /**
      *
      *
@@ -5893,6 +6104,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public java.lang.String getDbServerOcids(int index) {
       return dbServerOcids_.get(index);
     }
+
     /**
      *
      *
@@ -5908,6 +6120,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getDbServerOcidsBytes(int index) {
       return dbServerOcids_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5931,6 +6144,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5953,6 +6167,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5972,6 +6187,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5990,6 +6206,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6015,6 +6232,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object compartmentId_ = "";
+
     /**
      *
      *
@@ -6037,6 +6255,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6059,6 +6278,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6080,6 +6300,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6097,6 +6318,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6121,6 +6343,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object dnsListenerIp_ = "";
+
     /**
      *
      *
@@ -6143,6 +6366,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6165,6 +6389,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6186,6 +6411,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6203,6 +6429,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6227,6 +6454,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private java.lang.Object clusterName_ = "";
+
     /**
      *
      *
@@ -6249,6 +6477,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6271,6 +6500,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6292,6 +6522,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6309,6 +6540,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -45,6 +45,7 @@ public interface BindingExplanationOrBuilder
    * @return The enum numeric value on the wire for access.
    */
   int getAccessValue();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface BindingExplanationOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface BindingExplanationOrBuilder
    * @return The enum numeric value on the wire for rolePermission.
    */
   int getRolePermissionValue();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface BindingExplanationOrBuilder
    * @return The enum numeric value on the wire for rolePermissionRelevance.
    */
   int getRolePermissionRelevanceValue();
+
   /**
    *
    *
@@ -187,6 +191,7 @@ public interface BindingExplanationOrBuilder
    * </code>
    */
   int getMembershipsCount();
+
   /**
    *
    *
@@ -218,12 +223,14 @@ public interface BindingExplanationOrBuilder
    * </code>
    */
   boolean containsMemberships(java.lang.String key);
+
   /** Use {@link #getMembershipsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.policysimulator.v1.BindingExplanation.AnnotatedMembership>
       getMemberships();
+
   /**
    *
    *
@@ -258,6 +265,7 @@ public interface BindingExplanationOrBuilder
           java.lang.String,
           com.google.cloud.policysimulator.v1.BindingExplanation.AnnotatedMembership>
       getMembershipsMap();
+
   /**
    *
    *
@@ -294,6 +302,7 @@ public interface BindingExplanationOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.policysimulator.v1.BindingExplanation.AnnotatedMembership defaultValue);
+
   /**
    *
    *
@@ -340,6 +349,7 @@ public interface BindingExplanationOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
+
   /**
    *
    *
@@ -370,6 +380,7 @@ public interface BindingExplanationOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -386,6 +397,7 @@ public interface BindingExplanationOrBuilder
    * @return The condition.
    */
   com.google.type.Expr getCondition();
+
   /**
    *
    *

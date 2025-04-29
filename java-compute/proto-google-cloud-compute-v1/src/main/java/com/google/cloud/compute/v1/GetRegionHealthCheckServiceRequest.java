@@ -33,6 +33,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetRegionHealthCheckServiceRequest)
     GetRegionHealthCheckServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetRegionHealthCheckServiceRequest.newBuilder() to construct.
   private GetRegionHealthCheckServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheckService_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -398,6 +405,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -615,6 +623,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object healthCheckService_ = "";
+
     /**
      *
      *
@@ -638,6 +647,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -748,6 +762,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -854,6 +873,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +936,7 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *

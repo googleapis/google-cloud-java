@@ -36,6 +36,7 @@ public interface UploadedGoModuleOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UploadedGoModuleOrBuilder
    * @return Whether the fileHashes field is set.
    */
   boolean hasFileHashes();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UploadedGoModuleOrBuilder
    * @return The fileHashes.
    */
   com.google.cloudbuild.v1.FileHashes getFileHashes();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UploadedGoModuleOrBuilder
    * @return Whether the pushTiming field is set.
    */
   boolean hasPushTiming();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface UploadedGoModuleOrBuilder
    * @return The pushTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getPushTiming();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface BackupRuleOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface BackupRuleOrBuilder
    * @return Whether the standardSchedule field is set.
    */
   boolean hasStandardSchedule();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface BackupRuleOrBuilder
    * @return The standardSchedule.
    */
   com.google.cloud.backupdr.v1.StandardSchedule getStandardSchedule();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v2.ResourceInfoList)
     ResourceInfoListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceInfoList.newBuilder() to construct.
   private ResourceInfoList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v2.ResourceInfo> resources_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.api.servicecontrol.v2.ResourceInfo> getResourcesList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       getResourcesOrBuilderList() {
     return resources_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
   public int getResourcesCount() {
     return resources_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
   public com.google.api.servicecontrol.v2.ResourceInfo getResources(int index) {
     return resources_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,6 +564,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
         return resourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
         return resourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
         return resourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +665,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +771,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +791,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +804,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
     public com.google.api.servicecontrol.v2.ResourceInfo.Builder getResourcesBuilder(int index) {
       return getResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -801,6 +821,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
         return resourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -818,6 +839,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(resources_);
       }
     }
+
     /**
      *
      *
@@ -831,6 +853,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       return getResourcesFieldBuilder()
           .addBuilder(com.google.api.servicecontrol.v2.ResourceInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -844,6 +867,7 @@ public final class ResourceInfoList extends com.google.protobuf.GeneratedMessage
       return getResourcesFieldBuilder()
           .addBuilder(index, com.google.api.servicecontrol.v2.ResourceInfo.getDefaultInstance());
     }
+
     /**
      *
      *

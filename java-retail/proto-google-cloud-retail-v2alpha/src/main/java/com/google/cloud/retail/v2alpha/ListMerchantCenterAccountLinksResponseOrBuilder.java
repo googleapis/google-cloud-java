@@ -37,6 +37,7 @@ public interface ListMerchantCenterAccountLinksResponseOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterAccountLink>
       getMerchantCenterAccountLinksList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListMerchantCenterAccountLinksResponseOrBuilder
    */
   com.google.cloud.retail.v2alpha.MerchantCenterAccountLink getMerchantCenterAccountLinks(
       int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListMerchantCenterAccountLinksResponseOrBuilder
    * </code>
    */
   int getMerchantCenterAccountLinksCount();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ListMerchantCenterAccountLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.MerchantCenterAccountLinkOrBuilder>
       getMerchantCenterAccountLinksOrBuilderList();
+
   /**
    *
    *

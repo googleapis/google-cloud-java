@@ -34,6 +34,7 @@ public interface ListInfoTypesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> getInfoTypesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListInfoTypesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
   com.google.privacy.dlp.v2.InfoTypeDescription getInfoTypes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListInfoTypesResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
   int getInfoTypesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListInfoTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
       getInfoTypesOrBuilderList();
+
   /**
    *
    *

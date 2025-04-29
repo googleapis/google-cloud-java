@@ -33,6 +33,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Dialog)
     DialogOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Dialog.newBuilder() to construct.
   private Dialog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -61,6 +62,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int BODY_FIELD_NUMBER = 1;
   private com.google.apps.card.v1.Card body_;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBody() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
   public com.google.apps.card.v1.Card getBody() {
     return body_ == null ? com.google.apps.card.v1.Card.getDefaultInstance() : body_;
   }
+
   /**
    *
    *
@@ -273,6 +277,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -471,6 +476,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.card.v1.Card.Builder,
             com.google.apps.card.v1.CardOrBuilder>
         bodyBuilder_;
+
     /**
      *
      *
@@ -487,6 +493,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBody() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
         return bodyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -531,6 +539,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -552,6 +561,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +613,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBodyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -636,6 +649,7 @@ public final class Dialog extends com.google.protobuf.GeneratedMessageV3
         return body_ == null ? com.google.apps.card.v1.Card.getDefaultInstance() : body_;
       }
     }
+
     /**
      *
      *

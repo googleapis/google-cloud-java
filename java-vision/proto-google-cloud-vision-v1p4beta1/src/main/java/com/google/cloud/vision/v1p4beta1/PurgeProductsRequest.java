@@ -33,6 +33,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.PurgeProductsRequest)
     PurgeProductsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PurgeProductsRequest.newBuilder() to construct.
   private PurgeProductsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     private TargetCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PRODUCT_SET_PURGE_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasProductSetPurgeConfig() {
     return targetCase_ == 2;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DELETE_ORPHAN_PRODUCTS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasDeleteOrphanProducts() {
     return targetCase_ == 3;
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -262,6 +271,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int FORCE_FIELD_NUMBER = 4;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -487,6 +497,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -745,6 +756,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig.Builder,
             com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfigOrBuilder>
         productSetPurgeConfigBuilder_;
+
     /**
      *
      *
@@ -761,6 +773,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasProductSetPurgeConfig() {
       return targetCase_ == 2;
     }
+
     /**
      *
      *
@@ -787,6 +800,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -811,6 +825,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       targetCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +910,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         getProductSetPurgeConfigBuilder() {
       return getProductSetPurgeConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -929,6 +948,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -978,6 +998,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasDeleteOrphanProducts() {
       return targetCase_ == 3;
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       }
       return false;
     }
+
     /**
      *
      *
@@ -1016,6 +1038,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1061,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1115,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1141,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1163,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1192,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -1180,6 +1209,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -1200,6 +1230,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

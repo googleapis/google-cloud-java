@@ -38,6 +38,7 @@ public interface ModelMonitoringAnomalyOrBuilder
    * @return Whether the tabularAnomaly field is set.
    */
   boolean hasTabularAnomaly();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ModelMonitoringAnomalyOrBuilder
    * @return The tabularAnomaly.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringAnomaly.TabularAnomaly getTabularAnomaly();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ModelMonitoringAnomalyOrBuilder
    * @return The modelMonitoringJob.
    */
   java.lang.String getModelMonitoringJob();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ModelMonitoringAnomalyOrBuilder
    * @return The algorithm.
    */
   java.lang.String getAlgorithm();
+
   /**
    *
    *

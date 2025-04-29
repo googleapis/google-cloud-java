@@ -37,6 +37,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface OperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface OperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface OperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface OperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface OperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface OperationMetadataOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -186,10 +193,9 @@ public interface OperationMetadataOrBuilder
    * Output only. Identifies whether the user has requested cancellation of the
    * operation.
    *
-   * Successfully cancelled operations have a
-   * [google.longrunning.Operation.error][] value with a
-   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * Successfully cancelled operations have a [Operation.error][] value
+   * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+   * to `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -210,6 +216,7 @@ public interface OperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *

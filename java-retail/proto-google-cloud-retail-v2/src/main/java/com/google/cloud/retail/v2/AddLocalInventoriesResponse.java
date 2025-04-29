@@ -38,6 +38,7 @@ public final class AddLocalInventoriesResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.AddLocalInventoriesResponse)
     AddLocalInventoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddLocalInventoriesResponse.newBuilder() to construct.
   private AddLocalInventoriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -217,6 +218,7 @@ public final class AddLocalInventoriesResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

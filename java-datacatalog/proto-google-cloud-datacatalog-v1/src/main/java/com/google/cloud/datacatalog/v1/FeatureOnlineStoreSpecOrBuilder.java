@@ -38,6 +38,7 @@ public interface FeatureOnlineStoreSpecOrBuilder
    * @return The enum numeric value on the wire for storageType.
    */
   int getStorageTypeValue();
+
   /**
    *
    *

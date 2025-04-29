@@ -72,6 +72,7 @@ public enum TransitEncryptionMode implements com.google.protobuf.ProtocolMessage
    * <code>TRANSIT_ENCRYPTION_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int TRANSIT_ENCRYPTION_MODE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum TransitEncryptionMode implements com.google.protobuf.ProtocolMessage
    * <code>TRANSIT_ENCRYPTION_MODE_DISABLED = 1;</code>
    */
   public static final int TRANSIT_ENCRYPTION_MODE_DISABLED_VALUE = 1;
+
   /**
    *
    *

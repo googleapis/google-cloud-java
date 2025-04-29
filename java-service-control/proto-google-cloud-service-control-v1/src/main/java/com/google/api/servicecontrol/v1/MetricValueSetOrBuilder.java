@@ -36,6 +36,7 @@ public interface MetricValueSetOrBuilder
    * @return The metricName.
    */
   java.lang.String getMetricName();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface MetricValueSetOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValue metric_values = 2;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.MetricValue> getMetricValuesList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface MetricValueSetOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValue metric_values = 2;</code>
    */
   com.google.api.servicecontrol.v1.MetricValue getMetricValues(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface MetricValueSetOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValue metric_values = 2;</code>
    */
   int getMetricValuesCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface MetricValueSetOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.MetricValueOrBuilder>
       getMetricValuesOrBuilderList();
+
   /**
    *
    *

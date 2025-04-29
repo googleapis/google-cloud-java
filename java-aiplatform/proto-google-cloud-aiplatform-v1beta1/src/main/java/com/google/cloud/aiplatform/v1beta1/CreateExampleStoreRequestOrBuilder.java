@@ -40,6 +40,7 @@ public interface CreateExampleStoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateExampleStoreRequestOrBuilder
    * @return Whether the exampleStore field is set.
    */
   boolean hasExampleStore();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateExampleStoreRequestOrBuilder
    * @return The exampleStore.
    */
   com.google.cloud.aiplatform.v1beta1.ExampleStore getExampleStore();
+
   /**
    *
    *

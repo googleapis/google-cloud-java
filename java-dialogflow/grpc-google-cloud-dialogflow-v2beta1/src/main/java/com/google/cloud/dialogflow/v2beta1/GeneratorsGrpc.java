@@ -277,6 +277,19 @@ public final class GeneratorsGrpc {
     return GeneratorsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GeneratorsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GeneratorsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GeneratorsBlockingV2Stub>() {
+          @java.lang.Override
+          public GeneratorsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GeneratorsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GeneratorsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -520,6 +533,95 @@ public final class GeneratorsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Generators.
+   *
+   * <pre>
+   * Generator Service for LLM powered Agent Assist. This service manages the
+   * configurations of user owned Generators, such as description, context and
+   * instruction, input/output format, etc. The generator resources will be used
+   * inside a conversation and will be triggered by TriggerEvent to query LLM for
+   * answers.
+   * </pre>
+   */
+  public static final class GeneratorsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GeneratorsBlockingV2Stub> {
+    private GeneratorsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GeneratorsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GeneratorsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a generator.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Generator createGenerator(
+        com.google.cloud.dialogflow.v2beta1.CreateGeneratorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGeneratorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a generator.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Generator getGenerator(
+        com.google.cloud.dialogflow.v2beta1.GetGeneratorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGeneratorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists generators.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListGeneratorsResponse listGenerators(
+        com.google.cloud.dialogflow.v2beta1.ListGeneratorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGeneratorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a generator.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteGenerator(
+        com.google.cloud.dialogflow.v2beta1.DeleteGeneratorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGeneratorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a generator.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Generator updateGenerator(
+        com.google.cloud.dialogflow.v2beta1.UpdateGeneratorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGeneratorMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Generators.
    *
    * <pre>
    * Generator Service for LLM powered Agent Assist. This service manages the

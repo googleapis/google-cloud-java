@@ -38,6 +38,7 @@ public interface SearchExampleComparisonsResponseOrBuilder
   java.util.List<
           com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison>
       getExampleComparisonsList();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface SearchExampleComparisonsResponseOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison
       getExampleComparisons(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface SearchExampleComparisonsResponseOrBuilder
    * </code>
    */
   int getExampleComparisonsCount();
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface SearchExampleComparisonsResponseOrBuilder
               com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
                   .ExampleComparisonOrBuilder>
       getExampleComparisonsOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface SearchExampleComparisonsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

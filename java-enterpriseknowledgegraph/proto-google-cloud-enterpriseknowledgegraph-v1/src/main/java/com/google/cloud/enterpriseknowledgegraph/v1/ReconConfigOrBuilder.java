@@ -38,6 +38,7 @@ public interface ReconConfigOrBuilder
    * @return Whether the connectedComponentsConfig field is set.
    */
   boolean hasConnectedComponentsConfig();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface ReconConfigOrBuilder
    */
   com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig
       getConnectedComponentsConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ReconConfigOrBuilder
    * @return Whether the affinityClusteringConfig field is set.
    */
   boolean hasAffinityClusteringConfig();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ReconConfigOrBuilder
    */
   com.google.cloud.enterpriseknowledgegraph.v1.AffinityClusteringConfig
       getAffinityClusteringConfig();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ReconConfigOrBuilder
    * @return Whether the options field is set.
    */
   boolean hasOptions();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface ReconConfigOrBuilder
    * @return The options.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options getOptions();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ReconConfigOrBuilder
    * @return Whether the modelConfig field is set.
    */
   boolean hasModelConfig();
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public interface ReconConfigOrBuilder
    * @return The modelConfig.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig getModelConfig();
+
   /**
    *
    *

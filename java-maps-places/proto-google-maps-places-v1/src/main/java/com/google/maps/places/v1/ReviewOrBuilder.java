@@ -38,6 +38,7 @@ public interface ReviewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ReviewOrBuilder
    * @return The relativePublishTimeDescription.
    */
   java.lang.String getRelativePublishTimeDescription();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ReviewOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ReviewOrBuilder
    * @return The text.
    */
   com.google.type.LocalizedText getText();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ReviewOrBuilder
    * @return Whether the originalText field is set.
    */
   boolean hasOriginalText();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ReviewOrBuilder
    * @return The originalText.
    */
   com.google.type.LocalizedText getOriginalText();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface ReviewOrBuilder
    * @return Whether the authorAttribution field is set.
    */
   boolean hasAuthorAttribution();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface ReviewOrBuilder
    * @return The authorAttribution.
    */
   com.google.maps.places.v1.AuthorAttribution getAuthorAttribution();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface ReviewOrBuilder
    * @return Whether the publishTime field is set.
    */
   boolean hasPublishTime();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface ReviewOrBuilder
    * @return The publishTime.
    */
   com.google.protobuf.Timestamp getPublishTime();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ProcessWithDocAiPipeline)
     ProcessWithDocAiPipelineOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProcessWithDocAiPipeline.newBuilder() to construct.
   private ProcessWithDocAiPipeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList documents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getDocumentsList() {
     return documents_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
   public int getDocumentsCount() {
     return documents_.size();
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
   public java.lang.String getDocuments(int index) {
     return documents_.get(index);
   }
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exportFolderPath_ = "";
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
 
   public static final int PROCESSOR_INFO_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.ProcessorInfo processorInfo_;
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
   public boolean hasProcessorInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
         ? com.google.cloud.contentwarehouse.v1.ProcessorInfo.getDefaultInstance()
         : processorInfo_;
   }
+
   /**
    *
    *
@@ -248,6 +258,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processorResultsFolderPath_ = "";
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -500,6 +512,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -763,6 +776,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       documents_.makeImmutable();
       return documents_;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     public int getDocumentsCount() {
       return documents_.size();
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     public java.lang.String getDocuments(int index) {
       return documents_.get(index);
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getDocumentsBytes(int index) {
       return documents_.getByteString(index);
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     }
 
     private java.lang.Object exportFolderPath_ = "";
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
             com.google.cloud.contentwarehouse.v1.ProcessorInfo.Builder,
             com.google.cloud.contentwarehouse.v1.ProcessorInfoOrBuilder>
         processorInfoBuilder_;
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     public boolean hasProcessorInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1102,6 +1131,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
         return processorInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1154,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1175,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1204,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1224,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1239,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return getProcessorInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1223,6 +1258,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
             : processorInfo_;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1286,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
     }
 
     private java.lang.Object processorResultsFolderPath_ = "";
+
     /**
      *
      *
@@ -1274,6 +1311,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1336,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1321,6 +1360,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1380,7 @@ public final class ProcessWithDocAiPipeline extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

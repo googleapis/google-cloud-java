@@ -846,6 +846,19 @@ public final class LiveVideoAnalyticsGrpc {
     return LiveVideoAnalyticsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LiveVideoAnalyticsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LiveVideoAnalyticsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LiveVideoAnalyticsBlockingV2Stub>() {
+          @java.lang.Override
+          public LiveVideoAnalyticsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LiveVideoAnalyticsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LiveVideoAnalyticsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1474,6 +1487,263 @@ public final class LiveVideoAnalyticsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LiveVideoAnalytics.
+   *
+   * <pre>
+   * Service describing handlers for resources. The service enables clients to run
+   * Live Video Analytics (LVA) on the streaming inputs.
+   * </pre>
+   */
+  public static final class LiveVideoAnalyticsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LiveVideoAnalyticsBlockingV2Stub> {
+    private LiveVideoAnalyticsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LiveVideoAnalyticsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LiveVideoAnalyticsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListPublicOperators returns all the operators in public registry.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListPublicOperatorsResponse listPublicOperators(
+        com.google.cloud.visionai.v1.ListPublicOperatorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPublicOperatorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ResolveOperatorInfo returns the operator information based on the request.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ResolveOperatorInfoResponse resolveOperatorInfo(
+        com.google.cloud.visionai.v1.ResolveOperatorInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolveOperatorInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Operators in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListOperatorsResponse listOperators(
+        com.google.cloud.visionai.v1.ListOperatorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOperatorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Operator.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Operator getOperator(
+        com.google.cloud.visionai.v1.GetOperatorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOperatorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Operator in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOperator(
+        com.google.cloud.visionai.v1.CreateOperatorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOperatorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Operator.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOperator(
+        com.google.cloud.visionai.v1.UpdateOperatorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOperatorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Operator.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOperator(
+        com.google.cloud.visionai.v1.DeleteOperatorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOperatorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Analyses in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListAnalysesResponse listAnalyses(
+        com.google.cloud.visionai.v1.ListAnalysesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAnalysesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Analysis.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Analysis getAnalysis(
+        com.google.cloud.visionai.v1.GetAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Analysis in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAnalysis(
+        com.google.cloud.visionai.v1.CreateAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Analysis.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAnalysis(
+        com.google.cloud.visionai.v1.UpdateAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Analysis.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAnalysis(
+        com.google.cloud.visionai.v1.DeleteAnalysisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAnalysisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Processes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListProcessesResponse listProcesses(
+        com.google.cloud.visionai.v1.ListProcessesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProcessesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Process.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Process getProcess(
+        com.google.cloud.visionai.v1.GetProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Process in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createProcess(
+        com.google.cloud.visionai.v1.CreateProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Process.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateProcess(
+        com.google.cloud.visionai.v1.UpdateProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Process.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProcess(
+        com.google.cloud.visionai.v1.DeleteProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProcessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Run all of the processes to "completion". Max time for each process is
+     * the LRO time limit.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchRunProcess(
+        com.google.cloud.visionai.v1.BatchRunProcessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchRunProcessMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LiveVideoAnalytics.
    *
    * <pre>
    * Service describing handlers for resources. The service enables clients to run

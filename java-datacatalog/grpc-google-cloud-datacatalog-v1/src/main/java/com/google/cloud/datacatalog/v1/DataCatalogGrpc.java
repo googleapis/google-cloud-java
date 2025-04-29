@@ -1712,6 +1712,19 @@ public final class DataCatalogGrpc {
     return DataCatalogStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataCatalogBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataCatalogBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataCatalogBlockingV2Stub>() {
+          @java.lang.Override
+          public DataCatalogBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataCatalogBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataCatalogBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3335,6 +3348,718 @@ public final class DataCatalogGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataCatalog.
+   *
+   * <pre>
+   * Deprecated: Please use Dataplex Catalog instead.
+   * Data Catalog API service allows you to discover, understand, and manage
+   * your data.
+   * </pre>
+   */
+  @java.lang.Deprecated
+  public static final class DataCatalogBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataCatalogBlockingV2Stub> {
+    private DataCatalogBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataCatalogBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataCatalogBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Data Catalog for multiple resources like entries and tags that
+     * match a query.
+     * This is a [Custom Method]
+     * (https://cloud.google.com/apis/design/custom_methods) that doesn't return
+     * all information on a resource, only its ID and high level fields. To get
+     * more information, you can subsequently call specific get methods.
+     * Note: Data Catalog search queries don't guarantee full recall. Results
+     * that match your query might not be returned, even in subsequent
+     * result pages. Additionally, returned (and not returned) results can vary
+     * if you repeat search queries.
+     * For more information, see [Data Catalog search syntax]
+     * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.SearchCatalogResponse searchCatalog(
+        com.google.cloud.datacatalog.v1.SearchCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an entry group.
+     * An entry group contains logically related entries together with [Cloud
+     * Identity and Access Management](/data-catalog/docs/concepts/iam) policies.
+     * These policies specify users who can create, edit, and view entries
+     * within entry groups.
+     * Data Catalog automatically creates entry groups with names that start with
+     * the `&#64;` symbol for the following resources:
+     * * BigQuery entries (`&#64;bigquery`)
+     * * Pub/Sub topics (`&#64;pubsub`)
+     * * Dataproc Metastore services (`&#64;dataproc_metastore_{SERVICE_NAME_HASH}`)
+     * You can create your own entry groups for Cloud Storage fileset entries
+     * and custom entries together with the corresponding IAM policies.
+     * User-created entry groups can't contain the `&#64;` symbol, it is reserved
+     * for automatically created groups.
+     * Entry groups, like entries, can be searched.
+     * A maximum of 10,000 entry groups may be created per organization across all
+     * locations.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.EntryGroup createEntryGroup(
+        com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an entry group.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.EntryGroup getEntryGroup(
+        com.google.cloud.datacatalog.v1.GetEntryGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an entry group.
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry_group.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.EntryGroup updateEntryGroup(
+        com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an entry group.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteEntryGroup(
+        com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists entry groups.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.ListEntryGroupsResponse listEntryGroups(
+        com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an entry.
+     * You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
+     * or custom types. Data Catalog automatically creates entries with other
+     * types during metadata ingestion from integrated systems.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * An entry group can have a maximum of 100,000 entries.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Entry createEntry(
+        com.google.cloud.datacatalog.v1.CreateEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing entry.
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Entry updateEntry(
+        com.google.cloud.datacatalog.v1.UpdateEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing entry.
+     * You can delete only the entries created by the
+     * [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
+     * method.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteEntry(
+        com.google.cloud.datacatalog.v1.DeleteEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an entry.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Entry getEntry(
+        com.google.cloud.datacatalog.v1.GetEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an entry by its target resource name.
+     * The resource name comes from the source Google Cloud Platform service.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Entry lookupEntry(
+        com.google.cloud.datacatalog.v1.LookupEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.ListEntriesResponse listEntries(
+        com.google.cloud.datacatalog.v1.ListEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies entry overview, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateOverview`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.EntryOverview modifyEntryOverview(
+        com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyEntryOverviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies contacts, part of the business context of an
+     * [Entry][google.cloud.datacatalog.v1.Entry].
+     * To call this method, you must have the `datacatalog.entries.updateContacts`
+     * IAM permission on the corresponding project.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Contacts modifyEntryContacts(
+        com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyEntryContactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `parent` parameter.
+     * For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplate createTagTemplate(
+        com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a tag template.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplate getTagTemplate(
+        com.google.cloud.datacatalog.v1.GetTagTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTagTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a tag template.
+     * You can't update template fields with this method. These fields are
+     * separate resources with their own create, update, and delete methods.
+     * You must enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplate updateTagTemplate(
+        com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a tag template and all tags that use it.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteTagTemplate(
+        com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplateField createTagTemplateField(
+        com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagTemplateFieldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a field in a tag template.
+     * You can't update the field type with this method.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplateField updateTagTemplateField(
+        com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagTemplateFieldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Renames a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `name` parameter. For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateField(
+        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameTagTemplateFieldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Renames an enum value in a tag template.
+     * Within a single enum field, enum values must be unique.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateFieldEnumValue(
+        com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameTagTemplateFieldEnumValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a field in a tag template and all uses of this field from the tags
+     * based on this template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteTagTemplateField(
+        com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagTemplateFieldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a tag and assigns it to:
+     * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
+     *   `projects.locations.entryGroups.entries.tags.create`.
+     * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
+     *   name is `projects.locations.entryGroups.tags.create`.
+     * Note: The project identified by the `parent` parameter for the [tag]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the [tag template]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be in the same organization.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Tag createTag(
+        com.google.cloud.datacatalog.v1.CreateTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing tag.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.Tag updateTag(
+        com.google.cloud.datacatalog.v1.UpdateTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a tag.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteTag(
+        com.google.cloud.datacatalog.v1.DeleteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
+     * The [columns][google.cloud.datacatalog.v1.Tag.column] in the response are
+     * lowercased.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.ListTagsResponse listTags(
+        com.google.cloud.datacatalog.v1.ListTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `ReconcileTags` creates or updates a list of tags on the entry.
+     * If the
+     * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+     * parameter is set, the operation deletes tags not included in the input tag
+     * list.
+     * `ReconcileTags` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return [ReconcileTagsMetadata]
+     * [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and
+     * a [ReconcileTagsResponse]
+     * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.longrunning.Operation reconcileTags(
+        com.google.cloud.datacatalog.v1.ReconcileTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReconcileTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.StarEntryResponse starEntry(
+        com.google.cloud.datacatalog.v1.StarEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStarEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as NOT starred by
+     * the current user. Starring information is private to each user.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.UnstarEntryResponse unstarEntry(
+        com.google.cloud.datacatalog.v1.UnstarEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnstarEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets an access control policy for a resource. Replaces any existing
+     * policy.
+     * Supported resources are:
+     * - Tag templates
+     * - Entry groups
+     * Note: This method sets policies only within Data Catalog and can't be
+     * used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources synced with the Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
+     * Supported resources are:
+     * - Tag templates
+     * - Entry groups
+     * Note: This method doesn't get policies from Google Cloud Platform
+     * resources ingested into Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets your permissions on a resource.
+     * Returns an empty set of permissions if the resource doesn't exist.
+     * Supported resources are:
+     * - Tag templates
+     * - Entry groups
+     * Note: This method gets policies only within Data Catalog and can't be
+     * used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources ingested into Data Catalog.
+     * No Google IAM permissions are required to call this method.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports entries from a source, such as data previously dumped into a
+     * Cloud Storage bucket, into Data Catalog. Import of entries
+     * is a sync operation that reconciles the state of the third-party system
+     * with the Data Catalog.
+     * `ImportEntries` accepts source data snapshots of a third-party system.
+     * Snapshot should be delivered as a .wire or base65-encoded .txt file
+     * containing a sequence of Protocol Buffer messages of
+     * [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+     * `ImportEntries` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return
+     * [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata]
+     * and an
+     * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse]
+     * message.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.longrunning.Operation importEntries(
+        com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the configuration related to the migration to Dataplex for an
+     * organization or project.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.MigrationConfig setConfig(
+        com.google.cloud.datacatalog.v1.SetConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the configuration related to the migration from Data Catalog to
+     * Dataplex for a specific organization, including all the projects under it
+     * which have a separate configuration set.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.OrganizationConfig retrieveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the effective configuration related to the migration from Data
+     * Catalog to Dataplex for a specific organization or project. If there is no
+     * specific configuration set for the resource, the setting is checked
+     * hierarchicahlly through the ancestors of the resource, starting from the
+     * resource itself.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.datacatalog.v1.MigrationConfig retrieveEffectiveConfig(
+        com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveEffectiveConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataCatalog.
    *
    * <pre>
    * Deprecated: Please use Dataplex Catalog instead.

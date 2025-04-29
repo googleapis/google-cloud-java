@@ -36,6 +36,7 @@ public interface GenerateTcpProxyScriptRequestOrBuilder
    * @return The migrationJob.
    */
   java.lang.String getMigrationJob();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GenerateTcpProxyScriptRequestOrBuilder
    * @return The vmName.
    */
   java.lang.String getVmName();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GenerateTcpProxyScriptRequestOrBuilder
    * @return The vmMachineType.
    */
   java.lang.String getVmMachineType();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface GenerateTcpProxyScriptRequestOrBuilder
    * @return The vmZone.
    */
   java.lang.String getVmZone();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface GenerateTcpProxyScriptRequestOrBuilder
    * @return The vmSubnet.
    */
   java.lang.String getVmSubnet();
+
   /**
    *
    *

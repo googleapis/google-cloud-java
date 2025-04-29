@@ -37,6 +37,7 @@ public interface KerberosConfigOrBuilder
    * @return Whether the keytab field is set.
    */
   boolean hasKeytab();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface KerberosConfigOrBuilder
    * @return The keytab.
    */
   com.google.cloud.metastore.v1alpha.Secret getKeytab();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface KerberosConfigOrBuilder
    * @return The principal.
    */
   java.lang.String getPrincipal();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface KerberosConfigOrBuilder
    * @return The krb5ConfigGcsUri.
    */
   java.lang.String getKrb5ConfigGcsUri();
+
   /**
    *
    *

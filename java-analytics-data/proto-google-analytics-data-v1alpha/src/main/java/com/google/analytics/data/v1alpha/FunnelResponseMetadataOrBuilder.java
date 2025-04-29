@@ -41,6 +41,7 @@ public interface FunnelResponseMetadataOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> getSamplingMetadatasList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface FunnelResponseMetadataOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 1;</code>
    */
   com.google.analytics.data.v1alpha.SamplingMetadata getSamplingMetadatas(int index);
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface FunnelResponseMetadataOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.SamplingMetadata sampling_metadatas = 1;</code>
    */
   int getSamplingMetadatasCount();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface FunnelResponseMetadataOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder>
       getSamplingMetadatasOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.Connector)
     ConnectorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Connector.newBuilder() to construct.
   private Connector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -169,6 +170,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -179,6 +181,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>UNASSIGNED = 1;</code>
      */
     public static final int UNASSIGNED_VALUE = 1;
+
     /**
      *
      *
@@ -189,6 +192,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
+
     /**
      *
      *
@@ -199,6 +203,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 3;</code>
      */
     public static final int PAUSED_VALUE = 3;
+
     /**
      *
      *
@@ -209,6 +214,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+
     /**
      *
      *
@@ -219,6 +225,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTARTING = 5;</code>
      */
     public static final int RESTARTING_VALUE = 5;
+
     /**
      *
      *
@@ -337,6 +344,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     private RestartPolicyCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -368,6 +376,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TASK_RESTART_POLICY_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -385,6 +394,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskRestartPolicy() {
     return restartPolicyCase_ == 4;
   }
+
   /**
    *
    *
@@ -405,6 +415,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.managedkafka.v1.TaskRetryPolicy.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -428,6 +439,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -453,6 +465,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -505,6 +518,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   public int getConfigsCount() {
     return internalGetConfigs().getMap().size();
   }
+
   /**
    *
    *
@@ -523,12 +537,14 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetConfigs().getMap().containsKey(key);
   }
+
   /** Use {@link #getConfigsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConfigs() {
     return getConfigsMap();
   }
+
   /**
    *
    *
@@ -544,6 +560,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getConfigsMap() {
     return internalGetConfigs().getMap();
   }
+
   /**
    *
    *
@@ -566,6 +583,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -591,6 +609,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -608,6 +627,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -837,6 +857,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1124,6 +1145,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.managedkafka.v1.TaskRetryPolicy.Builder,
             com.google.cloud.managedkafka.v1.TaskRetryPolicyOrBuilder>
         taskRestartPolicyBuilder_;
+
     /**
      *
      *
@@ -1141,6 +1163,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskRestartPolicy() {
       return restartPolicyCase_ == 4;
     }
+
     /**
      *
      *
@@ -1168,6 +1191,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.managedkafka.v1.TaskRetryPolicy.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1192,6 +1216,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       restartPolicyCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1239,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       restartPolicyCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1249,6 +1275,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       restartPolicyCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1303,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1318,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.managedkafka.v1.TaskRetryPolicy.Builder getTaskRestartPolicyBuilder() {
       return getTaskRestartPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1313,6 +1342,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.managedkafka.v1.TaskRetryPolicy.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1349,6 +1379,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1373,6 +1404,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1397,6 +1429,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1453,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1473,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1524,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public int getConfigsCount() {
       return internalGetConfigs().getMap().size();
     }
+
     /**
      *
      *
@@ -1507,12 +1543,14 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetConfigs().getMap().containsKey(key);
     }
+
     /** Use {@link #getConfigsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConfigs() {
       return getConfigsMap();
     }
+
     /**
      *
      *
@@ -1528,6 +1566,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getConfigsMap() {
       return internalGetConfigs().getMap();
     }
+
     /**
      *
      *
@@ -1550,6 +1589,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1578,6 +1618,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConfigs().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1596,12 +1637,14 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConfigs().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConfigs() {
       bitField0_ |= 0x00000004;
       return internalGetMutableConfigs().getMutableMap();
     }
+
     /**
      *
      *
@@ -1624,6 +1667,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1642,6 +1686,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1659,6 +1704,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1679,6 +1725,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1747,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.managedkafka.v1.Connector.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1723,6 +1771,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

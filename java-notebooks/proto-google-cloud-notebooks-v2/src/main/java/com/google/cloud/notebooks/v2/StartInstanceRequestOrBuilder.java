@@ -37,6 +37,7 @@ public interface StartInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

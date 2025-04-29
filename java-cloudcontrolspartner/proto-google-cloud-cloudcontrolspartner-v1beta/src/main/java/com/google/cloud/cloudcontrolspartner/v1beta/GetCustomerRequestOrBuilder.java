@@ -39,6 +39,7 @@ public interface GetCustomerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

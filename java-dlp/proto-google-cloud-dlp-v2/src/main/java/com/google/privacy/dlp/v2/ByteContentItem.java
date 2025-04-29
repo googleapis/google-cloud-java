@@ -33,6 +33,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ByteContentItem)
     ByteContentItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ByteContentItem.newBuilder() to construct.
   private ByteContentItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -272,6 +273,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>BYTES_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BYTES_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -282,6 +284,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>IMAGE = 6;</code>
      */
     public static final int IMAGE_VALUE = 6;
+
     /**
      *
      *
@@ -292,6 +295,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>IMAGE_JPEG = 1;</code>
      */
     public static final int IMAGE_JPEG_VALUE = 1;
+
     /**
      *
      *
@@ -302,6 +306,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>IMAGE_BMP = 2;</code>
      */
     public static final int IMAGE_BMP_VALUE = 2;
+
     /**
      *
      *
@@ -312,6 +317,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>IMAGE_PNG = 3;</code>
      */
     public static final int IMAGE_PNG_VALUE = 3;
+
     /**
      *
      *
@@ -322,6 +328,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>IMAGE_SVG = 4;</code>
      */
     public static final int IMAGE_SVG_VALUE = 4;
+
     /**
      *
      *
@@ -332,6 +339,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>TEXT_UTF8 = 5;</code>
      */
     public static final int TEXT_UTF8_VALUE = 5;
+
     /**
      *
      *
@@ -342,6 +350,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>WORD_DOCUMENT = 7;</code>
      */
     public static final int WORD_DOCUMENT_VALUE = 7;
+
     /**
      *
      *
@@ -352,6 +361,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>PDF = 8;</code>
      */
     public static final int PDF_VALUE = 8;
+
     /**
      *
      *
@@ -362,6 +372,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>POWERPOINT_DOCUMENT = 9;</code>
      */
     public static final int POWERPOINT_DOCUMENT_VALUE = 9;
+
     /**
      *
      *
@@ -372,6 +383,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>EXCEL_DOCUMENT = 10;</code>
      */
     public static final int EXCEL_DOCUMENT_VALUE = 10;
+
     /**
      *
      *
@@ -382,6 +394,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>AVRO = 11;</code>
      */
     public static final int AVRO_VALUE = 11;
+
     /**
      *
      *
@@ -392,6 +405,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>CSV = 12;</code>
      */
     public static final int CSV_VALUE = 12;
+
     /**
      *
      *
@@ -402,6 +416,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>TSV = 13;</code>
      */
     public static final int TSV_VALUE = 13;
+
     /**
      *
      *
@@ -412,6 +427,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>AUDIO = 15;</code>
      */
     public static final int AUDIO_VALUE = 15;
+
     /**
      *
      *
@@ -422,6 +438,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>VIDEO = 16;</code>
      */
     public static final int VIDEO_VALUE = 16;
+
     /**
      *
      *
@@ -432,6 +449,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>EXECUTABLE = 17;</code>
      */
     public static final int EXECUTABLE_VALUE = 17;
+
     /**
      *
      *
@@ -558,6 +576,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -573,6 +592,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -595,6 +615,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
 
   public static final int DATA_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -781,6 +802,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -975,6 +997,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           ? com.google.privacy.dlp.v2.ByteContentItem.BytesType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1094,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1082,6 +1110,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
+
     /**
      *
      *
@@ -1103,6 +1132,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

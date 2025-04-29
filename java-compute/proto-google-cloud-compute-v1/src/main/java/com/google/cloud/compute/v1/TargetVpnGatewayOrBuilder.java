@@ -36,6 +36,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return A list containing the forwardingRules.
    */
   java.util.List<java.lang.String> getForwardingRulesList();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The count of forwardingRules.
    */
   int getForwardingRulesCount();
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The forwardingRules at the given index.
    */
   java.lang.String getForwardingRules(int index);
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -186,6 +194,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface TargetVpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -268,9 +281,11 @@ public interface TargetVpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -281,6 +296,7 @@ public interface TargetVpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -295,6 +311,7 @@ public interface TargetVpnGatewayOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -318,6 +335,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -330,6 +348,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -355,6 +374,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -367,6 +387,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -392,6 +413,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -404,6 +426,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -429,6 +452,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -441,6 +465,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -467,6 +492,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -480,6 +506,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -506,6 +533,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return A list containing the tunnels.
    */
   java.util.List<java.lang.String> getTunnelsList();
+
   /**
    *
    *
@@ -518,6 +546,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The count of tunnels.
    */
   int getTunnelsCount();
+
   /**
    *
    *
@@ -531,6 +560,7 @@ public interface TargetVpnGatewayOrBuilder
    * @return The tunnels at the given index.
    */
   java.lang.String getTunnels(int index);
+
   /**
    *
    *

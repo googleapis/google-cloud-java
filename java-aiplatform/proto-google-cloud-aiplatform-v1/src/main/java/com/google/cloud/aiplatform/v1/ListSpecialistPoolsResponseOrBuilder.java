@@ -34,6 +34,7 @@ public interface ListSpecialistPoolsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.SpecialistPool specialist_pools = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.SpecialistPool> getSpecialistPoolsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSpecialistPoolsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.SpecialistPool specialist_pools = 1;</code>
    */
   com.google.cloud.aiplatform.v1.SpecialistPool getSpecialistPools(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSpecialistPoolsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.SpecialistPool specialist_pools = 1;</code>
    */
   int getSpecialistPoolsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSpecialistPoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.SpecialistPoolOrBuilder>
       getSpecialistPoolsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSpecialistPoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

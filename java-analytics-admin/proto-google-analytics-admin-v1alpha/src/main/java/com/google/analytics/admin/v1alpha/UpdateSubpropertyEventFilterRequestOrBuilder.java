@@ -38,6 +38,7 @@ public interface UpdateSubpropertyEventFilterRequestOrBuilder
    * @return Whether the subpropertyEventFilter field is set.
    */
   boolean hasSubpropertyEventFilter();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateSubpropertyEventFilterRequestOrBuilder
    * @return The subpropertyEventFilter.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateSubpropertyEventFilterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateSubpropertyEventFilterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

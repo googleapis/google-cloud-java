@@ -33,6 +33,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ChangeParametersRequest)
     ChangeParametersRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChangeParametersRequest.newBuilder() to construct.
   private ChangeParametersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Parameter> parameters_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.channel.v1.Parameter> getParametersList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       getParametersOrBuilderList() {
     return parameters_;
   }
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   public int getParametersCount() {
     return parameters_.size();
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
   public com.google.cloud.channel.v1.Parameter getParameters(int index) {
     return parameters_.get(index);
   }
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object purchaseOrderId_ = "";
+
   /**
    *
    *
@@ -327,6 +338,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -539,6 +551,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -814,6 +827,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -838,6 +852,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +877,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -885,6 +901,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +921,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +986,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return parametersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -991,6 +1010,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return parametersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1034,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return parametersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1064,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1092,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1122,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1152,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1179,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1207,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1235,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1262,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1289,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1309,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     public com.google.cloud.channel.v1.Parameter.Builder getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1302,6 +1333,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1358,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(parameters_);
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1379,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       return getParametersFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.Parameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1366,6 +1400,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       return getParametersFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.Parameter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1405,6 +1440,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1438,6 +1474,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1471,6 +1508,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1503,6 +1541,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1531,6 +1570,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1606,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object purchaseOrderId_ = "";
+
     /**
      *
      *
@@ -1588,6 +1629,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1610,6 +1652,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1631,6 +1674,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1692,7 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

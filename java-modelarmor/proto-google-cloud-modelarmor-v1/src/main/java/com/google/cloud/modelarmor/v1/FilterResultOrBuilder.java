@@ -36,6 +36,7 @@ public interface FilterResultOrBuilder
    * @return Whether the raiFilterResult field is set.
    */
   boolean hasRaiFilterResult();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FilterResultOrBuilder
    * @return The raiFilterResult.
    */
   com.google.cloud.modelarmor.v1.RaiFilterResult getRaiFilterResult();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface FilterResultOrBuilder
    * @return Whether the sdpFilterResult field is set.
    */
   boolean hasSdpFilterResult();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FilterResultOrBuilder
    * @return The sdpFilterResult.
    */
   com.google.cloud.modelarmor.v1.SdpFilterResult getSdpFilterResult();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface FilterResultOrBuilder
    * @return Whether the piAndJailbreakFilterResult field is set.
    */
   boolean hasPiAndJailbreakFilterResult();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface FilterResultOrBuilder
    * @return The piAndJailbreakFilterResult.
    */
   com.google.cloud.modelarmor.v1.PiAndJailbreakFilterResult getPiAndJailbreakFilterResult();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface FilterResultOrBuilder
    * @return Whether the maliciousUriFilterResult field is set.
    */
   boolean hasMaliciousUriFilterResult();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface FilterResultOrBuilder
    * @return The maliciousUriFilterResult.
    */
   com.google.cloud.modelarmor.v1.MaliciousUriFilterResult getMaliciousUriFilterResult();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface FilterResultOrBuilder
    * @return Whether the csamFilterFilterResult field is set.
    */
   boolean hasCsamFilterFilterResult();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface FilterResultOrBuilder
    * @return The csamFilterFilterResult.
    */
   com.google.cloud.modelarmor.v1.CsamFilterResult getCsamFilterFilterResult();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface FilterResultOrBuilder
    * @return Whether the virusScanFilterResult field is set.
    */
   boolean hasVirusScanFilterResult();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface FilterResultOrBuilder
    * @return The virusScanFilterResult.
    */
   com.google.cloud.modelarmor.v1.VirusScanFilterResult getVirusScanFilterResult();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface SourceOrBuilder
    * @return Whether the vmware field is set.
    */
   boolean hasVmware();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SourceOrBuilder
    * @return The vmware.
    */
   com.google.cloud.vmmigration.v1.VmwareSourceDetails getVmware();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SourceOrBuilder
    * @return Whether the aws field is set.
    */
   boolean hasAws();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface SourceOrBuilder
    * @return The aws.
    */
   com.google.cloud.vmmigration.v1.AwsSourceDetails getAws();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface SourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface SourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface SourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface SourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public interface SourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -205,6 +214,7 @@ public interface SourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -215,9 +225,11 @@ public interface SourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -228,6 +240,7 @@ public interface SourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -242,6 +255,7 @@ public interface SourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -265,6 +279,7 @@ public interface SourceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig)
     AdvancedSiteSearchConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvancedSiteSearchConfig.newBuilder() to construct.
   private AdvancedSiteSearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int DISABLE_INITIAL_INDEX_FIELD_NUMBER = 3;
   private boolean disableInitialIndex_ = false;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
   public boolean hasDisableInitialIndex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
 
   public static final int DISABLE_AUTOMATIC_REFRESH_FIELD_NUMBER = 4;
   private boolean disableAutomaticRefresh_ = false;
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
   public boolean hasDisableAutomaticRefresh() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -307,6 +312,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -509,6 +515,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean disableInitialIndex_;
+
     /**
      *
      *
@@ -524,6 +531,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     public boolean hasDisableInitialIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -539,6 +547,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     public boolean getDisableInitialIndex() {
       return disableInitialIndex_;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +587,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     }
 
     private boolean disableAutomaticRefresh_;
+
     /**
      *
      *
@@ -592,6 +603,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     public boolean hasDisableAutomaticRefresh() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -607,6 +619,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
     public boolean getDisableAutomaticRefresh() {
       return disableAutomaticRefresh_;
     }
+
     /**
      *
      *
@@ -626,6 +639,7 @@ public final class AdvancedSiteSearchConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

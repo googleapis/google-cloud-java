@@ -33,6 +33,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.TaskAttemptResult)
     TaskAttemptResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TaskAttemptResult.newBuilder() to construct.
   private TaskAttemptResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int STATUS_FIELD_NUMBER = 1;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
 
   public static final int EXIT_CODE_FIELD_NUMBER = 2;
   private int exitCode_ = 0;
+
   /**
    *
    *
@@ -305,6 +310,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -518,6 +524,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -533,6 +540,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -552,6 +560,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -675,6 +689,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     }
 
     private int exitCode_;
+
     /**
      *
      *
@@ -718,6 +734,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     public int getExitCode() {
       return exitCode_;
     }
+
     /**
      *
      *
@@ -740,6 +757,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

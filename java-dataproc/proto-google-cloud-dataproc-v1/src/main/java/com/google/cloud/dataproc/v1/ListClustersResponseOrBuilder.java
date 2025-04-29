@@ -36,6 +36,7 @@ public interface ListClustersResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Cluster> getClustersList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListClustersResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.Cluster getClusters(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListClustersResponseOrBuilder
    * </code>
    */
   int getClustersCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOrBuilder>
       getClustersOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -312,7 +312,8 @@ public class FileStoreDataProfileName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               fileStoreDataProfileName.pathTemplate, ORGANIZATION_LOCATION_FILE_STORE_DATA_PROFILE),
-          "toBuilder is only supported when FileStoreDataProfileName has the pattern of organizations/{organization}/locations/{location}/fileStoreDataProfiles/{file_store_data_profile}");
+          "toBuilder is only supported when FileStoreDataProfileName has the pattern of"
+              + " organizations/{organization}/locations/{location}/fileStoreDataProfiles/{file_store_data_profile}");
       this.organization = fileStoreDataProfileName.organization;
       this.location = fileStoreDataProfileName.location;
       this.fileStoreDataProfile = fileStoreDataProfileName.fileStoreDataProfile;

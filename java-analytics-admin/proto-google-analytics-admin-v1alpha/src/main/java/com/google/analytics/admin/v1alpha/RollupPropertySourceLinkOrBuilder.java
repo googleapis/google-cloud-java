@@ -39,6 +39,7 @@ public interface RollupPropertySourceLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RollupPropertySourceLinkOrBuilder
    * @return The sourceProperty.
    */
   java.lang.String getSourceProperty();
+
   /**
    *
    *

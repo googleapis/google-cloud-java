@@ -33,6 +33,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.GuestAttributesValue)
     GuestAttributesValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GuestAttributesValue.newBuilder() to construct.
   private GuestAttributesValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tpu.v2alpha1.GuestAttributesEntry> items_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.tpu.v2alpha1.GuestAttributesEntry> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
   public com.google.cloud.tpu.v2alpha1.GuestAttributesEntry getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +710,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +752,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +805,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     public com.google.cloud.tpu.v2alpha1.GuestAttributesEntry.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -803,6 +823,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -820,6 +841,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -833,6 +855,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.tpu.v2alpha1.GuestAttributesEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -847,6 +870,7 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.tpu.v2alpha1.GuestAttributesEntry.getDefaultInstance());
     }
+
     /**
      *
      *

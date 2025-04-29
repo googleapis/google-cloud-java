@@ -34,6 +34,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListCustomFieldsResponse)
     ListCustomFieldsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCustomFieldsResponse.newBuilder() to construct.
   private ListCustomFieldsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.CustomField> customFields_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.ads.admanager.v1.CustomField> getCustomFieldsList() {
     return customFields_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       getCustomFieldsOrBuilderList() {
     return customFields_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
   public int getCustomFieldsCount() {
     return customFields_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
   public com.google.ads.admanager.v1.CustomField getCustomFields(int index) {
     return customFields_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
+
   /**
    *
    *
@@ -396,6 +405,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +697,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return customFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -703,6 +714,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return customFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return customFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +842,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +904,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
     public com.google.ads.admanager.v1.CustomField.Builder getCustomFieldsBuilder(int index) {
       return getCustomFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return customFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -948,6 +972,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(customFields_);
       }
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       return getCustomFieldsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.CustomField.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -974,6 +1000,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       return getCustomFieldsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.CustomField.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1006,6 +1033,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1029,6 +1057,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1081,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1104,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1123,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1149,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
     }
 
     private int totalSize_;
+
     /**
      *
      *
@@ -1142,6 +1175,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
     public int getTotalSize() {
       return totalSize_;
     }
+
     /**
      *
      *
@@ -1171,6 +1205,7 @@ public final class ListCustomFieldsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface UpdateDataTaxonomyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -51,6 +52,7 @@ public interface UpdateDataTaxonomyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateDataTaxonomyRequestOrBuilder
    * @return Whether the dataTaxonomy field is set.
    */
   boolean hasDataTaxonomy();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateDataTaxonomyRequestOrBuilder
    * @return The dataTaxonomy.
    */
   com.google.cloud.dataplex.v1.DataTaxonomy getDataTaxonomy();
+
   /**
    *
    *

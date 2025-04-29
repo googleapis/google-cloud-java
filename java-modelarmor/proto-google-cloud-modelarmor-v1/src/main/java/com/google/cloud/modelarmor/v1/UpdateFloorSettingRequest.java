@@ -33,6 +33,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.UpdateFloorSettingRequest)
     UpdateFloorSettingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateFloorSettingRequest.newBuilder() to construct.
   private UpdateFloorSettingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int FLOOR_SETTING_FIELD_NUMBER = 1;
   private com.google.cloud.modelarmor.v1.FloorSetting floorSetting_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
   public boolean hasFloorSetting() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
         ? com.google.cloud.modelarmor.v1.FloorSetting.getDefaultInstance()
         : floorSetting_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -358,6 +365,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +589,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
             com.google.cloud.modelarmor.v1.FloorSetting.Builder,
             com.google.cloud.modelarmor.v1.FloorSettingOrBuilder>
         floorSettingBuilder_;
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
     public boolean hasFloorSetting() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
         return floorSettingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -643,6 +654,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +677,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +729,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -731,6 +746,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return getFloorSettingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
             : floorSetting_;
       }
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -804,6 +822,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -829,6 +848,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -856,6 +876,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +959,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +979,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -978,6 +1003,7 @@ public final class UpdateFloorSettingRequest extends com.google.protobuf.Generat
             : updateMask_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.PostureDeployment)
     PostureDeploymentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PostureDeployment.newBuilder() to construct.
   private PostureDeployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -188,6 +189,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -198,6 +200,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -208,6 +211,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>DELETING = 2;</code>
      */
     public static final int DELETING_VALUE = 2;
+
     /**
      *
      *
@@ -218,6 +222,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -228,6 +233,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>ACTIVE = 4;</code>
      */
     public static final int ACTIVE_VALUE = 4;
+
     /**
      *
      *
@@ -238,6 +244,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>CREATE_FAILED = 5;</code>
      */
     public static final int CREATE_FAILED_VALUE = 5;
+
     /**
      *
      *
@@ -248,6 +255,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
      * <code>UPDATE_FAILED = 6;</code>
      */
     public static final int UPDATE_FAILED_VALUE = 6;
+
     /**
      *
      *
@@ -359,6 +367,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -383,6 +392,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +422,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetResource_ = "";
+
   /**
    *
    *
@@ -437,6 +448,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -465,6 +477,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -482,6 +495,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -508,6 +522,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postureId_ = "";
+
   /**
    *
    *
@@ -535,6 +550,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -567,6 +583,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postureRevisionId_ = "";
+
   /**
    *
    *
@@ -590,6 +607,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -616,6 +634,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -632,6 +651,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -648,6 +668,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -665,6 +686,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -681,6 +703,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -697,6 +720,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -716,6 +740,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -739,6 +764,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -767,6 +793,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -800,6 +827,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -861,6 +889,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -880,12 +909,14 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -902,6 +933,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -925,6 +957,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -951,6 +984,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   public static final int RECONCILING_FIELD_NUMBER = 10;
   private boolean reconciling_ = false;
+
   /**
    *
    *
@@ -972,6 +1006,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredPostureId_ = "";
+
   /**
    *
    *
@@ -997,6 +1032,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1027,6 +1063,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredPostureRevisionId_ = "";
+
   /**
    *
    *
@@ -1052,6 +1089,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1082,6 +1120,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureMessage_ = "";
+
   /**
    *
    *
@@ -1107,6 +1146,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1433,6 +1473,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1853,6 +1894,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1876,6 +1918,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1899,6 +1942,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1921,6 +1965,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1939,6 +1984,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2010,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object targetResource_ = "";
+
     /**
      *
      *
@@ -1988,6 +2035,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2012,6 +2060,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2035,6 +2084,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2104,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2131,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2097,6 +2149,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2117,6 +2170,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2138,6 +2192,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.securityposture.v1.PostureDeployment.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2161,6 +2216,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2238,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object postureId_ = "";
+
     /**
      *
      *
@@ -2208,6 +2265,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2234,6 +2292,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2259,6 +2318,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2340,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2308,6 +2369,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object postureRevisionId_ = "";
+
     /**
      *
      *
@@ -2330,6 +2392,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2352,6 +2415,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2373,6 +2437,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2390,6 +2455,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2419,6 +2485,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2435,6 +2502,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2457,6 +2525,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2481,6 +2550,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2502,6 +2572,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2531,6 +2602,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2552,6 +2624,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2641,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2588,6 +2662,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2622,6 +2697,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2638,6 +2714,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2660,6 +2737,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2684,6 +2762,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2705,6 +2784,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2734,6 +2814,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +2836,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2771,6 +2853,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2791,6 +2874,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2820,6 +2904,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2842,6 +2927,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2864,6 +2950,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2885,6 +2972,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +2990,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2926,6 +3015,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -2958,6 +3048,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2990,6 +3081,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3021,6 +3113,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3048,6 +3141,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3109,6 +3203,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -3128,12 +3223,14 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -3150,6 +3247,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -3173,6 +3271,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3202,6 +3301,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3221,12 +3321,14 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000200;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -3250,6 +3352,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3269,6 +3372,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean reconciling_;
+
     /**
      *
      *
@@ -3285,6 +3389,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     public boolean getReconciling() {
       return reconciling_;
     }
+
     /**
      *
      *
@@ -3305,6 +3410,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3325,6 +3431,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object desiredPostureId_ = "";
+
     /**
      *
      *
@@ -3349,6 +3456,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3373,6 +3481,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3396,6 +3505,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3415,6 +3525,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3441,6 +3552,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object desiredPostureRevisionId_ = "";
+
     /**
      *
      *
@@ -3465,6 +3577,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3489,6 +3602,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3512,6 +3626,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3531,6 +3646,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3557,6 +3673,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object failureMessage_ = "";
+
     /**
      *
      *
@@ -3581,6 +3698,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3605,6 +3723,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3628,6 +3747,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3647,6 +3767,7 @@ public final class PostureDeployment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

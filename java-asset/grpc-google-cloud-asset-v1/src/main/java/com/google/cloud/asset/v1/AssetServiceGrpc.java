@@ -1087,6 +1087,19 @@ public final class AssetServiceGrpc {
     return AssetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AssetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AssetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AssetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2048,6 +2061,421 @@ public final class AssetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AssetService.
+   *
+   * <pre>
+   * Asset service definition.
+   * </pre>
+   */
+  public static final class AssetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingV2Stub> {
+    private AssetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AssetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AssetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports assets with time and resource types to a given Cloud Storage
+     * location/BigQuery table. For Cloud Storage location destinations, the
+     * output format is newline-delimited JSON. Each line represents a
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportAssets(
+        com.google.cloud.asset.v1.ExportAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists assets with time and resource types and returns paged results in
+     * response.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.ListAssetsResponse listAssets(
+        com.google.cloud.asset.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch gets the update history of assets that overlap a time window.
+     * For IAM_POLICY content, this API outputs history when the asset and its
+     * attached IAM POLICY both exist. This can create gaps in the output history.
+     * Otherwise, this API outputs history with asset in both non-delete or
+     * deleted status.
+     * If a specified asset does not exist, this API returns an INVALID_ARGUMENT
+     * error.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse batchGetAssetsHistory(
+        com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetAssetsHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a feed in a parent project/folder/organization to listen to its
+     * asset updates.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.Feed createFeed(
+        com.google.cloud.asset.v1.CreateFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about an asset feed.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.Feed getFeed(
+        com.google.cloud.asset.v1.GetFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all asset feeds in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.ListFeedsResponse listFeeds(
+        com.google.cloud.asset.v1.ListFeedsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeedsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an asset feed configuration.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.Feed updateFeed(
+        com.google.cloud.asset.v1.UpdateFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an asset feed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFeed(
+        com.google.cloud.asset.v1.DeleteFeedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all Google Cloud resources within the specified scope, such as a
+     * project, folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllResources` permission on the desired scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SearchAllResourcesResponse searchAllResources(
+        com.google.cloud.asset.v1.SearchAllResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchAllResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all IAM policies within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllIamPolicies` permission on the desired scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SearchAllIamPoliciesResponse searchAllIamPolicies(
+        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchAllIamPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies to answer which identities have what accesses on
+     * which resources.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse analyzeIamPolicy(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies asynchronously to answer which identities have what
+     * accesses on which resources, and writes the analysis results to a Google
+     * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+     * output format is the JSON format that represents a
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation analyzeIamPolicyLongrunning(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeIamPolicyLongrunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze moving a resource to a specified destination without kicking off
+     * the actual move. The analysis is best effort depending on the user's
+     * permissions of viewing different hierarchical policies and configurations.
+     * The policies and configuration are subject to change before the actual
+     * resource migration takes place.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeMoveResponse analyzeMove(
+        com.google.cloud.asset.v1.AnalyzeMoveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeMoveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Issue a job that queries assets using a SQL statement compatible with
+     * [BigQuery SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
+     * If the query execution finishes within timeout and there's no pagination,
+     * the full query results will be returned in the `QueryAssetsResponse`.
+     * Otherwise, full query results can be obtained by issuing extra requests
+     * with the `job_reference` from the a previous `QueryAssets` call.
+     * Note, the query result has approximately 10 GB limitation enforced by
+     * [BigQuery](https://cloud.google.com/bigquery/docs/best-practices-performance-output).
+     * Queries return larger results will result in errors.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.QueryAssetsResponse queryAssets(
+        com.google.cloud.asset.v1.QueryAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a saved query in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SavedQuery createSavedQuery(
+        com.google.cloud.asset.v1.CreateSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a saved query.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SavedQuery getSavedQuery(
+        com.google.cloud.asset.v1.GetSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all saved queries in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.ListSavedQueriesResponse listSavedQueries(
+        com.google.cloud.asset.v1.ListSavedQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSavedQueriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a saved query.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SavedQuery updateSavedQuery(
+        com.google.cloud.asset.v1.UpdateSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a saved query.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSavedQuery(
+        com.google.cloud.asset.v1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets effective IAM policies for a batch of resources.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse
+        batchGetEffectiveIamPolicies(
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetEffectiveIamPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies under a scope.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse analyzeOrgPolicies(
+        com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeOrgPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed containers (projects, folders or
+     * organization) under a scope.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse
+        analyzeOrgPolicyGovernedContainers(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeOrgPolicyGovernedContainersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed assets (Google Cloud resources or
+     * policies) under a scope. This RPC supports custom constraints and the
+     * following canned constraints:
+     * * constraints/ainotebooks.accessMode
+     * * constraints/ainotebooks.disableFileDownloads
+     * * constraints/ainotebooks.disableRootAccess
+     * * constraints/ainotebooks.disableTerminal
+     * * constraints/ainotebooks.environmentOptions
+     * * constraints/ainotebooks.requireAutoUpgradeSchedule
+     * * constraints/ainotebooks.restrictVpcNetworks
+     * * constraints/compute.disableGuestAttributesAccess
+     * * constraints/compute.disableInstanceDataAccessApis
+     * * constraints/compute.disableNestedVirtualization
+     * * constraints/compute.disableSerialPortAccess
+     * * constraints/compute.disableSerialPortLogging
+     * * constraints/compute.disableVpcExternalIpv6
+     * * constraints/compute.requireOsLogin
+     * * constraints/compute.requireShieldedVm
+     * * constraints/compute.restrictLoadBalancerCreationForTypes
+     * * constraints/compute.restrictProtocolForwardingCreationForTypes
+     * * constraints/compute.restrictXpnProjectLienRemoval
+     * * constraints/compute.setNewProjectDefaultToZonalDNSOnly
+     * * constraints/compute.skipDefaultNetworkCreation
+     * * constraints/compute.trustedImageProjects
+     * * constraints/compute.vmCanIpForward
+     * * constraints/compute.vmExternalIpAccess
+     * * constraints/gcp.detailedAuditLoggingMode
+     * * constraints/gcp.resourceLocations
+     * * constraints/iam.allowedPolicyMemberDomains
+     * * constraints/iam.automaticIamGrantsForDefaultServiceAccounts
+     * * constraints/iam.disableServiceAccountCreation
+     * * constraints/iam.disableServiceAccountKeyCreation
+     * * constraints/iam.disableServiceAccountKeyUpload
+     * * constraints/iam.restrictCrossProjectServiceAccountLienRemoval
+     * * constraints/iam.serviceAccountKeyExpiryHours
+     * * constraints/resourcemanager.accessBoundaries
+     * * constraints/resourcemanager.allowedExportDestinations
+     * * constraints/sql.restrictAuthorizedNetworks
+     * * constraints/sql.restrictNoncompliantDiagnosticDataAccess
+     * * constraints/sql.restrictNoncompliantResourceCreation
+     * * constraints/sql.restrictPublicIp
+     * * constraints/storage.publicAccessPrevention
+     * * constraints/storage.restrictAuthTypes
+     * * constraints/storage.uniformBucketLevelAccess
+     * This RPC only returns either resources of types [supported by search
+     * APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+     * or IAM policies.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse
+        analyzeOrgPolicyGovernedAssets(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeOrgPolicyGovernedAssetsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.

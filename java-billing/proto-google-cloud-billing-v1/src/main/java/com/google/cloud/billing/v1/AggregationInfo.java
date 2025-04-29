@@ -33,6 +33,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.AggregationInfo)
     AggregationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AggregationInfo.newBuilder() to construct.
   private AggregationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,8 +88,10 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
 
     /** <code>AGGREGATION_LEVEL_UNSPECIFIED = 0;</code> */
     public static final int AGGREGATION_LEVEL_UNSPECIFIED_VALUE = 0;
+
     /** <code>ACCOUNT = 1;</code> */
     public static final int ACCOUNT_VALUE = 1;
+
     /** <code>PROJECT = 2;</code> */
     public static final int PROJECT_VALUE = 2;
 
@@ -200,8 +203,10 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
 
     /** <code>AGGREGATION_INTERVAL_UNSPECIFIED = 0;</code> */
     public static final int AGGREGATION_INTERVAL_UNSPECIFIED_VALUE = 0;
+
     /** <code>DAILY = 1;</code> */
     public static final int DAILY_VALUE = 1;
+
     /** <code>MONTHLY = 2;</code> */
     public static final int MONTHLY_VALUE = 2;
 
@@ -293,6 +298,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
 
   public static final int AGGREGATION_LEVEL_FIELD_NUMBER = 1;
   private int aggregationLevel_ = 0;
+
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
    *
@@ -302,6 +308,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
   public int getAggregationLevelValue() {
     return aggregationLevel_;
   }
+
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
    *
@@ -318,6 +325,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
 
   public static final int AGGREGATION_INTERVAL_FIELD_NUMBER = 2;
   private int aggregationInterval_ = 0;
+
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
    * </code>
@@ -328,6 +336,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
   public int getAggregationIntervalValue() {
     return aggregationInterval_;
   }
+
   /**
    * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
    * </code>
@@ -346,6 +355,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
 
   public static final int AGGREGATION_COUNT_FIELD_NUMBER = 3;
   private int aggregationCount_ = 0;
+
   /**
    *
    *
@@ -553,6 +563,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -760,6 +771,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int aggregationLevel_ = 0;
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
      *
@@ -769,6 +781,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     public int getAggregationLevelValue() {
       return aggregationLevel_;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
      *
@@ -781,6 +794,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
      *
@@ -794,6 +808,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.billing.v1.AggregationInfo.AggregationLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
      *
@@ -810,6 +825,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationLevel aggregation_level = 1;</code>
      *
@@ -823,6 +839,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     }
 
     private int aggregationInterval_ = 0;
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
      * </code>
@@ -833,6 +850,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     public int getAggregationIntervalValue() {
       return aggregationInterval_;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
      * </code>
@@ -846,6 +864,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
      * </code>
@@ -862,6 +881,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.billing.v1.AggregationInfo.AggregationInterval.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
      * </code>
@@ -879,6 +899,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.cloud.billing.v1.AggregationInfo.AggregationInterval aggregation_interval = 2;
      * </code>
@@ -893,6 +914,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     }
 
     private int aggregationCount_;
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
     public int getAggregationCount() {
       return aggregationCount_;
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

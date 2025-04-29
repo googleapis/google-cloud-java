@@ -34,6 +34,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ConnectGcpConfig)
     ConnectGcpConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectGcpConfig.newBuilder() to construct.
   private ConnectGcpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int ACCESS_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.managedkafka.v1.ConnectAccessConfig accessConfig_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasAccessConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.managedkafka.v1.ConnectAccessConfig.getDefaultInstance()
         : accessConfig_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList secretPaths_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getSecretPathsList() {
     return secretPaths_;
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
   public int getSecretPathsCount() {
     return secretPaths_.size();
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getSecretPaths(int index) {
     return secretPaths_.get(index);
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -612,6 +621,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.managedkafka.v1.ConnectAccessConfig.Builder,
             com.google.cloud.managedkafka.v1.ConnectAccessConfigOrBuilder>
         accessConfigBuilder_;
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasAccessConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
         return accessConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAccessConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -784,6 +801,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
             : accessConfig_;
       }
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       secretPaths_.makeImmutable();
       return secretPaths_;
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
     public int getSecretPathsCount() {
       return secretPaths_.size();
     }
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getSecretPaths(int index) {
       return secretPaths_.get(index);
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getSecretPathsBytes(int index) {
       return secretPaths_.getByteString(index);
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +979,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1004,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class ConnectGcpConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

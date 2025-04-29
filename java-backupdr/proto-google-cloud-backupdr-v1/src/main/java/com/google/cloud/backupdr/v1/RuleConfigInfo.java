@@ -33,6 +33,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.RuleConfigInfo)
     RuleConfigInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuleConfigInfo.newBuilder() to construct.
   private RuleConfigInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,6 +139,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>LAST_BACKUP_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int LAST_BACKUP_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>FIRST_BACKUP_PENDING = 1;</code>
      */
     public static final int FIRST_BACKUP_PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -159,6 +162,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED = 2;</code>
      */
     public static final int PERMISSION_DENIED_VALUE = 2;
+
     /**
      *
      *
@@ -169,6 +173,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
+
     /**
      *
      *
@@ -274,6 +279,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_BACKUP_STATE_FIELD_NUMBER = 3;
   private int lastBackupState_ = 0;
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
   public int getLastBackupStateValue() {
     return lastBackupState_;
   }
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_BACKUP_ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status lastBackupError_;
+
   /**
    *
    *
@@ -380,6 +390,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastBackupError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -396,6 +407,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getLastBackupError() {
     return lastBackupError_ == null ? com.google.rpc.Status.getDefaultInstance() : lastBackupError_;
   }
+
   /**
    *
    *
@@ -413,6 +425,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_SUCCESSFUL_BACKUP_CONSISTENCY_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp lastSuccessfulBackupConsistencyTime_;
+
   /**
    *
    *
@@ -431,6 +444,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastSuccessfulBackupConsistencyTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -451,6 +465,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastSuccessfulBackupConsistencyTime_;
   }
+
   /**
    *
    *
@@ -674,6 +689,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -924,6 +940,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object ruleId_ = "";
+
     /**
      *
      *
@@ -946,6 +963,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -968,6 +986,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1008,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1026,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1051,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int lastBackupState_ = 0;
+
     /**
      *
      *
@@ -1047,6 +1069,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     public int getLastBackupStateValue() {
       return lastBackupState_;
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1112,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.backupdr.v1.RuleConfigInfo.LastBackupState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1112,6 +1137,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1162,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         lastBackupErrorBuilder_;
+
     /**
      *
      *
@@ -1151,6 +1178,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastBackupError() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1172,6 +1200,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
         return lastBackupErrorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1224,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1245,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1274,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1295,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1311,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastBackupErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1297,6 +1331,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
             : lastBackupError_;
       }
     }
+
     /**
      *
      *
@@ -1328,6 +1363,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastSuccessfulBackupConsistencyTimeBuilder_;
+
     /**
      *
      *
@@ -1345,6 +1381,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastSuccessfulBackupConsistencyTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1368,6 +1405,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
         return lastSuccessfulBackupConsistencyTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1431,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1416,6 +1455,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1487,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1510,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1528,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastSuccessfulBackupConsistencyTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1508,6 +1551,7 @@ public final class RuleConfigInfo extends com.google.protobuf.GeneratedMessageV3
             : lastSuccessfulBackupConsistencyTime_;
       }
     }
+
     /**
      *
      *

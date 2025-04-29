@@ -36,6 +36,7 @@ public interface SegmentFilterOrBuilder
    * @return The fieldName.
    */
   java.lang.String getFieldName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SegmentFilterOrBuilder
    * @return Whether the stringFilter field is set.
    */
   boolean hasStringFilter();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SegmentFilterOrBuilder
    * @return The stringFilter.
    */
   com.google.analytics.data.v1alpha.StringFilter getStringFilter();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface SegmentFilterOrBuilder
    * @return Whether the inListFilter field is set.
    */
   boolean hasInListFilter();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface SegmentFilterOrBuilder
    * @return The inListFilter.
    */
   com.google.analytics.data.v1alpha.InListFilter getInListFilter();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface SegmentFilterOrBuilder
    * @return Whether the numericFilter field is set.
    */
   boolean hasNumericFilter();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface SegmentFilterOrBuilder
    * @return The numericFilter.
    */
   com.google.analytics.data.v1alpha.NumericFilter getNumericFilter();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface SegmentFilterOrBuilder
    * @return Whether the betweenFilter field is set.
    */
   boolean hasBetweenFilter();
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public interface SegmentFilterOrBuilder
    * @return The betweenFilter.
    */
   com.google.analytics.data.v1alpha.BetweenFilter getBetweenFilter();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface SegmentFilterOrBuilder
    * @return Whether the filterScoping field is set.
    */
   boolean hasFilterScoping();
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public interface SegmentFilterOrBuilder
    * @return The filterScoping.
    */
   com.google.analytics.data.v1alpha.SegmentFilterScoping getFilterScoping();
+
   /**
    *
    *

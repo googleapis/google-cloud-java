@@ -36,6 +36,7 @@ public interface GetRegionInstantSnapshotRequestOrBuilder
    * @return The instantSnapshot.
    */
   java.lang.String getInstantSnapshot();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetRegionInstantSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetRegionInstantSnapshotRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ScratchDisksOrBuilder
    * @return Whether the diskGb field is set.
    */
   boolean hasDiskGb();
+
   /**
    *
    *

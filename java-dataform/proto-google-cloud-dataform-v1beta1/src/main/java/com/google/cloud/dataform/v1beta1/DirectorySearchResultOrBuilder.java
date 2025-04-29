@@ -36,6 +36,7 @@ public interface DirectorySearchResultOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

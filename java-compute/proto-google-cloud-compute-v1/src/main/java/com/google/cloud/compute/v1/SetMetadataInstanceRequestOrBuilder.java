@@ -36,6 +36,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return Whether the metadataResource field is set.
    */
   boolean hasMetadataResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return The metadataResource.
    */
   com.google.cloud.compute.v1.Metadata getMetadataResource();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface SetMetadataInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

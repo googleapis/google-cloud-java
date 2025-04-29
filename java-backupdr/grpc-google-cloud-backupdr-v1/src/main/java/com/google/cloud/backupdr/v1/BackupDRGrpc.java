@@ -1314,6 +1314,19 @@ public final class BackupDRGrpc {
     return BackupDRStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BackupDRBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BackupDRBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BackupDRBlockingV2Stub>() {
+          @java.lang.Override
+          public BackupDRBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BackupDRBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BackupDRBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2246,6 +2259,393 @@ public final class BackupDRGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BackupDR.
+   *
+   * <pre>
+   * The BackupDR Service
+   * </pre>
+   */
+  public static final class BackupDRBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BackupDRBlockingV2Stub> {
+    private BackupDRBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BackupDRBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BackupDRBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ManagementServers in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListManagementServersResponse listManagementServers(
+        com.google.cloud.backupdr.v1.ListManagementServersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListManagementServersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ManagementServer.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ManagementServer getManagementServer(
+        com.google.cloud.backupdr.v1.GetManagementServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetManagementServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ManagementServer in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createManagementServer(
+        com.google.cloud.backupdr.v1.CreateManagementServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateManagementServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ManagementServer.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteManagementServer(
+        com.google.cloud.backupdr.v1.DeleteManagementServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteManagementServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupVault in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupVault(
+        com.google.cloud.backupdr.v1.CreateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupVaults in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBackupVaultsResponse listBackupVaults(
+        com.google.cloud.backupdr.v1.ListBackupVaultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupVaultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * FetchUsableBackupVaults lists usable BackupVaults in a given project and
+     * location. Usable BackupVault are the ones that user has
+     * backupdr.backupVaults.get permission.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse fetchUsableBackupVaults(
+        com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchUsableBackupVaultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a BackupVault.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.BackupVault getBackupVault(
+        com.google.cloud.backupdr.v1.GetBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a BackupVault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupVault(
+        com.google.cloud.backupdr.v1.UpdateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BackupVault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupVault(
+        com.google.cloud.backupdr.v1.DeleteBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataSources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListDataSourcesResponse listDataSources(
+        com.google.cloud.backupdr.v1.ListDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a DataSource.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.DataSource getDataSource(
+        com.google.cloud.backupdr.v1.GetDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a DataSource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDataSource(
+        com.google.cloud.backupdr.v1.UpdateDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Backups in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBackupsResponse listBackups(
+        com.google.cloud.backupdr.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a Backup.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.Backup getBackup(
+        com.google.cloud.backupdr.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.backupdr.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.backupdr.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore from a Backup
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreBackup(
+        com.google.cloud.backupdr.v1.RestoreBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a BackupPlan
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPlan(
+        com.google.cloud.backupdr.v1.CreateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single BackupPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.BackupPlan getBackupPlan(
+        com.google.cloud.backupdr.v1.GetBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlans in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBackupPlansResponse listBackupPlans(
+        com.google.cloud.backupdr.v1.ListBackupPlansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPlan(
+        com.google.cloud.backupdr.v1.DeleteBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a BackupPlanAssociation
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPlanAssociationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single BackupPlanAssociation.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.BackupPlanAssociation getBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanAssociationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanAssociations in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse
+        listBackupPlanAssociations(
+            com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlanAssociationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single BackupPlanAssociation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPlanAssociation(
+        com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPlanAssociationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers a new Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation triggerBackup(
+        com.google.cloud.backupdr.v1.TriggerBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTriggerBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes the service related config for a project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation initializeService(
+        com.google.cloud.backupdr.v1.InitializeServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitializeServiceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BackupDR.
    *
    * <pre>
    * The BackupDR Service

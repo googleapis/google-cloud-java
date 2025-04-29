@@ -34,6 +34,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.UpdateReservationRequest)
     UpdateReservationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateReservationRequest.newBuilder() to construct.
   private UpdateReservationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int RESERVATION_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.reservation.v1.Reservation reservation_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   public boolean hasReservation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.bigquery.reservation.v1.Reservation.getDefaultInstance()
         : reservation_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -339,6 +346,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +576,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
             com.google.cloud.bigquery.reservation.v1.Reservation.Builder,
             com.google.cloud.bigquery.reservation.v1.ReservationOrBuilder>
         reservationBuilder_;
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
     public boolean hasReservation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         return reservationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +685,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +705,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +720,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return getReservationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -723,6 +739,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
             : reservation_;
       }
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -769,6 +787,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -789,6 +808,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -811,6 +831,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +851,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +879,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +899,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +914,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -908,6 +933,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *

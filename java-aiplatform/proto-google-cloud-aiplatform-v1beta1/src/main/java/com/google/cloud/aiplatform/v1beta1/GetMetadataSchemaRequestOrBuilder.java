@@ -40,6 +40,7 @@ public interface GetMetadataSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

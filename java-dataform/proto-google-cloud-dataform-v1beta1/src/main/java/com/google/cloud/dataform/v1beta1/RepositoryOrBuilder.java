@@ -36,6 +36,7 @@ public interface RepositoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RepositoryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RepositoryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface RepositoryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface RepositoryOrBuilder
    * @return Whether the gitRemoteSettings field is set.
    */
   boolean hasGitRemoteSettings();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface RepositoryOrBuilder
    * @return The gitRemoteSettings.
    */
   com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings getGitRemoteSettings();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface RepositoryOrBuilder
    * @return The npmrcEnvironmentVariablesSecretVersion.
    */
   java.lang.String getNpmrcEnvironmentVariablesSecretVersion();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface RepositoryOrBuilder
    * @return Whether the workspaceCompilationOverrides field is set.
    */
   boolean hasWorkspaceCompilationOverrides();
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public interface RepositoryOrBuilder
    */
   com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides
       getWorkspaceCompilationOverrides();
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -261,9 +271,11 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public interface RepositoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -288,6 +301,7 @@ public interface RepositoryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface RepositoryOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -360,6 +375,7 @@ public interface RepositoryOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -394,6 +410,7 @@ public interface RepositoryOrBuilder
    * @return Whether the dataEncryptionState field is set.
    */
   boolean hasDataEncryptionState();
+
   /**
    *
    *
@@ -409,6 +426,7 @@ public interface RepositoryOrBuilder
    * @return The dataEncryptionState.
    */
   com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState();
+
   /**
    *
    *
@@ -438,6 +456,7 @@ public interface RepositoryOrBuilder
    * @return Whether the internalMetadata field is set.
    */
   boolean hasInternalMetadata();
+
   /**
    *
    *
@@ -453,6 +472,7 @@ public interface RepositoryOrBuilder
    * @return The internalMetadata.
    */
   java.lang.String getInternalMetadata();
+
   /**
    *
    *

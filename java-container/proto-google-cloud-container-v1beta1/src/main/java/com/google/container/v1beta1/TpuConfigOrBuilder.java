@@ -62,6 +62,7 @@ public interface TpuConfigOrBuilder
    * @return The ipv4CidrBlock.
    */
   java.lang.String getIpv4CidrBlock();
+
   /**
    *
    *

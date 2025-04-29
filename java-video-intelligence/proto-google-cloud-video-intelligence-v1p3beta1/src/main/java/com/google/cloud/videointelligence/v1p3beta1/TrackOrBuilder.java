@@ -36,6 +36,7 @@ public interface TrackOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TrackOrBuilder
    * @return The segment.
    */
   com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface TrackOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.TimestampedObject>
       getTimestampedObjectsList();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface TrackOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.TimestampedObject getTimestampedObjects(int index);
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface TrackOrBuilder
    * </code>
    */
   int getTimestampedObjectsCount();
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface TrackOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TimestampedObjectOrBuilder>
       getTimestampedObjectsOrBuilderList();
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface TrackOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
       getAttributesList();
+
   /**
    *
    *
@@ -148,6 +155,7 @@ public interface TrackOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index);
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface TrackOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface TrackOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder>
       getAttributesOrBuilderList();
+
   /**
    *
    *

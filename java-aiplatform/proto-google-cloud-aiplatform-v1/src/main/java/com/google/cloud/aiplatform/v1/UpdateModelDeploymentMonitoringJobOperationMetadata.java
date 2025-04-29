@@ -36,6 +36,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationMetadata)
     UpdateModelDeploymentMonitoringJobOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateModelDeploymentMonitoringJobOperationMetadata.newBuilder() to construct.
   private UpdateModelDeploymentMonitoringJobOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -293,6 +297,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -515,6 +520,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -529,6 +535,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -549,6 +556,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +631,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class UpdateModelDeploymentMonitoringJobOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *

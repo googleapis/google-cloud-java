@@ -34,6 +34,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreateDataTaxonomyRequest)
     CreateDataTaxonomyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDataTaxonomyRequest.newBuilder() to construct.
   private CreateDataTaxonomyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -89,6 +91,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -113,6 +116,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataTaxonomyId_ = "";
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
 
   public static final int DATA_TAXONOMY_FIELD_NUMBER = 3;
   private com.google.cloud.dataplex.v1.DataTaxonomy dataTaxonomy_;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
   public boolean hasDataTaxonomy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
         ? com.google.cloud.dataplex.v1.DataTaxonomy.getDefaultInstance()
         : dataTaxonomy_;
   }
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -437,6 +446,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -679,6 +689,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -697,6 +708,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -715,6 +727,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -732,6 +745,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -745,6 +759,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -765,6 +780,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object dataTaxonomyId_ = "";
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
             com.google.cloud.dataplex.v1.DataTaxonomy.Builder,
             com.google.cloud.dataplex.v1.DataTaxonomyOrBuilder>
         dataTaxonomyBuilder_;
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     public boolean hasDataTaxonomy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
         return dataTaxonomyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return getDataTaxonomyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1071,6 +1099,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
             : dataTaxonomy_;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1129,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1116,6 +1146,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1136,6 +1167,7 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface FailoverReservationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

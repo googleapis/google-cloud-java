@@ -33,6 +33,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription)
     DestinationPubSubSubscriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DestinationPubSubSubscription.newBuilder() to construct.
   private DestinationPubSubSubscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int PUBSUB_SUBSCRIPTION_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.analyticshub.v1.PubSubSubscription pubsubSubscription_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
   public boolean hasPubsubSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
         ? com.google.cloud.bigquery.analyticshub.v1.PubSubSubscription.getDefaultInstance()
         : pubsubSubscription_;
   }
+
   /**
    *
    *
@@ -285,6 +289,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -502,6 +507,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
             com.google.cloud.bigquery.analyticshub.v1.PubSubSubscription.Builder,
             com.google.cloud.bigquery.analyticshub.v1.PubSubSubscriptionOrBuilder>
         pubsubSubscriptionBuilder_;
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
     public boolean hasPubsubSubscription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -540,6 +547,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
         return pubsubSubscriptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
       onChanged();
       return getPubsubSubscriptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class DestinationPubSubSubscription extends com.google.protobuf.Gen
             : pubsubSubscription_;
       }
     }
+
     /**
      *
      *

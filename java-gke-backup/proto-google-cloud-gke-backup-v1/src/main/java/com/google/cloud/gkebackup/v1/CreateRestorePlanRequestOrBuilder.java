@@ -39,6 +39,7 @@ public interface CreateRestorePlanRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateRestorePlanRequestOrBuilder
    * @return Whether the restorePlan field is set.
    */
   boolean hasRestorePlan();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateRestorePlanRequestOrBuilder
    * @return The restorePlan.
    */
   com.google.cloud.gkebackup.v1.RestorePlan getRestorePlan();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateRestorePlanRequestOrBuilder
    * @return The restorePlanId.
    */
   java.lang.String getRestorePlanId();
+
   /**
    *
    *

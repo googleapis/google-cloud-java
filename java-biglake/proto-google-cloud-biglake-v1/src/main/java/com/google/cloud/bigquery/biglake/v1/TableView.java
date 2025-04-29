@@ -74,6 +74,7 @@ public enum TableView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TABLE_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int TABLE_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum TableView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
+
   /**
    *
    *

@@ -82,6 +82,7 @@ public enum ConnectionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONNECTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int CONNECTION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum ConnectionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONNECTION_TYPE_DISCOVERY = 1;</code>
    */
   public static final int CONNECTION_TYPE_DISCOVERY_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum ConnectionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONNECTION_TYPE_PRIMARY = 2;</code>
    */
   public static final int CONNECTION_TYPE_PRIMARY_VALUE = 2;
+
   /**
    *
    *

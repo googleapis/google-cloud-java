@@ -35,6 +35,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.WeekDayOfMonth)
     WeekDayOfMonthOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WeekDayOfMonth.newBuilder() to construct.
   private WeekDayOfMonth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,6 +151,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
      * <code>WEEK_OF_MONTH_UNSPECIFIED = 0;</code>
      */
     public static final int WEEK_OF_MONTH_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -160,6 +162,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
      * <code>FIRST = 1;</code>
      */
     public static final int FIRST_VALUE = 1;
+
     /**
      *
      *
@@ -170,6 +173,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
      * <code>SECOND = 2;</code>
      */
     public static final int SECOND_VALUE = 2;
+
     /**
      *
      *
@@ -180,6 +184,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
      * <code>THIRD = 3;</code>
      */
     public static final int THIRD_VALUE = 3;
+
     /**
      *
      *
@@ -190,6 +195,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
      * <code>FOURTH = 4;</code>
      */
     public static final int FOURTH_VALUE = 4;
+
     /**
      *
      *
@@ -292,6 +298,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WEEK_OF_MONTH_FIELD_NUMBER = 1;
   private int weekOfMonth_ = 0;
+
   /**
    *
    *
@@ -309,6 +316,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
   public int getWeekOfMonthValue() {
     return weekOfMonth_;
   }
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
   private int dayOfWeek_ = 0;
+
   /**
    *
    *
@@ -348,6 +357,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
   public int getDayOfWeekValue() {
     return dayOfWeek_;
   }
+
   /**
    *
    *
@@ -537,6 +547,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -733,6 +744,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int weekOfMonth_ = 0;
+
     /**
      *
      *
@@ -750,6 +762,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
     public int getWeekOfMonthValue() {
       return weekOfMonth_;
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.backupdr.v1.WeekDayOfMonth.WeekOfMonth.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dayOfWeek_ = 0;
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class WeekDayOfMonth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

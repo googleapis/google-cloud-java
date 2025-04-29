@@ -36,6 +36,7 @@ public interface EncryptionConfigurationOrBuilder
    * @return Whether the kmsKeyName field is set.
    */
   boolean hasKmsKeyName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EncryptionConfigurationOrBuilder
    * @return The kmsKeyName.
    */
   com.google.protobuf.StringValue getKmsKeyName();
+
   /**
    *
    *

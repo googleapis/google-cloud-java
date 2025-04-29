@@ -40,6 +40,7 @@ public interface DocsDestinationOrBuilder
    * @return The document.
    */
   java.lang.String getDocument();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface DocsDestinationOrBuilder
    * @return The exportUri.
    */
   java.lang.String getExportUri();
+
   /**
    *
    *

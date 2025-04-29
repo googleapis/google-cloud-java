@@ -36,6 +36,7 @@ public interface GcsSourceOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface GcsSourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface GcsSourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

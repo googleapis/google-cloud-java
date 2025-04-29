@@ -38,6 +38,7 @@ public interface RagFileChunkingConfigOrBuilder
    * @return Whether the fixedLengthChunking field is set.
    */
   boolean hasFixedLengthChunking();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface RagFileChunkingConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.FixedLengthChunking
       getFixedLengthChunking();
+
   /**
    *
    *

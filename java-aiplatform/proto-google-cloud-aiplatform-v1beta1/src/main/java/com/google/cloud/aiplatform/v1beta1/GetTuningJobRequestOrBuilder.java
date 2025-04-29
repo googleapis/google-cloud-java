@@ -39,6 +39,7 @@ public interface GetTuningJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

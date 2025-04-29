@@ -36,6 +36,7 @@ public interface ReachabilityDetailsOrBuilder
    * @return The enum numeric value on the wire for result.
    */
   int getResultValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ReachabilityDetailsOrBuilder
    * @return Whether the verifyTime field is set.
    */
   boolean hasVerifyTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ReachabilityDetailsOrBuilder
    * @return The verifyTime.
    */
   com.google.protobuf.Timestamp getVerifyTime();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ReachabilityDetailsOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ReachabilityDetailsOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface ReachabilityDetailsOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1beta1.Trace traces = 5;</code>
    */
   java.util.List<com.google.cloud.networkmanagement.v1beta1.Trace> getTracesList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface ReachabilityDetailsOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1beta1.Trace traces = 5;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.Trace getTraces(int index);
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface ReachabilityDetailsOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1beta1.Trace traces = 5;</code>
    */
   int getTracesCount();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface ReachabilityDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkmanagement.v1beta1.TraceOrBuilder>
       getTracesOrBuilderList();
+
   /**
    *
    *

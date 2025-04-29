@@ -36,6 +36,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.SchedulingDuration)
     SchedulingDurationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SchedulingDuration.newBuilder() to construct.
   private SchedulingDuration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SECONDS_FIELD_NUMBER = 1;
   private long seconds_ = 0L;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
   public boolean hasSeconds() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
 
   public static final int NANOS_FIELD_NUMBER = 2;
   private int nanos_ = 0;
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
   public boolean hasNanos() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -311,6 +316,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -513,6 +519,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private long seconds_;
+
     /**
      *
      *
@@ -528,6 +535,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     public boolean hasSeconds() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -543,6 +551,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     public long getSeconds() {
       return seconds_;
     }
+
     /**
      *
      *
@@ -562,6 +571,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     }
 
     private int nanos_;
+
     /**
      *
      *
@@ -597,6 +608,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     public boolean hasNanos() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -613,6 +625,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
     public int getNanos() {
       return nanos_;
     }
+
     /**
      *
      *
@@ -633,6 +646,7 @@ public final class SchedulingDuration extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

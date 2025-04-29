@@ -38,6 +38,7 @@ public interface RubricBasedInstructionFollowingInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RubricBasedInstructionFollowingInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingSpec getMetricSpec();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface RubricBasedInstructionFollowingInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface RubricBasedInstructionFollowingInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInstance getInstance();
+
   /**
    *
    *

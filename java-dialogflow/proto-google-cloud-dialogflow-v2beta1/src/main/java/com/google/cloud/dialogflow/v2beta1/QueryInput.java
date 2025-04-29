@@ -40,6 +40,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.QueryInput)
     QueryInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryInput.newBuilder() to construct.
   private QueryInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,6 +88,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     private InputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -124,6 +126,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAudioConfig() {
     return inputCase_ == 1;
   }
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return inputCase_ == 2;
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEvent() {
     return inputCase_ == 3;
   }
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DTMF_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -292,6 +304,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDtmf() {
     return inputCase_ == 4;
   }
+
   /**
    *
    *
@@ -310,6 +323,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -546,6 +560,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -821,6 +836,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder>
         audioConfigBuilder_;
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAudioConfig() {
       return inputCase_ == 1;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -883,6 +901,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +995,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder getAudioConfigBuilder() {
       return getAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -993,6 +1016,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.TextInput.Builder,
             com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>
         textBuilder_;
+
     /**
      *
      *
@@ -1046,6 +1071,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return inputCase_ == 2;
     }
+
     /**
      *
      *
@@ -1071,6 +1097,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1199,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1212,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.TextInput.Builder getTextBuilder() {
       return getTextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1201,6 +1233,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1272,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
             com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>
         eventBuilder_;
+
     /**
      *
      *
@@ -1254,6 +1288,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEvent() {
       return inputCase_ == 3;
     }
+
     /**
      *
      *
@@ -1279,6 +1314,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1301,6 +1337,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1358,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1417,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1430,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.EventInput.Builder getEventBuilder() {
       return getEventFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1410,6 +1451,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1490,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
             com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>
         dtmfBuilder_;
+
     /**
      *
      *
@@ -1463,6 +1506,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDtmf() {
       return inputCase_ == 4;
     }
+
     /**
      *
      *
@@ -1488,6 +1532,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1510,6 +1555,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1576,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1610,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       inputCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1588,6 +1636,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1649,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder getDtmfBuilder() {
       return getDtmfFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1620,6 +1670,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
       }
     }
+
     /**
      *
      *

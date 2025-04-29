@@ -39,6 +39,7 @@ public interface VolumeOrBuilder
    * @return The volume.
    */
   java.lang.String getVolume();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VolumeOrBuilder
    * @return Whether the persistentDisk field is set.
    */
   boolean hasPersistentDisk();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface VolumeOrBuilder
    * @return The persistentDisk.
    */
   com.google.cloud.lifesciences.v2beta.PersistentDisk getPersistentDisk();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface VolumeOrBuilder
    * @return Whether the existingDisk field is set.
    */
   boolean hasExistingDisk();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface VolumeOrBuilder
    * @return The existingDisk.
    */
   com.google.cloud.lifesciences.v2beta.ExistingDisk getExistingDisk();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface VolumeOrBuilder
    * @return Whether the nfsMount field is set.
    */
   boolean hasNfsMount();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface VolumeOrBuilder
    * @return The nfsMount.
    */
   com.google.cloud.lifesciences.v2beta.NFSMount getNfsMount();
+
   /**
    *
    *

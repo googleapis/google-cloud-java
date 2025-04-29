@@ -38,6 +38,7 @@ public interface MoveDiskProjectRequestOrBuilder
    * @return Whether the diskMoveRequestResource field is set.
    */
   boolean hasDiskMoveRequestResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface MoveDiskProjectRequestOrBuilder
    * @return The diskMoveRequestResource.
    */
   com.google.cloud.compute.v1.DiskMoveRequest getDiskMoveRequestResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface MoveDiskProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface MoveDiskProjectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface MoveDiskProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

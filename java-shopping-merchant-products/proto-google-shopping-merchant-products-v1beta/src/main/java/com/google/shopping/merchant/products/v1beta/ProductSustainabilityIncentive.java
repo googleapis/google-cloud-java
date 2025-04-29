@@ -34,6 +34,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive)
     ProductSustainabilityIncentiveOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductSustainabilityIncentive.newBuilder() to construct.
   private ProductSustainabilityIncentive(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -125,6 +126,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
      * <code>EV_TAX_CREDIT = 1;</code>
      */
     public static final int EV_TAX_CREDIT_VALUE = 1;
+
     /**
      *
      *
@@ -255,6 +258,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     private ValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -288,6 +292,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -303,6 +308,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
   public boolean hasAmount() {
     return valueCase_ == 2;
   }
+
   /**
    *
    *
@@ -321,6 +327,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     }
     return com.google.shopping.type.Price.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -339,6 +346,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
   }
 
   public static final int PERCENTAGE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
   public boolean hasPercentage() {
     return valueCase_ == 3;
   }
+
   /**
    *
    *
@@ -375,6 +384,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -392,6 +402,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -409,6 +420,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -649,6 +661,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -907,6 +920,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         amountBuilder_;
+
     /**
      *
      *
@@ -922,6 +936,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     public boolean hasAmount() {
       return valueCase_ == 2;
     }
+
     /**
      *
      *
@@ -947,6 +962,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
         return com.google.shopping.type.Price.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -969,6 +985,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       valueCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1005,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       valueCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1036,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       valueCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1062,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1075,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     public com.google.shopping.type.Price.Builder getAmountBuilder() {
       return getAmountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1075,6 +1096,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
         return com.google.shopping.type.Price.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1142,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     public boolean hasPercentage() {
       return valueCase_ == 3;
     }
+
     /**
      *
      *
@@ -1137,6 +1160,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -1156,6 +1180,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1202,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1194,6 +1220,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     public boolean hasType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1211,6 +1238,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1231,6 +1259,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1284,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1279,6 +1309,7 @@ public final class ProductSustainabilityIncentive extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

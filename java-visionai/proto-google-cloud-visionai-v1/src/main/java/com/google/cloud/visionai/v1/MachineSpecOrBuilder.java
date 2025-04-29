@@ -46,6 +46,7 @@ public interface MachineSpecOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface MachineSpecOrBuilder
    * @return The enum numeric value on the wire for acceleratorType.
    */
   int getAcceleratorTypeValue();
+
   /**
    *
    *

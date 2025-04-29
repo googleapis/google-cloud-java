@@ -35,6 +35,7 @@ public final class CreateKeyHandleMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CreateKeyHandleMetadata)
     CreateKeyHandleMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateKeyHandleMetadata.newBuilder() to construct.
   private CreateKeyHandleMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class CreateKeyHandleMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

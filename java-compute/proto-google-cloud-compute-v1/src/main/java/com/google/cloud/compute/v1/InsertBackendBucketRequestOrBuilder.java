@@ -38,6 +38,7 @@ public interface InsertBackendBucketRequestOrBuilder
    * @return Whether the backendBucketResource field is set.
    */
   boolean hasBackendBucketResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertBackendBucketRequestOrBuilder
    * @return The backendBucketResource.
    */
   com.google.cloud.compute.v1.BackendBucket getBackendBucketResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertBackendBucketRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertBackendBucketRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertBackendBucketRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

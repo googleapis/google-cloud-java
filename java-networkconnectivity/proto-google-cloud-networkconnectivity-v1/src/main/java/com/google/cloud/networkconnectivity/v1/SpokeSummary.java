@@ -37,6 +37,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.SpokeSummary)
     SpokeSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpokeSummary.newBuilder() to construct.
   private SpokeSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for spokeType.
      */
     int getSpokeTypeValue();
+
     /**
      *
      *
@@ -117,6 +119,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getCount();
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCount)
       SpokeTypeCountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SpokeTypeCount.newBuilder() to construct.
     private SpokeTypeCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -165,6 +169,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SPOKE_TYPE_FIELD_NUMBER = 1;
     private int spokeType_ = 0;
+
     /**
      *
      *
@@ -182,6 +187,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
     public int getSpokeTypeValue() {
       return spokeType_;
     }
+
     /**
      *
      *
@@ -206,6 +212,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private long count_ = 0L;
+
     /**
      *
      *
@@ -396,6 +403,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -603,6 +611,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int spokeType_ = 0;
+
       /**
        *
        *
@@ -620,6 +629,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       public int getSpokeTypeValue() {
         return spokeType_;
       }
+
       /**
        *
        *
@@ -640,6 +650,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -661,6 +672,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.networkconnectivity.v1.SpokeType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -684,6 +696,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -705,6 +718,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long count_;
+
       /**
        *
        *
@@ -721,6 +735,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       public long getCount() {
         return count_;
       }
+
       /**
        *
        *
@@ -741,6 +756,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -846,6 +862,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getCount();
   }
+
   /**
    *
    *
@@ -890,6 +908,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCount)
       SpokeStateCountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SpokeStateCount.newBuilder() to construct.
     private SpokeStateCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -922,6 +941,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private long count_ = 0L;
+
     /**
      *
      *
@@ -1149,6 +1171,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1356,6 +1379,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -1373,6 +1397,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -1393,6 +1418,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1412,6 +1438,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.State.forNumber(state_);
         return result == null ? com.google.cloud.networkconnectivity.v1.State.UNRECOGNIZED : result;
       }
+
       /**
        *
        *
@@ -1435,6 +1462,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1456,6 +1484,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long count_;
+
       /**
        *
        *
@@ -1472,6 +1501,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       public long getCount() {
         return count_;
       }
+
       /**
        *
        *
@@ -1492,6 +1522,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1597,6 +1628,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for stateReasonCode.
      */
     int getStateReasonCodeValue();
+
     /**
      *
      *
@@ -1626,6 +1658,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
      */
     long getCount();
   }
+
   /**
    *
    *
@@ -1640,6 +1673,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCount)
       SpokeStateReasonCountOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SpokeStateReasonCount.newBuilder() to construct.
     private SpokeStateReasonCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1673,6 +1707,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATE_REASON_CODE_FIELD_NUMBER = 1;
     private int stateReasonCode_ = 0;
+
     /**
      *
      *
@@ -1690,6 +1725,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
     public int getStateReasonCodeValue() {
       return stateReasonCode_;
     }
+
     /**
      *
      *
@@ -1715,6 +1751,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COUNT_FIELD_NUMBER = 2;
     private long count_ = 0L;
+
     /**
      *
      *
@@ -1913,6 +1950,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2122,6 +2160,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int stateReasonCode_ = 0;
+
       /**
        *
        *
@@ -2139,6 +2178,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       public int getStateReasonCodeValue() {
         return stateReasonCode_;
       }
+
       /**
        *
        *
@@ -2159,6 +2199,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2181,6 +2222,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2205,6 +2247,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2226,6 +2269,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long count_;
+
       /**
        *
        *
@@ -2242,6 +2286,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       public long getCount() {
         return count_;
       }
+
       /**
        *
        *
@@ -2262,6 +2307,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2354,6 +2400,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCount>
       spokeTypeCounts_;
+
   /**
    *
    *
@@ -2371,6 +2418,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeTypeCountsList() {
     return spokeTypeCounts_;
   }
+
   /**
    *
    *
@@ -2389,6 +2437,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeTypeCountsOrBuilderList() {
     return spokeTypeCounts_;
   }
+
   /**
    *
    *
@@ -2405,6 +2454,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
   public int getSpokeTypeCountsCount() {
     return spokeTypeCounts_.size();
   }
+
   /**
    *
    *
@@ -2422,6 +2472,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return spokeTypeCounts_.get(index);
   }
+
   /**
    *
    *
@@ -2445,6 +2496,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCount>
       spokeStateCounts_;
+
   /**
    *
    *
@@ -2462,6 +2514,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeStateCountsList() {
     return spokeStateCounts_;
   }
+
   /**
    *
    *
@@ -2480,6 +2533,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeStateCountsOrBuilderList() {
     return spokeStateCounts_;
   }
+
   /**
    *
    *
@@ -2496,6 +2550,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
   public int getSpokeStateCountsCount() {
     return spokeStateCounts_.size();
   }
+
   /**
    *
    *
@@ -2513,6 +2568,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return spokeStateCounts_.get(index);
   }
+
   /**
    *
    *
@@ -2536,6 +2592,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCount>
       spokeStateReasonCounts_;
+
   /**
    *
    *
@@ -2553,6 +2610,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeStateReasonCountsList() {
     return spokeStateReasonCounts_;
   }
+
   /**
    *
    *
@@ -2572,6 +2630,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeStateReasonCountsOrBuilderList() {
     return spokeStateReasonCounts_;
   }
+
   /**
    *
    *
@@ -2588,6 +2647,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
   public int getSpokeStateReasonCountsCount() {
     return spokeStateReasonCounts_.size();
   }
+
   /**
    *
    *
@@ -2605,6 +2665,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       getSpokeStateReasonCounts(int index) {
     return spokeStateReasonCounts_.get(index);
   }
+
   /**
    *
    *
@@ -2809,6 +2870,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3199,6 +3261,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeTypeCountsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3218,6 +3281,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeTypeCountsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3238,6 +3302,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeTypeCountsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3264,6 +3329,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3289,6 +3355,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3315,6 +3382,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3341,6 +3409,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3365,6 +3434,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3390,6 +3460,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3415,6 +3486,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3437,6 +3509,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3459,6 +3532,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3475,6 +3549,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         getSpokeTypeCountsBuilder(int index) {
       return getSpokeTypeCountsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3495,6 +3570,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeTypeCountsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3516,6 +3592,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spokeTypeCounts_);
       }
     }
+
     /**
      *
      *
@@ -3535,6 +3612,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCount
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3555,6 +3633,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCount
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3632,6 +3711,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateCountsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3651,6 +3731,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateCountsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3671,6 +3752,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateCountsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3697,6 +3779,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3722,6 +3805,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3748,6 +3832,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3774,6 +3859,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3798,6 +3884,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3823,6 +3910,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3848,6 +3936,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3870,6 +3959,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3892,6 +3982,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3908,6 +3999,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         getSpokeStateCountsBuilder(int index) {
       return getSpokeStateCountsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3928,6 +4020,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateCountsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3949,6 +4042,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spokeStateCounts_);
       }
     }
+
     /**
      *
      *
@@ -3968,6 +4062,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCount
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3988,6 +4083,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCount
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4067,6 +4163,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateReasonCountsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4086,6 +4183,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateReasonCountsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4106,6 +4204,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateReasonCountsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4133,6 +4232,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4158,6 +4258,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4184,6 +4285,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4211,6 +4313,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4235,6 +4338,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4260,6 +4364,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4286,6 +4391,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4308,6 +4414,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4330,6 +4437,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4346,6 +4454,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         getSpokeStateReasonCountsBuilder(int index) {
       return getSpokeStateReasonCountsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4366,6 +4475,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return spokeStateReasonCountsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4388,6 +4498,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spokeStateReasonCounts_);
       }
     }
+
     /**
      *
      *
@@ -4407,6 +4518,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCount
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4427,6 +4539,7 @@ public final class SpokeSummary extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCount
                   .getDefaultInstance());
     }
+
     /**
      *
      *

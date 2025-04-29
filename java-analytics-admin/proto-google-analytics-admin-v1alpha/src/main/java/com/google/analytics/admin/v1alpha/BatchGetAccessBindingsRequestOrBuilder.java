@@ -42,6 +42,7 @@ public interface BatchGetAccessBindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface BatchGetAccessBindingsRequestOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface BatchGetAccessBindingsRequestOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface BatchGetAccessBindingsRequestOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
+
   /**
    *
    *

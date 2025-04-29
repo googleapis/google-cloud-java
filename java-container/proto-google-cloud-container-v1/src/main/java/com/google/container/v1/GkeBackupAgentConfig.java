@@ -33,6 +33,7 @@ public final class GkeBackupAgentConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.container.v1.GkeBackupAgentConfig)
     GkeBackupAgentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GkeBackupAgentConfig.newBuilder() to construct.
   private GkeBackupAgentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class GkeBackupAgentConfig extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class GkeBackupAgentConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class GkeBackupAgentConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -434,6 +438,7 @@ public final class GkeBackupAgentConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -453,6 +458,7 @@ public final class GkeBackupAgentConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

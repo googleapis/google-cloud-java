@@ -34,6 +34,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.FeatureOnlineStoreSpec)
     FeatureOnlineStoreSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureOnlineStoreSpec.newBuilder() to construct.
   private FeatureOnlineStoreSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      * <code>STORAGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      * <code>BIGTABLE = 1;</code>
      */
     public static final int BIGTABLE_VALUE = 1;
+
     /**
      *
      *
@@ -225,6 +228,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
 
   public static final int STORAGE_TYPE_FIELD_NUMBER = 1;
   private int storageType_ = 0;
+
   /**
    *
    *
@@ -242,6 +246,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
   public int getStorageTypeValue() {
     return storageType_;
   }
+
   /**
    *
    *
@@ -430,6 +435,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -613,6 +619,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int storageType_ = 0;
+
     /**
      *
      *
@@ -630,6 +637,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
     public int getStorageTypeValue() {
       return storageType_;
     }
+
     /**
      *
      *
@@ -650,6 +658,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -672,6 +681,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
           ? com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.StorageType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -696,6 +706,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

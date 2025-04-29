@@ -55,6 +55,7 @@ public interface AudioStreamOrBuilder
    * @return The codec.
    */
   java.lang.String getCodec();
+
   /**
    *
    *
@@ -122,6 +123,7 @@ public interface AudioStreamOrBuilder
    * @return A list containing the channelLayout.
    */
   java.util.List<java.lang.String> getChannelLayoutList();
+
   /**
    *
    *
@@ -145,6 +147,7 @@ public interface AudioStreamOrBuilder
    * @return The count of channelLayout.
    */
   int getChannelLayoutCount();
+
   /**
    *
    *
@@ -169,6 +172,7 @@ public interface AudioStreamOrBuilder
    * @return The channelLayout at the given index.
    */
   java.lang.String getChannelLayout(int index);
+
   /**
    *
    *
@@ -204,6 +208,7 @@ public interface AudioStreamOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.AudioStream.AudioMapping mapping = 5;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.AudioStream.AudioMapping> getMappingList();
+
   /**
    *
    *
@@ -214,6 +219,7 @@ public interface AudioStreamOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.AudioStream.AudioMapping mapping = 5;</code>
    */
   com.google.cloud.video.livestream.v1.AudioStream.AudioMapping getMapping(int index);
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public interface AudioStreamOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.AudioStream.AudioMapping mapping = 5;</code>
    */
   int getMappingCount();
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public interface AudioStreamOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.AudioStream.AudioMappingOrBuilder>
       getMappingOrBuilderList();
+
   /**
    *
    *

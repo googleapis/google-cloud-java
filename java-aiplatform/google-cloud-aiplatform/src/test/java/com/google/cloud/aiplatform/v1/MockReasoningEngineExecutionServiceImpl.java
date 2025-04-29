@@ -75,7 +75,8 @@ public class MockReasoningEngineExecutionServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryReasoningEngine, expected %s or %s",
+                  "Unrecognized response type %s for method QueryReasoningEngine, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryReasoningEngineResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockReasoningEngineExecutionServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method StreamQueryReasoningEngine, expected %s or %s",
+                  "Unrecognized response type %s for method StreamQueryReasoningEngine, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   HttpBody.class.getName(),
                   Exception.class.getName())));

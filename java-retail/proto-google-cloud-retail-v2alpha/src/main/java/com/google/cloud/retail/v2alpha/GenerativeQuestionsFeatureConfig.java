@@ -33,6 +33,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.GenerativeQuestionsFeatureConfig)
     GenerativeQuestionsFeatureConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerativeQuestionsFeatureConfig.newBuilder() to construct.
   private GenerativeQuestionsFeatureConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalog_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
 
   public static final int FEATURE_ENABLED_FIELD_NUMBER = 2;
   private boolean featureEnabled_ = false;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
 
   public static final int MINIMUM_PRODUCTS_FIELD_NUMBER = 3;
   private int minimumProducts_ = 0;
+
   /**
    *
    *
@@ -334,6 +339,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +554,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object catalog_ = "";
+
     /**
      *
      *
@@ -571,6 +578,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     }
 
     private boolean featureEnabled_;
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     public boolean getFeatureEnabled() {
       return featureEnabled_;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     }
 
     private int minimumProducts_;
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
     public int getMinimumProducts() {
       return minimumProducts_;
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class GenerativeQuestionsFeatureConfig extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface TargetHttpsProxiesSetQuicOverrideRequestOrBuilder
    * @return Whether the quicOverride field is set.
    */
   boolean hasQuicOverride();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TargetHttpsProxiesSetQuicOverrideRequestOrBuilder
    * @return The quicOverride.
    */
   java.lang.String getQuicOverride();
+
   /**
    *
    *

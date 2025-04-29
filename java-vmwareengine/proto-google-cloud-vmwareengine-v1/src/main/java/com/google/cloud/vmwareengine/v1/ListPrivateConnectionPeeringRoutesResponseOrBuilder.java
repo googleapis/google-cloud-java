@@ -34,6 +34,7 @@ public interface ListPrivateConnectionPeeringRoutesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PeeringRoute peering_routes = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.PeeringRoute> getPeeringRoutesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListPrivateConnectionPeeringRoutesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PeeringRoute peering_routes = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.PeeringRoute getPeeringRoutes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListPrivateConnectionPeeringRoutesResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PeeringRoute peering_routes = 1;</code>
    */
   int getPeeringRoutesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListPrivateConnectionPeeringRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.PeeringRouteOrBuilder>
       getPeeringRoutesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListPrivateConnectionPeeringRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

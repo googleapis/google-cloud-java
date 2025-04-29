@@ -41,6 +41,7 @@ public interface UpdateSubnetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateSubnetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateSubnetRequestOrBuilder
    * @return Whether the subnet field is set.
    */
   boolean hasSubnet();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateSubnetRequestOrBuilder
    * @return The subnet.
    */
   com.google.cloud.edgenetwork.v1.Subnet getSubnet();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateSubnetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

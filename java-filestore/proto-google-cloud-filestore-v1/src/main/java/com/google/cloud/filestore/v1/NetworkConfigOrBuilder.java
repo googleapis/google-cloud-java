@@ -38,6 +38,7 @@ public interface NetworkConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface NetworkConfigOrBuilder
    * @return A list containing the modes.
    */
   java.util.List<com.google.cloud.filestore.v1.NetworkConfig.AddressMode> getModesList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface NetworkConfigOrBuilder
    * @return The count of modes.
    */
   int getModesCount();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface NetworkConfigOrBuilder
    * @return The modes at the given index.
    */
   com.google.cloud.filestore.v1.NetworkConfig.AddressMode getModes(int index);
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface NetworkConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for modes.
    */
   java.util.List<java.lang.Integer> getModesValueList();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface NetworkConfigOrBuilder
    * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface NetworkConfigOrBuilder
    * @return A list containing the ipAddresses.
    */
   java.util.List<java.lang.String> getIpAddressesList();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface NetworkConfigOrBuilder
    * @return The count of ipAddresses.
    */
   int getIpAddressesCount();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface NetworkConfigOrBuilder
    * @return The ipAddresses at the given index.
    */
   java.lang.String getIpAddresses(int index);
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for connectMode.
    */
   int getConnectModeValue();
+
   /**
    *
    *

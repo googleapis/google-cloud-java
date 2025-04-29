@@ -33,6 +33,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.DiagnoseNetworkResponse)
     DiagnoseNetworkResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiagnoseNetworkResponse.newBuilder() to construct.
   private DiagnoseNetworkResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.edgenetwork.v1.SubnetStatus subnet_status = 1;</code>
      */
     java.util.List<com.google.cloud.edgenetwork.v1.SubnetStatus> getSubnetStatusList();
+
     /**
      *
      *
@@ -86,6 +88,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.edgenetwork.v1.SubnetStatus subnet_status = 1;</code>
      */
     com.google.cloud.edgenetwork.v1.SubnetStatus getSubnetStatus(int index);
+
     /**
      *
      *
@@ -96,6 +99,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.edgenetwork.v1.SubnetStatus subnet_status = 1;</code>
      */
     int getSubnetStatusCount();
+
     /**
      *
      *
@@ -107,6 +111,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
      */
     java.util.List<? extends com.google.cloud.edgenetwork.v1.SubnetStatusOrBuilder>
         getSubnetStatusOrBuilderList();
+
     /**
      *
      *
@@ -132,6 +137,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
      * @return The enum numeric value on the wire for macsecStatusInternalLinks.
      */
     int getMacsecStatusInternalLinksValue();
+
     /**
      *
      *
@@ -148,6 +154,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.MacsecStatus
         getMacsecStatusInternalLinks();
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus)
       NetworkStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NetworkStatus.newBuilder() to construct.
     private NetworkStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -248,6 +256,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
        * <code>MACSEC_STATUS_UNSPECIFIED = 0;</code>
        */
       public static final int MACSEC_STATUS_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -258,6 +267,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
        * <code>SECURE = 1;</code>
        */
       public static final int SECURE_VALUE = 1;
+
       /**
        *
        *
@@ -358,6 +368,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.edgenetwork.v1.SubnetStatus> subnetStatus_;
+
     /**
      *
      *
@@ -371,6 +382,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     public java.util.List<com.google.cloud.edgenetwork.v1.SubnetStatus> getSubnetStatusList() {
       return subnetStatus_;
     }
+
     /**
      *
      *
@@ -385,6 +397,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         getSubnetStatusOrBuilderList() {
       return subnetStatus_;
     }
+
     /**
      *
      *
@@ -398,6 +411,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     public int getSubnetStatusCount() {
       return subnetStatus_.size();
     }
+
     /**
      *
      *
@@ -411,6 +425,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     public com.google.cloud.edgenetwork.v1.SubnetStatus getSubnetStatus(int index) {
       return subnetStatus_.get(index);
     }
+
     /**
      *
      *
@@ -428,6 +443,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
 
     public static final int MACSEC_STATUS_INTERNAL_LINKS_FIELD_NUMBER = 2;
     private int macsecStatusInternalLinks_ = 0;
+
     /**
      *
      *
@@ -445,6 +461,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     public int getMacsecStatusInternalLinksValue() {
       return macsecStatusInternalLinks_;
     }
+
     /**
      *
      *
@@ -650,6 +667,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -939,6 +957,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           return subnetStatusBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -955,6 +974,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           return subnetStatusBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -971,6 +991,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           return subnetStatusBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -994,6 +1015,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1014,6 +1036,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1036,6 +1059,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1059,6 +1083,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1079,6 +1104,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1099,6 +1125,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1119,6 +1146,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1138,6 +1166,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1157,6 +1186,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1170,6 +1200,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           int index) {
         return getSubnetStatusFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1187,6 +1218,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           return subnetStatusBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1204,6 +1236,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(subnetStatus_);
         }
       }
+
       /**
        *
        *
@@ -1217,6 +1250,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         return getSubnetStatusFieldBuilder()
             .addBuilder(com.google.cloud.edgenetwork.v1.SubnetStatus.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1231,6 +1265,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         return getSubnetStatusFieldBuilder()
             .addBuilder(index, com.google.cloud.edgenetwork.v1.SubnetStatus.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1266,6 +1301,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       }
 
       private int macsecStatusInternalLinks_ = 0;
+
       /**
        *
        *
@@ -1283,6 +1319,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       public int getMacsecStatusInternalLinksValue() {
         return macsecStatusInternalLinks_;
       }
+
       /**
        *
        *
@@ -1303,6 +1340,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1327,6 +1365,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1352,6 +1391,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1443,6 +1483,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int UPDATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1458,6 +1499,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1473,6 +1515,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1489,6 +1532,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
 
   public static final int RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus result_;
+
   /**
    *
    *
@@ -1504,6 +1548,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1521,6 +1566,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         ? com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.getDefaultInstance()
         : result_;
   }
+
   /**
    *
    *
@@ -1717,6 +1763,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1939,6 +1986,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1953,6 +2001,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1973,6 +2022,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1995,6 +2045,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2014,6 +2065,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2093,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2113,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2074,6 +2128,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2092,6 +2147,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2124,6 +2180,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
             com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatus.Builder,
             com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse.NetworkStatusOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -2138,6 +2195,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
     public boolean hasResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2159,6 +2217,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2182,6 +2241,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2203,6 +2263,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2233,6 +2294,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2252,6 +2314,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2267,6 +2330,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2287,6 +2351,7 @@ public final class DiagnoseNetworkResponse extends com.google.protobuf.Generated
             : result_;
       }
     }
+
     /**
      *
      *

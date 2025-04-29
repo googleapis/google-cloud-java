@@ -36,6 +36,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.RuntimeShieldedInstanceConfig)
     RuntimeShieldedInstanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeShieldedInstanceConfig.newBuilder() to construct.
   private RuntimeShieldedInstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
 
   public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 1;
   private boolean enableSecureBoot_ = false;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
 
   public static final int ENABLE_VTPM_FIELD_NUMBER = 2;
   private boolean enableVtpm_ = false;
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
 
   public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 3;
   private boolean enableIntegrityMonitoring_ = false;
+
   /**
    *
    *
@@ -305,6 +309,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +521,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     private int bitField0_;
 
     private boolean enableSecureBoot_;
+
     /**
      *
      *
@@ -535,6 +541,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public boolean getEnableSecureBoot() {
       return enableSecureBoot_;
     }
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     }
 
     private boolean enableVtpm_;
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public boolean getEnableVtpm() {
       return enableVtpm_;
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     }
 
     private boolean enableIntegrityMonitoring_;
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     public boolean getEnableIntegrityMonitoring() {
       return enableIntegrityMonitoring_;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

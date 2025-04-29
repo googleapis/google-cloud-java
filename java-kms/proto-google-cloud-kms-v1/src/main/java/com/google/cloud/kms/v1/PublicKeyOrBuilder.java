@@ -40,6 +40,7 @@ public interface PublicKeyOrBuilder
    * @return The pem.
    */
   java.lang.String getPem();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface PublicKeyOrBuilder
    * @return The enum numeric value on the wire for algorithm.
    */
   int getAlgorithmValue();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface PublicKeyOrBuilder
    * @return Whether the pemCrc32c field is set.
    */
   boolean hasPemCrc32C();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface PublicKeyOrBuilder
    * @return The pemCrc32c.
    */
   com.google.protobuf.Int64Value getPemCrc32C();
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public interface PublicKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public interface PublicKeyOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
+
   /**
    *
    *
@@ -235,6 +241,7 @@ public interface PublicKeyOrBuilder
    * @return The enum numeric value on the wire for publicKeyFormat.
    */
   int getPublicKeyFormatValue();
+
   /**
    *
    *
@@ -265,6 +272,7 @@ public interface PublicKeyOrBuilder
    * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
+
   /**
    *
    *
@@ -279,6 +287,7 @@ public interface PublicKeyOrBuilder
    * @return The publicKey.
    */
   com.google.cloud.kms.v1.ChecksummedData getPublicKey();
+
   /**
    *
    *

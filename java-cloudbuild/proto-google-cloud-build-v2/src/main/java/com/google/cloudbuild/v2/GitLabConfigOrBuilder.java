@@ -37,6 +37,7 @@ public interface GitLabConfigOrBuilder
    * @return The hostUri.
    */
   java.lang.String getHostUri();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface GitLabConfigOrBuilder
    * @return The webhookSecretSecretVersion.
    */
   java.lang.String getWebhookSecretSecretVersion();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface GitLabConfigOrBuilder
    * @return Whether the readAuthorizerCredential field is set.
    */
   boolean hasReadAuthorizerCredential();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface GitLabConfigOrBuilder
    * @return The readAuthorizerCredential.
    */
   com.google.cloudbuild.v2.UserCredential getReadAuthorizerCredential();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface GitLabConfigOrBuilder
    * @return Whether the authorizerCredential field is set.
    */
   boolean hasAuthorizerCredential();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface GitLabConfigOrBuilder
    * @return The authorizerCredential.
    */
   com.google.cloudbuild.v2.UserCredential getAuthorizerCredential();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface GitLabConfigOrBuilder
    * @return Whether the serviceDirectoryConfig field is set.
    */
   boolean hasServiceDirectoryConfig();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface GitLabConfigOrBuilder
    * @return The serviceDirectoryConfig.
    */
   com.google.cloudbuild.v2.ServiceDirectoryConfig getServiceDirectoryConfig();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface GitLabConfigOrBuilder
    * @return The sslCa.
    */
   java.lang.String getSslCa();
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public interface GitLabConfigOrBuilder
    * @return The serverVersion.
    */
   java.lang.String getServerVersion();
+
   /**
    *
    *

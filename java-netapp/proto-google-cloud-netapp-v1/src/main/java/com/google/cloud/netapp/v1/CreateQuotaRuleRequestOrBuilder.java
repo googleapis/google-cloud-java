@@ -38,6 +38,7 @@ public interface CreateQuotaRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateQuotaRuleRequestOrBuilder
    * @return Whether the quotaRule field is set.
    */
   boolean hasQuotaRule();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateQuotaRuleRequestOrBuilder
    * @return The quotaRule.
    */
   com.google.cloud.netapp.v1.QuotaRule getQuotaRule();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface CreateQuotaRuleRequestOrBuilder
    * @return The quotaRuleId.
    */
   java.lang.String getQuotaRuleId();
+
   /**
    *
    *

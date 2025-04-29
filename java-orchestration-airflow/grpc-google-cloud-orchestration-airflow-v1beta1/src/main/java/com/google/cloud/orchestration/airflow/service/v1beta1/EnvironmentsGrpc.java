@@ -1361,6 +1361,19 @@ public final class EnvironmentsGrpc {
     return EnvironmentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EnvironmentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub>() {
+          @java.lang.Override
+          public EnvironmentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EnvironmentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EnvironmentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2334,6 +2347,413 @@ public final class EnvironmentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Environments.
+   *
+   * <pre>
+   * Managed Apache Airflow Environments.
+   * </pre>
+   */
+  public static final class EnvironmentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EnvironmentsBlockingV2Stub> {
+    private EnvironmentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EnvironmentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EnvironmentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get an existing environment.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.Environment getEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List environments.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsResponse
+        listEnvironments(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEnvironment(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restart Airflow web server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restartWebServer(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestartWebServerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Check if an upgrade operation on the environment will succeed.
+     * In case of problems detailed info can be found in the returned Operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation checkUpgrade(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckUpgradeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes Airflow CLI command.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse
+        executeAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExecuteAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops Airflow CLI command execution.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse
+        stopAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Polls Airflow CLI command execution and fetches logs.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
+        pollAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPollAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workloads in a Cloud Composer environment. Workload is a unit that
+     * runs a single Composer component.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
+        listWorkloads(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
+        createUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1beta1.CreateUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads Secret.
+     * Values of the "data" field in the response are cleared.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
+        getUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1beta1.GetUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads Secrets.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsResponse
+        listUserWorkloadsSecrets(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserWorkloadsSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
+        updateUserWorkloadsSecret(
+            com.google.cloud.orchestration.airflow.service.v1beta1.UpdateUserWorkloadsSecretRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads Secret.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserWorkloadsSecret(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteUserWorkloadsSecretRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserWorkloadsSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
+        createUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                    .CreateUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an existing user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
+        getUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1beta1.GetUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists user workloads ConfigMaps.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1
+            .ListUserWorkloadsConfigMapsResponse
+        listUserWorkloadsConfigMaps(
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                    .ListUserWorkloadsConfigMapsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserWorkloadsConfigMapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
+        updateUserWorkloadsConfigMap(
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                    .UpdateUserWorkloadsConfigMapRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user workloads ConfigMap.
+     * This method is supported for Cloud Composer environments in versions
+     * composer-3-airflow-*.*.*-build.* and newer.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserWorkloadsConfigMap(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteUserWorkloadsConfigMapRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserWorkloadsConfigMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshots of a Cloud Composer environment.
+     * As a result of this operation, snapshot of environment's state is stored
+     * in a location specified in the SaveSnapshotRequest.
+     * </pre>
+     */
+    public com.google.longrunning.Operation saveSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSaveSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads a snapshot of a Cloud Composer environment.
+     * As a result of this operation, a snapshot of environment's specified in
+     * LoadSnapshotRequest is loaded into the environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation loadSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoadSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers database failover (only for highly resilient environments).
+     * </pre>
+     */
+    public com.google.longrunning.Operation databaseFailover(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDatabaseFailoverMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches database properties.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse
+        fetchDatabaseProperties(
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchDatabasePropertiesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Environments.
    *
    * <pre>
    * Managed Apache Airflow Environments.

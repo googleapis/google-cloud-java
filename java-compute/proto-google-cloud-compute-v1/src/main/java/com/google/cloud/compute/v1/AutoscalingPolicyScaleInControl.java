@@ -33,6 +33,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AutoscalingPolicyScaleInControl)
     AutoscalingPolicyScaleInControlOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingPolicyScaleInControl.newBuilder() to construct.
   private AutoscalingPolicyScaleInControl(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
   private int bitField0_;
   public static final int MAX_SCALED_IN_REPLICAS_FIELD_NUMBER = 180710123;
   private com.google.cloud.compute.v1.FixedOrPercent maxScaledInReplicas_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
   public boolean hasMaxScaledInReplicas() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()
         : maxScaledInReplicas_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
 
   public static final int TIME_WINDOW_SEC_FIELD_NUMBER = 36405300;
   private int timeWindowSec_ = 0;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
   public boolean hasTimeWindowSec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -330,6 +336,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +558,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
             com.google.cloud.compute.v1.FixedOrPercent.Builder,
             com.google.cloud.compute.v1.FixedOrPercentOrBuilder>
         maxScaledInReplicasBuilder_;
+
     /**
      *
      *
@@ -566,6 +574,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     public boolean hasMaxScaledInReplicas() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
         return maxScaledInReplicasBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       onChanged();
       return getMaxScaledInReplicasFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
             : maxScaledInReplicas_;
       }
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     }
 
     private int timeWindowSec_;
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     public boolean hasTimeWindowSec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     public int getTimeWindowSec() {
       return timeWindowSec_;
     }
+
     /**
      *
      *
@@ -791,6 +810,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

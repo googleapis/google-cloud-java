@@ -38,6 +38,7 @@ public interface GetCorpusRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

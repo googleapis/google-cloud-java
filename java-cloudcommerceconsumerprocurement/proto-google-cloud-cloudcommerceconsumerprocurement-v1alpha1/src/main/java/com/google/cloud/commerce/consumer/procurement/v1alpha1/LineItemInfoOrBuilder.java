@@ -40,6 +40,7 @@ public interface LineItemInfoOrBuilder
    * @return The offer.
    */
   java.lang.String getOffer();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface LineItemInfoOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter>
       getParametersList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface LineItemInfoOrBuilder
    * </code>
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter getParameters(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface LineItemInfoOrBuilder
    * </code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface LineItemInfoOrBuilder
   java.util.List<
           ? extends com.google.cloud.commerce.consumer.procurement.v1alpha1.ParameterOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface LineItemInfoOrBuilder
    * @return Whether the subscription field is set.
    */
   boolean hasSubscription();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface LineItemInfoOrBuilder
    * @return The subscription.
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.Subscription getSubscription();
+
   /**
    *
    *

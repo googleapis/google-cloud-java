@@ -36,6 +36,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.TransitionAttributes)
     TransitionAttributesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransitionAttributes.newBuilder() to construct.
   private TransitionAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object srcTag_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object excludedSrcTag_ = "";
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dstTag_ = "";
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object excludedDstTag_ = "";
+
   /**
    *
    *
@@ -275,6 +283,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -302,6 +311,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   public static final int COST_FIELD_NUMBER = 5;
   private double cost_ = 0D;
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   public static final int COST_PER_KILOMETER_FIELD_NUMBER = 6;
   private double costPerKilometer_ = 0D;
+
   /**
    *
    *
@@ -343,6 +354,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   public static final int DISTANCE_LIMIT_FIELD_NUMBER = 7;
   private com.google.maps.routeoptimization.v1.DistanceLimit distanceLimit_;
+
   /**
    *
    *
@@ -361,6 +373,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   public boolean hasDistanceLimit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         ? com.google.maps.routeoptimization.v1.DistanceLimit.getDefaultInstance()
         : distanceLimit_;
   }
+
   /**
    *
    *
@@ -402,6 +416,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
 
   public static final int DELAY_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration delay_;
+
   /**
    *
    *
@@ -420,6 +435,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   public boolean hasDelay() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -438,6 +454,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Duration getDelay() {
     return delay_ == null ? com.google.protobuf.Duration.getDefaultInstance() : delay_;
   }
+
   /**
    *
    *
@@ -695,6 +712,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1002,6 +1020,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object srcTag_ = "";
+
     /**
      *
      *
@@ -1031,6 +1050,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1080,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1109,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1134,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1166,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object excludedSrcTag_ = "";
+
     /**
      *
      *
@@ -1166,6 +1190,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1214,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1211,6 +1237,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1256,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1282,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object dstTag_ = "";
+
     /**
      *
      *
@@ -1280,6 +1309,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1336,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1362,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1384,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1413,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object excludedDstTag_ = "";
+
     /**
      *
      *
@@ -1403,6 +1437,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1426,6 +1461,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1448,6 +1484,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1503,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,6 +1529,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     }
 
     private double cost_;
+
     /**
      *
      *
@@ -1508,6 +1547,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public double getCost() {
       return cost_;
     }
+
     /**
      *
      *
@@ -1529,6 +1569,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1550,6 +1591,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     }
 
     private double costPerKilometer_;
+
     /**
      *
      *
@@ -1568,6 +1610,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public double getCostPerKilometer() {
       return costPerKilometer_;
     }
+
     /**
      *
      *
@@ -1590,6 +1633,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1617,6 +1661,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
             com.google.maps.routeoptimization.v1.DistanceLimit.Builder,
             com.google.maps.routeoptimization.v1.DistanceLimitOrBuilder>
         distanceLimitBuilder_;
+
     /**
      *
      *
@@ -1634,6 +1679,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public boolean hasDistanceLimit() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1657,6 +1703,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return distanceLimitBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1682,6 +1729,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1753,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1736,6 +1785,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1808,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1775,6 +1826,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return getDistanceLimitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1796,6 +1848,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
             : distanceLimit_;
       }
     }
+
     /**
      *
      *
@@ -1831,6 +1884,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         delayBuilder_;
+
     /**
      *
      *
@@ -1848,6 +1902,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     public boolean hasDelay() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1869,6 +1924,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return delayBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1894,6 +1950,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1916,6 +1973,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +2004,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1968,6 +2027,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1985,6 +2045,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       onChanged();
       return getDelayFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2004,6 +2065,7 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
         return delay_ == null ? com.google.protobuf.Duration.getDefaultInstance() : delay_;
       }
     }
+
     /**
      *
      *

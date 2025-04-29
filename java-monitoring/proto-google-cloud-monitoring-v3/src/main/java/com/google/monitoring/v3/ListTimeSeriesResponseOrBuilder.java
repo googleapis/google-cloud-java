@@ -34,6 +34,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
   com.google.monitoring.v3.TimeSeries getTimeSeries(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
   int getTimeSeriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTimeSeriesResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
   java.util.List<com.google.rpc.Status> getExecutionErrorsList();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
   com.google.rpc.Status getExecutionErrors(int index);
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
   int getExecutionErrorsCount();
+
   /**
    *
    *
@@ -149,6 +157,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getExecutionErrorsOrBuilderList();
+
   /**
    *
    *
@@ -178,6 +187,7 @@ public interface ListTimeSeriesResponseOrBuilder
    * @return The unit.
    */
   java.lang.String getUnit();
+
   /**
    *
    *

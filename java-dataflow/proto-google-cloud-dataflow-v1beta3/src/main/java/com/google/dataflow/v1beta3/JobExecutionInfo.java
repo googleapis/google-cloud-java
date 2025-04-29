@@ -34,6 +34,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.JobExecutionInfo)
     JobExecutionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobExecutionInfo.newBuilder() to construct.
   private JobExecutionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
   public int getStagesCount() {
     return internalGetStages().getMap().size();
   }
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     }
     return internalGetStages().getMap().containsKey(key);
   }
+
   /** Use {@link #getStagesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -131,6 +134,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       getStages() {
     return getStagesMap();
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       getStagesMap() {
     return internalGetStages().getMap();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
         internalGetStages().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -357,6 +363,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -587,7 +594,8 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
           defaultEntry() {
         return StagesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final StagesConverter stagesConverter = new StagesConverter();
 
@@ -627,6 +635,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public int getStagesCount() {
       return internalGetStages().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -643,6 +652,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       }
       return internalGetStages().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getStagesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -650,6 +660,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
         getStages() {
       return getStagesMap();
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
         getStagesMap() {
       return internalGetStages().getImmutableMap();
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
           map = internalGetMutableStages().ensureBuilderMap();
       return map.containsKey(key) ? stagesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       internalGetMutableStages().clear();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +743,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       internalGetMutableStages().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo>
@@ -736,6 +751,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return internalGetMutableStages().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +795,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

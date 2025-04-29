@@ -38,6 +38,7 @@ public interface ValueMatcherOrBuilder
    * @return Whether the matchesPattern field is set.
    */
   boolean hasMatchesPattern();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ValueMatcherOrBuilder
    * @return The matchesPattern.
    */
   java.lang.String getMatchesPattern();
+
   /**
    *
    *

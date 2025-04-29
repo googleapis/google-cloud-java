@@ -38,6 +38,7 @@ public interface AssessDataResponseOrBuilder
    * @return Whether the tuningValidationAssessmentResult field is set.
    */
   boolean hasTuningValidationAssessmentResult();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AssessDataResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataResponse.TuningValidationAssessmentResult
       getTuningValidationAssessmentResult();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface AssessDataResponseOrBuilder
    * @return Whether the tuningResourceUsageAssessmentResult field is set.
    */
   boolean hasTuningResourceUsageAssessmentResult();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface AssessDataResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataResponse.TuningResourceUsageAssessmentResult
       getTuningResourceUsageAssessmentResult();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface AssessDataResponseOrBuilder
    * @return Whether the batchPredictionValidationAssessmentResult field is set.
    */
   boolean hasBatchPredictionValidationAssessmentResult();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface AssessDataResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult
       getBatchPredictionValidationAssessmentResult();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface AssessDataResponseOrBuilder
    * @return Whether the batchPredictionResourceUsageAssessmentResult field is set.
    */
   boolean hasBatchPredictionResourceUsageAssessmentResult();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface AssessDataResponseOrBuilder
   com.google.cloud.aiplatform.v1beta1.AssessDataResponse
           .BatchPredictionResourceUsageAssessmentResult
       getBatchPredictionResourceUsageAssessmentResult();
+
   /**
    *
    *

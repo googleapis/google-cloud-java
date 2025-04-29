@@ -36,6 +36,7 @@ public interface InsightOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface InsightOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface InsightOrBuilder
    * @return A list containing the targetResources.
    */
   java.util.List<java.lang.String> getTargetResourcesList();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface InsightOrBuilder
    * @return The count of targetResources.
    */
   int getTargetResourcesCount();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface InsightOrBuilder
    * @return The targetResources at the given index.
    */
   java.lang.String getTargetResources(int index);
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface InsightOrBuilder
    * @return The insightSubtype.
    */
   java.lang.String getInsightSubtype();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface InsightOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface InsightOrBuilder
    * @return The content.
    */
   com.google.protobuf.Struct getContent();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface InsightOrBuilder
    * @return Whether the lastRefreshTime field is set.
    */
   boolean hasLastRefreshTime();
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public interface InsightOrBuilder
    * @return The lastRefreshTime.
    */
   com.google.protobuf.Timestamp getLastRefreshTime();
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public interface InsightOrBuilder
    * @return Whether the observationPeriod field is set.
    */
   boolean hasObservationPeriod();
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public interface InsightOrBuilder
    * @return The observationPeriod.
    */
   com.google.protobuf.Duration getObservationPeriod();
+
   /**
    *
    *
@@ -278,6 +290,7 @@ public interface InsightOrBuilder
    * @return Whether the stateInfo field is set.
    */
   boolean hasStateInfo();
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public interface InsightOrBuilder
    * @return The stateInfo.
    */
   com.google.cloud.recommender.v1beta1.InsightStateInfo getStateInfo();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface InsightOrBuilder
    * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
+
   /**
    *
    *
@@ -338,6 +353,7 @@ public interface InsightOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -364,6 +380,7 @@ public interface InsightOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -391,6 +408,7 @@ public interface InsightOrBuilder
    */
   java.util.List<com.google.cloud.recommender.v1beta1.Insight.RecommendationReference>
       getAssociatedRecommendationsList();
+
   /**
    *
    *
@@ -404,6 +422,7 @@ public interface InsightOrBuilder
    */
   com.google.cloud.recommender.v1beta1.Insight.RecommendationReference getAssociatedRecommendations(
       int index);
+
   /**
    *
    *
@@ -416,6 +435,7 @@ public interface InsightOrBuilder
    * </code>
    */
   int getAssociatedRecommendationsCount();
+
   /**
    *
    *
@@ -430,6 +450,7 @@ public interface InsightOrBuilder
   java.util.List<
           ? extends com.google.cloud.recommender.v1beta1.Insight.RecommendationReferenceOrBuilder>
       getAssociatedRecommendationsOrBuilderList();
+
   /**
    *
    *

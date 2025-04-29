@@ -38,6 +38,7 @@ public interface ExportDataOperationMetadataOrBuilder
    * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportDataOperationMetadataOrBuilder
    * @return The outputInfo.
    */
   com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.ExportDataOutputInfo getOutputInfo();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface TagOrBuilder
    * @return The namespacedTagValue.
    */
   java.lang.String getNamespacedTagValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface TagOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface TagOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

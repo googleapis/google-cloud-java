@@ -37,6 +37,7 @@ public interface ResourceRequirementsOrBuilder
    * @return Whether the limits field is set.
    */
   boolean hasLimits();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ResourceRequirementsOrBuilder
    * @return The limits.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.ResourceList getLimits();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ResourceRequirementsOrBuilder
    * @return Whether the requests field is set.
    */
   boolean hasRequests();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ResourceRequirementsOrBuilder
    * @return The requests.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.ResourceList getRequests();
+
   /**
    *
    *

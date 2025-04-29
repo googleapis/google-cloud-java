@@ -39,6 +39,7 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface JobOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface JobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface JobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface JobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface JobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for service.
    */
   int getServiceValue();
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public interface JobOrBuilder
    * @return The serviceJob.
    */
   java.lang.String getServiceJob();
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public interface JobOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -291,6 +301,7 @@ public interface JobOrBuilder
    * </code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -302,9 +313,11 @@ public interface JobOrBuilder
    * </code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -316,6 +329,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -331,6 +345,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -357,6 +372,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for trigger.
    */
   int getTriggerValue();
+
   /**
    *
    *
@@ -386,6 +402,7 @@ public interface JobOrBuilder
    * @return Whether the executionSpec field is set.
    */
   boolean hasExecutionSpec();
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public interface JobOrBuilder
    * @return The executionSpec.
    */
   com.google.cloud.dataplex.v1.Task.ExecutionSpec getExecutionSpec();
+
   /**
    *
    *

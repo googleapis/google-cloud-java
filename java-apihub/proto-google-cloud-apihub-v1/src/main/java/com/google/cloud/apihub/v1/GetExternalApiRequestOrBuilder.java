@@ -40,6 +40,7 @@ public interface GetExternalApiRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

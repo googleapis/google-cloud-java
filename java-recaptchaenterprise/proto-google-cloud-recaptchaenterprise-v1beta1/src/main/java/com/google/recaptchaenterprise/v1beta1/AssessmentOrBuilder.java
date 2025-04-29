@@ -37,6 +37,7 @@ public interface AssessmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AssessmentOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface AssessmentOrBuilder
    * @return The event.
    */
   com.google.recaptchaenterprise.v1beta1.Event getEvent();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface AssessmentOrBuilder
    * @return Whether the tokenProperties field is set.
    */
   boolean hasTokenProperties();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AssessmentOrBuilder
    * @return The tokenProperties.
    */
   com.google.recaptchaenterprise.v1beta1.TokenProperties getTokenProperties();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface AssessmentOrBuilder
    */
   java.util.List<com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason>
       getReasonsList();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface AssessmentOrBuilder
    * @return The count of reasons.
    */
   int getReasonsCount();
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public interface AssessmentOrBuilder
    * @return The reasons at the given index.
    */
   com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason getReasons(int index);
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface AssessmentOrBuilder
    * @return A list containing the enum numeric values on the wire for reasons.
    */
   java.util.List<java.lang.Integer> getReasonsValueList();
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public interface AssessmentOrBuilder
    * @return Whether the passwordLeakVerification field is set.
    */
   boolean hasPasswordLeakVerification();
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public interface AssessmentOrBuilder
    * @return The passwordLeakVerification.
    */
   com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification getPasswordLeakVerification();
+
   /**
    *
    *
@@ -282,6 +293,7 @@ public interface AssessmentOrBuilder
    * @return Whether the accountDefenderAssessment field is set.
    */
   boolean hasAccountDefenderAssessment();
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public interface AssessmentOrBuilder
    * @return The accountDefenderAssessment.
    */
   com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment getAccountDefenderAssessment();
+
   /**
    *
    *
@@ -326,6 +339,7 @@ public interface AssessmentOrBuilder
    * @return Whether the fraudPreventionAssessment field is set.
    */
   boolean hasFraudPreventionAssessment();
+
   /**
    *
    *
@@ -340,6 +354,7 @@ public interface AssessmentOrBuilder
    * @return The fraudPreventionAssessment.
    */
   com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment getFraudPreventionAssessment();
+
   /**
    *
    *

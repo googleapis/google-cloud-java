@@ -34,6 +34,7 @@ public interface SalesforceOrgOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SalesforceObject objects = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.SalesforceObject> getObjectsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SalesforceOrgOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SalesforceObject objects = 1;</code>
    */
   com.google.cloud.datastream.v1.SalesforceObject getObjects(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SalesforceOrgOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SalesforceObject objects = 1;</code>
    */
   int getObjectsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SalesforceOrgOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.SalesforceObjectOrBuilder>
       getObjectsOrBuilderList();
+
   /**
    *
    *

@@ -378,6 +378,19 @@ public final class ConversionSourcesServiceGrpc {
     return ConversionSourcesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversionSourcesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversionSourcesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversionSourcesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversionSourcesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversionSourcesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversionSourcesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -664,6 +677,114 @@ public final class ConversionSourcesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConversionSourcesService.
+   *
+   * <pre>
+   * Service for managing conversion sources for a merchant account.
+   * </pre>
+   */
+  public static final class ConversionSourcesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversionSourcesServiceBlockingV2Stub> {
+    private ConversionSourcesServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversionSourcesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversionSourcesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new conversion source.
+     * </pre>
+     */
+    public com.google.shopping.merchant.conversions.v1beta.ConversionSource createConversionSource(
+        com.google.shopping.merchant.conversions.v1beta.CreateConversionSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversionSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates information of an existing conversion source. Available only for
+     * Merchant Center Destination conversion sources.
+     * </pre>
+     */
+    public com.google.shopping.merchant.conversions.v1beta.ConversionSource updateConversionSource(
+        com.google.shopping.merchant.conversions.v1beta.UpdateConversionSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversionSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives an existing conversion source. If the conversion source is a
+     * Merchant Center Destination, it will be recoverable for 30 days. If the
+     * conversion source is a Google Analytics Link, it will be deleted
+     * immediately and can be restored by creating a new one.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversionSource(
+        com.google.shopping.merchant.conversions.v1beta.DeleteConversionSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversionSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Re-enables an archived conversion source. Only Available for Merchant
+     * Center Destination conversion sources.
+     * </pre>
+     */
+    public com.google.shopping.merchant.conversions.v1beta.ConversionSource
+        undeleteConversionSource(
+            com.google.shopping.merchant.conversions.v1beta.UndeleteConversionSourceRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteConversionSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a conversion source.
+     * </pre>
+     */
+    public com.google.shopping.merchant.conversions.v1beta.ConversionSource getConversionSource(
+        com.google.shopping.merchant.conversions.v1beta.GetConversionSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversionSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of conversion sources the caller has access to.
+     * </pre>
+     */
+    public com.google.shopping.merchant.conversions.v1beta.ListConversionSourcesResponse
+        listConversionSources(
+            com.google.shopping.merchant.conversions.v1beta.ListConversionSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversionSourcesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ConversionSourcesService.
    *
    * <pre>
    * Service for managing conversion sources for a merchant account.

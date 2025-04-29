@@ -39,6 +39,7 @@ public interface CreateAdaptiveMtDatasetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateAdaptiveMtDatasetRequestOrBuilder
    * @return Whether the adaptiveMtDataset field is set.
    */
   boolean hasAdaptiveMtDataset();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateAdaptiveMtDatasetRequestOrBuilder
    * @return The adaptiveMtDataset.
    */
   com.google.cloud.translate.v3.AdaptiveMtDataset getAdaptiveMtDataset();
+
   /**
    *
    *

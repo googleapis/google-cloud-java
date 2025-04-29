@@ -40,6 +40,7 @@ public interface ExplanationParametersOrBuilder
    * @return Whether the sampledShapleyAttribution field is set.
    */
   boolean hasSampledShapleyAttribution();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface ExplanationParametersOrBuilder
    * @return The sampledShapleyAttribution.
    */
   com.google.cloud.vertexai.api.SampledShapleyAttribution getSampledShapleyAttribution();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ExplanationParametersOrBuilder
    * @return Whether the integratedGradientsAttribution field is set.
    */
   boolean hasIntegratedGradientsAttribution();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ExplanationParametersOrBuilder
    * @return The integratedGradientsAttribution.
    */
   com.google.cloud.vertexai.api.IntegratedGradientsAttribution getIntegratedGradientsAttribution();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface ExplanationParametersOrBuilder
    * @return Whether the xraiAttribution field is set.
    */
   boolean hasXraiAttribution();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface ExplanationParametersOrBuilder
    * @return The xraiAttribution.
    */
   com.google.cloud.vertexai.api.XraiAttribution getXraiAttribution();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface ExplanationParametersOrBuilder
    * @return Whether the examples field is set.
    */
   boolean hasExamples();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface ExplanationParametersOrBuilder
    * @return The examples.
    */
   com.google.cloud.vertexai.api.Examples getExamples();
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public interface ExplanationParametersOrBuilder
    * @return Whether the outputIndices field is set.
    */
   boolean hasOutputIndices();
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public interface ExplanationParametersOrBuilder
    * @return The outputIndices.
    */
   com.google.protobuf.ListValue getOutputIndices();
+
   /**
    *
    *

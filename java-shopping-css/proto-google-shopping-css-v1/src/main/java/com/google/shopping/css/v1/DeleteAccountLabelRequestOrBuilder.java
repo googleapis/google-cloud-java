@@ -39,6 +39,7 @@ public interface DeleteAccountLabelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface RecordConditionOrBuilder
    * @return Whether the expressions field is set.
    */
   boolean hasExpressions();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RecordConditionOrBuilder
    * @return The expressions.
    */
   com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions();
+
   /**
    *
    *

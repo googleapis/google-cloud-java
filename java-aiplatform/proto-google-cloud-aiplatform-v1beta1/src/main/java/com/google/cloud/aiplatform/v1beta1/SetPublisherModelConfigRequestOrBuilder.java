@@ -39,6 +39,7 @@ public interface SetPublisherModelConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SetPublisherModelConfigRequestOrBuilder
    * @return Whether the publisherModelConfig field is set.
    */
   boolean hasPublisherModelConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SetPublisherModelConfigRequestOrBuilder
    * @return The publisherModelConfig.
    */
   com.google.cloud.aiplatform.v1beta1.PublisherModelConfig getPublisherModelConfig();
+
   /**
    *
    *

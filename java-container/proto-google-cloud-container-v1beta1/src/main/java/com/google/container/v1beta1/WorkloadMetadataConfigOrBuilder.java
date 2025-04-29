@@ -42,6 +42,7 @@ public interface WorkloadMetadataConfigOrBuilder
    */
   @java.lang.Deprecated
   int getNodeMetadataValue();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface WorkloadMetadataConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *

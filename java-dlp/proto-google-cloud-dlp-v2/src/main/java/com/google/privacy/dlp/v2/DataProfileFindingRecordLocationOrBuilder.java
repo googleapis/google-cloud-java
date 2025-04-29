@@ -36,6 +36,7 @@ public interface DataProfileFindingRecordLocationOrBuilder
    * @return Whether the field field is set.
    */
   boolean hasField();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataProfileFindingRecordLocationOrBuilder
    * @return The field.
    */
   com.google.privacy.dlp.v2.FieldId getField();
+
   /**
    *
    *

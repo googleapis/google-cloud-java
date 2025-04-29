@@ -38,6 +38,7 @@ public interface DataDiscoveryResultOrBuilder
    * @return Whether the bigqueryPublishing field is set.
    */
   boolean hasBigqueryPublishing();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DataDiscoveryResultOrBuilder
    * @return The bigqueryPublishing.
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing getBigqueryPublishing();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface DataDiscoveryResultOrBuilder
    * @return Whether the scanStatistics field is set.
    */
   boolean hasScanStatistics();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface DataDiscoveryResultOrBuilder
    * @return The scanStatistics.
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics getScanStatistics();
+
   /**
    *
    *

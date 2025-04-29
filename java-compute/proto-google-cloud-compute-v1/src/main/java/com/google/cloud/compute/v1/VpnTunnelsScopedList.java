@@ -32,6 +32,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.VpnTunnelsScopedList)
     VpnTunnelsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VpnTunnelsScopedList.newBuilder() to construct.
   private VpnTunnelsScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.VpnTunnel> vpnTunnels_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.compute.v1.VpnTunnel> getVpnTunnelsList() {
     return vpnTunnels_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       getVpnTunnelsOrBuilderList() {
     return vpnTunnels_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
   public int getVpnTunnelsCount() {
     return vpnTunnels_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.VpnTunnel getVpnTunnels(int index) {
     return vpnTunnels_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +656,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         return vpnTunnelsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         return vpnTunnelsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         return vpnTunnelsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +842,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +862,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.VpnTunnel.Builder getVpnTunnelsBuilder(int index) {
       return getVpnTunnelsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         return vpnTunnelsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(vpnTunnels_);
       }
     }
+
     /**
      *
      *
@@ -919,6 +944,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       return getVpnTunnelsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.VpnTunnel.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -932,6 +958,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       return getVpnTunnelsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.VpnTunnel.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -969,6 +996,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -983,6 +1011,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1003,6 +1032,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1055,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1075,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1103,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1123,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1138,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1122,6 +1157,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
             : warning_;
       }
     }
+
     /**
      *
      *

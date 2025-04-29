@@ -39,6 +39,7 @@ public interface GetBackupPlanAssociationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

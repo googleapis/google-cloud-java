@@ -33,6 +33,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.ListTenantsResponse)
     ListTenantsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTenantsResponse.newBuilder() to construct.
   private ListTenantsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.Tenant> tenants_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.talent.v4beta1.Tenant> getTenantsList() {
     return tenants_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       getTenantsOrBuilderList() {
     return tenants_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
   public int getTenantsCount() {
     return tenants_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.talent.v4beta1.Tenant getTenants(int index) {
     return tenants_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_;
+
   /**
    *
    *
@@ -205,6 +214,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -424,6 +435,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -730,6 +742,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return tenantsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return tenantsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return tenantsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +820,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +928,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +948,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +981,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.talent.v4beta1.Tenant.Builder getTenantsBuilder(int index) {
       return getTenantsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -973,6 +998,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return tenantsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -990,6 +1016,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(tenants_);
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1030,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       return getTenantsFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1016,6 +1044,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       return getTenantsFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1122,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1144,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1162,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1158,6 +1192,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.talent.v4beta1.ResponseMetadata.Builder,
             com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -1173,6 +1208,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1194,6 +1230,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1254,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1276,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1305,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1326,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1342,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1320,6 +1362,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
             : metadata_;
       }
     }
+
     /**
      *
      *

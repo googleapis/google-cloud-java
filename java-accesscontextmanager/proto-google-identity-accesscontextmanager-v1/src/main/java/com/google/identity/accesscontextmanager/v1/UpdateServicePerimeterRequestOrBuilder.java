@@ -39,6 +39,7 @@ public interface UpdateServicePerimeterRequestOrBuilder
    * @return Whether the servicePerimeter field is set.
    */
   boolean hasServicePerimeter();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateServicePerimeterRequestOrBuilder
    * @return The servicePerimeter.
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateServicePerimeterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateServicePerimeterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

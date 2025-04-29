@@ -381,7 +381,8 @@ public class FeedbackLabelName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               feedbackLabelName.pathTemplate, PROJECT_LOCATION_CONVERSATION_FEEDBACK_LABEL),
-          "toBuilder is only supported when FeedbackLabelName has the pattern of projects/{project}/locations/{location}/conversations/{conversation}/feedbackLabels/{feedback_label}");
+          "toBuilder is only supported when FeedbackLabelName has the pattern of"
+              + " projects/{project}/locations/{location}/conversations/{conversation}/feedbackLabels/{feedback_label}");
       this.project = feedbackLabelName.project;
       this.location = feedbackLabelName.location;
       this.conversation = feedbackLabelName.conversation;

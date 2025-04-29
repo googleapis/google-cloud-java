@@ -33,6 +33,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.CreateConnectClusterRequest)
     CreateConnectClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateConnectClusterRequest.newBuilder() to construct.
   private CreateConnectClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectClusterId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
 
   public static final int CONNECT_CLUSTER_FIELD_NUMBER = 3;
   private com.google.cloud.managedkafka.v1.ConnectCluster connectCluster_;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
   public boolean hasConnectCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         ? com.google.cloud.managedkafka.v1.ConnectCluster.getDefaultInstance()
         : connectCluster_;
   }
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -287,6 +296,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -518,6 +528,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -765,6 +776,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -791,6 +803,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +830,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +856,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +878,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +907,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object connectClusterId_ = "";
+
     /**
      *
      *
@@ -918,6 +935,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -945,6 +963,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -971,6 +990,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1013,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1048,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
             com.google.cloud.managedkafka.v1.ConnectCluster.Builder,
             com.google.cloud.managedkafka.v1.ConnectClusterOrBuilder>
         connectClusterBuilder_;
+
     /**
      *
      *
@@ -1044,6 +1066,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
     public boolean hasConnectCluster() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return connectClusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1140,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1172,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1195,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1213,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return getConnectClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1206,6 +1235,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
             : connectCluster_;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1266,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1273,6 +1304,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1310,6 +1342,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1346,6 +1379,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1412,7 @@ public final class CreateConnectClusterRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

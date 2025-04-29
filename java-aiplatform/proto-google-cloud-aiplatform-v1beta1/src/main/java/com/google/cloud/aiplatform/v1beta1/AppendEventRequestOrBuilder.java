@@ -40,6 +40,7 @@ public interface AppendEventRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface AppendEventRequestOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface AppendEventRequestOrBuilder
    * @return The event.
    */
   com.google.cloud.aiplatform.v1beta1.SessionEvent getEvent();
+
   /**
    *
    *
