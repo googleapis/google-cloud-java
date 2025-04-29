@@ -33,6 +33,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.ListQuotaGroupsResponse)
     ListQuotaGroupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListQuotaGroupsResponse.newBuilder() to construct.
   private ListQuotaGroupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.css.v1.QuotaGroup> quotaGroups_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.shopping.css.v1.QuotaGroup> getQuotaGroupsList() {
     return quotaGroups_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       getQuotaGroupsOrBuilderList() {
     return quotaGroups_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
   public int getQuotaGroupsCount() {
     return quotaGroups_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
   public com.google.shopping.css.v1.QuotaGroup getQuotaGroups(int index) {
     return quotaGroups_.get(index);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -373,6 +381,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return quotaGroupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return quotaGroupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return quotaGroupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +777,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +936,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
     public com.google.shopping.css.v1.QuotaGroup.Builder getQuotaGroupsBuilder(int index) {
       return getQuotaGroupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return quotaGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -954,6 +977,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(quotaGroups_);
       }
     }
+
     /**
      *
      *
@@ -970,6 +994,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       return getQuotaGroupsFieldBuilder()
           .addBuilder(com.google.shopping.css.v1.QuotaGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -986,6 +1011,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       return getQuotaGroupsFieldBuilder()
           .addBuilder(index, com.google.shopping.css.v1.QuotaGroup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1021,6 +1047,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1044,6 +1071,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1095,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1118,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class ListQuotaGroupsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.ReferenceList)
     ReferenceListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReferenceList.newBuilder() to construct.
   private ReferenceList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVISION_CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp revisionCreateTime_;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : revisionCreateTime_;
   }
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<google.cloud.chronicle.v1.ReferenceListEntry> entries_;
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<google.cloud.chronicle.v1.ReferenceListEntry> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -327,6 +339,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -346,6 +359,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -365,6 +379,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public google.cloud.chronicle.v1.ReferenceListEntry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -390,6 +405,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList rules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -406,6 +422,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRulesList() {
     return rules_;
   }
+
   /**
    *
    *
@@ -422,6 +439,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public int getRulesCount() {
     return rules_.size();
   }
+
   /**
    *
    *
@@ -439,6 +457,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRules(int index) {
     return rules_.get(index);
   }
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SYNTAX_TYPE_FIELD_NUMBER = 8;
   private int syntaxType_ = 0;
+
   /**
    *
    *
@@ -476,6 +496,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public int getSyntaxTypeValue() {
     return syntaxType_;
   }
+
   /**
    *
    *
@@ -498,6 +519,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RULE_ASSOCIATIONS_COUNT_FIELD_NUMBER = 9;
   private int ruleAssociationsCount_ = 0;
+
   /**
    *
    *
@@ -516,6 +538,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCOPE_INFO_FIELD_NUMBER = 11;
   private google.cloud.chronicle.v1.ScopeInfo scopeInfo_;
+
   /**
    *
    *
@@ -535,6 +558,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScopeInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -556,6 +580,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         ? google.cloud.chronicle.v1.ScopeInfo.getDefaultInstance()
         : scopeInfo_;
   }
+
   /**
    *
    *
@@ -829,6 +854,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1205,6 +1231,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1229,6 +1256,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1281,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1276,6 +1305,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1325,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1352,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1343,6 +1375,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1365,6 +1398,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1386,6 +1420,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1438,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1468,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         revisionCreateTimeBuilder_;
+
     /**
      *
      *
@@ -1448,6 +1485,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1470,6 +1508,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return revisionCreateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1494,6 +1533,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1555,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1585,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1607,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1624,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1601,6 +1645,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
             : revisionCreateTime_;
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1675,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1652,6 +1698,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1674,6 +1721,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1695,6 +1743,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1761,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1823,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1795,6 +1846,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1869,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1845,6 +1898,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1925,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1899,6 +1954,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +1983,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1953,6 +2010,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2037,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2064,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2090,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2055,6 +2116,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2135,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public google.cloud.chronicle.v1.ReferenceListEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2095,6 +2158,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2118,6 +2182,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -2137,6 +2202,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       return getEntriesFieldBuilder()
           .addBuilder(google.cloud.chronicle.v1.ReferenceListEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2156,6 +2222,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       return getEntriesFieldBuilder()
           .addBuilder(index, google.cloud.chronicle.v1.ReferenceListEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2202,6 +2269,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2219,6 +2287,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       rules_.makeImmutable();
       return rules_;
     }
+
     /**
      *
      *
@@ -2235,6 +2304,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public int getRulesCount() {
       return rules_.size();
     }
+
     /**
      *
      *
@@ -2252,6 +2322,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRules(int index) {
       return rules_.get(index);
     }
+
     /**
      *
      *
@@ -2269,6 +2340,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRulesBytes(int index) {
       return rules_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2294,6 +2366,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2391,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2413,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2434,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2462,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int syntaxType_ = 0;
+
     /**
      *
      *
@@ -2403,6 +2480,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public int getSyntaxTypeValue() {
       return syntaxType_;
     }
+
     /**
      *
      *
@@ -2423,6 +2501,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2444,6 +2523,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
           ? google.cloud.chronicle.v1.ReferenceListSyntaxType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2467,6 +2547,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2488,6 +2569,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int ruleAssociationsCount_;
+
     /**
      *
      *
@@ -2503,6 +2585,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public int getRuleAssociationsCount() {
       return ruleAssociationsCount_;
     }
+
     /**
      *
      *
@@ -2522,6 +2605,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2546,6 +2630,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
             google.cloud.chronicle.v1.ScopeInfo.Builder,
             google.cloud.chronicle.v1.ScopeInfoOrBuilder>
         scopeInfoBuilder_;
+
     /**
      *
      *
@@ -2564,6 +2649,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScopeInfo() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2588,6 +2674,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
         return scopeInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2614,6 +2701,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2637,6 +2725,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2668,6 +2757,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2691,6 +2781,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2709,6 +2800,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScopeInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2731,6 +2823,7 @@ public final class ReferenceList extends com.google.protobuf.GeneratedMessageV3
             : scopeInfo_;
       }
     }
+
     /**
      *
      *

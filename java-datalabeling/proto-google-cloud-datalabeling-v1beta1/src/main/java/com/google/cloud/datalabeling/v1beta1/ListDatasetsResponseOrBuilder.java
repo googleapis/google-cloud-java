@@ -34,6 +34,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Dataset datasets = 1;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Dataset> getDatasetsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Dataset datasets = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Dataset getDatasets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDatasetsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Dataset datasets = 1;</code>
    */
   int getDatasetsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDatasetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.DatasetOrBuilder>
       getDatasetsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListDatasetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

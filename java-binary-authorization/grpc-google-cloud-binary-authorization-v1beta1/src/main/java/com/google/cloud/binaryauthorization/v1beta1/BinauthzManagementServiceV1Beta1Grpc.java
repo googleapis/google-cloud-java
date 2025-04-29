@@ -400,6 +400,21 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
     return BinauthzManagementServiceV1Beta1Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BinauthzManagementServiceV1Beta1BlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BinauthzManagementServiceV1Beta1BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<
+            BinauthzManagementServiceV1Beta1BlockingV2Stub>() {
+          @java.lang.Override
+          public BinauthzManagementServiceV1Beta1BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BinauthzManagementServiceV1Beta1BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BinauthzManagementServiceV1Beta1BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -744,6 +759,139 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
+   * BinauthzManagementServiceV1Beta1.
+   *
+   * <pre>
+   * Google Cloud Management Service for Binary Authorization admission policies
+   * and attestation authorities.
+   * This API implements a REST model with the following objects:
+   * * [Policy][google.cloud.binaryauthorization.v1beta1.Policy]
+   * * [Attestor][google.cloud.binaryauthorization.v1beta1.Attestor]
+   * </pre>
+   */
+  public static final class BinauthzManagementServiceV1Beta1BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BinauthzManagementServiceV1Beta1BlockingV2Stub> {
+    private BinauthzManagementServiceV1Beta1BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BinauthzManagementServiceV1Beta1BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BinauthzManagementServiceV1Beta1BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] specifies the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] that must attest to
+     * a container image, before the project is allowed to deploy that
+     * image. There is at most one policy per project. All image admission
+     * requests are permitted if a project has no policy.
+     * Gets the [policy][google.cloud.binaryauthorization.v1beta1.Policy] for this project. Returns a default
+     * [policy][google.cloud.binaryauthorization.v1beta1.Policy] if the project does not have one.
+     * </pre>
+     */
+    public com.google.cloud.binaryauthorization.v1beta1.Policy getPolicy(
+        com.google.cloud.binaryauthorization.v1beta1.GetPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or updates a project's [policy][google.cloud.binaryauthorization.v1beta1.Policy], and returns a copy of the
+     * new [policy][google.cloud.binaryauthorization.v1beta1.Policy]. A policy is always updated as a whole, to avoid race
+     * conditions with concurrent policy enforcement (or management!)
+     * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
+     * if the request is malformed.
+     * </pre>
+     */
+    public com.google.cloud.binaryauthorization.v1beta1.Policy updatePolicy(
+        com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor], and returns a copy of the new
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the project does not exist,
+     * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] already exists.
+     * </pre>
+     */
+    public com.google.cloud.binaryauthorization.v1beta1.Attestor createAttestor(
+        com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAttestorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
+     * </pre>
+     */
+    public com.google.cloud.binaryauthorization.v1beta1.Attestor getAttestor(
+        com.google.cloud.binaryauthorization.v1beta1.GetAttestorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttestorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
+     * </pre>
+     */
+    public com.google.cloud.binaryauthorization.v1beta1.Attestor updateAttestor(
+        com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAttestorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [attestors][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Returns INVALID_ARGUMENT if the project does not exist.
+     * </pre>
+     */
+    public com.google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse listAttestors(
+        com.google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAttestorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [attestor][google.cloud.binaryauthorization.v1beta1.Attestor]. Returns NOT_FOUND if the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAttestor(
+        com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAttestorMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
    * BinauthzManagementServiceV1Beta1.
    *
    * <pre>

@@ -33,6 +33,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.PrefixList)
     PrefixListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrefixList.newBuilder() to construct.
   private PrefixList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedObjectPrefixes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIncludedObjectPrefixesList() {
     return includedObjectPrefixes_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
   public int getIncludedObjectPrefixesCount() {
     return includedObjectPrefixes_.size();
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIncludedObjectPrefixes(int index) {
     return includedObjectPrefixes_.get(index);
   }
+
   /**
    *
    *
@@ -316,6 +321,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +522,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -536,6 +543,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
       includedObjectPrefixes_.makeImmutable();
       return includedObjectPrefixes_;
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
     public int getIncludedObjectPrefixesCount() {
       return includedObjectPrefixes_.size();
     }
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIncludedObjectPrefixes(int index) {
       return includedObjectPrefixes_.get(index);
     }
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIncludedObjectPrefixesBytes(int index) {
       return includedObjectPrefixes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +662,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class PrefixList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

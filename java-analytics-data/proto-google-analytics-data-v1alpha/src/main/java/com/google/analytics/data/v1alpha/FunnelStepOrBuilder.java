@@ -40,6 +40,7 @@ public interface FunnelStepOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface FunnelStepOrBuilder
    * @return Whether the withinDurationFromPriorStep field is set.
    */
   boolean hasWithinDurationFromPriorStep();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface FunnelStepOrBuilder
    * @return The withinDurationFromPriorStep.
    */
   com.google.protobuf.Duration getWithinDurationFromPriorStep();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface FunnelStepOrBuilder
    * @return Whether the filterExpression field is set.
    */
   boolean hasFilterExpression();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface FunnelStepOrBuilder
    * @return The filterExpression.
    */
   com.google.analytics.data.v1alpha.FunnelFilterExpression getFilterExpression();
+
   /**
    *
    *

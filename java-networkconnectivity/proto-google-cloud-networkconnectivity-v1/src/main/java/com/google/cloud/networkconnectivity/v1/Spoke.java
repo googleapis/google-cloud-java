@@ -42,6 +42,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.Spoke)
     SpokeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Spoke.newBuilder() to construct.
   private Spoke(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for code.
      */
     int getCodeValue();
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
+
     /**
      *
      *
@@ -160,6 +163,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return The userDetails.
      */
     java.lang.String getUserDetails();
+
     /**
      *
      *
@@ -173,6 +177,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUserDetailsBytes();
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.Spoke.StateReason)
       StateReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StateReason.newBuilder() to construct.
     private StateReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -324,6 +330,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>CODE_UNSPECIFIED = 0;</code>
        */
       public static final int CODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -334,6 +341,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>PENDING_REVIEW = 1;</code>
        */
       public static final int PENDING_REVIEW_VALUE = 1;
+
       /**
        *
        *
@@ -344,6 +352,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>REJECTED = 2;</code>
        */
       public static final int REJECTED_VALUE = 2;
+
       /**
        *
        *
@@ -354,6 +363,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>PAUSED = 3;</code>
        */
       public static final int PAUSED_VALUE = 3;
+
       /**
        *
        *
@@ -365,6 +375,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>FAILED = 4;</code>
        */
       public static final int FAILED_VALUE = 4;
+
       /**
        *
        *
@@ -375,6 +386,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>UPDATE_PENDING_REVIEW = 5;</code>
        */
       public static final int UPDATE_PENDING_REVIEW_VALUE = 5;
+
       /**
        *
        *
@@ -385,6 +397,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
        * <code>UPDATE_REJECTED = 6;</code>
        */
       public static final int UPDATE_REJECTED_VALUE = 6;
+
       /**
        *
        *
@@ -494,6 +507,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CODE_FIELD_NUMBER = 1;
     private int code_ = 0;
+
     /**
      *
      *
@@ -509,6 +523,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -533,6 +548,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -556,6 +572,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -584,6 +601,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object userDetails_ = "";
+
     /**
      *
      *
@@ -607,6 +625,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -814,6 +833,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1029,6 +1049,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int code_ = 0;
+
       /**
        *
        *
@@ -1044,6 +1065,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       public int getCodeValue() {
         return code_;
       }
+
       /**
        *
        *
@@ -1062,6 +1084,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1081,6 +1104,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1102,6 +1126,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1121,6 +1146,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object message_ = "";
+
       /**
        *
        *
@@ -1143,6 +1169,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1165,6 +1192,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1186,6 +1214,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1203,6 +1232,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1227,6 +1257,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object userDetails_ = "";
+
       /**
        *
        *
@@ -1249,6 +1280,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1271,6 +1303,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1292,6 +1325,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1309,6 +1343,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1401,6 +1436,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1426,6 +1462,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1454,6 +1491,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1470,6 +1508,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1486,6 +1525,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1503,6 +1543,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1519,6 +1560,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1535,6 +1577,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1576,6 +1619,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1594,12 +1638,14 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1615,6 +1661,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1637,6 +1684,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1664,6 +1712,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1687,6 +1736,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1715,6 +1765,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hub_ = "";
+
   /**
    *
    *
@@ -1740,6 +1791,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1770,6 +1822,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object group_ = "";
+
   /**
    *
    *
@@ -1795,6 +1848,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1823,6 +1877,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINKED_VPN_TUNNELS_FIELD_NUMBER = 17;
   private com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels linkedVpnTunnels_;
+
   /**
    *
    *
@@ -1840,6 +1895,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinkedVpnTunnels() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1859,6 +1915,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels.getDefaultInstance()
         : linkedVpnTunnels_;
   }
+
   /**
    *
    *
@@ -1881,6 +1938,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public static final int LINKED_INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 18;
   private com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments
       linkedInterconnectAttachments_;
+
   /**
    *
    *
@@ -1898,6 +1956,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinkedInterconnectAttachments() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1918,6 +1977,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments.getDefaultInstance()
         : linkedInterconnectAttachments_;
   }
+
   /**
    *
    *
@@ -1940,6 +2000,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public static final int LINKED_ROUTER_APPLIANCE_INSTANCES_FIELD_NUMBER = 19;
   private com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances
       linkedRouterApplianceInstances_;
+
   /**
    *
    *
@@ -1957,6 +2018,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinkedRouterApplianceInstances() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1978,6 +2040,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : linkedRouterApplianceInstances_;
   }
+
   /**
    *
    *
@@ -2000,6 +2063,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINKED_VPC_NETWORK_FIELD_NUMBER = 20;
   private com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork linkedVpcNetwork_;
+
   /**
    *
    *
@@ -2017,6 +2081,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinkedVpcNetwork() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -2036,6 +2101,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.getDefaultInstance()
         : linkedVpcNetwork_;
   }
+
   /**
    *
    *
@@ -2058,6 +2124,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public static final int LINKED_PRODUCER_VPC_NETWORK_FIELD_NUMBER = 26;
   private com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
       linkedProducerVpcNetwork_;
+
   /**
    *
    *
@@ -2075,6 +2142,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLinkedProducerVpcNetwork() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -2095,6 +2163,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.getDefaultInstance()
         : linkedProducerVpcNetwork_;
   }
+
   /**
    *
    *
@@ -2118,6 +2187,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uniqueId_ = "";
+
   /**
    *
    *
@@ -2143,6 +2213,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2171,6 +2242,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 15;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2188,6 +2260,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2212,6 +2285,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason> reasons_;
+
   /**
    *
    *
@@ -2228,6 +2302,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       getReasonsList() {
     return reasons_;
   }
+
   /**
    *
    *
@@ -2245,6 +2320,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       getReasonsOrBuilderList() {
     return reasons_;
   }
+
   /**
    *
    *
@@ -2260,6 +2336,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public int getReasonsCount() {
     return reasons_.size();
   }
+
   /**
    *
    *
@@ -2275,6 +2352,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.networkconnectivity.v1.Spoke.StateReason getReasons(int index) {
     return reasons_.get(index);
   }
+
   /**
    *
    *
@@ -2294,6 +2372,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPOKE_TYPE_FIELD_NUMBER = 22;
   private int spokeType_ = 0;
+
   /**
    *
    *
@@ -2311,6 +2390,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public int getSpokeTypeValue() {
     return spokeType_;
   }
+
   /**
    *
    *
@@ -2335,6 +2415,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -2360,6 +2441,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2391,6 +2473,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList fieldPathsPendingUpdate_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2407,6 +2490,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFieldPathsPendingUpdateList() {
     return fieldPathsPendingUpdate_;
   }
+
   /**
    *
    *
@@ -2423,6 +2507,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public int getFieldPathsPendingUpdateCount() {
     return fieldPathsPendingUpdate_.size();
   }
+
   /**
    *
    *
@@ -2440,6 +2525,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFieldPathsPendingUpdate(int index) {
     return fieldPathsPendingUpdate_.get(index);
   }
+
   /**
    *
    *
@@ -2836,6 +2922,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3414,6 +3501,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3438,6 +3526,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3462,6 +3551,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3485,6 +3575,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3504,6 +3595,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3535,6 +3627,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3551,6 +3644,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3573,6 +3667,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3597,6 +3692,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3618,6 +3714,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3647,6 +3744,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3668,6 +3766,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3684,6 +3783,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3704,6 +3804,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3738,6 +3839,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3754,6 +3856,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3776,6 +3879,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3800,6 +3904,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3821,6 +3926,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3850,6 +3956,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3871,6 +3978,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3887,6 +3995,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3907,6 +4016,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3960,6 +4070,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3978,12 +4089,14 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -3999,6 +4112,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -4021,6 +4135,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4049,6 +4164,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4067,12 +4183,14 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -4095,6 +4213,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -4113,6 +4232,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -4135,6 +4255,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4157,6 +4278,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4178,6 +4300,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4195,6 +4318,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4219,6 +4343,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object hub_ = "";
+
     /**
      *
      *
@@ -4243,6 +4368,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4267,6 +4393,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4290,6 +4417,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4309,6 +4437,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4335,6 +4464,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object group_ = "";
+
     /**
      *
      *
@@ -4359,6 +4489,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4383,6 +4514,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4406,6 +4538,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4425,6 +4558,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4456,6 +4590,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels.Builder,
             com.google.cloud.networkconnectivity.v1.LinkedVpnTunnelsOrBuilder>
         linkedVpnTunnelsBuilder_;
+
     /**
      *
      *
@@ -4472,6 +4607,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinkedVpnTunnels() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4494,6 +4630,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return linkedVpnTunnelsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4519,6 +4656,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4541,6 +4679,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4572,6 +4711,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4593,6 +4733,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4610,6 +4751,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLinkedVpnTunnelsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4631,6 +4773,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : linkedVpnTunnels_;
       }
     }
+
     /**
      *
      *
@@ -4666,6 +4809,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments.Builder,
             com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachmentsOrBuilder>
         linkedInterconnectAttachmentsBuilder_;
+
     /**
      *
      *
@@ -4682,6 +4826,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinkedInterconnectAttachments() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4706,6 +4851,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return linkedInterconnectAttachmentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4731,6 +4877,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4754,6 +4901,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4786,6 +4934,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4807,6 +4956,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4824,6 +4974,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLinkedInterconnectAttachmentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4846,6 +4997,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : linkedInterconnectAttachments_;
       }
     }
+
     /**
      *
      *
@@ -4881,6 +5033,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances.Builder,
             com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstancesOrBuilder>
         linkedRouterApplianceInstancesBuilder_;
+
     /**
      *
      *
@@ -4897,6 +5050,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinkedRouterApplianceInstances() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -4921,6 +5075,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return linkedRouterApplianceInstancesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4946,6 +5101,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4969,6 +5125,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5001,6 +5158,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5022,6 +5180,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5039,6 +5198,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLinkedRouterApplianceInstancesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5061,6 +5221,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : linkedRouterApplianceInstances_;
       }
     }
+
     /**
      *
      *
@@ -5095,6 +5256,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.Builder,
             com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder>
         linkedVpcNetworkBuilder_;
+
     /**
      *
      *
@@ -5111,6 +5273,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinkedVpcNetwork() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5133,6 +5296,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return linkedVpcNetworkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5158,6 +5322,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5180,6 +5345,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5211,6 +5377,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5232,6 +5399,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5249,6 +5417,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLinkedVpcNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5270,6 +5439,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : linkedVpcNetwork_;
       }
     }
+
     /**
      *
      *
@@ -5305,6 +5475,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder,
             com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder>
         linkedProducerVpcNetworkBuilder_;
+
     /**
      *
      *
@@ -5321,6 +5492,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLinkedProducerVpcNetwork() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -5344,6 +5516,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return linkedProducerVpcNetworkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5369,6 +5542,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5391,6 +5565,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5423,6 +5598,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5444,6 +5620,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5461,6 +5638,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLinkedProducerVpcNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5482,6 +5660,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             : linkedProducerVpcNetwork_;
       }
     }
+
     /**
      *
      *
@@ -5511,6 +5690,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uniqueId_ = "";
+
     /**
      *
      *
@@ -5535,6 +5715,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5559,6 +5740,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5582,6 +5764,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5601,6 +5784,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5627,6 +5811,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -5644,6 +5829,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -5664,6 +5850,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5683,6 +5870,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.networkconnectivity.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.networkconnectivity.v1.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -5706,6 +5894,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5763,6 +5952,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return reasonsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5781,6 +5971,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return reasonsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5799,6 +5990,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return reasonsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5824,6 +6016,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5847,6 +6040,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5871,6 +6065,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5896,6 +6091,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5918,6 +6114,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5941,6 +6138,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5964,6 +6162,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5985,6 +6184,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6006,6 +6206,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6021,6 +6222,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getReasonsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6040,6 +6242,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return reasonsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6060,6 +6263,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(reasons_);
       }
     }
+
     /**
      *
      *
@@ -6076,6 +6280,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6094,6 +6299,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6128,6 +6334,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spokeType_ = 0;
+
     /**
      *
      *
@@ -6145,6 +6352,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public int getSpokeTypeValue() {
       return spokeType_;
     }
+
     /**
      *
      *
@@ -6165,6 +6373,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6186,6 +6395,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkconnectivity.v1.SpokeType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -6209,6 +6419,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6230,6 +6441,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -6254,6 +6466,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6278,6 +6491,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6301,6 +6515,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6320,6 +6535,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6355,6 +6571,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00020000;
     }
+
     /**
      *
      *
@@ -6372,6 +6589,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       fieldPathsPendingUpdate_.makeImmutable();
       return fieldPathsPendingUpdate_;
     }
+
     /**
      *
      *
@@ -6388,6 +6606,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public int getFieldPathsPendingUpdateCount() {
       return fieldPathsPendingUpdate_.size();
     }
+
     /**
      *
      *
@@ -6405,6 +6624,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFieldPathsPendingUpdate(int index) {
       return fieldPathsPendingUpdate_.get(index);
     }
+
     /**
      *
      *
@@ -6422,6 +6642,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFieldPathsPendingUpdateBytes(int index) {
       return fieldPathsPendingUpdate_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6447,6 +6668,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6471,6 +6693,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6492,6 +6715,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6512,6 +6736,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

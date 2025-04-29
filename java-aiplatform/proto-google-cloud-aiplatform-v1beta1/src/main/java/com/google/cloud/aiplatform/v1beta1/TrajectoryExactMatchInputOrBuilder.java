@@ -38,6 +38,7 @@ public interface TrajectoryExactMatchInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TrajectoryExactMatchInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchSpec getMetricSpec();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface TrajectoryExactMatchInputOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInstance>
       getInstancesList();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface TrajectoryExactMatchInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInstance getInstances(int index);
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface TrajectoryExactMatchInputOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface TrajectoryExactMatchInputOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

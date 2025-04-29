@@ -36,6 +36,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * @return The duration.
    */
   java.lang.String getDuration();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * @return Whether the hoursInCycle field is set.
    */
   boolean hasHoursInCycle();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
+
   /**
    *
    *

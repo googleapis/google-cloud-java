@@ -37,6 +37,7 @@ public interface NameMappingValueOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface NameMappingValueOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface NameMappingValueOrBuilder
    * @return The relation.
    */
   java.lang.String getRelation();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface NameMappingValueOrBuilder
    * @return The attribute.
    */
   java.lang.String getAttribute();
+
   /**
    *
    *

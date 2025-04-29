@@ -36,6 +36,7 @@ public interface CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder
    * @return A list containing the matchResponseCodes.
    */
   java.util.List<java.lang.String> getMatchResponseCodesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder
    * @return The count of matchResponseCodes.
    */
   int getMatchResponseCodesCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder
    * @return The matchResponseCodes at the given index.
    */
   java.lang.String getMatchResponseCodes(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder
    * @return Whether the overrideResponseCode field is set.
    */
   boolean hasOverrideResponseCode();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.UpdateBusinessIdentityRequest)
     UpdateBusinessIdentityRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateBusinessIdentityRequest.newBuilder() to construct.
   private UpdateBusinessIdentityRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int BUSINESS_IDENTITY_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.accounts.v1beta.BusinessIdentity businessIdentity_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
   public boolean hasBusinessIdentity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
         ? com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.getDefaultInstance()
         : businessIdentity_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -590,6 +598,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.Builder,
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentityOrBuilder>
         businessIdentityBuilder_;
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
     public boolean hasBusinessIdentity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
         return businessIdentityBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return getBusinessIdentityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
             : businessIdentity_;
       }
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +929,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +966,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class UpdateBusinessIdentityRequest extends com.google.protobuf.Gen
             : updateMask_;
       }
     }
+
     /**
      *
      *

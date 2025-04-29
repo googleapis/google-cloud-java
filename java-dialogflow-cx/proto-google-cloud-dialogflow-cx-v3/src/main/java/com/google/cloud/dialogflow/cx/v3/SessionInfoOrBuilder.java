@@ -46,6 +46,7 @@ public interface SessionInfoOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface SessionInfoOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -103,9 +105,11 @@ public interface SessionInfoOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
    */
   boolean containsParameters(java.lang.String key);
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParameters();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface SessionInfoOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getParametersMap();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface SessionInfoOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
+
   /**
    *
    *

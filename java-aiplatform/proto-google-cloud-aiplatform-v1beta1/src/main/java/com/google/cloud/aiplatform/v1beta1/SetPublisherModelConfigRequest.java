@@ -34,6 +34,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest)
     SetPublisherModelConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetPublisherModelConfigRequest.newBuilder() to construct.
   private SetPublisherModelConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
 
   public static final int PUBLISHER_MODEL_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.PublisherModelConfig publisherModelConfig_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
   public boolean hasPublisherModelConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
         ? com.google.cloud.aiplatform.v1beta1.PublisherModelConfig.getDefaultInstance()
         : publisherModelConfig_;
   }
+
   /**
    *
    *
@@ -356,6 +362,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +588,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -606,6 +614,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -631,6 +640,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -655,6 +665,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
             com.google.cloud.aiplatform.v1beta1.PublisherModelConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.PublisherModelConfigOrBuilder>
         publisherModelConfigBuilder_;
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
     public boolean hasPublisherModelConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
         return publisherModelConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +880,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return getPublisherModelConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class SetPublisherModelConfigRequest extends com.google.protobuf.Ge
             : publisherModelConfig_;
       }
     }
+
     /**
      *
      *

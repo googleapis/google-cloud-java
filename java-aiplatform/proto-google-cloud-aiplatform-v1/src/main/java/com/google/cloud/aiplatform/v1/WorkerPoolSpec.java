@@ -33,6 +33,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.WorkerPoolSpec)
     WorkerPoolSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkerPoolSpec.newBuilder() to construct.
   private WorkerPoolSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     private TaskCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,6 +116,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_SPEC_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainerSpec() {
     return taskCase_ == 6;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.ContainerSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PYTHON_PACKAGE_SPEC_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPythonPackageSpec() {
     return taskCase_ == 7;
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1.PythonPackageSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MACHINE_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.MachineSpec machineSpec_;
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMachineSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.MachineSpec.getDefaultInstance()
         : machineSpec_;
   }
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICA_COUNT_FIELD_NUMBER = 2;
   private long replicaCount_ = 0L;
+
   /**
    *
    *
@@ -293,6 +305,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.NfsMount> nfsMounts_;
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.NfsMount> getNfsMountsList() {
     return nfsMounts_;
   }
+
   /**
    *
    *
@@ -324,6 +338,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       getNfsMountsOrBuilderList() {
     return nfsMounts_;
   }
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public int getNfsMountsCount() {
     return nfsMounts_.size();
   }
+
   /**
    *
    *
@@ -354,6 +370,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.NfsMount getNfsMounts(int index) {
     return nfsMounts_.get(index);
   }
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_SPEC_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1.DiskSpec diskSpec_;
+
   /**
    *
    *
@@ -387,6 +405,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiskSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -404,6 +423,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.DiskSpec.getDefaultInstance()
         : diskSpec_;
   }
+
   /**
    *
    *
@@ -657,6 +677,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1015,6 +1036,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.ContainerSpec.Builder,
             com.google.cloud.aiplatform.v1.ContainerSpecOrBuilder>
         containerSpecBuilder_;
+
     /**
      *
      *
@@ -1030,6 +1052,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainerSpec() {
       return taskCase_ == 6;
     }
+
     /**
      *
      *
@@ -1055,6 +1078,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.ContainerSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1101,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       taskCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1122,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       taskCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       taskCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1181,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1194,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.ContainerSpec.Builder getContainerSpecBuilder() {
       return getContainerSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1186,6 +1215,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.ContainerSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.PythonPackageSpec.Builder,
             com.google.cloud.aiplatform.v1.PythonPackageSpecOrBuilder>
         pythonPackageSpecBuilder_;
+
     /**
      *
      *
@@ -1239,6 +1270,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPythonPackageSpec() {
       return taskCase_ == 7;
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.PythonPackageSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1319,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       taskCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1340,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       taskCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1373,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       taskCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1399,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1412,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.PythonPackageSpec.Builder getPythonPackageSpecBuilder() {
       return getPythonPackageSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1396,6 +1434,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1.PythonPackageSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1435,6 +1474,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.MachineSpec.Builder,
             com.google.cloud.aiplatform.v1.MachineSpecOrBuilder>
         machineSpecBuilder_;
+
     /**
      *
      *
@@ -1451,6 +1491,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMachineSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1473,6 +1514,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return machineSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1539,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1562,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1548,6 +1592,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1614,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1631,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1605,6 +1652,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             : machineSpec_;
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1682,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long replicaCount_;
+
     /**
      *
      *
@@ -1649,6 +1698,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public long getReplicaCount() {
       return replicaCount_;
     }
+
     /**
      *
      *
@@ -1668,6 +1718,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1771,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return nfsMountsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1738,6 +1790,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return nfsMountsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1809,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return nfsMountsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1780,6 +1834,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1857,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1826,6 +1882,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1907,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1929,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1893,6 +1952,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1915,6 +1975,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1936,6 +1997,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1957,6 +2019,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1971,6 +2034,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.NfsMount.Builder getNfsMountsBuilder(int index) {
       return getNfsMountsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1989,6 +2053,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return nfsMountsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2008,6 +2073,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nfsMounts_);
       }
     }
+
     /**
      *
      *
@@ -2023,6 +2089,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       return getNfsMountsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.NfsMount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2038,6 +2105,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       return getNfsMountsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.NfsMount.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2077,6 +2145,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.DiskSpec.Builder,
             com.google.cloud.aiplatform.v1.DiskSpecOrBuilder>
         diskSpecBuilder_;
+
     /**
      *
      *
@@ -2091,6 +2160,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiskSpec() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2111,6 +2181,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         return diskSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2133,6 +2204,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2152,6 +2224,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2252,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2198,6 +2272,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2212,6 +2287,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDiskSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2230,6 +2306,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             : diskSpec_;
       }
     }
+
     /**
      *
      *

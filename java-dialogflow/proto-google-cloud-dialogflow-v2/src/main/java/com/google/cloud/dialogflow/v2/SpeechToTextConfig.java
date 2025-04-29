@@ -34,6 +34,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SpeechToTextConfig)
     SpeechToTextConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechToTextConfig.newBuilder() to construct.
   private SpeechToTextConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int SPEECH_MODEL_VARIANT_FIELD_NUMBER = 1;
   private int speechModelVariant_ = 0;
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   public int getSpeechModelVariantValue() {
     return speechModelVariant_;
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -217,6 +222,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList phraseSets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -233,6 +239,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getPhraseSetsList() {
     return phraseSets_;
   }
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   public int getPhraseSetsCount() {
     return phraseSets_.size();
   }
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   public java.lang.String getPhraseSets(int index) {
     return phraseSets_.get(index);
   }
+
   /**
    *
    *
@@ -286,6 +295,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 6;
   private int audioEncoding_ = 0;
+
   /**
    *
    *
@@ -301,6 +311,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
+
   /**
    *
    *
@@ -321,6 +332,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 7;
   private int sampleRateHertz_ = 0;
+
   /**
    *
    *
@@ -344,6 +356,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -371,6 +384,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -401,6 +415,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int ENABLE_WORD_INFO_FIELD_NUMBER = 9;
   private boolean enableWordInfo_ = false;
+
   /**
    *
    *
@@ -424,6 +439,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int USE_TIMEOUT_BASED_ENDPOINTING_FIELD_NUMBER = 11;
   private boolean useTimeoutBasedEndpointing_ = false;
+
   /**
    *
    *
@@ -677,6 +693,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -964,6 +981,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int speechModelVariant_ = 0;
+
     /**
      *
      *
@@ -987,6 +1005,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public int getSpeechModelVariantValue() {
       return speechModelVariant_;
     }
+
     /**
      *
      *
@@ -1013,6 +1032,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1060,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.dialogflow.v2.SpeechModelVariant.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1069,6 +1090,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1118,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -1139,6 +1162,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1206,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1249,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1288,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1342,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1332,6 +1360,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       phraseSets_.makeImmutable();
       return phraseSets_;
     }
+
     /**
      *
      *
@@ -1348,6 +1377,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public int getPhraseSetsCount() {
       return phraseSets_.size();
     }
+
     /**
      *
      *
@@ -1365,6 +1395,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public java.lang.String getPhraseSets(int index) {
       return phraseSets_.get(index);
     }
+
     /**
      *
      *
@@ -1382,6 +1413,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getPhraseSetsBytes(int index) {
       return phraseSets_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1407,6 +1439,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1464,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1452,6 +1486,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1507,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1499,6 +1535,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int audioEncoding_ = 0;
+
     /**
      *
      *
@@ -1514,6 +1551,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
+
     /**
      *
      *
@@ -1532,6 +1570,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1588,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
           com.google.cloud.dialogflow.v2.AudioEncoding.forNumber(audioEncoding_);
       return result == null ? com.google.cloud.dialogflow.v2.AudioEncoding.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1570,6 +1610,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1630,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int sampleRateHertz_;
+
     /**
      *
      *
@@ -1607,6 +1649,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
+
     /**
      *
      *
@@ -1629,6 +1672,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1695,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -1677,6 +1722,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1703,6 +1749,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1728,6 +1775,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1797,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +1826,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean enableWordInfo_;
+
     /**
      *
      *
@@ -1797,6 +1847,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public boolean getEnableWordInfo() {
       return enableWordInfo_;
     }
+
     /**
      *
      *
@@ -1821,6 +1872,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1897,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean useTimeoutBasedEndpointing_;
+
     /**
      *
      *
@@ -1861,6 +1914,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public boolean getUseTimeoutBasedEndpointing() {
       return useTimeoutBasedEndpointing_;
     }
+
     /**
      *
      *
@@ -1881,6 +1935,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -59,6 +59,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return Whether the csvReadInstances field is set.
    */
   boolean hasCsvReadInstances();
+
   /**
    *
    *
@@ -94,6 +95,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return The csvReadInstances.
    */
   com.google.cloud.aiplatform.v1.CsvSource getCsvReadInstances();
+
   /**
    *
    *
@@ -140,6 +142,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return Whether the bigqueryReadInstances field is set.
    */
   boolean hasBigqueryReadInstances();
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return The bigqueryReadInstances.
    */
   com.google.cloud.aiplatform.v1.BigQuerySource getBigqueryReadInstances();
+
   /**
    *
    *
@@ -179,6 +183,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return The featurestore.
    */
   java.lang.String getFeaturestore();
+
   /**
    *
    *
@@ -210,6 +215,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return The destination.
    */
   com.google.cloud.aiplatform.v1.FeatureValueDestination getDestination();
+
   /**
    *
    *
@@ -256,6 +263,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.PassThroughField>
       getPassThroughFieldsList();
+
   /**
    *
    *
@@ -275,6 +283,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.PassThroughField
       getPassThroughFields(int index);
+
   /**
    *
    *
@@ -293,6 +302,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * </code>
    */
   int getPassThroughFieldsCount();
+
   /**
    *
    *
@@ -315,6 +325,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
               com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest
                   .PassThroughFieldOrBuilder>
       getPassThroughFieldsOrBuilderList();
+
   /**
    *
    *
@@ -349,6 +360,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.EntityTypeSpec>
       getEntityTypeSpecsList();
+
   /**
    *
    *
@@ -363,6 +375,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.EntityTypeSpec getEntityTypeSpecs(
       int index);
+
   /**
    *
    *
@@ -376,6 +389,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * </code>
    */
   int getEntityTypeSpecsCount();
+
   /**
    *
    *
@@ -392,6 +406,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.EntityTypeSpecOrBuilder>
       getEntityTypeSpecsOrBuilderList();
+
   /**
    *
    *
@@ -422,6 +437,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -437,6 +453,7 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *

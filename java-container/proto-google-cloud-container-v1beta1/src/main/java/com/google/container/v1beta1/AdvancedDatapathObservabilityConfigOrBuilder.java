@@ -50,6 +50,7 @@ public interface AdvancedDatapathObservabilityConfigOrBuilder
    * @return The enum numeric value on the wire for relayMode.
    */
   int getRelayModeValue();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface AdvancedDatapathObservabilityConfigOrBuilder
    * @return Whether the enableRelay field is set.
    */
   boolean hasEnableRelay();
+
   /**
    *
    *

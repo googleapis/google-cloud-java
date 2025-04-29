@@ -39,6 +39,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return Whether the agentUri field is set.
    */
   boolean hasAgentUri();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return Whether the agentContent field is set.
    */
   boolean hasAgentContent();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return Whether the gitSource field is set.
    */
   boolean hasGitSource();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return The gitSource.
    */
   com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource getGitSource();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface RestoreAgentRequestOrBuilder
    * @return The enum numeric value on the wire for restoreOption.
    */
   int getRestoreOptionValue();
+
   /**
    *
    *

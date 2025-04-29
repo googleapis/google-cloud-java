@@ -36,6 +36,7 @@ public interface PdfInstructionOrBuilder
    * @return The gcsFileUri.
    */
   java.lang.String getGcsFileUri();
+
   /**
    *
    *

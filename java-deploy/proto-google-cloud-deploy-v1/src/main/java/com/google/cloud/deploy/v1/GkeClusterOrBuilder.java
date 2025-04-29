@@ -39,6 +39,7 @@ public interface GkeClusterOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface GkeClusterOrBuilder
    * @return The proxyUrl.
    */
   java.lang.String getProxyUrl();
+
   /**
    *
    *

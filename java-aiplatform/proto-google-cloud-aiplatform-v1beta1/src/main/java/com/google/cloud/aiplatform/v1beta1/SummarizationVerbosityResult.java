@@ -33,6 +33,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SummarizationVerbosityResult)
     SummarizationVerbosityResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SummarizationVerbosityResult.newBuilder() to construct.
   private SummarizationVerbosityResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object explanation_ = "";
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -371,6 +378,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -589,6 +597,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     }
 
     private java.lang.Object explanation_ = "";
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +755,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +780,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -778,6 +796,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -793,6 +812,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -812,6 +832,7 @@ public final class SummarizationVerbosityResult extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

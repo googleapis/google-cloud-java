@@ -37,6 +37,7 @@ public interface UndeployConversationModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

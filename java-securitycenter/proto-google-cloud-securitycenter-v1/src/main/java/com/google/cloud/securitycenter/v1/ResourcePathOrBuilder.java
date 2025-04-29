@@ -35,6 +35,7 @@ public interface ResourcePathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ResourcePath.ResourcePathNode nodes = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.ResourcePath.ResourcePathNode> getNodesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ResourcePathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ResourcePath.ResourcePathNode nodes = 1;</code>
    */
   com.google.cloud.securitycenter.v1.ResourcePath.ResourcePathNode getNodes(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ResourcePathOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ResourcePath.ResourcePathNode nodes = 1;</code>
    */
   int getNodesCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ResourcePathOrBuilder
   java.util.List<
           ? extends com.google.cloud.securitycenter.v1.ResourcePath.ResourcePathNodeOrBuilder>
       getNodesOrBuilderList();
+
   /**
    *
    *

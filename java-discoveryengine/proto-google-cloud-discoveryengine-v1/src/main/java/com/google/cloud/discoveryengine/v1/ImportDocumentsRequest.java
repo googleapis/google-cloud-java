@@ -33,6 +33,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.ImportDocumentsRequest)
     ImportDocumentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportDocumentsRequest.newBuilder() to construct.
   private ImportDocumentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int RECONCILIATION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>INCREMENTAL = 1;</code>
      */
     public static final int INCREMENTAL_VALUE = 1;
+
     /**
      *
      *
@@ -249,6 +252,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     java.util.List<com.google.cloud.discoveryengine.v1.Document> getDocumentsList();
+
     /**
      *
      *
@@ -263,6 +267,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     com.google.cloud.discoveryengine.v1.Document getDocuments(int index);
+
     /**
      *
      *
@@ -277,6 +282,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     int getDocumentsCount();
+
     /**
      *
      *
@@ -292,6 +298,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     java.util.List<? extends com.google.cloud.discoveryengine.v1.DocumentOrBuilder>
         getDocumentsOrBuilderList();
+
     /**
      *
      *
@@ -307,6 +314,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     com.google.cloud.discoveryengine.v1.DocumentOrBuilder getDocumentsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -321,6 +329,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.ImportDocumentsRequest.InlineSource)
       InlineSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InlineSource.newBuilder() to construct.
     private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -356,6 +365,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1.Document> documents_;
+
     /**
      *
      *
@@ -373,6 +383,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public java.util.List<com.google.cloud.discoveryengine.v1.Document> getDocumentsList() {
       return documents_;
     }
+
     /**
      *
      *
@@ -391,6 +402,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         getDocumentsOrBuilderList() {
       return documents_;
     }
+
     /**
      *
      *
@@ -408,6 +420,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public int getDocumentsCount() {
       return documents_.size();
     }
+
     /**
      *
      *
@@ -425,6 +438,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.Document getDocuments(int index) {
       return documents_.get(index);
     }
+
     /**
      *
      *
@@ -608,6 +622,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -888,6 +903,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return documentsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -908,6 +924,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return documentsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -928,6 +945,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return documentsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -954,6 +972,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -978,6 +997,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1004,6 +1024,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1030,6 +1051,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1054,6 +1076,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1078,6 +1101,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1102,6 +1126,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1125,6 +1150,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1148,6 +1174,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1164,6 +1191,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       public com.google.cloud.discoveryengine.v1.Document.Builder getDocumentsBuilder(int index) {
         return getDocumentsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1185,6 +1213,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return documentsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1206,6 +1235,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return java.util.Collections.unmodifiableList(documents_);
         }
       }
+
       /**
        *
        *
@@ -1223,6 +1253,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return getDocumentsFieldBuilder()
             .addBuilder(com.google.cloud.discoveryengine.v1.Document.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1240,6 +1271,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return getDocumentsFieldBuilder()
             .addBuilder(index, com.google.cloud.discoveryengine.v1.Document.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1368,6 +1400,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1415,6 +1448,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int INLINE_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1431,6 +1465,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasInlineSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -1451,6 +1486,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     return com.google.cloud.discoveryengine.v1.ImportDocumentsRequest.InlineSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1472,6 +1508,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1487,6 +1524,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -1505,6 +1543,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1523,6 +1562,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1538,6 +1578,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasBigquerySource() {
     return sourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -1556,6 +1597,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.BigQuerySource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1574,6 +1616,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int FHIR_STORE_SOURCE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -1589,6 +1632,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasFhirStoreSource() {
     return sourceCase_ == 10;
   }
+
   /**
    *
    *
@@ -1607,6 +1651,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.FhirStoreSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1626,6 +1671,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SPANNER_SOURCE_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -1641,6 +1687,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasSpannerSource() {
     return sourceCase_ == 11;
   }
+
   /**
    *
    *
@@ -1659,6 +1706,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.SpannerSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1677,6 +1725,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLOUD_SQL_SOURCE_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -1692,6 +1741,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasCloudSqlSource() {
     return sourceCase_ == 12;
   }
+
   /**
    *
    *
@@ -1710,6 +1760,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.CloudSqlSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1728,6 +1779,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int FIRESTORE_SOURCE_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -1743,6 +1795,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasFirestoreSource() {
     return sourceCase_ == 13;
   }
+
   /**
    *
    *
@@ -1761,6 +1814,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.FirestoreSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1780,6 +1834,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ALLOY_DB_SOURCE_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -1795,6 +1850,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasAlloyDbSource() {
     return sourceCase_ == 14;
   }
+
   /**
    *
    *
@@ -1813,6 +1869,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.AlloyDbSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1831,6 +1888,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int BIGTABLE_SOURCE_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -1846,6 +1904,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasBigtableSource() {
     return sourceCase_ == 15;
   }
+
   /**
    *
    *
@@ -1864,6 +1923,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.cloud.discoveryengine.v1.BigtableSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1885,6 +1945,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -1912,6 +1973,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -1942,6 +2004,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1.ImportErrorConfig errorConfig_;
+
   /**
    *
    *
@@ -1957,6 +2020,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1974,6 +2038,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.discoveryengine.v1.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
+
   /**
    *
    *
@@ -1992,6 +2057,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int RECONCILIATION_MODE_FIELD_NUMBER = 6;
   private int reconciliationMode_ = 0;
+
   /**
    *
    *
@@ -2011,6 +2077,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public int getReconciliationModeValue() {
     return reconciliationMode_;
   }
+
   /**
    *
    *
@@ -2039,6 +2106,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 7;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -2055,6 +2123,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2071,6 +2140,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -2088,6 +2158,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int AUTO_GENERATE_IDS_FIELD_NUMBER = 8;
   private boolean autoGenerateIds_ = false;
+
   /**
    *
    *
@@ -2132,6 +2203,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object idField_ = "";
+
   /**
    *
    *
@@ -2188,6 +2260,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -2247,6 +2320,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
 
   public static final int FORCE_REFRESH_CONTENT_FIELD_NUMBER = 16;
   private boolean forceRefreshContent_ = false;
+
   /**
    *
    *
@@ -2642,6 +2716,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3115,6 +3190,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.ImportDocumentsRequest.InlineSource.Builder,
             com.google.cloud.discoveryengine.v1.ImportDocumentsRequest.InlineSourceOrBuilder>
         inlineSourceBuilder_;
+
     /**
      *
      *
@@ -3131,6 +3207,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasInlineSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -3160,6 +3237,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3184,6 +3262,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3206,6 +3285,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3243,6 +3323,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3269,6 +3350,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3283,6 +3365,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         getInlineSourceBuilder() {
       return getInlineSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3306,6 +3389,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3347,6 +3431,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.GcsSource.Builder,
             com.google.cloud.discoveryengine.v1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -3362,6 +3447,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -3387,6 +3473,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3409,6 +3496,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3429,6 +3517,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3461,6 +3550,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3486,6 +3576,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3498,6 +3589,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3518,6 +3610,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3556,6 +3649,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.BigQuerySource.Builder,
             com.google.cloud.discoveryengine.v1.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
+
     /**
      *
      *
@@ -3571,6 +3665,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasBigquerySource() {
       return sourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -3596,6 +3691,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3618,6 +3714,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3638,6 +3735,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3670,6 +3768,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -3695,6 +3794,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3707,6 +3807,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.BigQuerySource.Builder getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3728,6 +3829,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.BigQuerySource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3766,6 +3868,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.FhirStoreSource.Builder,
             com.google.cloud.discoveryengine.v1.FhirStoreSourceOrBuilder>
         fhirStoreSourceBuilder_;
+
     /**
      *
      *
@@ -3781,6 +3884,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasFhirStoreSource() {
       return sourceCase_ == 10;
     }
+
     /**
      *
      *
@@ -3806,6 +3910,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.FhirStoreSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3828,6 +3933,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3848,6 +3954,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3881,6 +3988,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3906,6 +4014,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3918,6 +4027,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.FhirStoreSource.Builder getFhirStoreSourceBuilder() {
       return getFhirStoreSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3939,6 +4049,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.FhirStoreSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3977,6 +4088,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.SpannerSource.Builder,
             com.google.cloud.discoveryengine.v1.SpannerSourceOrBuilder>
         spannerSourceBuilder_;
+
     /**
      *
      *
@@ -3992,6 +4104,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasSpannerSource() {
       return sourceCase_ == 11;
     }
+
     /**
      *
      *
@@ -4017,6 +4130,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.SpannerSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4039,6 +4153,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4059,6 +4174,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4091,6 +4207,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4116,6 +4233,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4128,6 +4246,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.SpannerSource.Builder getSpannerSourceBuilder() {
       return getSpannerSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4148,6 +4267,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.SpannerSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4186,6 +4306,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.CloudSqlSource.Builder,
             com.google.cloud.discoveryengine.v1.CloudSqlSourceOrBuilder>
         cloudSqlSourceBuilder_;
+
     /**
      *
      *
@@ -4201,6 +4322,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasCloudSqlSource() {
       return sourceCase_ == 12;
     }
+
     /**
      *
      *
@@ -4226,6 +4348,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.CloudSqlSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4248,6 +4371,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4268,6 +4392,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4300,6 +4425,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4325,6 +4451,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4337,6 +4464,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.CloudSqlSource.Builder getCloudSqlSourceBuilder() {
       return getCloudSqlSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4358,6 +4486,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.CloudSqlSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4396,6 +4525,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.FirestoreSource.Builder,
             com.google.cloud.discoveryengine.v1.FirestoreSourceOrBuilder>
         firestoreSourceBuilder_;
+
     /**
      *
      *
@@ -4411,6 +4541,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasFirestoreSource() {
       return sourceCase_ == 13;
     }
+
     /**
      *
      *
@@ -4436,6 +4567,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.FirestoreSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4458,6 +4590,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4478,6 +4611,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4511,6 +4645,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4536,6 +4671,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4548,6 +4684,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.FirestoreSource.Builder getFirestoreSourceBuilder() {
       return getFirestoreSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4569,6 +4706,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.FirestoreSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4607,6 +4745,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.AlloyDbSource.Builder,
             com.google.cloud.discoveryengine.v1.AlloyDbSourceOrBuilder>
         alloyDbSourceBuilder_;
+
     /**
      *
      *
@@ -4622,6 +4761,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasAlloyDbSource() {
       return sourceCase_ == 14;
     }
+
     /**
      *
      *
@@ -4647,6 +4787,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.AlloyDbSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4669,6 +4810,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4689,6 +4831,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4721,6 +4864,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4746,6 +4890,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4758,6 +4903,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.AlloyDbSource.Builder getAlloyDbSourceBuilder() {
       return getAlloyDbSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4778,6 +4924,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.AlloyDbSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4816,6 +4963,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.BigtableSource.Builder,
             com.google.cloud.discoveryengine.v1.BigtableSourceOrBuilder>
         bigtableSourceBuilder_;
+
     /**
      *
      *
@@ -4831,6 +4979,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasBigtableSource() {
       return sourceCase_ == 15;
     }
+
     /**
      *
      *
@@ -4856,6 +5005,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.BigtableSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4878,6 +5028,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4898,6 +5049,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4930,6 +5082,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       sourceCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4955,6 +5108,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4967,6 +5121,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1.BigtableSource.Builder getBigtableSourceBuilder() {
       return getBigtableSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4988,6 +5143,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return com.google.cloud.discoveryengine.v1.BigtableSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5022,6 +5178,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -5048,6 +5205,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5074,6 +5232,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5099,6 +5258,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5120,6 +5280,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5153,6 +5314,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.discoveryengine.v1.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
+
     /**
      *
      *
@@ -5167,6 +5329,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -5187,6 +5350,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return errorConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5209,6 +5373,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5229,6 +5394,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5257,6 +5423,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5276,6 +5443,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5290,6 +5458,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5309,6 +5478,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             : errorConfig_;
       }
     }
+
     /**
      *
      *
@@ -5336,6 +5506,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private int reconciliationMode_ = 0;
+
     /**
      *
      *
@@ -5355,6 +5526,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public int getReconciliationModeValue() {
       return reconciliationMode_;
     }
+
     /**
      *
      *
@@ -5377,6 +5549,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5403,6 +5576,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5429,6 +5603,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5457,6 +5632,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -5472,6 +5648,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -5493,6 +5670,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5516,6 +5694,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5536,6 +5715,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5564,6 +5744,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5584,6 +5765,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5599,6 +5781,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5618,6 +5801,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -5646,6 +5830,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean autoGenerateIds_;
+
     /**
      *
      *
@@ -5685,6 +5870,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean getAutoGenerateIds() {
       return autoGenerateIds_;
     }
+
     /**
      *
      *
@@ -5728,6 +5914,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5771,6 +5958,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object idField_ = "";
+
     /**
      *
      *
@@ -5826,6 +6014,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5881,6 +6070,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5935,6 +6125,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5985,6 +6176,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6042,6 +6234,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean forceRefreshContent_;
+
     /**
      *
      *
@@ -6061,6 +6254,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public boolean getForceRefreshContent() {
       return forceRefreshContent_;
     }
+
     /**
      *
      *
@@ -6084,6 +6278,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

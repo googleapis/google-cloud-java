@@ -47,6 +47,7 @@ public interface ManifestOrBuilder
    * @return The manifestLocation.
    */
   java.lang.String getManifestLocation();
+
   /**
    *
    *

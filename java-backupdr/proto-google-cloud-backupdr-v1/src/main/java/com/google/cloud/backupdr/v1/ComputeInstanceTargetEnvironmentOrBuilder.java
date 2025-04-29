@@ -36,6 +36,7 @@ public interface ComputeInstanceTargetEnvironmentOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ComputeInstanceTargetEnvironmentOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

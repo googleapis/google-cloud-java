@@ -34,6 +34,7 @@ public interface ListGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.apigateway.v1.Gateway gateways = 1;</code>
    */
   java.util.List<com.google.cloud.apigateway.v1.Gateway> getGatewaysList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.apigateway.v1.Gateway gateways = 1;</code>
    */
   com.google.cloud.apigateway.v1.Gateway getGateways(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListGatewaysResponseOrBuilder
    * <code>repeated .google.cloud.apigateway.v1.Gateway gateways = 1;</code>
    */
   int getGatewaysCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListGatewaysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigateway.v1.GatewayOrBuilder>
       getGatewaysOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListGatewaysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListGatewaysResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListGatewaysResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListGatewaysResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
+
   /**
    *
    *

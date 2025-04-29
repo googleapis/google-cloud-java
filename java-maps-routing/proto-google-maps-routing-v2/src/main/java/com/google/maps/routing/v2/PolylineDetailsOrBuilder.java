@@ -34,6 +34,7 @@ public interface PolylineDetailsOrBuilder
    * <code>repeated .google.maps.routing.v2.PolylineDetails.FlyoverInfo flyover_info = 12;</code>
    */
   java.util.List<com.google.maps.routing.v2.PolylineDetails.FlyoverInfo> getFlyoverInfoList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface PolylineDetailsOrBuilder
    * <code>repeated .google.maps.routing.v2.PolylineDetails.FlyoverInfo flyover_info = 12;</code>
    */
   com.google.maps.routing.v2.PolylineDetails.FlyoverInfo getFlyoverInfo(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface PolylineDetailsOrBuilder
    * <code>repeated .google.maps.routing.v2.PolylineDetails.FlyoverInfo flyover_info = 12;</code>
    */
   int getFlyoverInfoCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface PolylineDetailsOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.FlyoverInfoOrBuilder>
       getFlyoverInfoOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface PolylineDetailsOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo> getNarrowRoadInfoList();
+
   /**
    *
    *
@@ -99,6 +104,7 @@ public interface PolylineDetailsOrBuilder
    * </code>
    */
   com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo getNarrowRoadInfo(int index);
+
   /**
    *
    *
@@ -110,6 +116,7 @@ public interface PolylineDetailsOrBuilder
    * </code>
    */
   int getNarrowRoadInfoCount();
+
   /**
    *
    *
@@ -122,6 +129,7 @@ public interface PolylineDetailsOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfoOrBuilder>
       getNarrowRoadInfoOrBuilderList();
+
   /**
    *
    *

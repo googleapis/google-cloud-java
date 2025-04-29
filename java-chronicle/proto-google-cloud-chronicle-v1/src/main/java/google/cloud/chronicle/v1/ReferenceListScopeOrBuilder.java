@@ -38,6 +38,7 @@ public interface ReferenceListScopeOrBuilder
    * @return A list containing the scopeNames.
    */
   java.util.List<java.lang.String> getScopeNamesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ReferenceListScopeOrBuilder
    * @return The count of scopeNames.
    */
   int getScopeNamesCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface ReferenceListScopeOrBuilder
    * @return The scopeNames at the given index.
    */
   java.lang.String getScopeNames(int index);
+
   /**
    *
    *

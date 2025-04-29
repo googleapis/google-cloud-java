@@ -36,6 +36,7 @@ public interface PostStartupScriptConfigOrBuilder
    * @return The postStartupScript.
    */
   java.lang.String getPostStartupScript();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface PostStartupScriptConfigOrBuilder
    * @return The postStartupScriptUrl.
    */
   java.lang.String getPostStartupScriptUrl();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface PostStartupScriptConfigOrBuilder
    * @return The enum numeric value on the wire for postStartupScriptBehavior.
    */
   int getPostStartupScriptBehaviorValue();
+
   /**
    *
    *

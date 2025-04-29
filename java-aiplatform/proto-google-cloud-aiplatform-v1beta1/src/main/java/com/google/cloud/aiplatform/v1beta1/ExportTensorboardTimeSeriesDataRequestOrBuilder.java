@@ -40,6 +40,7 @@ public interface ExportTensorboardTimeSeriesDataRequestOrBuilder
    * @return The tensorboardTimeSeries.
    */
   java.lang.String getTensorboardTimeSeries();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ExportTensorboardTimeSeriesDataRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface ExportTensorboardTimeSeriesDataRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface ExportTensorboardTimeSeriesDataRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

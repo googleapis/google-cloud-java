@@ -38,6 +38,7 @@ public interface MembershipSpecOrBuilder
    * @return Whether the configSync field is set.
    */
   boolean hasConfigSync();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface MembershipSpecOrBuilder
    * @return The configSync.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.ConfigSync getConfigSync();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface MembershipSpecOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPolicyController();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface MembershipSpecOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyController getPolicyController();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface MembershipSpecOrBuilder
    */
   @java.lang.Deprecated
   boolean hasBinauthz();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface MembershipSpecOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig getBinauthz();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface MembershipSpecOrBuilder
    */
   @java.lang.Deprecated
   boolean hasHierarchyController();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface MembershipSpecOrBuilder
   @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig
       getHierarchyController();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface MembershipSpecOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public interface MembershipSpecOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public interface MembershipSpecOrBuilder
    * @return The enum numeric value on the wire for management.
    */
   int getManagementValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class NoConnectivitySettings extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.NoConnectivitySettings)
     NoConnectivitySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NoConnectivitySettings.newBuilder() to construct.
   private NoConnectivitySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class NoConnectivitySettings extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

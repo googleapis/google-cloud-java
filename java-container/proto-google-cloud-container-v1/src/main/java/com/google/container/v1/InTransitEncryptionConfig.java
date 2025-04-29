@@ -74,6 +74,7 @@ public enum InTransitEncryptionConfig implements com.google.protobuf.ProtocolMes
    * <code>IN_TRANSIT_ENCRYPTION_CONFIG_UNSPECIFIED = 0;</code>
    */
   public static final int IN_TRANSIT_ENCRYPTION_CONFIG_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum InTransitEncryptionConfig implements com.google.protobuf.ProtocolMes
    * <code>IN_TRANSIT_ENCRYPTION_DISABLED = 1;</code>
    */
   public static final int IN_TRANSIT_ENCRYPTION_DISABLED_VALUE = 1;
+
   /**
    *
    *

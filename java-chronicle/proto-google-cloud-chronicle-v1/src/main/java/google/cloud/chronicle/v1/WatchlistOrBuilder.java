@@ -38,6 +38,7 @@ public interface WatchlistOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface WatchlistOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface WatchlistOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface WatchlistOrBuilder
    * @return Whether the entityPopulationMechanism field is set.
    */
   boolean hasEntityPopulationMechanism();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface WatchlistOrBuilder
    * @return The entityPopulationMechanism.
    */
   google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism getEntityPopulationMechanism();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface WatchlistOrBuilder
    * @return Whether the entityCount field is set.
    */
   boolean hasEntityCount();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface WatchlistOrBuilder
    * @return The entityCount.
    */
   google.cloud.chronicle.v1.Watchlist.EntityCount getEntityCount();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface WatchlistOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface WatchlistOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface WatchlistOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public interface WatchlistOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -295,6 +306,7 @@ public interface WatchlistOrBuilder
    * @return Whether the watchlistUserPreferences field is set.
    */
   boolean hasWatchlistUserPreferences();
+
   /**
    *
    *
@@ -309,6 +321,7 @@ public interface WatchlistOrBuilder
    * @return The watchlistUserPreferences.
    */
   google.cloud.chronicle.v1.WatchlistUserPreferences getWatchlistUserPreferences();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ShareSettings)
     ShareSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ShareSettings.newBuilder() to construct.
   private ShareSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -148,6 +149,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SHARE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_SHARE_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -158,6 +160,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCAL = 72607563;</code>
      */
     public static final int LOCAL_VALUE = 72607563;
+
     /**
      *
      *
@@ -168,6 +171,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>ORGANIZATION = 274978099;</code>
      */
     public static final int ORGANIZATION_VALUE = 274978099;
+
     /**
      *
      *
@@ -178,6 +182,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>SHARE_TYPE_UNSPECIFIED = 494771730;</code>
      */
     public static final int SHARE_TYPE_UNSPECIFIED_VALUE = 494771730;
+
     /**
      *
      *
@@ -312,6 +317,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
   public int getProjectMapCount() {
     return internalGetProjectMap().getMap().size();
   }
+
   /**
    *
    *
@@ -330,6 +336,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProjectMap().getMap().containsKey(key);
   }
+
   /** Use {@link #getProjectMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -337,6 +344,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       getProjectMap() {
     return getProjectMapMap();
   }
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       getProjectMapMap() {
     return internalGetProjectMap().getMap();
   }
+
   /**
    *
    *
@@ -377,6 +386,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
         internalGetProjectMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -406,6 +416,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shareType_ = "";
+
   /**
    *
    *
@@ -422,6 +433,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShareType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -446,6 +458,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -655,6 +668,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -903,7 +917,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ProjectMapDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ProjectMapConverter projectMapConverter = new ProjectMapConverter();
 
@@ -943,6 +958,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     public int getProjectMapCount() {
       return internalGetProjectMap().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -961,6 +977,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProjectMap().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getProjectMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -968,6 +985,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
         getProjectMap() {
       return getProjectMapMap();
     }
+
     /**
      *
      *
@@ -984,6 +1002,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
         getProjectMapMap() {
       return internalGetProjectMap().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1009,6 +1028,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableProjectMap().ensureBuilderMap();
       return map.containsKey(key) ? projectMapConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1040,6 +1060,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProjectMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1058,6 +1079,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProjectMap().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig>
@@ -1065,6 +1087,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableProjectMap().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1088,6 +1111,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1113,6 +1137,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1167,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object shareType_ = "";
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShareType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1180,6 +1207,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1231,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1254,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1273,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

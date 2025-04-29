@@ -41,6 +41,7 @@ public interface UpdateRagEngineConfigRequestOrBuilder
    * @return Whether the ragEngineConfig field is set.
    */
   boolean hasRagEngineConfig();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateRagEngineConfigRequestOrBuilder
    * @return The ragEngineConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagEngineConfig getRagEngineConfig();
+
   /**
    *
    *

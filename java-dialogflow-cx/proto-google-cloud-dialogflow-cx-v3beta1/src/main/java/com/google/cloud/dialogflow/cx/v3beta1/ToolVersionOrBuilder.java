@@ -38,6 +38,7 @@ public interface ToolVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ToolVersionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ToolVersionOrBuilder
    * @return Whether the tool field is set.
    */
   boolean hasTool();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ToolVersionOrBuilder
    * @return The tool.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool getTool();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface ToolVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface ToolVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface ToolVersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface ToolVersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class StreamingAutomlClassificationConfig
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
     StreamingAutomlClassificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingAutomlClassificationConfig.newBuilder() to construct.
   private StreamingAutomlClassificationConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class StreamingAutomlClassificationConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelName_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class StreamingAutomlClassificationConfig
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +293,7 @@ public final class StreamingAutomlClassificationConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +495,7 @@ public final class StreamingAutomlClassificationConfig
     private int bitField0_;
 
     private java.lang.Object modelName_ = "";
+
     /**
      *
      *
@@ -515,6 +520,7 @@ public final class StreamingAutomlClassificationConfig
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -539,6 +545,7 @@ public final class StreamingAutomlClassificationConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -562,6 +569,7 @@ public final class StreamingAutomlClassificationConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class StreamingAutomlClassificationConfig
       onChanged();
       return this;
     }
+
     /**
      *
      *

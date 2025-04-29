@@ -34,6 +34,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Step)
     StepOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Step.newBuilder() to construct.
   private Step(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -480,6 +481,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -491,6 +493,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_INSTANCE = 1;</code>
      */
     public static final int START_FROM_INSTANCE_VALUE = 1;
+
     /**
      *
      *
@@ -502,6 +505,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_INTERNET = 2;</code>
      */
     public static final int START_FROM_INTERNET_VALUE = 2;
+
     /**
      *
      *
@@ -513,6 +517,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
      */
     public static final int START_FROM_GOOGLE_SERVICE_VALUE = 27;
+
     /**
      *
      *
@@ -526,6 +531,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_PRIVATE_NETWORK = 3;</code>
      */
     public static final int START_FROM_PRIVATE_NETWORK_VALUE = 3;
+
     /**
      *
      *
@@ -537,6 +543,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_GKE_MASTER = 21;</code>
      */
     public static final int START_FROM_GKE_MASTER_VALUE = 21;
+
     /**
      *
      *
@@ -548,6 +555,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_CLOUD_SQL_INSTANCE = 22;</code>
      */
     public static final int START_FROM_CLOUD_SQL_INSTANCE_VALUE = 22;
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_REDIS_INSTANCE = 32;</code>
      */
     public static final int START_FROM_REDIS_INSTANCE_VALUE = 32;
+
     /**
      *
      *
@@ -570,6 +579,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_REDIS_CLUSTER = 33;</code>
      */
     public static final int START_FROM_REDIS_CLUSTER_VALUE = 33;
+
     /**
      *
      *
@@ -581,6 +591,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_CLOUD_FUNCTION = 23;</code>
      */
     public static final int START_FROM_CLOUD_FUNCTION_VALUE = 23;
+
     /**
      *
      *
@@ -592,6 +603,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_APP_ENGINE_VERSION = 25;</code>
      */
     public static final int START_FROM_APP_ENGINE_VERSION_VALUE = 25;
+
     /**
      *
      *
@@ -603,6 +615,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_CLOUD_RUN_REVISION = 26;</code>
      */
     public static final int START_FROM_CLOUD_RUN_REVISION_VALUE = 26;
+
     /**
      *
      *
@@ -615,6 +628,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_STORAGE_BUCKET = 29;</code>
      */
     public static final int START_FROM_STORAGE_BUCKET_VALUE = 29;
+
     /**
      *
      *
@@ -626,6 +640,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
      */
     public static final int START_FROM_PSC_PUBLISHED_SERVICE_VALUE = 30;
+
     /**
      *
      *
@@ -638,6 +653,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_SERVERLESS_NEG = 31;</code>
      */
     public static final int START_FROM_SERVERLESS_NEG_VALUE = 31;
+
     /**
      *
      *
@@ -648,6 +664,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLY_INGRESS_FIREWALL_RULE = 4;</code>
      */
     public static final int APPLY_INGRESS_FIREWALL_RULE_VALUE = 4;
+
     /**
      *
      *
@@ -658,6 +675,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLY_EGRESS_FIREWALL_RULE = 5;</code>
      */
     public static final int APPLY_EGRESS_FIREWALL_RULE_VALUE = 5;
+
     /**
      *
      *
@@ -668,6 +686,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLY_ROUTE = 6;</code>
      */
     public static final int APPLY_ROUTE_VALUE = 6;
+
     /**
      *
      *
@@ -678,6 +697,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLY_FORWARDING_RULE = 7;</code>
      */
     public static final int APPLY_FORWARDING_RULE_VALUE = 7;
+
     /**
      *
      *
@@ -688,6 +708,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ANALYZE_LOAD_BALANCER_BACKEND = 28;</code>
      */
     public static final int ANALYZE_LOAD_BALANCER_BACKEND_VALUE = 28;
+
     /**
      *
      *
@@ -699,6 +720,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>SPOOFING_APPROVED = 8;</code>
      */
     public static final int SPOOFING_APPROVED_VALUE = 8;
+
     /**
      *
      *
@@ -709,6 +731,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_INSTANCE = 9;</code>
      */
     public static final int ARRIVE_AT_INSTANCE_VALUE = 9;
+
     /**
      *
      *
@@ -721,6 +744,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int ARRIVE_AT_INTERNAL_LOAD_BALANCER_VALUE = 10;
+
     /**
      *
      *
@@ -733,6 +757,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int ARRIVE_AT_EXTERNAL_LOAD_BALANCER_VALUE = 11;
+
     /**
      *
      *
@@ -743,6 +768,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_GATEWAY = 12;</code>
      */
     public static final int ARRIVE_AT_VPN_GATEWAY_VALUE = 12;
+
     /**
      *
      *
@@ -753,6 +779,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_TUNNEL = 13;</code>
      */
     public static final int ARRIVE_AT_VPN_TUNNEL_VALUE = 13;
+
     /**
      *
      *
@@ -763,6 +790,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPC_CONNECTOR = 24;</code>
      */
     public static final int ARRIVE_AT_VPC_CONNECTOR_VALUE = 24;
+
     /**
      *
      *
@@ -774,6 +802,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECT_VPC_EGRESS_CONNECTION = 35;</code>
      */
     public static final int DIRECT_VPC_EGRESS_CONNECTION_VALUE = 35;
+
     /**
      *
      *
@@ -785,6 +814,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVERLESS_EXTERNAL_CONNECTION = 36;</code>
      */
     public static final int SERVERLESS_EXTERNAL_CONNECTION_VALUE = 36;
+
     /**
      *
      *
@@ -795,6 +825,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>NAT = 14;</code>
      */
     public static final int NAT_VALUE = 14;
+
     /**
      *
      *
@@ -806,6 +837,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>PROXY_CONNECTION = 15;</code>
      */
     public static final int PROXY_CONNECTION_VALUE = 15;
+
     /**
      *
      *
@@ -816,6 +848,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>DELIVER = 16;</code>
      */
     public static final int DELIVER_VALUE = 16;
+
     /**
      *
      *
@@ -826,6 +859,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>DROP = 17;</code>
      */
     public static final int DROP_VALUE = 17;
+
     /**
      *
      *
@@ -837,6 +871,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>FORWARD = 18;</code>
      */
     public static final int FORWARD_VALUE = 18;
+
     /**
      *
      *
@@ -847,6 +882,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ABORT = 19;</code>
      */
     public static final int ABORT_VALUE = 19;
+
     /**
      *
      *
@@ -1053,6 +1089,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     private StepInfoCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1143,6 +1180,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1166,6 +1204,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1192,6 +1231,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1207,6 +1247,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1227,6 +1268,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAUSES_DROP_FIELD_NUMBER = 3;
   private boolean causesDrop_ = false;
+
   /**
    *
    *
@@ -1247,6 +1289,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -1270,6 +1313,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1295,6 +1339,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -1310,6 +1355,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstance() {
     return stepInfoCase_ == 5;
   }
+
   /**
    *
    *
@@ -1328,6 +1374,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.InstanceInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1346,6 +1393,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIREWALL_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -1361,6 +1409,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFirewall() {
     return stepInfoCase_ == 6;
   }
+
   /**
    *
    *
@@ -1379,6 +1428,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.FirewallInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1397,6 +1447,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -1412,6 +1463,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRoute() {
     return stepInfoCase_ == 7;
   }
+
   /**
    *
    *
@@ -1430,6 +1482,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.RouteInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1448,6 +1501,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -1466,6 +1520,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndpoint() {
     return stepInfoCase_ == 8;
   }
+
   /**
    *
    *
@@ -1487,6 +1542,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.EndpointInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1508,6 +1564,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GOOGLE_SERVICE_FIELD_NUMBER = 24;
+
   /**
    *
    *
@@ -1523,6 +1580,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGoogleService() {
     return stepInfoCase_ == 24;
   }
+
   /**
    *
    *
@@ -1541,6 +1599,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1560,6 +1619,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORWARDING_RULE_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -1575,6 +1635,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForwardingRule() {
     return stepInfoCase_ == 9;
   }
+
   /**
    *
    *
@@ -1593,6 +1654,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.ForwardingRuleInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1612,6 +1674,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPN_GATEWAY_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -1627,6 +1690,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVpnGateway() {
     return stepInfoCase_ == 10;
   }
+
   /**
    *
    *
@@ -1645,6 +1709,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.VpnGatewayInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1663,6 +1728,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPN_TUNNEL_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -1678,6 +1744,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVpnTunnel() {
     return stepInfoCase_ == 11;
   }
+
   /**
    *
    *
@@ -1696,6 +1763,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.VpnTunnelInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1714,6 +1782,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPC_CONNECTOR_FIELD_NUMBER = 21;
+
   /**
    *
    *
@@ -1729,6 +1798,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVpcConnector() {
     return stepInfoCase_ == 21;
   }
+
   /**
    *
    *
@@ -1747,6 +1817,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1766,6 +1837,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECT_VPC_EGRESS_CONNECTION_FIELD_NUMBER = 33;
+
   /**
    *
    *
@@ -1783,6 +1855,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDirectVpcEgressConnection() {
     return stepInfoCase_ == 33;
   }
+
   /**
    *
    *
@@ -1804,6 +1877,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1825,6 +1899,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVERLESS_EXTERNAL_CONNECTION_FIELD_NUMBER = 34;
+
   /**
    *
    *
@@ -1842,6 +1917,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServerlessExternalConnection() {
     return stepInfoCase_ == 34;
   }
+
   /**
    *
    *
@@ -1864,6 +1940,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfo
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1886,6 +1963,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELIVER_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -1901,6 +1979,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeliver() {
     return stepInfoCase_ == 12;
   }
+
   /**
    *
    *
@@ -1919,6 +1998,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.DeliverInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1937,6 +2017,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORWARD_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -1952,6 +2033,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForward() {
     return stepInfoCase_ == 13;
   }
+
   /**
    *
    *
@@ -1970,6 +2052,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.ForwardInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1988,6 +2071,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ABORT_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -2003,6 +2087,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAbort() {
     return stepInfoCase_ == 14;
   }
+
   /**
    *
    *
@@ -2021,6 +2106,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.AbortInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2039,6 +2125,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DROP_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -2054,6 +2141,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDrop() {
     return stepInfoCase_ == 15;
   }
+
   /**
    *
    *
@@ -2072,6 +2160,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.DropInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2090,6 +2179,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOAD_BALANCER_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -2111,6 +2201,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoadBalancer() {
     return stepInfoCase_ == 16;
   }
+
   /**
    *
    *
@@ -2135,6 +2226,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.LoadBalancerInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2158,6 +2250,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -2173,6 +2266,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return stepInfoCase_ == 17;
   }
+
   /**
    *
    *
@@ -2191,6 +2285,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.NetworkInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2209,6 +2304,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GKE_MASTER_FIELD_NUMBER = 18;
+
   /**
    *
    *
@@ -2224,6 +2320,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGkeMaster() {
     return stepInfoCase_ == 18;
   }
+
   /**
    *
    *
@@ -2242,6 +2339,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.GKEMasterInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2260,6 +2358,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_SQL_INSTANCE_FIELD_NUMBER = 19;
+
   /**
    *
    *
@@ -2275,6 +2374,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudSqlInstance() {
     return stepInfoCase_ == 19;
   }
+
   /**
    *
    *
@@ -2293,6 +2393,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2312,6 +2413,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIS_INSTANCE_FIELD_NUMBER = 30;
+
   /**
    *
    *
@@ -2327,6 +2429,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedisInstance() {
     return stepInfoCase_ == 30;
   }
+
   /**
    *
    *
@@ -2345,6 +2448,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.RedisInstanceInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2364,6 +2468,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIS_CLUSTER_FIELD_NUMBER = 31;
+
   /**
    *
    *
@@ -2379,6 +2484,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedisCluster() {
     return stepInfoCase_ == 31;
   }
+
   /**
    *
    *
@@ -2397,6 +2503,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.RedisClusterInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2416,6 +2523,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 20;
+
   /**
    *
    *
@@ -2431,6 +2539,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudFunction() {
     return stepInfoCase_ == 20;
   }
+
   /**
    *
    *
@@ -2449,6 +2558,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2468,6 +2578,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APP_ENGINE_VERSION_FIELD_NUMBER = 22;
+
   /**
    *
    *
@@ -2483,6 +2594,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppEngineVersion() {
     return stepInfoCase_ == 22;
   }
+
   /**
    *
    *
@@ -2501,6 +2613,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2520,6 +2633,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_RUN_REVISION_FIELD_NUMBER = 23;
+
   /**
    *
    *
@@ -2535,6 +2649,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRunRevision() {
     return stepInfoCase_ == 23;
   }
+
   /**
    *
    *
@@ -2553,6 +2668,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2572,6 +2688,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAT_FIELD_NUMBER = 25;
+
   /**
    *
    *
@@ -2587,6 +2704,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNat() {
     return stepInfoCase_ == 25;
   }
+
   /**
    *
    *
@@ -2605,6 +2723,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.NatInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2623,6 +2742,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROXY_CONNECTION_FIELD_NUMBER = 26;
+
   /**
    *
    *
@@ -2638,6 +2758,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProxyConnection() {
     return stepInfoCase_ == 26;
   }
+
   /**
    *
    *
@@ -2656,6 +2777,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.ProxyConnectionInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2675,6 +2797,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOAD_BALANCER_BACKEND_INFO_FIELD_NUMBER = 27;
+
   /**
    *
    *
@@ -2692,6 +2815,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoadBalancerBackendInfo() {
     return stepInfoCase_ == 27;
   }
+
   /**
    *
    *
@@ -2713,6 +2837,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2734,6 +2859,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STORAGE_BUCKET_FIELD_NUMBER = 28;
+
   /**
    *
    *
@@ -2749,6 +2875,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStorageBucket() {
     return stepInfoCase_ == 28;
   }
+
   /**
    *
    *
@@ -2767,6 +2894,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.StorageBucketInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2786,6 +2914,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVERLESS_NEG_FIELD_NUMBER = 29;
+
   /**
    *
    *
@@ -2802,6 +2931,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServerlessNeg() {
     return stepInfoCase_ == 29;
   }
+
   /**
    *
    *
@@ -2821,6 +2951,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.networkmanagement.v1.ServerlessNegInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3480,6 +3611,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4241,6 +4373,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     private int bitField1_;
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -4263,6 +4396,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4285,6 +4419,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4306,6 +4441,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4323,6 +4459,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4347,6 +4484,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -4362,6 +4500,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4380,6 +4519,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4399,6 +4539,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1.Step.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4420,6 +4561,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4439,6 +4581,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean causesDrop_;
+
     /**
      *
      *
@@ -4454,6 +4597,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean getCausesDrop() {
       return causesDrop_;
     }
+
     /**
      *
      *
@@ -4473,6 +4617,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4492,6 +4637,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -4514,6 +4660,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4536,6 +4683,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4557,6 +4705,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4574,6 +4723,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4602,6 +4752,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.InstanceInfo.Builder,
             com.google.cloud.networkmanagement.v1.InstanceInfoOrBuilder>
         instanceBuilder_;
+
     /**
      *
      *
@@ -4617,6 +4768,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstance() {
       return stepInfoCase_ == 5;
     }
+
     /**
      *
      *
@@ -4642,6 +4794,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.InstanceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4664,6 +4817,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4684,6 +4838,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4717,6 +4872,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4742,6 +4898,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4754,6 +4911,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.InstanceInfo.Builder getInstanceBuilder() {
       return getInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4774,6 +4932,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.InstanceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4812,6 +4971,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.FirewallInfo.Builder,
             com.google.cloud.networkmanagement.v1.FirewallInfoOrBuilder>
         firewallBuilder_;
+
     /**
      *
      *
@@ -4827,6 +4987,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFirewall() {
       return stepInfoCase_ == 6;
     }
+
     /**
      *
      *
@@ -4852,6 +5013,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.FirewallInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4874,6 +5036,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4894,6 +5057,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4927,6 +5091,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -4952,6 +5117,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4964,6 +5130,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.FirewallInfo.Builder getFirewallBuilder() {
       return getFirewallFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4984,6 +5151,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.FirewallInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5022,6 +5190,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.RouteInfo.Builder,
             com.google.cloud.networkmanagement.v1.RouteInfoOrBuilder>
         routeBuilder_;
+
     /**
      *
      *
@@ -5037,6 +5206,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRoute() {
       return stepInfoCase_ == 7;
     }
+
     /**
      *
      *
@@ -5062,6 +5232,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.RouteInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5084,6 +5255,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -5104,6 +5276,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -5136,6 +5309,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -5161,6 +5335,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5173,6 +5348,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.RouteInfo.Builder getRouteBuilder() {
       return getRouteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5193,6 +5369,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.RouteInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5231,6 +5408,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.EndpointInfo.Builder,
             com.google.cloud.networkmanagement.v1.EndpointInfoOrBuilder>
         endpointBuilder_;
+
     /**
      *
      *
@@ -5249,6 +5427,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndpoint() {
       return stepInfoCase_ == 8;
     }
+
     /**
      *
      *
@@ -5277,6 +5456,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.EndpointInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5302,6 +5482,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -5325,6 +5506,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -5361,6 +5543,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -5389,6 +5572,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5404,6 +5588,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.EndpointInfo.Builder getEndpointBuilder() {
       return getEndpointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5427,6 +5612,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.EndpointInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5468,6 +5654,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.GoogleServiceInfo.Builder,
             com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder>
         googleServiceBuilder_;
+
     /**
      *
      *
@@ -5483,6 +5670,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleService() {
       return stepInfoCase_ == 24;
     }
+
     /**
      *
      *
@@ -5508,6 +5696,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5530,6 +5719,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 24;
       return this;
     }
+
     /**
      *
      *
@@ -5550,6 +5740,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 24;
       return this;
     }
+
     /**
      *
      *
@@ -5584,6 +5775,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 24;
       return this;
     }
+
     /**
      *
      *
@@ -5609,6 +5801,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5622,6 +5815,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getGoogleServiceBuilder() {
       return getGoogleServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5643,6 +5837,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5681,6 +5876,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.ForwardingRuleInfo.Builder,
             com.google.cloud.networkmanagement.v1.ForwardingRuleInfoOrBuilder>
         forwardingRuleBuilder_;
+
     /**
      *
      *
@@ -5696,6 +5892,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForwardingRule() {
       return stepInfoCase_ == 9;
     }
+
     /**
      *
      *
@@ -5721,6 +5918,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ForwardingRuleInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5744,6 +5942,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -5764,6 +5963,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -5798,6 +5998,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -5823,6 +6024,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5836,6 +6038,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getForwardingRuleBuilder() {
       return getForwardingRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5857,6 +6060,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ForwardingRuleInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5895,6 +6099,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.VpnGatewayInfo.Builder,
             com.google.cloud.networkmanagement.v1.VpnGatewayInfoOrBuilder>
         vpnGatewayBuilder_;
+
     /**
      *
      *
@@ -5910,6 +6115,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVpnGateway() {
       return stepInfoCase_ == 10;
     }
+
     /**
      *
      *
@@ -5935,6 +6141,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.VpnGatewayInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5957,6 +6164,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -5977,6 +6185,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -6010,6 +6219,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -6035,6 +6245,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6047,6 +6258,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.VpnGatewayInfo.Builder getVpnGatewayBuilder() {
       return getVpnGatewayFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6067,6 +6279,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.VpnGatewayInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6105,6 +6318,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.VpnTunnelInfo.Builder,
             com.google.cloud.networkmanagement.v1.VpnTunnelInfoOrBuilder>
         vpnTunnelBuilder_;
+
     /**
      *
      *
@@ -6120,6 +6334,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVpnTunnel() {
       return stepInfoCase_ == 11;
     }
+
     /**
      *
      *
@@ -6145,6 +6360,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.VpnTunnelInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6167,6 +6383,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -6187,6 +6404,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -6220,6 +6438,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -6245,6 +6464,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6257,6 +6477,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.VpnTunnelInfo.Builder getVpnTunnelBuilder() {
       return getVpnTunnelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6277,6 +6498,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.VpnTunnelInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6315,6 +6537,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder,
             com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder>
         vpcConnectorBuilder_;
+
     /**
      *
      *
@@ -6330,6 +6553,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVpcConnector() {
       return stepInfoCase_ == 21;
     }
+
     /**
      *
      *
@@ -6355,6 +6579,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6377,6 +6602,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6397,6 +6623,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6430,6 +6657,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6455,6 +6683,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6467,6 +6696,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder getVpcConnectorBuilder() {
       return getVpcConnectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6488,6 +6718,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6526,6 +6757,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfo.Builder,
             com.google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfoOrBuilder>
         directVpcEgressConnectionBuilder_;
+
     /**
      *
      *
@@ -6543,6 +6775,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDirectVpcEgressConnection() {
       return stepInfoCase_ == 33;
     }
+
     /**
      *
      *
@@ -6573,6 +6806,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6598,6 +6832,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 33;
       return this;
     }
+
     /**
      *
      *
@@ -6621,6 +6856,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 33;
       return this;
     }
+
     /**
      *
      *
@@ -6659,6 +6895,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 33;
       return this;
     }
+
     /**
      *
      *
@@ -6686,6 +6923,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6701,6 +6939,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getDirectVpcEgressConnectionBuilder() {
       return getDirectVpcEgressConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6725,6 +6964,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6767,6 +7007,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfo.Builder,
             com.google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfoOrBuilder>
         serverlessExternalConnectionBuilder_;
+
     /**
      *
      *
@@ -6784,6 +7025,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServerlessExternalConnection() {
       return stepInfoCase_ == 34;
     }
+
     /**
      *
      *
@@ -6814,6 +7056,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6839,6 +7082,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 34;
       return this;
     }
+
     /**
      *
      *
@@ -6862,6 +7106,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 34;
       return this;
     }
+
     /**
      *
      *
@@ -6900,6 +7145,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 34;
       return this;
     }
+
     /**
      *
      *
@@ -6927,6 +7173,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6942,6 +7189,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getServerlessExternalConnectionBuilder() {
       return getServerlessExternalConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6966,6 +7214,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7008,6 +7257,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.DeliverInfo.Builder,
             com.google.cloud.networkmanagement.v1.DeliverInfoOrBuilder>
         deliverBuilder_;
+
     /**
      *
      *
@@ -7023,6 +7273,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeliver() {
       return stepInfoCase_ == 12;
     }
+
     /**
      *
      *
@@ -7048,6 +7299,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.DeliverInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7070,6 +7322,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -7090,6 +7343,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -7123,6 +7377,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -7148,6 +7403,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7160,6 +7416,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.DeliverInfo.Builder getDeliverBuilder() {
       return getDeliverFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7180,6 +7437,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.DeliverInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7218,6 +7476,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.ForwardInfo.Builder,
             com.google.cloud.networkmanagement.v1.ForwardInfoOrBuilder>
         forwardBuilder_;
+
     /**
      *
      *
@@ -7233,6 +7492,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForward() {
       return stepInfoCase_ == 13;
     }
+
     /**
      *
      *
@@ -7258,6 +7518,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ForwardInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7280,6 +7541,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -7300,6 +7562,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -7333,6 +7596,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -7358,6 +7622,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7370,6 +7635,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.ForwardInfo.Builder getForwardBuilder() {
       return getForwardFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7390,6 +7656,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ForwardInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7428,6 +7695,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.AbortInfo.Builder,
             com.google.cloud.networkmanagement.v1.AbortInfoOrBuilder>
         abortBuilder_;
+
     /**
      *
      *
@@ -7443,6 +7711,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAbort() {
       return stepInfoCase_ == 14;
     }
+
     /**
      *
      *
@@ -7468,6 +7737,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.AbortInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7490,6 +7760,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -7510,6 +7781,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -7542,6 +7814,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -7567,6 +7840,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7579,6 +7853,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.AbortInfo.Builder getAbortBuilder() {
       return getAbortFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7599,6 +7874,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.AbortInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7637,6 +7913,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.DropInfo.Builder,
             com.google.cloud.networkmanagement.v1.DropInfoOrBuilder>
         dropBuilder_;
+
     /**
      *
      *
@@ -7652,6 +7929,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDrop() {
       return stepInfoCase_ == 15;
     }
+
     /**
      *
      *
@@ -7677,6 +7955,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.DropInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7699,6 +7978,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -7718,6 +7998,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -7750,6 +8031,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -7775,6 +8057,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7787,6 +8070,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.DropInfo.Builder getDropBuilder() {
       return getDropFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7807,6 +8091,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.DropInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7845,6 +8130,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.LoadBalancerInfo.Builder,
             com.google.cloud.networkmanagement.v1.LoadBalancerInfoOrBuilder>
         loadBalancerBuilder_;
+
     /**
      *
      *
@@ -7866,6 +8152,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadBalancer() {
       return stepInfoCase_ == 16;
     }
+
     /**
      *
      *
@@ -7897,6 +8184,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.LoadBalancerInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7923,6 +8211,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -7947,6 +8236,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -7984,6 +8274,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -8013,6 +8304,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8029,6 +8321,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.LoadBalancerInfo.Builder getLoadBalancerBuilder() {
       return getLoadBalancerFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8054,6 +8347,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.LoadBalancerInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8095,6 +8389,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.NetworkInfo.Builder,
             com.google.cloud.networkmanagement.v1.NetworkInfoOrBuilder>
         networkBuilder_;
+
     /**
      *
      *
@@ -8110,6 +8405,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return stepInfoCase_ == 17;
     }
+
     /**
      *
      *
@@ -8135,6 +8431,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.NetworkInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8157,6 +8454,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -8177,6 +8475,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -8210,6 +8509,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -8235,6 +8535,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8247,6 +8548,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.NetworkInfo.Builder getNetworkBuilder() {
       return getNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8267,6 +8569,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.NetworkInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8305,6 +8608,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.GKEMasterInfo.Builder,
             com.google.cloud.networkmanagement.v1.GKEMasterInfoOrBuilder>
         gkeMasterBuilder_;
+
     /**
      *
      *
@@ -8320,6 +8624,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGkeMaster() {
       return stepInfoCase_ == 18;
     }
+
     /**
      *
      *
@@ -8345,6 +8650,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.GKEMasterInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8367,6 +8673,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -8387,6 +8694,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -8420,6 +8728,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -8445,6 +8754,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8457,6 +8767,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.GKEMasterInfo.Builder getGkeMasterBuilder() {
       return getGkeMasterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8477,6 +8788,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.GKEMasterInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8515,6 +8827,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo.Builder,
             com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfoOrBuilder>
         cloudSqlInstanceBuilder_;
+
     /**
      *
      *
@@ -8530,6 +8843,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudSqlInstance() {
       return stepInfoCase_ == 19;
     }
+
     /**
      *
      *
@@ -8555,6 +8869,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8578,6 +8893,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -8598,6 +8914,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -8633,6 +8950,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -8658,6 +8976,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8671,6 +8990,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getCloudSqlInstanceBuilder() {
       return getCloudSqlInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8692,6 +9012,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8731,6 +9052,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.RedisInstanceInfo.Builder,
             com.google.cloud.networkmanagement.v1.RedisInstanceInfoOrBuilder>
         redisInstanceBuilder_;
+
     /**
      *
      *
@@ -8746,6 +9068,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedisInstance() {
       return stepInfoCase_ == 30;
     }
+
     /**
      *
      *
@@ -8771,6 +9094,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.RedisInstanceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8793,6 +9117,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 30;
       return this;
     }
+
     /**
      *
      *
@@ -8813,6 +9138,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 30;
       return this;
     }
+
     /**
      *
      *
@@ -8847,6 +9173,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 30;
       return this;
     }
+
     /**
      *
      *
@@ -8872,6 +9199,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -8885,6 +9213,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getRedisInstanceBuilder() {
       return getRedisInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8906,6 +9235,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.RedisInstanceInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8944,6 +9274,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.RedisClusterInfo.Builder,
             com.google.cloud.networkmanagement.v1.RedisClusterInfoOrBuilder>
         redisClusterBuilder_;
+
     /**
      *
      *
@@ -8959,6 +9290,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedisCluster() {
       return stepInfoCase_ == 31;
     }
+
     /**
      *
      *
@@ -8984,6 +9316,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.RedisClusterInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9006,6 +9339,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 31;
       return this;
     }
+
     /**
      *
      *
@@ -9026,6 +9360,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 31;
       return this;
     }
+
     /**
      *
      *
@@ -9059,6 +9394,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 31;
       return this;
     }
+
     /**
      *
      *
@@ -9084,6 +9420,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9096,6 +9433,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.RedisClusterInfo.Builder getRedisClusterBuilder() {
       return getRedisClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9117,6 +9455,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.RedisClusterInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9155,6 +9494,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.CloudFunctionInfo.Builder,
             com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder>
         cloudFunctionBuilder_;
+
     /**
      *
      *
@@ -9170,6 +9510,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudFunction() {
       return stepInfoCase_ == 20;
     }
+
     /**
      *
      *
@@ -9195,6 +9536,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9217,6 +9559,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -9237,6 +9580,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -9271,6 +9615,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -9296,6 +9641,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9309,6 +9655,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getCloudFunctionBuilder() {
       return getCloudFunctionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9330,6 +9677,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9368,6 +9716,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.Builder,
             com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder>
         appEngineVersionBuilder_;
+
     /**
      *
      *
@@ -9383,6 +9732,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppEngineVersion() {
       return stepInfoCase_ == 22;
     }
+
     /**
      *
      *
@@ -9408,6 +9758,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9431,6 +9782,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 22;
       return this;
     }
+
     /**
      *
      *
@@ -9451,6 +9803,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 22;
       return this;
     }
+
     /**
      *
      *
@@ -9486,6 +9839,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 22;
       return this;
     }
+
     /**
      *
      *
@@ -9511,6 +9865,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9524,6 +9879,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getAppEngineVersionBuilder() {
       return getAppEngineVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9545,6 +9901,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9584,6 +9941,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.Builder,
             com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder>
         cloudRunRevisionBuilder_;
+
     /**
      *
      *
@@ -9599,6 +9957,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRunRevision() {
       return stepInfoCase_ == 23;
     }
+
     /**
      *
      *
@@ -9624,6 +9983,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9647,6 +10007,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -9667,6 +10028,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -9702,6 +10064,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -9727,6 +10090,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9740,6 +10104,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getCloudRunRevisionBuilder() {
       return getCloudRunRevisionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9761,6 +10126,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9800,6 +10166,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.NatInfo.Builder,
             com.google.cloud.networkmanagement.v1.NatInfoOrBuilder>
         natBuilder_;
+
     /**
      *
      *
@@ -9815,6 +10182,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNat() {
       return stepInfoCase_ == 25;
     }
+
     /**
      *
      *
@@ -9840,6 +10208,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.NatInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9862,6 +10231,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 25;
       return this;
     }
+
     /**
      *
      *
@@ -9881,6 +10251,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 25;
       return this;
     }
+
     /**
      *
      *
@@ -9913,6 +10284,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 25;
       return this;
     }
+
     /**
      *
      *
@@ -9938,6 +10310,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9950,6 +10323,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.NatInfo.Builder getNatBuilder() {
       return getNatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9970,6 +10344,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.NatInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10008,6 +10383,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.ProxyConnectionInfo.Builder,
             com.google.cloud.networkmanagement.v1.ProxyConnectionInfoOrBuilder>
         proxyConnectionBuilder_;
+
     /**
      *
      *
@@ -10023,6 +10399,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProxyConnection() {
       return stepInfoCase_ == 26;
     }
+
     /**
      *
      *
@@ -10048,6 +10425,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ProxyConnectionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10071,6 +10449,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 26;
       return this;
     }
+
     /**
      *
      *
@@ -10091,6 +10470,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 26;
       return this;
     }
+
     /**
      *
      *
@@ -10125,6 +10505,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 26;
       return this;
     }
+
     /**
      *
      *
@@ -10150,6 +10531,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10163,6 +10545,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getProxyConnectionBuilder() {
       return getProxyConnectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10184,6 +10567,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ProxyConnectionInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10223,6 +10607,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfo.Builder,
             com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfoOrBuilder>
         loadBalancerBackendInfoBuilder_;
+
     /**
      *
      *
@@ -10240,6 +10625,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadBalancerBackendInfo() {
       return stepInfoCase_ == 27;
     }
+
     /**
      *
      *
@@ -10268,6 +10654,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10293,6 +10680,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 27;
       return this;
     }
+
     /**
      *
      *
@@ -10315,6 +10703,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 27;
       return this;
     }
+
     /**
      *
      *
@@ -10352,6 +10741,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 27;
       return this;
     }
+
     /**
      *
      *
@@ -10379,6 +10769,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10394,6 +10785,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getLoadBalancerBackendInfoBuilder() {
       return getLoadBalancerBackendInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10417,6 +10809,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10458,6 +10851,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.StorageBucketInfo.Builder,
             com.google.cloud.networkmanagement.v1.StorageBucketInfoOrBuilder>
         storageBucketBuilder_;
+
     /**
      *
      *
@@ -10473,6 +10867,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStorageBucket() {
       return stepInfoCase_ == 28;
     }
+
     /**
      *
      *
@@ -10498,6 +10893,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.StorageBucketInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10520,6 +10916,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 28;
       return this;
     }
+
     /**
      *
      *
@@ -10540,6 +10937,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 28;
       return this;
     }
+
     /**
      *
      *
@@ -10574,6 +10972,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 28;
       return this;
     }
+
     /**
      *
      *
@@ -10599,6 +10998,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10612,6 +11012,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getStorageBucketBuilder() {
       return getStorageBucketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10633,6 +11034,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.StorageBucketInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10671,6 +11073,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1.ServerlessNegInfo.Builder,
             com.google.cloud.networkmanagement.v1.ServerlessNegInfoOrBuilder>
         serverlessNegBuilder_;
+
     /**
      *
      *
@@ -10687,6 +11090,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServerlessNeg() {
       return stepInfoCase_ == 29;
     }
+
     /**
      *
      *
@@ -10713,6 +11117,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ServerlessNegInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -10736,6 +11141,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 29;
       return this;
     }
+
     /**
      *
      *
@@ -10757,6 +11163,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 29;
       return this;
     }
+
     /**
      *
      *
@@ -10792,6 +11199,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 29;
       return this;
     }
+
     /**
      *
      *
@@ -10818,6 +11226,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10832,6 +11241,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         getServerlessNegBuilder() {
       return getServerlessNegFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10854,6 +11264,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.networkmanagement.v1.ServerlessNegInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *

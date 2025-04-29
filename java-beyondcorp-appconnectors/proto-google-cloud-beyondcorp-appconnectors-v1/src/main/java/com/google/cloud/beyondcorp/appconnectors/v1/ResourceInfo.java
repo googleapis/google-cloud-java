@@ -42,6 +42,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appconnectors.v1.ResourceInfo)
     ResourceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceInfo.newBuilder() to construct.
   private ResourceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private int status_ = 0;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_FIELD_NUMBER = 3;
   private com.google.protobuf.Any resource_;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Any getResource() {
     return resource_ == null ? com.google.protobuf.Any.getDefaultInstance() : resource_;
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp time_;
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getTime() {
     return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
   }
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo> sub_;
+
   /**
    *
    *
@@ -277,6 +289,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo> getSubList() {
     return sub_;
   }
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       getSubOrBuilderList() {
     return sub_;
   }
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public int getSubCount() {
     return sub_.size();
   }
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo getSub(int index) {
     return sub_.get(index);
   }
+
   /**
    *
    *
@@ -545,6 +561,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -862,6 +879,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -906,6 +925,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -927,6 +947,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +965,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -1003,6 +1027,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.beyondcorp.appconnectors.v1.HealthStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1045,6 +1071,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1097,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         resourceBuilder_;
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1102,6 +1131,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return resourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1154,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1174,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1202,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1222,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1237,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1219,6 +1254,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return resource_ == null ? com.google.protobuf.Any.getDefaultInstance() : resource_;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1286,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timeBuilder_;
+
     /**
      *
      *
@@ -1265,6 +1302,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1284,6 +1322,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return timeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1346,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1367,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1396,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1417,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1433,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1407,6 +1451,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
       }
     }
+
     /**
      *
      *
@@ -1468,6 +1513,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return subBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1484,6 +1530,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return subBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1547,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return subBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1571,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1593,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1566,6 +1616,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1589,6 +1640,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1661,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1630,6 +1683,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1705,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1670,6 +1725,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1689,6 +1745,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1702,6 +1759,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSubFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1719,6 +1777,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return subBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1737,6 +1796,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(sub_);
       }
     }
+
     /**
      *
      *
@@ -1751,6 +1811,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1767,6 +1828,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.getDefaultInstance());
     }
+
     /**
      *
      *

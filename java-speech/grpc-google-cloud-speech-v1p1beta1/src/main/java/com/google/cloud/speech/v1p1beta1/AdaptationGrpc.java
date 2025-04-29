@@ -500,6 +500,19 @@ public final class AdaptationGrpc {
     return AdaptationStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AdaptationBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AdaptationBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AdaptationBlockingV2Stub>() {
+          @java.lang.Override
+          public AdaptationBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AdaptationBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AdaptationBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -887,6 +900,158 @@ public final class AdaptationGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Adaptation.
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech Adaptation API.
+   * </pre>
+   */
+  public static final class AdaptationBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AdaptationBlockingV2Stub> {
+    private AdaptationBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AdaptationBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AdaptationBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a set of phrase hints. Each item in the set can be a single word or
+     * a multi-word phrase. The items in the PhraseSet are favored by the
+     * recognition model when you send a call that includes the PhraseSet.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.PhraseSet createPhraseSet(
+        com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a phrase set.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.PhraseSet getPhraseSet(
+        com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List phrase sets.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse listPhraseSet(
+        com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a phrase set.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.PhraseSet updatePhraseSet(
+        com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a phrase set.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePhraseSet(
+        com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a custom class.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.CustomClass createCustomClass(
+        com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a custom class.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClass(
+        com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List custom classes.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse listCustomClasses(
+        com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomClassesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a custom class.
+     * </pre>
+     */
+    public com.google.cloud.speech.v1p1beta1.CustomClass updateCustomClass(
+        com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a custom class.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomClass(
+        com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomClassMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Adaptation.
    *
    * <pre>
    * Service that implements Google Cloud Speech Adaptation API.

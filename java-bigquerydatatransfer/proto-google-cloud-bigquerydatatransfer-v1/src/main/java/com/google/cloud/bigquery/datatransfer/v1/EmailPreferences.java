@@ -34,6 +34,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.EmailPreferences)
     EmailPreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EmailPreferences.newBuilder() to construct.
   private EmailPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
 
   public static final int ENABLE_FAILURE_EMAIL_FIELD_NUMBER = 1;
   private boolean enableFailureEmail_ = false;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -423,6 +426,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean enableFailureEmail_;
+
     /**
      *
      *
@@ -438,6 +442,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
     public boolean getEnableFailureEmail() {
       return enableFailureEmail_;
     }
+
     /**
      *
      *
@@ -457,6 +462,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

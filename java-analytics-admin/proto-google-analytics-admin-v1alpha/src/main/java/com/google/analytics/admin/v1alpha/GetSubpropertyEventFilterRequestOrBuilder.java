@@ -41,6 +41,7 @@ public interface GetSubpropertyEventFilterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -63,6 +63,7 @@ public interface CertificateOrBuilder
    * @return The issuer.
    */
   java.lang.String getIssuer();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface CertificateOrBuilder
    * @return The subject.
    */
   java.lang.String getSubject();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface CertificateOrBuilder
    * @return A list containing the subjectAlternativeDnsNames.
    */
   java.util.List<java.lang.String> getSubjectAlternativeDnsNamesList();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface CertificateOrBuilder
    * @return The count of subjectAlternativeDnsNames.
    */
   int getSubjectAlternativeDnsNamesCount();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface CertificateOrBuilder
    * @return The subjectAlternativeDnsNames at the given index.
    */
   java.lang.String getSubjectAlternativeDnsNames(int index);
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface CertificateOrBuilder
    * @return Whether the notBeforeTime field is set.
    */
   boolean hasNotBeforeTime();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface CertificateOrBuilder
    * @return The notBeforeTime.
    */
   com.google.protobuf.Timestamp getNotBeforeTime();
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public interface CertificateOrBuilder
    * @return Whether the notAfterTime field is set.
    */
   boolean hasNotAfterTime();
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public interface CertificateOrBuilder
    * @return The notAfterTime.
    */
   com.google.protobuf.Timestamp getNotAfterTime();
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface CertificateOrBuilder
    * @return The serialNumber.
    */
   java.lang.String getSerialNumber();
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public interface CertificateOrBuilder
    * @return The sha256Fingerprint.
    */
   java.lang.String getSha256Fingerprint();
+
   /**
    *
    *

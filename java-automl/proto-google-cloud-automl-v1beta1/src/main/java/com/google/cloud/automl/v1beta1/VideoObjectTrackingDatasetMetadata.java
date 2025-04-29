@@ -33,6 +33,7 @@ public final class VideoObjectTrackingDatasetMetadata extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.VideoObjectTrackingDatasetMetadata)
     VideoObjectTrackingDatasetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoObjectTrackingDatasetMetadata.newBuilder() to construct.
   private VideoObjectTrackingDatasetMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,6 +215,7 @@ public final class VideoObjectTrackingDatasetMetadata extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.CapacityCommitment)
     CapacityCommitmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CapacityCommitment.newBuilder() to construct.
   private CapacityCommitment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -225,6 +226,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>COMMITMENT_PLAN_UNSPECIFIED = 0;</code>
      */
     public static final int COMMITMENT_PLAN_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -237,6 +239,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>FLEX = 3;</code>
      */
     public static final int FLEX_VALUE = 3;
+
     /**
      *
      *
@@ -248,6 +251,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>FLEX_FLAT_RATE = 7 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int FLEX_FLAT_RATE_VALUE = 7;
+
     /**
      *
      *
@@ -261,6 +265,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>TRIAL = 5 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int TRIAL_VALUE = 5;
+
     /**
      *
      *
@@ -273,6 +278,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>MONTHLY = 2;</code>
      */
     public static final int MONTHLY_VALUE = 2;
+
     /**
      *
      *
@@ -284,6 +290,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>MONTHLY_FLAT_RATE = 8 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int MONTHLY_FLAT_RATE_VALUE = 8;
+
     /**
      *
      *
@@ -296,6 +303,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>ANNUAL = 4;</code>
      */
     public static final int ANNUAL_VALUE = 4;
+
     /**
      *
      *
@@ -307,6 +315,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>ANNUAL_FLAT_RATE = 9 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int ANNUAL_FLAT_RATE_VALUE = 9;
+
     /**
      *
      *
@@ -319,6 +328,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>THREE_YEAR = 10;</code>
      */
     public static final int THREE_YEAR_VALUE = 10;
+
     /**
      *
      *
@@ -500,6 +510,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -511,6 +522,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -522,6 +534,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -625,6 +638,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -652,6 +666,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -682,6 +697,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int SLOT_COUNT_FIELD_NUMBER = 2;
   private long slotCount_ = 0L;
+
   /**
    *
    *
@@ -700,6 +716,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int PLAN_FIELD_NUMBER = 3;
   private int plan_ = 0;
+
   /**
    *
    *
@@ -715,6 +732,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public int getPlanValue() {
     return plan_;
   }
+
   /**
    *
    *
@@ -737,6 +755,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -754,6 +773,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -778,6 +798,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int COMMITMENT_START_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp commitmentStartTime_;
+
   /**
    *
    *
@@ -798,6 +819,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public boolean hasCommitmentStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -820,6 +842,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : commitmentStartTime_;
   }
+
   /**
    *
    *
@@ -843,6 +866,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int COMMITMENT_END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp commitmentEndTime_;
+
   /**
    *
    *
@@ -864,6 +888,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public boolean hasCommitmentEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -887,6 +912,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : commitmentEndTime_;
   }
+
   /**
    *
    *
@@ -911,6 +937,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int FAILURE_STATUS_FIELD_NUMBER = 7;
   private com.google.rpc.Status failureStatus_;
+
   /**
    *
    *
@@ -927,6 +954,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public boolean hasFailureStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -943,6 +971,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public com.google.rpc.Status getFailureStatus() {
     return failureStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : failureStatus_;
   }
+
   /**
    *
    *
@@ -960,6 +989,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int RENEWAL_PLAN_FIELD_NUMBER = 8;
   private int renewalPlan_ = 0;
+
   /**
    *
    *
@@ -978,6 +1008,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public int getRenewalPlanValue() {
     return renewalPlan_;
   }
+
   /**
    *
    *
@@ -1005,6 +1036,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int MULTI_REGION_AUXILIARY_FIELD_NUMBER = 10;
   private boolean multiRegionAuxiliary_ = false;
+
   /**
    *
    *
@@ -1031,6 +1063,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int EDITION_FIELD_NUMBER = 12;
   private int edition_ = 0;
+
   /**
    *
    *
@@ -1046,6 +1079,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   public int getEditionValue() {
     return edition_;
   }
+
   /**
    *
    *
@@ -1066,6 +1100,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int IS_FLAT_RATE_FIELD_NUMBER = 14;
   private boolean isFlatRate_ = false;
+
   /**
    *
    *
@@ -1366,6 +1401,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1726,6 +1762,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1752,6 +1789,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1778,6 +1816,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1803,6 +1842,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1864,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1852,6 +1893,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private long slotCount_;
+
     /**
      *
      *
@@ -1867,6 +1909,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public long getSlotCount() {
       return slotCount_;
     }
+
     /**
      *
      *
@@ -1886,6 +1929,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1905,6 +1949,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private int plan_ = 0;
+
     /**
      *
      *
@@ -1921,6 +1966,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public int getPlanValue() {
       return plan_;
     }
+
     /**
      *
      *
@@ -1940,6 +1986,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1961,6 +2008,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1984,6 +2032,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2004,6 +2053,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2021,6 +2071,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2041,6 +2092,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2114,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2086,6 +2139,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2112,6 +2166,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         commitmentStartTimeBuilder_;
+
     /**
      *
      *
@@ -2131,6 +2186,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public boolean hasCommitmentStartTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2156,6 +2212,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         return commitmentStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2183,6 +2240,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2207,6 +2265,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2239,6 +2298,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2263,6 +2323,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2343,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCommitmentStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2305,6 +2367,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
             : commitmentStartTime_;
       }
     }
+
     /**
      *
      *
@@ -2342,6 +2405,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         commitmentEndTimeBuilder_;
+
     /**
      *
      *
@@ -2362,6 +2426,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public boolean hasCommitmentEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2388,6 +2453,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         return commitmentEndTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2416,6 +2482,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2441,6 +2508,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2474,6 +2542,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2499,6 +2568,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2519,6 +2589,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCommitmentEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2543,6 +2614,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
             : commitmentEndTime_;
       }
     }
+
     /**
      *
      *
@@ -2579,6 +2651,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         failureStatusBuilder_;
+
     /**
      *
      *
@@ -2594,6 +2667,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public boolean hasFailureStatus() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2613,6 +2687,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         return failureStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2636,6 +2711,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2656,6 +2732,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2684,6 +2761,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2704,6 +2782,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2719,6 +2798,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFailureStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2736,6 +2816,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         return failureStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : failureStatus_;
       }
     }
+
     /**
      *
      *
@@ -2762,6 +2843,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private int renewalPlan_ = 0;
+
     /**
      *
      *
@@ -2781,6 +2863,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public int getRenewalPlanValue() {
       return renewalPlan_;
     }
+
     /**
      *
      *
@@ -2803,6 +2886,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2828,6 +2912,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2854,6 +2939,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2877,6 +2963,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean multiRegionAuxiliary_;
+
     /**
      *
      *
@@ -2900,6 +2987,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public boolean getMultiRegionAuxiliary() {
       return multiRegionAuxiliary_;
     }
+
     /**
      *
      *
@@ -2927,6 +3015,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2954,6 +3043,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private int edition_ = 0;
+
     /**
      *
      *
@@ -2969,6 +3059,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public int getEditionValue() {
       return edition_;
     }
+
     /**
      *
      *
@@ -2987,6 +3078,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3006,6 +3098,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.bigquery.reservation.v1.Edition.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3027,6 +3120,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3046,6 +3140,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean isFlatRate_;
+
     /**
      *
      *
@@ -3062,6 +3157,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public boolean getIsFlatRate() {
       return isFlatRate_;
     }
+
     /**
      *
      *
@@ -3082,6 +3178,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

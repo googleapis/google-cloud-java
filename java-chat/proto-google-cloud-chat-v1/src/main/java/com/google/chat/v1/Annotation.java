@@ -59,6 +59,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Annotation)
     AnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Annotation.newBuilder() to construct.
   private Annotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,6 +108,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     private MetadataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -145,6 +147,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -160,6 +163,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -179,6 +183,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_INDEX_FIELD_NUMBER = 2;
   private int startIndex_ = 0;
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartIndex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LENGTH_FIELD_NUMBER = 3;
   private int length_ = 0;
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_MENTION_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserMention() {
     return metadataCase_ == 4;
   }
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.UserMentionMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SLASH_COMMAND_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSlashCommand() {
     return metadataCase_ == 5;
   }
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.SlashCommandMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RICH_LINK_METADATA_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -349,6 +363,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRichLinkMetadata() {
     return metadataCase_ == 6;
   }
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -385,6 +401,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_EMOJI_METADATA_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomEmojiMetadata() {
     return metadataCase_ == 7;
   }
+
   /**
    *
    *
@@ -418,6 +436,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -684,6 +703,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1016,6 +1036,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1088,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       com.google.chat.v1.AnnotationType result = com.google.chat.v1.AnnotationType.forNumber(type_);
       return result == null ? com.google.chat.v1.AnnotationType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1086,6 +1110,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1130,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int startIndex_;
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartIndex() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1137,6 +1164,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public int getStartIndex() {
       return startIndex_;
     }
+
     /**
      *
      *
@@ -1157,6 +1185,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1206,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int length_;
+
     /**
      *
      *
@@ -1193,6 +1223,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public int getLength() {
       return length_;
     }
+
     /**
      *
      *
@@ -1213,6 +1244,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1269,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.UserMentionMetadata.Builder,
             com.google.chat.v1.UserMentionMetadataOrBuilder>
         userMentionBuilder_;
+
     /**
      *
      *
@@ -1252,6 +1285,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserMention() {
       return metadataCase_ == 4;
     }
+
     /**
      *
      *
@@ -1277,6 +1311,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.UserMentionMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1299,6 +1334,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1387,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1413,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1387,6 +1426,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.UserMentionMetadata.Builder getUserMentionBuilder() {
       return getUserMentionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1407,6 +1447,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.UserMentionMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1445,6 +1486,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.SlashCommandMetadata.Builder,
             com.google.chat.v1.SlashCommandMetadataOrBuilder>
         slashCommandBuilder_;
+
     /**
      *
      *
@@ -1460,6 +1502,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSlashCommand() {
       return metadataCase_ == 5;
     }
+
     /**
      *
      *
@@ -1485,6 +1528,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.SlashCommandMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1507,6 +1551,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1527,6 +1572,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1605,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1631,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1644,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.SlashCommandMetadata.Builder getSlashCommandBuilder() {
       return getSlashCommandFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1616,6 +1665,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.SlashCommandMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1704,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.RichLinkMetadata.Builder,
             com.google.chat.v1.RichLinkMetadataOrBuilder>
         richLinkMetadataBuilder_;
+
     /**
      *
      *
@@ -1669,6 +1720,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRichLinkMetadata() {
       return metadataCase_ == 6;
     }
+
     /**
      *
      *
@@ -1694,6 +1746,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1716,6 +1769,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1736,6 +1790,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1768,6 +1823,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1793,6 +1849,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1862,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.RichLinkMetadata.Builder getRichLinkMetadataBuilder() {
       return getRichLinkMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1825,6 +1883,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1861,6 +1920,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.CustomEmojiMetadata.Builder,
             com.google.chat.v1.CustomEmojiMetadataOrBuilder>
         customEmojiMetadataBuilder_;
+
     /**
      *
      *
@@ -1876,6 +1936,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomEmojiMetadata() {
       return metadataCase_ == 7;
     }
+
     /**
      *
      *
@@ -1901,6 +1962,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1923,6 +1985,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1943,6 +2006,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1975,6 +2039,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2000,6 +2065,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2012,6 +2078,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.CustomEmojiMetadata.Builder getCustomEmojiMetadataBuilder() {
       return getCustomEmojiMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2032,6 +2099,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.CustomEmojiMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *

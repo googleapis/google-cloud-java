@@ -37,6 +37,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return Whether the metricPromptTemplate field is set.
    */
   boolean hasMetricPromptTemplate();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return The metricPromptTemplate.
    */
   java.lang.String getMetricPromptTemplate();
+
   /**
    *
    *

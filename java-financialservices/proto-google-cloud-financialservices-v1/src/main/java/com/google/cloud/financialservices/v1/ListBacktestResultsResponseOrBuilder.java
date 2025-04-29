@@ -34,6 +34,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * <code>repeated .google.cloud.financialservices.v1.BacktestResult backtest_results = 1;</code>
    */
   java.util.List<com.google.cloud.financialservices.v1.BacktestResult> getBacktestResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * <code>repeated .google.cloud.financialservices.v1.BacktestResult backtest_results = 1;</code>
    */
   com.google.cloud.financialservices.v1.BacktestResult getBacktestResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * <code>repeated .google.cloud.financialservices.v1.BacktestResult backtest_results = 1;</code>
    */
   int getBacktestResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBacktestResultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.financialservices.v1.BacktestResultOrBuilder>
       getBacktestResultsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface ListBacktestResultsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

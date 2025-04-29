@@ -39,6 +39,7 @@ public interface CreateMeshRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateMeshRequestOrBuilder
    * @return The meshId.
    */
   java.lang.String getMeshId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreateMeshRequestOrBuilder
    * @return Whether the mesh field is set.
    */
   boolean hasMesh();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateMeshRequestOrBuilder
    * @return The mesh.
    */
   com.google.cloud.networkservices.v1.Mesh getMesh();
+
   /**
    *
    *

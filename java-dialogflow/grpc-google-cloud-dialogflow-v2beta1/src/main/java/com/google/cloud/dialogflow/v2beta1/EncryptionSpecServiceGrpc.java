@@ -150,6 +150,19 @@ public final class EncryptionSpecServiceGrpc {
     return EncryptionSpecServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EncryptionSpecServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EncryptionSpecServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EncryptionSpecServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EncryptionSpecServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EncryptionSpecServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EncryptionSpecServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -296,6 +309,57 @@ public final class EncryptionSpecServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EncryptionSpecService.
+   *
+   * <pre>
+   * Manages encryption spec settings for Dialogflow and Agent Assist.
+   * </pre>
+   */
+  public static final class EncryptionSpecServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EncryptionSpecServiceBlockingV2Stub> {
+    private EncryptionSpecServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EncryptionSpecServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EncryptionSpecServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets location-level encryption key specification.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.EncryptionSpec getEncryptionSpec(
+        com.google.cloud.dialogflow.v2beta1.GetEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEncryptionSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initializes a location-level encryption key specification.  An error will
+     * be thrown if the location has resources already created before the
+     * initialization. Once the encryption specification is initialized at a
+     * location, it is immutable and all newly created resources under the
+     * location will be encrypted with the existing specification.
+     * </pre>
+     */
+    public com.google.longrunning.Operation initializeEncryptionSpec(
+        com.google.cloud.dialogflow.v2beta1.InitializeEncryptionSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitializeEncryptionSpecMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EncryptionSpecService.
    *
    * <pre>
    * Manages encryption spec settings for Dialogflow and Agent Assist.

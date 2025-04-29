@@ -39,6 +39,7 @@ public interface StoredContentsExampleFilterOrBuilder
    * @return A list containing the searchKeys.
    */
   java.util.List<java.lang.String> getSearchKeysList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface StoredContentsExampleFilterOrBuilder
    * @return The count of searchKeys.
    */
   int getSearchKeysCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface StoredContentsExampleFilterOrBuilder
    * @return The searchKeys at the given index.
    */
   java.lang.String getSearchKeys(int index);
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface StoredContentsExampleFilterOrBuilder
    * @return Whether the functionNames field is set.
    */
   boolean hasFunctionNames();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface StoredContentsExampleFilterOrBuilder
    * @return The functionNames.
    */
   com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter getFunctionNames();
+
   /**
    *
    *

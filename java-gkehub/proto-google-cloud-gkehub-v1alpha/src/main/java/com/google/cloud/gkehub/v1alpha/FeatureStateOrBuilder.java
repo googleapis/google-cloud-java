@@ -36,6 +36,7 @@ public interface FeatureStateOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FeatureStateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface FeatureStateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface FeatureStateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface AutonomousDatabaseApexOrBuilder
    * @return The apexVersion.
    */
   java.lang.String getApexVersion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AutonomousDatabaseApexOrBuilder
    * @return The ordsVersion.
    */
   java.lang.String getOrdsVersion();
+
   /**
    *
    *

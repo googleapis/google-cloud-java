@@ -36,6 +36,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.FetchReportResultsResponse)
     FetchReportResultsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FetchReportResultsResponse.newBuilder() to construct.
   private FetchReportResultsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int REPORT_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.ReportResultsMetadata reportMetadata_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   public boolean hasReportMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         ? com.google.cloud.channel.v1.ReportResultsMetadata.getDefaultInstance()
         : reportMetadata_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Row> rows_;
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.channel.v1.Row> getRowsList() {
     return rows_;
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   public java.util.List<? extends com.google.cloud.channel.v1.RowOrBuilder> getRowsOrBuilderList() {
     return rows_;
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   public int getRowsCount() {
     return rows_.size();
   }
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
   public com.google.cloud.channel.v1.Row getRows(int index) {
     return rows_.get(index);
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -436,6 +447,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -718,6 +730,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
             com.google.cloud.channel.v1.ReportResultsMetadata.Builder,
             com.google.cloud.channel.v1.ReportResultsMetadataOrBuilder>
         reportMetadataBuilder_;
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     public boolean hasReportMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return reportMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       onChanged();
       return getReportMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
             : reportMetadata_;
       }
     }
+
     /**
      *
      *
@@ -941,6 +962,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return rowsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return rowsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return rowsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1067,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1112,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1133,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1155,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1176,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1197,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1211,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     public com.google.cloud.channel.v1.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1195,6 +1229,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1213,6 +1248,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1262,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     public com.google.cloud.channel.v1.Row.Builder addRowsBuilder() {
       return getRowsFieldBuilder().addBuilder(com.google.cloud.channel.v1.Row.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1240,6 +1277,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.Row.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1272,6 +1310,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1296,6 +1335,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1360,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1343,6 +1384,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1404,7 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

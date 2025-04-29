@@ -35,6 +35,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.DependencyEdge)
     DependencyEdgeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DependencyEdge.newBuilder() to construct.
   private DependencyEdge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -918,6 +919,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -928,6 +930,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ABBREV = 1;</code>
      */
     public static final int ABBREV_VALUE = 1;
+
     /**
      *
      *
@@ -938,6 +941,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ACOMP = 2;</code>
      */
     public static final int ACOMP_VALUE = 2;
+
     /**
      *
      *
@@ -948,6 +952,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ADVCL = 3;</code>
      */
     public static final int ADVCL_VALUE = 3;
+
     /**
      *
      *
@@ -958,6 +963,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ADVMOD = 4;</code>
      */
     public static final int ADVMOD_VALUE = 4;
+
     /**
      *
      *
@@ -968,6 +974,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>AMOD = 5;</code>
      */
     public static final int AMOD_VALUE = 5;
+
     /**
      *
      *
@@ -978,6 +985,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>APPOS = 6;</code>
      */
     public static final int APPOS_VALUE = 6;
+
     /**
      *
      *
@@ -988,6 +996,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTR = 7;</code>
      */
     public static final int ATTR_VALUE = 7;
+
     /**
      *
      *
@@ -998,6 +1007,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>AUX = 8;</code>
      */
     public static final int AUX_VALUE = 8;
+
     /**
      *
      *
@@ -1008,6 +1018,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>AUXPASS = 9;</code>
      */
     public static final int AUXPASS_VALUE = 9;
+
     /**
      *
      *
@@ -1018,6 +1029,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>CC = 10;</code>
      */
     public static final int CC_VALUE = 10;
+
     /**
      *
      *
@@ -1028,6 +1040,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>CCOMP = 11;</code>
      */
     public static final int CCOMP_VALUE = 11;
+
     /**
      *
      *
@@ -1038,6 +1051,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>CONJ = 12;</code>
      */
     public static final int CONJ_VALUE = 12;
+
     /**
      *
      *
@@ -1048,6 +1062,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>CSUBJ = 13;</code>
      */
     public static final int CSUBJ_VALUE = 13;
+
     /**
      *
      *
@@ -1058,6 +1073,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>CSUBJPASS = 14;</code>
      */
     public static final int CSUBJPASS_VALUE = 14;
+
     /**
      *
      *
@@ -1068,6 +1084,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>DEP = 15;</code>
      */
     public static final int DEP_VALUE = 15;
+
     /**
      *
      *
@@ -1078,6 +1095,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>DET = 16;</code>
      */
     public static final int DET_VALUE = 16;
+
     /**
      *
      *
@@ -1088,6 +1106,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>DISCOURSE = 17;</code>
      */
     public static final int DISCOURSE_VALUE = 17;
+
     /**
      *
      *
@@ -1098,6 +1117,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>DOBJ = 18;</code>
      */
     public static final int DOBJ_VALUE = 18;
+
     /**
      *
      *
@@ -1108,6 +1128,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPL = 19;</code>
      */
     public static final int EXPL_VALUE = 19;
+
     /**
      *
      *
@@ -1118,6 +1139,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>GOESWITH = 20;</code>
      */
     public static final int GOESWITH_VALUE = 20;
+
     /**
      *
      *
@@ -1128,6 +1150,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>IOBJ = 21;</code>
      */
     public static final int IOBJ_VALUE = 21;
+
     /**
      *
      *
@@ -1138,6 +1161,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>MARK = 22;</code>
      */
     public static final int MARK_VALUE = 22;
+
     /**
      *
      *
@@ -1148,6 +1172,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>MWE = 23;</code>
      */
     public static final int MWE_VALUE = 23;
+
     /**
      *
      *
@@ -1158,6 +1183,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>MWV = 24;</code>
      */
     public static final int MWV_VALUE = 24;
+
     /**
      *
      *
@@ -1168,6 +1194,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NEG = 25;</code>
      */
     public static final int NEG_VALUE = 25;
+
     /**
      *
      *
@@ -1178,6 +1205,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NN = 26;</code>
      */
     public static final int NN_VALUE = 26;
+
     /**
      *
      *
@@ -1188,6 +1216,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NPADVMOD = 27;</code>
      */
     public static final int NPADVMOD_VALUE = 27;
+
     /**
      *
      *
@@ -1198,6 +1227,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NSUBJ = 28;</code>
      */
     public static final int NSUBJ_VALUE = 28;
+
     /**
      *
      *
@@ -1208,6 +1238,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NSUBJPASS = 29;</code>
      */
     public static final int NSUBJPASS_VALUE = 29;
+
     /**
      *
      *
@@ -1218,6 +1249,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NUM = 30;</code>
      */
     public static final int NUM_VALUE = 30;
+
     /**
      *
      *
@@ -1228,6 +1260,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NUMBER = 31;</code>
      */
     public static final int NUMBER_VALUE = 31;
+
     /**
      *
      *
@@ -1238,6 +1271,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>P = 32;</code>
      */
     public static final int P_VALUE = 32;
+
     /**
      *
      *
@@ -1248,6 +1282,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PARATAXIS = 33;</code>
      */
     public static final int PARATAXIS_VALUE = 33;
+
     /**
      *
      *
@@ -1258,6 +1293,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTMOD = 34;</code>
      */
     public static final int PARTMOD_VALUE = 34;
+
     /**
      *
      *
@@ -1268,6 +1304,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PCOMP = 35;</code>
      */
     public static final int PCOMP_VALUE = 35;
+
     /**
      *
      *
@@ -1278,6 +1315,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>POBJ = 36;</code>
      */
     public static final int POBJ_VALUE = 36;
+
     /**
      *
      *
@@ -1288,6 +1326,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>POSS = 37;</code>
      */
     public static final int POSS_VALUE = 37;
+
     /**
      *
      *
@@ -1298,6 +1337,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>POSTNEG = 38;</code>
      */
     public static final int POSTNEG_VALUE = 38;
+
     /**
      *
      *
@@ -1308,6 +1348,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PRECOMP = 39;</code>
      */
     public static final int PRECOMP_VALUE = 39;
+
     /**
      *
      *
@@ -1318,6 +1359,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PRECONJ = 40;</code>
      */
     public static final int PRECONJ_VALUE = 40;
+
     /**
      *
      *
@@ -1328,6 +1370,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PREDET = 41;</code>
      */
     public static final int PREDET_VALUE = 41;
+
     /**
      *
      *
@@ -1338,6 +1381,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PREF = 42;</code>
      */
     public static final int PREF_VALUE = 42;
+
     /**
      *
      *
@@ -1348,6 +1392,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PREP = 43;</code>
      */
     public static final int PREP_VALUE = 43;
+
     /**
      *
      *
@@ -1358,6 +1403,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PRONL = 44;</code>
      */
     public static final int PRONL_VALUE = 44;
+
     /**
      *
      *
@@ -1368,6 +1414,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PRT = 45;</code>
      */
     public static final int PRT_VALUE = 45;
+
     /**
      *
      *
@@ -1378,6 +1425,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>PS = 46;</code>
      */
     public static final int PS_VALUE = 46;
+
     /**
      *
      *
@@ -1388,6 +1436,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>QUANTMOD = 47;</code>
      */
     public static final int QUANTMOD_VALUE = 47;
+
     /**
      *
      *
@@ -1398,6 +1447,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>RCMOD = 48;</code>
      */
     public static final int RCMOD_VALUE = 48;
+
     /**
      *
      *
@@ -1408,6 +1458,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>RCMODREL = 49;</code>
      */
     public static final int RCMODREL_VALUE = 49;
+
     /**
      *
      *
@@ -1418,6 +1469,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>RDROP = 50;</code>
      */
     public static final int RDROP_VALUE = 50;
+
     /**
      *
      *
@@ -1428,6 +1480,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>REF = 51;</code>
      */
     public static final int REF_VALUE = 51;
+
     /**
      *
      *
@@ -1438,6 +1491,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>REMNANT = 52;</code>
      */
     public static final int REMNANT_VALUE = 52;
+
     /**
      *
      *
@@ -1448,6 +1502,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>REPARANDUM = 53;</code>
      */
     public static final int REPARANDUM_VALUE = 53;
+
     /**
      *
      *
@@ -1458,6 +1513,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ROOT = 54;</code>
      */
     public static final int ROOT_VALUE = 54;
+
     /**
      *
      *
@@ -1468,6 +1524,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>SNUM = 55;</code>
      */
     public static final int SNUM_VALUE = 55;
+
     /**
      *
      *
@@ -1478,6 +1535,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>SUFF = 56;</code>
      */
     public static final int SUFF_VALUE = 56;
+
     /**
      *
      *
@@ -1488,6 +1546,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>TMOD = 57;</code>
      */
     public static final int TMOD_VALUE = 57;
+
     /**
      *
      *
@@ -1498,6 +1557,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>TOPIC = 58;</code>
      */
     public static final int TOPIC_VALUE = 58;
+
     /**
      *
      *
@@ -1508,6 +1568,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>VMOD = 59;</code>
      */
     public static final int VMOD_VALUE = 59;
+
     /**
      *
      *
@@ -1518,6 +1579,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>VOCATIVE = 60;</code>
      */
     public static final int VOCATIVE_VALUE = 60;
+
     /**
      *
      *
@@ -1528,6 +1590,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>XCOMP = 61;</code>
      */
     public static final int XCOMP_VALUE = 61;
+
     /**
      *
      *
@@ -1538,6 +1601,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>SUFFIX = 62;</code>
      */
     public static final int SUFFIX_VALUE = 62;
+
     /**
      *
      *
@@ -1548,6 +1612,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>TITLE = 63;</code>
      */
     public static final int TITLE_VALUE = 63;
+
     /**
      *
      *
@@ -1558,6 +1623,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ADVPHMOD = 64;</code>
      */
     public static final int ADVPHMOD_VALUE = 64;
+
     /**
      *
      *
@@ -1568,6 +1634,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>AUXCAUS = 65;</code>
      */
     public static final int AUXCAUS_VALUE = 65;
+
     /**
      *
      *
@@ -1578,6 +1645,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>AUXVV = 66;</code>
      */
     public static final int AUXVV_VALUE = 66;
+
     /**
      *
      *
@@ -1588,6 +1656,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>DTMOD = 67;</code>
      */
     public static final int DTMOD_VALUE = 67;
+
     /**
      *
      *
@@ -1598,6 +1667,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>FOREIGN = 68;</code>
      */
     public static final int FOREIGN_VALUE = 68;
+
     /**
      *
      *
@@ -1608,6 +1678,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>KW = 69;</code>
      */
     public static final int KW_VALUE = 69;
+
     /**
      *
      *
@@ -1618,6 +1689,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>LIST = 70;</code>
      */
     public static final int LIST_VALUE = 70;
+
     /**
      *
      *
@@ -1628,6 +1700,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NOMC = 71;</code>
      */
     public static final int NOMC_VALUE = 71;
+
     /**
      *
      *
@@ -1638,6 +1711,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NOMCSUBJ = 72;</code>
      */
     public static final int NOMCSUBJ_VALUE = 72;
+
     /**
      *
      *
@@ -1648,6 +1722,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NOMCSUBJPASS = 73;</code>
      */
     public static final int NOMCSUBJPASS_VALUE = 73;
+
     /**
      *
      *
@@ -1658,6 +1733,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>NUMC = 74;</code>
      */
     public static final int NUMC_VALUE = 74;
+
     /**
      *
      *
@@ -1668,6 +1744,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>COP = 75;</code>
      */
     public static final int COP_VALUE = 75;
+
     /**
      *
      *
@@ -1678,6 +1755,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>DISLOCATED = 76;</code>
      */
     public static final int DISLOCATED_VALUE = 76;
+
     /**
      *
      *
@@ -1688,6 +1766,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>ASP = 77;</code>
      */
     public static final int ASP_VALUE = 77;
+
     /**
      *
      *
@@ -1698,6 +1777,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>GMOD = 78;</code>
      */
     public static final int GMOD_VALUE = 78;
+
     /**
      *
      *
@@ -1708,6 +1788,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>GOBJ = 79;</code>
      */
     public static final int GOBJ_VALUE = 79;
+
     /**
      *
      *
@@ -1718,6 +1799,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>INFMOD = 80;</code>
      */
     public static final int INFMOD_VALUE = 80;
+
     /**
      *
      *
@@ -1728,6 +1810,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * <code>MES = 81;</code>
      */
     public static final int MES_VALUE = 81;
+
     /**
      *
      *
@@ -1984,6 +2067,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEAD_TOKEN_INDEX_FIELD_NUMBER = 1;
   private int headTokenIndex_ = 0;
+
   /**
    *
    *
@@ -2006,6 +2090,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LABEL_FIELD_NUMBER = 2;
   private int label_ = 0;
+
   /**
    *
    *
@@ -2021,6 +2106,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
   public int getLabelValue() {
     return label_;
   }
+
   /**
    *
    *
@@ -2207,6 +2293,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2403,6 +2490,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int headTokenIndex_;
+
     /**
      *
      *
@@ -2422,6 +2510,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
     public int getHeadTokenIndex() {
       return headTokenIndex_;
     }
+
     /**
      *
      *
@@ -2445,6 +2534,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2468,6 +2558,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int label_ = 0;
+
     /**
      *
      *
@@ -2483,6 +2574,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
     public int getLabelValue() {
       return label_;
     }
+
     /**
      *
      *
@@ -2501,6 +2593,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2520,6 +2613,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1.DependencyEdge.Label.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2541,6 +2635,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

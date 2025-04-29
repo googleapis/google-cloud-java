@@ -34,6 +34,7 @@ public interface ListDocumentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document documents = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Document> getDocumentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDocumentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document documents = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Document getDocuments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDocumentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document documents = 1;</code>
    */
   int getDocumentsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDocumentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder>
       getDocumentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDocumentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

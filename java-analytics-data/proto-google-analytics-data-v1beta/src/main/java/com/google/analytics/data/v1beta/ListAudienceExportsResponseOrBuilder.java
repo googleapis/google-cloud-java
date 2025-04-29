@@ -34,6 +34,7 @@ public interface ListAudienceExportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.AudienceExport audience_exports = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.AudienceExport> getAudienceExportsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAudienceExportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.AudienceExport audience_exports = 1;</code>
    */
   com.google.analytics.data.v1beta.AudienceExport getAudienceExports(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAudienceExportsResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.AudienceExport audience_exports = 1;</code>
    */
   int getAudienceExportsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAudienceExportsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.AudienceExportOrBuilder>
       getAudienceExportsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListAudienceExportsResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface ListAudienceExportsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.UpdateVpcFlowLogsConfigRequest)
     UpdateVpcFlowLogsConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateVpcFlowLogsConfigRequest.newBuilder() to construct.
   private UpdateVpcFlowLogsConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
 
   public static final int VPC_FLOW_LOGS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig vpcFlowLogsConfig_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
   public boolean hasVpcFlowLogsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
         ? com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig.getDefaultInstance()
         : vpcFlowLogsConfig_;
   }
+
   /**
    *
    *
@@ -352,6 +359,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +593,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -647,6 +658,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -788,6 +805,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
             com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig.Builder,
             com.google.cloud.networkmanagement.v1.VpcFlowLogsConfigOrBuilder>
         vpcFlowLogsConfigBuilder_;
+
     /**
      *
      *
@@ -804,6 +822,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
     public boolean hasVpcFlowLogsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -826,6 +845,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
         return vpcFlowLogsConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +966,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
       onChanged();
       return getVpcFlowLogsConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -963,6 +988,7 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
             : vpcFlowLogsConfig_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the iPAddress field is set.
    */
   boolean hasIPAddress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ForwardingRuleOrBuilder
    * @return The iPAddress.
    */
   java.lang.String getIPAddress();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the iPProtocol field is set.
    */
   boolean hasIPProtocol();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ForwardingRuleOrBuilder
    * @return The iPProtocol.
    */
   java.lang.String getIPProtocol();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the allPorts field is set.
    */
   boolean hasAllPorts();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the allowGlobalAccess field is set.
    */
   boolean hasAllowGlobalAccess();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the allowPscGlobalAccess field is set.
    */
   boolean hasAllowPscGlobalAccess();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the backendService field is set.
    */
   boolean hasBackendService();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface ForwardingRuleOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the baseForwardingRule field is set.
    */
   boolean hasBaseForwardingRule();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface ForwardingRuleOrBuilder
    * @return The baseForwardingRule.
    */
   java.lang.String getBaseForwardingRule();
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public interface ForwardingRuleOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public interface ForwardingRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -336,6 +351,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -348,6 +364,7 @@ public interface ForwardingRuleOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -373,6 +390,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -398,6 +416,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the ipCollection field is set.
    */
   boolean hasIpCollection();
+
   /**
    *
    *
@@ -410,6 +429,7 @@ public interface ForwardingRuleOrBuilder
    * @return The ipCollection.
    */
   java.lang.String getIpCollection();
+
   /**
    *
    *
@@ -436,6 +456,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the ipVersion field is set.
    */
   boolean hasIpVersion();
+
   /**
    *
    *
@@ -449,6 +470,7 @@ public interface ForwardingRuleOrBuilder
    * @return The ipVersion.
    */
   java.lang.String getIpVersion();
+
   /**
    *
    *
@@ -475,6 +497,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the isMirroringCollector field is set.
    */
   boolean hasIsMirroringCollector();
+
   /**
    *
    *
@@ -500,6 +523,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -512,6 +536,7 @@ public interface ForwardingRuleOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -537,6 +562,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -549,6 +575,7 @@ public interface ForwardingRuleOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -572,6 +599,7 @@ public interface ForwardingRuleOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -582,9 +610,11 @@ public interface ForwardingRuleOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -595,6 +625,7 @@ public interface ForwardingRuleOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -609,6 +640,7 @@ public interface ForwardingRuleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -633,6 +665,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the loadBalancingScheme field is set.
    */
   boolean hasLoadBalancingScheme();
+
   /**
    *
    *
@@ -646,6 +679,7 @@ public interface ForwardingRuleOrBuilder
    * @return The loadBalancingScheme.
    */
   java.lang.String getLoadBalancingScheme();
+
   /**
    *
    *
@@ -670,6 +704,7 @@ public interface ForwardingRuleOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList();
+
   /**
    *
    *
@@ -680,6 +715,7 @@ public interface ForwardingRuleOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index);
+
   /**
    *
    *
@@ -690,6 +726,7 @@ public interface ForwardingRuleOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   int getMetadataFiltersCount();
+
   /**
    *
    *
@@ -701,6 +738,7 @@ public interface ForwardingRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
       getMetadataFiltersOrBuilderList();
+
   /**
    *
    *
@@ -724,6 +762,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -736,6 +775,7 @@ public interface ForwardingRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -761,6 +801,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -773,6 +814,7 @@ public interface ForwardingRuleOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -799,6 +841,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
+
   /**
    *
    *
@@ -812,6 +855,7 @@ public interface ForwardingRuleOrBuilder
    * @return The networkTier.
    */
   java.lang.String getNetworkTier();
+
   /**
    *
    *
@@ -838,6 +882,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the noAutomateDnsZone field is set.
    */
   boolean hasNoAutomateDnsZone();
+
   /**
    *
    *
@@ -863,6 +908,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the portRange field is set.
    */
   boolean hasPortRange();
+
   /**
    *
    *
@@ -875,6 +921,7 @@ public interface ForwardingRuleOrBuilder
    * @return The portRange.
    */
   java.lang.String getPortRange();
+
   /**
    *
    *
@@ -900,6 +947,7 @@ public interface ForwardingRuleOrBuilder
    * @return A list containing the ports.
    */
   java.util.List<java.lang.String> getPortsList();
+
   /**
    *
    *
@@ -912,6 +960,7 @@ public interface ForwardingRuleOrBuilder
    * @return The count of ports.
    */
   int getPortsCount();
+
   /**
    *
    *
@@ -925,6 +974,7 @@ public interface ForwardingRuleOrBuilder
    * @return The ports at the given index.
    */
   java.lang.String getPorts(int index);
+
   /**
    *
    *
@@ -951,6 +1001,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the pscConnectionId field is set.
    */
   boolean hasPscConnectionId();
+
   /**
    *
    *
@@ -977,6 +1028,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the pscConnectionStatus field is set.
    */
   boolean hasPscConnectionStatus();
+
   /**
    *
    *
@@ -990,6 +1042,7 @@ public interface ForwardingRuleOrBuilder
    * @return The pscConnectionStatus.
    */
   java.lang.String getPscConnectionStatus();
+
   /**
    *
    *
@@ -1016,6 +1069,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -1028,6 +1082,7 @@ public interface ForwardingRuleOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -1053,6 +1108,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -1065,6 +1121,7 @@ public interface ForwardingRuleOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -1091,6 +1148,7 @@ public interface ForwardingRuleOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>
       getServiceDirectoryRegistrationsList();
+
   /**
    *
    *
@@ -1104,6 +1162,7 @@ public interface ForwardingRuleOrBuilder
    */
   com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration
       getServiceDirectoryRegistrations(int index);
+
   /**
    *
    *
@@ -1116,6 +1175,7 @@ public interface ForwardingRuleOrBuilder
    * </code>
    */
   int getServiceDirectoryRegistrationsCount();
+
   /**
    *
    *
@@ -1130,6 +1190,7 @@ public interface ForwardingRuleOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistrationOrBuilder>
       getServiceDirectoryRegistrationsOrBuilderList();
+
   /**
    *
    *
@@ -1156,6 +1217,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the serviceLabel field is set.
    */
   boolean hasServiceLabel();
+
   /**
    *
    *
@@ -1168,6 +1230,7 @@ public interface ForwardingRuleOrBuilder
    * @return The serviceLabel.
    */
   java.lang.String getServiceLabel();
+
   /**
    *
    *
@@ -1193,6 +1256,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the serviceName field is set.
    */
   boolean hasServiceName();
+
   /**
    *
    *
@@ -1205,6 +1269,7 @@ public interface ForwardingRuleOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -1230,6 +1295,7 @@ public interface ForwardingRuleOrBuilder
    * @return A list containing the sourceIpRanges.
    */
   java.util.List<java.lang.String> getSourceIpRangesList();
+
   /**
    *
    *
@@ -1242,6 +1308,7 @@ public interface ForwardingRuleOrBuilder
    * @return The count of sourceIpRanges.
    */
   int getSourceIpRangesCount();
+
   /**
    *
    *
@@ -1255,6 +1322,7 @@ public interface ForwardingRuleOrBuilder
    * @return The sourceIpRanges at the given index.
    */
   java.lang.String getSourceIpRanges(int index);
+
   /**
    *
    *
@@ -1281,6 +1349,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -1293,6 +1362,7 @@ public interface ForwardingRuleOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
@@ -1318,6 +1388,7 @@ public interface ForwardingRuleOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -1330,6 +1401,7 @@ public interface ForwardingRuleOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *

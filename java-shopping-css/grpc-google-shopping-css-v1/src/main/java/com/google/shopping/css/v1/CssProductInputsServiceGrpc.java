@@ -203,6 +203,19 @@ public final class CssProductInputsServiceGrpc {
     return CssProductInputsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CssProductInputsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CssProductInputsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CssProductInputsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CssProductInputsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CssProductInputsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CssProductInputsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -388,6 +401,75 @@ public final class CssProductInputsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CssProductInputsService.
+   *
+   * <pre>
+   * Service to use CssProductInput resource.
+   * This service helps to insert/update/delete CSS Products.
+   * </pre>
+   */
+  public static final class CssProductInputsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CssProductInputsServiceBlockingV2Stub> {
+    private CssProductInputsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CssProductInputsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CssProductInputsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads a CssProductInput to your CSS Center account. If an
+     * input with the same contentLanguage, identity, feedLabel and feedId already
+     * exists, this method replaces that entry.
+     * After inserting, updating, or deleting a CSS Product input, it may
+     * take several minutes before the processed CSS Product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.CssProductInput insertCssProductInput(
+        com.google.shopping.css.v1.InsertCssProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInsertCssProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the existing Css Product input in your CSS Center account.
+     * After inserting, updating, or deleting a CSS Product input, it may take
+     * several minutes before the processed Css Product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.css.v1.CssProductInput updateCssProductInput(
+        com.google.shopping.css.v1.UpdateCssProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCssProductInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CSS Product input from your CSS Center account.
+     * After a delete it may take several minutes until the input is no longer
+     * available.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCssProductInput(
+        com.google.shopping.css.v1.DeleteCssProductInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCssProductInputMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CssProductInputsService.
    *
    * <pre>
    * Service to use CssProductInput resource.

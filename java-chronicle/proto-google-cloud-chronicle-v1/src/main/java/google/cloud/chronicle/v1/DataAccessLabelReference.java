@@ -33,6 +33,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.DataAccessLabelReference)
     DataAccessLabelReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataAccessLabelReference.newBuilder() to construct.
   private DataAccessLabelReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     private LabelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   }
 
   public static final int DATA_ACCESS_LABEL_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   public boolean hasDataAccessLabel() {
     return labelCase_ == 1;
   }
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   }
 
   public static final int LOG_TYPE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   public boolean hasLogType() {
     return labelCase_ == 2;
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   }
 
   public static final int ASSET_NAMESPACE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -274,6 +283,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   public boolean hasAssetNamespace() {
     return labelCase_ == 3;
   }
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -332,6 +343,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   }
 
   public static final int INGESTION_LABEL_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -347,6 +359,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
   public boolean hasIngestionLabel() {
     return labelCase_ == 4;
   }
+
   /**
    *
    *
@@ -365,6 +378,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     }
     return google.cloud.chronicle.v1.IngestionLabel.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -386,6 +400,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -413,6 +428,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -663,6 +679,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -948,6 +965,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     public boolean hasDataAccessLabel() {
       return labelCase_ == 1;
     }
+
     /**
      *
      *
@@ -976,6 +994,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1023,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1045,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1065,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1104,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     public boolean hasLogType() {
       return labelCase_ == 2;
     }
+
     /**
      *
      *
@@ -1110,6 +1133,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1162,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1184,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1204,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1244,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     public boolean hasAssetNamespace() {
       return labelCase_ == 3;
     }
+
     /**
      *
      *
@@ -1246,6 +1274,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1275,6 +1304,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1327,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1348,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1378,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
             google.cloud.chronicle.v1.IngestionLabel.Builder,
             google.cloud.chronicle.v1.IngestionLabelOrBuilder>
         ingestionLabelBuilder_;
+
     /**
      *
      *
@@ -1361,6 +1394,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     public boolean hasIngestionLabel() {
       return labelCase_ == 4;
     }
+
     /**
      *
      *
@@ -1386,6 +1420,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return google.cloud.chronicle.v1.IngestionLabel.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1408,6 +1443,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       labelCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1464,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       labelCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1497,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       labelCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1523,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1536,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     public google.cloud.chronicle.v1.IngestionLabel.Builder getIngestionLabelBuilder() {
       return getIngestionLabelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1517,6 +1557,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return google.cloud.chronicle.v1.IngestionLabel.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1551,6 +1592,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1577,6 +1619,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1603,6 +1646,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1628,6 +1672,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1694,7 @@ public final class DataAccessLabelReference extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

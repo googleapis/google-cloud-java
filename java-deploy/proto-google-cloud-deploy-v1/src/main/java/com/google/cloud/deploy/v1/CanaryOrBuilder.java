@@ -40,6 +40,7 @@ public interface CanaryOrBuilder
    * @return Whether the runtimeConfig field is set.
    */
   boolean hasRuntimeConfig();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface CanaryOrBuilder
    * @return The runtimeConfig.
    */
   com.google.cloud.deploy.v1.RuntimeConfig getRuntimeConfig();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CanaryOrBuilder
    * @return Whether the canaryDeployment field is set.
    */
   boolean hasCanaryDeployment();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface CanaryOrBuilder
    * @return The canaryDeployment.
    */
   com.google.cloud.deploy.v1.CanaryDeployment getCanaryDeployment();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface CanaryOrBuilder
    * @return Whether the customCanaryDeployment field is set.
    */
   boolean hasCustomCanaryDeployment();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface CanaryOrBuilder
    * @return The customCanaryDeployment.
    */
   com.google.cloud.deploy.v1.CustomCanaryDeployment getCustomCanaryDeployment();
+
   /**
    *
    *

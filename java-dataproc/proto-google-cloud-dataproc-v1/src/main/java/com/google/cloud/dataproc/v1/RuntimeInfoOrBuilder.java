@@ -36,6 +36,7 @@ public interface RuntimeInfoOrBuilder
    * </code>
    */
   int getEndpointsCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface RuntimeInfoOrBuilder
    * </code>
    */
   boolean containsEndpoints(java.lang.String key);
+
   /** Use {@link #getEndpointsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEndpoints();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface RuntimeInfoOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEndpointsMap();
+
   /**
    *
    *
@@ -79,6 +83,7 @@ public interface RuntimeInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -105,6 +110,7 @@ public interface RuntimeInfoOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface RuntimeInfoOrBuilder
    * @return The diagnosticOutputUri.
    */
   java.lang.String getDiagnosticOutputUri();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface RuntimeInfoOrBuilder
    * @return Whether the approximateUsage field is set.
    */
   boolean hasApproximateUsage();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface RuntimeInfoOrBuilder
    * @return The approximateUsage.
    */
   com.google.cloud.dataproc.v1.UsageMetrics getApproximateUsage();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface RuntimeInfoOrBuilder
    * @return Whether the currentUsage field is set.
    */
   boolean hasCurrentUsage();
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public interface RuntimeInfoOrBuilder
    * @return The currentUsage.
    */
   com.google.cloud.dataproc.v1.UsageSnapshot getCurrentUsage();
+
   /**
    *
    *

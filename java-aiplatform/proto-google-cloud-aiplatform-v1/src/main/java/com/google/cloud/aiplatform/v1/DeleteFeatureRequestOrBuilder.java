@@ -41,6 +41,7 @@ public interface DeleteFeatureRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

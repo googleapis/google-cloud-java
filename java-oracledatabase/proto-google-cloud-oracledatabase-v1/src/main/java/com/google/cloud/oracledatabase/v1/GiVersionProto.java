@@ -41,21 +41,20 @@ public final class GiVersionProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n/google/cloud/oracledatabase/v1/gi_vers"
-          + "ion.proto\022\036google.cloud.oracledatabase.v"
-          + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\"\274\001\n\tGiVersion\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\010\022\024\n\007version\030\002 \001(\tB\003\340A\001:\205\001\352"
-          + "A\201\001\n\'oracledatabase.googleapis.com/GiVer"
-          + "sion\022?projects/{project}/locations/{loca"
-          + "tion}/giVersions/{gi_version}*\ngiVersion"
-          + "s2\tgiVersionB\350\001\n\"com.google.cloud.oracle"
-          + "database.v1B\016GiVersionProtoP\001ZJcloud.goo"
+      "\n"
+          + "/google/cloud/oracledatabase/v1/gi_version.proto\022\036google.cloud.oracledatabase.v"
+          + "1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\274\001\n"
+          + "\tGiVersion\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\024\n"
+          + "\007version\030\002 \001(\tB\003\340A\001:\205\001\352A\201\001\n"
+          + "\'oracledatabase.googleapis.com/GiVer"
+          + "sion\022?projects/{project}/locations/{location}/giVersions/{gi_version}*\n"
+          + "giVersions2\tgiVersionB\350\001\n"
+          + "\"com.google.cloud.oracledatabase.v1B\016GiVersionProtoP\001ZJcloud.goo"
           + "gle.com/go/oracledatabase/apiv1/oracleda"
           + "tabasepb;oracledatabasepb\252\002\036Google.Cloud"
           + ".OracleDatabase.V1\312\002\036Google\\Cloud\\Oracle"
-          + "Database\\V1\352\002!Google::Cloud::OracleDatab"
-          + "ase::V1b\006proto3"
+          + "Database\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

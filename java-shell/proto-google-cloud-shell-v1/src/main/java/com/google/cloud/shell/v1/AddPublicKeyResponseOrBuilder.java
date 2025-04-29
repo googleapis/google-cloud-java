@@ -36,6 +36,7 @@ public interface AddPublicKeyResponseOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *

@@ -43,6 +43,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.KmsWrappedCryptoKey)
     KmsWrappedCryptoKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KmsWrappedCryptoKey.newBuilder() to construct.
   private KmsWrappedCryptoKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
 
   public static final int WRAPPED_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cryptoKeyName_ = "";
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -311,6 +315,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -517,6 +522,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -532,6 +538,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getWrappedKey() {
       return wrappedKey_;
     }
+
     /**
      *
      *
@@ -553,6 +560,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object cryptoKeyName_ = "";
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

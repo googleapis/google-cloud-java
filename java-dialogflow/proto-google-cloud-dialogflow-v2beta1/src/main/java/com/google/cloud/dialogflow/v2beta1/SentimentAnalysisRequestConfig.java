@@ -33,6 +33,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig)
     SentimentAnalysisRequestConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SentimentAnalysisRequestConfig.newBuilder() to construct.
   private SentimentAnalysisRequestConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -64,6 +65,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
 
   public static final int ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER = 1;
   private boolean analyzeQueryTextSentiment_ = false;
+
   /**
    *
    *
@@ -243,6 +245,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -432,6 +435,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     private int bitField0_;
 
     private boolean analyzeQueryTextSentiment_;
+
     /**
      *
      *
@@ -449,6 +453,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
     public boolean getAnalyzeQueryTextSentiment() {
       return analyzeQueryTextSentiment_;
     }
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

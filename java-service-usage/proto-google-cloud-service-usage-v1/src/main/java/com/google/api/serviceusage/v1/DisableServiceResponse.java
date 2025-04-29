@@ -35,6 +35,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1.DisableServiceResponse)
     DisableServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DisableServiceResponse.newBuilder() to construct.
   private DisableServiceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 1;
   private com.google.api.serviceusage.v1.Service service_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
   public boolean hasService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
         ? com.google.api.serviceusage.v1.Service.getDefaultInstance()
         : service_;
   }
+
   /**
    *
    *
@@ -279,6 +283,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -484,6 +489,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
             com.google.api.serviceusage.v1.Service.Builder,
             com.google.api.serviceusage.v1.ServiceOrBuilder>
         serviceBuilder_;
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
     public boolean hasService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -518,6 +525,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
         return serviceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -540,6 +548,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -559,6 +568,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -586,6 +596,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +616,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +631,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -637,6 +650,7 @@ public final class DisableServiceResponse extends com.google.protobuf.GeneratedM
             : service_;
       }
     }
+
     /**
      *
      *

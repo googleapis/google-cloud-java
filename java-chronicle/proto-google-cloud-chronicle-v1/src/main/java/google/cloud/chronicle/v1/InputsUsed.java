@@ -35,6 +35,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.InputsUsed)
     InputsUsedOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InputsUsed.newBuilder() to construct.
   private InputsUsed(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USES_UDM_FIELD_NUMBER = 1;
   private boolean usesUdm_ = false;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USES_ENTITY_FIELD_NUMBER = 2;
   private boolean usesEntity_ = false;
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USES_DETECTION_FIELD_NUMBER = 3;
   private boolean usesDetection_ = false;
+
   /**
    *
    *
@@ -292,6 +296,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -500,6 +505,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean usesUdm_;
+
     /**
      *
      *
@@ -515,6 +521,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     public boolean getUsesUdm() {
       return usesUdm_;
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean usesEntity_;
+
     /**
      *
      *
@@ -568,6 +577,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     public boolean getUsesEntity() {
       return usesEntity_;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +617,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean usesDetection_;
+
     /**
      *
      *
@@ -621,6 +633,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
     public boolean getUsesDetection() {
       return usesDetection_;
     }
+
     /**
      *
      *
@@ -640,6 +653,7 @@ public final class InputsUsed extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

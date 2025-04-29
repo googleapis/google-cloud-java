@@ -36,6 +36,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The sourceSpoke.
    */
   java.lang.String getSourceSpoke();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The sourceGroup.
    */
   java.lang.String getSourceGroup();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The sourceForwardingRule.
    */
   java.lang.String getSourceForwardingRule();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The targetSpoke.
    */
   java.lang.String getTargetSpoke();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The targetGroup.
    */
   java.lang.String getTargetGroup();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public interface PscPropagationStatusOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.MerchantReviewStatus)
     MerchantReviewStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MerchantReviewStatus.newBuilder() to construct.
   private MerchantReviewStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
+
     /**
      *
      *
@@ -99,6 +101,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      */
     com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext();
   }
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.MerchantReviewStatus.MerchantReviewDestinationStatus)
       MerchantReviewDestinationStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MerchantReviewDestinationStatus.newBuilder() to construct.
     private MerchantReviewDestinationStatus(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -150,6 +154,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 1;
     private int reportingContext_ = 0;
+
     /**
      *
      *
@@ -167,6 +172,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     public int getReportingContextValue() {
       return reportingContext_;
     }
+
     /**
      *
      *
@@ -384,6 +390,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -599,6 +606,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private int reportingContext_ = 0;
+
       /**
        *
        *
@@ -616,6 +624,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       public int getReportingContextValue() {
         return reportingContext_;
       }
+
       /**
        *
        *
@@ -636,6 +645,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -658,6 +668,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -682,6 +693,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -791,6 +803,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The code.
      */
     java.lang.String getCode();
+
     /**
      *
      *
@@ -818,6 +831,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
+
     /**
      *
      *
@@ -847,6 +861,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The resolution.
      */
     java.lang.String getResolution();
+
     /**
      *
      *
@@ -873,6 +888,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The attribute.
      */
     java.lang.String getAttribute();
+
     /**
      *
      *
@@ -901,6 +917,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for reportingContext.
      */
     int getReportingContextValue();
+
     /**
      *
      *
@@ -928,6 +945,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -953,6 +971,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The detail.
      */
     java.lang.String getDetail();
+
     /**
      *
      *
@@ -978,6 +997,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      * @return The documentation.
      */
     java.lang.String getDocumentation();
+
     /**
      *
      *
@@ -991,6 +1011,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getDocumentationBytes();
   }
+
   /**
    *
    *
@@ -1007,6 +1028,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.MerchantReviewStatus.MerchantReviewItemLevelIssue)
       MerchantReviewItemLevelIssueOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MerchantReviewItemLevelIssue.newBuilder() to construct.
     private MerchantReviewItemLevelIssue(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1102,6 +1124,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
        * <code>SEVERITY_UNSPECIFIED = 0;</code>
        */
       public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1113,6 +1136,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
        * <code>NOT_IMPACTED = 1;</code>
        */
       public static final int NOT_IMPACTED_VALUE = 1;
+
       /**
        *
        *
@@ -1214,6 +1238,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
+
     /**
      *
      *
@@ -1237,6 +1262,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1289,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     public static final int SEVERITY_FIELD_NUMBER = 2;
     private int severity_ = 0;
+
     /**
      *
      *
@@ -1280,6 +1307,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -1312,6 +1340,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resolution_ = "";
+
     /**
      *
      *
@@ -1335,6 +1364,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1363,6 +1393,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object attribute_ = "";
+
     /**
      *
      *
@@ -1387,6 +1418,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1446,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     public static final int REPORTING_CONTEXT_FIELD_NUMBER = 5;
     private int reportingContext_ = 0;
+
     /**
      *
      *
@@ -1431,6 +1464,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     public int getReportingContextValue() {
       return reportingContext_;
     }
+
     /**
      *
      *
@@ -1458,6 +1492,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1481,6 +1516,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1509,6 +1545,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object detail_ = "";
+
     /**
      *
      *
@@ -1532,6 +1569,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1598,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object documentation_ = "";
+
     /**
      *
      *
@@ -1583,6 +1622,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1869,6 +1909,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2187,6 +2228,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object code_ = "";
+
       /**
        *
        *
@@ -2209,6 +2251,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2231,6 +2274,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2252,6 +2296,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2269,6 +2314,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2293,6 +2339,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private int severity_ = 0;
+
       /**
        *
        *
@@ -2310,6 +2357,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       public int getSeverityValue() {
         return severity_;
       }
+
       /**
        *
        *
@@ -2330,6 +2378,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2357,6 +2406,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
                 .MerchantReviewItemLevelIssue.Severity.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2383,6 +2433,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2404,6 +2455,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object resolution_ = "";
+
       /**
        *
        *
@@ -2426,6 +2478,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2448,6 +2501,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2469,6 +2523,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2486,6 +2541,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2510,6 +2566,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object attribute_ = "";
+
       /**
        *
        *
@@ -2533,6 +2590,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2556,6 +2614,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2578,6 +2637,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2596,6 +2656,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2621,6 +2682,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private int reportingContext_ = 0;
+
       /**
        *
        *
@@ -2638,6 +2700,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       public int getReportingContextValue() {
         return reportingContext_;
       }
+
       /**
        *
        *
@@ -2658,6 +2721,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2680,6 +2744,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
             ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2704,6 +2769,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2725,6 +2791,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -2747,6 +2814,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2769,6 +2837,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2790,6 +2859,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2807,6 +2877,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2831,6 +2902,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object detail_ = "";
+
       /**
        *
        *
@@ -2853,6 +2925,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2875,6 +2948,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2896,6 +2970,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2913,6 +2988,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2937,6 +3013,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object documentation_ = "";
+
       /**
        *
        *
@@ -2959,6 +3036,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2981,6 +3059,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3002,6 +3081,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3019,6 +3099,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3122,6 +3203,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           com.google.shopping.merchant.reviews.v1beta.MerchantReviewStatus
               .MerchantReviewDestinationStatus>
       destinationStatuses_;
+
   /**
    *
    *
@@ -3140,6 +3222,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       getDestinationStatusesList() {
     return destinationStatuses_;
   }
+
   /**
    *
    *
@@ -3159,6 +3242,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       getDestinationStatusesOrBuilderList() {
     return destinationStatuses_;
   }
+
   /**
    *
    *
@@ -3174,6 +3258,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
   public int getDestinationStatusesCount() {
     return destinationStatuses_.size();
   }
+
   /**
    *
    *
@@ -3191,6 +3276,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       getDestinationStatuses(int index) {
     return destinationStatuses_.get(index);
   }
+
   /**
    *
    *
@@ -3216,6 +3302,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
           com.google.shopping.merchant.reviews.v1beta.MerchantReviewStatus
               .MerchantReviewItemLevelIssue>
       itemLevelIssues_;
+
   /**
    *
    *
@@ -3234,6 +3321,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       getItemLevelIssuesList() {
     return itemLevelIssues_;
   }
+
   /**
    *
    *
@@ -3253,6 +3341,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       getItemLevelIssuesOrBuilderList() {
     return itemLevelIssues_;
   }
+
   /**
    *
    *
@@ -3268,6 +3357,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
   public int getItemLevelIssuesCount() {
     return itemLevelIssues_.size();
   }
+
   /**
    *
    *
@@ -3285,6 +3375,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       getItemLevelIssues(int index) {
     return itemLevelIssues_.get(index);
   }
+
   /**
    *
    *
@@ -3305,6 +3396,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -3322,6 +3414,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3339,6 +3432,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -3357,6 +3451,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp lastUpdateTime_;
+
   /**
    *
    *
@@ -3375,6 +3470,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3395,6 +3491,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
+
   /**
    *
    *
@@ -3616,6 +3713,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4010,6 +4108,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return destinationStatusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4028,6 +4127,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return destinationStatusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4048,6 +4148,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return destinationStatusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4076,6 +4177,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4101,6 +4203,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4128,6 +4231,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4156,6 +4260,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4180,6 +4285,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4205,6 +4311,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4231,6 +4338,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4252,6 +4360,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4273,6 +4382,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4289,6 +4399,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         getDestinationStatusesBuilder(int index) {
       return getDestinationStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4309,6 +4420,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return destinationStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4331,6 +4443,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(destinationStatuses_);
       }
     }
+
     /**
      *
      *
@@ -4350,6 +4463,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
               com.google.shopping.merchant.reviews.v1beta.MerchantReviewStatus
                   .MerchantReviewDestinationStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4370,6 +4484,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
               com.google.shopping.merchant.reviews.v1beta.MerchantReviewStatus
                   .MerchantReviewDestinationStatus.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4459,6 +4574,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return itemLevelIssuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4477,6 +4593,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return itemLevelIssuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4497,6 +4614,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return itemLevelIssuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4525,6 +4643,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4550,6 +4669,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4577,6 +4697,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4605,6 +4726,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4629,6 +4751,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4654,6 +4777,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4680,6 +4804,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4701,6 +4826,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4722,6 +4848,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4738,6 +4865,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         getItemLevelIssuesBuilder(int index) {
       return getItemLevelIssuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4758,6 +4886,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return itemLevelIssuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4780,6 +4909,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(itemLevelIssues_);
       }
     }
+
     /**
      *
      *
@@ -4799,6 +4929,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
               com.google.shopping.merchant.reviews.v1beta.MerchantReviewStatus
                   .MerchantReviewItemLevelIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4819,6 +4950,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
               com.google.shopping.merchant.reviews.v1beta.MerchantReviewStatus
                   .MerchantReviewItemLevelIssue.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4869,6 +5001,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4886,6 +5019,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4909,6 +5043,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4934,6 +5069,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4956,6 +5092,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4986,6 +5123,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5008,6 +5146,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5025,6 +5164,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5046,6 +5186,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -5081,6 +5222,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
+
     /**
      *
      *
@@ -5098,6 +5240,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5121,6 +5264,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5146,6 +5290,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5168,6 +5313,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5198,6 +5344,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -5220,6 +5367,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5237,6 +5385,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5258,6 +5407,7 @@ public final class MerchantReviewStatus extends com.google.protobuf.GeneratedMes
             : lastUpdateTime_;
       }
     }
+
     /**
      *
      *

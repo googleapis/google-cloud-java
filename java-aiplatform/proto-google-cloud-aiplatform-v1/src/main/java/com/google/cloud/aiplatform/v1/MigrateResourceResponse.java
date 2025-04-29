@@ -33,6 +33,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.MigrateResourceResponse)
     MigrateResourceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrateResourceResponse.newBuilder() to construct.
   private MigrateResourceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     private MigratedResourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   }
 
   public static final int DATASET_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   public boolean hasDataset() {
     return migratedResourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   }
 
   public static final int MODEL_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   public boolean hasModel() {
     return migratedResourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
 
   public static final int MIGRATABLE_RESOURCE_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.MigratableResource migratableResource_;
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   public boolean hasMigratableResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.MigratableResource.getDefaultInstance()
         : migratableResource_;
   }
+
   /**
    *
    *
@@ -505,6 +516,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -777,6 +789,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     public boolean hasDataset() {
       return migratedResourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -805,6 +818,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -833,6 +847,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -854,6 +869,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +889,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     public boolean hasModel() {
       return migratedResourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -939,6 +957,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1028,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.MigratableResource.Builder,
             com.google.cloud.aiplatform.v1.MigratableResourceOrBuilder>
         migratableResourceBuilder_;
+
     /**
      *
      *
@@ -1051,6 +1074,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
     public boolean hasMigratableResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1072,6 +1096,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
         return migratableResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1142,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1173,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1194,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1211,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       onChanged();
       return getMigratableResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1202,6 +1232,7 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
             : migratableResource_;
       }
     }
+
     /**
      *
      *

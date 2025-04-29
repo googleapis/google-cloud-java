@@ -37,6 +37,7 @@ public interface SessionSegmentOrBuilder
    * @return Whether the sessionInclusionCriteria field is set.
    */
   boolean hasSessionInclusionCriteria();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SessionSegmentOrBuilder
    * @return The sessionInclusionCriteria.
    */
   com.google.analytics.data.v1alpha.SessionSegmentCriteria getSessionInclusionCriteria();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SessionSegmentOrBuilder
    * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface SessionSegmentOrBuilder
    * @return The exclusion.
    */
   com.google.analytics.data.v1alpha.SessionSegmentExclusion getExclusion();
+
   /**
    *
    *

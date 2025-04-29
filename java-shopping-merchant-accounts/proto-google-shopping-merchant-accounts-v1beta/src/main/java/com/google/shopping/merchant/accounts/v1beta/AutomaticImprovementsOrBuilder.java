@@ -37,6 +37,7 @@ public interface AutomaticImprovementsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface AutomaticImprovementsOrBuilder
    * @return Whether the itemUpdates field is set.
    */
   boolean hasItemUpdates();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface AutomaticImprovementsOrBuilder
    * @return The itemUpdates.
    */
   com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates getItemUpdates();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface AutomaticImprovementsOrBuilder
    * @return Whether the imageImprovements field is set.
    */
   boolean hasImageImprovements();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface AutomaticImprovementsOrBuilder
    * @return The imageImprovements.
    */
   com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements getImageImprovements();
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public interface AutomaticImprovementsOrBuilder
    * @return Whether the shippingImprovements field is set.
    */
   boolean hasShippingImprovements();
+
   /**
    *
    *
@@ -224,6 +230,7 @@ public interface AutomaticImprovementsOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.AutomaticShippingImprovements
       getShippingImprovements();
+
   /**
    *
    *

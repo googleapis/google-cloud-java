@@ -36,6 +36,7 @@ public interface VolumeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface VolumeOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface VolumeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface VolumeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface VolumeOrBuilder
    * @return The shareName.
    */
   java.lang.String getShareName();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface VolumeOrBuilder
    * @return The psaRange.
    */
   java.lang.String getPsaRange();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface VolumeOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
+
   /**
    *
    *
@@ -237,6 +245,7 @@ public interface VolumeOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for serviceLevel.
    */
   int getServiceLevelValue();
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public interface VolumeOrBuilder
    * @return Whether the exportPolicy field is set.
    */
   boolean hasExportPolicy();
+
   /**
    *
    *
@@ -323,6 +334,7 @@ public interface VolumeOrBuilder
    * @return The exportPolicy.
    */
   com.google.cloud.netapp.v1.ExportPolicy getExportPolicy();
+
   /**
    *
    *
@@ -350,6 +362,7 @@ public interface VolumeOrBuilder
    * @return A list containing the protocols.
    */
   java.util.List<com.google.cloud.netapp.v1.Protocols> getProtocolsList();
+
   /**
    *
    *
@@ -364,6 +377,7 @@ public interface VolumeOrBuilder
    * @return The count of protocols.
    */
   int getProtocolsCount();
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public interface VolumeOrBuilder
    * @return The protocols at the given index.
    */
   com.google.cloud.netapp.v1.Protocols getProtocols(int index);
+
   /**
    *
    *
@@ -393,6 +408,7 @@ public interface VolumeOrBuilder
    * @return A list containing the enum numeric values on the wire for protocols.
    */
   java.util.List<java.lang.Integer> getProtocolsValueList();
+
   /**
    *
    *
@@ -423,6 +439,7 @@ public interface VolumeOrBuilder
    * @return A list containing the smbSettings.
    */
   java.util.List<com.google.cloud.netapp.v1.SMBSettings> getSmbSettingsList();
+
   /**
    *
    *
@@ -437,6 +454,7 @@ public interface VolumeOrBuilder
    * @return The count of smbSettings.
    */
   int getSmbSettingsCount();
+
   /**
    *
    *
@@ -452,6 +470,7 @@ public interface VolumeOrBuilder
    * @return The smbSettings at the given index.
    */
   com.google.cloud.netapp.v1.SMBSettings getSmbSettings(int index);
+
   /**
    *
    *
@@ -466,6 +485,7 @@ public interface VolumeOrBuilder
    * @return A list containing the enum numeric values on the wire for smbSettings.
    */
   java.util.List<java.lang.Integer> getSmbSettingsValueList();
+
   /**
    *
    *
@@ -494,6 +514,7 @@ public interface VolumeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.netapp.v1.MountOption> getMountOptionsList();
+
   /**
    *
    *
@@ -506,6 +527,7 @@ public interface VolumeOrBuilder
    * </code>
    */
   com.google.cloud.netapp.v1.MountOption getMountOptions(int index);
+
   /**
    *
    *
@@ -518,6 +540,7 @@ public interface VolumeOrBuilder
    * </code>
    */
   int getMountOptionsCount();
+
   /**
    *
    *
@@ -531,6 +554,7 @@ public interface VolumeOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.MountOptionOrBuilder>
       getMountOptionsOrBuilderList();
+
   /**
    *
    *
@@ -557,6 +581,7 @@ public interface VolumeOrBuilder
    * @return The unixPermissions.
    */
   java.lang.String getUnixPermissions();
+
   /**
    *
    *
@@ -581,6 +606,7 @@ public interface VolumeOrBuilder
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -591,9 +617,11 @@ public interface VolumeOrBuilder
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -604,6 +632,7 @@ public interface VolumeOrBuilder
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -618,6 +647,7 @@ public interface VolumeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -641,6 +671,7 @@ public interface VolumeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -668,6 +699,7 @@ public interface VolumeOrBuilder
    * @return Whether the snapshotPolicy field is set.
    */
   boolean hasSnapshotPolicy();
+
   /**
    *
    *
@@ -682,6 +714,7 @@ public interface VolumeOrBuilder
    * @return The snapshotPolicy.
    */
   com.google.cloud.netapp.v1.SnapshotPolicy getSnapshotPolicy();
+
   /**
    *
    *
@@ -752,6 +785,7 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for securityStyle.
    */
   int getSecurityStyleValue();
+
   /**
    *
    *
@@ -808,6 +842,7 @@ public interface VolumeOrBuilder
    * @return The activeDirectory.
    */
   java.lang.String getActiveDirectory();
+
   /**
    *
    *
@@ -837,6 +872,7 @@ public interface VolumeOrBuilder
    * @return Whether the restoreParameters field is set.
    */
   boolean hasRestoreParameters();
+
   /**
    *
    *
@@ -851,6 +887,7 @@ public interface VolumeOrBuilder
    * @return The restoreParameters.
    */
   com.google.cloud.netapp.v1.RestoreParameters getRestoreParameters();
+
   /**
    *
    *
@@ -878,6 +915,7 @@ public interface VolumeOrBuilder
    * @return The kmsConfig.
    */
   java.lang.String getKmsConfig();
+
   /**
    *
    *
@@ -907,6 +945,7 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for encryptionType.
    */
   int getEncryptionTypeValue();
+
   /**
    *
    *
@@ -948,6 +987,7 @@ public interface VolumeOrBuilder
    * @return Whether the backupConfig field is set.
    */
   boolean hasBackupConfig();
+
   /**
    *
    *
@@ -960,6 +1000,7 @@ public interface VolumeOrBuilder
    * @return The backupConfig.
    */
   com.google.cloud.netapp.v1.BackupConfig getBackupConfig();
+
   /**
    *
    *
@@ -985,6 +1026,7 @@ public interface VolumeOrBuilder
    * @return A list containing the restrictedActions.
    */
   java.util.List<com.google.cloud.netapp.v1.RestrictedAction> getRestrictedActionsList();
+
   /**
    *
    *
@@ -999,6 +1041,7 @@ public interface VolumeOrBuilder
    * @return The count of restrictedActions.
    */
   int getRestrictedActionsCount();
+
   /**
    *
    *
@@ -1014,6 +1057,7 @@ public interface VolumeOrBuilder
    * @return The restrictedActions at the given index.
    */
   com.google.cloud.netapp.v1.RestrictedAction getRestrictedActions(int index);
+
   /**
    *
    *
@@ -1028,6 +1072,7 @@ public interface VolumeOrBuilder
    * @return A list containing the enum numeric values on the wire for restrictedActions.
    */
   java.util.List<java.lang.Integer> getRestrictedActionsValueList();
+
   /**
    *
    *
@@ -1085,6 +1130,7 @@ public interface VolumeOrBuilder
    * @return Whether the tieringPolicy field is set.
    */
   boolean hasTieringPolicy();
+
   /**
    *
    *
@@ -1097,6 +1143,7 @@ public interface VolumeOrBuilder
    * @return The tieringPolicy.
    */
   com.google.cloud.netapp.v1.TieringPolicy getTieringPolicy();
+
   /**
    *
    *
@@ -1120,6 +1167,7 @@ public interface VolumeOrBuilder
    * @return The replicaZone.
    */
   java.lang.String getReplicaZone();
+
   /**
    *
    *
@@ -1145,6 +1193,7 @@ public interface VolumeOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -1185,6 +1234,7 @@ public interface VolumeOrBuilder
    * @return Whether the hybridReplicationParameters field is set.
    */
   boolean hasHybridReplicationParameters();
+
   /**
    *
    *
@@ -1199,6 +1249,7 @@ public interface VolumeOrBuilder
    * @return The hybridReplicationParameters.
    */
   com.google.cloud.netapp.v1.HybridReplicationParameters getHybridReplicationParameters();
+
   /**
    *
    *

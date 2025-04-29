@@ -33,6 +33,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDevicesRequest)
     ListDevicesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDevicesRequest.newBuilder() to construct.
   private ListDevicesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList deviceNumIds_ = emptyLongList();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Long> getDeviceNumIdsList() {
     return deviceNumIds_;
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public int getDeviceNumIdsCount() {
     return deviceNumIds_.size();
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList deviceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getDeviceIdsList() {
     return deviceIds_;
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public int getDeviceIdsCount() {
     return deviceIds_.size();
   }
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public java.lang.String getDeviceIds(int index) {
     return deviceIds_.get(index);
   }
+
   /**
    *
    *
@@ -248,6 +258,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int FIELD_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask fieldMask_;
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasFieldMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -284,6 +296,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int GATEWAY_LIST_OPTIONS_FIELD_NUMBER = 6;
   private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_;
+
   /**
    *
    *
@@ -318,6 +332,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasGatewayListOptions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance()
         : gatewayListOptions_;
   }
+
   /**
    *
    *
@@ -353,6 +369,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 100;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -376,6 +393,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -401,6 +419,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -674,6 +693,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -993,6 +1013,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1018,6 +1039,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1043,6 +1065,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1090,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1111,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1137,6 +1163,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       deviceNumIds_.makeImmutable();
       return deviceNumIds_;
     }
+
     /**
      *
      *
@@ -1152,6 +1179,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public int getDeviceNumIdsCount() {
       return deviceNumIds_.size();
     }
+
     /**
      *
      *
@@ -1168,6 +1196,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public long getDeviceNumIds(int index) {
       return deviceNumIds_.getLong(index);
     }
+
     /**
      *
      *
@@ -1190,6 +1219,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1241,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1262,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1291,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1275,6 +1308,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       deviceIds_.makeImmutable();
       return deviceIds_;
     }
+
     /**
      *
      *
@@ -1290,6 +1324,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public int getDeviceIdsCount() {
       return deviceIds_.size();
     }
+
     /**
      *
      *
@@ -1306,6 +1341,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public java.lang.String getDeviceIds(int index) {
       return deviceIds_.get(index);
     }
+
     /**
      *
      *
@@ -1322,6 +1358,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getDeviceIdsBytes(int index) {
       return deviceIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1346,6 +1383,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1407,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1389,6 +1428,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1448,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1480,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         fieldMaskBuilder_;
+
     /**
      *
      *
@@ -1456,6 +1498,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasFieldMask() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1477,6 +1520,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return fieldMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1502,6 +1546,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1569,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1600,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1623,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1593,6 +1641,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1612,6 +1661,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
+
     /**
      *
      *
@@ -1647,6 +1697,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.iot.v1.GatewayListOptions.Builder,
             com.google.cloud.iot.v1.GatewayListOptionsOrBuilder>
         gatewayListOptionsBuilder_;
+
     /**
      *
      *
@@ -1661,6 +1712,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasGatewayListOptions() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1681,6 +1733,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return gatewayListOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1703,6 +1756,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1723,6 +1777,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1806,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1770,6 +1826,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1841,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getGatewayListOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1802,6 +1860,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             : gatewayListOptions_;
       }
     }
+
     /**
      *
      *
@@ -1829,6 +1888,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1847,6 +1907,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1869,6 +1930,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1953,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1915,6 +1978,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1939,6 +2003,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1962,6 +2027,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2047,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

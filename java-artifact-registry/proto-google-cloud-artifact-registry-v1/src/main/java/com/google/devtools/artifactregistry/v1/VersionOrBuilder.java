@@ -39,6 +39,7 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface VersionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface VersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface VersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface VersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface VersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface VersionOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Tag related_tags = 7;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.Tag> getRelatedTagsList();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface VersionOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Tag related_tags = 7;</code>
    */
   com.google.devtools.artifactregistry.v1.Tag getRelatedTags(int index);
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public interface VersionOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Tag related_tags = 7;</code>
    */
   int getRelatedTagsCount();
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public interface VersionOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.TagOrBuilder>
       getRelatedTagsOrBuilderList();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface VersionOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -239,6 +250,7 @@ public interface VersionOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface VersionOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -276,9 +289,11 @@ public interface VersionOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -290,6 +305,7 @@ public interface VersionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -305,6 +321,7 @@ public interface VersionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

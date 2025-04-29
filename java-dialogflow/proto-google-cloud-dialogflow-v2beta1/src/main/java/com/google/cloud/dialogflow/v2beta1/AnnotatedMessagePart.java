@@ -35,6 +35,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.AnnotatedMessagePart)
     AnnotatedMessagePartOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotatedMessagePart.newBuilder() to construct.
   private AnnotatedMessagePart(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entityType_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
 
   public static final int FORMATTED_VALUE_FIELD_NUMBER = 3;
   private com.google.protobuf.Value formattedValue_;
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
   public boolean hasFormattedValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Value.getDefaultInstance()
         : formattedValue_;
   }
+
   /**
    *
    *
@@ -435,6 +443,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,6 +675,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -688,6 +698,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -710,6 +721,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +786,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object entityType_ = "";
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +884,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         formattedValueBuilder_;
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
     public boolean hasFormattedValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
         return formattedValueBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -981,6 +1003,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1032,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1098,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
       onChanged();
       return getFormattedValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class AnnotatedMessagePart extends com.google.protobuf.GeneratedMes
             : formattedValue_;
       }
     }
+
     /**
      *
      *

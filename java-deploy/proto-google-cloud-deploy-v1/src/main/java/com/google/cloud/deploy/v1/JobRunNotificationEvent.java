@@ -35,6 +35,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.JobRunNotificationEvent)
     JobRunNotificationEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobRunNotificationEvent.newBuilder() to construct.
   private JobRunNotificationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobRun_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object releaseUid_ = "";
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object release_ = "";
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -332,6 +343,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutUid_ = "";
+
   /**
    *
    *
@@ -355,6 +367,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -383,6 +396,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rollout_ = "";
+
   /**
    *
    *
@@ -406,6 +420,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -434,6 +449,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetId_ = "";
+
   /**
    *
    *
@@ -457,6 +473,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -483,6 +500,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
 
   public static final int TYPE_FIELD_NUMBER = 7;
   private int type_ = 0;
+
   /**
    *
    *
@@ -498,6 +516,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -746,6 +765,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1050,6 +1070,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -1072,6 +1093,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1094,6 +1116,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1138,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1156,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1181,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object jobRun_ = "";
+
     /**
      *
      *
@@ -1178,6 +1204,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1200,6 +1227,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1221,6 +1249,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1267,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1292,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object pipelineUid_ = "";
+
     /**
      *
      *
@@ -1284,6 +1315,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1338,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1360,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1378,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1403,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object releaseUid_ = "";
+
     /**
      *
      *
@@ -1390,6 +1426,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1449,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1433,6 +1471,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1489,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1474,6 +1514,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object release_ = "";
+
     /**
      *
      *
@@ -1496,6 +1537,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1518,6 +1560,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1539,6 +1582,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1600,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1580,6 +1625,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object rolloutUid_ = "";
+
     /**
      *
      *
@@ -1602,6 +1648,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1624,6 +1671,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1645,6 +1693,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1711,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1736,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object rollout_ = "";
+
     /**
      *
      *
@@ -1708,6 +1759,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1730,6 +1782,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1751,6 +1804,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1768,6 +1822,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1792,6 +1847,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private java.lang.Object targetId_ = "";
+
     /**
      *
      *
@@ -1814,6 +1870,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1836,6 +1893,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1857,6 +1915,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1874,6 +1933,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1898,6 +1958,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1913,6 +1974,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1931,6 +1993,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2010,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1968,6 +2032,7 @@ public final class JobRunNotificationEvent extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

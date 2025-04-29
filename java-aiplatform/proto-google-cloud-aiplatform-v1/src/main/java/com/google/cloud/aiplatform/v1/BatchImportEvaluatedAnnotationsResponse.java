@@ -35,6 +35,7 @@ public final class BatchImportEvaluatedAnnotationsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse)
     BatchImportEvaluatedAnnotationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchImportEvaluatedAnnotationsResponse.newBuilder() to construct.
   private BatchImportEvaluatedAnnotationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class BatchImportEvaluatedAnnotationsResponse
 
   public static final int IMPORTED_EVALUATED_ANNOTATIONS_COUNT_FIELD_NUMBER = 1;
   private int importedEvaluatedAnnotationsCount_ = 0;
+
   /**
    *
    *
@@ -248,6 +250,7 @@ public final class BatchImportEvaluatedAnnotationsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -439,6 +442,7 @@ public final class BatchImportEvaluatedAnnotationsResponse
     private int bitField0_;
 
     private int importedEvaluatedAnnotationsCount_;
+
     /**
      *
      *
@@ -456,6 +460,7 @@ public final class BatchImportEvaluatedAnnotationsResponse
     public int getImportedEvaluatedAnnotationsCount() {
       return importedEvaluatedAnnotationsCount_;
     }
+
     /**
      *
      *
@@ -477,6 +482,7 @@ public final class BatchImportEvaluatedAnnotationsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

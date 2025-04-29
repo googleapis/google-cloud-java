@@ -33,6 +33,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.GetRuleDeploymentRequest)
     GetRuleDeploymentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetRuleDeploymentRequest.newBuilder() to construct.
   private GetRuleDeploymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -281,6 +284,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -465,6 +469,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -491,6 +496,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -517,6 +523,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -542,6 +549,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class GetRuleDeploymentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

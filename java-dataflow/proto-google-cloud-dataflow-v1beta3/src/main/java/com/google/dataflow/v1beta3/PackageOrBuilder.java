@@ -36,6 +36,7 @@ public interface PackageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PackageOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

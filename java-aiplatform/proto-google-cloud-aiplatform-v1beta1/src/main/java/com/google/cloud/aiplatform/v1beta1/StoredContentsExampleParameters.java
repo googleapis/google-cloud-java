@@ -34,6 +34,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters)
     StoredContentsExampleParametersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StoredContentsExampleParameters.newBuilder() to construct.
   private StoredContentsExampleParameters(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
      * </code>
      */
     java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+
     /**
      *
      *
@@ -104,6 +107,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
      * </code>
      */
     int getContentsCount();
+
     /**
      *
      *
@@ -117,6 +121,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
      */
     java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
         getContentsOrBuilderList();
+
     /**
      *
      *
@@ -144,6 +149,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
      * @return Whether the searchKeyGenerationMethod field is set.
      */
     boolean hasSearchKeyGenerationMethod();
+
     /**
      *
      *
@@ -159,6 +165,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
      */
     com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod
         getSearchKeyGenerationMethod();
+
     /**
      *
      *
@@ -173,6 +180,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethodOrBuilder
         getSearchKeyGenerationMethodOrBuilder();
   }
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters.ContentSearchKey)
       ContentSearchKeyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ContentSearchKey.newBuilder() to construct.
     private ContentSearchKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -225,6 +234,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> contents_;
+
     /**
      *
      *
@@ -240,6 +250,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList() {
       return contents_;
     }
+
     /**
      *
      *
@@ -256,6 +267,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         getContentsOrBuilderList() {
       return contents_;
     }
+
     /**
      *
      *
@@ -271,6 +283,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public int getContentsCount() {
       return contents_.size();
     }
+
     /**
      *
      *
@@ -286,6 +299,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public com.google.cloud.aiplatform.v1beta1.Content getContents(int index) {
       return contents_.get(index);
     }
+
     /**
      *
      *
@@ -305,6 +319,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public static final int SEARCH_KEY_GENERATION_METHOD_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod
         searchKeyGenerationMethod_;
+
     /**
      *
      *
@@ -322,6 +337,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public boolean hasSearchKeyGenerationMethod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -343,6 +359,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
               .getDefaultInstance()
           : searchKeyGenerationMethod_;
     }
+
     /**
      *
      *
@@ -566,6 +583,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
           return contentsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -907,6 +926,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
           return contentsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -925,6 +945,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
           return contentsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -949,6 +970,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -971,6 +993,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -995,6 +1018,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1019,6 +1043,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1041,6 +1066,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1063,6 +1089,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1085,6 +1112,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1106,6 +1134,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1127,6 +1156,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1141,6 +1171,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       public com.google.cloud.aiplatform.v1beta1.Content.Builder getContentsBuilder(int index) {
         return getContentsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1159,6 +1190,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
           return contentsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1178,6 +1210,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
           return java.util.Collections.unmodifiableList(contents_);
         }
       }
+
       /**
        *
        *
@@ -1193,6 +1226,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         return getContentsFieldBuilder()
             .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1208,6 +1242,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         return getContentsFieldBuilder()
             .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1250,6 +1285,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
               com.google.cloud.aiplatform.v1beta1.StoredContentsExample
                   .SearchKeyGenerationMethodOrBuilder>
           searchKeyGenerationMethodBuilder_;
+
       /**
        *
        *
@@ -1266,6 +1302,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       public boolean hasSearchKeyGenerationMethod() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1290,6 +1327,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
           return searchKeyGenerationMethodBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1316,6 +1354,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1340,6 +1379,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1373,6 +1413,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -1394,6 +1435,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1412,6 +1454,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         onChanged();
         return getSearchKeyGenerationMethodFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1435,6 +1478,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
               : searchKeyGenerationMethod_;
         }
       }
+
       /**
        *
        *
@@ -1557,6 +1601,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     private QueryCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1590,6 +1635,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
   }
 
   public static final int SEARCH_KEY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1604,6 +1650,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
   public boolean hasSearchKey() {
     return queryCase_ == 1;
   }
+
   /**
    *
    *
@@ -1631,6 +1678,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -1660,6 +1708,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
   }
 
   public static final int CONTENT_SEARCH_KEY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1677,6 +1726,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
   public boolean hasContentSearchKey() {
     return queryCase_ == 2;
   }
+
   /**
    *
    *
@@ -1700,6 +1750,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     return com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters.ContentSearchKey
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1725,6 +1776,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
 
   public static final int FUNCTION_NAMES_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter functionNames_;
+
   /**
    *
    *
@@ -1742,6 +1794,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
   public boolean hasFunctionNames() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1761,6 +1814,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter.getDefaultInstance()
         : functionNames_;
   }
+
   /**
    *
    *
@@ -1988,6 +2042,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2270,6 +2325,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public boolean hasSearchKey() {
       return queryCase_ == 1;
     }
+
     /**
      *
      *
@@ -2298,6 +2354,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2326,6 +2383,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2347,6 +2405,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2366,6 +2425,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2396,6 +2456,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters
                 .ContentSearchKeyOrBuilder>
         contentSearchKeyBuilder_;
+
     /**
      *
      *
@@ -2413,6 +2474,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public boolean hasContentSearchKey() {
       return queryCase_ == 2;
     }
+
     /**
      *
      *
@@ -2445,6 +2507,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2471,6 +2534,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       queryCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2494,6 +2558,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       queryCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2535,6 +2600,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       queryCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2562,6 +2628,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2578,6 +2645,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         getContentSearchKeyBuilder() {
       return getContentSearchKeyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2605,6 +2673,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2655,6 +2724,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilter.Builder,
             com.google.cloud.aiplatform.v1beta1.ExamplesArrayFilterOrBuilder>
         functionNamesBuilder_;
+
     /**
      *
      *
@@ -2671,6 +2741,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
     public boolean hasFunctionNames() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2693,6 +2764,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
         return functionNamesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2717,6 +2789,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2739,6 +2812,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2770,6 +2844,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -2791,6 +2866,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2808,6 +2884,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
       onChanged();
       return getFunctionNamesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2829,6 +2906,7 @@ public final class StoredContentsExampleParameters extends com.google.protobuf.G
             : functionNames_;
       }
     }
+
     /**
      *
      *

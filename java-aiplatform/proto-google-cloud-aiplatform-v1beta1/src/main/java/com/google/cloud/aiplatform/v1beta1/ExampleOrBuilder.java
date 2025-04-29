@@ -38,6 +38,7 @@ public interface ExampleOrBuilder
    * @return Whether the storedContentsExample field is set.
    */
   boolean hasStoredContentsExample();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExampleOrBuilder
    * @return The storedContentsExample.
    */
   com.google.cloud.aiplatform.v1beta1.StoredContentsExample getStoredContentsExample();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ExampleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ExampleOrBuilder
    * @return The exampleId.
    */
   java.lang.String getExampleId();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ExampleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ExampleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

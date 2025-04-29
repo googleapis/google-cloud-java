@@ -33,6 +33,7 @@ public final class InstanceGroupManagersListErrorsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse)
     InstanceGroupManagersListErrorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagersListErrorsResponse.newBuilder() to construct.
   private InstanceGroupManagersListErrorsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class InstanceGroupManagersListErrorsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> items_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InstanceGroupManagersListErrorsResponse
   public java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class InstanceGroupManagersListErrorsResponse
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class InstanceGroupManagersListErrorsResponse
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class InstanceGroupManagersListErrorsResponse
   public com.google.cloud.compute.v1.InstanceManagedByIgmError getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class InstanceGroupManagersListErrorsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public final class InstanceGroupManagersListErrorsResponse
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class InstanceGroupManagersListErrorsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +390,7 @@ public final class InstanceGroupManagersListErrorsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +678,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +868,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +888,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +908,7 @@ public final class InstanceGroupManagersListErrorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class InstanceGroupManagersListErrorsResponse
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -917,6 +940,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -934,6 +958,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class InstanceGroupManagersListErrorsResponse
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceManagedByIgmError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -962,6 +988,7 @@ public final class InstanceGroupManagersListErrorsResponse
           .addBuilder(
               index, com.google.cloud.compute.v1.InstanceManagedByIgmError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class InstanceGroupManagersListErrorsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1008,6 +1036,7 @@ public final class InstanceGroupManagersListErrorsResponse
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1030,6 +1059,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1082,7 @@ public final class InstanceGroupManagersListErrorsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1104,7 @@ public final class InstanceGroupManagersListErrorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1122,7 @@ public final class InstanceGroupManagersListErrorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

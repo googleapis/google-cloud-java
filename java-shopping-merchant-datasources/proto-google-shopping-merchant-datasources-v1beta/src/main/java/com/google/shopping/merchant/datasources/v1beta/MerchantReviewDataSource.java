@@ -33,6 +33,7 @@ public final class MerchantReviewDataSource extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource)
     MerchantReviewDataSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MerchantReviewDataSource.newBuilder() to construct.
   private MerchantReviewDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,6 +215,7 @@ public final class MerchantReviewDataSource extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

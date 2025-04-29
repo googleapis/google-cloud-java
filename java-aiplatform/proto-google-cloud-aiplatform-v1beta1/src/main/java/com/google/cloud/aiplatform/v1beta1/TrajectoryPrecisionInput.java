@@ -33,6 +33,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput)
     TrajectoryPrecisionInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrajectoryPrecisionInput.newBuilder() to construct.
   private TrajectoryPrecisionInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionSpec metricSpec_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         ? com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionSpec.getDefaultInstance()
         : metricSpec_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance>
       instances_;
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
   public com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -382,6 +391,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -651,6 +661,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
             com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionSpecOrBuilder>
         metricSpecBuilder_;
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         return metricSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
             : metricSpec_;
       }
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1025,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1074,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1098,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1123,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1167,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1183,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1171,6 +1203,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1191,6 +1224,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1242,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1226,6 +1261,7 @@ public final class TrajectoryPrecisionInput extends com.google.protobuf.Generate
               index,
               com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInstance.getDefaultInstance());
     }
+
     /**
      *
      *

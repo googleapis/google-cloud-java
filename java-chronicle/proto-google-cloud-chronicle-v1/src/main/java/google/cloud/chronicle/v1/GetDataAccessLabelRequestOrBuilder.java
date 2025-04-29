@@ -40,6 +40,7 @@ public interface GetDataAccessLabelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface LocalDiskInitializeParamsOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface LocalDiskInitializeParamsOrBuilder
    * @return The diskName.
    */
   java.lang.String getDiskName();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface LocalDiskInitializeParamsOrBuilder
    * @return The enum numeric value on the wire for diskType.
    */
   int getDiskTypeValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface LocalDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -146,9 +150,11 @@ public interface LocalDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface LocalDiskInitializeParamsOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface LocalDiskInitializeParamsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface SdpInspectResultOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface SdpInspectResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SdpInspectResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface SdpInspectResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   int getMessageItemsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface SdpInspectResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.MessageItemOrBuilder>
       getMessageItemsOrBuilderList();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface SdpInspectResultOrBuilder
    * @return The enum numeric value on the wire for matchState.
    */
   int getMatchStateValue();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface SdpInspectResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.SdpFinding findings = 4;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.SdpFinding> getFindingsList();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface SdpInspectResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.SdpFinding findings = 4;</code>
    */
   com.google.cloud.modelarmor.v1.SdpFinding getFindings(int index);
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface SdpInspectResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.SdpFinding findings = 4;</code>
    */
   int getFindingsCount();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface SdpInspectResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.SdpFindingOrBuilder>
       getFindingsOrBuilderList();
+
   /**
    *
    *

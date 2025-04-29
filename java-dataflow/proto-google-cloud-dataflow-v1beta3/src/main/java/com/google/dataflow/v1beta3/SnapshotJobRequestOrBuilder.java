@@ -36,6 +36,7 @@ public interface SnapshotJobRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SnapshotJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface SnapshotJobRequestOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface SnapshotJobRequestOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface SnapshotJobRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface SnapshotJobRequestOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

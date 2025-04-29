@@ -36,6 +36,7 @@ public interface SqlServerLsnPositionOrBuilder
    * @return The lsn.
    */
   java.lang.String getLsn();
+
   /**
    *
    *

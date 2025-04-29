@@ -38,6 +38,7 @@ public interface CommitMetadataOrBuilder
    * @return Whether the author field is set.
    */
   boolean hasAuthor();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CommitMetadataOrBuilder
    * @return The author.
    */
   com.google.cloud.dataform.v1beta1.CommitAuthor getAuthor();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface CommitMetadataOrBuilder
    * @return The commitMessage.
    */
   java.lang.String getCommitMessage();
+
   /**
    *
    *

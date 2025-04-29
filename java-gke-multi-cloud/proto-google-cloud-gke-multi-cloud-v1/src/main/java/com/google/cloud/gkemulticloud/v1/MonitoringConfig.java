@@ -33,6 +33,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.MonitoringConfig)
     MonitoringConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MonitoringConfig.newBuilder() to construct.
   private MonitoringConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig managedPrometheusConfig_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasManagedPrometheusConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.getDefaultInstance()
         : managedPrometheusConfig_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CLOUD_MONITORING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloudMonitoringConfig_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasCloudMonitoringConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.getDefaultInstance()
         : cloudMonitoringConfig_;
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +588,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.Builder,
             com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfigOrBuilder>
         managedPrometheusConfigBuilder_;
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasManagedPrometheusConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         return managedPrometheusConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +742,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getManagedPrometheusConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -747,6 +763,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             : managedPrometheusConfig_;
       }
     }
+
     /**
      *
      *
@@ -780,6 +797,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig.Builder,
             com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder>
         cloudMonitoringConfigBuilder_;
+
     /**
      *
      *
@@ -796,6 +814,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasCloudMonitoringConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -818,6 +837,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         return cloudMonitoringConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +886,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +918,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +940,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +958,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCloudMonitoringConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -955,6 +980,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             : cloudMonitoringConfig_;
       }
     }
+
     /**
      *
      *

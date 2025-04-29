@@ -33,6 +33,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceOrg)
     SalesforceOrgOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SalesforceOrg.newBuilder() to construct.
   private SalesforceOrg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.SalesforceObject> objects_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1.SalesforceObject> getObjectsList() {
     return objects_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       getObjectsOrBuilderList() {
     return objects_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
   public int getObjectsCount() {
     return objects_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1.SalesforceObject getObjects(int index) {
     return objects_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +563,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -588,6 +597,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +687,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +750,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +770,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +790,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.SalesforceObject.Builder getObjectsBuilder(int index) {
       return getObjectsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -800,6 +820,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
         return objectsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -817,6 +838,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(objects_);
       }
     }
+
     /**
      *
      *
@@ -830,6 +852,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       return getObjectsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.SalesforceObject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -843,6 +866,7 @@ public final class SalesforceOrg extends com.google.protobuf.GeneratedMessageV3
       return getObjectsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.SalesforceObject.getDefaultInstance());
     }
+
     /**
      *
      *

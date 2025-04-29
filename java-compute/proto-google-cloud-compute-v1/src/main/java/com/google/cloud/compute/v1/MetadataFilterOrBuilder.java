@@ -35,6 +35,7 @@ public interface MetadataFilterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.MetadataFilterLabelMatch> getFilterLabelsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface MetadataFilterOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.MetadataFilterLabelMatch getFilterLabels(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface MetadataFilterOrBuilder
    * </code>
    */
   int getFilterLabelsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface MetadataFilterOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterLabelMatchOrBuilder>
       getFilterLabelsOrBuilderList();
+
   /**
    *
    *
@@ -94,6 +98,7 @@ public interface MetadataFilterOrBuilder
    * @return Whether the filterMatchCriteria field is set.
    */
   boolean hasFilterMatchCriteria();
+
   /**
    *
    *
@@ -107,6 +112,7 @@ public interface MetadataFilterOrBuilder
    * @return The filterMatchCriteria.
    */
   java.lang.String getFilterMatchCriteria();
+
   /**
    *
    *

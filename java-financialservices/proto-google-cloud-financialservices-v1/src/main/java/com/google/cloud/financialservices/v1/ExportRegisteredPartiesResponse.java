@@ -33,6 +33,7 @@ public final class ExportRegisteredPartiesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportRegisteredPartiesResponse)
     ExportRegisteredPartiesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportRegisteredPartiesResponse.newBuilder() to construct.
   private ExportRegisteredPartiesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,6 +215,7 @@ public final class ExportRegisteredPartiesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

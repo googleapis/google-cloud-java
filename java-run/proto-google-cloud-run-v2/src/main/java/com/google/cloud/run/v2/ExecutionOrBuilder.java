@@ -36,6 +36,7 @@ public interface ExecutionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ExecutionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ExecutionOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -147,9 +151,11 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public interface ExecutionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public interface ExecutionOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -228,9 +237,11 @@ public interface ExecutionOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -245,6 +256,7 @@ public interface ExecutionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface ExecutionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface ExecutionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -308,6 +322,7 @@ public interface ExecutionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -337,6 +352,7 @@ public interface ExecutionOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -352,6 +368,7 @@ public interface ExecutionOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -381,6 +398,7 @@ public interface ExecutionOrBuilder
    * @return Whether the completionTime field is set.
    */
   boolean hasCompletionTime();
+
   /**
    *
    *
@@ -396,6 +414,7 @@ public interface ExecutionOrBuilder
    * @return The completionTime.
    */
   com.google.protobuf.Timestamp getCompletionTime();
+
   /**
    *
    *
@@ -423,6 +442,7 @@ public interface ExecutionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -436,6 +456,7 @@ public interface ExecutionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -462,6 +483,7 @@ public interface ExecutionOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -476,6 +498,7 @@ public interface ExecutionOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -504,6 +527,7 @@ public interface ExecutionOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -519,6 +543,7 @@ public interface ExecutionOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -553,6 +578,7 @@ public interface ExecutionOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
+
   /**
    *
    *
@@ -588,6 +614,7 @@ public interface ExecutionOrBuilder
    * @return The job.
    */
   java.lang.String getJob();
+
   /**
    *
    *
@@ -649,6 +676,7 @@ public interface ExecutionOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
+
   /**
    *
    *
@@ -663,6 +691,7 @@ public interface ExecutionOrBuilder
    * @return The template.
    */
   com.google.cloud.run.v2.TaskTemplate getTemplate();
+
   /**
    *
    *
@@ -705,6 +734,7 @@ public interface ExecutionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Condition> getConditionsList();
+
   /**
    *
    *
@@ -719,6 +749,7 @@ public interface ExecutionOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Condition getConditions(int index);
+
   /**
    *
    *
@@ -733,6 +764,7 @@ public interface ExecutionOrBuilder
    * </code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -747,6 +779,7 @@ public interface ExecutionOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ConditionOrBuilder> getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -855,6 +888,7 @@ public interface ExecutionOrBuilder
    * @return The logUri.
    */
   java.lang.String getLogUri();
+
   /**
    *
    *
@@ -895,6 +929,7 @@ public interface ExecutionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

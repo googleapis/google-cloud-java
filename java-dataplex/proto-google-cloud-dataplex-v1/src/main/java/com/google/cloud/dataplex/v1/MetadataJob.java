@@ -33,6 +33,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob)
     MetadataJobOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetadataJob.newBuilder() to construct.
   private MetadataJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORT = 1;</code>
      */
     public static final int IMPORT_VALUE = 1;
+
     /**
      *
      *
@@ -318,6 +321,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -332,6 +336,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -345,6 +350,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -359,6 +365,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ImportJobResult)
       ImportJobResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImportJobResult.newBuilder() to construct.
     private ImportJobResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -390,6 +397,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int DELETED_ENTRIES_FIELD_NUMBER = 1;
     private long deletedEntries_ = 0L;
+
     /**
      *
      *
@@ -408,6 +416,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATED_ENTRIES_FIELD_NUMBER = 2;
     private long updatedEntries_ = 0L;
+
     /**
      *
      *
@@ -426,6 +435,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CREATED_ENTRIES_FIELD_NUMBER = 3;
     private long createdEntries_ = 0L;
+
     /**
      *
      *
@@ -444,6 +454,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UNCHANGED_ENTRIES_FIELD_NUMBER = 4;
     private long unchangedEntries_ = 0L;
+
     /**
      *
      *
@@ -462,6 +473,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RECREATED_ENTRIES_FIELD_NUMBER = 6;
     private long recreatedEntries_ = 0L;
+
     /**
      *
      *
@@ -480,6 +492,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -497,6 +510,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -514,6 +528,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1008,6 +1024,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long deletedEntries_;
+
       /**
        *
        *
@@ -1023,6 +1040,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public long getDeletedEntries() {
         return deletedEntries_;
       }
+
       /**
        *
        *
@@ -1042,6 +1060,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1061,6 +1080,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long updatedEntries_;
+
       /**
        *
        *
@@ -1076,6 +1096,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public long getUpdatedEntries() {
         return updatedEntries_;
       }
+
       /**
        *
        *
@@ -1095,6 +1116,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1114,6 +1136,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long createdEntries_;
+
       /**
        *
        *
@@ -1129,6 +1152,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public long getCreatedEntries() {
         return createdEntries_;
       }
+
       /**
        *
        *
@@ -1148,6 +1172,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1167,6 +1192,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long unchangedEntries_;
+
       /**
        *
        *
@@ -1182,6 +1208,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public long getUnchangedEntries() {
         return unchangedEntries_;
       }
+
       /**
        *
        *
@@ -1201,6 +1228,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1220,6 +1248,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long recreatedEntries_;
+
       /**
        *
        *
@@ -1235,6 +1264,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public long getRecreatedEntries() {
         return recreatedEntries_;
       }
+
       /**
        *
        *
@@ -1254,6 +1284,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1278,6 +1309,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -1294,6 +1326,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -1316,6 +1349,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1340,6 +1374,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1361,6 +1396,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1390,6 +1426,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1411,6 +1448,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1427,6 +1465,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1447,6 +1486,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -1569,6 +1609,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
+
     /**
      *
      *
@@ -1582,6 +1623,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getErrorMessageBytes();
   }
+
   /**
    *
    *
@@ -1597,6 +1639,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobResult)
       ExportJobResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExportJobResult.newBuilder() to construct.
     private ExportJobResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1629,6 +1672,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int EXPORTED_ENTRIES_FIELD_NUMBER = 1;
     private long exportedEntries_ = 0L;
+
     /**
      *
      *
@@ -1649,6 +1693,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -1672,6 +1717,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1866,6 +1912,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2067,6 +2114,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long exportedEntries_;
+
       /**
        *
        *
@@ -2082,6 +2130,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public long getExportedEntries() {
         return exportedEntries_;
       }
+
       /**
        *
        *
@@ -2101,6 +2150,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2120,6 +2170,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object errorMessage_ = "";
+
       /**
        *
        *
@@ -2142,6 +2193,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2164,6 +2216,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2185,6 +2238,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2202,6 +2256,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2323,6 +2378,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceStorageUri.
      */
     java.lang.String getSourceStorageUri();
+
     /**
      *
      *
@@ -2368,6 +2424,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceCreateTime field is set.
      */
     boolean hasSourceCreateTime();
+
     /**
      *
      *
@@ -2383,6 +2440,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceCreateTime.
      */
     com.google.protobuf.Timestamp getSourceCreateTime();
+
     /**
      *
      *
@@ -2412,6 +2470,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scope field is set.
      */
     boolean hasScope();
+
     /**
      *
      *
@@ -2427,6 +2486,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The scope.
      */
     com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.ImportJobScope getScope();
+
     /**
      *
      *
@@ -2456,6 +2516,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for entrySyncMode.
      */
     int getEntrySyncModeValue();
+
     /**
      *
      *
@@ -2485,6 +2546,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for aspectSyncMode.
      */
     int getAspectSyncModeValue();
+
     /**
      *
      *
@@ -2521,6 +2583,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for logLevel.
      */
     int getLogLevelValue();
+
     /**
      *
      *
@@ -2543,6 +2606,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.LogLevel getLogLevel();
   }
+
   /**
    *
    *
@@ -2566,6 +2630,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ImportJobSpec)
       ImportJobSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ImportJobSpec.newBuilder() to construct.
     private ImportJobSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2677,6 +2742,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>SYNC_MODE_UNSPECIFIED = 0;</code>
        */
       public static final int SYNC_MODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2692,6 +2758,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>FULL = 1;</code>
        */
       public static final int FULL_VALUE = 1;
+
       /**
        *
        *
@@ -2706,6 +2773,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>INCREMENTAL = 2;</code>
        */
       public static final int INCREMENTAL_VALUE = 2;
+
       /**
        *
        *
@@ -2872,6 +2940,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>LOG_LEVEL_UNSPECIFIED = 0;</code>
        */
       public static final int LOG_LEVEL_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2891,6 +2960,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>DEBUG = 1;</code>
        */
       public static final int DEBUG_VALUE = 1;
+
       /**
        *
        *
@@ -3015,6 +3085,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the entryGroups.
        */
       java.util.List<java.lang.String> getEntryGroupsList();
+
       /**
        *
        *
@@ -3036,6 +3107,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of entryGroups.
        */
       int getEntryGroupsCount();
+
       /**
        *
        *
@@ -3058,6 +3130,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The entryGroups at the given index.
        */
       java.lang.String getEntryGroups(int index);
+
       /**
        *
        *
@@ -3106,6 +3179,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the entryTypes.
        */
       java.util.List<java.lang.String> getEntryTypesList();
+
       /**
        *
        *
@@ -3131,6 +3205,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of entryTypes.
        */
       int getEntryTypesCount();
+
       /**
        *
        *
@@ -3157,6 +3232,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The entryTypes at the given index.
        */
       java.lang.String getEntryTypes(int index);
+
       /**
        *
        *
@@ -3210,6 +3286,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the aspectTypes.
        */
       java.util.List<java.lang.String> getAspectTypesList();
+
       /**
        *
        *
@@ -3236,6 +3313,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of aspectTypes.
        */
       int getAspectTypesCount();
+
       /**
        *
        *
@@ -3263,6 +3341,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The aspectTypes at the given index.
        */
       java.lang.String getAspectTypes(int index);
+
       /**
        *
        *
@@ -3291,6 +3370,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getAspectTypesBytes(int index);
     }
+
     /**
      *
      *
@@ -3305,6 +3385,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.ImportJobScope)
         ImportJobScopeOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ImportJobScope.newBuilder() to construct.
       private ImportJobScope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3343,6 +3424,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList entryGroups_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -3366,6 +3448,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getEntryGroupsList() {
         return entryGroups_;
       }
+
       /**
        *
        *
@@ -3389,6 +3472,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getEntryGroupsCount() {
         return entryGroups_.size();
       }
+
       /**
        *
        *
@@ -3413,6 +3497,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getEntryGroups(int index) {
         return entryGroups_.get(index);
       }
+
       /**
        *
        *
@@ -3443,6 +3528,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList entryTypes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -3470,6 +3556,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getEntryTypesList() {
         return entryTypes_;
       }
+
       /**
        *
        *
@@ -3497,6 +3584,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getEntryTypesCount() {
         return entryTypes_.size();
       }
+
       /**
        *
        *
@@ -3525,6 +3613,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getEntryTypes(int index) {
         return entryTypes_.get(index);
       }
+
       /**
        *
        *
@@ -3559,6 +3648,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList aspectTypes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -3587,6 +3677,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getAspectTypesList() {
         return aspectTypes_;
       }
+
       /**
        *
        *
@@ -3615,6 +3706,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getAspectTypesCount() {
         return aspectTypes_.size();
       }
+
       /**
        *
        *
@@ -3644,6 +3736,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAspectTypes(int index) {
         return aspectTypes_.get(index);
       }
+
       /**
        *
        *
@@ -3877,6 +3970,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4134,6 +4228,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -4158,6 +4253,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           entryGroups_.makeImmutable();
           return entryGroups_;
         }
+
         /**
          *
          *
@@ -4181,6 +4277,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getEntryGroupsCount() {
           return entryGroups_.size();
         }
+
         /**
          *
          *
@@ -4205,6 +4302,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getEntryGroups(int index) {
           return entryGroups_.get(index);
         }
+
         /**
          *
          *
@@ -4229,6 +4327,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getEntryGroupsBytes(int index) {
           return entryGroups_.getByteString(index);
         }
+
         /**
          *
          *
@@ -4261,6 +4360,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4292,6 +4392,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4320,6 +4421,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4347,6 +4449,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4389,6 +4492,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000002;
         }
+
         /**
          *
          *
@@ -4417,6 +4521,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           entryTypes_.makeImmutable();
           return entryTypes_;
         }
+
         /**
          *
          *
@@ -4444,6 +4549,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getEntryTypesCount() {
           return entryTypes_.size();
         }
+
         /**
          *
          *
@@ -4472,6 +4578,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getEntryTypes(int index) {
           return entryTypes_.get(index);
         }
+
         /**
          *
          *
@@ -4500,6 +4607,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getEntryTypesBytes(int index) {
           return entryTypes_.getByteString(index);
         }
+
         /**
          *
          *
@@ -4536,6 +4644,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4571,6 +4680,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4603,6 +4713,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4634,6 +4745,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4680,6 +4792,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000004;
         }
+
         /**
          *
          *
@@ -4709,6 +4822,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           aspectTypes_.makeImmutable();
           return aspectTypes_;
         }
+
         /**
          *
          *
@@ -4737,6 +4851,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getAspectTypesCount() {
           return aspectTypes_.size();
         }
+
         /**
          *
          *
@@ -4766,6 +4881,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getAspectTypes(int index) {
           return aspectTypes_.get(index);
         }
+
         /**
          *
          *
@@ -4795,6 +4911,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getAspectTypesBytes(int index) {
           return aspectTypes_.getByteString(index);
         }
+
         /**
          *
          *
@@ -4832,6 +4949,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4868,6 +4986,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4901,6 +5020,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4933,6 +5053,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5044,6 +5165,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceStorageUri_ = "";
+
     /**
      *
      *
@@ -5084,6 +5206,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5127,6 +5250,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SOURCE_CREATE_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp sourceCreateTime_;
+
     /**
      *
      *
@@ -5145,6 +5269,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5165,6 +5290,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : sourceCreateTime_;
     }
+
     /**
      *
      *
@@ -5186,6 +5312,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCOPE_FIELD_NUMBER = 2;
     private com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.ImportJobScope scope_;
+
     /**
      *
      *
@@ -5204,6 +5331,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScope() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5225,6 +5353,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : scope_;
     }
+
     /**
      *
      *
@@ -5248,6 +5377,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENTRY_SYNC_MODE_FIELD_NUMBER = 3;
     private int entrySyncMode_ = 0;
+
     /**
      *
      *
@@ -5265,6 +5395,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public int getEntrySyncModeValue() {
       return entrySyncMode_;
     }
+
     /**
      *
      *
@@ -5289,6 +5420,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ASPECT_SYNC_MODE_FIELD_NUMBER = 4;
     private int aspectSyncMode_ = 0;
+
     /**
      *
      *
@@ -5306,6 +5438,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public int getAspectSyncModeValue() {
       return aspectSyncMode_;
     }
+
     /**
      *
      *
@@ -5331,6 +5464,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOG_LEVEL_FIELD_NUMBER = 6;
     private int logLevel_ = 0;
+
     /**
      *
      *
@@ -5355,6 +5489,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public int getLogLevelValue() {
       return logLevel_;
     }
+
     /**
      *
      *
@@ -5612,6 +5747,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5899,6 +6035,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object sourceStorageUri_ = "";
+
       /**
        *
        *
@@ -5938,6 +6075,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5977,6 +6115,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6015,6 +6154,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6049,6 +6189,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6095,6 +6236,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           sourceCreateTimeBuilder_;
+
       /**
        *
        *
@@ -6112,6 +6254,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSourceCreateTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -6135,6 +6278,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return sourceCreateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6160,6 +6304,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6182,6 +6327,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6212,6 +6358,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6234,6 +6381,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6251,6 +6399,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSourceCreateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6272,6 +6421,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               : sourceCreateTime_;
         }
       }
+
       /**
        *
        *
@@ -6307,6 +6457,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.ImportJobScope.Builder,
               com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.ImportJobScopeOrBuilder>
           scopeBuilder_;
+
       /**
        *
        *
@@ -6324,6 +6475,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScope() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -6348,6 +6500,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return scopeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6374,6 +6527,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6398,6 +6552,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6431,6 +6586,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6453,6 +6609,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6471,6 +6628,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getScopeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6494,6 +6652,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               : scope_;
         }
       }
+
       /**
        *
        *
@@ -6524,6 +6683,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int entrySyncMode_ = 0;
+
       /**
        *
        *
@@ -6541,6 +6701,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getEntrySyncModeValue() {
         return entrySyncMode_;
       }
+
       /**
        *
        *
@@ -6561,6 +6722,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6583,6 +6745,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncMode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6607,6 +6770,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6628,6 +6792,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int aspectSyncMode_ = 0;
+
       /**
        *
        *
@@ -6645,6 +6810,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getAspectSyncModeValue() {
         return aspectSyncMode_;
       }
+
       /**
        *
        *
@@ -6665,6 +6831,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6687,6 +6854,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncMode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6711,6 +6879,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6732,6 +6901,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int logLevel_ = 0;
+
       /**
        *
        *
@@ -6756,6 +6926,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getLogLevelValue() {
         return logLevel_;
       }
+
       /**
        *
        *
@@ -6783,6 +6954,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6811,6 +6983,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.LogLevel.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6842,6 +7015,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6952,6 +7126,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scope field is set.
      */
     boolean hasScope();
+
     /**
      *
      *
@@ -6966,6 +7141,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The scope.
      */
     com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope getScope();
+
     /**
      *
      *
@@ -6997,6 +7173,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The outputPath.
      */
     java.lang.String getOutputPath();
+
     /**
      *
      *
@@ -7015,6 +7192,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getOutputPathBytes();
   }
+
   /**
    *
    *
@@ -7029,6 +7207,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)
       ExportJobSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExportJobSpec.newBuilder() to construct.
     private ExportJobSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7102,6 +7281,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the projects.
        */
       java.util.List<java.lang.String> getProjectsList();
+
       /**
        *
        *
@@ -7120,6 +7300,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of projects.
        */
       int getProjectsCount();
+
       /**
        *
        *
@@ -7139,6 +7320,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The projects at the given index.
        */
       java.lang.String getProjects(int index);
+
       /**
        *
        *
@@ -7177,6 +7359,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the entryGroups.
        */
       java.util.List<java.lang.String> getEntryGroupsList();
+
       /**
        *
        *
@@ -7195,6 +7378,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of entryGroups.
        */
       int getEntryGroupsCount();
+
       /**
        *
        *
@@ -7214,6 +7398,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The entryGroups at the given index.
        */
       java.lang.String getEntryGroups(int index);
+
       /**
        *
        *
@@ -7249,6 +7434,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the entryTypes.
        */
       java.util.List<java.lang.String> getEntryTypesList();
+
       /**
        *
        *
@@ -7264,6 +7450,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of entryTypes.
        */
       int getEntryTypesCount();
+
       /**
        *
        *
@@ -7280,6 +7467,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The entryTypes at the given index.
        */
       java.lang.String getEntryTypes(int index);
+
       /**
        *
        *
@@ -7313,6 +7501,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the aspectTypes.
        */
       java.util.List<java.lang.String> getAspectTypesList();
+
       /**
        *
        *
@@ -7329,6 +7518,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The count of aspectTypes.
        */
       int getAspectTypesCount();
+
       /**
        *
        *
@@ -7346,6 +7536,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The aspectTypes at the given index.
        */
       java.lang.String getAspectTypes(int index);
+
       /**
        *
        *
@@ -7364,6 +7555,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getAspectTypesBytes(int index);
     }
+
     /**
      *
      *
@@ -7378,6 +7570,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)
         ExportJobScopeOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ExportJobScope.newBuilder() to construct.
       private ExportJobScope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7414,6 +7607,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
       public static final int ORGANIZATION_LEVEL_FIELD_NUMBER = 1;
       private boolean organizationLevel_ = false;
+
       /**
        *
        *
@@ -7442,6 +7636,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList projects_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -7462,6 +7657,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getProjectsList() {
         return projects_;
       }
+
       /**
        *
        *
@@ -7482,6 +7678,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getProjectsCount() {
         return projects_.size();
       }
+
       /**
        *
        *
@@ -7503,6 +7700,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getProjects(int index) {
         return projects_.get(index);
       }
+
       /**
        *
        *
@@ -7530,6 +7728,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList entryGroups_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -7550,6 +7749,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getEntryGroupsList() {
         return entryGroups_;
       }
+
       /**
        *
        *
@@ -7570,6 +7770,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getEntryGroupsCount() {
         return entryGroups_.size();
       }
+
       /**
        *
        *
@@ -7591,6 +7792,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getEntryGroups(int index) {
         return entryGroups_.get(index);
       }
+
       /**
        *
        *
@@ -7618,6 +7820,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList entryTypes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -7635,6 +7838,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getEntryTypesList() {
         return entryTypes_;
       }
+
       /**
        *
        *
@@ -7652,6 +7856,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getEntryTypesCount() {
         return entryTypes_.size();
       }
+
       /**
        *
        *
@@ -7670,6 +7875,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getEntryTypes(int index) {
         return entryTypes_.get(index);
       }
+
       /**
        *
        *
@@ -7694,6 +7900,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList aspectTypes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -7712,6 +7919,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getAspectTypesList() {
         return aspectTypes_;
       }
+
       /**
        *
        *
@@ -7730,6 +7938,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getAspectTypesCount() {
         return aspectTypes_.size();
       }
+
       /**
        *
        *
@@ -7749,6 +7958,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAspectTypes(int index) {
         return aspectTypes_.get(index);
       }
+
       /**
        *
        *
@@ -7997,6 +8207,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -8281,6 +8492,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private boolean organizationLevel_;
+
         /**
          *
          *
@@ -8303,6 +8515,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public boolean getOrganizationLevel() {
           return organizationLevel_;
         }
+
         /**
          *
          *
@@ -8329,6 +8542,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8363,6 +8577,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000002;
         }
+
         /**
          *
          *
@@ -8384,6 +8599,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           projects_.makeImmutable();
           return projects_;
         }
+
         /**
          *
          *
@@ -8404,6 +8620,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getProjectsCount() {
           return projects_.size();
         }
+
         /**
          *
          *
@@ -8425,6 +8642,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getProjects(int index) {
           return projects_.get(index);
         }
+
         /**
          *
          *
@@ -8446,6 +8664,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getProjectsBytes(int index) {
           return projects_.getByteString(index);
         }
+
         /**
          *
          *
@@ -8475,6 +8694,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8503,6 +8723,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8528,6 +8749,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8552,6 +8774,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8591,6 +8814,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000004;
         }
+
         /**
          *
          *
@@ -8612,6 +8836,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           entryGroups_.makeImmutable();
           return entryGroups_;
         }
+
         /**
          *
          *
@@ -8632,6 +8857,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getEntryGroupsCount() {
           return entryGroups_.size();
         }
+
         /**
          *
          *
@@ -8653,6 +8879,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getEntryGroups(int index) {
           return entryGroups_.get(index);
         }
+
         /**
          *
          *
@@ -8674,6 +8901,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getEntryGroupsBytes(int index) {
           return entryGroups_.getByteString(index);
         }
+
         /**
          *
          *
@@ -8703,6 +8931,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8731,6 +8960,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8756,6 +8986,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8780,6 +9011,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8819,6 +9051,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000008;
         }
+
         /**
          *
          *
@@ -8837,6 +9070,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           entryTypes_.makeImmutable();
           return entryTypes_;
         }
+
         /**
          *
          *
@@ -8854,6 +9088,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getEntryTypesCount() {
           return entryTypes_.size();
         }
+
         /**
          *
          *
@@ -8872,6 +9107,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getEntryTypes(int index) {
           return entryTypes_.get(index);
         }
+
         /**
          *
          *
@@ -8890,6 +9126,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getEntryTypesBytes(int index) {
           return entryTypes_.getByteString(index);
         }
+
         /**
          *
          *
@@ -8916,6 +9153,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8941,6 +9179,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8963,6 +9202,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8984,6 +9224,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9020,6 +9261,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000010;
         }
+
         /**
          *
          *
@@ -9039,6 +9281,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           aspectTypes_.makeImmutable();
           return aspectTypes_;
         }
+
         /**
          *
          *
@@ -9057,6 +9300,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public int getAspectTypesCount() {
           return aspectTypes_.size();
         }
+
         /**
          *
          *
@@ -9076,6 +9320,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getAspectTypes(int index) {
           return aspectTypes_.get(index);
         }
+
         /**
          *
          *
@@ -9095,6 +9340,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getAspectTypesBytes(int index) {
           return aspectTypes_.getByteString(index);
         }
+
         /**
          *
          *
@@ -9122,6 +9368,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9148,6 +9395,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9171,6 +9419,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9193,6 +9442,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9292,6 +9542,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SCOPE_FIELD_NUMBER = 2;
     private com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope_;
+
     /**
      *
      *
@@ -9309,6 +9560,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScope() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -9329,6 +9581,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : scope_;
     }
+
     /**
      *
      *
@@ -9353,6 +9606,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputPath_ = "";
+
     /**
      *
      *
@@ -9381,6 +9635,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -9585,6 +9840,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9806,6 +10062,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder,
               com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder>
           scopeBuilder_;
+
       /**
        *
        *
@@ -9822,6 +10079,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScope() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -9845,6 +10103,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return scopeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -9870,6 +10129,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9893,6 +10153,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9925,6 +10186,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -9946,6 +10208,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9963,6 +10226,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getScopeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9985,6 +10249,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               : scope_;
         }
       }
+
       /**
        *
        *
@@ -10014,6 +10279,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object outputPath_ = "";
+
       /**
        *
        *
@@ -10041,6 +10307,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10068,6 +10335,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10094,6 +10362,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10116,6 +10385,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10227,6 +10497,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -10254,6 +10525,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
+
     /**
      *
      *
@@ -10294,6 +10566,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -10308,6 +10581,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -10321,6 +10595,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -10335,6 +10610,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.Status)
       StatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Status.newBuilder() to construct.
     private Status(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10469,6 +10745,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -10479,6 +10756,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>QUEUED = 1;</code>
        */
       public static final int QUEUED_VALUE = 1;
+
       /**
        *
        *
@@ -10489,6 +10767,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>RUNNING = 2;</code>
        */
       public static final int RUNNING_VALUE = 2;
+
       /**
        *
        *
@@ -10499,6 +10778,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>CANCELING = 3;</code>
        */
       public static final int CANCELING_VALUE = 3;
+
       /**
        *
        *
@@ -10509,6 +10789,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>CANCELED = 4;</code>
        */
       public static final int CANCELED_VALUE = 4;
+
       /**
        *
        *
@@ -10519,6 +10800,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>SUCCEEDED = 5;</code>
        */
       public static final int SUCCEEDED_VALUE = 5;
+
       /**
        *
        *
@@ -10529,6 +10811,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>FAILED = 6;</code>
        */
       public static final int FAILED_VALUE = 6;
+
       /**
        *
        *
@@ -10638,6 +10921,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -10655,6 +10939,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -10681,6 +10966,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -10704,6 +10990,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -10730,6 +11017,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COMPLETION_PERCENT_FIELD_NUMBER = 3;
     private int completionPercent_ = 0;
+
     /**
      *
      *
@@ -10748,6 +11036,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -10765,6 +11054,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -10782,6 +11072,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -10992,6 +11283,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11235,6 +11527,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -11252,6 +11545,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -11272,6 +11566,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11293,6 +11588,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.MetadataJob.Status.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -11316,6 +11612,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11337,6 +11634,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object message_ = "";
+
       /**
        *
        *
@@ -11359,6 +11657,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -11381,6 +11680,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -11402,6 +11702,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11419,6 +11720,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11443,6 +11745,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int completionPercent_;
+
       /**
        *
        *
@@ -11458,6 +11761,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public int getCompletionPercent() {
         return completionPercent_;
       }
+
       /**
        *
        *
@@ -11477,6 +11781,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11501,6 +11806,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -11517,6 +11823,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -11539,6 +11846,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11563,6 +11871,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11584,6 +11893,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11613,6 +11923,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11634,6 +11945,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11650,6 +11962,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11670,6 +11983,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -11780,6 +12094,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     private SpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -11829,6 +12144,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -11865,6 +12181,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -11892,6 +12209,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -11924,6 +12242,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -11951,6 +12270,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -11981,6 +12301,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -11997,6 +12318,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -12013,6 +12335,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -12030,6 +12353,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -12046,6 +12370,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -12062,6 +12387,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -12103,6 +12429,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -12119,12 +12446,14 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -12138,6 +12467,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -12158,6 +12488,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -12181,6 +12512,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 6;
   private int type_ = 0;
+
   /**
    *
    *
@@ -12198,6 +12530,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -12219,6 +12552,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORT_SPEC_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -12234,6 +12568,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImportSpec() {
     return specCase_ == 100;
   }
+
   /**
    *
    *
@@ -12252,6 +12587,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12270,6 +12606,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPORT_SPEC_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -12285,6 +12622,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExportSpec() {
     return specCase_ == 101;
   }
+
   /**
    *
    *
@@ -12303,6 +12641,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12321,6 +12660,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORT_RESULT_FIELD_NUMBER = 200;
+
   /**
    *
    *
@@ -12338,6 +12678,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImportResult() {
     return resultCase_ == 200;
   }
+
   /**
    *
    *
@@ -12358,6 +12699,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12379,6 +12721,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPORT_RESULT_FIELD_NUMBER = 201;
+
   /**
    *
    *
@@ -12396,6 +12739,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExportResult() {
     return resultCase_ == 201;
   }
+
   /**
    *
    *
@@ -12416,6 +12760,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12438,6 +12783,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 7;
   private com.google.cloud.dataplex.v1.MetadataJob.Status status_;
+
   /**
    *
    *
@@ -12455,6 +12801,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -12474,6 +12821,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.MetadataJob.Status.getDefaultInstance()
         : status_;
   }
+
   /**
    *
    *
@@ -12805,6 +13153,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -13244,6 +13593,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -13270,6 +13620,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -13296,6 +13647,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -13321,6 +13673,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13342,6 +13695,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13370,6 +13724,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -13396,6 +13751,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -13422,6 +13778,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -13447,6 +13804,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13468,6 +13826,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13501,6 +13860,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -13517,6 +13877,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -13539,6 +13900,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13563,6 +13925,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13584,6 +13947,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13613,6 +13977,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13634,6 +13999,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13650,6 +14016,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13670,6 +14037,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -13704,6 +14072,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -13720,6 +14089,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -13742,6 +14112,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13766,6 +14137,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13787,6 +14159,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13816,6 +14189,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13837,6 +14211,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13853,6 +14228,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13873,6 +14249,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -13926,6 +14303,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -13942,12 +14320,14 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -13961,6 +14341,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -13981,6 +14362,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -14007,6 +14389,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -14023,12 +14406,14 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -14049,6 +14434,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -14065,6 +14451,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -14082,6 +14469,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -14102,6 +14490,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14121,6 +14510,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.MetadataJob.Type.forNumber(type_);
       return result == null ? com.google.cloud.dataplex.v1.MetadataJob.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -14144,6 +14534,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14169,6 +14560,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.Builder,
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpecOrBuilder>
         importSpecBuilder_;
+
     /**
      *
      *
@@ -14184,6 +14576,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImportSpec() {
       return specCase_ == 100;
     }
+
     /**
      *
      *
@@ -14209,6 +14602,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14231,6 +14625,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -14251,6 +14646,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -14284,6 +14680,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -14309,6 +14706,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14321,6 +14719,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.Builder getImportSpecBuilder() {
       return getImportSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14342,6 +14741,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14380,6 +14780,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder,
             com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder>
         exportSpecBuilder_;
+
     /**
      *
      *
@@ -14395,6 +14796,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExportSpec() {
       return specCase_ == 101;
     }
+
     /**
      *
      *
@@ -14420,6 +14822,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14442,6 +14845,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -14462,6 +14866,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -14495,6 +14900,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       specCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -14520,6 +14926,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14532,6 +14939,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder getExportSpecBuilder() {
       return getExportSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14553,6 +14961,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14591,6 +15000,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult.Builder,
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobResultOrBuilder>
         importResultBuilder_;
+
     /**
      *
      *
@@ -14608,6 +15018,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImportResult() {
       return resultCase_ == 200;
     }
+
     /**
      *
      *
@@ -14635,6 +15046,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14659,6 +15071,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 200;
       return this;
     }
+
     /**
      *
      *
@@ -14681,6 +15094,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 200;
       return this;
     }
+
     /**
      *
      *
@@ -14717,6 +15131,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 200;
       return this;
     }
+
     /**
      *
      *
@@ -14744,6 +15159,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14759,6 +15175,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         getImportResultBuilder() {
       return getImportResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14782,6 +15199,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14822,6 +15240,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder,
             com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder>
         exportResultBuilder_;
+
     /**
      *
      *
@@ -14839,6 +15258,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExportResult() {
       return resultCase_ == 201;
     }
+
     /**
      *
      *
@@ -14866,6 +15286,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14890,6 +15311,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -14912,6 +15334,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -14948,6 +15371,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -14975,6 +15399,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14990,6 +15415,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         getExportResultBuilder() {
       return getExportResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15013,6 +15439,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -15054,6 +15481,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.MetadataJob.Status.Builder,
             com.google.cloud.dataplex.v1.MetadataJob.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -15070,6 +15498,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -15092,6 +15521,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15116,6 +15546,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15138,6 +15569,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15167,6 +15599,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -15188,6 +15621,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15204,6 +15638,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15224,6 +15659,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             : status_;
       }
     }
+
     /**
      *
      *

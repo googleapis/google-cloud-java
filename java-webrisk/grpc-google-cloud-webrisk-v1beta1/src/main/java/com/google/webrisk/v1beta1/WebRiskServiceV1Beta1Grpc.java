@@ -192,6 +192,19 @@ public final class WebRiskServiceV1Beta1Grpc {
     return WebRiskServiceV1Beta1Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WebRiskServiceV1Beta1BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceV1Beta1BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceV1Beta1BlockingV2Stub>() {
+          @java.lang.Override
+          public WebRiskServiceV1Beta1BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebRiskServiceV1Beta1BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WebRiskServiceV1Beta1BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -372,6 +385,71 @@ public final class WebRiskServiceV1Beta1Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service WebRiskServiceV1Beta1.
+   *
+   * <pre>
+   * Web Risk v1beta1 API defines an interface to detect malicious URLs on your
+   * website and in client applications.
+   * </pre>
+   */
+  public static final class WebRiskServiceV1Beta1BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WebRiskServiceV1Beta1BlockingV2Stub> {
+    private WebRiskServiceV1Beta1BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WebRiskServiceV1Beta1BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WebRiskServiceV1Beta1BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the most recent threat list diffs.
+     * </pre>
+     */
+    public com.google.webrisk.v1beta1.ComputeThreatListDiffResponse computeThreatListDiff(
+        com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getComputeThreatListDiffMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method is used to check whether a URI is on a given threatList.
+     * </pre>
+     */
+    public com.google.webrisk.v1beta1.SearchUrisResponse searchUris(
+        com.google.webrisk.v1beta1.SearchUrisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchUrisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the full hashes that match the requested hash prefix.
+     * This is used after a hash prefix is looked up in a threatList
+     * and there is a match. The client side threatList only holds partial hashes
+     * so the client must query this method to determine if there is a full
+     * hash match of a threat.
+     * </pre>
+     */
+    public com.google.webrisk.v1beta1.SearchHashesResponse searchHashes(
+        com.google.webrisk.v1beta1.SearchHashesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchHashesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service WebRiskServiceV1Beta1.
    *
    * <pre>
    * Web Risk v1beta1 API defines an interface to detect malicious URLs on your

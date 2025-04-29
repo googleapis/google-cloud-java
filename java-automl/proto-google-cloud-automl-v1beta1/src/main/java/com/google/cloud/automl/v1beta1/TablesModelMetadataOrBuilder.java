@@ -37,6 +37,7 @@ public interface TablesModelMetadataOrBuilder
    * @return Whether the optimizationObjectiveRecallValue field is set.
    */
   boolean hasOptimizationObjectiveRecallValue();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface TablesModelMetadataOrBuilder
    * @return Whether the optimizationObjectivePrecisionValue field is set.
    */
   boolean hasOptimizationObjectivePrecisionValue();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface TablesModelMetadataOrBuilder
    * @return Whether the targetColumnSpec field is set.
    */
   boolean hasTargetColumnSpec();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface TablesModelMetadataOrBuilder
    * @return The targetColumnSpec.
    */
   com.google.cloud.automl.v1beta1.ColumnSpec getTargetColumnSpec();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface TablesModelMetadataOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec> getInputFeatureColumnSpecsList();
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public interface TablesModelMetadataOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
   com.google.cloud.automl.v1beta1.ColumnSpec getInputFeatureColumnSpecs(int index);
+
   /**
    *
    *
@@ -230,6 +236,7 @@ public interface TablesModelMetadataOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
   int getInputFeatureColumnSpecsCount();
+
   /**
    *
    *
@@ -262,6 +269,7 @@ public interface TablesModelMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder>
       getInputFeatureColumnSpecsOrBuilderList();
+
   /**
    *
    *
@@ -331,6 +339,7 @@ public interface TablesModelMetadataOrBuilder
    * @return The optimizationObjective.
    */
   java.lang.String getOptimizationObjective();
+
   /**
    *
    *
@@ -381,6 +390,7 @@ public interface TablesModelMetadataOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>
       getTablesModelColumnInfoList();
+
   /**
    *
    *
@@ -393,6 +403,7 @@ public interface TablesModelMetadataOrBuilder
    * </code>
    */
   com.google.cloud.automl.v1beta1.TablesModelColumnInfo getTablesModelColumnInfo(int index);
+
   /**
    *
    *
@@ -405,6 +416,7 @@ public interface TablesModelMetadataOrBuilder
    * </code>
    */
   int getTablesModelColumnInfoCount();
+
   /**
    *
    *
@@ -418,6 +430,7 @@ public interface TablesModelMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>
       getTablesModelColumnInfoOrBuilderList();
+
   /**
    *
    *

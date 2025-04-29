@@ -39,6 +39,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * @return Whether the cssProductInput field is set.
    */
   boolean hasCssProductInput();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * @return The cssProductInput.
    */
   com.google.shopping.css.v1.CssProductInput getCssProductInput();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CompareVersionsResponseOrBuilder
    * @return The baseVersionContentJson.
    */
   java.lang.String getBaseVersionContentJson();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CompareVersionsResponseOrBuilder
    * @return The targetVersionContentJson.
    */
   java.lang.String getTargetVersionContentJson();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CompareVersionsResponseOrBuilder
    * @return Whether the compareTime field is set.
    */
   boolean hasCompareTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface CompareVersionsResponseOrBuilder
    * @return The compareTime.
    */
   com.google.protobuf.Timestamp getCompareTime();
+
   /**
    *
    *

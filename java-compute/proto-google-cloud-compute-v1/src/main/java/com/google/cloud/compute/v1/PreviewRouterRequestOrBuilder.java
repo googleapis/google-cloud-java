@@ -36,6 +36,7 @@ public interface PreviewRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PreviewRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PreviewRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface PreviewRouterRequestOrBuilder
    * @return Whether the routerResource field is set.
    */
   boolean hasRouterResource();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface PreviewRouterRequestOrBuilder
    * @return The routerResource.
    */
   com.google.cloud.compute.v1.Router getRouterResource();
+
   /**
    *
    *

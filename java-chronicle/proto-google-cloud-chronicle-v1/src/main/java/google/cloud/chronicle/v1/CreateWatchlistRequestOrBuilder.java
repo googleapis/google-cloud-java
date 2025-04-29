@@ -39,6 +39,7 @@ public interface CreateWatchlistRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateWatchlistRequestOrBuilder
    * @return The watchlistId.
    */
   java.lang.String getWatchlistId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateWatchlistRequestOrBuilder
    * @return Whether the watchlist field is set.
    */
   boolean hasWatchlist();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateWatchlistRequestOrBuilder
    * @return The watchlist.
    */
   google.cloud.chronicle.v1.Watchlist getWatchlist();
+
   /**
    *
    *

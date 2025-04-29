@@ -35,6 +35,7 @@ public interface ManifestOptionsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.RenditionFilter include_renditions = 1;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.RenditionFilter> getIncludeRenditionsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ManifestOptionsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.RenditionFilter include_renditions = 1;</code>
    */
   com.google.cloud.video.stitcher.v1.RenditionFilter getIncludeRenditions(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ManifestOptionsOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.RenditionFilter include_renditions = 1;</code>
    */
   int getIncludeRenditionsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ManifestOptionsOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.RenditionFilterOrBuilder>
       getIncludeRenditionsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ManifestOptionsOrBuilder
    * @return The enum numeric value on the wire for bitrateOrder.
    */
   int getBitrateOrderValue();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * @return Whether the urlMask field is set.
    */
   boolean hasUrlMask();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * @return The urlMask.
    */
   java.lang.String getUrlMask();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

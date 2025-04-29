@@ -50,7 +50,7 @@ public final class InstanceProto {
           + "i/annotations.proto\032\027google/api/client.p"
           + "roto\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\"\230\001\n\010Instance\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003:y\352Av\n!chronicle.googlea"
+          + "\004name\030\001 \001(\tB\003\340A\010:y\352Av\n!chronicle.googlea"
           + "pis.com/Instance\022<projects/{project}/loc"
           + "ations/{location}/instances/{instance}*\t"
           + "instances2\010instance\"M\n\022GetInstanceReques"

@@ -38,6 +38,7 @@ public interface GetServiceConnectionTokenRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

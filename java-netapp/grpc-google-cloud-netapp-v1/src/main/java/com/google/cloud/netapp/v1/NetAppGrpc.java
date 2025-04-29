@@ -2634,6 +2634,19 @@ public final class NetAppGrpc {
     return NetAppStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NetAppBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NetAppBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NetAppBlockingV2Stub>() {
+          @java.lang.Override
+          public NetAppBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NetAppBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NetAppBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -4545,6 +4558,816 @@ public final class NetAppGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NetApp.
+   *
+   * <pre>
+   * NetApp Files Google Cloud Service
+   * </pre>
+   */
+  public static final class NetAppBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NetAppBlockingV2Stub> {
+    private NetAppBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NetAppBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NetAppBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all storage pools owned by the caller.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListStoragePoolsResponse listStoragePools(
+        com.google.cloud.netapp.v1.ListStoragePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStoragePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createStoragePool(
+        com.google.cloud.netapp.v1.CreateStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified storage pool by poolId.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.StoragePool getStoragePool(
+        com.google.cloud.netapp.v1.GetStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the storage pool properties with the full spec
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateStoragePool(
+        com.google.cloud.netapp.v1.UpdateStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteStoragePool(
+        com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateDirectoryServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSwitchActiveReplicaZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Volumes in a given project.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListVolumesResponse listVolumes(
+        com.google.cloud.netapp.v1.ListVolumesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Volume getVolume(
+        com.google.cloud.netapp.v1.GetVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Volume in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVolume(
+        com.google.cloud.netapp.v1.CreateVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateVolume(
+        com.google.cloud.netapp.v1.UpdateVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVolume(
+        com.google.cloud.netapp.v1.DeleteVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revert an existing volume to a specified snapshot.
+     * Warning! This operation will permanently revert all changes made after the
+     * snapshot was created.
+     * </pre>
+     */
+    public com.google.longrunning.Operation revertVolume(
+        com.google.cloud.netapp.v1.RevertVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevertVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all snapshots for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListSnapshotsResponse listSnapshots(
+        com.google.cloud.netapp.v1.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describe a snapshot for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Snapshot getSnapshot(
+        com.google.cloud.netapp.v1.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new snapshot for a volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSnapshot(
+        com.google.cloud.netapp.v1.CreateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSnapshot(
+        com.google.cloud.netapp.v1.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSnapshot(
+        com.google.cloud.netapp.v1.UpdateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists active directories.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListActiveDirectoriesResponse listActiveDirectories(
+        com.google.cloud.netapp.v1.ListActiveDirectoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListActiveDirectoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specified active directory.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ActiveDirectory getActiveDirectory(
+        com.google.cloud.netapp.v1.GetActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateActiveDirectory
+     * Creates the active directory specified in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createActiveDirectory(
+        com.google.cloud.netapp.v1.CreateActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the parameters of an active directories.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateActiveDirectory(
+        com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the active directory specified in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteActiveDirectory(
+        com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all KMS configs owned by the caller.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListKmsConfigsResponse listKmsConfigs(
+        com.google.cloud.netapp.v1.ListKmsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKmsConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new KMS config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createKmsConfig(
+        com.google.cloud.netapp.v1.CreateKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified KMS config by kms_config_id.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.KmsConfig getKmsConfig(
+        com.google.cloud.netapp.v1.GetKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Kms config properties with the full spec
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateKmsConfig(
+        com.google.cloud.netapp.v1.UpdateKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Encrypt the existing volumes without CMEK encryption with the desired the
+     * KMS config for the whole region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation encryptVolumes(
+        com.google.cloud.netapp.v1.EncryptVolumesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEncryptVolumesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies KMS config reachability.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.VerifyKmsConfigResponse verifyKmsConfig(
+        com.google.cloud.netapp.v1.VerifyKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the Kms config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteKmsConfig(
+        com.google.cloud.netapp.v1.DeleteKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all replications for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListReplicationsResponse listReplications(
+        com.google.cloud.netapp.v1.ListReplicationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describe a replication for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Replication getReplication(
+        com.google.cloud.netapp.v1.GetReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new replication for a volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReplication(
+        com.google.cloud.netapp.v1.CreateReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteReplication(
+        com.google.cloud.netapp.v1.DeleteReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateReplication(
+        com.google.cloud.netapp.v1.UpdateReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stop Cross Region Replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopReplication(
+        com.google.cloud.netapp.v1.StopReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resume Cross Region Replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resumeReplication(
+        com.google.cloud.netapp.v1.ResumeReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reverses direction of replication. Source becomes destination and
+     * destination becomes source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reverseReplicationDirection(
+        com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReverseReplicationDirectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.longrunning.Operation establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEstablishPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup vault
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupVault(
+        com.google.cloud.netapp.v1.CreateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup vault
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.BackupVault getBackupVault(
+        com.google.cloud.netapp.v1.GetBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup vaults.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupVaultsResponse listBackupVaults(
+        com.google.cloud.netapp.v1.ListBackupVaultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupVaultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup vault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupVault(
+        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup vault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupVault(
+        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup from the volume specified in the request
+     * The backup can be created from the given snapshot if specified in the
+     * request. If no snapshot specified, there'll be a new snapshot taken to
+     * initiate the backup creation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.netapp.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Backup getBackup(
+        com.google.cloud.netapp.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all backups for a backupVault.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupsResponse listBackups(
+        com.google.cloud.netapp.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.netapp.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update backup with full spec.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.netapp.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup policy
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPolicy(
+        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup policy by backup_policy_id.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.BackupPolicy getBackupPolicy(
+        com.google.cloud.netapp.v1.GetBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup policies.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupPoliciesResponse listBackupPolicies(
+        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates settings of a specific backup policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPolicy(
+        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPolicy(
+        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListQuotaRulesResponse listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQuotaRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.QuotaRule getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NetApp.
    *
    * <pre>
    * NetApp Files Google Cloud Service

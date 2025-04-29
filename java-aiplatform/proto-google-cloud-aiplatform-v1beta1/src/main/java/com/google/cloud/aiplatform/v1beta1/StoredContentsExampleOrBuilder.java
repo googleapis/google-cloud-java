@@ -40,6 +40,7 @@ public interface StoredContentsExampleOrBuilder
    * @return The searchKey.
    */
   java.lang.String getSearchKey();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface StoredContentsExampleOrBuilder
    * @return Whether the contentsExample field is set.
    */
   boolean hasContentsExample();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface StoredContentsExampleOrBuilder
    * @return The contentsExample.
    */
   com.google.cloud.aiplatform.v1beta1.ContentsExample getContentsExample();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface StoredContentsExampleOrBuilder
    * @return Whether the searchKeyGenerationMethod field is set.
    */
   boolean hasSearchKeyGenerationMethod();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface StoredContentsExampleOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StoredContentsExample.SearchKeyGenerationMethod
       getSearchKeyGenerationMethod();
+
   /**
    *
    *

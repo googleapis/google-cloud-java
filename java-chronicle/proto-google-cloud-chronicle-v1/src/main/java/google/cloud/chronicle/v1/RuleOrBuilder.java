@@ -38,6 +38,7 @@ public interface RuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RuleOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface RuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface RuleOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface RuleOrBuilder
    * @return The author.
    */
   java.lang.String getAuthor();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface RuleOrBuilder
    * @return Whether the severity field is set.
    */
   boolean hasSeverity();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public interface RuleOrBuilder
    * @return The severity.
    */
   google.cloud.chronicle.v1.Severity getSeverity();
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public interface RuleOrBuilder
    * </code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -233,9 +241,11 @@ public interface RuleOrBuilder
    * </code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -248,6 +258,7 @@ public interface RuleOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public interface RuleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -291,6 +303,7 @@ public interface RuleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface RuleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -333,6 +347,7 @@ public interface RuleOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -348,6 +363,7 @@ public interface RuleOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *
@@ -377,6 +393,7 @@ public interface RuleOrBuilder
    * @return The enum numeric value on the wire for compilationState.
    */
   int getCompilationStateValue();
+
   /**
    *
    *
@@ -408,6 +425,7 @@ public interface RuleOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -439,6 +457,7 @@ public interface RuleOrBuilder
    * @return A list containing the referenceLists.
    */
   java.util.List<java.lang.String> getReferenceListsList();
+
   /**
    *
    *
@@ -454,6 +473,7 @@ public interface RuleOrBuilder
    * @return The count of referenceLists.
    */
   int getReferenceListsCount();
+
   /**
    *
    *
@@ -470,6 +490,7 @@ public interface RuleOrBuilder
    * @return The referenceLists at the given index.
    */
   java.lang.String getReferenceLists(int index);
+
   /**
    *
    *
@@ -502,6 +523,7 @@ public interface RuleOrBuilder
    * @return A list containing the allowedRunFrequencies.
    */
   java.util.List<google.cloud.chronicle.v1.RunFrequency> getAllowedRunFrequenciesList();
+
   /**
    *
    *
@@ -517,6 +539,7 @@ public interface RuleOrBuilder
    * @return The count of allowedRunFrequencies.
    */
   int getAllowedRunFrequenciesCount();
+
   /**
    *
    *
@@ -533,6 +556,7 @@ public interface RuleOrBuilder
    * @return The allowedRunFrequencies at the given index.
    */
   google.cloud.chronicle.v1.RunFrequency getAllowedRunFrequencies(int index);
+
   /**
    *
    *
@@ -548,6 +572,7 @@ public interface RuleOrBuilder
    * @return A list containing the enum numeric values on the wire for allowedRunFrequencies.
    */
   java.util.List<java.lang.Integer> getAllowedRunFrequenciesValueList();
+
   /**
    *
    *
@@ -581,6 +606,7 @@ public interface RuleOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -616,6 +642,7 @@ public interface RuleOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
+
   /**
    *
    *
@@ -649,6 +676,7 @@ public interface RuleOrBuilder
    * </code>
    */
   java.util.List<google.cloud.chronicle.v1.CompilationDiagnostic> getCompilationDiagnosticsList();
+
   /**
    *
    *
@@ -663,6 +691,7 @@ public interface RuleOrBuilder
    * </code>
    */
   google.cloud.chronicle.v1.CompilationDiagnostic getCompilationDiagnostics(int index);
+
   /**
    *
    *
@@ -677,6 +706,7 @@ public interface RuleOrBuilder
    * </code>
    */
   int getCompilationDiagnosticsCount();
+
   /**
    *
    *
@@ -692,6 +722,7 @@ public interface RuleOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.CompilationDiagnosticOrBuilder>
       getCompilationDiagnosticsOrBuilderList();
+
   /**
    *
    *
@@ -739,6 +770,7 @@ public interface RuleOrBuilder
    * @return Whether the inputsUsed field is set.
    */
   boolean hasInputsUsed();
+
   /**
    *
    *
@@ -754,6 +786,7 @@ public interface RuleOrBuilder
    * @return The inputsUsed.
    */
   google.cloud.chronicle.v1.InputsUsed getInputsUsed();
+
   /**
    *
    *

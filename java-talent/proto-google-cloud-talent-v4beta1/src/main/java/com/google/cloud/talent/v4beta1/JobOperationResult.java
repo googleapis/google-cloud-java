@@ -39,6 +39,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.JobOperationResult)
     JobOperationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobOperationResult.newBuilder() to construct.
   private JobOperationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * @return Whether the job field is set.
      */
     boolean hasJob();
+
     /**
      *
      *
@@ -110,6 +112,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * @return The job.
      */
     com.google.cloud.talent.v4beta1.Job getJob();
+
     /**
      *
      *
@@ -142,6 +145,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -157,6 +161,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -171,6 +176,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.JobOperationResult.JobResult)
       JobResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use JobResult.newBuilder() to construct.
     private JobResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -216,6 +223,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int JOB_FIELD_NUMBER = 1;
     private com.google.cloud.talent.v4beta1.Job job_;
+
     /**
      *
      *
@@ -237,6 +245,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     public boolean hasJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -258,6 +267,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
+
     /**
      *
      *
@@ -280,6 +290,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -298,6 +309,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -316,6 +328,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -513,6 +526,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
               com.google.cloud.talent.v4beta1.Job.Builder,
               com.google.cloud.talent.v4beta1.JobOrBuilder>
           jobBuilder_;
+
       /**
        *
        *
@@ -761,6 +776,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       public boolean hasJob() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -785,6 +801,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
           return jobBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -813,6 +830,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -838,6 +856,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -871,6 +890,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -896,6 +916,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -916,6 +937,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getJobFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -938,6 +960,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
           return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
         }
       }
+
       /**
        *
        *
@@ -974,6 +997,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -991,6 +1015,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1012,6 +1037,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1037,6 +1063,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1059,6 +1086,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1089,6 +1117,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1111,6 +1140,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1128,6 +1158,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1147,6 +1178,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -1244,6 +1276,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.JobOperationResult.JobResult> jobResults_;
+
   /**
    *
    *
@@ -1260,6 +1293,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       getJobResultsList() {
     return jobResults_;
   }
+
   /**
    *
    *
@@ -1277,6 +1311,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       getJobResultsOrBuilderList() {
     return jobResults_;
   }
+
   /**
    *
    *
@@ -1292,6 +1327,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
   public int getJobResultsCount() {
     return jobResults_.size();
   }
+
   /**
    *
    *
@@ -1307,6 +1343,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.talent.v4beta1.JobOperationResult.JobResult getJobResults(int index) {
     return jobResults_.get(index);
   }
+
   /**
    *
    *
@@ -1485,6 +1522,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1758,6 +1796,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         return jobResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1776,6 +1815,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         return jobResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1794,6 +1834,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         return jobResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1819,6 +1860,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1884,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1867,6 +1910,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1892,6 +1936,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1914,6 +1959,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1983,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2007,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2029,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2002,6 +2051,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2017,6 +2067,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         getJobResultsBuilder(int index) {
       return getJobResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2036,6 +2087,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         return jobResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2056,6 +2108,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(jobResults_);
       }
     }
+
     /**
      *
      *
@@ -2073,6 +2126,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.talent.v4beta1.JobOperationResult.JobResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2091,6 +2145,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.talent.v4beta1.JobOperationResult.JobResult.getDefaultInstance());
     }
+
     /**
      *
      *

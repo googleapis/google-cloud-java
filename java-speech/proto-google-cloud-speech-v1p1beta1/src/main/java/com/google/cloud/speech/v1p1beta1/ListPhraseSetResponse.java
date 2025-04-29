@@ -33,6 +33,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.ListPhraseSetResponse)
     ListPhraseSetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPhraseSetResponse.newBuilder() to construct.
   private ListPhraseSetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet> phraseSets_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet> getPhraseSetsList() {
     return phraseSets_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       getPhraseSetsOrBuilderList() {
     return phraseSets_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
   public int getPhraseSetsCount() {
     return phraseSets_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.speech.v1p1beta1.PhraseSet getPhraseSets(int index) {
     return phraseSets_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -636,6 +645,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return phraseSetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return phraseSetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -668,6 +679,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return phraseSetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +872,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.speech.v1p1beta1.PhraseSet.Builder getPhraseSetsBuilder(int index) {
       return getPhraseSetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -880,6 +902,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return phraseSetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -897,6 +920,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(phraseSets_);
       }
     }
+
     /**
      *
      *
@@ -910,6 +934,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       return getPhraseSetsFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1p1beta1.PhraseSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -923,6 +948,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       return getPhraseSetsFieldBuilder()
           .addBuilder(index, com.google.cloud.speech.v1p1beta1.PhraseSet.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -955,6 +981,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -978,6 +1005,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1029,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1023,6 +1052,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1071,7 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

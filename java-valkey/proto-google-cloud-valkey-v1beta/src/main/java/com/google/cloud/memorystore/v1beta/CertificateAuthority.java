@@ -33,6 +33,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1beta.CertificateAuthority)
     CertificateAuthorityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CertificateAuthority.newBuilder() to construct.
   private CertificateAuthority(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority
                 .CertChain>
         getCaCertsList();
+
     /**
      *
      *
@@ -96,6 +98,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority.CertChain
         getCaCerts(int index);
+
     /**
      *
      *
@@ -108,6 +111,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * </code>
      */
     int getCaCertsCount();
+
     /**
      *
      *
@@ -124,6 +128,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
                 com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority
                     .CertChainOrBuilder>
         getCaCertsOrBuilderList();
+
     /**
      *
      *
@@ -139,6 +144,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             .CertChainOrBuilder
         getCaCertsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority)
       ManagedCertificateAuthorityOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ManagedCertificateAuthority.newBuilder() to construct.
     private ManagedCertificateAuthority(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -204,6 +211,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return A list containing the certificates.
        */
       java.util.List<java.lang.String> getCertificatesList();
+
       /**
        *
        *
@@ -216,6 +224,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return The count of certificates.
        */
       int getCertificatesCount();
+
       /**
        *
        *
@@ -229,6 +238,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return The certificates at the given index.
        */
       java.lang.String getCertificates(int index);
+
       /**
        *
        *
@@ -243,6 +253,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        */
       com.google.protobuf.ByteString getCertificatesBytes(int index);
     }
+
     /**
      *
      *
@@ -258,6 +269,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority.CertChain)
         CertChainOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CertChain.newBuilder() to construct.
       private CertChain(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -295,6 +307,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList certificates_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -309,6 +322,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ProtocolStringList getCertificatesList() {
         return certificates_;
       }
+
       /**
        *
        *
@@ -323,6 +337,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public int getCertificatesCount() {
         return certificates_.size();
       }
+
       /**
        *
        *
@@ -338,6 +353,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public java.lang.String getCertificates(int index) {
         return certificates_.get(index);
       }
+
       /**
        *
        *
@@ -551,6 +567,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -783,6 +800,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -798,6 +816,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           certificates_.makeImmutable();
           return certificates_;
         }
+
         /**
          *
          *
@@ -812,6 +831,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public int getCertificatesCount() {
           return certificates_.size();
         }
+
         /**
          *
          *
@@ -827,6 +847,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public java.lang.String getCertificates(int index) {
           return certificates_.get(index);
         }
+
         /**
          *
          *
@@ -842,6 +863,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public com.google.protobuf.ByteString getCertificatesBytes(int index) {
           return certificates_.getByteString(index);
         }
+
         /**
          *
          *
@@ -865,6 +887,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -887,6 +910,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -906,6 +930,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -924,6 +949,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1027,6 +1053,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority
                 .CertChain>
         caCerts_;
+
     /**
      *
      *
@@ -1045,6 +1072,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         getCaCertsList() {
       return caCerts_;
     }
+
     /**
      *
      *
@@ -1064,6 +1092,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         getCaCertsOrBuilderList() {
       return caCerts_;
     }
+
     /**
      *
      *
@@ -1079,6 +1108,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public int getCaCertsCount() {
       return caCerts_.size();
     }
+
     /**
      *
      *
@@ -1096,6 +1126,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         getCaCerts(int index) {
       return caCerts_.get(index);
     }
+
     /**
      *
      *
@@ -1299,6 +1330,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1602,6 +1634,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           return caCertsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1620,6 +1653,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           return caCertsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1640,6 +1674,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           return caCertsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1668,6 +1703,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1693,6 +1729,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1720,6 +1757,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1748,6 +1786,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1772,6 +1811,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1797,6 +1837,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1823,6 +1864,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1844,6 +1886,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1865,6 +1908,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1881,6 +1925,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           getCaCertsBuilder(int index) {
         return getCaCertsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1901,6 +1946,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           return caCertsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1923,6 +1969,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           return java.util.Collections.unmodifiableList(caCerts_);
         }
       }
+
       /**
        *
        *
@@ -1942,6 +1989,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
                 com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority
                     .CertChain.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1962,6 +2010,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
                 com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority
                     .CertChain.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2090,6 +2139,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     private ServerCaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2121,6 +2171,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MANAGED_SERVER_CA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -2138,6 +2189,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
   public boolean hasManagedServerCa() {
     return serverCaCase_ == 2;
   }
+
   /**
    *
    *
@@ -2161,6 +2213,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     return com.google.cloud.memorystore.v1beta.CertificateAuthority.ManagedCertificateAuthority
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2188,6 +2241,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2213,6 +2267,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2428,6 +2483,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2664,6 +2720,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             com.google.cloud.memorystore.v1beta.CertificateAuthority
                 .ManagedCertificateAuthorityOrBuilder>
         managedServerCaBuilder_;
+
     /**
      *
      *
@@ -2681,6 +2738,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public boolean hasManagedServerCa() {
       return serverCaCase_ == 2;
     }
+
     /**
      *
      *
@@ -2713,6 +2771,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2739,6 +2798,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       serverCaCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2762,6 +2822,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       serverCaCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2803,6 +2864,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       serverCaCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2830,6 +2892,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2846,6 +2909,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         getManagedServerCaBuilder() {
       return getManagedServerCaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2873,6 +2937,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2918,6 +2983,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2942,6 +3008,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2966,6 +3033,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2989,6 +3057,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3008,6 +3077,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -49,6 +49,7 @@ public interface PscInterfaceConfigOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
+
   /**
    *
    *

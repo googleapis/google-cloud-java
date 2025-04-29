@@ -36,6 +36,7 @@ public interface ContainerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ContainerOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ContainerOrBuilder
    * @return The imageId.
    */
   java.lang.String getImageId();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Label labels = 4;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1.Label> getLabelsList();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Label labels = 4;</code>
    */
   com.google.cloud.securitycenter.v1.Label getLabels(int index);
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Label labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public interface ContainerOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1.LabelOrBuilder>
       getLabelsOrBuilderList();
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public interface ContainerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -179,6 +187,7 @@ public interface ContainerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

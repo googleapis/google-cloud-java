@@ -33,6 +33,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ListBuildTriggersResponse)
     ListBuildTriggersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBuildTriggersResponse.newBuilder() to construct.
   private ListBuildTriggersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.BuildTrigger> triggers_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloudbuild.v1.BuildTrigger> getTriggersList() {
     return triggers_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       getTriggersOrBuilderList() {
     return triggers_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
   public int getTriggersCount() {
     return triggers_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
   public com.google.cloudbuild.v1.BuildTrigger getTriggers(int index) {
     return triggers_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +364,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -632,6 +641,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return triggersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -648,6 +658,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return triggersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return triggersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +867,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     public com.google.cloudbuild.v1.BuildTrigger.Builder getTriggersBuilder(int index) {
       return getTriggersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -875,6 +897,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return triggersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -892,6 +915,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(triggers_);
       }
     }
+
     /**
      *
      *
@@ -905,6 +929,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       return getTriggersFieldBuilder()
           .addBuilder(com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -918,6 +943,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       return getTriggersFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -949,6 +975,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -971,6 +998,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -993,6 +1021,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1043,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1061,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

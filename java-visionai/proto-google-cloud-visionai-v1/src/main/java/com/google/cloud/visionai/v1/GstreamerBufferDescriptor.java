@@ -33,6 +33,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GstreamerBufferDescriptor)
     GstreamerBufferDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GstreamerBufferDescriptor.newBuilder() to construct.
   private GstreamerBufferDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object capsString_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
 
   public static final int IS_KEY_FRAME_FIELD_NUMBER = 2;
   private boolean isKeyFrame_ = false;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
 
   public static final int PTS_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp ptsTime_;
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
   public boolean hasPtsTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
   public com.google.protobuf.Timestamp getPtsTime() {
     return ptsTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : ptsTime_;
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
 
   public static final int DTS_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp dtsTime_;
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
   public boolean hasDtsTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
   public com.google.protobuf.Timestamp getDtsTime() {
     return dtsTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dtsTime_;
   }
+
   /**
    *
    *
@@ -227,6 +237,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
 
   public static final int DURATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration duration_;
+
   /**
    *
    *
@@ -242,6 +253,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -257,6 +269,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
+
   /**
    *
    *
@@ -482,6 +495,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +760,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object capsString_ = "";
+
     /**
      *
      *
@@ -768,6 +783,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     }
 
     private boolean isKeyFrame_;
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     public boolean getIsKeyFrame() {
       return isKeyFrame_;
     }
+
     /**
      *
      *
@@ -886,6 +907,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         ptsTimeBuilder_;
+
     /**
      *
      *
@@ -924,6 +947,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     public boolean hasPtsTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -942,6 +966,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return ptsTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -964,6 +989,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1009,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1037,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1057,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1072,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return getPtsTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1059,6 +1089,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return ptsTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : ptsTime_;
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1122,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         dtsTimeBuilder_;
+
     /**
      *
      *
@@ -1105,6 +1137,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     public boolean hasDtsTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1123,6 +1156,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return dtsTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1179,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1199,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1227,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1247,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1262,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return getDtsTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1240,6 +1279,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return dtsTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dtsTime_;
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1312,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
+
     /**
      *
      *
@@ -1286,6 +1327,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1304,6 +1346,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return durationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1369,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1345,6 +1389,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1417,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1391,6 +1437,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1405,6 +1452,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1421,6 +1469,7 @@ public final class GstreamerBufferDescriptor extends com.google.protobuf.Generat
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
+
     /**
      *
      *

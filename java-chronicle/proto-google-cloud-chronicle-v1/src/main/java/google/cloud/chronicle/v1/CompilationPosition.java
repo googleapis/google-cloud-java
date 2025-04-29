@@ -34,6 +34,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.CompilationPosition)
     CompilationPositionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompilationPosition.newBuilder() to construct.
   private CompilationPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
 
   public static final int START_LINE_FIELD_NUMBER = 1;
   private int startLine_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
 
   public static final int START_COLUMN_FIELD_NUMBER = 2;
   private int startColumn_ = 0;
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
 
   public static final int END_LINE_FIELD_NUMBER = 3;
   private int endLine_ = 0;
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
 
   public static final int END_COLUMN_FIELD_NUMBER = 4;
   private int endColumn_ = 0;
+
   /**
    *
    *
@@ -320,6 +325,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -541,6 +547,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int startLine_;
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     public int getStartLine() {
       return startLine_;
     }
+
     /**
      *
      *
@@ -575,6 +583,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     }
 
     private int startColumn_;
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     public int getStartColumn() {
       return startColumn_;
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -647,6 +659,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     }
 
     private int endLine_;
+
     /**
      *
      *
@@ -662,6 +675,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     public int getEndLine() {
       return endLine_;
     }
+
     /**
      *
      *
@@ -681,6 +695,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     }
 
     private int endColumn_;
+
     /**
      *
      *
@@ -715,6 +731,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
     public int getEndColumn() {
       return endColumn_;
     }
+
     /**
      *
      *
@@ -734,6 +751,7 @@ public final class CompilationPosition extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

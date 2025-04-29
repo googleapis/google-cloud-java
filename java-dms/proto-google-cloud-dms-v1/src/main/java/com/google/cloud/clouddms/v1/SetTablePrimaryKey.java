@@ -39,6 +39,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SetTablePrimaryKey)
     SetTablePrimaryKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetTablePrimaryKey.newBuilder() to construct.
   private SetTablePrimaryKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList primaryKeyColumns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getPrimaryKeyColumnsList() {
     return primaryKeyColumns_;
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
   public int getPrimaryKeyColumnsCount() {
     return primaryKeyColumns_.size();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
   public java.lang.String getPrimaryKeyColumns(int index) {
     return primaryKeyColumns_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primaryKey_ = "";
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +588,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -596,6 +605,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       primaryKeyColumns_.makeImmutable();
       return primaryKeyColumns_;
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
     public int getPrimaryKeyColumnsCount() {
       return primaryKeyColumns_.size();
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
     public java.lang.String getPrimaryKeyColumns(int index) {
       return primaryKeyColumns_.get(index);
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getPrimaryKeyColumnsBytes(int index) {
       return primaryKeyColumns_.getByteString(index);
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object primaryKey_ = "";
+
     /**
      *
      *
@@ -777,6 +795,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -799,6 +818,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +840,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +858,7 @@ public final class SetTablePrimaryKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

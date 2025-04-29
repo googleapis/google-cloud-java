@@ -25,6 +25,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apigeeconnect.v1.Connection)
     ConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Connection.newBuilder() to construct.
   private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -60,6 +61,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLUSTER_FIELD_NUMBER = 2;
   private com.google.cloud.apigeeconnect.v1.Cluster cluster_;
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apigeeconnect.v1.Cluster.getDefaultInstance()
         : cluster_;
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAM_COUNT_FIELD_NUMBER = 3;
   private int streamCount_ = 0;
+
   /**
    *
    *
@@ -359,6 +366,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.apigeeconnect.v1.Connection} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -576,6 +584,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -622,6 +632,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apigeeconnect.v1.Cluster.Builder,
             com.google.cloud.apigeeconnect.v1.ClusterOrBuilder>
         clusterBuilder_;
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCluster() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -726,6 +741,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return clusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -748,6 +764,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +812,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +847,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -845,6 +866,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             : cluster_;
       }
     }
+
     /**
      *
      *
@@ -872,6 +894,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int streamCount_;
+
     /**
      *
      *
@@ -887,6 +910,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getStreamCount() {
       return streamCount_;
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface StreamOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface StreamOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface StreamOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface StreamOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface StreamOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface StreamOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -145,9 +151,11 @@ public interface StreamOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface StreamOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface StreamOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public interface StreamOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -222,6 +233,7 @@ public interface StreamOrBuilder
    * @return Whether the sourceConfig field is set.
    */
   boolean hasSourceConfig();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface StreamOrBuilder
    * @return The sourceConfig.
    */
   com.google.cloud.datastream.v1alpha1.SourceConfig getSourceConfig();
+
   /**
    *
    *
@@ -263,6 +276,7 @@ public interface StreamOrBuilder
    * @return Whether the destinationConfig field is set.
    */
   boolean hasDestinationConfig();
+
   /**
    *
    *
@@ -277,6 +291,7 @@ public interface StreamOrBuilder
    * @return The destinationConfig.
    */
   com.google.cloud.datastream.v1alpha1.DestinationConfig getDestinationConfig();
+
   /**
    *
    *
@@ -302,6 +317,7 @@ public interface StreamOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -328,6 +344,7 @@ public interface StreamOrBuilder
    * @return Whether the backfillAll field is set.
    */
   boolean hasBackfillAll();
+
   /**
    *
    *
@@ -341,6 +358,7 @@ public interface StreamOrBuilder
    * @return The backfillAll.
    */
   com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy getBackfillAll();
+
   /**
    *
    *
@@ -366,6 +384,7 @@ public interface StreamOrBuilder
    * @return Whether the backfillNone field is set.
    */
   boolean hasBackfillNone();
+
   /**
    *
    *
@@ -378,6 +397,7 @@ public interface StreamOrBuilder
    * @return The backfillNone.
    */
   com.google.cloud.datastream.v1alpha1.Stream.BackfillNoneStrategy getBackfillNone();
+
   /**
    *
    *
@@ -402,6 +422,7 @@ public interface StreamOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.Error> getErrorsList();
+
   /**
    *
    *
@@ -414,6 +435,7 @@ public interface StreamOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1alpha1.Error getErrors(int index);
+
   /**
    *
    *
@@ -426,6 +448,7 @@ public interface StreamOrBuilder
    * </code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -439,6 +462,7 @@ public interface StreamOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.ErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *

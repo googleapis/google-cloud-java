@@ -34,6 +34,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StopInstancesRegionInstanceGroupManagerRequest)
     StopInstancesRegionInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StopInstancesRegionInstanceGroupManagerRequest.newBuilder() to construct.
   private StopInstancesRegionInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       REGION_INSTANCE_GROUP_MANAGERS_STOP_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 270306882;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest
       regionInstanceGroupManagersStopInstancesRequestResource_;
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
   public boolean hasRegionInstanceGroupManagersStopInstancesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +284,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
             .getDefaultInstance()
         : regionInstanceGroupManagersStopInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -299,6 +309,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -581,6 +594,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -858,6 +872,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -881,6 +896,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +920,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -926,6 +943,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +962,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +988,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -993,6 +1013,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1062,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1082,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1109,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1109,6 +1134,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1159,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1183,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1203,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1236,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest.Builder,
             com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequestOrBuilder>
         regionInstanceGroupManagersStopInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1223,6 +1253,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     public boolean hasRegionInstanceGroupManagersStopInstancesRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1247,6 +1278,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return regionInstanceGroupManagersStopInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1304,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1329,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1362,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1384,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1402,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return getRegionInstanceGroupManagersStopInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1389,6 +1426,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
             : regionInstanceGroupManagersStopInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1421,6 +1459,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1435,6 +1474,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1457,6 +1497,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1479,6 +1520,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1542,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +1560,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface ListIssueModelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

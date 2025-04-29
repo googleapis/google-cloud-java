@@ -33,6 +33,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest)
     CommitRepositoryChangesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CommitRepositoryChangesRequest.newBuilder() to construct.
   private CommitRepositoryChangesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -96,6 +97,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      * @return Whether the writeFile field is set.
      */
     boolean hasWriteFile();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      */
     com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.WriteFile
         getWriteFile();
+
     /**
      *
      *
@@ -140,6 +143,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      * @return Whether the deleteFile field is set.
      */
     boolean hasDeleteFile();
+
     /**
      *
      *
@@ -155,6 +159,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      */
     com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.DeleteFile
         getDeleteFile();
+
     /**
      *
      *
@@ -173,6 +178,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.OperationCase
         getOperationCase();
   }
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation)
       FileOperationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FileOperation.newBuilder() to construct.
     private FileOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -235,6 +242,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
        */
       com.google.protobuf.ByteString getContents();
     }
+
     /**
      *
      *
@@ -250,6 +258,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.WriteFile)
         WriteFileOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use WriteFile.newBuilder() to construct.
       private WriteFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -284,6 +293,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
 
       public static final int CONTENTS_FIELD_NUMBER = 1;
       private com.google.protobuf.ByteString contents_ = com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -488,6 +498,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -699,6 +710,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         private int bitField0_;
 
         private com.google.protobuf.ByteString contents_ = com.google.protobuf.ByteString.EMPTY;
+
         /**
          *
          *
@@ -714,6 +726,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         public com.google.protobuf.ByteString getContents() {
           return contents_;
         }
+
         /**
          *
          *
@@ -735,6 +748,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -829,6 +843,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.DeleteFile)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.DeleteFile)
         DeleteFileOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DeleteFile.newBuilder() to construct.
       private DeleteFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1053,6 +1069,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1328,6 +1345,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       private OperationCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1361,6 +1379,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     }
 
     public static final int WRITE_FILE_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1378,6 +1397,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     public boolean hasWriteFile() {
       return operationCase_ == 1;
     }
+
     /**
      *
      *
@@ -1402,6 +1422,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       return com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation
           .WriteFile.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1427,6 +1448,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     }
 
     public static final int DELETE_FILE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1444,6 +1466,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     public boolean hasDeleteFile() {
       return operationCase_ == 2;
     }
+
     /**
      *
      *
@@ -1468,6 +1491,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       return com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation
           .DeleteFile.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1705,6 +1729,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1964,6 +1989,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
               com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation
                   .WriteFileOrBuilder>
           writeFileBuilder_;
+
       /**
        *
        *
@@ -1981,6 +2007,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       public boolean hasWriteFile() {
         return operationCase_ == 1;
       }
+
       /**
        *
        *
@@ -2014,6 +2041,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
               .WriteFile.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2040,6 +2068,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         operationCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2064,6 +2093,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         operationCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2105,6 +2135,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         operationCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2132,6 +2163,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         }
         return this;
       }
+
       /**
        *
        *
@@ -2148,6 +2180,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
           getWriteFileBuilder() {
         return getWriteFileFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2175,6 +2208,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
               .WriteFile.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2228,6 +2262,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
               com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation
                   .DeleteFileOrBuilder>
           deleteFileBuilder_;
+
       /**
        *
        *
@@ -2245,6 +2280,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       public boolean hasDeleteFile() {
         return operationCase_ == 2;
       }
+
       /**
        *
        *
@@ -2278,6 +2314,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
               .DeleteFile.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2304,6 +2341,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         operationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2328,6 +2366,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         operationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2369,6 +2408,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         operationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2396,6 +2436,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         }
         return this;
       }
+
       /**
        *
        *
@@ -2412,6 +2453,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
           getDeleteFileBuilder() {
         return getDeleteFileFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2439,6 +2481,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
               .DeleteFile.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2558,6 +2601,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2583,6 +2627,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -2611,6 +2656,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
 
   public static final int COMMIT_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1beta1.CommitMetadata commitMetadata_;
+
   /**
    *
    *
@@ -2628,6 +2674,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
   public boolean hasCommitMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2647,6 +2694,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         ? com.google.cloud.dataform.v1beta1.CommitMetadata.getDefaultInstance()
         : commitMetadata_;
   }
+
   /**
    *
    *
@@ -2669,6 +2717,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requiredHeadCommitSha_ = "";
+
   /**
    *
    *
@@ -2694,6 +2743,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -2760,6 +2810,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
   public int getFileOperationsCount() {
     return internalGetFileOperations().getMap().size();
   }
+
   /**
    *
    *
@@ -2779,6 +2830,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     }
     return internalGetFileOperations().getMap().containsKey(key);
   }
+
   /** Use {@link #getFileOperationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -2788,6 +2840,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       getFileOperations() {
     return getFileOperationsMap();
   }
+
   /**
    *
    *
@@ -2807,6 +2860,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       getFileOperationsMap() {
     return internalGetFileOperations().getMap();
   }
+
   /**
    *
    *
@@ -2836,6 +2890,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         map = internalGetFileOperations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -3069,6 +3124,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3347,6 +3403,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3371,6 +3428,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3395,6 +3453,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3418,6 +3477,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3437,6 +3497,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3468,6 +3529,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
             com.google.cloud.dataform.v1beta1.CommitMetadata.Builder,
             com.google.cloud.dataform.v1beta1.CommitMetadataOrBuilder>
         commitMetadataBuilder_;
+
     /**
      *
      *
@@ -3484,6 +3546,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     public boolean hasCommitMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3506,6 +3569,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         return commitMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3530,6 +3594,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3552,6 +3617,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3582,6 +3648,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -3603,6 +3670,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3619,6 +3687,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return getCommitMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3639,6 +3708,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
             : commitMetadata_;
       }
     }
+
     /**
      *
      *
@@ -3668,6 +3738,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requiredHeadCommitSha_ = "";
+
     /**
      *
      *
@@ -3692,6 +3763,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3716,6 +3788,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3739,6 +3812,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3758,6 +3832,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3811,7 +3886,8 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
           defaultEntry() {
         return FileOperationsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final FileOperationsConverter fileOperationsConverter =
         new FileOperationsConverter();
@@ -3852,6 +3928,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
     public int getFileOperationsCount() {
       return internalGetFileOperations().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -3871,6 +3948,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       }
       return internalGetFileOperations().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getFileOperationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -3880,6 +3958,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         getFileOperations() {
       return getFileOperationsMap();
     }
+
     /**
      *
      *
@@ -3899,6 +3978,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
         getFileOperationsMap() {
       return internalGetFileOperations().getImmutableMap();
     }
+
     /**
      *
      *
@@ -3929,6 +4009,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
           map = internalGetMutableFileOperations().ensureBuilderMap();
       return map.containsKey(key) ? fileOperationsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -3963,6 +4044,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       internalGetMutableFileOperations().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3982,6 +4064,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       internalGetMutableFileOperations().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -3991,6 +4074,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000008;
       return internalGetMutableFileOperations().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -4016,6 +4100,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -4045,6 +4130,7 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

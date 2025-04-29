@@ -40,6 +40,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * @return Whether the tagTemplateField field is set.
    */
   boolean hasTagTemplateField();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * @return The tagTemplateField.
    */
   com.google.cloud.datacatalog.v1beta1.TagTemplateField getTagTemplateField();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

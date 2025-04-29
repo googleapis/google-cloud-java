@@ -173,6 +173,19 @@ public final class RevisionsGrpc {
     return RevisionsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RevisionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RevisionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RevisionsBlockingV2Stub>() {
+          @java.lang.Override
+          public RevisionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RevisionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RevisionsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -340,6 +353,66 @@ public final class RevisionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Revisions.
+   *
+   * <pre>
+   * Cloud Run Revision Control Plane API.
+   * </pre>
+   */
+  public static final class RevisionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RevisionsBlockingV2Stub> {
+    private RevisionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RevisionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RevisionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a Revision.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.Revision getRevision(
+        com.google.cloud.run.v2.GetRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Revisions from a given Service, or from a given location.  Results
+     * are sorted by creation time, descending.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.ListRevisionsResponse listRevisions(
+        com.google.cloud.run.v2.ListRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Revision.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRevision(
+        com.google.cloud.run.v2.DeleteRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRevisionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Revisions.
    *
    * <pre>
    * Cloud Run Revision Control Plane API.

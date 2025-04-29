@@ -33,6 +33,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.CreateWorkflowTemplateRequest)
     CreateWorkflowTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWorkflowTemplateRequest.newBuilder() to construct.
   private CreateWorkflowTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
 
   public static final int TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.WorkflowTemplate template_;
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
   public boolean hasTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
         ? com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()
         : template_;
   }
+
   /**
    *
    *
@@ -367,6 +373,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +587,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -613,6 +621,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -646,6 +655,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
             com.google.cloud.dataproc.v1.WorkflowTemplate.Builder,
             com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder>
         templateBuilder_;
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
     public boolean hasTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
         return templateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +915,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -916,6 +936,7 @@ public final class CreateWorkflowTemplateRequest extends com.google.protobuf.Gen
             : template_;
       }
     }
+
     /**
      *
      *

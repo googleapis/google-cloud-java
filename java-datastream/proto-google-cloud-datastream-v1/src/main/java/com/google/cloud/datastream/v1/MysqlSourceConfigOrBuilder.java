@@ -36,6 +36,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the includeObjects field is set.
    */
   boolean hasIncludeObjects();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return The includeObjects.
    */
   com.google.cloud.datastream.v1.MysqlRdbms getIncludeObjects();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the excludeObjects field is set.
    */
   boolean hasExcludeObjects();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return The excludeObjects.
    */
   com.google.cloud.datastream.v1.MysqlRdbms getExcludeObjects();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the binaryLogPosition field is set.
    */
   boolean hasBinaryLogPosition();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return The binaryLogPosition.
    */
   com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition getBinaryLogPosition();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return Whether the gtid field is set.
    */
   boolean hasGtid();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface MysqlSourceConfigOrBuilder
    * @return The gtid.
    */
   com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getGtid();
+
   /**
    *
    *

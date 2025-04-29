@@ -39,6 +39,7 @@ public interface DeleteArtifactRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

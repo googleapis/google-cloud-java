@@ -33,6 +33,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.UpdateProjectBillingInfoRequest)
     UpdateProjectBillingInfoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateProjectBillingInfoRequest.newBuilder() to construct.
   private UpdateProjectBillingInfoRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
 
   public static final int PROJECT_BILLING_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.billing.v1.ProjectBillingInfo projectBillingInfo_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
   public boolean hasProjectBillingInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         ? com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance()
         : projectBillingInfo_;
   }
+
   /**
    *
    *
@@ -350,6 +356,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -567,6 +574,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -638,6 +648,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
             com.google.cloud.billing.v1.ProjectBillingInfo.Builder,
             com.google.cloud.billing.v1.ProjectBillingInfoOrBuilder>
         projectBillingInfoBuilder_;
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
     public boolean hasProjectBillingInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
         return projectBillingInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
       onChanged();
       return getProjectBillingInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -860,6 +880,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
             : projectBillingInfo_;
       }
     }
+
     /**
      *
      *

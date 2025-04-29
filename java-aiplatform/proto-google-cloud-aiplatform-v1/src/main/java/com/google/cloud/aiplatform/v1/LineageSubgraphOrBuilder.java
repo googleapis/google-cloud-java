@@ -34,6 +34,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Artifact> getArtifactsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   com.google.cloud.aiplatform.v1.Artifact getArtifacts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   int getArtifactsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface LineageSubgraphOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ArtifactOrBuilder>
       getArtifactsOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Execution> getExecutionsList();
+
   /**
    *
    *
@@ -96,6 +101,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   com.google.cloud.aiplatform.v1.Execution getExecutions(int index);
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   int getExecutionsCount();
+
   /**
    *
    *
@@ -117,6 +124,7 @@ public interface LineageSubgraphOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ExecutionOrBuilder>
       getExecutionsOrBuilderList();
+
   /**
    *
    *
@@ -138,6 +146,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 3;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Event> getEventsList();
+
   /**
    *
    *
@@ -148,6 +157,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 3;</code>
    */
   com.google.cloud.aiplatform.v1.Event getEvents(int index);
+
   /**
    *
    *
@@ -158,6 +168,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 3;</code>
    */
   int getEventsCount();
+
   /**
    *
    *
@@ -168,6 +179,7 @@ public interface LineageSubgraphOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Event events = 3;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.EventOrBuilder> getEventsOrBuilderList();
+
   /**
    *
    *

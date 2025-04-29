@@ -36,6 +36,7 @@ public interface AttachedOidcConfigOrBuilder
    * @return The issuerUrl.
    */
   java.lang.String getIssuerUrl();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p1beta1.ImageProperties)
     ImagePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImageProperties.newBuilder() to construct.
   private ImageProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int DOMINANT_COLORS_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p1beta1.DominantColorsAnnotation dominantColors_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
   public boolean hasDominantColors() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.vision.v1p1beta1.DominantColorsAnnotation.getDefaultInstance()
         : dominantColors_;
   }
+
   /**
    *
    *
@@ -277,6 +281,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -481,6 +486,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.vision.v1p1beta1.DominantColorsAnnotation.Builder,
             com.google.cloud.vision.v1p1beta1.DominantColorsAnnotationOrBuilder>
         dominantColorsBuilder_;
+
     /**
      *
      *
@@ -495,6 +501,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     public boolean hasDominantColors() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -515,6 +522,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
         return dominantColorsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -588,6 +598,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +618,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +634,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDominantColorsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -641,6 +654,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
             : dominantColors_;
       }
     }
+
     /**
      *
      *

@@ -89,6 +89,7 @@ public enum SecurityLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SECURE_DEFAULT = 0;</code>
    */
   public static final SecurityLevel SECURE_DEFAULT = SECURE_UNSPECIFIED;
+
   /**
    *
    *
@@ -99,6 +100,7 @@ public enum SecurityLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SECURE_UNSPECIFIED = 0;</code>
    */
   public static final int SECURE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public enum SecurityLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SECURE_DEFAULT = 0;</code>
    */
   public static final int SECURE_DEFAULT_VALUE = 0;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum SecurityLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SECURE_NEVER = 1;</code>
    */
   public static final int SECURE_NEVER_VALUE = 1;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public enum SecurityLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SECURE_OPTIONAL = 2;</code>
    */
   public static final int SECURE_OPTIONAL_VALUE = 2;
+
   /**
    *
    *

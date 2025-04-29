@@ -36,6 +36,7 @@ public interface DiskMoveRequestOrBuilder
    * @return Whether the destinationZone field is set.
    */
   boolean hasDestinationZone();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DiskMoveRequestOrBuilder
    * @return The destinationZone.
    */
   java.lang.String getDestinationZone();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface DiskMoveRequestOrBuilder
    * @return Whether the targetDisk field is set.
    */
   boolean hasTargetDisk();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface DiskMoveRequestOrBuilder
    * @return The targetDisk.
    */
   java.lang.String getTargetDisk();
+
   /**
    *
    *

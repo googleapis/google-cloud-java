@@ -37,6 +37,7 @@ public interface GrpcEndpointOrBuilder
    * @return The targetUri.
    */
   java.lang.String getTargetUri();
+
   /**
    *
    *

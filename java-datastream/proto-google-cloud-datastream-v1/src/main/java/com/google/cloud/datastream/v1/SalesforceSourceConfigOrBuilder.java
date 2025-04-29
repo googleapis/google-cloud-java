@@ -36,6 +36,7 @@ public interface SalesforceSourceConfigOrBuilder
    * @return Whether the includeObjects field is set.
    */
   boolean hasIncludeObjects();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SalesforceSourceConfigOrBuilder
    * @return The includeObjects.
    */
   com.google.cloud.datastream.v1.SalesforceOrg getIncludeObjects();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SalesforceSourceConfigOrBuilder
    * @return Whether the excludeObjects field is set.
    */
   boolean hasExcludeObjects();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface SalesforceSourceConfigOrBuilder
    * @return The excludeObjects.
    */
   com.google.cloud.datastream.v1.SalesforceOrg getExcludeObjects();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface SalesforceSourceConfigOrBuilder
    * @return Whether the pollingInterval field is set.
    */
   boolean hasPollingInterval();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface SalesforceSourceConfigOrBuilder
    * @return The pollingInterval.
    */
   com.google.protobuf.Duration getPollingInterval();
+
   /**
    *
    *

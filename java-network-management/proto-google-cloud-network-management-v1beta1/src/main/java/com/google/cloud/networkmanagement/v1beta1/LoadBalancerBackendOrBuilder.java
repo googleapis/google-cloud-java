@@ -36,6 +36,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The enum numeric value on the wire for healthCheckFirewallState.
    */
   int getHealthCheckFirewallStateValue();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return A list containing the healthCheckAllowingFirewallRules.
    */
   java.util.List<java.lang.String> getHealthCheckAllowingFirewallRulesList();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The count of healthCheckAllowingFirewallRules.
    */
   int getHealthCheckAllowingFirewallRulesCount();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The healthCheckAllowingFirewallRules at the given index.
    */
   java.lang.String getHealthCheckAllowingFirewallRules(int index);
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return A list containing the healthCheckBlockingFirewallRules.
    */
   java.util.List<java.lang.String> getHealthCheckBlockingFirewallRulesList();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The count of healthCheckBlockingFirewallRules.
    */
   int getHealthCheckBlockingFirewallRulesCount();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface LoadBalancerBackendOrBuilder
    * @return The healthCheckBlockingFirewallRules at the given index.
    */
   java.lang.String getHealthCheckBlockingFirewallRules(int index);
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListCaPoolsResponseOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1.CaPool ca_pools = 1;</code>
    */
   java.util.List<com.google.cloud.security.privateca.v1.CaPool> getCaPoolsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCaPoolsResponseOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1.CaPool ca_pools = 1;</code>
    */
   com.google.cloud.security.privateca.v1.CaPool getCaPools(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCaPoolsResponseOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1.CaPool ca_pools = 1;</code>
    */
   int getCaPoolsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCaPoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1.CaPoolOrBuilder>
       getCaPoolsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListCaPoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface ListCaPoolsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface ListCaPoolsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface ListCaPoolsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

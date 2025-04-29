@@ -249,7 +249,8 @@ public class AccessBindingName implements ResourceName {
     private Builder(AccessBindingName accessBindingName) {
       Preconditions.checkArgument(
           Objects.equals(accessBindingName.pathTemplate, ACCOUNT_ACCESS_BINDING),
-          "toBuilder is only supported when AccessBindingName has the pattern of accounts/{account}/accessBindings/{access_binding}");
+          "toBuilder is only supported when AccessBindingName has the pattern of"
+              + " accounts/{account}/accessBindings/{access_binding}");
       this.account = accessBindingName.account;
       this.accessBinding = accessBindingName.accessBinding;
     }

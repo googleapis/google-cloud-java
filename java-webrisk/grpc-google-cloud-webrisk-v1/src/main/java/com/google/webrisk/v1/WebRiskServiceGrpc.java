@@ -264,6 +264,19 @@ public final class WebRiskServiceGrpc {
     return WebRiskServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WebRiskServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public WebRiskServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WebRiskServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WebRiskServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -544,6 +557,120 @@ public final class WebRiskServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service WebRiskService.
+   *
+   * <pre>
+   * Web Risk API defines an interface to detect malicious URLs on your
+   * website and in client applications.
+   * </pre>
+   */
+  public static final class WebRiskServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WebRiskServiceBlockingV2Stub> {
+    private WebRiskServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WebRiskServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WebRiskServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the most recent threat list diffs. These diffs should be applied to
+     * a local database of hashes to keep it up-to-date. If the local database is
+     * empty or excessively out-of-date, a complete snapshot of the database will
+     * be returned. This Method only updates a single ThreatList at a time. To
+     * update multiple ThreatList databases, this method needs to be called once
+     * for each list.
+     * </pre>
+     */
+    public com.google.webrisk.v1.ComputeThreatListDiffResponse computeThreatListDiff(
+        com.google.webrisk.v1.ComputeThreatListDiffRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getComputeThreatListDiffMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method is used to check whether a URI is on a given threatList.
+     * Multiple threatLists may be searched in a single query.
+     * The response will list all requested threatLists the URI was found to
+     * match. If the URI is not found on any of the requested ThreatList an
+     * empty response will be returned.
+     * </pre>
+     */
+    public com.google.webrisk.v1.SearchUrisResponse searchUris(
+        com.google.webrisk.v1.SearchUrisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchUrisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the full hashes that match the requested hash prefix.
+     * This is used after a hash prefix is looked up in a threatList
+     * and there is a match. The client side threatList only holds partial hashes
+     * so the client must query this method to determine if there is a full
+     * hash match of a threat.
+     * </pre>
+     */
+    public com.google.webrisk.v1.SearchHashesResponse searchHashes(
+        com.google.webrisk.v1.SearchHashesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchHashesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Submission of a URI suspected of containing phishing content to
+     * be reviewed. If the result verifies the existence of malicious phishing
+     * content, the site will be added to the [Google's Social Engineering
+     * lists](https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future. Only
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
+     * </pre>
+     */
+    public com.google.webrisk.v1.Submission createSubmission(
+        com.google.webrisk.v1.CreateSubmissionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSubmissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a URI suspected of containing malicious content to be reviewed.
+     * Returns a google.longrunning.Operation which, once the review is complete,
+     * is updated with its result. You can use the [Pub/Sub API]
+     * (https://cloud.google.com/pubsub) to receive notifications for the returned
+     * Operation. If the result verifies the existence of malicious content, the
+     * site will be added to the [Google's Social Engineering lists]
+     * (https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future. Only
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
+     * </pre>
+     */
+    public com.google.longrunning.Operation submitUri(
+        com.google.webrisk.v1.SubmitUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitUriMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service WebRiskService.
    *
    * <pre>
    * Web Risk API defines an interface to detect malicious URLs on your

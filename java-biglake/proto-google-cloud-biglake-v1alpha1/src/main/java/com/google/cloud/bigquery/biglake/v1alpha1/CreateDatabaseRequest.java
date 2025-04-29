@@ -33,6 +33,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.CreateDatabaseRequest)
     CreateDatabaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDatabaseRequest.newBuilder() to construct.
   private CreateDatabaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DATABASE_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.biglake.v1alpha1.Database database_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDatabase() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.bigquery.biglake.v1alpha1.Database.getDefaultInstance()
         : database_;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -419,6 +427,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -651,6 +660,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -703,6 +714,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +740,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.bigquery.biglake.v1alpha1.Database.Builder,
             com.google.cloud.bigquery.biglake.v1alpha1.DatabaseOrBuilder>
         databaseBuilder_;
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDatabase() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         return databaseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +888,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +943,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDatabaseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -961,6 +983,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
             : database_;
       }
     }
+
     /**
      *
      *
@@ -991,6 +1014,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object databaseId_ = "";
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1062,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

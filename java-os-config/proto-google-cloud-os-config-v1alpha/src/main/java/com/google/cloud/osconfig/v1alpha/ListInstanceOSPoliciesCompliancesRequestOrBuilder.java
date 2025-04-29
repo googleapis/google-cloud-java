@@ -44,6 +44,7 @@ public interface ListInstanceOSPoliciesCompliancesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ListInstanceOSPoliciesCompliancesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface ListInstanceOSPoliciesCompliancesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

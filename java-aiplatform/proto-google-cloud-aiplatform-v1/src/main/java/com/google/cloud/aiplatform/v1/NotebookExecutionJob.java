@@ -33,6 +33,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob)
     NotebookExecutionJobOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotebookExecutionJob.newBuilder() to construct.
   private NotebookExecutionJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The dataformRepositoryResourceName.
      */
     java.lang.String getDataformRepositoryResourceName();
+
     /**
      *
      *
@@ -124,6 +126,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The commitSha.
      */
     java.lang.String getCommitSha();
+
     /**
      *
      *
@@ -138,6 +141,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getCommitShaBytes();
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.DataformRepositorySource)
       DataformRepositorySourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DataformRepositorySource.newBuilder() to construct.
     private DataformRepositorySource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,6 +193,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataformRepositoryResourceName_ = "";
+
     /**
      *
      *
@@ -212,6 +218,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -241,6 +248,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object commitSha_ = "";
+
     /**
      *
      *
@@ -265,6 +273,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -472,6 +481,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -687,6 +697,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object dataformRepositoryResourceName_ = "";
+
       /**
        *
        *
@@ -710,6 +721,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -733,6 +745,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -755,6 +768,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -773,6 +787,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -798,6 +813,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object commitSha_ = "";
+
       /**
        *
        *
@@ -821,6 +837,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -844,6 +861,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -866,6 +884,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -884,6 +903,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -995,6 +1015,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -1023,6 +1044,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The generation.
      */
     java.lang.String getGeneration();
+
     /**
      *
      *
@@ -1038,6 +1060,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getGenerationBytes();
   }
+
   /**
    *
    *
@@ -1052,6 +1075,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.GcsNotebookSource)
       GcsNotebookSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GcsNotebookSource.newBuilder() to construct.
     private GcsNotebookSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1087,6 +1111,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1111,6 +1136,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1166,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object generation_ = "";
+
     /**
      *
      *
@@ -1165,6 +1192,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1362,6 +1390,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1574,6 +1603,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -1597,6 +1627,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1620,6 +1651,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1642,6 +1674,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1660,6 +1693,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1685,6 +1719,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object generation_ = "";
+
       /**
        *
        *
@@ -1709,6 +1744,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1733,6 +1769,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1756,6 +1793,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1775,6 +1813,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1886,6 +1925,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getContent();
   }
+
   /**
    *
    *
@@ -1900,6 +1940,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.DirectNotebookSource)
       DirectNotebookSourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DirectNotebookSource.newBuilder() to construct.
     private DirectNotebookSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1933,6 +1974,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     public static final int CONTENT_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -2117,6 +2159,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2313,6 +2356,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -2328,6 +2372,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getContent() {
         return content_;
       }
+
       /**
        *
        *
@@ -2349,6 +2394,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2452,6 +2498,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the machineSpec field is set.
      */
     boolean hasMachineSpec();
+
     /**
      *
      *
@@ -2464,6 +2511,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The machineSpec.
      */
     com.google.cloud.aiplatform.v1.MachineSpec getMachineSpec();
+
     /**
      *
      *
@@ -2487,6 +2535,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the persistentDiskSpec field is set.
      */
     boolean hasPersistentDiskSpec();
+
     /**
      *
      *
@@ -2499,6 +2548,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The persistentDiskSpec.
      */
     com.google.cloud.aiplatform.v1.PersistentDiskSpec getPersistentDiskSpec();
+
     /**
      *
      *
@@ -2522,6 +2572,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return Whether the networkSpec field is set.
      */
     boolean hasNetworkSpec();
+
     /**
      *
      *
@@ -2534,6 +2585,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      * @return The networkSpec.
      */
     com.google.cloud.aiplatform.v1.NetworkSpec getNetworkSpec();
+
     /**
      *
      *
@@ -2545,6 +2597,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.aiplatform.v1.NetworkSpecOrBuilder getNetworkSpecOrBuilder();
   }
+
   /**
    *
    *
@@ -2559,6 +2612,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.CustomEnvironmentSpec)
       CustomEnvironmentSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomEnvironmentSpec.newBuilder() to construct.
     private CustomEnvironmentSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2591,6 +2645,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private int bitField0_;
     public static final int MACHINE_SPEC_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1.MachineSpec machineSpec_;
+
     /**
      *
      *
@@ -2606,6 +2661,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasMachineSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2623,6 +2679,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.aiplatform.v1.MachineSpec.getDefaultInstance()
           : machineSpec_;
     }
+
     /**
      *
      *
@@ -2641,6 +2698,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     public static final int PERSISTENT_DISK_SPEC_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1.PersistentDiskSpec persistentDiskSpec_;
+
     /**
      *
      *
@@ -2656,6 +2714,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasPersistentDiskSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2673,6 +2732,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.aiplatform.v1.PersistentDiskSpec.getDefaultInstance()
           : persistentDiskSpec_;
     }
+
     /**
      *
      *
@@ -2692,6 +2752,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
     public static final int NETWORK_SPEC_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1.NetworkSpec networkSpec_;
+
     /**
      *
      *
@@ -2707,6 +2768,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasNetworkSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2724,6 +2786,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.aiplatform.v1.NetworkSpec.getDefaultInstance()
           : networkSpec_;
     }
+
     /**
      *
      *
@@ -2942,6 +3005,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3203,6 +3267,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.MachineSpec.Builder,
               com.google.cloud.aiplatform.v1.MachineSpecOrBuilder>
           machineSpecBuilder_;
+
       /**
        *
        *
@@ -3217,6 +3282,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       public boolean hasMachineSpec() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -3237,6 +3303,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return machineSpecBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3259,6 +3326,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3279,6 +3347,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3306,6 +3375,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -3325,6 +3395,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3339,6 +3410,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return getMachineSpecFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3357,6 +3429,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               : machineSpec_;
         }
       }
+
       /**
        *
        *
@@ -3389,6 +3462,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.PersistentDiskSpec.Builder,
               com.google.cloud.aiplatform.v1.PersistentDiskSpecOrBuilder>
           persistentDiskSpecBuilder_;
+
       /**
        *
        *
@@ -3403,6 +3477,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       public boolean hasPersistentDiskSpec() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3423,6 +3498,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return persistentDiskSpecBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3446,6 +3522,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3466,6 +3543,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3495,6 +3573,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -3514,6 +3593,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3529,6 +3609,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return getPersistentDiskSpecFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3548,6 +3629,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               : persistentDiskSpec_;
         }
       }
+
       /**
        *
        *
@@ -3580,6 +3662,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               com.google.cloud.aiplatform.v1.NetworkSpec.Builder,
               com.google.cloud.aiplatform.v1.NetworkSpecOrBuilder>
           networkSpecBuilder_;
+
       /**
        *
        *
@@ -3594,6 +3677,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       public boolean hasNetworkSpec() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -3614,6 +3698,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           return networkSpecBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3636,6 +3721,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3656,6 +3742,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3683,6 +3770,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -3702,6 +3790,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3716,6 +3805,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         onChanged();
         return getNetworkSpecFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3734,6 +3824,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
               : networkSpec_;
         }
       }
+
       /**
        *
        *
@@ -3832,6 +3923,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3846,6 +3938,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime)
       WorkbenchRuntimeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WorkbenchRuntime.newBuilder() to construct.
     private WorkbenchRuntime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4027,6 +4120,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4281,6 +4375,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private NotebookSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4332,6 +4427,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private EnvironmentSpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4380,6 +4476,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private ExecutionSinkCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4427,6 +4524,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private ExecutionIdentityCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4475,6 +4573,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private RuntimeEnvironmentCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4506,6 +4605,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DATAFORM_REPOSITORY_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -4523,6 +4623,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasDataformRepositorySource() {
     return notebookSourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -4546,6 +4647,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1.NotebookExecutionJob.DataformRepositorySource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4569,6 +4671,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GCS_NOTEBOOK_SOURCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -4587,6 +4690,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasGcsNotebookSource() {
     return notebookSourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -4611,6 +4715,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1.NotebookExecutionJob.GcsNotebookSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4635,6 +4740,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DIRECT_NOTEBOOK_SOURCE_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -4652,6 +4758,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasDirectNotebookSource() {
     return notebookSourceCase_ == 17;
   }
+
   /**
    *
    *
@@ -4675,6 +4782,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1.NotebookExecutionJob.DirectNotebookSource
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4698,6 +4806,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NOTEBOOK_RUNTIME_TEMPLATE_RESOURCE_NAME_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -4714,6 +4823,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasNotebookRuntimeTemplateResourceName() {
     return environmentSpecCase_ == 14;
   }
+
   /**
    *
    *
@@ -4743,6 +4853,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -4774,6 +4885,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CUSTOM_ENVIRONMENT_SPEC_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -4791,6 +4903,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasCustomEnvironmentSpec() {
     return environmentSpecCase_ == 16;
   }
+
   /**
    *
    *
@@ -4814,6 +4927,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1.NotebookExecutionJob.CustomEnvironmentSpec
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4837,6 +4951,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GCS_OUTPUT_URI_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -4852,6 +4967,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasGcsOutputUri() {
     return executionSinkCase_ == 8;
   }
+
   /**
    *
    *
@@ -4880,6 +4996,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -4910,6 +5027,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EXECUTION_USER_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -4924,6 +5042,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasExecutionUser() {
     return executionIdentityCase_ == 9;
   }
+
   /**
    *
    *
@@ -4951,6 +5070,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -4980,6 +5100,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 18;
+
   /**
    *
    *
@@ -4994,6 +5115,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasServiceAccount() {
     return executionIdentityCase_ == 18;
   }
+
   /**
    *
    *
@@ -5021,6 +5143,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -5050,6 +5173,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   }
 
   public static final int WORKBENCH_RUNTIME_FIELD_NUMBER = 23;
+
   /**
    *
    *
@@ -5066,6 +5190,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasWorkbenchRuntime() {
     return runtimeEnvironmentCase_ == 23;
   }
+
   /**
    *
    *
@@ -5088,6 +5213,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5113,6 +5239,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -5137,6 +5264,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -5166,6 +5294,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -5190,6 +5319,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -5217,6 +5347,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public static final int EXECUTION_TIMEOUT_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration executionTimeout_;
+
   /**
    *
    *
@@ -5232,6 +5363,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasExecutionTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5249,6 +5381,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Duration.getDefaultInstance()
         : executionTimeout_;
   }
+
   /**
    *
    *
@@ -5269,6 +5402,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scheduleResourceName_ = "";
+
   /**
    *
    *
@@ -5296,6 +5430,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -5326,6 +5461,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public static final int JOB_STATE_FIELD_NUMBER = 10;
   private int jobState_ = 0;
+
   /**
    *
    *
@@ -5343,6 +5479,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public int getJobStateValue() {
     return jobState_;
   }
+
   /**
    *
    *
@@ -5365,6 +5502,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public static final int STATUS_FIELD_NUMBER = 11;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -5382,6 +5520,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5399,6 +5538,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -5417,6 +5557,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -5433,6 +5574,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -5449,6 +5591,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -5466,6 +5609,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -5483,6 +5627,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -5500,6 +5645,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -5542,6 +5688,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -5566,12 +5713,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -5593,6 +5742,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -5621,6 +5771,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -5654,6 +5805,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kernelName_ = "";
+
   /**
    *
    *
@@ -5678,6 +5830,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -5705,6 +5858,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 22;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+
   /**
    *
    *
@@ -5723,6 +5877,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -5743,6 +5898,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
+
   /**
    *
    *
@@ -6242,6 +6398,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -6907,6 +7064,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.DataformRepositorySource.Builder,
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.DataformRepositorySourceOrBuilder>
         dataformRepositorySourceBuilder_;
+
     /**
      *
      *
@@ -6924,6 +7082,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasDataformRepositorySource() {
       return notebookSourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -6955,6 +7114,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6980,6 +7140,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7003,6 +7164,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7042,6 +7204,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -7069,6 +7232,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7084,6 +7248,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         getDataformRepositorySourceBuilder() {
       return getDataformRepositorySourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7109,6 +7274,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7154,6 +7320,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.GcsNotebookSource.Builder,
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.GcsNotebookSourceOrBuilder>
         gcsNotebookSourceBuilder_;
+
     /**
      *
      *
@@ -7172,6 +7339,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasGcsNotebookSource() {
       return notebookSourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -7204,6 +7372,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7230,6 +7399,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7254,6 +7424,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7293,6 +7464,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -7321,6 +7493,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7337,6 +7510,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         getGcsNotebookSourceBuilder() {
       return getGcsNotebookSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7363,6 +7537,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7407,6 +7582,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.DirectNotebookSource.Builder,
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.DirectNotebookSourceOrBuilder>
         directNotebookSourceBuilder_;
+
     /**
      *
      *
@@ -7424,6 +7600,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasDirectNotebookSource() {
       return notebookSourceCase_ == 17;
     }
+
     /**
      *
      *
@@ -7455,6 +7632,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7480,6 +7658,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -7503,6 +7682,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -7541,6 +7721,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       notebookSourceCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -7568,6 +7749,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7583,6 +7765,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         getDirectNotebookSourceBuilder() {
       return getDirectNotebookSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7608,6 +7791,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7663,6 +7847,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasNotebookRuntimeTemplateResourceName() {
       return environmentSpecCase_ == 14;
     }
+
     /**
      *
      *
@@ -7693,6 +7878,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7723,6 +7909,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7746,6 +7933,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7767,6 +7955,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7798,6 +7987,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.CustomEnvironmentSpec.Builder,
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.CustomEnvironmentSpecOrBuilder>
         customEnvironmentSpecBuilder_;
+
     /**
      *
      *
@@ -7815,6 +8005,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasCustomEnvironmentSpec() {
       return environmentSpecCase_ == 16;
     }
+
     /**
      *
      *
@@ -7846,6 +8037,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7871,6 +8063,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       environmentSpecCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -7894,6 +8087,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       environmentSpecCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -7932,6 +8126,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       environmentSpecCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -7959,6 +8154,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7974,6 +8170,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         getCustomEnvironmentSpecBuilder() {
       return getCustomEnvironmentSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7999,6 +8196,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8053,6 +8251,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasGcsOutputUri() {
       return executionSinkCase_ == 8;
     }
+
     /**
      *
      *
@@ -8082,6 +8281,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8111,6 +8311,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8133,6 +8334,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8153,6 +8355,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8192,6 +8395,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasExecutionUser() {
       return executionIdentityCase_ == 9;
     }
+
     /**
      *
      *
@@ -8220,6 +8424,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8248,6 +8453,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8269,6 +8475,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8288,6 +8495,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8326,6 +8534,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasServiceAccount() {
       return executionIdentityCase_ == 18;
     }
+
     /**
      *
      *
@@ -8354,6 +8563,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8382,6 +8592,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8403,6 +8614,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8422,6 +8634,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8450,6 +8663,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntime.Builder,
             com.google.cloud.aiplatform.v1.NotebookExecutionJob.WorkbenchRuntimeOrBuilder>
         workbenchRuntimeBuilder_;
+
     /**
      *
      *
@@ -8467,6 +8681,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasWorkbenchRuntime() {
       return runtimeEnvironmentCase_ == 23;
     }
+
     /**
      *
      *
@@ -8498,6 +8713,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8523,6 +8739,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       runtimeEnvironmentCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -8546,6 +8763,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       runtimeEnvironmentCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -8584,6 +8802,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       runtimeEnvironmentCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -8611,6 +8830,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8626,6 +8846,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         getWorkbenchRuntimeBuilder() {
       return getWorkbenchRuntimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8651,6 +8872,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8690,6 +8912,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -8713,6 +8936,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8736,6 +8960,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8758,6 +8983,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8776,6 +9002,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8801,6 +9028,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -8824,6 +9052,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8847,6 +9076,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8869,6 +9099,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8887,6 +9118,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8917,6 +9149,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         executionTimeoutBuilder_;
+
     /**
      *
      *
@@ -8931,6 +9164,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasExecutionTimeout() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -8951,6 +9185,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return executionTimeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8973,6 +9208,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8992,6 +9228,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9019,6 +9256,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9038,6 +9276,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9052,6 +9291,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9070,6 +9310,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             : executionTimeout_;
       }
     }
+
     /**
      *
      *
@@ -9097,6 +9338,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object scheduleResourceName_ = "";
+
     /**
      *
      *
@@ -9123,6 +9365,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9149,6 +9392,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9174,6 +9418,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9195,6 +9440,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9223,6 +9469,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
 
     private int jobState_ = 0;
+
     /**
      *
      *
@@ -9240,6 +9487,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public int getJobStateValue() {
       return jobState_;
     }
+
     /**
      *
      *
@@ -9260,6 +9508,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9279,6 +9528,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
           com.google.cloud.aiplatform.v1.JobState.forNumber(jobState_);
       return result == null ? com.google.cloud.aiplatform.v1.JobState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -9302,6 +9552,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9326,6 +9577,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -9342,6 +9594,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -9362,6 +9615,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9386,6 +9640,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9407,6 +9662,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9436,6 +9692,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9457,6 +9714,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9473,6 +9731,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9491,6 +9750,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *
@@ -9522,6 +9782,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -9538,6 +9799,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -9560,6 +9822,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9584,6 +9847,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9605,6 +9869,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9634,6 +9899,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9655,6 +9921,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9671,6 +9938,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9691,6 +9959,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -9725,6 +9994,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -9742,6 +10012,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -9765,6 +10036,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9790,6 +10062,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9812,6 +10085,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9842,6 +10116,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9864,6 +10139,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9881,6 +10157,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9902,6 +10179,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -9956,6 +10234,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -9980,12 +10259,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -10007,6 +10288,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -10035,6 +10317,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -10069,6 +10352,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -10093,12 +10377,14 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00020000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -10127,6 +10413,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00020000;
       return this;
     }
+
     /**
      *
      *
@@ -10151,6 +10438,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kernelName_ = "";
+
     /**
      *
      *
@@ -10174,6 +10462,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10197,6 +10486,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10219,6 +10509,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10237,6 +10528,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10267,6 +10559,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
+
     /**
      *
      *
@@ -10284,6 +10577,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -10307,6 +10601,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
         return encryptionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10332,6 +10627,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10355,6 +10651,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10386,6 +10683,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10408,6 +10706,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10425,6 +10724,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10446,6 +10746,7 @@ public final class NotebookExecutionJob extends com.google.protobuf.GeneratedMes
             : encryptionSpec_;
       }
     }
+
     /**
      *
      *

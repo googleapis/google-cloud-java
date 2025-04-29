@@ -40,6 +40,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The detailedState.
    */
   java.lang.String getDetailedState();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The detailedStateReason.
    */
   java.lang.String getDetailedStateReason();
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    */
   java.util.List<com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance>
       getOsPolicyCompliancesList();
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    */
   com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.OSPolicyCompliance
       getOsPolicyCompliances(int index);
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * </code>
    */
   int getOsPolicyCompliancesCount();
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
               com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance
                   .OSPolicyComplianceOrBuilder>
       getOsPolicyCompliancesOrBuilderList();
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return Whether the lastComplianceCheckTime field is set.
    */
   boolean hasLastComplianceCheckTime();
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The lastComplianceCheckTime.
    */
   com.google.protobuf.Timestamp getLastComplianceCheckTime();
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * @return The lastComplianceRunId.
    */
   java.lang.String getLastComplianceRunId();
+
   /**
    *
    *

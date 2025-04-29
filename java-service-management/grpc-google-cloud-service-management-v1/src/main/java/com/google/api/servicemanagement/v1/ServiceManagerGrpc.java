@@ -658,6 +658,19 @@ public final class ServiceManagerGrpc {
     return ServiceManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServiceManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServiceManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServiceManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public ServiceManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServiceManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServiceManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1255,6 +1268,256 @@ public final class ServiceManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServiceManager.
+   *
+   * <pre>
+   * [Google Service Management
+   * API](https://cloud.google.com/service-infrastructure/docs/overview)
+   * </pre>
+   */
+  public static final class ServiceManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServiceManagerBlockingV2Stub> {
+    private ServiceManagerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServiceManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServiceManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists managed services.
+     * Returns all public services. For authenticated users, also returns all
+     * services the calling user has "servicemanagement.services.get" permission
+     * for.
+     * </pre>
+     */
+    public com.google.api.servicemanagement.v1.ListServicesResponse listServices(
+        com.google.api.servicemanagement.v1.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a managed service. Authentication is required unless the service is
+     * public.
+     * </pre>
+     */
+    public com.google.api.servicemanagement.v1.ManagedService getService(
+        com.google.api.servicemanagement.v1.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new managed service.
+     * A managed service is immutable, and is subject to mandatory 30-day
+     * data retention. You cannot move a service or recreate it within 30 days
+     * after deletion.
+     * One producer project can own no more than 500 services. For security and
+     * reliability purposes, a production service should be hosted in a
+     * dedicated producer project.
+     * Operation&lt;response: ManagedService&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation createService(
+        com.google.api.servicemanagement.v1.CreateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a managed service. This method will change the service to the
+     * `Soft-Delete` state for 30 days. Within this period, service producers may
+     * call
+     * [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService]
+     * to restore the service. After 30 days, the service will be permanently
+     * deleted.
+     * Operation&lt;response: google.protobuf.Empty&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteService(
+        com.google.api.servicemanagement.v1.DeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revives a previously deleted managed service. The method restores the
+     * service using the configuration at the time the service was deleted.
+     * The target service must exist and must have been deleted within the
+     * last 30 days.
+     * Operation&lt;response: UndeleteServiceResponse&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeleteService(
+        com.google.api.servicemanagement.v1.UndeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the history of the service configuration for a managed service,
+     * from the newest to the oldest.
+     * </pre>
+     */
+    public com.google.api.servicemanagement.v1.ListServiceConfigsResponse listServiceConfigs(
+        com.google.api.servicemanagement.v1.ListServiceConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a service configuration (version) for a managed service.
+     * </pre>
+     */
+    public com.google.api.Service getServiceConfig(
+        com.google.api.servicemanagement.v1.GetServiceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new service configuration (version) for a managed service.
+     * This method only stores the service configuration. To roll out the service
+     * configuration to backend systems please call
+     * [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
+     * Only the 100 most recent service configurations and ones referenced by
+     * existing rollouts are kept for each service. The rest will be deleted
+     * eventually.
+     * </pre>
+     */
+    public com.google.api.Service createServiceConfig(
+        com.google.api.servicemanagement.v1.CreateServiceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new service configuration (version) for a managed service based
+     * on
+     * user-supplied configuration source files (for example: OpenAPI
+     * Specification). This method stores the source configurations as well as the
+     * generated service configuration. To rollout the service configuration to
+     * other services,
+     * please call
+     * [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
+     * Only the 100 most recent configuration sources and ones referenced by
+     * existing service configurtions are kept for each service. The rest will be
+     * deleted eventually.
+     * Operation&lt;response: SubmitConfigSourceResponse&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation submitConfigSource(
+        com.google.api.servicemanagement.v1.SubmitConfigSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitConfigSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the history of the service configuration rollouts for a managed
+     * service, from the newest to the oldest.
+     * </pre>
+     */
+    public com.google.api.servicemanagement.v1.ListServiceRolloutsResponse listServiceRollouts(
+        com.google.api.servicemanagement.v1.ListServiceRolloutsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceRolloutsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a service configuration
+     * [rollout][google.api.servicemanagement.v1.Rollout].
+     * </pre>
+     */
+    public com.google.api.servicemanagement.v1.Rollout getServiceRollout(
+        com.google.api.servicemanagement.v1.GetServiceRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new service configuration rollout. Based on rollout, the
+     * Google Service Management will roll out the service configurations to
+     * different backend services. For example, the logging configuration will be
+     * pushed to Google Cloud Logging.
+     * Please note that any previous pending and running Rollouts and associated
+     * Operations will be automatically cancelled so that the latest Rollout will
+     * not be blocked by previous Rollouts.
+     * Only the 100 most recent (in any state) and the last 10 successful (if not
+     * already part of the set of 100 most recent) rollouts are kept for each
+     * service. The rest will be deleted eventually.
+     * Operation&lt;response: Rollout&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceRollout(
+        com.google.api.servicemanagement.v1.CreateServiceRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a report (errors, warnings and changes from
+     * existing configurations) associated with
+     * GenerateConfigReportRequest.new_value
+     * If GenerateConfigReportRequest.old_value is specified,
+     * GenerateConfigReportRequest will contain a single ChangeReport based on the
+     * comparison between GenerateConfigReportRequest.new_value and
+     * GenerateConfigReportRequest.old_value.
+     * If GenerateConfigReportRequest.old_value is not specified, this method
+     * will compare GenerateConfigReportRequest.new_value with the last pushed
+     * service configuration.
+     * </pre>
+     */
+    public com.google.api.servicemanagement.v1.GenerateConfigReportResponse generateConfigReport(
+        com.google.api.servicemanagement.v1.GenerateConfigReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateConfigReportMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServiceManager.
    *
    * <pre>
    * [Google Service Management

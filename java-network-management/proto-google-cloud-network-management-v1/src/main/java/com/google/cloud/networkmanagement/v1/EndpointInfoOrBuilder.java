@@ -36,6 +36,7 @@ public interface EndpointInfoOrBuilder
    * @return The sourceIp.
    */
   java.lang.String getSourceIp();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EndpointInfoOrBuilder
    * @return The destinationIp.
    */
   java.lang.String getDestinationIp();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface EndpointInfoOrBuilder
    * @return The protocol.
    */
   java.lang.String getProtocol();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface EndpointInfoOrBuilder
    * @return The sourceNetworkUri.
    */
   java.lang.String getSourceNetworkUri();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface EndpointInfoOrBuilder
    * @return The destinationNetworkUri.
    */
   java.lang.String getDestinationNetworkUri();
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public interface EndpointInfoOrBuilder
    * @return The sourceAgentUri.
    */
   java.lang.String getSourceAgentUri();
+
   /**
    *
    *

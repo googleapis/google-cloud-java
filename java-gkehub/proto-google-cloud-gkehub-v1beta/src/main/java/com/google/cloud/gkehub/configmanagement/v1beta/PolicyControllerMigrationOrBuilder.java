@@ -37,6 +37,7 @@ public interface PolicyControllerMigrationOrBuilder
    * @return The enum numeric value on the wire for stage.
    */
   int getStageValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PolicyControllerMigrationOrBuilder
    * @return Whether the copyTime field is set.
    */
   boolean hasCopyTime();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface PolicyControllerMigrationOrBuilder
    * @return The copyTime.
    */
   com.google.protobuf.Timestamp getCopyTime();
+
   /**
    *
    *

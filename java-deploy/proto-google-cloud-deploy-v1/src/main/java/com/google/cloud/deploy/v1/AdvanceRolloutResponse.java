@@ -33,6 +33,7 @@ public final class AdvanceRolloutResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AdvanceRolloutResponse)
     AdvanceRolloutResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdvanceRolloutResponse.newBuilder() to construct.
   private AdvanceRolloutResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class AdvanceRolloutResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

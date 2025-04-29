@@ -38,6 +38,7 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   int getStateMetadataCount();
+
   /**
    *
    *
@@ -79,9 +81,11 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   boolean containsStateMetadata(java.lang.String key);
+
   /** Use {@link #getStateMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getStateMetadata();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface MarkRecommendationSucceededRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface MarkRecommendationSucceededRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

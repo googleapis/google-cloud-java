@@ -36,6 +36,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationDetails)
     TransformationDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformationDetails.newBuilder() to construct.
   private TransformationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceName_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerName_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.TransformationDescription> transformation_;
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       getTransformationList() {
     return transformation_;
   }
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       getTransformationOrBuilderList() {
     return transformation_;
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
   public int getTransformationCount() {
     return transformation_.size();
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.TransformationDescription getTransformation(int index) {
     return transformation_.get(index);
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
 
   public static final int STATUS_DETAILS_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.TransformationResultStatus statusDetails_;
+
   /**
    *
    *
@@ -285,6 +296,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
   public boolean hasStatusDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -304,6 +316,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.TransformationResultStatus.getDefaultInstance()
         : statusDetails_;
   }
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
 
   public static final int TRANSFORMED_BYTES_FIELD_NUMBER = 5;
   private long transformedBytes_ = 0L;
+
   /**
    *
    *
@@ -344,6 +358,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
 
   public static final int TRANSFORMATION_LOCATION_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.TransformationLocation transformationLocation_;
+
   /**
    *
    *
@@ -359,6 +374,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
   public boolean hasTransformationLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -376,6 +392,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.TransformationLocation.getDefaultInstance()
         : transformationLocation_;
   }
+
   /**
    *
    *
@@ -610,6 +627,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -941,6 +959,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object resourceName_ = "";
+
     /**
      *
      *
@@ -963,6 +982,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -985,6 +1005,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1027,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1045,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object containerName_ = "";
+
     /**
      *
      *
@@ -1070,6 +1094,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1118,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1141,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1160,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1224,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return transformationBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1245,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return transformationBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1266,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return transformationBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1294,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1319,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1346,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1374,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1399,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1424,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1449,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1473,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1497,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1515,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         int index) {
       return getTransformationFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1496,6 +1537,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return transformationBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1517,6 +1559,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(transformation_);
       }
     }
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       return getTransformationFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.TransformationDescription.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1553,6 +1597,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.privacy.dlp.v2.TransformationDescription.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1597,6 +1642,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.TransformationResultStatus.Builder,
             com.google.privacy.dlp.v2.TransformationResultStatusOrBuilder>
         statusDetailsBuilder_;
+
     /**
      *
      *
@@ -1613,6 +1659,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     public boolean hasStatusDetails() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1635,6 +1682,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return statusDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1659,6 +1707,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1730,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1761,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1783,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1748,6 +1800,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return getStatusDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1769,6 +1822,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
             : statusDetails_;
       }
     }
+
     /**
      *
      *
@@ -1798,6 +1852,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     }
 
     private long transformedBytes_;
+
     /**
      *
      *
@@ -1815,6 +1870,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     public long getTransformedBytes() {
       return transformedBytes_;
     }
+
     /**
      *
      *
@@ -1836,6 +1892,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1862,6 +1919,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.TransformationLocation.Builder,
             com.google.privacy.dlp.v2.TransformationLocationOrBuilder>
         transformationLocationBuilder_;
+
     /**
      *
      *
@@ -1876,6 +1934,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
     public boolean hasTransformationLocation() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1896,6 +1955,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
         return transformationLocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1919,6 +1979,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1939,6 +2000,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1968,6 +2030,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1987,6 +2050,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2002,6 +2066,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTransformationLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2021,6 +2086,7 @@ public final class TransformationDetails extends com.google.protobuf.GeneratedMe
             : transformationLocation_;
       }
     }
+
     /**
      *
      *

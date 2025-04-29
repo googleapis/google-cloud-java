@@ -35,6 +35,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse)
     ListChannelPartnerRepricingConfigsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListChannelPartnerRepricingConfigsResponse.newBuilder() to construct.
   private ListChannelPartnerRepricingConfigsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
       channelPartnerRepricingConfigs_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       getChannelPartnerRepricingConfigsList() {
     return channelPartnerRepricingConfigs_;
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       getChannelPartnerRepricingConfigsOrBuilderList() {
     return channelPartnerRepricingConfigs_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
   public int getChannelPartnerRepricingConfigsCount() {
     return channelPartnerRepricingConfigs_.size();
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       getChannelPartnerRepricingConfigs(int index) {
     return channelPartnerRepricingConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -678,6 +687,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return channelPartnerRepricingConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -696,6 +706,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return channelPartnerRepricingConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -715,6 +726,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return channelPartnerRepricingConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -740,6 +752,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +802,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +900,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +922,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +944,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +960,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         getChannelPartnerRepricingConfigsBuilder(int index) {
       return getChannelPartnerRepricingConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return channelPartnerRepricingConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return java.util.Collections.unmodifiableList(channelPartnerRepricingConfigs_);
       }
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
           .addBuilder(
               com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
               index,
               com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1050,6 +1076,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1128,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1153,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1174,7 @@ public final class ListChannelPartnerRepricingConfigsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

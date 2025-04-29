@@ -33,6 +33,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Sku)
     SkuOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Sku.newBuilder() to construct.
   private Sku(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -45,6 +46,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     revisionId_ = "";
     type_ = 0;
+    hardwareCountRanges_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -121,6 +123,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +134,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * <code>RACK = 1;</code>
      */
     public static final int RACK_VALUE = 1;
+
     /**
      *
      *
@@ -227,11 +231,669 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Sku.Type)
   }
 
+  public interface RangeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gdchardwaremanagement.v1alpha.Sku.Range)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The minimum value of the range.
+     * </pre>
+     *
+     * <code>int32 min = 1;</code>
+     *
+     * @return The min.
+     */
+    int getMin();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum value of the range.
+     * </pre>
+     *
+     * <code>int32 max = 2;</code>
+     *
+     * @return The max.
+     */
+    int getMax();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Inclusive range.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Sku.Range}
+   */
+  public static final class Range extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.Sku.Range)
+      RangeOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Range.newBuilder() to construct.
+    private Range(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Range() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Range();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Sku_Range_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+          .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Sku_Range_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.class,
+              com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder.class);
+    }
+
+    public static final int MIN_FIELD_NUMBER = 1;
+    private int min_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The minimum value of the range.
+     * </pre>
+     *
+     * <code>int32 min = 1;</code>
+     *
+     * @return The min.
+     */
+    @java.lang.Override
+    public int getMin() {
+      return min_;
+    }
+
+    public static final int MAX_FIELD_NUMBER = 2;
+    private int max_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum value of the range.
+     * </pre>
+     *
+     * <code>int32 max = 2;</code>
+     *
+     * @return The max.
+     */
+    @java.lang.Override
+    public int getMax() {
+      return max_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (min_ != 0) {
+        output.writeInt32(1, min_);
+      }
+      if (max_ != 0) {
+        output.writeInt32(2, max_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (min_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, min_);
+      }
+      if (max_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, max_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range other =
+          (com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range) obj;
+
+      if (getMin() != other.getMin()) return false;
+      if (getMax() != other.getMax()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIN_FIELD_NUMBER;
+      hash = (53 * hash) + getMin();
+      hash = (37 * hash) + MAX_FIELD_NUMBER;
+      hash = (53 * hash) + getMax();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inclusive range.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gdchardwaremanagement.v1alpha.Sku.Range}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gdchardwaremanagement.v1alpha.Sku.Range)
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Sku_Range_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Sku_Range_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.class,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder.class);
+      }
+
+      // Construct using com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        min_ = 0;
+        max_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.ResourcesProto
+            .internal_static_google_cloud_gdchardwaremanagement_v1alpha_Sku_Range_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getDefaultInstanceForType() {
+        return com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range build() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range buildPartial() {
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range result =
+            new com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.min_ = min_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.max_ = max_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range) {
+          return mergeFrom((com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range other) {
+        if (other == com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.getDefaultInstance())
+          return this;
+        if (other.getMin() != 0) {
+          setMin(other.getMin());
+        }
+        if (other.getMax() != 0) {
+          setMax(other.getMax());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  min_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  max_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int min_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value of the range.
+       * </pre>
+       *
+       * <code>int32 min = 1;</code>
+       *
+       * @return The min.
+       */
+      @java.lang.Override
+      public int getMin() {
+        return min_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value of the range.
+       * </pre>
+       *
+       * <code>int32 min = 1;</code>
+       *
+       * @param value The min to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMin(int value) {
+
+        min_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value of the range.
+       * </pre>
+       *
+       * <code>int32 min = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMin() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        min_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int max_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value of the range.
+       * </pre>
+       *
+       * <code>int32 max = 2;</code>
+       *
+       * @return The max.
+       */
+      @java.lang.Override
+      public int getMax() {
+        return max_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value of the range.
+       * </pre>
+       *
+       * <code>int32 max = 2;</code>
+       *
+       * @param value The max to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMax(int value) {
+
+        max_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value of the range.
+       * </pre>
+       *
+       * <code>int32 max = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMax() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        max_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gdchardwaremanagement.v1alpha.Sku.Range)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gdchardwaremanagement.v1alpha.Sku.Range)
+    private static final com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range();
+    }
+
+    public static com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Range> PARSER =
+        new com.google.protobuf.AbstractParser<Range>() {
+          @java.lang.Override
+          public Range parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Range> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Range> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -256,6 +918,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +948,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -308,6 +972,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -334,6 +999,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -350,6 +1016,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -366,6 +1033,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -383,6 +1051,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -399,6 +1068,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -415,6 +1085,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -432,6 +1103,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig config_;
+
   /**
    *
    *
@@ -449,6 +1121,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -468,6 +1141,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -490,6 +1164,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance> instances_;
+
   /**
    *
    *
@@ -507,6 +1182,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       getInstancesList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -525,6 +1201,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       getInstancesOrBuilderList() {
     return instances_;
   }
+
   /**
    *
    *
@@ -541,6 +1218,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public int getInstancesCount() {
     return instances_.size();
   }
+
   /**
    *
    *
@@ -557,6 +1235,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance getInstances(int index) {
     return instances_.get(index);
   }
+
   /**
    *
    *
@@ -579,6 +1258,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -602,6 +1282,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -630,6 +1311,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
+
   /**
    *
    *
@@ -655,6 +1337,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -683,6 +1366,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_ACTIVE_FIELD_NUMBER = 10;
   private boolean isActive_ = false;
+
   /**
    *
    *
@@ -702,6 +1386,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 11;
   private int type_ = 0;
+
   /**
    *
    *
@@ -719,6 +1404,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -743,6 +1429,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VCPU_COUNT_FIELD_NUMBER = 12;
   private int vcpuCount_ = 0;
+
   /**
    *
    *
@@ -757,6 +1444,101 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getVcpuCount() {
     return vcpuCount_;
+  }
+
+  public static final int HARDWARE_COUNT_RANGES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
+      hardwareCountRanges_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
+      getHardwareCountRangesList() {
+    return hardwareCountRanges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>
+      getHardwareCountRangesOrBuilderList() {
+    return hardwareCountRanges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getHardwareCountRangesCount() {
+    return hardwareCountRanges_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getHardwareCountRanges(
+      int index) {
+    return hardwareCountRanges_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder
+      getHardwareCountRangesOrBuilder(int index) {
+    return hardwareCountRanges_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -807,6 +1589,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     if (vcpuCount_ != 0) {
       output.writeInt32(12, vcpuCount_);
     }
+    for (int i = 0; i < hardwareCountRanges_.size(); i++) {
+      output.writeMessage(13, hardwareCountRanges_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -850,6 +1635,10 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     if (vcpuCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, vcpuCount_);
     }
+    for (int i = 0; i < hardwareCountRanges_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, hardwareCountRanges_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -886,6 +1675,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     if (getIsActive() != other.getIsActive()) return false;
     if (type_ != other.type_) return false;
     if (getVcpuCount() != other.getVcpuCount()) return false;
+    if (!getHardwareCountRangesList().equals(other.getHardwareCountRangesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -927,6 +1717,10 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + type_;
     hash = (37 * hash) + VCPU_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getVcpuCount();
+    if (getHardwareCountRangesCount() > 0) {
+      hash = (37 * hash) + HARDWARE_COUNT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getHardwareCountRangesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1027,6 +1821,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1071,6 +1866,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getConfigFieldBuilder();
         getInstancesFieldBuilder();
+        getHardwareCountRangesFieldBuilder();
       }
     }
 
@@ -1107,6 +1903,13 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       isActive_ = false;
       type_ = 0;
       vcpuCount_ = 0;
+      if (hardwareCountRangesBuilder_ == null) {
+        hardwareCountRanges_ = java.util.Collections.emptyList();
+      } else {
+        hardwareCountRanges_ = null;
+        hardwareCountRangesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1152,6 +1955,15 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         result.instances_ = instances_;
       } else {
         result.instances_ = instancesBuilder_.build();
+      }
+      if (hardwareCountRangesBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          hardwareCountRanges_ = java.util.Collections.unmodifiableList(hardwareCountRanges_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.hardwareCountRanges_ = hardwareCountRanges_;
+      } else {
+        result.hardwareCountRanges_ = hardwareCountRangesBuilder_.build();
       }
     }
 
@@ -1305,6 +2117,33 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (other.getVcpuCount() != 0) {
         setVcpuCount(other.getVcpuCount());
       }
+      if (hardwareCountRangesBuilder_ == null) {
+        if (!other.hardwareCountRanges_.isEmpty()) {
+          if (hardwareCountRanges_.isEmpty()) {
+            hardwareCountRanges_ = other.hardwareCountRanges_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureHardwareCountRangesIsMutable();
+            hardwareCountRanges_.addAll(other.hardwareCountRanges_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.hardwareCountRanges_.isEmpty()) {
+          if (hardwareCountRangesBuilder_.isEmpty()) {
+            hardwareCountRangesBuilder_.dispose();
+            hardwareCountRangesBuilder_ = null;
+            hardwareCountRanges_ = other.hardwareCountRanges_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            hardwareCountRangesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getHardwareCountRangesFieldBuilder()
+                    : null;
+          } else {
+            hardwareCountRangesBuilder_.addAllMessages(other.hardwareCountRanges_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1405,6 +2244,20 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 96
+            case 106:
+              {
+                com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range m =
+                    input.readMessage(
+                        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.parser(),
+                        extensionRegistry);
+                if (hardwareCountRangesBuilder_ == null) {
+                  ensureHardwareCountRangesIsMutable();
+                  hardwareCountRanges_.add(m);
+                } else {
+                  hardwareCountRangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1425,6 +2278,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1448,6 +2302,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1471,6 +2326,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1493,6 +2349,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1511,6 +2368,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +2394,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1558,6 +2417,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1580,6 +2440,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1601,6 +2462,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1618,6 +2480,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +2510,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1663,6 +2527,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1685,6 +2550,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1709,6 +2575,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +2597,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +2627,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +2649,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +2666,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1816,6 +2687,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1850,6 +2722,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1866,6 +2739,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1888,6 +2762,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1912,6 +2787,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +2809,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1962,6 +2839,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2861,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2878,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2019,6 +2899,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2053,6 +2934,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -2069,6 +2951,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2091,6 +2974,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2115,6 +2999,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2137,6 +3022,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2167,6 +3053,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +3075,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2204,6 +3092,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2224,6 +3113,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
+
     /**
      *
      *
@@ -2290,6 +3180,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2309,6 +3200,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2328,6 +3220,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2354,6 +3247,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2378,6 +3272,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2403,6 +3298,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +3325,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +3349,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +3374,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2500,6 +3399,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2522,6 +3422,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2544,6 +3445,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2560,6 +3462,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2580,6 +3483,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2601,6 +3505,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
+
     /**
      *
      *
@@ -2619,6 +3524,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2638,6 +3544,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2673,6 +3580,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2695,6 +3603,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2717,6 +3626,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2738,6 +3648,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2755,6 +3666,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2779,6 +3691,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revisionId_ = "";
+
     /**
      *
      *
@@ -2803,6 +3716,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2827,6 +3741,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2850,6 +3765,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2869,6 +3785,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2895,6 +3812,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isActive_;
+
     /**
      *
      *
@@ -2911,6 +3829,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsActive() {
       return isActive_;
     }
+
     /**
      *
      *
@@ -2931,6 +3850,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2951,6 +3871,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -2968,6 +3889,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2988,6 +3910,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3009,6 +3932,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3032,6 +3956,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3053,6 +3978,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vcpuCount_;
+
     /**
      *
      *
@@ -3068,6 +3994,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public int getVcpuCount() {
       return vcpuCount_;
     }
+
     /**
      *
      *
@@ -3087,6 +4014,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3103,6 +4031,447 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       vcpuCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
+        hardwareCountRanges_ = java.util.Collections.emptyList();
+
+    private void ensureHardwareCountRangesIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        hardwareCountRanges_ =
+            new java.util.ArrayList<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>(
+                hardwareCountRanges_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>
+        hardwareCountRangesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
+        getHardwareCountRangesList() {
+      if (hardwareCountRangesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(hardwareCountRanges_);
+      } else {
+        return hardwareCountRangesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getHardwareCountRangesCount() {
+      if (hardwareCountRangesBuilder_ == null) {
+        return hardwareCountRanges_.size();
+      } else {
+        return hardwareCountRangesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getHardwareCountRanges(
+        int index) {
+      if (hardwareCountRangesBuilder_ == null) {
+        return hardwareCountRanges_.get(index);
+      } else {
+        return hardwareCountRangesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHardwareCountRanges(
+        int index, com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range value) {
+      if (hardwareCountRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.set(index, value);
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHardwareCountRanges(
+        int index,
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder builderForValue) {
+      if (hardwareCountRangesBuilder_ == null) {
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHardwareCountRanges(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range value) {
+      if (hardwareCountRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.add(value);
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHardwareCountRanges(
+        int index, com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range value) {
+      if (hardwareCountRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.add(index, value);
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHardwareCountRanges(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder builderForValue) {
+      if (hardwareCountRangesBuilder_ == null) {
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.add(builderForValue.build());
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHardwareCountRanges(
+        int index,
+        com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder builderForValue) {
+      if (hardwareCountRangesBuilder_ == null) {
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllHardwareCountRanges(
+        java.lang.Iterable<? extends com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
+            values) {
+      if (hardwareCountRangesBuilder_ == null) {
+        ensureHardwareCountRangesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, hardwareCountRanges_);
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearHardwareCountRanges() {
+      if (hardwareCountRangesBuilder_ == null) {
+        hardwareCountRanges_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeHardwareCountRanges(int index) {
+      if (hardwareCountRangesBuilder_ == null) {
+        ensureHardwareCountRangesIsMutable();
+        hardwareCountRanges_.remove(index);
+        onChanged();
+      } else {
+        hardwareCountRangesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder
+        getHardwareCountRangesBuilder(int index) {
+      return getHardwareCountRangesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder
+        getHardwareCountRangesOrBuilder(int index) {
+      if (hardwareCountRangesBuilder_ == null) {
+        return hardwareCountRanges_.get(index);
+      } else {
+        return hardwareCountRangesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>
+        getHardwareCountRangesOrBuilderList() {
+      if (hardwareCountRangesBuilder_ != null) {
+        return hardwareCountRangesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(hardwareCountRanges_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder
+        addHardwareCountRangesBuilder() {
+      return getHardwareCountRangesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder
+        addHardwareCountRangesBuilder(int index) {
+      return getHardwareCountRangesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The inclusive ranges of hardware counts that are allowed in a
+     * zone using this SKU.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder>
+        getHardwareCountRangesBuilderList() {
+      return getHardwareCountRangesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>
+        getHardwareCountRangesFieldBuilder() {
+      if (hardwareCountRangesBuilder_ == null) {
+        hardwareCountRangesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range.Builder,
+                com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>(
+                hardwareCountRanges_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        hardwareCountRanges_ = null;
+      }
+      return hardwareCountRangesBuilder_;
     }
 
     @java.lang.Override

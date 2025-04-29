@@ -953,6 +953,19 @@ public final class AzureClustersGrpc {
     return AzureClustersStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AzureClustersBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AzureClustersBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AzureClustersBlockingV2Stub>() {
+          @java.lang.Override
+          public AzureClustersBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AzureClustersBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AzureClustersBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1719,6 +1732,322 @@ public final class AzureClustersGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AzureClusters.
+   *
+   * <pre>
+   * The AzureClusters API provides a single centrally managed service
+   * to create and manage Anthos clusters that run on Azure infrastructure.
+   * </pre>
+   */
+  public static final class AzureClustersBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AzureClustersBlockingV2Stub> {
+    private AzureClustersBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AzureClustersBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AzureClustersBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource on a given Google Cloud project and region.
+     * `AzureClient` resources hold client authentication
+     * information needed by the Anthos Multicloud API to manage Azure resources
+     * on your Azure subscription on your behalf.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAzureClient(
+        com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAzureClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureClient getAzureClient(
+        com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources on a given Google Cloud project and region.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse listAzureClients(
+        com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAzureClientsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource.
+     * If the client is used by one or more clusters, deletion will
+     * fail and a `FAILED_PRECONDITION` error will be returned.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAzureClient(
+        com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAzureClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resource on a given Google Cloud Platform project and region.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAzureCluster(
+        com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAzureClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAzureCluster(
+        com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAzureClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster(
+        com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resources on a given Google Cloud project and region.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse listAzureClusters(
+        com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAzureClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Fails if the cluster has one or more associated
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAzureCluster(
+        com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAzureClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse
+        generateAzureClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAzureClusterAgentTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a short-lived access token to authenticate to a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse
+        generateAzureAccessToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAzureAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool],
+     * attached to a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAzureNodePool(
+        com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAzureNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAzureNodePool(
+        com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAzureNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool(
+        com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources on a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse listAzureNodePools(
+        com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAzureNodePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAzureNodePool(
+        com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAzureNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the OIDC discovery document for the cluster.
+     * See the
+     * [OpenID Connect Discovery 1.0
+     * specification](https://openid.net/specs/openid-connect-discovery-1_0.html)
+     * for details.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig getAzureOpenIdConfig(
+        com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureOpenIdConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys getAzureJsonWebKeys(
+        com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureJsonWebKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information, such as supported Azure regions and Kubernetes
+     * versions, on a given Google Cloud location.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureServerConfig getAzureServerConfig(
+        com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAzureServerConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AzureClusters.
    *
    * <pre>
    * The AzureClusters API provides a single centrally managed service

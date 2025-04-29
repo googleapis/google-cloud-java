@@ -46,6 +46,7 @@ public interface GetAwsServerConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

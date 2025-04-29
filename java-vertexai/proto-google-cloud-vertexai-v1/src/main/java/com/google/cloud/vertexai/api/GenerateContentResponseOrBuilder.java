@@ -36,6 +36,7 @@ public interface GenerateContentResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Candidate> getCandidatesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GenerateContentResponseOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Candidate getCandidates(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface GenerateContentResponseOrBuilder
    * </code>
    */
   int getCandidatesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface GenerateContentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.CandidateOrBuilder>
       getCandidatesOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface GenerateContentResponseOrBuilder
    * @return The modelVersion.
    */
   java.lang.String getModelVersion();
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public interface GenerateContentResponseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface GenerateContentResponseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface GenerateContentResponseOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface GenerateContentResponseOrBuilder
    * @return Whether the promptFeedback field is set.
    */
   boolean hasPromptFeedback();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface GenerateContentResponseOrBuilder
    * @return The promptFeedback.
    */
   com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback getPromptFeedback();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface GenerateContentResponseOrBuilder
    * @return Whether the usageMetadata field is set.
    */
   boolean hasUsageMetadata();
+
   /**
    *
    *
@@ -250,6 +261,7 @@ public interface GenerateContentResponseOrBuilder
    * @return The usageMetadata.
    */
   com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata getUsageMetadata();
+
   /**
    *
    *

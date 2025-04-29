@@ -33,6 +33,7 @@ public final class CancelJobResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.CancelJobResponse)
     CancelJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CancelJobResponse.newBuilder() to construct.
   private CancelJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class CancelJobResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

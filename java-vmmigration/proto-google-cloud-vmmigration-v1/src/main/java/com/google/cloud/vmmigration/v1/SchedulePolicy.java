@@ -33,6 +33,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.SchedulePolicy)
     SchedulePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SchedulePolicy.newBuilder() to construct.
   private SchedulePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int IDLE_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration idleDuration_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIdleDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : idleDuration_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SKIP_OS_ADAPTATION_FIELD_NUMBER = 2;
   private boolean skipOsAdaptation_ = false;
+
   /**
    *
    *
@@ -305,6 +310,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -521,6 +527,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         idleDurationBuilder_;
+
     /**
      *
      *
@@ -535,6 +542,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIdleDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
         return idleDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIdleDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -674,6 +688,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
             : idleDuration_;
       }
     }
+
     /**
      *
      *
@@ -701,6 +716,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean skipOsAdaptation_;
+
     /**
      *
      *
@@ -718,6 +734,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getSkipOsAdaptation() {
       return skipOsAdaptation_;
     }
+
     /**
      *
      *
@@ -739,6 +756,7 @@ public final class SchedulePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

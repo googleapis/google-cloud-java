@@ -36,6 +36,7 @@ public interface DataAccessLabelOrBuilder
    * @return Whether the udmQuery field is set.
    */
   boolean hasUdmQuery();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataAccessLabelOrBuilder
    * @return The udmQuery.
    */
   java.lang.String getUdmQuery();
+
   /**
    *
    *
@@ -65,26 +67,23 @@ public interface DataAccessLabelOrBuilder
    *
    *
    * <pre>
-   * Required. The unique resource name of the data access label.
+   * The unique resource name of the data access label.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * Required. The unique resource name of the data access label.
+   * The unique resource name of the data access label.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -103,6 +102,7 @@ public interface DataAccessLabelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -130,6 +130,7 @@ public interface DataAccessLabelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -143,6 +144,7 @@ public interface DataAccessLabelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -168,6 +170,7 @@ public interface DataAccessLabelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -181,6 +184,7 @@ public interface DataAccessLabelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -205,6 +209,7 @@ public interface DataAccessLabelOrBuilder
    * @return The author.
    */
   java.lang.String getAuthor();
+
   /**
    *
    *
@@ -230,6 +235,7 @@ public interface DataAccessLabelOrBuilder
    * @return The lastEditor.
    */
   java.lang.String getLastEditor();
+
   /**
    *
    *
@@ -255,6 +261,7 @@ public interface DataAccessLabelOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

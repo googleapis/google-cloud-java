@@ -39,6 +39,7 @@ public interface ScopeInfoOrBuilder
    * @return Whether the referenceListScope field is set.
    */
   boolean hasReferenceListScope();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ScopeInfoOrBuilder
    * @return The referenceListScope.
    */
   google.cloud.chronicle.v1.ReferenceListScope getReferenceListScope();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreatePersistentResourceRequest)
     CreatePersistentResourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreatePersistentResourceRequest.newBuilder() to construct.
   private CreatePersistentResourceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
 
   public static final int PERSISTENT_RESOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.PersistentResource persistentResource_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
   public boolean hasPersistentResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1.PersistentResource.getDefaultInstance()
         : persistentResource_;
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object persistentResourceId_ = "";
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +431,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -684,6 +694,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -709,6 +720,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1.PersistentResource.Builder,
             com.google.cloud.aiplatform.v1.PersistentResourceOrBuilder>
         persistentResourceBuilder_;
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
     public boolean hasPersistentResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
         return persistentResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +919,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return getPersistentResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -959,6 +981,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
             : persistentResource_;
       }
     }
+
     /**
      *
      *
@@ -988,6 +1011,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object persistentResourceId_ = "";
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1065,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1091,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1113,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

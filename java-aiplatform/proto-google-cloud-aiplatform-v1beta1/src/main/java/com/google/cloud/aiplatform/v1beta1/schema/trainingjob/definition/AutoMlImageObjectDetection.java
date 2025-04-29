@@ -35,6 +35,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetection)
     AutoMlImageObjectDetectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlImageObjectDetection.newBuilder() to construct.
   private AutoMlImageObjectDetection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionInputs
       inputs_;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             .AutoMlImageObjectDetectionInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionMetadata
       metadata_;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             .AutoMlImageObjectDetectionMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -400,6 +407,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -656,6 +664,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageObjectDetectionInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -672,6 +681,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -724,6 +735,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +817,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +836,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             : inputs_;
       }
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageObjectDetectionMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -905,6 +923,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -930,6 +949,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -957,6 +977,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1002,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1059,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1077,6 +1102,7 @@ public final class AutoMlImageObjectDetection extends com.google.protobuf.Genera
             : metadata_;
       }
     }
+
     /**
      *
      *

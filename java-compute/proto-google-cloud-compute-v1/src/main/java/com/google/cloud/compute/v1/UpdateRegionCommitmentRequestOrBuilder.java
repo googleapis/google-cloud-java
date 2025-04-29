@@ -36,6 +36,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return The commitment.
    */
   java.lang.String getCommitment();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return Whether the commitmentResource field is set.
    */
   boolean hasCommitmentResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return The commitmentResource.
    */
   com.google.cloud.compute.v1.Commitment getCommitmentResource();
+
   /**
    *
    *
@@ -96,12 +99,14 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return Whether the paths field is set.
    */
   boolean hasPaths();
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
    * @return The paths.
    */
   java.lang.String getPaths();
+
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -123,6 +128,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public interface UpdateRegionCommitmentRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
+
   /**
    *
    *

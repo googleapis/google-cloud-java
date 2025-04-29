@@ -35,6 +35,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.AutoscalingMetricSpec)
     AutoscalingMetricSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingMetricSpec.newBuilder() to construct.
   private AutoscalingMetricSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricName_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
 
   public static final int TARGET_FIELD_NUMBER = 2;
   private int target_ = 0;
+
   /**
    *
    *
@@ -315,6 +319,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -514,6 +519,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object metricName_ = "";
+
     /**
      *
      *
@@ -541,6 +547,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     }
 
     private int target_;
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     public int getTarget() {
       return target_;
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -53,6 +53,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.TimeWindow)
     TimeWindowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimeWindow.newBuilder() to construct.
   private TimeWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOFT_START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp softStartTime_;
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSoftStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : softStartTime_;
   }
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOFT_END_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp softEndTime_;
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSoftEndTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -262,6 +274,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getSoftEndTime() {
     return softEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : softEndTime_;
   }
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_HOUR_BEFORE_SOFT_START_TIME_FIELD_NUMBER = 5;
   private double costPerHourBeforeSoftStartTime_ = 0D;
+
   /**
    *
    *
@@ -303,6 +317,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCostPerHourBeforeSoftStartTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -331,6 +346,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_HOUR_AFTER_SOFT_END_TIME_FIELD_NUMBER = 6;
   private double costPerHourAfterSoftEndTime_ = 0D;
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCostPerHourAfterSoftEndTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -630,6 +647,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -939,6 +957,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1038,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1067,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1104,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1144,6 +1172,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1163,6 +1192,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1237,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1287,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1303,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1286,6 +1321,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1319,6 +1355,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         softStartTimeBuilder_;
+
     /**
      *
      *
@@ -1333,6 +1370,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSoftStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         return softStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1375,6 +1414,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1434,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1462,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1482,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1497,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSoftStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1472,6 +1516,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             : softStartTime_;
       }
     }
+
     /**
      *
      *
@@ -1504,6 +1549,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         softEndTimeBuilder_;
+
     /**
      *
      *
@@ -1518,6 +1564,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSoftEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1538,6 +1585,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
         return softEndTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1608,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1628,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1606,6 +1656,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1676,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1691,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSoftEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1657,6 +1710,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
             : softEndTime_;
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1738,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerHourBeforeSoftStartTime_;
+
     /**
      *
      *
@@ -1709,6 +1764,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostPerHourBeforeSoftStartTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1734,6 +1790,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerHourBeforeSoftStartTime() {
       return costPerHourBeforeSoftStartTime_;
     }
+
     /**
      *
      *
@@ -1763,6 +1820,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1792,6 +1850,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerHourAfterSoftEndTime_;
+
     /**
      *
      *
@@ -1817,6 +1876,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostPerHourAfterSoftEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1842,6 +1902,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerHourAfterSoftEndTime() {
       return costPerHourAfterSoftEndTime_;
     }
+
     /**
      *
      *
@@ -1871,6 +1932,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

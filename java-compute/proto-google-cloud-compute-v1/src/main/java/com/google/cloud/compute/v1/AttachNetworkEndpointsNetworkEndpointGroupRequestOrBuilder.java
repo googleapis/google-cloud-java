@@ -37,6 +37,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * @return Whether the networkEndpointGroupsAttachEndpointsRequestResource field is set.
    */
   boolean hasNetworkEndpointGroupsAttachEndpointsRequestResource();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest
       getNetworkEndpointGroupsAttachEndpointsRequestResource();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

@@ -278,6 +278,19 @@ public final class SchemaServiceGrpc {
     return SchemaServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SchemaServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SchemaServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SchemaServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SchemaServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SchemaServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SchemaServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -504,6 +517,91 @@ public final class SchemaServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SchemaService.
+   *
+   * <pre>
+   * Service for managing [Schema][google.cloud.discoveryengine.v1alpha.Schema]s.
+   * </pre>
+   */
+  public static final class SchemaServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SchemaServiceBlockingV2Stub> {
+    private SchemaServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SchemaServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SchemaServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [Schema][google.cloud.discoveryengine.v1alpha.Schema].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Schema getSchema(
+        com.google.cloud.discoveryengine.v1alpha.GetSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of [Schema][google.cloud.discoveryengine.v1alpha.Schema]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListSchemasResponse listSchemas(
+        com.google.cloud.discoveryengine.v1alpha.ListSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchemasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Schema][google.cloud.discoveryengine.v1alpha.Schema].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSchema(
+        com.google.cloud.discoveryengine.v1alpha.CreateSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [Schema][google.cloud.discoveryengine.v1alpha.Schema].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSchema(
+        com.google.cloud.discoveryengine.v1alpha.UpdateSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Schema][google.cloud.discoveryengine.v1alpha.Schema].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSchema(
+        com.google.cloud.discoveryengine.v1alpha.DeleteSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSchemaMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SchemaService.
    *
    * <pre>
    * Service for managing [Schema][google.cloud.discoveryengine.v1alpha.Schema]s.

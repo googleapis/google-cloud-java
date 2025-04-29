@@ -43,6 +43,7 @@ public interface UpdateReferenceListRequestOrBuilder
    * @return Whether the referenceList field is set.
    */
   boolean hasReferenceList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface UpdateReferenceListRequestOrBuilder
    * @return The referenceList.
    */
   google.cloud.chronicle.v1.ReferenceList getReferenceList();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface UpdateReferenceListRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface UpdateReferenceListRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

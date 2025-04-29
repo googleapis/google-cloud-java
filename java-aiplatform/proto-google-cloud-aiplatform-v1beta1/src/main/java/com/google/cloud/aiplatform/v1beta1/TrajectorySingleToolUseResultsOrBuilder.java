@@ -37,6 +37,7 @@ public interface TrajectorySingleToolUseResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseMetricValue>
       getTrajectorySingleToolUseMetricValuesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TrajectorySingleToolUseResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseMetricValue
       getTrajectorySingleToolUseMetricValues(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface TrajectorySingleToolUseResultsOrBuilder
    * </code>
    */
   int getTrajectorySingleToolUseMetricValuesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface TrajectorySingleToolUseResultsOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseMetricValueOrBuilder>
       getTrajectorySingleToolUseMetricValuesOrBuilderList();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GatekeeperDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for gatekeeperControllerManagerState.
    */
   int getGatekeeperControllerManagerStateValue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface GatekeeperDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for gatekeeperAudit.
    */
   int getGatekeeperAuditValue();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface GatekeeperDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for gatekeeperMutation.
    */
   int getGatekeeperMutationValue();
+
   /**
    *
    *

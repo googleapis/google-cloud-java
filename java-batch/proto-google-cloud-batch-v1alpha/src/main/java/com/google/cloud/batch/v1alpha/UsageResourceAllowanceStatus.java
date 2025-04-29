@@ -33,6 +33,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowanceStatus)
     UsageResourceAllowanceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UsageResourceAllowanceStatus.newBuilder() to construct.
   private UsageResourceAllowanceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return Whether the consumptionInterval field is set.
      */
     boolean hasConsumptionInterval();
+
     /**
      *
      *
@@ -96,6 +98,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return The consumptionInterval.
      */
     com.google.type.Interval getConsumptionInterval();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return Whether the limit field is set.
      */
     boolean hasLimit();
+
     /**
      *
      *
@@ -148,6 +152,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return Whether the consumed field is set.
      */
     boolean hasConsumed();
+
     /**
      *
      *
@@ -161,6 +166,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      */
     double getConsumed();
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.LimitStatus)
       LimitStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LimitStatus.newBuilder() to construct.
     private LimitStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -207,6 +214,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     private int bitField0_;
     public static final int CONSUMPTION_INTERVAL_FIELD_NUMBER = 1;
     private com.google.type.Interval consumptionInterval_;
+
     /**
      *
      *
@@ -224,6 +232,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasConsumptionInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -243,6 +252,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           ? com.google.type.Interval.getDefaultInstance()
           : consumptionInterval_;
     }
+
     /**
      *
      *
@@ -263,6 +273,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
 
     public static final int LIMIT_FIELD_NUMBER = 2;
     private double limit_ = 0D;
+
     /**
      *
      *
@@ -279,6 +290,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -298,6 +310,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
 
     public static final int CONSUMED_FIELD_NUMBER = 3;
     private double consumed_ = 0D;
+
     /**
      *
      *
@@ -313,6 +326,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasConsumed() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -534,6 +548,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -783,6 +798,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
               com.google.type.Interval.Builder,
               com.google.type.IntervalOrBuilder>
           consumptionIntervalBuilder_;
+
       /**
        *
        *
@@ -799,6 +815,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public boolean hasConsumptionInterval() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -821,6 +838,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           return consumptionIntervalBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -845,6 +863,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -866,6 +885,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -895,6 +915,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -916,6 +937,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -932,6 +954,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return getConsumptionIntervalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -952,6 +975,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
               : consumptionInterval_;
         }
       }
+
       /**
        *
        *
@@ -981,6 +1005,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       }
 
       private double limit_;
+
       /**
        *
        *
@@ -997,6 +1022,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public boolean hasLimit() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1013,6 +1039,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public double getLimit() {
         return limit_;
       }
+
       /**
        *
        *
@@ -1033,6 +1060,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1053,6 +1081,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       }
 
       private double consumed_;
+
       /**
        *
        *
@@ -1068,6 +1097,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public boolean hasConsumed() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1083,6 +1113,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public double getConsumed() {
         return consumed_;
       }
+
       /**
        *
        *
@@ -1102,6 +1133,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1207,6 +1239,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return Whether the consumptionInterval field is set.
      */
     boolean hasConsumptionInterval();
+
     /**
      *
      *
@@ -1221,6 +1254,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return The consumptionInterval.
      */
     com.google.type.Interval getConsumptionInterval();
+
     /**
      *
      *
@@ -1246,6 +1280,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * @return Whether the consumed field is set.
      */
     boolean hasConsumed();
+
     /**
      *
      *
@@ -1259,6 +1294,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      */
     double getConsumed();
   }
+
   /**
    * Protobuf type {@code google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption}
    */
@@ -1267,6 +1303,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption)
       PeriodConsumptionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PeriodConsumption.newBuilder() to construct.
     private PeriodConsumption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1299,6 +1336,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     private int bitField0_;
     public static final int CONSUMPTION_INTERVAL_FIELD_NUMBER = 1;
     private com.google.type.Interval consumptionInterval_;
+
     /**
      *
      *
@@ -1316,6 +1354,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasConsumptionInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1335,6 +1374,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           ? com.google.type.Interval.getDefaultInstance()
           : consumptionInterval_;
     }
+
     /**
      *
      *
@@ -1355,6 +1395,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
 
     public static final int CONSUMED_FIELD_NUMBER = 2;
     private double consumed_ = 0D;
+
     /**
      *
      *
@@ -1370,6 +1411,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasConsumed() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1579,6 +1621,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      * Protobuf type {@code
      * google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption}
@@ -1811,6 +1854,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
               com.google.type.Interval.Builder,
               com.google.type.IntervalOrBuilder>
           consumptionIntervalBuilder_;
+
       /**
        *
        *
@@ -1827,6 +1871,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public boolean hasConsumptionInterval() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1849,6 +1894,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           return consumptionIntervalBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1873,6 +1919,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1894,6 +1941,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1923,6 +1971,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         }
         return this;
       }
+
       /**
        *
        *
@@ -1944,6 +1993,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1960,6 +2010,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return getConsumptionIntervalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1980,6 +2031,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
               : consumptionInterval_;
         }
       }
+
       /**
        *
        *
@@ -2009,6 +2061,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       }
 
       private double consumed_;
+
       /**
        *
        *
@@ -2024,6 +2077,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public boolean hasConsumed() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2039,6 +2093,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public double getConsumed() {
         return consumed_;
       }
+
       /**
        *
        *
@@ -2058,6 +2113,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2164,6 +2220,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * </code>
      */
     int getLatestPeriodConsumptionsCount();
+
     /**
      *
      *
@@ -2178,12 +2235,14 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
      * </code>
      */
     boolean containsLatestPeriodConsumptions(java.lang.String key);
+
     /** Use {@link #getLatestPeriodConsumptionsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<
             java.lang.String,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption>
         getLatestPeriodConsumptions();
+
     /**
      *
      *
@@ -2201,6 +2260,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             java.lang.String,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption>
         getLatestPeriodConsumptionsMap();
+
     /**
      *
      *
@@ -2221,6 +2281,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             /* nullable */
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption
                 defaultValue);
+
     /**
      *
      *
@@ -2237,6 +2298,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.PeriodConsumption
         getLatestPeriodConsumptionsOrThrow(java.lang.String key);
   }
+
   /**
    *
    *
@@ -2252,6 +2314,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.ConsumptionReport)
       ConsumptionReportOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConsumptionReport.newBuilder() to construct.
     private ConsumptionReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2333,6 +2396,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public int getLatestPeriodConsumptionsCount() {
       return internalGetLatestPeriodConsumptions().getMap().size();
     }
+
     /**
      *
      *
@@ -2353,6 +2417,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       }
       return internalGetLatestPeriodConsumptions().getMap().containsKey(key);
     }
+
     /** Use {@link #getLatestPeriodConsumptionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2362,6 +2427,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         getLatestPeriodConsumptions() {
       return getLatestPeriodConsumptionsMap();
     }
+
     /**
      *
      *
@@ -2382,6 +2448,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         getLatestPeriodConsumptionsMap() {
       return internalGetLatestPeriodConsumptions().getMap();
     }
+
     /**
      *
      *
@@ -2412,6 +2479,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           map = internalGetLatestPeriodConsumptions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2628,6 +2696,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2893,7 +2962,8 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             defaultEntry() {
           return LatestPeriodConsumptionsDefaultEntryHolder.defaultEntry;
         }
-      };
+      }
+      ;
 
       private static final LatestPeriodConsumptionsConverter latestPeriodConsumptionsConverter =
           new LatestPeriodConsumptionsConverter();
@@ -2938,6 +3008,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       public int getLatestPeriodConsumptionsCount() {
         return internalGetLatestPeriodConsumptions().ensureBuilderMap().size();
       }
+
       /**
        *
        *
@@ -2958,6 +3029,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         }
         return internalGetLatestPeriodConsumptions().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getLatestPeriodConsumptionsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -2967,6 +3039,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           getLatestPeriodConsumptions() {
         return getLatestPeriodConsumptionsMap();
       }
+
       /**
        *
        *
@@ -2987,6 +3060,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           getLatestPeriodConsumptionsMap() {
         return internalGetLatestPeriodConsumptions().getImmutableMap();
       }
+
       /**
        *
        *
@@ -3020,6 +3094,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             ? latestPeriodConsumptionsConverter.build(map.get(key))
             : defaultValue;
       }
+
       /**
        *
        *
@@ -3055,6 +3130,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         internalGetMutableLatestPeriodConsumptions().clear();
         return this;
       }
+
       /**
        *
        *
@@ -3075,6 +3151,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         internalGetMutableLatestPeriodConsumptions().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -3084,6 +3161,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         bitField0_ |= 0x00000001;
         return internalGetMutableLatestPeriodConsumptions().ensureMessageMap();
       }
+
       /**
        *
        *
@@ -3110,6 +3188,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        *
        *
@@ -3140,6 +3219,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         bitField0_ |= 0x00000001;
         return this;
       }
+
       /**
        *
        *
@@ -3254,6 +3334,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -3271,6 +3352,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -3295,6 +3377,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
 
   public static final int LIMIT_STATUS_FIELD_NUMBER = 2;
   private com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.LimitStatus limitStatus_;
+
   /**
    *
    *
@@ -3312,6 +3395,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
   public boolean hasLimitStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3332,6 +3416,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             .getDefaultInstance()
         : limitStatus_;
   }
+
   /**
    *
    *
@@ -3354,6 +3439,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
 
   public static final int REPORT_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.ConsumptionReport report_;
+
   /**
    *
    *
@@ -3371,6 +3457,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
   public boolean hasReport() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3391,6 +3478,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             .getDefaultInstance()
         : report_;
   }
+
   /**
    *
    *
@@ -3605,6 +3693,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3836,6 +3925,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3853,6 +3943,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3873,6 +3964,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3894,6 +3986,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
           ? com.google.cloud.batch.v1alpha.ResourceAllowanceState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3917,6 +4010,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3943,6 +4037,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.LimitStatus.Builder,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.LimitStatusOrBuilder>
         limitStatusBuilder_;
+
     /**
      *
      *
@@ -3959,6 +4054,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasLimitStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3983,6 +4079,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         return limitStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4008,6 +4105,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4031,6 +4129,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4063,6 +4162,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -4084,6 +4184,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4101,6 +4202,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return getLimitStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4123,6 +4225,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             : limitStatus_;
       }
     }
+
     /**
      *
      *
@@ -4157,6 +4260,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.ConsumptionReport.Builder,
             com.google.cloud.batch.v1alpha.UsageResourceAllowanceStatus.ConsumptionReportOrBuilder>
         reportBuilder_;
+
     /**
      *
      *
@@ -4173,6 +4277,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
     public boolean hasReport() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4197,6 +4302,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
         return reportBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4222,6 +4328,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4245,6 +4352,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4277,6 +4385,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -4298,6 +4407,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4315,6 +4425,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
       onChanged();
       return getReportFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4337,6 +4448,7 @@ public final class UsageResourceAllowanceStatus extends com.google.protobuf.Gene
             : report_;
       }
     }
+
     /**
      *
      *

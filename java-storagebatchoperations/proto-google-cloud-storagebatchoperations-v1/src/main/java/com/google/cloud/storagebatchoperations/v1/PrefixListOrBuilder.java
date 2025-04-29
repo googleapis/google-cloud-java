@@ -41,6 +41,7 @@ public interface PrefixListOrBuilder
    * @return A list containing the includedObjectPrefixes.
    */
   java.util.List<java.lang.String> getIncludedObjectPrefixesList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface PrefixListOrBuilder
    * @return The count of includedObjectPrefixes.
    */
   int getIncludedObjectPrefixesCount();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface PrefixListOrBuilder
    * @return The includedObjectPrefixes at the given index.
    */
   java.lang.String getIncludedObjectPrefixes(int index);
+
   /**
    *
    *

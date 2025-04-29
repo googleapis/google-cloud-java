@@ -37,6 +37,7 @@ public interface ExportSBOMRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ExportSBOMRequestOrBuilder
    * @return Whether the cloudStorageLocation field is set.
    */
   boolean hasCloudStorageLocation();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportSBOMRequestOrBuilder
    * @return The cloudStorageLocation.
    */
   com.google.containeranalysis.v1.ExportSBOMRequest.CloudStorageLocation getCloudStorageLocation();
+
   /**
    *
    *

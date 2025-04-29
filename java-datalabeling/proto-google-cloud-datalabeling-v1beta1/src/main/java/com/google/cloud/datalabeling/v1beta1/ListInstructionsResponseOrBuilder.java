@@ -34,6 +34,7 @@ public interface ListInstructionsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Instruction> getInstructionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListInstructionsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Instruction getInstructions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListInstructionsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
   int getInstructionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListInstructionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder>
       getInstructionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListInstructionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface ExportBacktestResultMetadataRequestOrBuilder
    * @return The backtestResult.
    */
   java.lang.String getBacktestResult();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ExportBacktestResultMetadataRequestOrBuilder
    * @return Whether the structuredMetadataDestination field is set.
    */
   boolean hasStructuredMetadataDestination();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportBacktestResultMetadataRequestOrBuilder
    * @return The structuredMetadataDestination.
    */
   com.google.cloud.financialservices.v1.BigQueryDestination getStructuredMetadataDestination();
+
   /**
    *
    *

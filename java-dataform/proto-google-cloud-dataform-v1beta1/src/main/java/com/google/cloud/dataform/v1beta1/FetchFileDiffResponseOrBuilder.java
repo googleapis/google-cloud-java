@@ -36,6 +36,7 @@ public interface FetchFileDiffResponseOrBuilder
    * @return The formattedDiff.
    */
   java.lang.String getFormattedDiff();
+
   /**
    *
    *

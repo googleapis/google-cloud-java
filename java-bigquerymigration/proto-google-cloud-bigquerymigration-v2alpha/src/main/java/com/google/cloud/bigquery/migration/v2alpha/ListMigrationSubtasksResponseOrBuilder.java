@@ -37,6 +37,7 @@ public interface ListMigrationSubtasksResponseOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask>
       getMigrationSubtasksList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListMigrationSubtasksResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask getMigrationSubtasks(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListMigrationSubtasksResponseOrBuilder
    * </code>
    */
   int getMigrationSubtasksCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListMigrationSubtasksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2alpha.MigrationSubtaskOrBuilder>
       getMigrationSubtasksOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListMigrationSubtasksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

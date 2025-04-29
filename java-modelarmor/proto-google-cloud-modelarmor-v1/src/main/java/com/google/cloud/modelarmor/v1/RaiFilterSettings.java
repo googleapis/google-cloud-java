@@ -33,6 +33,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.RaiFilterSettings)
     RaiFilterSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RaiFilterSettings.newBuilder() to construct.
   private RaiFilterSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for filterType.
      */
     int getFilterTypeValue();
+
     /**
      *
      *
@@ -115,6 +117,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for confidenceLevel.
      */
     int getConfidenceLevelValue();
+
     /**
      *
      *
@@ -134,6 +137,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.modelarmor.v1.DetectionConfidenceLevel getConfidenceLevel();
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter)
       RaiFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RaiFilter.newBuilder() to construct.
     private RaiFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -181,6 +186,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
 
     public static final int FILTER_TYPE_FIELD_NUMBER = 1;
     private int filterType_ = 0;
+
     /**
      *
      *
@@ -198,6 +204,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
     public int getFilterTypeValue() {
       return filterType_;
     }
+
     /**
      *
      *
@@ -220,6 +227,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
 
     public static final int CONFIDENCE_LEVEL_FIELD_NUMBER = 2;
     private int confidenceLevel_ = 0;
+
     /**
      *
      *
@@ -241,6 +249,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
     public int getConfidenceLevelValue() {
       return confidenceLevel_;
     }
+
     /**
      *
      *
@@ -445,6 +454,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int filterType_ = 0;
+
       /**
        *
        *
@@ -663,6 +674,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       public int getFilterTypeValue() {
         return filterType_;
       }
+
       /**
        *
        *
@@ -683,6 +695,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -702,6 +715,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
             com.google.cloud.modelarmor.v1.RaiFilterType.forNumber(filterType_);
         return result == null ? com.google.cloud.modelarmor.v1.RaiFilterType.UNRECOGNIZED : result;
       }
+
       /**
        *
        *
@@ -725,6 +739,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -746,6 +761,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
 
       private int confidenceLevel_ = 0;
+
       /**
        *
        *
@@ -767,6 +783,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       public int getConfidenceLevelValue() {
         return confidenceLevel_;
       }
+
       /**
        *
        *
@@ -791,6 +808,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -816,6 +834,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
             ? com.google.cloud.modelarmor.v1.DetectionConfidenceLevel.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -844,6 +863,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -937,6 +957,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter> raiFilters_;
+
   /**
    *
    *
@@ -953,6 +974,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       getRaiFiltersList() {
     return raiFilters_;
   }
+
   /**
    *
    *
@@ -970,6 +992,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       getRaiFiltersOrBuilderList() {
     return raiFilters_;
   }
+
   /**
    *
    *
@@ -985,6 +1008,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
   public int getRaiFiltersCount() {
     return raiFilters_.size();
   }
+
   /**
    *
    *
@@ -1000,6 +1024,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter getRaiFilters(int index) {
     return raiFilters_.get(index);
   }
+
   /**
    *
    *
@@ -1178,6 +1203,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1445,6 +1471,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         return raiFiltersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1490,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         return raiFiltersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1481,6 +1509,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         return raiFiltersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1506,6 +1535,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1529,6 +1559,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1553,6 +1584,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1610,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1633,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1623,6 +1657,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1681,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +1703,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1725,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1741,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         int index) {
       return getRaiFiltersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1722,6 +1761,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         return raiFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1742,6 +1782,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(raiFilters_);
       }
     }
+
     /**
      *
      *
@@ -1759,6 +1800,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1777,6 +1819,7 @@ public final class RaiFilterSettings extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.modelarmor.v1.RaiFilterSettings.RaiFilter.getDefaultInstance());
     }
+
     /**
      *
      *

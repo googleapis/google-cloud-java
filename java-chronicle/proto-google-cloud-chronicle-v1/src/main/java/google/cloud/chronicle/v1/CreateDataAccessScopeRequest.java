@@ -33,6 +33,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.chronicle.v1.CreateDataAccessScopeRequest)
     CreateDataAccessScopeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDataAccessScopeRequest.newBuilder() to construct.
   private CreateDataAccessScopeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
 
   public static final int DATA_ACCESS_SCOPE_FIELD_NUMBER = 2;
   private google.cloud.chronicle.v1.DataAccessScope dataAccessScope_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
   public boolean hasDataAccessScope() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
         ? google.cloud.chronicle.v1.DataAccessScope.getDefaultInstance()
         : dataAccessScope_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataAccessScopeId_ = "";
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +654,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +785,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
             google.cloud.chronicle.v1.DataAccessScope.Builder,
             google.cloud.chronicle.v1.DataAccessScopeOrBuilder>
         dataAccessScopeBuilder_;
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
     public boolean hasDataAccessScope() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
         return dataAccessScopeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return getDataAccessScopeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
             : dataAccessScope_;
       }
     }
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object dataAccessScopeId_ = "";
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1043,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1067,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class CreateDataAccessScopeRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -937,6 +937,19 @@ public final class ModelServiceGrpc {
     return ModelServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ModelServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ModelServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ModelServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ModelServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ModelServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ModelServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1639,6 +1652,296 @@ public final class ModelServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ModelService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's machine learning Models.
+   * </pre>
+   */
+  public static final class ModelServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ModelServiceBlockingV2Stub> {
+    private ModelServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ModelServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ModelServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads a Model artifact into Vertex AI.
+     * </pre>
+     */
+    public com.google.longrunning.Operation uploadModel(
+        com.google.cloud.aiplatform.v1.UploadModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Model getModel(
+        com.google.cloud.aiplatform.v1.GetModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Models in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelsResponse listModels(
+        com.google.cloud.aiplatform.v1.ListModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists versions of the specified model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelVersionsResponse listModelVersions(
+        com.google.cloud.aiplatform.v1.ListModelVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse
+        listModelVersionCheckpoints(
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelVersionCheckpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Model updateModel(
+        com.google.cloud.aiplatform.v1.UpdateModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally update the dataset used for an examples model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExplanationDataset(
+        com.google.cloud.aiplatform.v1.UpdateExplanationDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExplanationDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model.
+     * A model cannot be deleted if any
+     * [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the
+     * model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models]
+     * field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModel(
+        com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model version.
+     * Model version can only be deleted if there are no
+     * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel] created from it.
+     * Deleting the only version in the Model is not allowed. Use
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
+     * deleting the Model instead.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelVersion(
+        com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a set of aliases for a Model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Model mergeVersionAliases(
+        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMergeVersionAliasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, exportable Model to a location specified by the
+     * user. A Model is considered to be exportable if it has at least one
+     * [supported export
+     * format][google.cloud.aiplatform.v1.Model.supported_export_formats].
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportModel(
+        com.google.cloud.aiplatform.v1.ExportModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies an already existing Vertex AI Model into the specified Location.
+     * The source Model must exist in the same Project.
+     * When copying custom Models, the users themselves are responsible for
+     * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be
+     * region-agnostic, as well as making sure that any resources (e.g. files) it
+     * depends on remain accessible.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyModel(
+        com.google.cloud.aiplatform.v1.CopyModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCopyModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an externally generated ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ModelEvaluation importModelEvaluation(
+        com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated ModelEvaluationSlice.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse
+        batchImportModelEvaluationSlices(
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchImportModelEvaluationSlicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated EvaluatedAnnotations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse
+        batchImportEvaluatedAnnotations(
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchImportEvaluatedAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ModelEvaluation getModelEvaluation(
+        com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelEvaluations in a Model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse listModelEvaluations(
+        com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelEvaluationSlice.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ModelEvaluationSlice getModelEvaluationSlice(
+        com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelEvaluationSliceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelEvaluationSlices in a ModelEvaluation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse
+        listModelEvaluationSlices(
+            com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelEvaluationSlicesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ModelService.
    *
    * <pre>
    * A service for managing Vertex AI's machine learning Models.

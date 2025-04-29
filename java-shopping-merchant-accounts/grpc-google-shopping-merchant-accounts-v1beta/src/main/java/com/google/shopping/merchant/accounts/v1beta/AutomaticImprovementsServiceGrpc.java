@@ -161,6 +161,20 @@ public final class AutomaticImprovementsServiceGrpc {
     return AutomaticImprovementsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AutomaticImprovementsServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AutomaticImprovementsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutomaticImprovementsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AutomaticImprovementsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutomaticImprovementsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AutomaticImprovementsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -312,6 +326,59 @@ public final class AutomaticImprovementsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AutomaticImprovementsService.
+   *
+   * <pre>
+   * Service to manage the automatic improvements of an account. The automatic
+   * improvements of the account can be used to automatically update products,
+   * improve images and shipping.
+   * </pre>
+   */
+  public static final class AutomaticImprovementsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AutomaticImprovementsServiceBlockingV2Stub> {
+    private AutomaticImprovementsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AutomaticImprovementsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AutomaticImprovementsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the automatic improvements of an account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements
+        getAutomaticImprovements(
+            com.google.shopping.merchant.accounts.v1beta.GetAutomaticImprovementsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutomaticImprovementsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the automatic improvements of an account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements
+        updateAutomaticImprovements(
+            com.google.shopping.merchant.accounts.v1beta.UpdateAutomaticImprovementsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutomaticImprovementsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * AutomaticImprovementsService.
    *
    * <pre>
    * Service to manage the automatic improvements of an account. The automatic

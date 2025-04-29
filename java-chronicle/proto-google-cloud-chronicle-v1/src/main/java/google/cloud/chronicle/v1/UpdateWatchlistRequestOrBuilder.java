@@ -42,6 +42,7 @@ public interface UpdateWatchlistRequestOrBuilder
    * @return Whether the watchlist field is set.
    */
   boolean hasWatchlist();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateWatchlistRequestOrBuilder
    * @return The watchlist.
    */
   google.cloud.chronicle.v1.Watchlist getWatchlist();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpdateWatchlistRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateWatchlistRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

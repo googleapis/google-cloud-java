@@ -36,6 +36,7 @@ public interface TriggerOrBuilder
    * @return Whether the onDemand field is set.
    */
   boolean hasOnDemand();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TriggerOrBuilder
    * @return The onDemand.
    */
   com.google.cloud.dataplex.v1.Trigger.OnDemand getOnDemand();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TriggerOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TriggerOrBuilder
    * @return The schedule.
    */
   com.google.cloud.dataplex.v1.Trigger.Schedule getSchedule();
+
   /**
    *
    *

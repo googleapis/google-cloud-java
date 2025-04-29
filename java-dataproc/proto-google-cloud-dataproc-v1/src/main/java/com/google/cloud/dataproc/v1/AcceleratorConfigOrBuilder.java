@@ -51,6 +51,7 @@ public interface AcceleratorConfigOrBuilder
    * @return The acceleratorTypeUri.
    */
   java.lang.String getAcceleratorTypeUri();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -83,10 +86,12 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.FirewallPoliciesScopedList>
       getItems();
+
   /**
    *
    *
@@ -99,6 +104,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.FirewallPoliciesScopedList>
       getItemsMap();
+
   /**
    *
    *
@@ -114,6 +120,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.FirewallPoliciesScopedList defaultValue);
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -150,6 +158,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -175,6 +184,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -187,6 +197,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -212,6 +223,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -224,6 +236,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -249,6 +262,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -261,6 +275,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -274,6 +289,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -300,6 +316,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -312,6 +329,7 @@ public interface NetworkFirewallPolicyAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

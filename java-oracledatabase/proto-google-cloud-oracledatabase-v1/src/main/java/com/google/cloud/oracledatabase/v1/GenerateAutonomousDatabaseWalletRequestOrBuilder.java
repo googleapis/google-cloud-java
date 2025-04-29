@@ -39,6 +39,7 @@ public interface GenerateAutonomousDatabaseWalletRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface GenerateAutonomousDatabaseWalletRequestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface GenerateAutonomousDatabaseWalletRequestOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *

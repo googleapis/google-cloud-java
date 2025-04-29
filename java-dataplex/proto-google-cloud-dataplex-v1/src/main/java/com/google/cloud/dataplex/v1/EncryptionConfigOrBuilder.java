@@ -41,6 +41,7 @@ public interface EncryptionConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface EncryptionConfigOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface EncryptionConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface EncryptionConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface EncryptionConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface EncryptionConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface EncryptionConfigOrBuilder
    * @return The enum numeric value on the wire for encryptionState.
    */
   int getEncryptionStateValue();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface EncryptionConfigOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface EncryptionConfigOrBuilder
    * @return Whether the failureDetails field is set.
    */
   boolean hasFailureDetails();
+
   /**
    *
    *
@@ -246,6 +255,7 @@ public interface EncryptionConfigOrBuilder
    * @return The failureDetails.
    */
   com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetails getFailureDetails();
+
   /**
    *
    *

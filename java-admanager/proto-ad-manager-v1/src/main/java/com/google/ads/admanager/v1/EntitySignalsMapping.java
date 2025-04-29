@@ -33,6 +33,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.EntitySignalsMapping)
     EntitySignalsMappingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntitySignalsMapping.newBuilder() to construct.
   private EntitySignalsMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     private EntityCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   }
 
   public static final int AUDIENCE_SEGMENT_ID_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   public boolean hasAudienceSegmentId() {
     return entityCase_ == 3;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CONTENT_BUNDLE_ID_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   public boolean hasContentBundleId() {
     return entityCase_ == 4;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CUSTOM_TARGETING_VALUE_ID_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   public boolean hasCustomTargetingValueId() {
     return entityCase_ == 5;
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
 
   public static final int ENTITY_SIGNALS_MAPPING_ID_FIELD_NUMBER = 2;
   private long entitySignalsMappingId_ = 0L;
+
   /**
    *
    *
@@ -298,6 +309,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList taxonomyCategoryIds_ = emptyLongList();
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   public java.util.List<java.lang.Long> getTaxonomyCategoryIdsList() {
     return taxonomyCategoryIds_;
   }
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   public int getTaxonomyCategoryIdsCount() {
     return taxonomyCategoryIds_.size();
   }
+
   /**
    *
    *
@@ -600,6 +614,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -905,6 +920,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public boolean hasAudienceSegmentId() {
       return entityCase_ == 3;
     }
+
     /**
      *
      *
@@ -922,6 +938,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -941,6 +958,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +993,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public boolean hasContentBundleId() {
       return entityCase_ == 4;
     }
+
     /**
      *
      *
@@ -992,6 +1011,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -1011,6 +1031,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public boolean hasCustomTargetingValueId() {
       return entityCase_ == 5;
     }
+
     /**
      *
      *
@@ -1062,6 +1084,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -1081,6 +1104,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1126,6 +1151,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1176,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1200,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1220,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1247,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     }
 
     private long entitySignalsMappingId_;
+
     /**
      *
      *
@@ -1234,6 +1264,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public long getEntitySignalsMappingId() {
       return entitySignalsMappingId_;
     }
+
     /**
      *
      *
@@ -1254,6 +1285,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1313,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1298,6 +1331,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       taxonomyCategoryIds_.makeImmutable();
       return taxonomyCategoryIds_;
     }
+
     /**
      *
      *
@@ -1314,6 +1348,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public int getTaxonomyCategoryIdsCount() {
       return taxonomyCategoryIds_.size();
     }
+
     /**
      *
      *
@@ -1331,6 +1366,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public long getTaxonomyCategoryIds(int index) {
       return taxonomyCategoryIds_.getLong(index);
     }
+
     /**
      *
      *
@@ -1354,6 +1390,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1413,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1435,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

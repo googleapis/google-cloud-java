@@ -33,6 +33,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.InsertProductReviewRequest)
     InsertProductReviewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertProductReviewRequest.newBuilder() to construct.
   private InsertProductReviewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
 
   public static final int PRODUCT_REVIEW_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.reviews.v1beta.ProductReview productReview_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
   public boolean hasProductReview() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
         ? com.google.shopping.merchant.reviews.v1beta.ProductReview.getDefaultInstance()
         : productReview_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSource_ = "";
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -717,6 +729,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +779,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
             com.google.shopping.merchant.reviews.v1beta.ProductReview.Builder,
             com.google.shopping.merchant.reviews.v1beta.ProductReviewOrBuilder>
         productReviewBuilder_;
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
     public boolean hasProductReview() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -803,6 +819,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
         return productReviewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +868,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +940,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return getProductReviewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
             : productReview_;
       }
     }
+
     /**
      *
      *
@@ -969,6 +992,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object dataSource_ = "";
+
     /**
      *
      *
@@ -992,6 +1016,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1040,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1082,7 @@ public final class InsertProductReviewRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface SpaceEventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SpaceEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface SpaceEventOrBuilder
    * @return The eventType.
    */
   java.lang.String getEventType();
+
   /**
    *
    *
@@ -217,6 +221,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the messageCreatedEventData field is set.
    */
   boolean hasMessageCreatedEventData();
+
   /**
    *
    *
@@ -231,6 +236,7 @@ public interface SpaceEventOrBuilder
    * @return The messageCreatedEventData.
    */
   com.google.chat.v1.MessageCreatedEventData getMessageCreatedEventData();
+
   /**
    *
    *
@@ -258,6 +264,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the messageUpdatedEventData field is set.
    */
   boolean hasMessageUpdatedEventData();
+
   /**
    *
    *
@@ -272,6 +279,7 @@ public interface SpaceEventOrBuilder
    * @return The messageUpdatedEventData.
    */
   com.google.chat.v1.MessageUpdatedEventData getMessageUpdatedEventData();
+
   /**
    *
    *
@@ -299,6 +307,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the messageDeletedEventData field is set.
    */
   boolean hasMessageDeletedEventData();
+
   /**
    *
    *
@@ -313,6 +322,7 @@ public interface SpaceEventOrBuilder
    * @return The messageDeletedEventData.
    */
   com.google.chat.v1.MessageDeletedEventData getMessageDeletedEventData();
+
   /**
    *
    *
@@ -341,6 +351,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the messageBatchCreatedEventData field is set.
    */
   boolean hasMessageBatchCreatedEventData();
+
   /**
    *
    *
@@ -356,6 +367,7 @@ public interface SpaceEventOrBuilder
    * @return The messageBatchCreatedEventData.
    */
   com.google.chat.v1.MessageBatchCreatedEventData getMessageBatchCreatedEventData();
+
   /**
    *
    *
@@ -386,6 +398,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the messageBatchUpdatedEventData field is set.
    */
   boolean hasMessageBatchUpdatedEventData();
+
   /**
    *
    *
@@ -401,6 +414,7 @@ public interface SpaceEventOrBuilder
    * @return The messageBatchUpdatedEventData.
    */
   com.google.chat.v1.MessageBatchUpdatedEventData getMessageBatchUpdatedEventData();
+
   /**
    *
    *
@@ -431,6 +445,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the messageBatchDeletedEventData field is set.
    */
   boolean hasMessageBatchDeletedEventData();
+
   /**
    *
    *
@@ -446,6 +461,7 @@ public interface SpaceEventOrBuilder
    * @return The messageBatchDeletedEventData.
    */
   com.google.chat.v1.MessageBatchDeletedEventData getMessageBatchDeletedEventData();
+
   /**
    *
    *
@@ -475,6 +491,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the spaceUpdatedEventData field is set.
    */
   boolean hasSpaceUpdatedEventData();
+
   /**
    *
    *
@@ -489,6 +506,7 @@ public interface SpaceEventOrBuilder
    * @return The spaceUpdatedEventData.
    */
   com.google.chat.v1.SpaceUpdatedEventData getSpaceUpdatedEventData();
+
   /**
    *
    *
@@ -516,6 +534,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the spaceBatchUpdatedEventData field is set.
    */
   boolean hasSpaceBatchUpdatedEventData();
+
   /**
    *
    *
@@ -530,6 +549,7 @@ public interface SpaceEventOrBuilder
    * @return The spaceBatchUpdatedEventData.
    */
   com.google.chat.v1.SpaceBatchUpdatedEventData getSpaceBatchUpdatedEventData();
+
   /**
    *
    *
@@ -557,6 +577,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the membershipCreatedEventData field is set.
    */
   boolean hasMembershipCreatedEventData();
+
   /**
    *
    *
@@ -571,6 +592,7 @@ public interface SpaceEventOrBuilder
    * @return The membershipCreatedEventData.
    */
   com.google.chat.v1.MembershipCreatedEventData getMembershipCreatedEventData();
+
   /**
    *
    *
@@ -598,6 +620,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the membershipUpdatedEventData field is set.
    */
   boolean hasMembershipUpdatedEventData();
+
   /**
    *
    *
@@ -612,6 +635,7 @@ public interface SpaceEventOrBuilder
    * @return The membershipUpdatedEventData.
    */
   com.google.chat.v1.MembershipUpdatedEventData getMembershipUpdatedEventData();
+
   /**
    *
    *
@@ -639,6 +663,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the membershipDeletedEventData field is set.
    */
   boolean hasMembershipDeletedEventData();
+
   /**
    *
    *
@@ -653,6 +678,7 @@ public interface SpaceEventOrBuilder
    * @return The membershipDeletedEventData.
    */
   com.google.chat.v1.MembershipDeletedEventData getMembershipDeletedEventData();
+
   /**
    *
    *
@@ -681,6 +707,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the membershipBatchCreatedEventData field is set.
    */
   boolean hasMembershipBatchCreatedEventData();
+
   /**
    *
    *
@@ -696,6 +723,7 @@ public interface SpaceEventOrBuilder
    * @return The membershipBatchCreatedEventData.
    */
   com.google.chat.v1.MembershipBatchCreatedEventData getMembershipBatchCreatedEventData();
+
   /**
    *
    *
@@ -726,6 +754,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the membershipBatchUpdatedEventData field is set.
    */
   boolean hasMembershipBatchUpdatedEventData();
+
   /**
    *
    *
@@ -741,6 +770,7 @@ public interface SpaceEventOrBuilder
    * @return The membershipBatchUpdatedEventData.
    */
   com.google.chat.v1.MembershipBatchUpdatedEventData getMembershipBatchUpdatedEventData();
+
   /**
    *
    *
@@ -771,6 +801,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the membershipBatchDeletedEventData field is set.
    */
   boolean hasMembershipBatchDeletedEventData();
+
   /**
    *
    *
@@ -786,6 +817,7 @@ public interface SpaceEventOrBuilder
    * @return The membershipBatchDeletedEventData.
    */
   com.google.chat.v1.MembershipBatchDeletedEventData getMembershipBatchDeletedEventData();
+
   /**
    *
    *
@@ -815,6 +847,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the reactionCreatedEventData field is set.
    */
   boolean hasReactionCreatedEventData();
+
   /**
    *
    *
@@ -829,6 +862,7 @@ public interface SpaceEventOrBuilder
    * @return The reactionCreatedEventData.
    */
   com.google.chat.v1.ReactionCreatedEventData getReactionCreatedEventData();
+
   /**
    *
    *
@@ -856,6 +890,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the reactionDeletedEventData field is set.
    */
   boolean hasReactionDeletedEventData();
+
   /**
    *
    *
@@ -870,6 +905,7 @@ public interface SpaceEventOrBuilder
    * @return The reactionDeletedEventData.
    */
   com.google.chat.v1.ReactionDeletedEventData getReactionDeletedEventData();
+
   /**
    *
    *
@@ -898,6 +934,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the reactionBatchCreatedEventData field is set.
    */
   boolean hasReactionBatchCreatedEventData();
+
   /**
    *
    *
@@ -913,6 +950,7 @@ public interface SpaceEventOrBuilder
    * @return The reactionBatchCreatedEventData.
    */
   com.google.chat.v1.ReactionBatchCreatedEventData getReactionBatchCreatedEventData();
+
   /**
    *
    *
@@ -943,6 +981,7 @@ public interface SpaceEventOrBuilder
    * @return Whether the reactionBatchDeletedEventData field is set.
    */
   boolean hasReactionBatchDeletedEventData();
+
   /**
    *
    *
@@ -958,6 +997,7 @@ public interface SpaceEventOrBuilder
    * @return The reactionBatchDeletedEventData.
    */
   com.google.chat.v1.ReactionBatchDeletedEventData getReactionBatchDeletedEventData();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionUrlMapsValidateRequest)
     RegionUrlMapsValidateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RegionUrlMapsValidateRequest.newBuilder() to construct.
   private RegionUrlMapsValidateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
   private com.google.cloud.compute.v1.UrlMap resource_;
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.UrlMap getResource() {
     return resource_ == null ? com.google.cloud.compute.v1.UrlMap.getDefaultInstance() : resource_;
   }
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -474,6 +479,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.UrlMap.Builder,
             com.google.cloud.compute.v1.UrlMapOrBuilder>
         resourceBuilder_;
+
     /**
      *
      *
@@ -488,6 +494,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
     public boolean hasResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -508,6 +515,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
         return resourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -549,6 +558,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -576,6 +586,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -595,6 +606,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +621,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -627,6 +640,7 @@ public final class RegionUrlMapsValidateRequest extends com.google.protobuf.Gene
             : resource_;
       }
     }
+
     /**
      *
      *

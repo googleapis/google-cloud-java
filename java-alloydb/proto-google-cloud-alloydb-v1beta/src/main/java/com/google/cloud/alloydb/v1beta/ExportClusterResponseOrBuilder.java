@@ -38,6 +38,7 @@ public interface ExportClusterResponseOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportClusterResponseOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.alloydb.v1beta.GcsDestination getGcsDestination();
+
   /**
    *
    *

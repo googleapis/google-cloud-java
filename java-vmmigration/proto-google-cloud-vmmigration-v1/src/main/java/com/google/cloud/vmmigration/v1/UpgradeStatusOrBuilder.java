@@ -36,6 +36,7 @@ public interface UpgradeStatusOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface UpgradeStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface UpgradeStatusOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpgradeStatusOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface UpgradeStatusOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface UpgradeStatusOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface UpgradeStatusOrBuilder
    * @return The previousVersion.
    */
   java.lang.String getPreviousVersion();
+
   /**
    *
    *

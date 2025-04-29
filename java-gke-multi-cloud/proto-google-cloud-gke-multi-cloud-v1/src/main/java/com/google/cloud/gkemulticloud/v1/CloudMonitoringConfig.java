@@ -35,6 +35,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.CloudMonitoringConfig)
     CloudMonitoringConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudMonitoringConfig.newBuilder() to construct.
   private CloudMonitoringConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -264,6 +267,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -451,6 +455,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -467,6 +472,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -483,6 +489,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -503,6 +510,7 @@ public final class CloudMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

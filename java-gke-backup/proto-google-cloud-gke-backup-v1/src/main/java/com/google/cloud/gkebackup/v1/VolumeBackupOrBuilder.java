@@ -37,6 +37,7 @@ public interface VolumeBackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface VolumeBackupOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface VolumeBackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface VolumeBackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface VolumeBackupOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface VolumeBackupOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface VolumeBackupOrBuilder
    * @return Whether the sourcePvc field is set.
    */
   boolean hasSourcePvc();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface VolumeBackupOrBuilder
    * @return The sourcePvc.
    */
   com.google.cloud.gkebackup.v1.NamespacedName getSourcePvc();
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public interface VolumeBackupOrBuilder
    * @return The volumeBackupHandle.
    */
   java.lang.String getVolumeBackupHandle();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface VolumeBackupOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public interface VolumeBackupOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
+
   /**
    *
    *
@@ -321,6 +332,7 @@ public interface VolumeBackupOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
+
   /**
    *
    *
@@ -349,6 +361,7 @@ public interface VolumeBackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -369,7 +382,9 @@ public interface VolumeBackupOrBuilder
    *
    * <pre>
    * Output only. A human readable message explaining why the VolumeBackup is in
-   * its current state.
+   * its current state. This field is only meant for human consumption and
+   * should not be used programmatically as this field is not guaranteed to be
+   * consistent.
    * </pre>
    *
    * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -377,12 +392,15 @@ public interface VolumeBackupOrBuilder
    * @return The stateMessage.
    */
   java.lang.String getStateMessage();
+
   /**
    *
    *
    * <pre>
    * Output only. A human readable message explaining why the VolumeBackup is in
-   * its current state.
+   * its current state. This field is only meant for human consumption and
+   * should not be used programmatically as this field is not guaranteed to be
+   * consistent.
    * </pre>
    *
    * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -407,6 +425,7 @@ public interface VolumeBackupOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -423,4 +442,30 @@ public interface VolumeBackupOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

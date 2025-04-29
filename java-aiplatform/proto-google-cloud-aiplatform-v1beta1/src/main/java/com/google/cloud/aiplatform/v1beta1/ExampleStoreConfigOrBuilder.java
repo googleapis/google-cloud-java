@@ -42,6 +42,7 @@ public interface ExampleStoreConfigOrBuilder
    * @return The vertexEmbeddingModel.
    */
   java.lang.String getVertexEmbeddingModel();
+
   /**
    *
    *

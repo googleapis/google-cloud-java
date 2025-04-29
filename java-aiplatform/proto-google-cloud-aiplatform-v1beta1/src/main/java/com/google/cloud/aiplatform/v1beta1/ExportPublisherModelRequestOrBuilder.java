@@ -39,6 +39,7 @@ public interface ExportPublisherModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ExportPublisherModelRequestOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ExportPublisherModelRequestOrBuilder
    * @return The destination.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getDestination();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ExportPublisherModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

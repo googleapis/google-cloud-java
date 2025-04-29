@@ -33,6 +33,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.LfpMerchantState)
     LfpMerchantStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LfpMerchantState.newBuilder() to construct.
   private LfpMerchantState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The storeCode.
      */
     java.lang.String getStoreCode();
+
     /**
      *
      *
@@ -113,6 +115,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for matchingState.
      */
     int getMatchingStateValue();
+
     /**
      *
      *
@@ -142,6 +145,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The matchingStateHint.
      */
     java.lang.String getMatchingStateHint();
+
     /**
      *
      *
@@ -156,6 +160,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getMatchingStateHintBytes();
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreState)
       LfpStoreStateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LfpStoreState.newBuilder() to construct.
     private LfpStoreState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -257,6 +263,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>STORE_MATCHING_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STORE_MATCHING_STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -268,6 +275,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>STORE_MATCHING_STATE_MATCHED = 1;</code>
        */
       public static final int STORE_MATCHING_STATE_MATCHED_VALUE = 1;
+
       /**
        *
        *
@@ -372,6 +380,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object storeCode_ = "";
+
     /**
      *
      *
@@ -397,6 +406,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -425,6 +435,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int MATCHING_STATE_FIELD_NUMBER = 2;
     private int matchingState_ = 0;
+
     /**
      *
      *
@@ -442,6 +453,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public int getMatchingStateValue() {
       return matchingState_;
     }
+
     /**
      *
      *
@@ -472,6 +484,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object matchingStateHint_ = "";
+
     /**
      *
      *
@@ -496,6 +509,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -708,6 +722,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -933,6 +948,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object storeCode_ = "";
+
       /**
        *
        *
@@ -957,6 +973,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -981,6 +998,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1004,6 +1022,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1023,6 +1042,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1049,6 +1069,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private int matchingState_ = 0;
+
       /**
        *
        *
@@ -1066,6 +1087,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public int getMatchingStateValue() {
         return matchingState_;
       }
+
       /**
        *
        *
@@ -1086,6 +1108,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1112,6 +1135,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
                 .StoreMatchingState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1137,6 +1161,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1158,6 +1183,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object matchingStateHint_ = "";
+
       /**
        *
        *
@@ -1181,6 +1207,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1204,6 +1231,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1226,6 +1254,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1244,6 +1273,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1399,6 +1429,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      */
     long getSubmittedProducts();
   }
+
   /**
    *
    *
@@ -1413,6 +1444,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats)
       InventoryStatsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use InventoryStats.newBuilder() to construct.
     private InventoryStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1444,6 +1476,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int SUBMITTED_ENTRIES_FIELD_NUMBER = 1;
     private long submittedEntries_ = 0L;
+
     /**
      *
      *
@@ -1464,6 +1497,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int SUBMITTED_IN_STOCK_ENTRIES_FIELD_NUMBER = 2;
     private long submittedInStockEntries_ = 0L;
+
     /**
      *
      *
@@ -1482,6 +1516,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int UNSUBMITTED_ENTRIES_FIELD_NUMBER = 3;
     private long unsubmittedEntries_ = 0L;
+
     /**
      *
      *
@@ -1502,6 +1537,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int SUBMITTED_PRODUCTS_FIELD_NUMBER = 4;
     private long submittedProducts_ = 0L;
+
     /**
      *
      *
@@ -1710,6 +1746,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1945,6 +1982,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private long submittedEntries_;
+
       /**
        *
        *
@@ -1962,6 +2000,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public long getSubmittedEntries() {
         return submittedEntries_;
       }
+
       /**
        *
        *
@@ -1983,6 +2022,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2004,6 +2044,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private long submittedInStockEntries_;
+
       /**
        *
        *
@@ -2019,6 +2060,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public long getSubmittedInStockEntries() {
         return submittedInStockEntries_;
       }
+
       /**
        *
        *
@@ -2038,6 +2080,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2057,6 +2100,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private long unsubmittedEntries_;
+
       /**
        *
        *
@@ -2074,6 +2118,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public long getUnsubmittedEntries() {
         return unsubmittedEntries_;
       }
+
       /**
        *
        *
@@ -2095,6 +2140,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2116,6 +2162,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private long submittedProducts_;
+
       /**
        *
        *
@@ -2133,6 +2180,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public long getSubmittedProducts() {
         return submittedProducts_;
       }
+
       /**
        *
        *
@@ -2154,6 +2202,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2261,6 +2310,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The regionCode.
      */
     java.lang.String getRegionCode();
+
     /**
      *
      *
@@ -2316,6 +2366,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for inventoryVerificationState.
      */
     int getInventoryVerificationStateValue();
+
     /**
      *
      *
@@ -2346,6 +2397,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for productPageType.
      */
     int getProductPageTypeValue();
+
     /**
      *
      *
@@ -2377,6 +2429,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for instockServingVerificationState.
      */
     int getInstockServingVerificationStateValue();
+
     /**
      *
      *
@@ -2409,6 +2462,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for pickupServingVerificationState.
      */
     int getPickupServingVerificationStateValue();
+
     /**
      *
      *
@@ -2426,6 +2480,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings.VerificationState
         getPickupServingVerificationState();
   }
+
   /**
    *
    *
@@ -2440,6 +2495,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings)
       CountrySettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CountrySettings.newBuilder() to construct.
     private CountrySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2539,6 +2595,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>VERIFICATION_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int VERIFICATION_STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2549,6 +2606,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>VERIFICATION_STATE_NOT_APPROVED = 1;</code>
        */
       public static final int VERIFICATION_STATE_NOT_APPROVED_VALUE = 1;
+
       /**
        *
        *
@@ -2559,6 +2617,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>VERIFICATION_STATE_IN_PROGRESS = 2;</code>
        */
       public static final int VERIFICATION_STATE_IN_PROGRESS_VALUE = 2;
+
       /**
        *
        *
@@ -2727,6 +2786,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>PRODUCT_PAGE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int PRODUCT_PAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2737,6 +2797,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>GOOGLE_HOSTED = 1;</code>
        */
       public static final int GOOGLE_HOSTED_VALUE = 1;
+
       /**
        *
        *
@@ -2747,6 +2808,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
        * <code>MERCHANT_HOSTED = 2;</code>
        */
       public static final int MERCHANT_HOSTED_VALUE = 2;
+
       /**
        *
        *
@@ -2853,6 +2915,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -2878,6 +2941,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -2906,6 +2970,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int FREE_LOCAL_LISTINGS_ENABLED_FIELD_NUMBER = 2;
     private boolean freeLocalListingsEnabled_ = false;
+
     /**
      *
      *
@@ -2924,6 +2989,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int LOCAL_INVENTORY_ADS_ENABLED_FIELD_NUMBER = 3;
     private boolean localInventoryAdsEnabled_ = false;
+
     /**
      *
      *
@@ -2942,6 +3008,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int INVENTORY_VERIFICATION_STATE_FIELD_NUMBER = 4;
     private int inventoryVerificationState_ = 0;
+
     /**
      *
      *
@@ -2959,6 +3026,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public int getInventoryVerificationStateValue() {
       return inventoryVerificationState_;
     }
+
     /**
      *
      *
@@ -2988,6 +3056,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int PRODUCT_PAGE_TYPE_FIELD_NUMBER = 5;
     private int productPageType_ = 0;
+
     /**
      *
      *
@@ -3005,6 +3074,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public int getProductPageTypeValue() {
       return productPageType_;
     }
+
     /**
      *
      *
@@ -3033,6 +3103,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int INSTOCK_SERVING_VERIFICATION_STATE_FIELD_NUMBER = 6;
     private int instockServingVerificationState_ = 0;
+
     /**
      *
      *
@@ -3051,6 +3122,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public int getInstockServingVerificationStateValue() {
       return instockServingVerificationState_;
     }
+
     /**
      *
      *
@@ -3081,6 +3153,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
     public static final int PICKUP_SERVING_VERIFICATION_STATE_FIELD_NUMBER = 7;
     private int pickupServingVerificationState_ = 0;
+
     /**
      *
      *
@@ -3099,6 +3172,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public int getPickupServingVerificationStateValue() {
       return pickupServingVerificationState_;
     }
+
     /**
      *
      *
@@ -3378,6 +3452,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3654,6 +3729,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object regionCode_ = "";
+
       /**
        *
        *
@@ -3678,6 +3754,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3702,6 +3779,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3725,6 +3803,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3744,6 +3823,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3770,6 +3850,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean freeLocalListingsEnabled_;
+
       /**
        *
        *
@@ -3785,6 +3866,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public boolean getFreeLocalListingsEnabled() {
         return freeLocalListingsEnabled_;
       }
+
       /**
        *
        *
@@ -3804,6 +3886,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3823,6 +3906,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean localInventoryAdsEnabled_;
+
       /**
        *
        *
@@ -3838,6 +3922,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public boolean getLocalInventoryAdsEnabled() {
         return localInventoryAdsEnabled_;
       }
+
       /**
        *
        *
@@ -3857,6 +3942,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3876,6 +3962,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private int inventoryVerificationState_ = 0;
+
       /**
        *
        *
@@ -3893,6 +3980,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public int getInventoryVerificationStateValue() {
         return inventoryVerificationState_;
       }
+
       /**
        *
        *
@@ -3913,6 +4001,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3939,6 +4028,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
                 .VerificationState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3964,6 +4054,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3985,6 +4076,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private int productPageType_ = 0;
+
       /**
        *
        *
@@ -4002,6 +4094,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public int getProductPageTypeValue() {
         return productPageType_;
       }
+
       /**
        *
        *
@@ -4022,6 +4115,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4048,6 +4142,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
                 .ProductPageType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4073,6 +4168,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4094,6 +4190,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private int instockServingVerificationState_ = 0;
+
       /**
        *
        *
@@ -4112,6 +4209,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public int getInstockServingVerificationStateValue() {
         return instockServingVerificationState_;
       }
+
       /**
        *
        *
@@ -4133,6 +4231,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4160,6 +4259,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
                 .VerificationState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4186,6 +4286,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4208,6 +4309,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
 
       private int pickupServingVerificationState_ = 0;
+
       /**
        *
        *
@@ -4226,6 +4328,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       public int getPickupServingVerificationStateValue() {
         return pickupServingVerificationState_;
       }
+
       /**
        *
        *
@@ -4247,6 +4350,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4274,6 +4378,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
                 .VerificationState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -4300,6 +4405,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4394,6 +4500,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -4418,6 +4525,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -4445,6 +4553,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
   public static final int LINKED_GBPS_FIELD_NUMBER = 2;
   private long linkedGbps_ = 0L;
+
   /**
    *
    *
@@ -4467,6 +4576,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreState>
       storeStates_;
+
   /**
    *
    *
@@ -4483,6 +4593,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       getStoreStatesList() {
     return storeStates_;
   }
+
   /**
    *
    *
@@ -4500,6 +4611,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       getStoreStatesOrBuilderList() {
     return storeStates_;
   }
+
   /**
    *
    *
@@ -4515,6 +4627,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
   public int getStoreStatesCount() {
     return storeStates_.size();
   }
+
   /**
    *
    *
@@ -4531,6 +4644,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       int index) {
     return storeStates_.get(index);
   }
+
   /**
    *
    *
@@ -4550,6 +4664,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
 
   public static final int INVENTORY_STATS_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats inventoryStats_;
+
   /**
    *
    *
@@ -4566,6 +4681,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
   public boolean hasInventoryStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4586,6 +4702,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : inventoryStats_;
   }
+
   /**
    *
    *
@@ -4610,6 +4727,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings>
       countrySettings_;
+
   /**
    *
    *
@@ -4626,6 +4744,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       getCountrySettingsList() {
     return countrySettings_;
   }
+
   /**
    *
    *
@@ -4644,6 +4763,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       getCountrySettingsOrBuilderList() {
     return countrySettings_;
   }
+
   /**
    *
    *
@@ -4659,6 +4779,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
   public int getCountrySettingsCount() {
     return countrySettings_.size();
   }
+
   /**
    *
    *
@@ -4675,6 +4796,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       getCountrySettings(int index) {
     return countrySettings_.get(index);
   }
+
   /**
    *
    *
@@ -4897,6 +5019,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5247,6 +5370,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -5270,6 +5394,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5293,6 +5418,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5315,6 +5441,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5333,6 +5460,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5358,6 +5486,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     }
 
     private long linkedGbps_;
+
     /**
      *
      *
@@ -5374,6 +5503,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public long getLinkedGbps() {
       return linkedGbps_;
     }
+
     /**
      *
      *
@@ -5394,6 +5524,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5451,6 +5582,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return storeStatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5469,6 +5601,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return storeStatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5488,6 +5621,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return storeStatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5513,6 +5647,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5537,6 +5672,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5562,6 +5698,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5587,6 +5724,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5610,6 +5748,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5634,6 +5773,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5658,6 +5798,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5679,6 +5820,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5700,6 +5842,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5715,6 +5858,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         getStoreStatesBuilder(int index) {
       return getStoreStatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5734,6 +5878,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return storeStatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5755,6 +5900,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(storeStates_);
       }
     }
+
     /**
      *
      *
@@ -5773,6 +5919,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
               com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreState
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5792,6 +5939,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
               com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreState
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5832,6 +5980,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats.Builder,
             com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStatsOrBuilder>
         inventoryStatsBuilder_;
+
     /**
      *
      *
@@ -5848,6 +5997,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
     public boolean hasInventoryStats() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5872,6 +6022,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return inventoryStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5897,6 +6048,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5920,6 +6072,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5952,6 +6105,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5973,6 +6127,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5990,6 +6145,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getInventoryStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6012,6 +6168,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
             : inventoryStats_;
       }
     }
+
     /**
      *
      *
@@ -6078,6 +6235,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return countrySettingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6096,6 +6254,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return countrySettingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6115,6 +6274,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return countrySettingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6140,6 +6300,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6164,6 +6325,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6189,6 +6351,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6214,6 +6377,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6237,6 +6401,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6261,6 +6426,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6285,6 +6451,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6306,6 +6473,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6327,6 +6495,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -6342,6 +6511,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         getCountrySettingsBuilder(int index) {
       return getCountrySettingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6361,6 +6531,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return countrySettingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6382,6 +6553,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(countrySettings_);
       }
     }
+
     /**
      *
      *
@@ -6400,6 +6572,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
               com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6419,6 +6592,7 @@ public final class LfpMerchantState extends com.google.protobuf.GeneratedMessage
               com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings
                   .getDefaultInstance());
     }
+
     /**
      *
      *

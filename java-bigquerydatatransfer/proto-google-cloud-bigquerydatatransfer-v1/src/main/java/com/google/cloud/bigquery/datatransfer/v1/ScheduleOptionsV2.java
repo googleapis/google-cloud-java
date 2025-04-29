@@ -36,6 +36,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2)
     ScheduleOptionsV2OrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ScheduleOptionsV2.newBuilder() to construct.
   private ScheduleOptionsV2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     private ScheduleCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TIME_BASED_SCHEDULE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
   public boolean hasTimeBasedSchedule() {
     return scheduleCase_ == 1;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.bigquery.datatransfer.v1.TimeBasedSchedule.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MANUAL_SCHEDULE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
   public boolean hasManualSchedule() {
     return scheduleCase_ == 2;
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.bigquery.datatransfer.v1.ManualSchedule.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int EVENT_DRIVEN_SCHEDULE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
   public boolean hasEventDrivenSchedule() {
     return scheduleCase_ == 3;
   }
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.bigquery.datatransfer.v1.EventDrivenSchedule.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -497,6 +508,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -755,6 +767,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
             com.google.cloud.bigquery.datatransfer.v1.TimeBasedSchedule.Builder,
             com.google.cloud.bigquery.datatransfer.v1.TimeBasedScheduleOrBuilder>
         timeBasedScheduleBuilder_;
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     public boolean hasTimeBasedSchedule() {
       return scheduleCase_ == 1;
     }
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.bigquery.datatransfer.v1.TimeBasedSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -824,6 +839,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +862,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +900,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +928,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +944,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         getTimeBasedScheduleBuilder() {
       return getTimeBasedScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -948,6 +968,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.bigquery.datatransfer.v1.TimeBasedSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -989,6 +1010,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
             com.google.cloud.bigquery.datatransfer.v1.ManualSchedule.Builder,
             com.google.cloud.bigquery.datatransfer.v1.ManualScheduleOrBuilder>
         manualScheduleBuilder_;
+
     /**
      *
      *
@@ -1007,6 +1029,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     public boolean hasManualSchedule() {
       return scheduleCase_ == 2;
     }
+
     /**
      *
      *
@@ -1035,6 +1058,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.bigquery.datatransfer.v1.ManualSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1085,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1109,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1147,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1176,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1193,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         getManualScheduleBuilder() {
       return getManualScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1189,6 +1218,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.bigquery.datatransfer.v1.ManualSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1260,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
             com.google.cloud.bigquery.datatransfer.v1.EventDrivenSchedule.Builder,
             com.google.cloud.bigquery.datatransfer.v1.EventDrivenScheduleOrBuilder>
         eventDrivenScheduleBuilder_;
+
     /**
      *
      *
@@ -1247,6 +1278,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
     public boolean hasEventDrivenSchedule() {
       return scheduleCase_ == 3;
     }
+
     /**
      *
      *
@@ -1274,6 +1306,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.bigquery.datatransfer.v1.EventDrivenSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1299,6 +1332,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1355,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1393,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       scheduleCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1421,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1437,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         getEventDrivenScheduleBuilder() {
       return getEventDrivenScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1423,6 +1461,7 @@ public final class ScheduleOptionsV2 extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.bigquery.datatransfer.v1.EventDrivenSchedule.getDefaultInstance();
       }
     }
+
     /**
      *
      *

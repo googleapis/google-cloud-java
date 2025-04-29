@@ -35,6 +35,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RiskAnalysisJobConfig)
     RiskAnalysisJobConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RiskAnalysisJobConfig.newBuilder() to construct.
   private RiskAnalysisJobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int PRIVACY_METRIC_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.PrivacyMetric privacyMetric_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   public boolean hasPrivacyMetric() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance()
         : privacyMetric_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
 
   public static final int SOURCE_TABLE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.BigQueryTable sourceTable_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   public boolean hasSourceTable() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
         : sourceTable_;
   }
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Action> actions_;
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.privacy.dlp.v2.Action> getActionsList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       getActionsOrBuilderList() {
     return actions_;
   }
+
   /**
    *
    *
@@ -213,6 +223,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   public int getActionsCount() {
     return actions_.size();
   }
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.Action getActions(int index) {
     return actions_.get(index);
   }
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -718,6 +731,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.PrivacyMetric.Builder,
             com.google.privacy.dlp.v2.PrivacyMetricOrBuilder>
         privacyMetricBuilder_;
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     public boolean hasPrivacyMetric() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return privacyMetricBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPrivacyMetricFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -872,6 +893,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             : privacyMetric_;
       }
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
             com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
         sourceTableBuilder_;
+
     /**
      *
      *
@@ -918,6 +941,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     public boolean hasSourceTable() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -938,6 +962,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return sourceTableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -960,6 +985,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1033,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1068,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSourceTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1057,6 +1087,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             : sourceTable_;
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1147,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1165,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1183,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1207,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1228,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1252,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1276,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1297,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1318,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1340,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1361,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1382,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1396,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     public com.google.privacy.dlp.v2.Action.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1370,6 +1414,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1433,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(actions_);
       }
     }
+
     /**
      *
      *
@@ -1402,6 +1448,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       return getActionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Action.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1416,6 +1463,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       return getActionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Action.getDefaultInstance());
     }
+
     /**
      *
      *

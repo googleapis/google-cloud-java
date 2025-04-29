@@ -34,6 +34,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix)
     PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublicDelegatedPrefixPublicDelegatedSubPrefix.newBuilder() to construct.
   private PublicDelegatedPrefixPublicDelegatedSubPrefix(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -136,6 +137,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * <code>DELEGATION = 264149288;</code>
      */
     public static final int DELEGATION_VALUE = 264149288;
+
     /**
      *
      *
@@ -156,6 +159,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * <code>EXTERNAL_IPV6_FORWARDING_RULE_CREATION = 398684356;</code>
      */
     public static final int EXTERNAL_IPV6_FORWARDING_RULE_CREATION_VALUE = 398684356;
+
     /**
      *
      *
@@ -293,8 +297,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /** <code>ACTIVE = 314733318;</code> */
     public static final int ACTIVE_VALUE = 314733318;
+
     /** <code>INACTIVE = 270421099;</code> */
     public static final int INACTIVE_VALUE = 270421099;
 
@@ -387,6 +393,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   private int bitField0_;
   public static final int ALLOCATABLE_PREFIX_LENGTH_FIELD_NUMBER = 38427446;
   private int allocatablePrefixLength_ = 0;
+
   /**
    *
    *
@@ -402,6 +409,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasAllocatablePrefixLength() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -422,6 +430,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object delegateeProject_ = "";
+
   /**
    *
    *
@@ -437,6 +446,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasDelegateeProject() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -460,6 +470,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -488,6 +499,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -503,6 +515,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -526,6 +539,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -554,6 +568,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
+
   /**
    *
    *
@@ -569,6 +584,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasIpCidrRange() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -592,6 +608,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -618,6 +635,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   public static final int IS_ADDRESS_FIELD_NUMBER = 352617951;
   private boolean isAddress_ = false;
+
   /**
    *
    *
@@ -633,6 +651,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasIsAddress() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -653,6 +672,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
+
   /**
    *
    *
@@ -669,6 +689,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasMode() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -693,6 +714,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -722,6 +744,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -737,6 +760,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -760,6 +784,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -788,6 +813,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -803,6 +829,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -826,6 +853,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -854,6 +882,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -870,6 +899,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -894,6 +924,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return s;
     }
   }
+
   /**
    *
    *
@@ -1201,6 +1232,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1523,6 +1555,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     private int bitField0_;
 
     private int allocatablePrefixLength_;
+
     /**
      *
      *
@@ -1538,6 +1571,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasAllocatablePrefixLength() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1553,6 +1587,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public int getAllocatablePrefixLength() {
       return allocatablePrefixLength_;
     }
+
     /**
      *
      *
@@ -1572,6 +1607,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1627,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object delegateeProject_ = "";
+
     /**
      *
      *
@@ -1605,6 +1642,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasDelegateeProject() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1627,6 +1665,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1649,6 +1688,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1670,6 +1710,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1728,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1711,6 +1753,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1725,6 +1768,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1747,6 +1791,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1769,6 +1814,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1790,6 +1836,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1854,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1831,6 +1879,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object ipCidrRange_ = "";
+
     /**
      *
      *
@@ -1845,6 +1894,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasIpCidrRange() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1867,6 +1917,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1889,6 +1940,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1962,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +1980,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1951,6 +2005,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private boolean isAddress_;
+
     /**
      *
      *
@@ -1966,6 +2021,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasIsAddress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1981,6 +2037,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean getIsAddress() {
       return isAddress_;
     }
+
     /**
      *
      *
@@ -2000,6 +2057,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2019,6 +2077,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object mode_ = "";
+
     /**
      *
      *
@@ -2034,6 +2093,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasMode() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2057,6 +2117,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2080,6 +2141,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2102,6 +2164,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2183,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2209,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2159,6 +2224,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasName() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2181,6 +2247,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2203,6 +2270,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2224,6 +2292,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2241,6 +2310,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2265,6 +2335,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -2279,6 +2350,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2301,6 +2373,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2323,6 +2396,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2344,6 +2418,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2361,6 +2436,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2385,6 +2461,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -2400,6 +2477,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2423,6 +2501,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2446,6 +2525,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2468,6 +2548,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2486,6 +2567,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       onChanged();
       return this;
     }
+
     /**
      *
      *

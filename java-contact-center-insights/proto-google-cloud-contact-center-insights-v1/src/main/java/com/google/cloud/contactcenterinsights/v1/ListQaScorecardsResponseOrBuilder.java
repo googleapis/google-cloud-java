@@ -34,6 +34,7 @@ public interface ListQaScorecardsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaScorecard qa_scorecards = 1;</code>
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecard> getQaScorecardsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListQaScorecardsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaScorecard qa_scorecards = 1;</code>
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecard getQaScorecards(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListQaScorecardsResponseOrBuilder
    * <code>repeated .google.cloud.contactcenterinsights.v1.QaScorecard qa_scorecards = 1;</code>
    */
   int getQaScorecardsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListQaScorecardsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaScorecardOrBuilder>
       getQaScorecardsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListQaScorecardsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

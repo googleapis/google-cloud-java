@@ -33,6 +33,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsPerformMaintenanceRequest)
     NodeGroupsPerformMaintenanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeGroupsPerformMaintenanceRequest.newBuilder() to construct.
   private NodeGroupsPerformMaintenanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class NodeGroupsPerformMaintenanceRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class NodeGroupsPerformMaintenanceRequest
   public com.google.protobuf.ProtocolStringList getNodesList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class NodeGroupsPerformMaintenanceRequest
   public int getNodesCount() {
     return nodes_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class NodeGroupsPerformMaintenanceRequest
   public java.lang.String getNodes(int index) {
     return nodes_.get(index);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class NodeGroupsPerformMaintenanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class NodeGroupsPerformMaintenanceRequest
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -377,6 +385,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +606,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       nodes_.makeImmutable();
       return nodes_;
     }
+
     /**
      *
      *
@@ -626,6 +637,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     public int getNodesCount() {
       return nodes_.size();
     }
+
     /**
      *
      *
@@ -641,6 +653,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     public java.lang.String getNodes(int index) {
       return nodes_.get(index);
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     public com.google.protobuf.ByteString getNodesBytes(int index) {
       return nodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -679,6 +693,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +716,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +736,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +755,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +781,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     }
 
     private java.lang.Object startTime_ = "";
+
     /**
      *
      *
@@ -777,6 +796,7 @@ public final class NodeGroupsPerformMaintenanceRequest
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -799,6 +819,7 @@ public final class NodeGroupsPerformMaintenanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +842,7 @@ public final class NodeGroupsPerformMaintenanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +864,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +882,7 @@ public final class NodeGroupsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -264,6 +264,19 @@ public final class EntityServiceGrpc {
     return EntityServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EntityServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EntityServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EntityServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EntityServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EntityServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EntityServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -493,6 +506,92 @@ public final class EntityServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EntityService.
+   *
+   * <pre>
+   * EntityService contains apis for finding entities.
+   * </pre>
+   */
+  public static final class EntityServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EntityServiceBlockingV2Stub> {
+    private EntityServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EntityServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EntityServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets watchlist details for the given watchlist ID.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Watchlist getWatchlist(
+        google.cloud.chronicle.v1.GetWatchlistRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWatchlistMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all watchlists for the given instance.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.ListWatchlistsResponse listWatchlists(
+        google.cloud.chronicle.v1.ListWatchlistsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWatchlistsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a watchlist for the given instance.
+     * Note that there can be at most 200 watchlists per instance.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Watchlist createWatchlist(
+        google.cloud.chronicle.v1.CreateWatchlistRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWatchlistMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the watchlist for the given instance.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Watchlist updateWatchlist(
+        google.cloud.chronicle.v1.UpdateWatchlistRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWatchlistMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the watchlist for the given instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteWatchlist(
+        google.cloud.chronicle.v1.DeleteWatchlistRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWatchlistMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EntityService.
    *
    * <pre>
    * EntityService contains apis for finding entities.

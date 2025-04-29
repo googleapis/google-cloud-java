@@ -270,6 +270,19 @@ public final class VersionsGrpc {
     return VersionsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VersionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VersionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VersionsBlockingV2Stub>() {
+          @java.lang.Override
+          public VersionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VersionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VersionsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -500,6 +513,95 @@ public final class VersionsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Versions.
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.v2beta1.Version].
+   * </pre>
+   */
+  public static final class VersionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VersionsBlockingV2Stub> {
+    private VersionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VersionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VersionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all versions of the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListVersionsResponse listVersions(
+        com.google.cloud.dialogflow.v2beta1.ListVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent version.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Version getVersion(
+        com.google.cloud.dialogflow.v2beta1.GetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent version.
+     * The new version points to the agent instance in the "default" environment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Version createVersion(
+        com.google.cloud.dialogflow.v2beta1.CreateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified agent version.
+     * Note that this method does not allow you to update the state of the agent
+     * the given version points to. It allows you to update only mutable
+     * properties of the version resource.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Version updateVersion(
+        com.google.cloud.dialogflow.v2beta1.UpdateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the specified agent version.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteVersion(
+        com.google.cloud.dialogflow.v2beta1.DeleteVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Versions.
    *
    * <pre>
    * Service for managing [Versions][google.cloud.dialogflow.v2beta1.Version].

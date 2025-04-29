@@ -34,6 +34,7 @@ public interface ListDataAccessScopesResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.DataAccessScope data_access_scopes = 1;</code>
    */
   java.util.List<google.cloud.chronicle.v1.DataAccessScope> getDataAccessScopesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDataAccessScopesResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.DataAccessScope data_access_scopes = 1;</code>
    */
   google.cloud.chronicle.v1.DataAccessScope getDataAccessScopes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDataAccessScopesResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.DataAccessScope data_access_scopes = 1;</code>
    */
   int getDataAccessScopesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDataAccessScopesResponseOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.DataAccessScopeOrBuilder>
       getDataAccessScopesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListDataAccessScopesResponseOrBuilder
    * @return Whether the globalDataAccessScopeGranted field is set.
    */
   boolean hasGlobalDataAccessScopeGranted();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ListDataAccessScopesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface UpdateDataRetentionSettingsRequestOrBuilder
    * @return Whether the dataRetentionSettings field is set.
    */
   boolean hasDataRetentionSettings();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateDataRetentionSettingsRequestOrBuilder
    * @return The dataRetentionSettings.
    */
   com.google.analytics.admin.v1beta.DataRetentionSettings getDataRetentionSettings();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateDataRetentionSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateDataRetentionSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

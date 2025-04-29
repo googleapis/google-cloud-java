@@ -33,6 +33,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessOptions)
     ProcessOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProcessOptions.newBuilder() to construct.
   private ProcessOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the chunkingConfig field is set.
      */
     boolean hasChunkingConfig();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The chunkingConfig.
      */
     com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig getChunkingConfig();
+
     /**
      *
      *
@@ -107,7 +110,35 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder
         getChunkingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include images in layout parser processor response.
+     * </pre>
+     *
+     * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnImages.
+     */
+    boolean getReturnImages();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include bounding boxes in layout parser processor
+     * response.
+     * </pre>
+     *
+     * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnBoundingBoxes.
+     */
+    boolean getReturnBoundingBoxes();
   }
+
   /**
    *
    *
@@ -122,6 +153,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessOptions.LayoutConfig)
       LayoutConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LayoutConfig.newBuilder() to construct.
     private LayoutConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -182,6 +214,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        */
       boolean getIncludeAncestorHeadings();
     }
+
     /**
      *
      *
@@ -196,6 +229,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig)
         ChunkingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ChunkingConfig.newBuilder() to construct.
       private ChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -227,6 +261,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
       public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
       private int chunkSize_ = 0;
+
       /**
        *
        *
@@ -246,6 +281,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
       public static final int INCLUDE_ANCESTOR_HEADINGS_FIELD_NUMBER = 2;
       private boolean includeAncestorHeadings_ = false;
+
       /**
        *
        *
@@ -442,6 +478,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -652,6 +689,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int chunkSize_;
+
         /**
          *
          *
@@ -668,6 +706,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         public int getChunkSize() {
           return chunkSize_;
         }
+
         /**
          *
          *
@@ -688,6 +727,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -708,6 +748,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean includeAncestorHeadings_;
+
         /**
          *
          *
@@ -724,6 +765,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         public boolean getIncludeAncestorHeadings() {
           return includeAncestorHeadings_;
         }
+
         /**
          *
          *
@@ -744,6 +786,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -835,6 +878,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public static final int CHUNKING_CONFIG_FIELD_NUMBER = 1;
     private com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig
         chunkingConfig_;
+
     /**
      *
      *
@@ -852,6 +896,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChunkingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -873,6 +918,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : chunkingConfig_;
     }
+
     /**
      *
      *
@@ -893,6 +939,45 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           : chunkingConfig_;
     }
 
+    public static final int RETURN_IMAGES_FIELD_NUMBER = 2;
+    private boolean returnImages_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include images in layout parser processor response.
+     * </pre>
+     *
+     * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnImages.
+     */
+    @java.lang.Override
+    public boolean getReturnImages() {
+      return returnImages_;
+    }
+
+    public static final int RETURN_BOUNDING_BOXES_FIELD_NUMBER = 3;
+    private boolean returnBoundingBoxes_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include bounding boxes in layout parser processor
+     * response.
+     * </pre>
+     *
+     * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnBoundingBoxes.
+     */
+    @java.lang.Override
+    public boolean getReturnBoundingBoxes() {
+      return returnBoundingBoxes_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -910,6 +995,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getChunkingConfig());
       }
+      if (returnImages_ != false) {
+        output.writeBool(2, returnImages_);
+      }
+      if (returnBoundingBoxes_ != false) {
+        output.writeBool(3, returnBoundingBoxes_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -921,6 +1012,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getChunkingConfig());
+      }
+      if (returnImages_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, returnImages_);
+      }
+      if (returnBoundingBoxes_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, returnBoundingBoxes_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -942,6 +1039,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (hasChunkingConfig()) {
         if (!getChunkingConfig().equals(other.getChunkingConfig())) return false;
       }
+      if (getReturnImages() != other.getReturnImages()) return false;
+      if (getReturnBoundingBoxes() != other.getReturnBoundingBoxes()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -957,6 +1056,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CHUNKING_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getChunkingConfig().hashCode();
       }
+      hash = (37 * hash) + RETURN_IMAGES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnImages());
+      hash = (37 * hash) + RETURN_BOUNDING_BOXES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnBoundingBoxes());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1059,6 +1162,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1113,6 +1217,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           chunkingConfigBuilder_.dispose();
           chunkingConfigBuilder_ = null;
         }
+        returnImages_ = false;
+        returnBoundingBoxes_ = false;
         return this;
       }
 
@@ -1156,6 +1262,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           result.chunkingConfig_ =
               chunkingConfigBuilder_ == null ? chunkingConfig_ : chunkingConfigBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.returnImages_ = returnImages_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.returnBoundingBoxes_ = returnBoundingBoxes_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1212,6 +1324,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         if (other.hasChunkingConfig()) {
           mergeChunkingConfig(other.getChunkingConfig());
         }
+        if (other.getReturnImages() != false) {
+          setReturnImages(other.getReturnImages());
+        }
+        if (other.getReturnBoundingBoxes() != false) {
+          setReturnBoundingBoxes(other.getReturnBoundingBoxes());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1245,6 +1363,18 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  returnImages_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  returnBoundingBoxes_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1271,6 +1401,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfig.Builder,
               com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder>
           chunkingConfigBuilder_;
+
       /**
        *
        *
@@ -1287,6 +1418,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean hasChunkingConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1311,6 +1443,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           return chunkingConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1336,6 +1469,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1359,6 +1493,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1391,6 +1526,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1412,6 +1548,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1429,6 +1566,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getChunkingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1451,6 +1589,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
               : chunkingConfig_;
         }
       }
+
       /**
        *
        *
@@ -1478,6 +1617,121 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           chunkingConfig_ = null;
         }
         return chunkingConfigBuilder_;
+      }
+
+      private boolean returnImages_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include images in layout parser processor response.
+       * </pre>
+       *
+       * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The returnImages.
+       */
+      @java.lang.Override
+      public boolean getReturnImages() {
+        return returnImages_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include images in layout parser processor response.
+       * </pre>
+       *
+       * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The returnImages to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReturnImages(boolean value) {
+
+        returnImages_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include images in layout parser processor response.
+       * </pre>
+       *
+       * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReturnImages() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        returnImages_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean returnBoundingBoxes_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include bounding boxes in layout parser processor
+       * response.
+       * </pre>
+       *
+       * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The returnBoundingBoxes.
+       */
+      @java.lang.Override
+      public boolean getReturnBoundingBoxes() {
+        return returnBoundingBoxes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include bounding boxes in layout parser processor
+       * response.
+       * </pre>
+       *
+       * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The returnBoundingBoxes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReturnBoundingBoxes(boolean value) {
+
+        returnBoundingBoxes_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include bounding boxes in layout parser processor
+       * response.
+       * </pre>
+       *
+       * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReturnBoundingBoxes() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        returnBoundingBoxes_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -1562,6 +1816,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the pages.
      */
     java.util.List<java.lang.Integer> getPagesList();
+
     /**
      *
      *
@@ -1574,6 +1829,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The count of pages.
      */
     int getPagesCount();
+
     /**
      *
      *
@@ -1588,6 +1844,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     int getPages(int index);
   }
+
   /**
    *
    *
@@ -1602,6 +1859,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector)
       IndividualPageSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualPageSelector.newBuilder() to construct.
     private IndividualPageSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1636,6 +1894,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList pages_ = emptyIntList();
+
     /**
      *
      *
@@ -1651,6 +1910,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getPagesList() {
       return pages_;
     }
+
     /**
      *
      *
@@ -1665,6 +1925,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public int getPagesCount() {
       return pages_.size();
     }
+
     /**
      *
      *
@@ -1861,6 +2122,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2082,6 +2344,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -2097,6 +2360,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         pages_.makeImmutable();
         return pages_;
       }
+
       /**
        *
        *
@@ -2111,6 +2375,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public int getPagesCount() {
         return pages_.size();
       }
+
       /**
        *
        *
@@ -2126,6 +2391,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       public int getPages(int index) {
         return pages_.getInt(index);
       }
+
       /**
        *
        *
@@ -2147,6 +2413,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2167,6 +2434,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2186,6 +2454,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2290,6 +2559,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     private PageRangeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2325,6 +2595,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDIVIDUAL_PAGE_SELECTOR_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -2342,6 +2613,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIndividualPageSelector() {
     return pageRangeCase_ == 5;
   }
+
   /**
    *
    *
@@ -2364,6 +2636,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2386,6 +2659,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FROM_START_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -2402,6 +2676,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFromStart() {
     return pageRangeCase_ == 6;
   }
+
   /**
    *
    *
@@ -2423,6 +2698,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FROM_END_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -2438,6 +2714,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFromEnd() {
     return pageRangeCase_ == 7;
   }
+
   /**
    *
    *
@@ -2459,6 +2736,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OCR_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1.OcrConfig ocrConfig_;
+
   /**
    *
    *
@@ -2475,6 +2753,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOcrConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2493,6 +2772,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1.OcrConfig.getDefaultInstance()
         : ocrConfig_;
   }
+
   /**
    *
    *
@@ -2512,6 +2792,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAYOUT_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig layoutConfig_;
+
   /**
    *
    *
@@ -2530,6 +2811,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLayoutConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2550,6 +2832,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.getDefaultInstance()
         : layoutConfig_;
   }
+
   /**
    *
    *
@@ -2572,6 +2855,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEMA_OVERRIDE_FIELD_NUMBER = 8;
   private com.google.cloud.documentai.v1.DocumentSchema schemaOverride_;
+
   /**
    *
    *
@@ -2593,6 +2877,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSchemaOverride() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2616,6 +2901,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()
         : schemaOverride_;
   }
+
   /**
    *
    *
@@ -2885,6 +3171,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3194,6 +3481,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector.Builder,
             com.google.cloud.documentai.v1.ProcessOptions.IndividualPageSelectorOrBuilder>
         individualPageSelectorBuilder_;
+
     /**
      *
      *
@@ -3211,6 +3499,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIndividualPageSelector() {
       return pageRangeCase_ == 5;
     }
+
     /**
      *
      *
@@ -3241,6 +3530,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3266,6 +3556,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       pageRangeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3289,6 +3580,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       pageRangeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3327,6 +3619,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       pageRangeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3354,6 +3647,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3369,6 +3663,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         getIndividualPageSelectorBuilder() {
       return getIndividualPageSelectorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3393,6 +3688,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3445,6 +3741,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFromStart() {
       return pageRangeCase_ == 6;
     }
+
     /**
      *
      *
@@ -3463,6 +3760,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -3483,6 +3781,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3518,6 +3817,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFromEnd() {
       return pageRangeCase_ == 7;
     }
+
     /**
      *
      *
@@ -3535,6 +3835,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -3554,6 +3855,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3580,6 +3882,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1.OcrConfig.Builder,
             com.google.cloud.documentai.v1.OcrConfigOrBuilder>
         ocrConfigBuilder_;
+
     /**
      *
      *
@@ -3595,6 +3898,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOcrConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3616,6 +3920,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return ocrConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3639,6 +3944,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3659,6 +3965,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3687,6 +3994,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3707,6 +4015,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3722,6 +4031,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOcrConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3741,6 +4051,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             : ocrConfig_;
       }
     }
+
     /**
      *
      *
@@ -3774,6 +4085,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1.ProcessOptions.LayoutConfig.Builder,
             com.google.cloud.documentai.v1.ProcessOptions.LayoutConfigOrBuilder>
         layoutConfigBuilder_;
+
     /**
      *
      *
@@ -3791,6 +4103,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLayoutConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3814,6 +4127,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return layoutConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3840,6 +4154,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3863,6 +4178,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3896,6 +4212,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3918,6 +4235,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3936,6 +4254,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLayoutConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3958,6 +4277,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             : layoutConfig_;
       }
     }
+
     /**
      *
      *
@@ -3993,6 +4313,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1.DocumentSchema.Builder,
             com.google.cloud.documentai.v1.DocumentSchemaOrBuilder>
         schemaOverrideBuilder_;
+
     /**
      *
      *
@@ -4013,6 +4334,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchemaOverride() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4039,6 +4361,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return schemaOverrideBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4067,6 +4390,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4093,6 +4417,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4127,6 +4452,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4152,6 +4478,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4172,6 +4499,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSchemaOverrideFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4196,6 +4524,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
             : schemaOverride_;
       }
     }
+
     /**
      *
      *

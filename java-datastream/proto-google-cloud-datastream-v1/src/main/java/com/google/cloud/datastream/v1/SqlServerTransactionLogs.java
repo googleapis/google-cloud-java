@@ -33,6 +33,7 @@ public final class SqlServerTransactionLogs extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerTransactionLogs)
     SqlServerTransactionLogsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SqlServerTransactionLogs.newBuilder() to construct.
   private SqlServerTransactionLogs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class SqlServerTransactionLogs extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

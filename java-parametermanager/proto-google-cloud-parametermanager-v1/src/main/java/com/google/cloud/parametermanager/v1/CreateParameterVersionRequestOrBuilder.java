@@ -39,6 +39,7 @@ public interface CreateParameterVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateParameterVersionRequestOrBuilder
    * @return The parameterVersionId.
    */
   java.lang.String getParameterVersionId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateParameterVersionRequestOrBuilder
    * @return Whether the parameterVersion field is set.
    */
   boolean hasParameterVersion();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface CreateParameterVersionRequestOrBuilder
    * @return The parameterVersion.
    */
   com.google.cloud.parametermanager.v1.ParameterVersion getParameterVersion();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface CreateParameterVersionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -294,7 +294,8 @@ public class TimeSeriesName implements ResourceName {
     private Builder(TimeSeriesName timeSeriesName) {
       Preconditions.checkArgument(
           Objects.equals(timeSeriesName.pathTemplate, PROJECT_TIME_SERIES),
-          "toBuilder is only supported when TimeSeriesName has the pattern of projects/{project}/timeSeries/{time_series}");
+          "toBuilder is only supported when TimeSeriesName has the pattern of"
+              + " projects/{project}/timeSeries/{time_series}");
       this.project = timeSeriesName.project;
       this.timeSeries = timeSeriesName.timeSeries;
     }

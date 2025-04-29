@@ -39,6 +39,7 @@ public interface CreateDeviceSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateDeviceSessionRequestOrBuilder
    * @return Whether the deviceSession field is set.
    */
   boolean hasDeviceSession();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateDeviceSessionRequestOrBuilder
    * @return The deviceSession.
    */
   com.google.cloud.devicestreaming.v1.DeviceSession getDeviceSession();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateDeviceSessionRequestOrBuilder
    * @return The deviceSessionId.
    */
   java.lang.String getDeviceSessionId();
+
   /**
    *
    *

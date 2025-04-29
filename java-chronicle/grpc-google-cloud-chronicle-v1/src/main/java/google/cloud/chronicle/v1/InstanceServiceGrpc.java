@@ -90,6 +90,19 @@ public final class InstanceServiceGrpc {
     return InstanceServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static InstanceServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<InstanceServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<InstanceServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public InstanceServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new InstanceServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return InstanceServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -195,6 +208,40 @@ public final class InstanceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service InstanceService.
+   *
+   * <pre>
+   * InstanceService provides the entry interface for the Chronicle API.
+   * </pre>
+   */
+  public static final class InstanceServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<InstanceServiceBlockingV2Stub> {
+    private InstanceServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected InstanceServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new InstanceServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Instance.
+     * </pre>
+     */
+    public google.cloud.chronicle.v1.Instance getInstance(
+        google.cloud.chronicle.v1.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service InstanceService.
    *
    * <pre>
    * InstanceService provides the entry interface for the Chronicle API.

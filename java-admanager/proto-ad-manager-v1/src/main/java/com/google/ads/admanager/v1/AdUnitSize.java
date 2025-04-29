@@ -33,6 +33,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.AdUnitSize)
     AdUnitSizeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AdUnitSize.newBuilder() to construct.
   private AdUnitSize(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SIZE_FIELD_NUMBER = 1;
   private com.google.ads.admanager.v1.Size size_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSize() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   public com.google.ads.admanager.v1.Size getSize() {
     return size_ == null ? com.google.ads.admanager.v1.Size.getDefaultInstance() : size_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENVIRONMENT_TYPE_FIELD_NUMBER = 2;
   private int environmentType_ = 0;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   public int getEnvironmentTypeValue() {
     return environmentType_;
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.Size> companions_;
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.ads.admanager.v1.Size> getCompanionsList() {
     return companions_;
   }
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       getCompanionsOrBuilderList() {
     return companions_;
   }
+
   /**
    *
    *
@@ -202,6 +211,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   public int getCompanionsCount() {
     return companions_.size();
   }
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
   public com.google.ads.admanager.v1.Size getCompanions(int index) {
     return companions_.get(index);
   }
+
   /**
    *
    *
@@ -422,6 +433,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +709,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Size.Builder,
             com.google.ads.admanager.v1.SizeOrBuilder>
         sizeBuilder_;
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSize() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return sizeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +856,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSizeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return size_ == null ? com.google.ads.admanager.v1.Size.getDefaultInstance() : size_;
       }
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int environmentType_ = 0;
+
     /**
      *
      *
@@ -899,6 +921,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     public int getEnvironmentTypeValue() {
       return environmentType_;
     }
+
     /**
      *
      *
@@ -919,6 +942,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
           ? com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1045,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return companionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1064,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return companionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return companionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1108,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1131,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1125,6 +1156,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1181,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1203,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1226,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1214,6 +1249,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1271,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1293,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1308,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     public com.google.ads.admanager.v1.Size.Builder getCompanionsBuilder(int index) {
       return getCompanionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1288,6 +1327,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return companionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1347,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(companions_);
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1363,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       return getCompanionsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.Size.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1337,6 +1379,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       return getCompanionsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.Size.getDefaultInstance());
     }
+
     /**
      *
      *

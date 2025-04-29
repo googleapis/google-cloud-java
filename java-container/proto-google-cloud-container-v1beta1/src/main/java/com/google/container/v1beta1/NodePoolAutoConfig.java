@@ -34,6 +34,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePoolAutoConfig)
     NodePoolAutoConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodePoolAutoConfig.newBuilder() to construct.
   private NodePoolAutoConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int NETWORK_TAGS_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.NetworkTags networkTags_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasNetworkTags() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.NetworkTags.getDefaultInstance()
         : networkTags_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 2;
   private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasResourceManagerTags() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
         : resourceManagerTags_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int NODE_KUBELET_CONFIG_FIELD_NUMBER = 3;
   private com.google.container.v1beta1.NodeKubeletConfig nodeKubeletConfig_;
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasNodeKubeletConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
         : nodeKubeletConfig_;
   }
+
   /**
    *
    *
@@ -424,6 +434,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -675,6 +686,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.NetworkTags.Builder,
             com.google.container.v1beta1.NetworkTagsOrBuilder>
         networkTagsBuilder_;
+
     /**
      *
      *
@@ -692,6 +704,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasNetworkTags() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         return networkTagsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +832,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNetworkTagsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             : networkTags_;
       }
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.ResourceManagerTags.Builder,
             com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
         resourceManagerTagsBuilder_;
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasResourceManagerTags() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -924,6 +946,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         return resourceManagerTagsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +992,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1044,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getResourceManagerTagsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1082,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             : resourceManagerTags_;
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1116,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             com.google.container.v1beta1.NodeKubeletConfig.Builder,
             com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
         nodeKubeletConfigBuilder_;
+
     /**
      *
      *
@@ -1103,6 +1133,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasNodeKubeletConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1125,6 +1156,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         return nodeKubeletConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1149,6 +1181,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1204,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1235,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1257,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1274,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNodeKubeletConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1258,6 +1295,7 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
             : nodeKubeletConfig_;
       }
     }
+
     /**
      *
      *

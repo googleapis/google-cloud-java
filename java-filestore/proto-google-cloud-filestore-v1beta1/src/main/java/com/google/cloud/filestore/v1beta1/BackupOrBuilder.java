@@ -37,6 +37,7 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface BackupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -165,9 +171,11 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -192,6 +201,7 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface BackupOrBuilder
    * @return The sourceInstance.
    */
   java.lang.String getSourceInstance();
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public interface BackupOrBuilder
    * @return The sourceFileShare.
    */
   java.lang.String getSourceFileShare();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for sourceInstanceTier.
    */
   int getSourceInstanceTierValue();
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public interface BackupOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -359,6 +373,7 @@ public interface BackupOrBuilder
    * @return The satisfiesPzs.
    */
   com.google.protobuf.BoolValue getSatisfiesPzs();
+
   /**
    *
    *
@@ -397,6 +412,7 @@ public interface BackupOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -431,6 +447,7 @@ public interface BackupOrBuilder
    * </code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -452,9 +469,11 @@ public interface BackupOrBuilder
    * </code>
    */
   boolean containsTags(java.lang.String key);
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
+
   /**
    *
    *
@@ -476,6 +495,7 @@ public interface BackupOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
   /**
    *
    *
@@ -501,6 +521,7 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -539,6 +560,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for fileSystemProtocol.
    */
   int getFileSystemProtocolValue();
+
   /**
    *
    *

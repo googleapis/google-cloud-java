@@ -38,6 +38,7 @@ public interface GetNetworkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

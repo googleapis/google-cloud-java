@@ -33,6 +33,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePoolDefaults)
     NodePoolDefaultsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodePoolDefaults.newBuilder() to construct.
   private NodePoolDefaults(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int NODE_CONFIG_DEFAULTS_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.NodeConfigDefaults nodeConfigDefaults_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
   public boolean hasNodeConfigDefaults() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
         ? com.google.container.v1beta1.NodeConfigDefaults.getDefaultInstance()
         : nodeConfigDefaults_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
             com.google.container.v1beta1.NodeConfigDefaults.Builder,
             com.google.container.v1beta1.NodeConfigDefaultsOrBuilder>
         nodeConfigDefaultsBuilder_;
+
     /**
      *
      *
@@ -496,6 +502,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
     public boolean hasNodeConfigDefaults() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
         return nodeConfigDefaultsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -586,6 +596,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +616,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +631,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getNodeConfigDefaultsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class NodePoolDefaults extends com.google.protobuf.GeneratedMessage
             : nodeConfigDefaults_;
       }
     }
+
     /**
      *
      *

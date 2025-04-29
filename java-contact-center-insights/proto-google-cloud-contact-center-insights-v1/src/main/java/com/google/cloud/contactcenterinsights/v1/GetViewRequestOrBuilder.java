@@ -38,6 +38,7 @@ public interface GetViewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

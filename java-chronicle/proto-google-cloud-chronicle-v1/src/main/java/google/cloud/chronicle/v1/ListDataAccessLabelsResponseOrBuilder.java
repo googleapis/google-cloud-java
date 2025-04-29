@@ -34,6 +34,7 @@ public interface ListDataAccessLabelsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.DataAccessLabel data_access_labels = 1;</code>
    */
   java.util.List<google.cloud.chronicle.v1.DataAccessLabel> getDataAccessLabelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDataAccessLabelsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.DataAccessLabel data_access_labels = 1;</code>
    */
   google.cloud.chronicle.v1.DataAccessLabel getDataAccessLabels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDataAccessLabelsResponseOrBuilder
    * <code>repeated .google.cloud.chronicle.v1.DataAccessLabel data_access_labels = 1;</code>
    */
   int getDataAccessLabelsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDataAccessLabelsResponseOrBuilder
    */
   java.util.List<? extends google.cloud.chronicle.v1.DataAccessLabelOrBuilder>
       getDataAccessLabelsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDataAccessLabelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

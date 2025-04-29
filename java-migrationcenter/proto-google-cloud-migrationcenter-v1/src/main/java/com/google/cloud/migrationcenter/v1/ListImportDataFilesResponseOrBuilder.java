@@ -34,6 +34,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportDataFile import_data_files = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ImportDataFile> getImportDataFilesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportDataFile import_data_files = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.ImportDataFile getImportDataFiles(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportDataFile import_data_files = 1;</code>
    */
   int getImportDataFilesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListImportDataFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ImportDataFileOrBuilder>
       getImportDataFilesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -128,6 +134,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface ListImportDataFilesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

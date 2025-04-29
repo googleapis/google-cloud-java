@@ -41,6 +41,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the coolDownPeriod field is set.
    */
   boolean hasCoolDownPeriod();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface AutomaticScalingOrBuilder
    * @return The coolDownPeriod.
    */
   com.google.protobuf.Duration getCoolDownPeriod();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the cpuUtilization field is set.
    */
   boolean hasCpuUtilization();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AutomaticScalingOrBuilder
    * @return The cpuUtilization.
    */
   com.google.appengine.v1.CpuUtilization getCpuUtilization();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the maxPendingLatency field is set.
    */
   boolean hasMaxPendingLatency();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface AutomaticScalingOrBuilder
    * @return The maxPendingLatency.
    */
   com.google.protobuf.Duration getMaxPendingLatency();
+
   /**
    *
    *
@@ -232,6 +238,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the minPendingLatency field is set.
    */
   boolean hasMinPendingLatency();
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public interface AutomaticScalingOrBuilder
    * @return The minPendingLatency.
    */
   com.google.protobuf.Duration getMinPendingLatency();
+
   /**
    *
    *
@@ -269,6 +277,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the requestUtilization field is set.
    */
   boolean hasRequestUtilization();
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public interface AutomaticScalingOrBuilder
    * @return The requestUtilization.
    */
   com.google.appengine.v1.RequestUtilization getRequestUtilization();
+
   /**
    *
    *
@@ -304,6 +314,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the diskUtilization field is set.
    */
   boolean hasDiskUtilization();
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public interface AutomaticScalingOrBuilder
    * @return The diskUtilization.
    */
   com.google.appengine.v1.DiskUtilization getDiskUtilization();
+
   /**
    *
    *
@@ -339,6 +351,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the networkUtilization field is set.
    */
   boolean hasNetworkUtilization();
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public interface AutomaticScalingOrBuilder
    * @return The networkUtilization.
    */
   com.google.appengine.v1.NetworkUtilization getNetworkUtilization();
+
   /**
    *
    *
@@ -374,6 +388,7 @@ public interface AutomaticScalingOrBuilder
    * @return Whether the standardSchedulerSettings field is set.
    */
   boolean hasStandardSchedulerSettings();
+
   /**
    *
    *
@@ -386,6 +401,7 @@ public interface AutomaticScalingOrBuilder
    * @return The standardSchedulerSettings.
    */
   com.google.appengine.v1.StandardSchedulerSettings getStandardSchedulerSettings();
+
   /**
    *
    *

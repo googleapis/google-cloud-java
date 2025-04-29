@@ -38,6 +38,7 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ServiceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ServiceOrBuilder
    * @return Whether the custom field is set.
    */
   boolean hasCustom();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ServiceOrBuilder
    * @return The custom.
    */
   com.google.monitoring.v3.Service.Custom getCustom();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ServiceOrBuilder
    * @return Whether the appEngine field is set.
    */
   boolean hasAppEngine();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface ServiceOrBuilder
    * @return The appEngine.
    */
   com.google.monitoring.v3.Service.AppEngine getAppEngine();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ServiceOrBuilder
    * @return Whether the cloudEndpoints field is set.
    */
   boolean hasCloudEndpoints();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface ServiceOrBuilder
    * @return The cloudEndpoints.
    */
   com.google.monitoring.v3.Service.CloudEndpoints getCloudEndpoints();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface ServiceOrBuilder
    * @return Whether the clusterIstio field is set.
    */
   boolean hasClusterIstio();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface ServiceOrBuilder
    * @return The clusterIstio.
    */
   com.google.monitoring.v3.Service.ClusterIstio getClusterIstio();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface ServiceOrBuilder
    * @return Whether the meshIstio field is set.
    */
   boolean hasMeshIstio();
+
   /**
    *
    *
@@ -242,6 +253,7 @@ public interface ServiceOrBuilder
    * @return The meshIstio.
    */
   com.google.monitoring.v3.Service.MeshIstio getMeshIstio();
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public interface ServiceOrBuilder
    * @return Whether the istioCanonicalService field is set.
    */
   boolean hasIstioCanonicalService();
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface ServiceOrBuilder
    * @return The istioCanonicalService.
    */
   com.google.monitoring.v3.Service.IstioCanonicalService getIstioCanonicalService();
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public interface ServiceOrBuilder
    * @return Whether the cloudRun field is set.
    */
   boolean hasCloudRun();
+
   /**
    *
    *
@@ -319,6 +334,7 @@ public interface ServiceOrBuilder
    * @return The cloudRun.
    */
   com.google.monitoring.v3.Service.CloudRun getCloudRun();
+
   /**
    *
    *
@@ -342,6 +358,7 @@ public interface ServiceOrBuilder
    * @return Whether the gkeNamespace field is set.
    */
   boolean hasGkeNamespace();
+
   /**
    *
    *
@@ -354,6 +371,7 @@ public interface ServiceOrBuilder
    * @return The gkeNamespace.
    */
   com.google.monitoring.v3.Service.GkeNamespace getGkeNamespace();
+
   /**
    *
    *
@@ -377,6 +395,7 @@ public interface ServiceOrBuilder
    * @return Whether the gkeWorkload field is set.
    */
   boolean hasGkeWorkload();
+
   /**
    *
    *
@@ -389,6 +408,7 @@ public interface ServiceOrBuilder
    * @return The gkeWorkload.
    */
   com.google.monitoring.v3.Service.GkeWorkload getGkeWorkload();
+
   /**
    *
    *
@@ -412,6 +432,7 @@ public interface ServiceOrBuilder
    * @return Whether the gkeService field is set.
    */
   boolean hasGkeService();
+
   /**
    *
    *
@@ -424,6 +445,7 @@ public interface ServiceOrBuilder
    * @return The gkeService.
    */
   com.google.monitoring.v3.Service.GkeService getGkeService();
+
   /**
    *
    *
@@ -450,6 +472,7 @@ public interface ServiceOrBuilder
    * @return Whether the basicService field is set.
    */
   boolean hasBasicService();
+
   /**
    *
    *
@@ -465,6 +488,7 @@ public interface ServiceOrBuilder
    * @return The basicService.
    */
   com.google.monitoring.v3.Service.BasicService getBasicService();
+
   /**
    *
    *
@@ -491,6 +515,7 @@ public interface ServiceOrBuilder
    * @return Whether the telemetry field is set.
    */
   boolean hasTelemetry();
+
   /**
    *
    *
@@ -503,6 +528,7 @@ public interface ServiceOrBuilder
    * @return The telemetry.
    */
   com.google.monitoring.v3.Service.Telemetry getTelemetry();
+
   /**
    *
    *
@@ -529,6 +555,7 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 14;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -544,9 +571,11 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 14;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -562,6 +591,7 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 14;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -581,6 +611,7 @@ public interface ServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

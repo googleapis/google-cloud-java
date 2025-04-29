@@ -287,7 +287,8 @@ public class ConversationModelName implements ResourceName {
     private Builder(ConversationModelName conversationModelName) {
       Preconditions.checkArgument(
           Objects.equals(conversationModelName.pathTemplate, PROJECT_LOCATION_CONVERSATION_MODEL),
-          "toBuilder is only supported when ConversationModelName has the pattern of projects/{project}/locations/{location}/conversationModels/{conversation_model}");
+          "toBuilder is only supported when ConversationModelName has the pattern of"
+              + " projects/{project}/locations/{location}/conversationModels/{conversation_model}");
       this.project = conversationModelName.project;
       this.location = conversationModelName.location;
       this.conversationModel = conversationModelName.conversationModel;

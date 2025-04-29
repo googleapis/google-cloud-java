@@ -33,6 +33,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.BucketList)
     BucketListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BucketList.newBuilder() to construct.
   private BucketList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
      * @return The bucket.
      */
     java.lang.String getBucket();
+
     /**
      *
      *
@@ -105,6 +107,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the prefixList field is set.
      */
     boolean hasPrefixList();
+
     /**
      *
      *
@@ -117,6 +120,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
      * @return The prefixList.
      */
     com.google.cloud.storagebatchoperations.v1.PrefixList getPrefixList();
+
     /**
      *
      *
@@ -140,6 +144,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manifest field is set.
      */
     boolean hasManifest();
+
     /**
      *
      *
@@ -152,6 +157,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
      * @return The manifest.
      */
     com.google.cloud.storagebatchoperations.v1.Manifest getManifest();
+
     /**
      *
      *
@@ -166,6 +172,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.storagebatchoperations.v1.BucketList.Bucket.ObjectConfigurationCase
         getObjectConfigurationCase();
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.storagebatchoperations.v1.BucketList.Bucket)
       BucketOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Bucket.newBuilder() to construct.
     private Bucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -228,6 +236,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       private ObjectConfigurationCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -264,6 +273,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -287,6 +297,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -312,6 +323,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PREFIX_LIST_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -327,6 +339,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrefixList() {
       return objectConfigurationCase_ == 2;
     }
+
     /**
      *
      *
@@ -345,6 +358,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.storagebatchoperations.v1.PrefixList.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -363,6 +377,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MANIFEST_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -378,6 +393,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManifest() {
       return objectConfigurationCase_ == 3;
     }
+
     /**
      *
      *
@@ -396,6 +412,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.storagebatchoperations.v1.Manifest.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -615,6 +632,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object bucket_ = "";
+
       /**
        *
        *
@@ -891,6 +910,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -913,6 +933,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -934,6 +955,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -951,6 +973,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -979,6 +1002,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.storagebatchoperations.v1.PrefixList.Builder,
               com.google.cloud.storagebatchoperations.v1.PrefixListOrBuilder>
           prefixListBuilder_;
+
       /**
        *
        *
@@ -994,6 +1018,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPrefixList() {
         return objectConfigurationCase_ == 2;
       }
+
       /**
        *
        *
@@ -1019,6 +1044,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.storagebatchoperations.v1.PrefixList.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1041,6 +1067,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         objectConfigurationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1061,6 +1088,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         objectConfigurationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1095,6 +1123,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         objectConfigurationCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1120,6 +1149,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1132,6 +1162,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.storagebatchoperations.v1.PrefixList.Builder getPrefixListBuilder() {
         return getPrefixListFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1153,6 +1184,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.storagebatchoperations.v1.PrefixList.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1192,6 +1224,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.storagebatchoperations.v1.Manifest.Builder,
               com.google.cloud.storagebatchoperations.v1.ManifestOrBuilder>
           manifestBuilder_;
+
       /**
        *
        *
@@ -1207,6 +1240,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       public boolean hasManifest() {
         return objectConfigurationCase_ == 3;
       }
+
       /**
        *
        *
@@ -1232,6 +1266,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.storagebatchoperations.v1.Manifest.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1254,6 +1289,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         objectConfigurationCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1274,6 +1310,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         objectConfigurationCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1307,6 +1344,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         objectConfigurationCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1332,6 +1370,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1344,6 +1383,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.storagebatchoperations.v1.Manifest.Builder getManifestBuilder() {
         return getManifestFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1364,6 +1404,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.storagebatchoperations.v1.Manifest.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1469,6 +1510,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.storagebatchoperations.v1.BucketList.Bucket> buckets_;
+
   /**
    *
    *
@@ -1487,6 +1529,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       getBucketsList() {
     return buckets_;
   }
+
   /**
    *
    *
@@ -1506,6 +1549,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       getBucketsOrBuilderList() {
     return buckets_;
   }
+
   /**
    *
    *
@@ -1523,6 +1567,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
   public int getBucketsCount() {
     return buckets_.size();
   }
+
   /**
    *
    *
@@ -1540,6 +1585,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.storagebatchoperations.v1.BucketList.Bucket getBuckets(int index) {
     return buckets_.get(index);
   }
+
   /**
    *
    *
@@ -1721,6 +1767,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1990,6 +2037,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         return bucketsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2010,6 +2058,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         return bucketsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2079,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         return bucketsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2057,6 +2107,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2082,6 +2133,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2108,6 +2160,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2135,6 +2188,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2213,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2184,6 +2239,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2209,6 +2265,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2289,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2255,6 +2313,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2272,6 +2331,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBucketsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2293,6 +2353,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         return bucketsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2315,6 +2376,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(buckets_);
       }
     }
+
     /**
      *
      *
@@ -2334,6 +2396,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.storagebatchoperations.v1.BucketList.Bucket.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2354,6 +2417,7 @@ public final class BucketList extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.storagebatchoperations.v1.BucketList.Bucket.getDefaultInstance());
     }
+
     /**
      *
      *

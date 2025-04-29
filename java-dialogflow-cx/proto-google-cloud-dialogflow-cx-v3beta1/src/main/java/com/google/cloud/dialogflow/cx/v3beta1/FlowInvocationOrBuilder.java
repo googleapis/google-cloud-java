@@ -40,6 +40,7 @@ public interface FlowInvocationOrBuilder
    * @return The flow.
    */
   java.lang.String getFlow();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface FlowInvocationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface FlowInvocationOrBuilder
    * @return Whether the inputActionParameters field is set.
    */
   boolean hasInputActionParameters();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface FlowInvocationOrBuilder
    * @return The inputActionParameters.
    */
   com.google.protobuf.Struct getInputActionParameters();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface FlowInvocationOrBuilder
    * @return Whether the outputActionParameters field is set.
    */
   boolean hasOutputActionParameters();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface FlowInvocationOrBuilder
    * @return The outputActionParameters.
    */
   com.google.protobuf.Struct getOutputActionParameters();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface FlowInvocationOrBuilder
    * @return The enum numeric value on the wire for flowState.
    */
   int getFlowStateValue();
+
   /**
    *
    *

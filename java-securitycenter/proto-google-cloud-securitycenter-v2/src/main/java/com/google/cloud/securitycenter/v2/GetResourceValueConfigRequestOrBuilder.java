@@ -39,6 +39,7 @@ public interface GetResourceValueConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

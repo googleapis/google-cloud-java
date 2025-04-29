@@ -337,6 +337,19 @@ public final class SampleQueryServiceGrpc {
     return SampleQueryServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SampleQueryServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SampleQueryServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SampleQueryServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SampleQueryServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SampleQueryServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SampleQueryServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -618,6 +631,112 @@ public final class SampleQueryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SampleQueryService.
+   *
+   * <pre>
+   * Service for managing
+   * [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery]s,
+   * </pre>
+   */
+  public static final class SampleQueryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SampleQueryServiceBlockingV2Stub> {
+    private SampleQueryServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SampleQueryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SampleQueryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.SampleQuery getSampleQuery(
+        com.google.cloud.discoveryengine.v1alpha.GetSampleQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSampleQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of
+     * [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ListSampleQueriesResponse listSampleQueries(
+        com.google.cloud.discoveryengine.v1alpha.ListSampleQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSampleQueriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery]
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.SampleQuery createSampleQuery(
+        com.google.cloud.discoveryengine.v1alpha.CreateSampleQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSampleQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.SampleQuery updateSampleQuery(
+        com.google.cloud.discoveryengine.v1alpha.UpdateSampleQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSampleQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSampleQuery(
+        com.google.cloud.discoveryengine.v1alpha.DeleteSampleQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSampleQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of multiple
+     * [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery]s. Sample
+     * queries that already exist may be deleted.
+     * Note: It is possible for a subset of the
+     * [SampleQuery][google.cloud.discoveryengine.v1alpha.SampleQuery]s to be
+     * successfully imported.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importSampleQueries(
+        com.google.cloud.discoveryengine.v1alpha.ImportSampleQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportSampleQueriesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SampleQueryService.
    *
    * <pre>
    * Service for managing

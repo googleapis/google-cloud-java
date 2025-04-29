@@ -28,6 +28,75 @@ public interface AllocationResourceStatusOrBuilder
    *
    *
    * <pre>
+   * The number of reservation blocks associated with this reservation.
+   * </pre>
+   *
+   * <code>optional int32 reservation_block_count = 161835754;</code>
+   *
+   * @return Whether the reservationBlockCount field is set.
+   */
+  boolean hasReservationBlockCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of reservation blocks associated with this reservation.
+   * </pre>
+   *
+   * <code>optional int32 reservation_block_count = 161835754;</code>
+   *
+   * @return The reservationBlockCount.
+   */
+  int getReservationBlockCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+   * </code>
+   *
+   * @return Whether the reservationMaintenance field is set.
+   */
+  boolean hasReservationMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+   * </code>
+   *
+   * @return The reservationMaintenance.
+   */
+  com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_maintenance = 340607776;
+   * </code>
+   */
+  com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder getReservationMaintenanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Allocation Properties of this reservation.
    * </pre>
    *
@@ -38,6 +107,7 @@ public interface AllocationResourceStatusOrBuilder
    * @return Whether the specificSkuAllocation field is set.
    */
   boolean hasSpecificSkuAllocation();
+
   /**
    *
    *
@@ -53,6 +123,7 @@ public interface AllocationResourceStatusOrBuilder
    */
   com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       getSpecificSkuAllocation();
+
   /**
    *
    *

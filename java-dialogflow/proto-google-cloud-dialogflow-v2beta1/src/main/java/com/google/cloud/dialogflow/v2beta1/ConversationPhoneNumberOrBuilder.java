@@ -49,6 +49,7 @@ public interface ConversationPhoneNumberOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
+
   /**
    *
    *

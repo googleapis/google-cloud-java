@@ -34,6 +34,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListEntitlementChangesResponse)
     ListEntitlementChangesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListEntitlementChangesResponse.newBuilder() to construct.
   private ListEntitlementChangesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.EntitlementChange> entitlementChanges_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.channel.v1.EntitlementChange> getEntitlementChangesList() {
     return entitlementChanges_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       getEntitlementChangesOrBuilderList() {
     return entitlementChanges_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
   public int getEntitlementChangesCount() {
     return entitlementChanges_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
   public com.google.cloud.channel.v1.EntitlementChange getEntitlementChanges(int index) {
     return entitlementChanges_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +650,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return entitlementChangesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return entitlementChangesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -673,6 +684,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return entitlementChangesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +818,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +859,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +893,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         int index) {
       return getEntitlementChangesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return entitlementChangesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -906,6 +929,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(entitlementChanges_);
       }
     }
+
     /**
      *
      *
@@ -919,6 +943,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       return getEntitlementChangesFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.EntitlementChange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -933,6 +958,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       return getEntitlementChangesFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.EntitlementChange.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -968,6 +994,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -990,6 +1017,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1062,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1080,7 @@ public final class ListEntitlementChangesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

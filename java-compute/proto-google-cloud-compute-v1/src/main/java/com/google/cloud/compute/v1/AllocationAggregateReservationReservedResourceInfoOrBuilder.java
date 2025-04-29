@@ -38,6 +38,7 @@ public interface AllocationAggregateReservationReservedResourceInfoOrBuilder
    * @return Whether the accelerator field is set.
    */
   boolean hasAccelerator();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface AllocationAggregateReservationReservedResourceInfoOrBuilder
    */
   com.google.cloud.compute.v1.AllocationAggregateReservationReservedResourceInfoAccelerator
       getAccelerator();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface GenerateStatelessSuggestionResponseOrBuilder
    * @return Whether the generatorSuggestion field is set.
    */
   boolean hasGeneratorSuggestion();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GenerateStatelessSuggestionResponseOrBuilder
    * @return The generatorSuggestion.
    */
   com.google.cloud.dialogflow.v2beta1.GeneratorSuggestion getGeneratorSuggestion();
+
   /**
    *
    *

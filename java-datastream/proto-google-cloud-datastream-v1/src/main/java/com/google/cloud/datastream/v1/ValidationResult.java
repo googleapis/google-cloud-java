@@ -33,6 +33,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.ValidationResult)
     ValidationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidationResult.newBuilder() to construct.
   private ValidationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.Validation> validations_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.datastream.v1.Validation> getValidationsList() {
     return validations_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       getValidationsOrBuilderList() {
     return validations_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public int getValidationsCount() {
     return validations_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datastream.v1.Validation getValidations(int index) {
     return validations_.get(index);
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return validationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return validationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return validationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +700,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +722,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +766,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +787,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +808,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +822,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datastream.v1.Validation.Builder getValidationsBuilder(int index) {
       return getValidationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -820,6 +840,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return validationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -838,6 +859,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(validations_);
       }
     }
+
     /**
      *
      *
@@ -852,6 +874,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       return getValidationsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.Validation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -866,6 +889,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
       return getValidationsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.Validation.getDefaultInstance());
     }
+
     /**
      *
      *

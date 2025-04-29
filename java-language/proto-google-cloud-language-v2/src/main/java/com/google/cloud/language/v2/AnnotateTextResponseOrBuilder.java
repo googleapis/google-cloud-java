@@ -35,6 +35,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Sentence sentences = 1;</code>
    */
   java.util.List<com.google.cloud.language.v2.Sentence> getSentencesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Sentence sentences = 1;</code>
    */
   com.google.cloud.language.v2.Sentence getSentences(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Sentence sentences = 1;</code>
    */
   int getSentencesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v2.SentenceOrBuilder>
       getSentencesOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Entity entities = 2;</code>
    */
   java.util.List<com.google.cloud.language.v2.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Entity entities = 2;</code>
    */
   com.google.cloud.language.v2.Entity getEntities(int index);
+
   /**
    *
    *
@@ -123,6 +129,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Entity entities = 2;</code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.Entity entities = 2;</code>
    */
   java.util.List<? extends com.google.cloud.language.v2.EntityOrBuilder> getEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public interface AnnotateTextResponseOrBuilder
    * @return Whether the documentSentiment field is set.
    */
   boolean hasDocumentSentiment();
+
   /**
    *
    *
@@ -178,6 +187,7 @@ public interface AnnotateTextResponseOrBuilder
    * @return The documentSentiment.
    */
   com.google.cloud.language.v2.Sentiment getDocumentSentiment();
+
   /**
    *
    *
@@ -204,6 +214,7 @@ public interface AnnotateTextResponseOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.ClassificationCategory categories = 5;</code>
    */
   java.util.List<com.google.cloud.language.v2.ClassificationCategory> getCategoriesList();
+
   /**
    *
    *
@@ -239,6 +251,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.ClassificationCategory categories = 5;</code>
    */
   com.google.cloud.language.v2.ClassificationCategory getCategories(int index);
+
   /**
    *
    *
@@ -249,6 +262,7 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v2.ClassificationCategory categories = 5;</code>
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -260,6 +274,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v2.ClassificationCategoryOrBuilder>
       getCategoriesOrBuilderList();
+
   /**
    *
    *
@@ -282,6 +297,7 @@ public interface AnnotateTextResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.language.v2.ClassificationCategory> getModerationCategoriesList();
+
   /**
    *
    *
@@ -293,6 +309,7 @@ public interface AnnotateTextResponseOrBuilder
    * </code>
    */
   com.google.cloud.language.v2.ClassificationCategory getModerationCategories(int index);
+
   /**
    *
    *
@@ -304,6 +321,7 @@ public interface AnnotateTextResponseOrBuilder
    * </code>
    */
   int getModerationCategoriesCount();
+
   /**
    *
    *
@@ -316,6 +334,7 @@ public interface AnnotateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v2.ClassificationCategoryOrBuilder>
       getModerationCategoriesOrBuilderList();
+
   /**
    *
    *

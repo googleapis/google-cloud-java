@@ -39,6 +39,7 @@ public interface CreateServiceConnectionTokenRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateServiceConnectionTokenRequestOrBuilder
    * @return The serviceConnectionTokenId.
    */
   java.lang.String getServiceConnectionTokenId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateServiceConnectionTokenRequestOrBuilder
    * @return Whether the serviceConnectionToken field is set.
    */
   boolean hasServiceConnectionToken();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateServiceConnectionTokenRequestOrBuilder
    * @return The serviceConnectionToken.
    */
   com.google.cloud.networkconnectivity.v1.ServiceConnectionToken getServiceConnectionToken();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface CreateServiceConnectionTokenRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

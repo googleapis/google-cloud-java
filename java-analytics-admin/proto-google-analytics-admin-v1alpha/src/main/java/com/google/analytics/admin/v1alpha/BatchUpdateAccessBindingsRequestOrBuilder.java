@@ -43,6 +43,7 @@ public interface BatchUpdateAccessBindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface BatchUpdateAccessBindingsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest> getRequestsList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface BatchUpdateAccessBindingsRequestOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest getRequests(int index);
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface BatchUpdateAccessBindingsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface BatchUpdateAccessBindingsRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.UpdateAccessBindingRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

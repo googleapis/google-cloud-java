@@ -38,6 +38,7 @@ public interface GenerateUploadUrlResponseOrBuilder
    * @return The uploadUrl.
    */
   java.lang.String getUploadUrl();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface GenerateUploadUrlResponseOrBuilder
    * @return Whether the storageSource field is set.
    */
   boolean hasStorageSource();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface GenerateUploadUrlResponseOrBuilder
    * @return The storageSource.
    */
   com.google.cloud.functions.v2beta.StorageSource getStorageSource();
+
   /**
    *
    *

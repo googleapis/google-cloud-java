@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
@@ -90,6 +91,7 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
@@ -121,6 +123,7 @@ import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
@@ -162,6 +165,7 @@ import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
@@ -216,6 +220,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
@@ -231,6 +237,7 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
 import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
 import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
@@ -240,6 +247,8 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
@@ -264,6 +273,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
@@ -2119,6 +2129,84 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor
+              .<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingDataAnnotation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor.<GetReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingDataAnnotation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsMethodDescriptor =
+          MethodDescriptor
+              .<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListReportingDataAnnotations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListReportingDataAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListReportingDataAnnotationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor
+              .<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingDataAnnotation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor.<DeleteReportingDataAnnotationRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionMethodDescriptor =
+          MethodDescriptor.<SubmitUserDeletionRequest, SubmitUserDeletionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/SubmitUserDeletion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SubmitUserDeletionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubmitUserDeletionResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -2451,6 +2539,22 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       updateSubpropertyEventFilterCallable;
   private final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
       deleteSubpropertyEventFilterCallable;
+  private final UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable;
+  private final UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable;
+  private final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable;
+  private final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable;
+  private final UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable;
+  private final UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable;
+  private final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -4138,6 +4242,79 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        createReportingDataAnnotationTransportSettings =
+            GrpcCallSettings
+                .<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+                .setMethodDescriptor(createReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+        getReportingDataAnnotationTransportSettings =
+            GrpcCallSettings
+                .<GetReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+                .setMethodDescriptor(getReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+        listReportingDataAnnotationsTransportSettings =
+            GrpcCallSettings
+                .<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listReportingDataAnnotationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        updateReportingDataAnnotationTransportSettings =
+            GrpcCallSettings
+                .<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+                .setMethodDescriptor(updateReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reporting_data_annotation.name",
+                          String.valueOf(request.getReportingDataAnnotation().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteReportingDataAnnotationRequest, Empty>
+        deleteReportingDataAnnotationTransportSettings =
+            GrpcCallSettings.<DeleteReportingDataAnnotationRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+        submitUserDeletionTransportSettings =
+            GrpcCallSettings.<SubmitUserDeletionRequest, SubmitUserDeletionResponse>newBuilder()
+                .setMethodDescriptor(submitUserDeletionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -4945,6 +5122,41 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             deleteSubpropertyEventFilterTransportSettings,
             settings.deleteSubpropertyEventFilterSettings(),
+            clientContext);
+    this.createReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            createReportingDataAnnotationTransportSettings,
+            settings.createReportingDataAnnotationSettings(),
+            clientContext);
+    this.getReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            getReportingDataAnnotationTransportSettings,
+            settings.getReportingDataAnnotationSettings(),
+            clientContext);
+    this.listReportingDataAnnotationsCallable =
+        callableFactory.createUnaryCallable(
+            listReportingDataAnnotationsTransportSettings,
+            settings.listReportingDataAnnotationsSettings(),
+            clientContext);
+    this.listReportingDataAnnotationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listReportingDataAnnotationsTransportSettings,
+            settings.listReportingDataAnnotationsSettings(),
+            clientContext);
+    this.updateReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            updateReportingDataAnnotationTransportSettings,
+            settings.updateReportingDataAnnotationSettings(),
+            clientContext);
+    this.deleteReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            deleteReportingDataAnnotationTransportSettings,
+            settings.deleteReportingDataAnnotationSettings(),
+            clientContext);
+    this.submitUserDeletionCallable =
+        callableFactory.createUnaryCallable(
+            submitUserDeletionTransportSettings,
+            settings.submitUserDeletionSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -5969,6 +6181,49 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
       deleteSubpropertyEventFilterCallable() {
     return deleteSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable() {
+    return createReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable() {
+    return getReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable() {
+    return listReportingDataAnnotationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable() {
+    return listReportingDataAnnotationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable() {
+    return updateReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable() {
+    return deleteReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable() {
+    return submitUserDeletionCallable;
   }
 
   @Override

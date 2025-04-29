@@ -45,6 +45,7 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -66,9 +67,11 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ExecutionTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; annotations = 2;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -177,9 +183,11 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; annotations = 2;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; annotations = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface ExecutionTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -293,6 +303,7 @@ public interface ExecutionTemplateOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public interface ExecutionTemplateOrBuilder
    * @return The template.
    */
   com.google.cloud.run.v2.TaskTemplate getTemplate();
+
   /**
    *
    *

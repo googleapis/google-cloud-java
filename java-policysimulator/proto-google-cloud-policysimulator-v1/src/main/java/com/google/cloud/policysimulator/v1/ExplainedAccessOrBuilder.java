@@ -37,6 +37,7 @@ public interface ExplainedAccessOrBuilder
    * @return The enum numeric value on the wire for accessState.
    */
   int getAccessStateValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.cloud.policysimulator.v1.ExplainedPolicy policies = 2;</code>
    */
   java.util.List<com.google.cloud.policysimulator.v1.ExplainedPolicy> getPoliciesList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.cloud.policysimulator.v1.ExplainedPolicy policies = 2;</code>
    */
   com.google.cloud.policysimulator.v1.ExplainedPolicy getPolicies(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.cloud.policysimulator.v1.ExplainedPolicy policies = 2;</code>
    */
   int getPoliciesCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ExplainedAccessOrBuilder
    */
   java.util.List<? extends com.google.cloud.policysimulator.v1.ExplainedPolicyOrBuilder>
       getPoliciesOrBuilderList();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorsList();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   com.google.rpc.Status getErrors(int index);
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public interface ExplainedAccessOrBuilder
    * <code>repeated .google.rpc.Status errors = 3;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *

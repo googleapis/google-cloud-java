@@ -36,6 +36,7 @@ public interface UpdateServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface UpdateServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateServiceRequestOrBuilder
    * @return The service.
    */
   com.google.appengine.v1.Service getService();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpdateServiceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface UpdateServiceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

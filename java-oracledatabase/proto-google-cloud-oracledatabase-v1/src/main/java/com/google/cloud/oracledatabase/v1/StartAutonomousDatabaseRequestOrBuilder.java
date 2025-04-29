@@ -39,6 +39,7 @@ public interface StartAutonomousDatabaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
