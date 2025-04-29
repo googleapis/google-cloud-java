@@ -840,3 +840,6 @@ grpc-google-cloud-chronicle-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-storagebatchoperations:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-storagebatchoperations-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-storagebatchoperations-v1:0.0.0:0.0.1-SNAPSHOT
+google-shopping-merchant-issue-resolution:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-issue-resolution-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-issue-resolution-v1beta:0.0.0:0.0.1-SNAPSHOT
