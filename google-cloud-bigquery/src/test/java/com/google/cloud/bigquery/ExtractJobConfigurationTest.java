@@ -43,6 +43,7 @@ public class ExtractJobConfigurationTest {
   private static final Map<String, String> LABELS =
       ImmutableMap.of("test-job-name", "test-extract-job");
   private static final Long TIMEOUT = 10L;
+  private static final String RESERVATION = "reservation";
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URIS)
           .setPrintHeader(PRINT_HEADER)
@@ -51,6 +52,7 @@ public class ExtractJobConfigurationTest {
           .setFormat(FORMAT)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setReservation(RESERVATION)
           .build();
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_ONE_URI =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URI)
@@ -60,6 +62,7 @@ public class ExtractJobConfigurationTest {
           .setFormat(FORMAT)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setReservation(RESERVATION)
           .build();
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_AVRO =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URI)
@@ -70,6 +73,7 @@ public class ExtractJobConfigurationTest {
           .setUseAvroLogicalTypes(USEAVROLOGICALTYPES)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setReservation(RESERVATION)
           .build();
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_MODEL =
       ExtractJobConfiguration.newBuilder(MODEL_ID, DESTINATION_URIS)
@@ -80,6 +84,7 @@ public class ExtractJobConfigurationTest {
           .setUseAvroLogicalTypes(USEAVROLOGICALTYPES)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setReservation(RESERVATION)
           .build();
 
   @Test
@@ -185,6 +190,7 @@ public class ExtractJobConfigurationTest {
     assertEquals(FORMAT, EXTRACT_CONFIGURATION_MODEL.getFormat());
     assertEquals(LABELS, EXTRACT_CONFIGURATION_MODEL.getLabels());
     assertEquals(TIMEOUT, EXTRACT_CONFIGURATION_MODEL.getJobTimeoutMs());
+    assertEquals(RESERVATION, EXTRACT_CONFIGURATION_MODEL.getReservation());
   }
 
   @Test
@@ -256,5 +262,6 @@ public class ExtractJobConfigurationTest {
     assertEquals(expected.getFormat(), value.getFormat());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
+    assertEquals(expected.getReservation(), value.getReservation());
   }
 }

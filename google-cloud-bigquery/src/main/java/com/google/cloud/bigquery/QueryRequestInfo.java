@@ -44,6 +44,7 @@ final class QueryRequestInfo {
   private final Boolean useLegacySql;
   private final JobCreationMode jobCreationMode;
   private final DataFormatOptions formatOptions;
+  private final String reservation;
 
   QueryRequestInfo(QueryJobConfiguration config, Boolean useInt64Timestamps) {
     this.config = config;
@@ -61,6 +62,7 @@ final class QueryRequestInfo {
     this.useQueryCache = config.useQueryCache();
     this.jobCreationMode = config.getJobCreationMode();
     this.formatOptions = new DataFormatOptions().setUseInt64Timestamp(useInt64Timestamps);
+    this.reservation = config.getReservation();
   }
 
   boolean isFastQuerySupported(JobId jobId) {
@@ -128,6 +130,9 @@ final class QueryRequestInfo {
     if (formatOptions != null) {
       request.setFormatOptions(formatOptions);
     }
+    if (reservation != null) {
+      request.setReservation(reservation);
+    }
     return request;
   }
 
@@ -148,6 +153,7 @@ final class QueryRequestInfo {
         .add("useLegacySql", useLegacySql)
         .add("jobCreationMode", jobCreationMode)
         .add("formatOptions", formatOptions.getUseInt64Timestamp())
+        .add("reservation", reservation)
         .toString();
   }
 
@@ -167,7 +173,8 @@ final class QueryRequestInfo {
         useQueryCache,
         useLegacySql,
         jobCreationMode,
-        formatOptions);
+        formatOptions,
+        reservation);
   }
 
   @Override

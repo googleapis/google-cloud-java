@@ -74,6 +74,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   // maxResults is only used for fast query path
   private final Long maxResults;
   private final JobCreationMode jobCreationMode;
+  private final String reservation;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -142,6 +143,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private List<ConnectionProperty> connectionProperties;
     private Long maxResults;
     private JobCreationMode jobCreationMode;
+    private String reservation;
 
     private Builder() {
       super(Type.QUERY);
@@ -178,6 +180,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.connectionProperties = jobConfiguration.connectionProperties;
       this.maxResults = jobConfiguration.maxResults;
       this.jobCreationMode = jobConfiguration.jobCreationMode;
+      this.reservation = jobConfiguration.reservation;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -284,6 +287,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
             Lists.transform(
                 queryConfigurationPb.getConnectionProperties(),
                 ConnectionProperty.FROM_PB_FUNCTION);
+      }
+      if (configurationPb.getReservation() != null) {
+        this.reservation = configurationPb.getReservation();
       }
     }
 
@@ -682,6 +688,19 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] The reservation that job would use. User can specify a reservation to execute the
+     * job. If reservation is not set, reservation is determined based on the rules defined by the
+     * reservation assignments. The expected format is
+     * `projects/{project}/locations/{location}/reservations/{reservation}`.
+     *
+     * @param reservation reservation or {@code null} for none
+     */
+    public Builder setReservation(String reservation) {
+      this.reservation = reservation;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -727,6 +746,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.connectionProperties = builder.connectionProperties;
     this.maxResults = builder.maxResults;
     this.jobCreationMode = builder.jobCreationMode;
+    this.reservation = builder.reservation;
   }
 
   /**
@@ -943,6 +963,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return jobCreationMode;
   }
 
+  /** Returns the reservation associated with this job */
+  public String getReservation() {
+    return reservation;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -978,7 +1003,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("labels", labels)
         .add("rangePartitioning", rangePartitioning)
         .add("connectionProperties", connectionProperties)
-        .add("jobCreationMode", jobCreationMode);
+        .add("jobCreationMode", jobCreationMode)
+        .add("reservation", reservation);
   }
 
   @Override
@@ -1016,7 +1042,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         jobTimeoutMs,
         labels,
         rangePartitioning,
-        connectionProperties);
+        connectionProperties,
+        reservation);
   }
 
   @Override
@@ -1124,6 +1151,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     if (connectionProperties != null) {
       queryConfigurationPb.setConnectionProperties(
           Lists.transform(connectionProperties, ConnectionProperty.TO_PB_FUNCTION));
+    }
+    if (reservation != null) {
+      configurationPb.setReservation(reservation);
     }
     configurationPb.setQuery(queryConfigurationPb);
     return configurationPb;

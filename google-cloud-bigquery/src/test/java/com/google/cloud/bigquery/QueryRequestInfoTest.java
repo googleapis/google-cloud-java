@@ -110,6 +110,7 @@ public class QueryRequestInfoTest {
       ImmutableMap.of("string", STRING_PARAMETER, "timestamp", TIMESTAMP_PARAMETER);
   private static final JobCreationMode jobCreationModeRequired =
       JobCreationMode.JOB_CREATION_REQUIRED;
+  private static final String RESERVATION = "reservation";
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -137,6 +138,7 @@ public class QueryRequestInfoTest {
           .setPositionalParameters(POSITIONAL_PARAMETER)
           .setMaxResults(100L)
           .setJobCreationMode(jobCreationModeRequired)
+          .setReservation(RESERVATION)
           .build();
   QueryRequestInfo REQUEST_INFO = new QueryRequestInfo(QUERY_JOB_CONFIGURATION, false);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_SUPPORTED =
@@ -151,6 +153,7 @@ public class QueryRequestInfoTest {
           .setPositionalParameters(POSITIONAL_PARAMETER)
           .setCreateSession(CREATE_SESSION)
           .setMaxResults(100L)
+          .setReservation(RESERVATION)
           .build();
   QueryRequestInfo REQUEST_INFO_SUPPORTED =
       new QueryRequestInfo(QUERY_JOB_CONFIGURATION_SUPPORTED, false);
@@ -214,5 +217,6 @@ public class QueryRequestInfoTest {
     assertEquals(expectedQueryReq.getUseLegacySql(), actualQueryReq.getUseLegacySql());
     assertEquals(expectedQueryReq.get("jobCreationMode"), actualQueryReq.get("jobCreationMode"));
     assertEquals(expectedQueryReq.getFormatOptions(), actualQueryReq.getFormatOptions());
+    assertEquals(expectedQueryReq.getReservation(), actualQueryReq.getReservation());
   }
 }

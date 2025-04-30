@@ -44,6 +44,7 @@ public class CopyJobConfigurationTest {
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final Map<String, String> LABELS = ImmutableMap.of("job-name", "copy");
   private static final Long TIMEOUT = 10L;
+  private static final String RESERVATION = "reservation";
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLE)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -51,6 +52,7 @@ public class CopyJobConfigurationTest {
           .setDestinationEncryptionConfiguration(COPY_JOB_ENCRYPTION_CONFIGURATION)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setReservation(RESERVATION)
           .build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION_MULTIPLE_TABLES =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLES)
@@ -58,6 +60,7 @@ public class CopyJobConfigurationTest {
           .setWriteDisposition(WRITE_DISPOSITION)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setReservation(RESERVATION)
           .build();
 
   @Test
@@ -181,5 +184,6 @@ public class CopyJobConfigurationTest {
         value.getDestinationEncryptionConfiguration());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
+    assertEquals(expected.getReservation(), value.getReservation());
   }
 }

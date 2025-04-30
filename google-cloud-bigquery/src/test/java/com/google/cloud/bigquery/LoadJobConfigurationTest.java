@@ -67,6 +67,7 @@ public class LoadJobConfigurationTest {
   private static final Map<String, String> LABELS =
       ImmutableMap.of("test-job-name", "test-load-job");
   private static final Long TIMEOUT = 10L;
+  private static final String RESERVATION = "reservation";
   private static final RangePartitioning.Range RANGE =
       RangePartitioning.Range.newBuilder().setStart(1L).setInterval(2L).setEnd(10L).build();
   private static final RangePartitioning RANGE_PARTITIONING =
@@ -108,6 +109,7 @@ public class LoadJobConfigurationTest {
           .setHivePartitioningOptions(HIVE_PARTITIONING_OPTIONS)
           .setConnectionProperties(CONNECTION_PROPERTIES)
           .setCreateSession(CREATE_SESSION)
+          .setReservation(RESERVATION)
           .build();
 
   private static final DatastoreBackupOptions BACKUP_OPTIONS =
@@ -127,6 +129,7 @@ public class LoadJobConfigurationTest {
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
           .setRangePartitioning(RANGE_PARTITIONING)
+          .setReservation(RESERVATION)
           .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_AVRO =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
@@ -145,6 +148,7 @@ public class LoadJobConfigurationTest {
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
           .setRangePartitioning(RANGE_PARTITIONING)
+          .setReservation(RESERVATION)
           .build();
 
   @Test
@@ -266,5 +270,6 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getHivePartitioningOptions(), value.getHivePartitioningOptions());
     assertEquals(expected.getConnectionProperties(), value.getConnectionProperties());
     assertEquals(expected.getCreateSession(), value.getCreateSession());
+    assertEquals(expected.getReservation(), value.getReservation());
   }
 }

@@ -112,6 +112,7 @@ public class QueryJobConfigurationTest {
       ImmutableMap.of("string", STRING_PARAMETER, "timestamp", TIMESTAMP_PARAMETER);
   private static final String PARAMETER_MODE = "POSITIONAL";
   private static final JobCreationMode JOB_CREATION_MODE = JobCreationMode.JOB_CREATION_OPTIONAL;
+  private static final String RESERVATION = "reservation";
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -139,6 +140,7 @@ public class QueryJobConfigurationTest {
           .setConnectionProperties(CONNECTION_PROPERTIES)
           .setPositionalParameters(POSITIONAL_PARAMETER)
           .setParameterMode(PARAMETER_MODE)
+          .setReservation(RESERVATION)
           .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_ADD_POSITIONAL_PARAMETER =
       QUERY_JOB_CONFIGURATION.toBuilder()
@@ -188,6 +190,7 @@ public class QueryJobConfigurationTest {
     assertNotNull(QUERY_JOB_CONFIGURATION.getConnectionProperties());
     assertNotNull(QUERY_JOB_CONFIGURATION.getPositionalParameters());
     assertNotNull(QUERY_JOB_CONFIGURATION.getNamedParameters());
+    assertNotNull(QUERY_JOB_CONFIGURATION.getReservation());
     compareQueryJobConfiguration(
         QUERY_JOB_CONFIGURATION, QueryJobConfiguration.fromPb(QUERY_JOB_CONFIGURATION.toPb()));
     QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
@@ -271,5 +274,6 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getConnectionProperties(), value.getConnectionProperties());
     assertEquals(expected.getPositionalParameters(), value.getPositionalParameters());
     assertEquals(expected.getNamedParameters(), value.getNamedParameters());
+    assertEquals(expected.getReservation(), value.getReservation());
   }
 }

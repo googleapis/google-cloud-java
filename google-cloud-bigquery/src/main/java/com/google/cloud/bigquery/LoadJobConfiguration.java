@@ -60,10 +60,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final RangePartitioning rangePartitioning;
   private final HivePartitioningOptions hivePartitioningOptions;
   private final String referenceFileSchemaUri;
-
   private final List<ConnectionProperty> connectionProperties;
-
   private final Boolean createSession;
+  private final String reservation;
 
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
@@ -95,6 +94,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private String referenceFileSchemaUri;
     private List<ConnectionProperty> connectionProperties;
     private Boolean createSession;
+    private String reservation;
 
     private Builder() {
       super(Type.LOAD);
@@ -128,6 +128,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.referenceFileSchemaUri = loadConfiguration.referenceFileSchemaUri;
       this.connectionProperties = loadConfiguration.connectionProperties;
       this.createSession = loadConfiguration.createSession;
+      this.reservation = loadConfiguration.reservation;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -234,6 +235,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
                 loadConfigurationPb.getConnectionProperties(), ConnectionProperty.FROM_PB_FUNCTION);
       }
       createSession = loadConfigurationPb.getCreateSession();
+      if (configurationPb.getReservation() != null) {
+        this.reservation = configurationPb.getReservation();
+      }
     }
 
     @Override
@@ -432,6 +436,19 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    /**
+     * [Optional] The reservation that job would use. User can specify a reservation to execute the
+     * job. If reservation is not set, reservation is determined based on the rules defined by the
+     * reservation assignments. The expected format is
+     * `projects/{project}/locations/{location}/reservations/{reservation}`.
+     *
+     * @param reservation reservation or {@code null} for none
+     */
+    public Builder setReservation(String reservation) {
+      this.reservation = reservation;
+      return this;
+    }
+
     @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
@@ -465,6 +482,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.referenceFileSchemaUri = builder.referenceFileSchemaUri;
     this.connectionProperties = builder.connectionProperties;
     this.createSession = builder.createSession;
+    this.reservation = builder.reservation;
   }
 
   @Override
@@ -611,6 +629,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return createSession;
   }
 
+  /** Returns the reservation associated with this job */
+  public String getReservation() {
+    return reservation;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -643,7 +666,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("hivePartitioningOptions", hivePartitioningOptions)
         .add("referenceFileSchemaUri", referenceFileSchemaUri)
         .add("connectionProperties", connectionProperties)
-        .add("createSession", createSession);
+        .add("createSession", createSession)
+        .add("reservation", reservation);
   }
 
   @Override
@@ -761,6 +785,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (createSession != null) {
       loadConfigurationPb.setCreateSession(createSession);
+    }
+    if (reservation != null) {
+      jobConfiguration.setReservation(reservation);
     }
 
     jobConfiguration.setLoad(loadConfigurationPb);

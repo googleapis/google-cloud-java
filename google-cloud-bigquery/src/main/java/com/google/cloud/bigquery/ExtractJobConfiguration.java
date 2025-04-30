@@ -47,6 +47,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   private final Boolean useAvroLogicalTypes;
   private final Map<String, String> labels;
   private final Long jobTimeoutMs;
+  private final String reservation;
 
   public static final class Builder
       extends JobConfiguration.Builder<ExtractJobConfiguration, Builder> {
@@ -61,6 +62,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     private Boolean useAvroLogicalTypes;
     private Map<String, String> labels;
     private Long jobTimeoutMs;
+    private String reservation;
 
     private Builder() {
       super(Type.EXTRACT);
@@ -78,6 +80,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.useAvroLogicalTypes = jobInfo.useAvroLogicalTypes;
       this.labels = jobInfo.labels;
       this.jobTimeoutMs = jobInfo.jobTimeoutMs;
+      this.reservation = jobInfo.reservation;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -100,6 +103,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       }
       if (configurationPb.getJobTimeoutMs() != null) {
         this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
+      }
+      if (configurationPb.getReservation() != null) {
+        this.reservation = configurationPb.getReservation();
       }
     }
 
@@ -198,6 +204,19 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] The reservation that job would use. User can specify a reservation to execute the
+     * job. If reservation is not set, reservation is determined based on the rules defined by the
+     * reservation assignments. The expected format is
+     * `projects/{project}/locations/{location}/reservations/{reservation}`.
+     *
+     * @param reservation reservation or {@code null} for none
+     */
+    public Builder setReservation(String reservation) {
+      this.reservation = reservation;
+      return this;
+    }
+
     public ExtractJobConfiguration build() {
       return new ExtractJobConfiguration(this);
     }
@@ -215,6 +234,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
     this.labels = builder.labels;
     this.jobTimeoutMs = builder.jobTimeoutMs;
+    this.reservation = builder.reservation;
   }
 
   /** Returns the table to export. */
@@ -274,6 +294,11 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return jobTimeoutMs;
   }
 
+  /** Returns the reservation associated with this job */
+  public String getReservation() {
+    return reservation;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -291,7 +316,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         .add("compression", compression)
         .add("useAvroLogicalTypes", useAvroLogicalTypes)
         .add("labels", labels)
-        .add("jobTimeoutMs", jobTimeoutMs);
+        .add("jobTimeoutMs", jobTimeoutMs)
+        .add("reservation", reservation);
   }
 
   @Override
@@ -313,7 +339,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         compression,
         useAvroLogicalTypes,
         labels,
-        jobTimeoutMs);
+        jobTimeoutMs,
+        reservation);
   }
 
   @Override
@@ -349,6 +376,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     }
     if (jobTimeoutMs != null) {
       jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
+    }
+    if (reservation != null) {
+      jobConfiguration.setReservation(reservation);
     }
     jobConfiguration.setExtract(extractConfigurationPb);
     return jobConfiguration;
