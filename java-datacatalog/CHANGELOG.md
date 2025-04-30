@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.67.0 (2025-04-30)
+
+### Features
+
+* add field `template_migration_enabled_time` to `.google.cloud.datacatalog.v1.MigrationConfig` ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+### Bug Fixes
+
+* A comment for field `sql_resource` in message `.google.cloud.datacatalog.v1.LookupEntryRequest` is changed ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+* clarify sql variant in comment for v1beta1.LookupEntryRequest.sql_resource ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+* fix a typo ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 1.65.0 (2025-02-26)
 
 ### Dependencies

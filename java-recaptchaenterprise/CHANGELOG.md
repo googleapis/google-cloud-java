@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.58.0 (2025-04-30)
+
+### Bug Fixes
+
+* fix typo in FraudPrevention.DISABLE comment ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+* marked fields as output only ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 3.56.0 (2025-02-26)
 
 ### Dependencies

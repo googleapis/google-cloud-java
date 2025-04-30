@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.63.0 (2025-04-30)
+
+### Features
+
+* add availability field to Localnventory ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+* add conversational search API ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+* add language_code, region_code and place_id to SearchRequest ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+* add language_code, region_code and place_id to SearchRequest ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 2.61.0 (2025-02-26)
 
 ### Dependencies

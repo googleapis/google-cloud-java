@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.60.0 (2025-04-30)
+
+### Features
+
+* Adding new BackupChannel, RestoreChannel, BackupPlanBinding and RestorePlanBinding ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 0.58.0 (2025-02-26)
 
 ### Dependencies

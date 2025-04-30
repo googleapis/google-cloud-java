@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.57.0 (2025-04-30)
+
+### Features
+
+* add stream answer API ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+* move serving config update API to GA ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+
+
+
 ## 0.55.0 (2025-02-26)
 
 ### Dependencies

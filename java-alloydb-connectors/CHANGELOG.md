@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.39.0 (2025-04-30)
+
+### Features
+
+* A new method `ExportCluster` is added to service `AlloyDBAdmin` ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+
+
+
 ## 0.37.0 (2025-02-26)
 
 ### Dependencies

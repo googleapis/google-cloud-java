@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.16.0 (2025-04-30)
+
+### Features
+
+* accept status updates in the SignalZoneState method ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 0.14.0 (2025-02-26)
 
 ### Dependencies

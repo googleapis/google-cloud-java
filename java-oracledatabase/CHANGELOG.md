@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.10.0 (2025-04-30)
+
+### Features
+
+* add enum value `State::NOT_APPROVED_IN_PRIVATE_MARKETPLACE` ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+* add new AutonomousDatabase RPCs ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+
+### Bug Fixes
+
+* the network and cidr fields of AutonomousDatabase are now marked optional ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+
+
+
 ## 0.8.0 (2025-02-26)
 
 ### Dependencies

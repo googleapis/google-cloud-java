@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.24.0 (2025-04-30)
+
+### Features
+
+* A new value `REPAIRING` is added to enum `State` ([6e30c7c](https://github.com/googleapis/google-cloud-java/commit/6e30c7c7d20f391b569a82b824fecc8f0e088ead))
+
+### Bug Fixes
+
+* A comment for field `daos_version` in message `.google.cloud.parallelstore.v1.Instance` is changed ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 0.22.0 (2025-02-26)
 
 ### Features

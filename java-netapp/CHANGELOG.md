@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.40.0 (2025-04-30)
+
+### Bug Fixes
+
+* A comment for field `cooling_threshold_days` in message `.google.cloud.netapp.v1.TieringPolicy` is changed ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 0.38.0 (2025-02-26)
 
 ### Dependencies

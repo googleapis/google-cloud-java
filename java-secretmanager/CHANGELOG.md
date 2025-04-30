@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.61.0 (2025-04-30)
+
+### Bug Fixes
+
+* various documentation clarifications ([ca48eb1](https://github.com/googleapis/google-cloud-java/commit/ca48eb166b4b90fd1eabb25a8acad6ef32029182))
+
+
+
 ## 2.59.0 (2025-02-26)
 
 ### Dependencies
