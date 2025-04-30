@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.28.0](https://github.com/googleapis/java-datastore/compare/v2.27.2...v2.28.0) (2025-04-29)
+
+
+### Features
+
+* Java datastore gapic upgrade ([#1824](https://github.com/googleapis/java-datastore/issues/1824)) ([a296d43](https://github.com/googleapis/java-datastore/commit/a296d43724c57aba6a69ebed249261e3d367d625))
+
 ## [2.27.2](https://github.com/googleapis/java-datastore/compare/v2.27.1...v2.27.2) (2025-04-25)
 
 
