@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,9 +51,9 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITGenerativeModelIntegrationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_NAME_TEXT = "gemini-pro";
-  private static final String MODEL_NAME_MULTIMODAL = "gemini-pro-vision";
-  private static final String MODEL_NAME_LATEST_GEMINI = "gemini-1.5-pro-preview-0409";
+  private static final String MODEL_NAME_MULTIMODAL = "gemini-2.5-pro-preview-03-25";
+  private static final String MODEL_NAME_TEXT = "gemini-2.5-pro-preview-03-25";
+  private static final String MODEL_NAME_LATEST_GEMINI = "gemini-2.5-pro-preview-03-25";
   private static final String LOCATION = "us-central1";
 
   // Tested content
@@ -129,12 +129,13 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
+  @Ignore("This is not reachable using cloud-java default credentials.")
   public void generateContent_restTransportWithTunedModel_nonEmptyCandidateList()
       throws IOException {
     try (VertexAI vertexAiViaRest = new VertexAI.Builder().setTransport(Transport.REST).build()) {
       GenerativeModel textModelWithRest =
           new GenerativeModel(
-              "projects/964831358985/locations/us-central1/endpoints/7226683110069370880",
+              "projects/964831358985/locations/us-central1/endpoints/5245801861956501504",
               vertexAiViaRest);
       GenerateContentResponse response = textModelWithRest.generateContent(TEXT);
 
